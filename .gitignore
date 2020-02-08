@@ -1,3 +1,5 @@
 *.dcu
 dcu
 __history
+windows
+*.exe

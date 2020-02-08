@@ -104,7 +104,11 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="Views\Main.View.pas">
-            <Form>Form1</Form>
+            <Form>FMainView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Base\Base.View.pas">
+            <Form>FBaseView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
@@ -133,7 +137,7 @@
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="3">
-                <DeployFile LocalName="Win32\Debug\saadmin.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="windows\saadmin.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>saadmin.exe</RemoteName>
                         <Overwrite>true</Overwrite>

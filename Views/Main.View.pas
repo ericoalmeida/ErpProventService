@@ -20,13 +20,13 @@ uses
   dxRibbon, cxClasses, dxStatusBar, dxRibbonStatusBar, dxGDIPlusClasses, Vcl.ExtCtrls;
 
 type
-  TForm1 = class(TForm)
-    dxRibbon1Tab1: TdxRibbonTab;
-    dxRibbon1: TdxRibbon;
-    dxRibbonStatusBar1: TdxRibbonStatusBar;
-    dxBarManager1: TdxBarManager;
-    dxBarApplicationMenu1: TdxBarApplicationMenu;
-    Image1: TImage;
+  TFMainView = class(TForm)
+    TbAdministration: TdxRibbonTab;
+    RbMainMenu: TdxRibbon;
+    StStatus: TdxRibbonStatusBar;
+    BrManager: TdxBarManager;
+    ApMainMenu: TdxBarApplicationMenu;
+    ImLogo: TImage;
     dxBarManager1Bar1: TdxBar;
     dxBarLargeButton1: TdxBarLargeButton;
     dxBarLargeButton2: TdxBarLargeButton;
@@ -41,6 +41,8 @@ type
     dxBarManager1Bar4: TdxBar;
     dxBarLargeButton9: TdxBarLargeButton;
     dxBarLargeButton10: TdxBarLargeButton;
+    TmMainMenu: TTimer;
+    procedure TmMainMenuTimer(Sender: TObject);
   private
     { Private declarations }
   public
@@ -48,10 +50,18 @@ type
   end;
 
 var
-  Form1: TForm1;
+  FMainView: TFMainView;
 
 implementation
 
 {$R *.dfm}
+
+procedure TFMainView.TmMainMenuTimer(Sender: TObject);
+begin
+  if Self.MDIChildCount <= 0 then
+    RbMainMenu.ShowTabGroups := True
+  else
+    RbMainMenu.ShowTabGroups := False
+end;
 
 end.

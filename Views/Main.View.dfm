@@ -1,4 +1,4 @@
-object Form1: TForm1
+object FMainView: TFMainView
   Left = 0
   Top = 0
   BorderStyle = bsSingle
@@ -17,11 +17,11 @@ object Form1: TForm1
   WindowState = wsMaximized
   PixelsPerInch = 96
   TextHeight = 13
-  object Image1: TImage
+  object ImLogo: TImage
     Left = 0
-    Top = 159
+    Top = 157
     Width = 702
-    Height = 323
+    Height = 325
     Align = alClient
     Center = True
     Picture.Data = {
@@ -1926,20 +1926,20 @@ object Form1: TForm1
     ExplicitWidth = 200
     ExplicitHeight = 185
   end
-  object dxRibbon1: TdxRibbon
+  object RbMainMenu: TdxRibbon
     Left = 0
     Top = 0
     Width = 702
-    Height = 159
-    ApplicationButton.Menu = dxBarApplicationMenu1
-    BarManager = dxBarManager1
+    Height = 157
+    ApplicationButton.Menu = ApMainMenu
+    BarManager = BrManager
     ColorSchemeAccent = rcsaBlue
-    ColorSchemeName = 'Black'
+    ColorSchemeName = 'DevExpressStyle'
     QuickAccessToolbar.Toolbar = dxBarManager1Bar2
     Contexts = <>
     TabOrder = 0
     TabStop = False
-    object dxRibbon1Tab1: TdxRibbonTab
+    object TbAdministration: TdxRibbonTab
       Active = True
       Caption = 'Administra'#231#227'o'
       Groups = <
@@ -1955,7 +1955,7 @@ object Form1: TForm1
       Index = 0
     end
   end
-  object dxRibbonStatusBar1: TdxRibbonStatusBar
+  object StStatus: TdxRibbonStatusBar
     Left = 0
     Top = 482
     Width = 702
@@ -1965,14 +1965,14 @@ object Form1: TForm1
         PanelStyleClassName = 'TdxStatusBarTextPanelStyle'
         Text = 'PREFEITURA MUNICIPAL DE PARANA'#205'TA/MT - SECRETARIA DE AGRICULTURA'
       end>
-    Ribbon = dxRibbon1
+    Ribbon = RbMainMenu
     Font.Charset = ANSI_CHARSET
     Font.Color = clDefault
     Font.Height = -11
     Font.Name = 'Open Sans ExtraBold'
     Font.Style = [fsBold]
   end
-  object dxBarManager1: TdxBarManager
+  object BrManager: TdxBarManager
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -2048,7 +2048,7 @@ object Form1: TForm1
     object dxBarManager1Bar3: TdxBar
       Caption = 'Rotinas'
       CaptionButtons = <>
-      DockedLeft = 258
+      DockedLeft = 259
       DockedTop = 0
       FloatLeft = 720
       FloatTop = 2
@@ -2072,7 +2072,7 @@ object Form1: TForm1
     object dxBarManager1Bar4: TdxBar
       Caption = 'Relat'#243'rios'
       CaptionButtons = <>
-      DockedLeft = 438
+      DockedLeft = 440
       DockedTop = 0
       FloatLeft = 720
       FloatTop = 2
@@ -2900,8 +2900,8 @@ object Form1: TForm1
         4E44AE426082}
     end
   end
-  object dxBarApplicationMenu1: TdxBarApplicationMenu
-    BarManager = dxBarManager1
+  object ApMainMenu: TdxBarApplicationMenu
+    BarManager = BrManager
     Buttons = <>
     ExtraPane.Items = <>
     ItemLinks = <>
@@ -2909,5 +2909,11 @@ object Form1: TForm1
     Left = 64
     Top = 136
     PixelsPerInch = 96
+  end
+  object TmMainMenu: TTimer
+    Interval = 100
+    OnTimer = TmMainMenuTimer
+    Left = 152
+    Top = 280
   end
 end
