@@ -1934,7 +1934,7 @@ object FMainView: TFMainView
     ApplicationButton.Menu = ApMainMenu
     BarManager = BrManager
     ColorSchemeAccent = rcsaBlue
-    ColorSchemeName = 'Black'
+    ColorSchemeName = 'Blue'
     QuickAccessToolbar.Toolbar = dxBarManager1Bar2
     Contexts = <>
     TabOrder = 0
