@@ -19,7 +19,13 @@ type
     LbProgram: TRzLabel;
     ImTitle: TImage;
     LbTitle: TRzLabel;
+    PnContainerBody: TRzPanel;
+    PnFooterBody: TRzPanel;
+    BtSair: TcxButton;
+    LbTotalDeRegistros: TRzLabel;
     procedure FormCreate(Sender: TObject);
+    procedure BtSairClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -32,6 +38,16 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFBaseView.BtSairClick(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TFBaseView.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+ Action := caFree;
+end;
 
 procedure TFBaseView.FormCreate(Sender: TObject);
 begin
