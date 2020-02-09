@@ -10,7 +10,9 @@ uses
   cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator,
   cxDataControllerConditionalFormattingRulesManagerDialog, Data.DB, cxDBData, cxGridLevel,
   cxClasses, cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid,
-  Vcl.Mask, RzEdit, cxContainer, cxLabel, cxTextEdit;
+  Vcl.Mask, RzEdit, cxContainer, cxLabel, cxTextEdit, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TFBaseListagemView = class(TFBaseView)
@@ -34,11 +36,14 @@ type
     BtInsert: TcxButton;
     PnGrid: TRzPanel;
     LbBuscar: TcxLabel;
-    TxBuscar: TcxTextEdit;
     StGridStyles: TcxStyleRepository;
     StHeader: TcxStyle;
     RzOptionShow: TRzPanel;
     BtOptionShow: TcxButton;
+    PnBuscar: TRzPanel;
+    TxBuscar: TcxTextEdit;
+    FdDados: TFDMemTable;
+    DsDados: TDataSource;
   private
     { Private declarations }
   public

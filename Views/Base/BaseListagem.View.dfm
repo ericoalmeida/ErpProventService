@@ -64,15 +64,29 @@ inherited FBaseListagemView: TFBaseListagemView
       end
     end
     inherited PnContainerBody: TRzPanel
+      inherited PnFooterBody: TRzPanel
+        inherited BtSair: TcxButton
+          OptionsImage.Glyph.Data = {
+            89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+            610000001974455874536F6674776172650041646F626520496D616765526561
+            647971C9653C00000019744558745469746C650044656C6574653B52656D6F76
+            653B4D696E7573EBA98F410000009449444154785E9593410A834010047D5C20
+            27F3093F104C6461C5CD37F312C5D3641AD27810BAF15030CC587510B68B88EE
+            3BDCFAA46236F0FB190E66CA7B12C9125EFE24F1771E584C9009234626230FE5
+            14F1F21B2E8E22A2650654A42999011951320322A265E0FFF6411301219B8893
+            5F49511129F3A622567611C8B3905DA462794FD693EC231B5C2C19795E78CE13
+            1CCC3FD2409CCC2C3656140000000049454E44AE426082}
+        end
+      end
       object PnContent: TRzPanel
         AlignWithMargins = True
-        Left = 6
+        Left = 1
         Top = 50
-        Width = 596
+        Width = 606
         Height = 144
-        Margins.Left = 6
+        Margins.Left = 1
         Margins.Top = 0
-        Margins.Right = 6
+        Margins.Right = 1
         Align = alClient
         BorderOuter = fsNone
         BorderSides = [sdTop, sdBottom]
@@ -80,29 +94,26 @@ inherited FBaseListagemView: TFBaseListagemView
         BorderWidth = 1
         Color = clWhite
         TabOrder = 1
-        ExplicitLeft = 10
-        ExplicitTop = 123
-        ExplicitHeight = 44
+        ExplicitLeft = 6
+        ExplicitWidth = 596
         object PnGridHeader: TRzPanel
           Left = 1
           Top = 1
-          Width = 594
+          Width = 604
           Height = 38
           Align = alTop
           BorderOuter = fsNone
           BorderSides = [sdBottom]
-          BorderColor = 15066597
+          BorderColor = 16315375
           BorderWidth = 1
           Color = 16119285
           TabOrder = 0
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 596
+          ExplicitWidth = 594
           DesignSize = (
-            594
+            604
             38)
           object LbBuscar: TcxLabel
-            Left = 268
+            Left = 277
             Top = 8
             Anchors = [akRight, akBottom]
             Caption = 'Buscar:'
@@ -113,40 +124,51 @@ inherited FBaseListagemView: TFBaseListagemView
             Style.Font.Name = 'Open Sans'
             Style.Font.Style = []
             Style.IsFontAssigned = True
+            ExplicitLeft = 267
           end
-          object TxBuscar: TcxTextEdit
-            Left = 320
-            Top = 8
-            Anchors = [akRight, akBottom]
-            Properties.CharCase = ecUpperCase
-            Style.BorderColor = clSilver
-            Style.BorderStyle = ebsUltraFlat
-            Style.HotTrack = False
-            Style.TransparentBorder = True
+          object PnBuscar: TRzPanel
+            AlignWithMargins = True
+            Left = 327
+            Top = 7
+            Width = 273
+            Height = 24
+            Margins.Top = 6
+            Margins.Bottom = 6
+            Align = alRight
+            BorderOuter = fsNone
+            BorderColor = 15314790
+            BorderWidth = 1
+            Color = clWhite
             TabOrder = 1
-            Width = 260
+            ExplicitLeft = 317
+            object TxBuscar: TcxTextEdit
+              Left = 1
+              Top = 1
+              Align = alClient
+              Style.BorderStyle = ebsNone
+              TabOrder = 0
+              Width = 271
+            end
           end
         end
         object PnGridFooter: TRzPanel
           Left = 1
           Top = 113
-          Width = 594
+          Width = 604
           Height = 30
           Align = alBottom
           BorderOuter = fsNone
           BorderSides = [sdTop]
-          BorderColor = 15066597
+          BorderColor = 16315375
           BorderWidth = 1
           Color = 16119285
           TabOrder = 1
-          ExplicitLeft = 0
-          ExplicitTop = 114
-          ExplicitWidth = 596
+          ExplicitWidth = 594
           object LbTotalRegistros: TRzLabel
             AlignWithMargins = True
             Left = 4
             Top = 5
-            Width = 586
+            Width = 596
             Height = 22
             Margins.Top = 4
             Margins.Bottom = 2
@@ -167,7 +189,7 @@ inherited FBaseListagemView: TFBaseListagemView
           AlignWithMargins = True
           Left = 1
           Top = 41
-          Width = 594
+          Width = 604
           Height = 70
           Margins.Left = 0
           Margins.Top = 2
@@ -179,15 +201,12 @@ inherited FBaseListagemView: TFBaseListagemView
           BorderWidth = 1
           Color = clWhite
           TabOrder = 2
-          ExplicitLeft = 0
-          ExplicitTop = 114
-          ExplicitWidth = 596
-          ExplicitHeight = 30
+          ExplicitWidth = 594
           object DbDados: TcxGrid
             AlignWithMargins = True
             Left = 1
             Top = 1
-            Width = 592
+            Width = 602
             Height = 68
             Margins.Left = 0
             Margins.Top = 0
@@ -198,8 +217,7 @@ inherited FBaseListagemView: TFBaseListagemView
             TabOrder = 0
             LookAndFeel.Kind = lfStandard
             LookAndFeel.NativeStyle = False
-            ExplicitTop = -12
-            ExplicitHeight = 42
+            ExplicitWidth = 592
             object VwDados: TcxGridDBTableView
               Navigator.Buttons.CustomButtons = <>
               DataController.Summary.DefaultGroupSummaryItems = <>
@@ -219,19 +237,18 @@ inherited FBaseListagemView: TFBaseListagemView
       end
       object PnHeaderButtons: TRzPanel
         AlignWithMargins = True
-        Left = 6
+        Left = 1
         Top = 3
-        Width = 596
+        Width = 606
         Height = 44
-        Margins.Left = 6
-        Margins.Right = 6
+        Margins.Left = 1
+        Margins.Right = 1
         Align = alTop
         BorderOuter = fsNone
         Color = clWhite
         TabOrder = 2
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 608
+        ExplicitLeft = 6
+        ExplicitWidth = 596
         object PnDuplicate: TRzPanel
           AlignWithMargins = True
           Left = 168
@@ -252,7 +269,6 @@ inherited FBaseListagemView: TFBaseListagemView
           GradientColorStop = 15066597
           GradientDirection = gdDiagonalDown
           TabOrder = 0
-          ExplicitLeft = 2
           object BtDuplicate: TcxButton
             Left = 1
             Top = 1
@@ -275,10 +291,6 @@ inherited FBaseListagemView: TFBaseListagemView
             SpeedButtonOptions.Flat = True
             SpeedButtonOptions.Transparent = True
             TabOrder = 0
-            ExplicitLeft = 16
-            ExplicitTop = 16
-            ExplicitWidth = 75
-            ExplicitHeight = 25
           end
         end
         object PnDelete: TRzPanel
@@ -301,7 +313,6 @@ inherited FBaseListagemView: TFBaseListagemView
           GradientColorStop = 15066597
           GradientDirection = gdDiagonalDown
           TabOrder = 1
-          ExplicitLeft = 2
           object BtDelete: TcxButton
             Left = 1
             Top = 1
@@ -346,7 +357,6 @@ inherited FBaseListagemView: TFBaseListagemView
           GradientColorStop = 15066597
           GradientDirection = gdDiagonalDown
           TabOrder = 2
-          ExplicitLeft = 2
           object BtShow: TcxButton
             Left = 1
             Top = 1
@@ -394,7 +404,6 @@ inherited FBaseListagemView: TFBaseListagemView
           GradientColorStop = 15066597
           GradientDirection = gdDiagonalDown
           TabOrder = 3
-          ExplicitLeft = 2
           object BtUpdate: TcxButton
             Left = 1
             Top = 1
@@ -440,7 +449,6 @@ inherited FBaseListagemView: TFBaseListagemView
           GradientColorStop = 15066597
           GradientDirection = gdDiagonalDown
           TabOrder = 4
-          ExplicitLeft = 2
           object BtInsert: TcxButton
             Left = 1
             Top = 1
@@ -485,8 +493,6 @@ inherited FBaseListagemView: TFBaseListagemView
           GradientColorStop = 15066597
           GradientDirection = gdDiagonalDown
           TabOrder = 5
-          ExplicitLeft = 269
-          ExplicitTop = 0
           object BtOptionShow: TcxButton
             Left = 1
             Top = 1
@@ -518,7 +524,6 @@ inherited FBaseListagemView: TFBaseListagemView
             SpeedButtonOptions.Flat = True
             SpeedButtonOptions.Transparent = True
             TabOrder = 0
-            ExplicitHeight = 16
           end
         end
       end
@@ -538,5 +543,21 @@ inherited FBaseListagemView: TFBaseListagemView
       Font.Style = [fsBold]
       TextColor = 5592405
     end
+  end
+  object FdDados: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    Left = 116
+    Top = 140
+  end
+  object DsDados: TDataSource
+    DataSet = FdDados
+    Left = 156
+    Top = 140
   end
 end

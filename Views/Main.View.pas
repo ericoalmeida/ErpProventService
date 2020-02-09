@@ -42,6 +42,7 @@ type
     dxBarLargeButton9: TdxBarLargeButton;
     dxBarLargeButton10: TdxBarLargeButton;
     TmMainMenu: TTimer;
+    dxBarLargeButton11: TdxBarLargeButton;
     procedure TmMainMenuTimer(Sender: TObject);
   private
     { Private declarations }

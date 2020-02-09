@@ -115,6 +115,22 @@
             <Form>FBaseListagemView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Views\Base\BaseCadastro.View.pas">
+            <Form>FBaseCadastroView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Base\BaseMensagem.View.pas">
+            <Form>FBaseMensagemView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Base\BasePesquisa.View.pas">
+            <Form>FBasePesquisaView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Base\BaseRelatorio.View.pas">
+            <Form>FBaseRelatorioView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
