@@ -1,4 +1,4 @@
-unit BaseCadastro.View;
+unit BaseRegister.View;
 
 interface
 
@@ -9,7 +9,7 @@ uses
   Vcl.StdCtrls, cxButtons, RzLabel, dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel;
 
 type
-  TFBaseCadastroView = class(TFBaseView)
+  TFBaseRegisterView = class(TFBaseView)
     BtConfirmar: TcxButton;
     PnContent: TRzPanel;
   private
@@ -19,7 +19,7 @@ type
   end;
 
 var
-  FBaseCadastroView: TFBaseCadastroView;
+  FBaseRegisterView: TFBaseRegisterView;
 
 implementation
 

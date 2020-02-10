@@ -1,5 +1,5 @@
-inherited FBaseCadastroView: TFBaseCadastroView
-  Caption = 'FBaseCadastroView'
+inherited FBaseRegisterView: TFBaseRegisterView
+  Caption = 'FBaseRegisterView'
   FormStyle = fsNormal
   WindowState = wsNormal
   PixelsPerInch = 96
@@ -7,9 +7,9 @@ inherited FBaseCadastroView: TFBaseCadastroView
   inherited PnContainer: TRzPanel
     inherited PnHeader: TRzPanel
       inherited LbTitle: TRzLabel
-        Width = 205
-        Caption = 'Formul'#225'rio cadastro base'
-        ExplicitWidth = 205
+        Width = 146
+        Caption = 'Base register form'
+        ExplicitWidth = 146
       end
     end
     inherited PnProgram: TRzPanel

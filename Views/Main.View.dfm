@@ -6,7 +6,7 @@ object FMainView: TFMainView
     'Prefeitura Municipal de Parana'#237'ta/MT - Secretaria Municipal de A' +
     'gricultura'
   ClientHeight = 399
-  ClientWidth = 552
+  ClientWidth = 412
   Color = clBlack
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -22,7 +22,7 @@ object FMainView: TFMainView
   object ImLogo: TImage
     Left = 0
     Top = 159
-    Width = 552
+    Width = 412
     Height = 217
     Align = alClient
     Center = True
@@ -1931,7 +1931,7 @@ object FMainView: TFMainView
   object RbMainMenu: TdxRibbon
     Left = 0
     Top = 0
-    Width = 552
+    Width = 412
     Height = 159
     ApplicationButton.Menu = ApMainMenu
     BarManager = BrManager
@@ -1960,7 +1960,7 @@ object FMainView: TFMainView
   object StStatus: TdxRibbonStatusBar
     Left = 0
     Top = 376
-    Width = 552
+    Width = 412
     Height = 23
     Panels = <
       item
@@ -2003,31 +2003,35 @@ object FMainView: TFMainView
       ItemLinks = <
         item
           Visible = True
-          ItemName = 'dxBarLargeButton1'
+          ItemName = 'BtClient'
         end
         item
           Visible = True
-          ItemName = 'dxBarLargeButton2'
+          ItemName = 'BtServices'
         end
         item
           Visible = True
-          ItemName = 'dxBarLargeButton3'
+          ItemName = 'BtTypeCost'
         end
         item
           Visible = True
-          ItemName = 'dxBarLargeButton11'
+          ItemName = 'BtMachine'
         end
         item
           Visible = True
-          ItemName = 'dxBarLargeButton4'
+          ItemName = 'BtDistrict'
         end
         item
           Visible = True
-          ItemName = 'dxBarLargeButton5'
+          ItemName = 'BtCities'
         end
         item
           Visible = True
-          ItemName = 'dxBarLargeButton6'
+          ItemName = 'BtStates'
+        end
+        item
+          Visible = True
+          ItemName = 'BtCountries'
         end>
       OneOnRow = False
       Row = 0
@@ -2054,7 +2058,7 @@ object FMainView: TFMainView
     object dxBarManager1Bar3: TdxBar
       Caption = 'Rotinas'
       CaptionButtons = <>
-      DockedLeft = 229
+      DockedLeft = 269
       DockedTop = 0
       FloatLeft = 720
       FloatTop = 2
@@ -2063,11 +2067,11 @@ object FMainView: TFMainView
       ItemLinks = <
         item
           Visible = True
-          ItemName = 'dxBarLargeButton7'
+          ItemName = 'BtServicesProvision'
         end
         item
           Visible = True
-          ItemName = 'dxBarLargeButton8'
+          ItemName = 'BtCost'
         end>
       OneOnRow = False
       Row = 0
@@ -2078,7 +2082,7 @@ object FMainView: TFMainView
     object dxBarManager1Bar4: TdxBar
       Caption = 'Relat'#243'rios'
       CaptionButtons = <>
-      DockedLeft = 409
+      DockedLeft = 317
       DockedTop = 0
       FloatLeft = 720
       FloatTop = 2
@@ -2087,11 +2091,11 @@ object FMainView: TFMainView
       ItemLinks = <
         item
           Visible = True
-          ItemName = 'dxBarLargeButton9'
+          ItemName = 'BtReportServicesProvision'
         end
         item
           Visible = True
-          ItemName = 'dxBarLargeButton10'
+          ItemName = 'BtReportCost'
         end>
       OneOnRow = False
       Row = 0
@@ -2099,7 +2103,7 @@ object FMainView: TFMainView
       Visible = True
       WholeRow = False
     end
-    object dxBarLargeButton1: TdxBarLargeButton
+    object BtClient: TdxBarLargeButton
       Caption = 'Clientes'
       Category = 0
       Hint = 'Clientes'
@@ -2204,7 +2208,7 @@ object FMainView: TFMainView
         BC0B38698C11673A8A5D4005500EE4F3C55606180102C6980CB9FA17031CF8B8
         BC35483E0000000049454E44AE426082}
     end
-    object dxBarLargeButton2: TdxBarLargeButton
+    object BtServices: TdxBarLargeButton
       Caption = 'Servi'#231'os'
       Category = 0
       Hint = 'Servi'#231'os'
@@ -2308,7 +2312,7 @@ object FMainView: TFMainView
         F8BB95E05E9524C3B9A876D2F289B8EF5FC72EDCE7F11F04311D30C2D9605F00
         00000049454E44AE426082}
     end
-    object dxBarLargeButton3: TdxBarLargeButton
+    object BtMachine: TdxBarLargeButton
       Caption = 'Maquin'#225'rios'
       Category = 0
       Hint = 'Maquin'#225'rios'
@@ -2390,7 +2394,7 @@ object FMainView: TFMainView
         E1D2FB2B0E4EA0F4AB25F95FFCFF03B7B981BCE2006CF60000000049454E44AE
         426082}
     end
-    object dxBarLargeButton4: TdxBarLargeButton
+    object BtCities: TdxBarLargeButton
       Caption = 'Cidades'
       Category = 0
       Hint = 'Cidades'
@@ -2505,7 +2509,7 @@ object FMainView: TFMainView
         67249D7C4F3861046096CB2095A80002628F2CAA9C977BBB898803F8BF489757
         E4D29B6670CBC9FD5BE9BFD22C96C3BEC476690000000049454E44AE426082}
     end
-    object dxBarLargeButton5: TdxBarLargeButton
+    object BtStates: TdxBarLargeButton
       Caption = 'Estados'
       Category = 0
       Hint = 'Estados'
@@ -2598,7 +2602,7 @@ object FMainView: TFMainView
         A4BDAC8C14B497FC771DD516031648FC9875A736747D0014B597D4A67600AEFD
         07D031680A30225D330000000049454E44AE426082}
     end
-    object dxBarLargeButton6: TdxBarLargeButton
+    object BtCountries: TdxBarLargeButton
       Caption = 'Pa'#237'ses'
       Category = 0
       Hint = 'Pa'#237'ses'
@@ -2710,7 +2714,7 @@ object FMainView: TFMainView
         166092B116035800C500978623201B1B630CB696E801460EC9F8B9D52036CAA8
         560374C4F3FF05BD0A7E7E5D55CD2B0000000049454E44AE426082}
     end
-    object dxBarLargeButton7: TdxBarLargeButton
+    object BtServicesProvision: TdxBarLargeButton
       Caption = 'Preta'#231#227'o de servi'#231'o'
       Category = 0
       Hint = 'Preta'#231#227'o de servi'#231'o'
@@ -2814,7 +2818,7 @@ object FMainView: TFMainView
         F8BB95E05E9524C3B9A876D2F289B8EF5FC72EDCE7F11F04311D30C2D9605F00
         00000049454E44AE426082}
     end
-    object dxBarLargeButton8: TdxBarLargeButton
+    object BtCost: TdxBarLargeButton
       Caption = 'Despesas com maquin'#225'rios'
       Category = 0
       Hint = 'Despesas com maquin'#225'rios'
@@ -2898,7 +2902,7 @@ object FMainView: TFMainView
         AB9B50C441AA8FF86DFF5E00A23E0064BC2D7C6BE460552FAC08FF1DB3307BA4
         7501F0FD055252C89F2A16627F0000000049454E44AE426082}
     end
-    object dxBarLargeButton9: TdxBarLargeButton
+    object BtReportServicesProvision: TdxBarLargeButton
       Caption = 'Servi'#231'os prestados'
       Category = 0
       Hint = 'Servi'#231'os prestados'
@@ -2984,7 +2988,7 @@ object FMainView: TFMainView
         FD77EC2BF95211609209DC78B818F9E4F10F4824A6D94EC853CD000000004945
         4E44AE426082}
     end
-    object dxBarLargeButton10: TdxBarLargeButton
+    object BtReportCost: TdxBarLargeButton
       Caption = 'Despesas com maquin'#225'rios'
       Category = 0
       Hint = 'Despesas com maquin'#225'rios'
@@ -3070,7 +3074,7 @@ object FMainView: TFMainView
         FD77EC2BF95211609209DC78B818F9E4F10F4824A6D94EC853CD000000004945
         4E44AE426082}
     end
-    object dxBarLargeButton11: TdxBarLargeButton
+    object BtDistrict: TdxBarLargeButton
       Caption = 'Bairros'
       Category = 0
       Hint = 'Bairros'
@@ -3171,6 +3175,76 @@ object FMainView: TFMainView
         1843844F985409FEAB6A5B5C794FBB6F017FCD16864CA41176E259A294C825CC
         896D76A118F1F8071345A5892DCA094D00E2B166F33F041C35D479E1CE980000
         000049454E44AE426082}
+    end
+    object BtTypeCost: TdxBarLargeButton
+      Caption = 'Tipo de despesas com maquin'#225'rios'
+      Category = 0
+      Hint = 'Tipo de despesas com maquin'#225'rios'
+      Visible = ivAlways
+      Glyph.SourceDPI = 96
+      Glyph.Data = {
+        89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+        61000000097048597300000B1200000B1201D2DD7EFC00000018744558745469
+        746C65005069766F745461626C65556E67726F75703B0C6A38B40000022C4944
+        4154785EA5935D48536118C75DADCCDABA31A3FBE8AA0B41A1205DDB38743667
+        932D5A6BE99C32A22DB022A1D9923E068D0C8CA81856D61CA7C299A7A1140D35
+        2A1A7E9614B4B1DBECAEB40F026B817B7A9EB373CE4DEF9D077E1CCEFB9CFFFF
+        7D9E3FEF5B0600AB422D7883D14C4B200A44F3B12856CAD6209AC493F94C2235
+        0FF88601F11DC487DF4ADC7F3C97A1BA6A8042126D46F4C846642DA22561B108
+        48516245A63F390B54570DF0D9845420E5C83AB983F571DC958476CF69B01C38
+        0EF5BC17BE7E5F86BE87534075126A3E04DA3CD9A02FFBDE7FA430E375655FBB
+        9ADCB44E66D8AA64F0E3D71F58FAF95B127FF9B60C3706DE80B4198ADDB960DB
+        42FAB0A3E968F5CE6D6967E3D97167E342CACA79C8E02EB62A8873FFD17BE765
+        C9E063C0974BBB1D769A5BB45BF871876D31C99BBA44DE94A3916E3F9A666610
+        BD352677E06F2E9CA8ADDEFAD469E370E7C57B6683AD664B6555923314289798
+        30C9CCE042EFB392C14CAB2B3776707F6802C571CED0409DC4EA775905E31EEA
+        4087B33233085F1929198C3A1A5A279CB6CF498B39DCB2637B55C25847E24F37
+        77D7FAA8836BFDAF98199CB99C2A19D09CC23E537B8A37E787B8BD7F1F18EBF2
+        B2B882B8DAF7829941E7A561D5402BFFAC97D191505E2FC7B098199C3C3FA41A
+        68C8C4ED8FD0C206E51029E72072FD3933838E7383AA01A13DD47E71924C1494
+        93D8DD333215EE198510CEDC1911E114EEDCD13D088190304D75D500D1B1EE82
+        FC5DC940AFDC8555F10F5757FB71477909CB0000000049454E44AE426082}
+      LargeGlyph.SourceDPI = 96
+      LargeGlyph.Data = {
+        89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+        F4000000097048597300000B1200000B1201D2DD7EFC00000018744558745469
+        746C65005069766F745461626C65556E67726F75703B0C6A38B4000004614944
+        4154785EC556614C1C45149EBD3D963B4A20B462042FC41F1AA4B547C48436A9
+        E91F492AA724B6985620461B6D1093FED0F847A31123AD4D35A11A9B62DAA626
+        0DC1A88568694C9AF38FD50625AD56AB08C701D6A0120BE5040E7667DE8CF396
+        A129DB75EF3667D277BCCC1E6FEEBEEF7D33F3DD048510E4564650E6AD27A069
+        1A712A81FFCB22021FF65EF84ACEDDE22C2C0B2B563DE388385CF06FF6ECDCB4
+        553EF35C150822F8CE58F43A9082B2B115AEEA48FE61CA57F76717B7A8E6ADFF
+        24D0D2BAEF6B42B033F7E8FEE0155D0E98762C993C3BC6BA209CDB7375CF3D80
+        E012A454F5E00CAAC035D579D6C10009081B209B4DC850269702A8CC93B98AE3
+        DE97DE946A9884522A931100B00B673E7E9FCCA5193E2281AC4F0182A7BD2638
+        15000E8403A0CC76BA05709E998094BF5875E91D8E353AD9D591713E00CF4A81
+        C56C0808B18A01CAEC8F80F3DCC79FDA955F5E58D0F673DBD34D1A17EB710D29
+        63BF5894F64CA6E68E34F69F359DFD237E208064D4F1CB4800DC1538FF4C4BC5
+        DA70FE69C2451438B79932B0D7B45692A92D0DE5EF3E555FD7D0F845FCCA75E2
+        B2DE7BE67BE22780B928F05EFD43E19250FE6921C165B7E3C37FCF1C387EE9F2
+        39F99EECDE5019BBB320FC3267102DD2B4FEF69AE8E6F68B3FDA9B930774F2C4
+        A3D5BE8CE89DAEF84D04B4AD1591362244D4A474ACE3DCC0239FFE3A3A250BF4
+        D54D35B79785427B80C13ACBA2D31C60E386E2A2E764AD731954F83622E6B207
+        749D88263C3EC9E96B6F49F049DC841FC5EA4ACBC3E17E00A85C34CDC4C4ECDC
+        D1C89AD04102A2094553047C1B1163703301A94E35C8427F62EC2C82F7356CBB
+        6DAD91F72507A85A5A32474E0C8F3EFE573A9D7EE1DECA835CF0289256A6E2D3
+        88DC4F4100C1518112C3A0D839820B065569D31A393992DCF1C9F86F571A2B22
+        85C06D93A1F819A5805F237255802C5AF4A720E7357591F2C7D6E8FADE657053
+        828FEDE8199B989000E6C365773430CE89C9F8B0C24390FFC588F8D5F9F9BE75
+        865153180C1E02C68CC5D5E04B07EEDF5812D603ED28F92CB3FA105BA68EEFFD
+        1A1177B162D83F70E158C7E6079A352EAA2C4AAD3FE6D3477442663AAAEF33EE
+        2A2C880588B64F70718F25F8D089E4C431E5923A00F76944EE3F4670FECFA9D4
+        A9C478732C52D62D67AC2F358CCEED91F24EDB90B87D8B212688A1F8D454F3A5
+        D9544A11204505061A51CE7742A4641DBE3C9488FF3EB9EDC5AACA678B83FA76
+        59B81BD95A00A33396D57B38913C9E9C5FB88673572CE66A2A4D9E7FF2415F46
+        34F8C3B8AB1503AEF570EA9FE9D681C17765AD0B25BEA166625D8183C356FD18
+        91E7AD18140855F780802A200AA8148E1DEDD388BC09AC88C65B5AF75375EFE3
+        DE5F087E8DC89B808ABC1B4633C32F9B1F23CA9A80EE183D4D25B311F9272038
+        876FE5322C785DCB15011723CA9D00F41C7DAD1E15F0BA962B5F7731A2DC0960
+        1B0B0A44F3B896072D6A7EF7FADB9FD7A25F208195D12B80D1416CCC8B005766
+        9329E0D01BBB62720C29A2D984507E028A404EC170D965A67D1200A532F917D4
+        D7F4FABBC34AA90000000049454E44AE426082}
     end
   end
   object ApMainMenu: TdxBarApplicationMenu

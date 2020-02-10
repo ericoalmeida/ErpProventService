@@ -1,4 +1,4 @@
-unit BasePesquisa.View;
+unit BaseSearch.View;
 
 interface
 
@@ -15,7 +15,7 @@ uses
   FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
-  TFBasePesquisaView = class(TFBaseView)
+  TFBaseSearchView = class(TFBaseView)
     PnContent: TRzPanel;
     PnGridHeader: TRzPanel;
     LbBuscar: TcxLabel;
@@ -39,13 +39,13 @@ type
   end;
 
 var
-  FBasePesquisaView: TFBasePesquisaView;
+  FBaseSearchView: TFBaseSearchView;
 
 implementation
 
 {$R *.dfm}
 
-procedure TFBasePesquisaView.FormCreate(Sender: TObject);
+procedure TFBaseSearchView.FormCreate(Sender: TObject);
 begin
   inherited;
   Self.Height := Screen.Height - 300;

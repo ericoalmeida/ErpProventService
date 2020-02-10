@@ -1,7 +1,10 @@
-inherited FBaseMensagemView: TFBaseMensagemView
-  Caption = 'FBaseMensagemView'
+inherited FBaseMessageView: TFBaseMessageView
+  Caption = 'FBaseMessageView'
   ClientHeight = 174
   ClientWidth = 451
+  FormStyle = fsNormal
+  Visible = False
+  WindowState = wsNormal
   ExplicitWidth = 457
   ExplicitHeight = 203
   PixelsPerInch = 96
@@ -9,8 +12,11 @@ inherited FBaseMensagemView: TFBaseMensagemView
   inherited PnContainer: TRzPanel
     Width = 449
     Height = 172
+    ExplicitWidth = 449
+    ExplicitHeight = 172
     inherited PnHeader: TRzPanel
       Width = 447
+      ExplicitWidth = 447
       inherited ImTitle: TImage
         Picture.Data = {
           0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000020
@@ -93,14 +99,16 @@ inherited FBaseMensagemView: TFBaseMensagemView
           FF0362546FFDF639EEA90000000049454E44AE426082}
       end
       inherited LbTitle: TRzLabel
-        Width = 245
-        Caption = 'Formul'#225'rio mensagem base'
-        ExplicitWidth = 245
+        Width = 154
+        Caption = 'Base message form'
+        ExplicitWidth = 154
       end
     end
     inherited PnProgram: TRzPanel
       Top = 153
       Width = 447
+      ExplicitTop = 153
+      ExplicitWidth = 447
       inherited LbProgram: TRzLabel
         Width = 447
         Height = 18
@@ -109,40 +117,67 @@ inherited FBaseMensagemView: TFBaseMensagemView
     inherited PnContainerBody: TRzPanel
       Width = 447
       Height = 112
+      ExplicitWidth = 447
+      ExplicitHeight = 112
       inherited PnFooterBody: TRzPanel
         Top = 72
         Width = 447
+        ExplicitTop = 72
+        ExplicitWidth = 447
         inherited BtSair: TcxButton
           Left = 337
           Caption = '&Ok'
-          ExplicitTop = 2
-          ExplicitHeight = 36
+          OptionsImage.Glyph.Data = {
+            89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+            6100000015744558745469746C6500436865636B3B4D61726B3B5469636B0B00
+            C7240000026B49444154785E95924D48156B18C77F338D7A94B436816090828B
+            8B94919BBE886304C5599CEA9A14145177211246AB3641F6B16861044610B408
+            23C842FB2410B4ACB06BDDD55510823072532267A19E93E76BE6FDCAF3323910
+            44F4303CFF7786797EFFE77978BD9B2FF6BE715DA7955F8589040CC63818345A
+            99B13389D13D5EA9B87DDB05FE341EFC7B310EB89E5286824A912ABC8FDCA2F4
+            F3BB9575952D48A9019C6580466B89D63FAAED4F51B11558585CA27A75259EE7
+            A2748092060B2891941168AD4213EB132930323AC1FF935FA85B5FC3F12371A4
+            F6114202E009A12C512AB5E2684AC931F67C7F708CB565BBB8717690AEAB5B48
+            67965853E12382B003DF170855442AC9CC4C8AFEC7236C6DD9C4EE783323AF26
+            A8ADDEC7A9F66EAEF49DA03D99205659812F0A148A3E165022E5FD1CD97C9EFE
+            872FE9E9FA8F47AF6ED1737D809D1B4FD2D176817BC397A9AD536C68A822574C
+            53EE6411225C621048842C10C880B644923BCFBA39DF7997C9E9C3FC55BF994C
+            EE33E3538374FC93643E9BB2E355951510221C41488D6F013E750D352C6632DC
+            7E728ED3477BC175B874AD93FD895616B2B380C618F0450E1128003C19683B93
+            54826F6A9EA6E675BC1B9FE2E9EB5E1AEB9B70631962D5057C195877005FE6A3
+            7B2084A628F30825D00616E51CDB7734F27CA88FBEE14F1C3BF437393F83C158
+            773025C368075228029127500227BC44F3B9AF1C4CB652597E80B9F4478A4202
+            7A05501405A20EA4B11DC4BC1AB02E1A6D0CE9FC1C0BB95930066F5585FD8E01
+            6DECCE501680F18A3931363CF4210E267C88344CB6D605B4E5E1601081790B48
+            6FA0673A017880CBEFC309D50002F0BF03C5148A5699E7E19C0000000049454E
+            44AE426082}
+          OptionsImage.Spacing = 5
+          ExplicitLeft = 337
         end
       end
-      object RzPanel1: TRzPanel
+      object PnContent: TRzPanel
         AlignWithMargins = True
-        Left = 2
-        Top = 2
-        Width = 443
-        Height = 68
-        Margins.Left = 2
-        Margins.Top = 2
-        Margins.Right = 2
-        Margins.Bottom = 2
+        Left = 1
+        Top = 1
+        Width = 445
+        Height = 70
+        Margins.Left = 1
+        Margins.Top = 1
+        Margins.Right = 1
+        Margins.Bottom = 1
         Align = alClient
         BorderOuter = fsNone
         Color = clWhite
         TabOrder = 1
-        ExplicitLeft = 96
-        ExplicitTop = 16
-        ExplicitWidth = 185
-        ExplicitHeight = 41
-        object LbMensagem: TcxLabel
+        object MmMessage: TcxMemo
           Left = 0
           Top = 0
           Align = alClient
-          Caption = 'LbMensagem'
+          Enabled = False
+          Lines.Strings = (
+            'MmMessage')
           ParentFont = False
+          Style.BorderStyle = ebsNone
           Style.Font.Charset = ANSI_CHARSET
           Style.Font.Color = clWindowText
           Style.Font.Height = -12
@@ -150,10 +185,15 @@ inherited FBaseMensagemView: TFBaseMensagemView
           Style.Font.Style = [fsBold]
           Style.TextColor = 5592405
           Style.IsFontAssigned = True
-          ExplicitLeft = 128
-          ExplicitTop = 24
-          ExplicitWidth = 49
-          ExplicitHeight = 19
+          StyleDisabled.Color = clWindow
+          StyleDisabled.TextColor = 5592405
+          TabOrder = 0
+          ExplicitLeft = 48
+          ExplicitTop = 40
+          ExplicitWidth = 185
+          ExplicitHeight = 89
+          Height = 70
+          Width = 445
         end
       end
     end

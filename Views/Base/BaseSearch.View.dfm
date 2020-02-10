@@ -1,5 +1,5 @@
-inherited FBasePesquisaView: TFBasePesquisaView
-  Caption = 'FBasePesquisaView'
+inherited FBaseSearchView: TFBaseSearchView
+  Caption = 'FBaseSearchView'
   FormStyle = fsNormal
   WindowState = wsNormal
   PixelsPerInch = 96
@@ -7,9 +7,15 @@ inherited FBasePesquisaView: TFBasePesquisaView
   inherited PnContainer: TRzPanel
     inherited PnHeader: TRzPanel
       inherited LbTitle: TRzLabel
-        Width = 229
-        Caption = 'Formul'#225'rio base de pesquisa'
-        ExplicitWidth = 229
+        Width = 138
+        Caption = 'Base search form'
+        ExplicitWidth = 138
+      end
+    end
+    inherited PnProgram: TRzPanel
+      inherited LbProgram: TRzLabel
+        Width = 608
+        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel

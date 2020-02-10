@@ -1,4 +1,4 @@
-unit BaseMensagem.View;
+unit BaseMessage.View;
 
 interface
 
@@ -7,23 +7,35 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Base.View, cxGraphics, cxLookAndFeels,
   cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore, dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle,
   Vcl.StdCtrls, cxButtons, RzLabel, dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel, cxControls,
-  cxContainer, cxEdit, cxLabel;
+  cxContainer, cxEdit, cxLabel, cxTextEdit, cxMemo;
 
 type
-  TFBaseMensagemView = class(TFBaseView)
-    RzPanel1: TRzPanel;
-    LbMensagem: TcxLabel;
+  TFBaseMessageView = class(TFBaseView)
+    PnContent: TRzPanel;
+    MmMessage: TcxMemo;
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
+
+  protected
+    FAnswer: Boolean;
+    FMessages: string;
+
   public
     { Public declarations }
   end;
 
 var
-  FBaseMensagemView: TFBaseMensagemView;
+  FBaseMessageView: TFBaseMessageView;
 
 implementation
 
 {$R *.dfm}
+
+procedure TFBaseMessageView.FormCreate(Sender: TObject);
+begin
+  inherited;
+  FAnswer := False;
+end;
 
 end.

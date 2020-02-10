@@ -88,6 +88,11 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>saadmin_Icon4.ico</Icon_MainIcon>
+        <VerInfo_MajorVer>2020</VerInfo_MajorVer>
+        <VerInfo_MinorVer>2</VerInfo_MinorVer>
+        <VerInfo_Release>10</VerInfo_Release>
+        <VerInfo_Build>1</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=2020.2.10.1;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -111,26 +116,49 @@
             <Form>FBaseView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="Views\Base\BaseListagem.View.pas">
-            <Form>FBaseListagemView</Form>
+        <DCCReference Include="Views\Base\BaseList.View.pas">
+            <Form>FBaseListView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="Views\Base\BaseCadastro.View.pas">
-            <Form>FBaseCadastroView</Form>
+        <DCCReference Include="Views\Base\BaseRegister.View.pas">
+            <Form>FBaseRegisterView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="Views\Base\BaseMensagem.View.pas">
-            <Form>FBaseMensagemView</Form>
+        <DCCReference Include="Views\Base\BaseMessage.View.pas">
+            <Form>FBaseMessageView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="Views\Base\BasePesquisa.View.pas">
-            <Form>FBasePesquisaView</Form>
+        <DCCReference Include="Views\Base\BaseSearch.View.pas">
+            <Form>FBaseSearchView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="Views\Base\BaseRelatorio.View.pas">
-            <Form>FBaseRelatorioView</Form>
+        <DCCReference Include="Views\Base\BaseReport.View.pas">
+            <Form>FBaseReportView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Views\Messages\MSG0001.View.pas">
+            <Form>FMSG0001View</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Messages\MSG0002.View.pas">
+            <Form>FMSG0002View</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Messages\MSG0003.View.pas">
+            <Form>FMSG0003View</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Messages\MSG0004.View.pas">
+            <Form>FMSG0004View</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Controllers\Types\Types.Controllers.pas"/>
+        <DCCReference Include="Views\Base\Base.View.interf.pas"/>
+        <DCCReference Include="Views\Messages\MessagesFactory.View.Interf.pas"/>
+        <DCCReference Include="Views\Types\Types.Views.pas"/>
+        <DCCReference Include="Views\Messages\MessagesFactory.View.pas"/>
+        <DCCReference Include="Views\Facade.View.interf.pas"/>
+        <DCCReference Include="Views\Facade.View.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

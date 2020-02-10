@@ -1,4 +1,4 @@
-unit BaseRelatorio.View;
+unit BaseReport.View;
 
 interface
 
@@ -7,13 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, RLReport, dxGDIPlusClasses;
 
 type
-  TFBaseRelatorioView = class(TForm)
-    RlReportContainer: TRLReport;
-    RlHader: TRLBand;
-    RLImage1: TRLImage;
-    RLPanel1: TRLPanel;
-    RLLabel1: TRLLabel;
-    RLLabel2: TRLLabel;
+  TFBaseReportView = class(TForm)
   private
     { Private declarations }
   public
@@ -21,7 +15,7 @@ type
   end;
 
 var
-  FBaseRelatorioView: TFBaseRelatorioView;
+  FBaseReportView: TFBaseReportView;
 
 implementation
 

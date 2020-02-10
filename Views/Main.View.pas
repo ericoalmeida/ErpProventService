@@ -28,21 +28,22 @@ type
     ApMainMenu: TdxBarApplicationMenu;
     ImLogo: TImage;
     dxBarManager1Bar1: TdxBar;
-    dxBarLargeButton1: TdxBarLargeButton;
-    dxBarLargeButton2: TdxBarLargeButton;
-    dxBarLargeButton3: TdxBarLargeButton;
-    dxBarLargeButton4: TdxBarLargeButton;
-    dxBarLargeButton5: TdxBarLargeButton;
-    dxBarLargeButton6: TdxBarLargeButton;
+    BtClient: TdxBarLargeButton;
+    BtServices: TdxBarLargeButton;
+    BtMachine: TdxBarLargeButton;
+    BtCities: TdxBarLargeButton;
+    BtStates: TdxBarLargeButton;
+    BtCountries: TdxBarLargeButton;
     dxBarManager1Bar2: TdxBar;
     dxBarManager1Bar3: TdxBar;
-    dxBarLargeButton7: TdxBarLargeButton;
-    dxBarLargeButton8: TdxBarLargeButton;
+    BtServicesProvision: TdxBarLargeButton;
+    BtCost: TdxBarLargeButton;
     dxBarManager1Bar4: TdxBar;
-    dxBarLargeButton9: TdxBarLargeButton;
-    dxBarLargeButton10: TdxBarLargeButton;
+    BtReportServicesProvision: TdxBarLargeButton;
+    BtReportCost: TdxBarLargeButton;
     TmMainMenu: TTimer;
-    dxBarLargeButton11: TdxBarLargeButton;
+    BtDistrict: TdxBarLargeButton;
+    BtTypeCost: TdxBarLargeButton;
     procedure TmMainMenuTimer(Sender: TObject);
   private
     { Private declarations }
@@ -56,6 +57,8 @@ var
 implementation
 
 {$R *.dfm}
+
+uses Facade.View, Types.Views;
 
 procedure TFMainView.TmMainMenuTimer(Sender: TObject);
 begin

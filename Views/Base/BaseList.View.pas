@@ -1,4 +1,4 @@
-unit BaseListagem.View;
+unit BaseList.View;
 
 interface
 
@@ -15,7 +15,7 @@ uses
   FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
-  TFBaseListagemView = class(TFBaseView)
+  TFBaseListView = class(TFBaseView)
     PnContent: TRzPanel;
     DbDados: TcxGrid;
     VwDados: TcxGridDBTableView;
@@ -51,7 +51,7 @@ type
   end;
 
 var
-  FBaseListagemView: TFBaseListagemView;
+  FBaseListView: TFBaseListView;
 
 implementation
 
