@@ -27,23 +27,27 @@ type
     BrManager: TdxBarManager;
     ApMainMenu: TdxBarApplicationMenu;
     ImLogo: TImage;
-    dxBarManager1Bar1: TdxBar;
+    BmCadastros: TdxBar;
     BtClient: TdxBarLargeButton;
     BtServices: TdxBarLargeButton;
     BtMachine: TdxBarLargeButton;
     BtCities: TdxBarLargeButton;
     BtStates: TdxBarLargeButton;
     BtCountries: TdxBarLargeButton;
-    dxBarManager1Bar2: TdxBar;
-    dxBarManager1Bar3: TdxBar;
+    BmAtalhos: TdxBar;
+    BmRotinas: TdxBar;
     BtServicesProvision: TdxBarLargeButton;
     BtCost: TdxBarLargeButton;
-    dxBarManager1Bar4: TdxBar;
+    BmRelatorios: TdxBar;
     BtReportServicesProvision: TdxBarLargeButton;
     BtReportCost: TdxBarLargeButton;
     TmMainMenu: TTimer;
     BtDistrict: TdxBarLargeButton;
     BtTypeCost: TdxBarLargeButton;
+    BmSupervisor: TdxBar;
+    TbSupervisor: TdxRibbonTab;
+    BtEmpresas: TdxBarLargeButton;
+    BtUsuarios: TdxBarLargeButton;
     procedure TmMainMenuTimer(Sender: TObject);
   private
     { Private declarations }
