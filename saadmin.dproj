@@ -159,6 +159,25 @@
         <DCCReference Include="Views\Messages\MessagesFactory.View.pas"/>
         <DCCReference Include="Views\Facade.View.interf.pas"/>
         <DCCReference Include="Views\Facade.View.pas"/>
+        <DCCReference Include="Models\Connection\Connection.Model.Interf.pas"/>
+        <DCCReference Include="Models\Connection\Firebird\DataMFirebird.Model.pas">
+            <Form>FDataMFirebird</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Models\Connection\ConnectionFactory.Model.Interf.pas"/>
+        <DCCReference Include="Models\Connection\ConnectionFactory.Model.pas"/>
+        <DCCReference Include="Models\Settings\Connection\ConnectionSettings.Model.interf.pas"/>
+        <DCCReference Include="Models\Settings\Connection\ConnectionSettings.Model.pas"/>
+        <DCCReference Include="Models\Settings\SettingsFactory.Model.interf.pas"/>
+        <DCCReference Include="Models\Settings\SettingsFactory.Model.pas"/>
+        <DCCReference Include="Models\Facade.Model.Interf.pas"/>
+        <DCCReference Include="Models\Facade.Model.pas"/>
+        <DCCReference Include="Models\Types\Types.Models.pas"/>
+        <DCCReference Include="Controllers\Connection\Connection.Controller.interf.pas"/>
+        <DCCReference Include="Controllers\Connection\Connection.Controller.pas"/>
+        <DCCReference Include="Controllers\Facade.Controller.Interf.pas"/>
+        <DCCReference Include="Controllers\Facade.Controller.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

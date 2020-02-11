@@ -62,7 +62,6 @@ implementation
 
 {$R *.dfm}
 
-uses Facade.View, Types.Views;
 
 procedure TFMainView.TmMainMenuTimer(Sender: TObject);
 begin

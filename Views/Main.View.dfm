@@ -1941,7 +1941,6 @@ object FMainView: TFMainView
     Contexts = <>
     TabOrder = 0
     TabStop = False
-    ExplicitWidth = 412
     object TbAdministration: TdxRibbonTab
       Active = True
       Caption = 'Administra'#231#227'o'
@@ -1982,7 +1981,6 @@ object FMainView: TFMainView
     Font.Height = -11
     Font.Name = 'Open Sans ExtraBold'
     Font.Style = [fsBold]
-    ExplicitWidth = 412
   end
   object BrManager: TdxBarManager
     Font.Charset = DEFAULT_CHARSET
