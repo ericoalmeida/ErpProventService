@@ -21,33 +21,12 @@ uses
 
 type
   TFMainView = class(TForm)
-    TbAdministration: TdxRibbonTab;
     RbMainMenu: TdxRibbon;
     StStatus: TdxRibbonStatusBar;
     BrManager: TdxBarManager;
     ApMainMenu: TdxBarApplicationMenu;
-    ImLogo: TImage;
-    BmCadastros: TdxBar;
-    BtClient: TdxBarLargeButton;
-    BtServices: TdxBarLargeButton;
-    BtMachine: TdxBarLargeButton;
-    BtCities: TdxBarLargeButton;
-    BtStates: TdxBarLargeButton;
-    BtCountries: TdxBarLargeButton;
     BmAtalhos: TdxBar;
-    BmRotinas: TdxBar;
-    BtServicesProvision: TdxBarLargeButton;
-    BtCost: TdxBarLargeButton;
-    BmRelatorios: TdxBar;
-    BtReportServicesProvision: TdxBarLargeButton;
-    BtReportCost: TdxBarLargeButton;
     TmMainMenu: TTimer;
-    BtDistrict: TdxBarLargeButton;
-    BtTypeCost: TdxBarLargeButton;
-    BmSupervisor: TdxBar;
-    TbSupervisor: TdxRibbonTab;
-    BtEmpresas: TdxBarLargeButton;
-    BtUsuarios: TdxBarLargeButton;
     procedure TmMainMenuTimer(Sender: TObject);
   private
     { Private declarations }

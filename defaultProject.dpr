@@ -1,4 +1,4 @@
-program saadmin;
+program defaultProject;
 
 uses
   Vcl.Forms,
