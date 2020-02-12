@@ -3,13 +3,20 @@ unit Base.View;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, RzPanel, cxGraphics, cxControls,
-  cxLookAndFeels, cxLookAndFeelPainters, cxStyles, dxSkinsCore, dxSkinDevExpressDarkStyle,
-  dxSkinDevExpressStyle, cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator,
-  cxDataControllerConditionalFormattingRulesManagerDialog, Data.DB, cxDBData, cxGridLevel,
-  cxClasses, cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid,
-  Vcl.Menus, Vcl.StdCtrls, cxButtons, RzLabel, dxGDIPlusClasses;
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, RzPanel, cxGraphics,
+  cxControls,
+  cxLookAndFeels, cxLookAndFeelPainters, cxStyles, dxSkinsCore,
+  dxSkinDevExpressDarkStyle,
+  dxSkinDevExpressStyle, cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit,
+  cxNavigator,
+  cxDataControllerConditionalFormattingRulesManagerDialog, Data.DB, cxDBData,
+  cxGridLevel,
+  cxClasses, cxGridCustomView, cxGridCustomTableView, cxGridTableView,
+  cxGridDBTableView, cxGrid,
+  Vcl.Menus, Vcl.StdCtrls, cxButtons, RzLabel, dxGDIPlusClasses,
+  ormbr.Factory.Interfaces;
 
 type
   TFBaseView = class(TForm)
@@ -27,6 +34,8 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
+  protected
+    FConnection: IDBConnection;
   public
     { Public declarations }
   end;
@@ -38,6 +47,8 @@ implementation
 
 {$R *.dfm}
 
+uses Facade.Controller;
+
 procedure TFBaseView.BtSairClick(Sender: TObject);
 begin
   Close;
@@ -45,12 +56,15 @@ end;
 
 procedure TFBaseView.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
- Action := caFree;
+  Action := caFree;
 end;
 
 procedure TFBaseView.FormCreate(Sender: TObject);
 begin
- LbProgram.Caption := Self.Name;
+  LbProgram.Caption := Self.Name;
+
+  FConnection := TFacadeController.New.ConnectionFactoryController.
+    currentConnection;
 end;
 
 end.

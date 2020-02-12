@@ -34,7 +34,31 @@ uses
   Connection.Controller.interf in 'Controllers\Connection\Connection.Controller.interf.pas',
   Connection.Controller in 'Controllers\Connection\Connection.Controller.pas',
   Facade.Controller.Interf in 'Controllers\Facade.Controller.Interf.pas',
-  Facade.Controller in 'Controllers\Facade.Controller.pas';
+  Facade.Controller in 'Controllers\Facade.Controller.pas',
+  TGEREMPRESA.Entity.Model in 'Models\Modules\Managment\Company\Entity\TGEREMPRESA.Entity.Model.pas',
+  TGERBAIRRO.Entity.Model in 'Models\Modules\Managment\Districts\Entity\TGERBAIRRO.Entity.Model.pas',
+  Districts.Model.Interf in 'Models\Modules\Managment\Districts\Districts.Model.Interf.pas',
+  Districts.Model in 'Models\Modules\Managment\Districts\Districts.Model.pas',
+  ManagmentFactory.Model.Interf in 'Models\Modules\Managment\ManagmentFactory.Model.Interf.pas',
+  ManagmentFactory.Model in 'Models\Modules\Managment\ManagmentFactory.Model.pas',
+  ModulesFacade.Model.Interf in 'Models\Modules\ModulesFacade.Model.Interf.pas',
+  ModulesFacade.Model in 'Models\Modules\ModulesFacade.Model.pas',
+  District.Controller.Interf in 'Controllers\Modules\Managment\District\District.Controller.Interf.pas',
+  District.Controller in 'Controllers\Modules\Managment\District\District.Controller.pas',
+  DistrictInsert.Controller in 'Controllers\Modules\Managment\District\Operations\DistrictInsert.Controller.pas',
+  ManagmentFactory.Controller.interf in 'Controllers\Modules\Managment\ManagmentFactory.Controller.interf.pas',
+  ManagmentFactory.Controller in 'Controllers\Modules\Managment\ManagmentFactory.Controller.pas',
+  ModulesFacade.Controller.interf in 'Controllers\Modules\ModulesFacade.Controller.interf.pas',
+  ModulesFacade.Controller in 'Controllers\Modules\ModulesFacade.Controller.pas',
+  MNG0001AView in 'Views\Modules\Managment\District\MNG0001AView.pas' {FMNG0001AView},
+  ManagmentFactory.View.Interf in 'Views\Modules\Managment\ManagmentFactory.View.Interf.pas',
+  ManagmentFactory.View in 'Views\Modules\Managment\ManagmentFactory.View.pas',
+  ModulesFacade.View.Interf in 'Views\Modules\ModulesFacade.View.Interf.pas',
+  ModulesFacade.View in 'Views\Modules\ModulesFacade.View.pas',
+  MNG0001BView in 'Views\Modules\Managment\District\MNG0001BView.pas' {FMNG0001BView},
+  DistrictUpdate.Controller in 'Controllers\Modules\Managment\District\Operations\DistrictUpdate.Controller.pas',
+  DistrictDelete.Controller in 'Controllers\Modules\Managment\District\Operations\DistrictDelete.Controller.pas',
+  DistrictDuplicate.Controller in 'Controllers\Modules\Managment\District\Operations\DistrictDuplicate.Controller.pas';
 
 {$R *.res}
 

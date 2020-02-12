@@ -1,9 +1,16 @@
 inherited FMSG0002View: TFMSG0002View
   Caption = 'Confirma'#231#227'o'
+  ClientHeight = 161
+  ClientWidth = 354
+  ExplicitWidth = 360
+  ExplicitHeight = 190
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
+    Width = 352
+    Height = 159
     inherited PnHeader: TRzPanel
+      Width = 350
       inherited ImTitle: TImage
         Picture.Data = {
           0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000020
@@ -93,9 +100,22 @@ inherited FMSG0002View: TFMSG0002View
         ExplicitWidth = 103
       end
     end
+    inherited PnProgram: TRzPanel
+      Top = 140
+      Width = 350
+      inherited LbProgram: TRzLabel
+        Width = 350
+        Height = 18
+      end
+    end
     inherited PnContainerBody: TRzPanel
+      Width = 350
+      Height = 99
       inherited PnFooterBody: TRzPanel
+        Top = 59
+        Width = 350
         inherited BtSair: TcxButton
+          Left = 240
           Margins.Left = 0
           Caption = '&N'#227'o'
           OptionsImage.Glyph.Data = {
@@ -127,7 +147,7 @@ inherited FMSG0002View: TFMSG0002View
         end
         object BtOk: TcxButton
           AlignWithMargins = True
-          Left = 229
+          Left = 132
           Top = 2
           Width = 108
           Height = 36
@@ -175,13 +195,18 @@ inherited FMSG0002View: TFMSG0002View
           Font.Style = [fsBold]
           ParentFont = False
           OnClick = BtOkClick
+          ExplicitLeft = 229
         end
       end
       inherited PnContent: TRzPanel
+        Width = 348
+        Height = 57
         inherited MmMessage: TcxMemo
           Style.IsFontAssigned = True
-          ExplicitWidth = 445
-          ExplicitHeight = 70
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          Height = 57
+          Width = 348
         end
       end
     end

@@ -70,20 +70,6 @@ inherited FBaseListView: TFBaseListView
       end
     end
     inherited PnContainerBody: TRzPanel
-      inherited PnFooterBody: TRzPanel
-        inherited BtSair: TcxButton
-          OptionsImage.Glyph.Data = {
-            89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
-            610000001974455874536F6674776172650041646F626520496D616765526561
-            647971C9653C00000019744558745469746C650044656C6574653B52656D6F76
-            653B4D696E7573EBA98F410000009449444154785E9593410A834010047D5C20
-            27F3093F104C6461C5CD37F312C5D3641AD27810BAF15030CC587510B68B88EE
-            3BDCFAA46236F0FB190E66CA7B12C9125EFE24F1771E584C9009234626230FE5
-            14F1F21B2E8E22A2650654A42999011951320322A265E0FFF6411301219B8893
-            5F49511129F3A622567611C8B3905DA462794FD693EC231B5C2C19795E78CE13
-            1CCC3FD2409CCC2C3656140000000049454E44AE426082}
-        end
-      end
       object PnContent: TRzPanel
         AlignWithMargins = True
         Left = 1
@@ -151,6 +137,7 @@ inherited FBaseListView: TFBaseListView
               Margins.Right = 0
               Margins.Bottom = 0
               Align = alClient
+              Properties.OnChange = TxBuscarPropertiesChange
               Style.BorderStyle = ebsNone
               Style.Color = clWhite
               StyleFocused.Color = 16577771
@@ -228,11 +215,21 @@ inherited FBaseListView: TFBaseListView
               DataController.Summary.DefaultGroupSummaryItems = <>
               DataController.Summary.FooterSummaryItems = <>
               DataController.Summary.SummaryGroups = <>
+              OptionsData.CancelOnExit = False
+              OptionsData.Deleting = False
+              OptionsData.DeletingConfirmation = False
+              OptionsData.Editing = False
+              OptionsData.Inserting = False
+              OptionsSelection.CellSelect = False
               OptionsView.NoDataToDisplayInfoText = '<Sem dados para exibir>'
               OptionsView.CellAutoHeight = True
               OptionsView.ColumnAutoWidth = True
               OptionsView.GroupByBox = False
+              Styles.ContentEven = stContentEven
+              Styles.ContentOdd = stContentOdd
               Styles.Header = StHeader
+              Styles.Inactive = StInactive
+              Styles.Selection = StSelection
             end
             object LvDados: TcxGridLevel
               GridView = VwDados
@@ -294,6 +291,7 @@ inherited FBaseListView: TFBaseListView
             SpeedButtonOptions.Flat = True
             SpeedButtonOptions.Transparent = True
             TabOrder = 0
+            OnClick = BtDuplicateClick
           end
         end
         object PnDelete: TRzPanel
@@ -338,6 +336,7 @@ inherited FBaseListView: TFBaseListView
             SpeedButtonOptions.Flat = True
             SpeedButtonOptions.Transparent = True
             TabOrder = 0
+            OnClick = BtDeleteClick
           end
         end
         object PnShow: TRzPanel
@@ -385,6 +384,7 @@ inherited FBaseListView: TFBaseListView
             SpeedButtonOptions.Flat = True
             SpeedButtonOptions.Transparent = True
             TabOrder = 0
+            OnClick = BtShowClick
           end
         end
         object PnUpdate: TRzPanel
@@ -430,6 +430,7 @@ inherited FBaseListView: TFBaseListView
             SpeedButtonOptions.Flat = True
             SpeedButtonOptions.Transparent = True
             TabOrder = 0
+            OnClick = BtUpdateClick
           end
         end
         object PnInsert: TRzPanel
@@ -474,6 +475,7 @@ inherited FBaseListView: TFBaseListView
             SpeedButtonOptions.Flat = True
             SpeedButtonOptions.Transparent = True
             TabOrder = 0
+            OnClick = BtInsertClick
           end
         end
         object RzOptionShow: TRzPanel
@@ -546,8 +548,46 @@ inherited FBaseListView: TFBaseListView
       Font.Style = [fsBold]
       TextColor = 5592405
     end
+    object stContentOdd: TcxStyle
+      AssignedValues = [svColor, svFont]
+      Color = 16382457
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Open Sans'
+      Font.Style = []
+    end
+    object stContentEven: TcxStyle
+      AssignedValues = [svColor, svFont]
+      Color = clWhite
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Open Sans'
+      Font.Style = []
+    end
+    object StInactive: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 16315375
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Open Sans SemiBold'
+      Font.Style = [fsBold]
+      TextColor = clBlack
+    end
+    object StSelection: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 16315375
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Open Sans SemiBold'
+      Font.Style = [fsBold]
+      TextColor = clBlack
+    end
   end
-  object FdDados: TFDMemTable
+  object FdData: TFDMemTable
     FetchOptions.AssignedValues = [evMode]
     FetchOptions.Mode = fmAll
     ResourceOptions.AssignedValues = [rvSilentMode]
@@ -558,9 +598,9 @@ inherited FBaseListView: TFBaseListView
     Left = 116
     Top = 140
   end
-  object DsDados: TDataSource
-    DataSet = FdDados
-    Left = 156
+  object DsData: TDataSource
+    DataSet = FdData
+    Left = 188
     Top = 140
   end
 end

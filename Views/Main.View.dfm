@@ -1936,7 +1936,7 @@ object FMainView: TFMainView
     ApplicationButton.Menu = ApMainMenu
     BarManager = BrManager
     ColorSchemeAccent = rcsaBlue
-    ColorSchemeName = 'Black'
+    ColorSchemeName = 'Blue'
     QuickAccessToolbar.Toolbar = BmAtalhos
     Contexts = <>
     TabOrder = 0
@@ -2424,6 +2424,7 @@ object FMainView: TFMainView
         6B29ED0929795A33D7AADF3AC3252525EBEB67B9C60406A533DAAED1B57B1624
         E1D2FB2B0E4EA0F4AB25F95FFCFF03B7B981BCE2006CF60000000049454E44AE
         426082}
+      OnClick = BtMachineClick
     end
     object BtCities: TdxBarLargeButton
       Caption = 'Cidades'
@@ -3206,6 +3207,7 @@ object FMainView: TFMainView
         1843844F985409FEAB6A5B5C794FBB6F017FCD16864CA41176E259A294C825CC
         896D76A118F1F8071345A5892DCA094D00E2B166F33F041C35D479E1CE980000
         000049454E44AE426082}
+      OnClick = BtDistrictClick
     end
     object BtTypeCost: TdxBarLargeButton
       Caption = 'Tipo de despesas com maquin'#225'rios'

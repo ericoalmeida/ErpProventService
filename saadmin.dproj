@@ -178,6 +178,36 @@
         <DCCReference Include="Controllers\Connection\Connection.Controller.pas"/>
         <DCCReference Include="Controllers\Facade.Controller.Interf.pas"/>
         <DCCReference Include="Controllers\Facade.Controller.pas"/>
+        <DCCReference Include="Models\Modules\Managment\Company\Entity\TGEREMPRESA.Entity.Model.pas"/>
+        <DCCReference Include="Models\Modules\Managment\Districts\Entity\TGERBAIRRO.Entity.Model.pas"/>
+        <DCCReference Include="Models\Modules\Managment\Districts\Districts.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modules\Managment\Districts\Districts.Model.pas"/>
+        <DCCReference Include="Models\Modules\Managment\ManagmentFactory.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modules\Managment\ManagmentFactory.Model.pas"/>
+        <DCCReference Include="Models\Modules\ModulesFacade.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modules\ModulesFacade.Model.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\District\District.Controller.Interf.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\District\District.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\District\Operations\DistrictInsert.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\ManagmentFactory.Controller.interf.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\ManagmentFactory.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\ModulesFacade.Controller.interf.pas"/>
+        <DCCReference Include="Controllers\Modules\ModulesFacade.Controller.pas"/>
+        <DCCReference Include="Views\Modules\Managment\District\MNG0001AView.pas">
+            <Form>FMNG0001AView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Modules\Managment\ManagmentFactory.View.Interf.pas"/>
+        <DCCReference Include="Views\Modules\Managment\ManagmentFactory.View.pas"/>
+        <DCCReference Include="Views\Modules\ModulesFacade.View.Interf.pas"/>
+        <DCCReference Include="Views\Modules\ModulesFacade.View.pas"/>
+        <DCCReference Include="Views\Modules\Managment\District\MNG0001BView.pas">
+            <Form>FMNG0001BView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Controllers\Modules\Managment\District\Operations\DistrictUpdate.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\District\Operations\DistrictDelete.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\District\Operations\DistrictDuplicate.Controller.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

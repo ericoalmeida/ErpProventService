@@ -7,9 +7,34 @@ inherited FBaseRegisterView: TFBaseRegisterView
   inherited PnContainer: TRzPanel
     inherited PnHeader: TRzPanel
       inherited LbTitle: TRzLabel
+        AlignWithMargins = True
+        Top = 6
         Width = 146
+        Height = 26
+        Margins.Top = 5
+        Margins.Bottom = 7
+        Align = alLeft
         Caption = 'Base register form'
         ExplicitWidth = 146
+      end
+      object LbOperation: TRzLabel
+        AlignWithMargins = True
+        Left = 524
+        Top = 6
+        Width = 80
+        Height = 26
+        Margins.Top = 5
+        Margins.Bottom = 7
+        Align = alRight
+        Caption = '(Opera'#231#227'o)'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = 5592405
+        Font.Height = -16
+        Font.Name = 'Open Sans SemiBold'
+        Font.Style = [fsBold, fsItalic]
+        ParentFont = False
+        ExplicitLeft = 519
+        ExplicitHeight = 22
       end
     end
     inherited PnProgram: TRzPanel
@@ -72,7 +97,7 @@ inherited FBaseRegisterView: TFBaseRegisterView
           Font.Name = 'Open Sans SemiBold'
           Font.Style = [fsBold]
           ParentFont = False
-          OnClick = BtSairClick
+          OnClick = BtConfirmarClick
         end
       end
       object PnContent: TRzPanel
@@ -89,6 +114,22 @@ inherited FBaseRegisterView: TFBaseRegisterView
         BorderOuter = fsNone
         Color = clWhite
         TabOrder = 1
+        object RzLabel1: TRzLabel
+          Left = 0
+          Top = 180
+          Width = 604
+          Height = 13
+          Align = alBottom
+          Caption = 'Os campos em NEGRITO s'#227'o obrigatorios'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = 5592405
+          Font.Height = -9
+          Font.Name = 'Open Sans'
+          Font.Style = []
+          ParentFont = False
+          ExplicitTop = 178
+          ExplicitWidth = 170
+        end
       end
     end
   end

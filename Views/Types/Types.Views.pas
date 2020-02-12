@@ -5,10 +5,9 @@ interface
 type
   TTypeMessageView = (tmInformation, tmConfirmation, tmError, tmWarning);
 
-  TTypeListView = (tlClientListView);
-  TTypeSearchView = (tsClientSearchView);
-  TTypeRegisterView = (trClientRegisterView);
-  TTypeReportView = (trClientReportView);
+
+  TTypeListingPrograms = (tpMNG0001AView);
+  TTYpeRegisterPrograms = (trMNG0001BView);
 
 implementation
 

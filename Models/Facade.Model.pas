@@ -3,7 +3,7 @@ unit Facade.Model;
 interface
 
 uses Facade.Model.interf, SettingsFactory.Model.interf,
-  ConnectionFactory.Model.interf;
+  ConnectionFactory.Model.interf, ModulesFacade.Model.interf;
 
 type
   TFacadeModel = class(TInterfacedObject, iFacadeModel)
@@ -16,13 +16,15 @@ type
 
     function ConnectionFactoryModel: iConnectionFactoryModel;
     function SettingsFactoryModel: iSettingsFactoryModel;
+
+    function moduleFacade: iModulesFacadeModel;
   end;
 
 implementation
 
 { TFacadeModel }
 
-uses SettingsFactory.Model, ConnectionFactory.Model;
+uses SettingsFactory.Model, ConnectionFactory.Model, ModulesFacade.Model;
 
 function TFacadeModel.ConnectionFactoryModel: iConnectionFactoryModel;
 begin
@@ -38,6 +40,11 @@ destructor TFacadeModel.Destroy;
 begin
 
   inherited;
+end;
+
+function TFacadeModel.moduleFacade: iModulesFacadeModel;
+begin
+  Result := TModulesFacadeModel.New;
 end;
 
 class function TFacadeModel.New: iFacadeModel;
