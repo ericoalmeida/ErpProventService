@@ -16,7 +16,7 @@ type
 
     class function New: iDistrictController;
 
-    function toLocate(AValue: string): iDistrictController;
+    function find(AValue: string): iDistrictController;
 
     function insert: iDistrictInsertController;
     function update: iDistrictUpdateController;
@@ -25,6 +25,8 @@ type
 
     function districtId: string;
     function description: string;
+    function createdDate: string;
+    function updatedDate: string;
   end;
 
 implementation
@@ -39,6 +41,11 @@ constructor TDistrictController.Create;
 begin
   FDistrictModel := TFacadeModel.New.moduleFacade.managmentFactoryModel.
     districtModel;
+end;
+
+function TDistrictController.createdDate: string;
+begin
+  Result := DateTimeToStr(FRecordFound.DATACADASTRO);
 end;
 
 function TDistrictController.delete: iDistrictDeleteController;
@@ -78,7 +85,7 @@ begin
   Result := Self.Create;
 end;
 
-function TDistrictController.toLocate(AValue: string): iDistrictController;
+function TDistrictController.find(AValue: string): iDistrictController;
 begin
   Result := Self;
 
@@ -90,6 +97,11 @@ function TDistrictController.update: iDistrictUpdateController;
 begin
   Result := TDistrictUpdateController.New.districtModel(FDistrictModel)
     .selectedDistrict(FRecordFound)
+end;
+
+function TDistrictController.updatedDate: string;
+begin
+  Result := DateTimeToStr(FRecordFound.DATAATUALIZACAO);
 end;
 
 end.

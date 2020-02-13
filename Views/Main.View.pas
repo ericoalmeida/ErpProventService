@@ -64,7 +64,7 @@ type
     BtUsuarios: TdxBarLargeButton;
     procedure TmMainMenuTimer(Sender: TObject);
     procedure BtDistrictClick(Sender: TObject);
-    procedure BtMachineClick(Sender: TObject);
+    procedure BtCountriesClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -80,6 +80,15 @@ implementation
 
 uses Facade.Controller, Facade.View, Types.Views;
 
+procedure TFMainView.BtCountriesClick(Sender: TObject);
+begin
+  TFacadeView.New
+    .modulesFacadeView
+     .ManagmentFactoryView
+      .showProgramOfListing(tpMNG0002AView)
+      .&end;
+end;
+
 procedure TFMainView.BtDistrictClick(Sender: TObject);
 begin
   TFacadeView.New
@@ -87,15 +96,6 @@ begin
      .ManagmentFactoryView
       .showProgramOfListing(tpMNG0001AView)
       .&end;
-end;
-
-procedure TFMainView.BtMachineClick(Sender: TObject);
-begin
-       TFacadeView.New
-         .messagesFactoryView
-         .typeMessage(tmWarning)
-         .messages('Erro')
-         .&end;
 end;
 
 procedure TFMainView.TmMainMenuTimer(Sender: TObject);

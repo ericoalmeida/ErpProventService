@@ -12,14 +12,21 @@ uses
   Vcl.StdCtrls, cxButtons, RzLabel, dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel,
   Vcl.Mask, RzEdit,
   cxControls, cxContainer, cxEdit, cxLabel, Types.Controllers, Base.View.interf,
-  District.Controller.interf;
+  District.Controller.interf, cxTextEdit, cxMaskEdit, cxButtonEdit;
 
 type
   TFMNG0001BView = class(TFBaseRegisterView, iBaseRegisterView)
-    TxDistrictId: TRzEdit;
-    TxDescription: TRzEdit;
     LbDistrictId: TcxLabel;
     LbDescription: TcxLabel;
+    TxCreatedDate: TcxTextEdit;
+    TxUpdatedDate: TcxTextEdit;
+    TxDescription: TcxTextEdit;
+    cxLabel1: TcxLabel;
+    cxLabel2: TcxLabel;
+    TxDistrictId: TcxTextEdit;
+    TxCityId: TcxButtonEdit;
+    TxCityName: TcxTextEdit;
+    cxLabel3: TcxLabel;
     procedure FormCreate(Sender: TObject);
     procedure BtConfirmarClick(Sender: TObject);
   private
@@ -68,13 +75,9 @@ end;
 
 procedure TFMNG0001BView.disableFields;
 begin
-  if not(FOperation in [toShow, toDelete]) then
-    Exit;
-
-  TxDistrictId.Enabled := False;
-  TxDescription.Enabled := False;
-
-  BtConfirmar.Visible := not(FOperation = toShow);
+  TxDescription.Enabled := not(FOperation in [toShow, toDelete]);
+  TxCityId.Enabled      := not(FOperation in [toShow, toDelete]);
+  BtConfirmar.Visible   := not(FOperation = toShow);
 end;
 
 procedure TFMNG0001BView.duplicate;
@@ -150,16 +153,16 @@ end;
 
 procedure TFMNG0001BView.showDataOnScreen;
 begin
-  if FOperation in [toInsert] then
+  if (FOperation in [toInsert]) or (FSelectedRecord = EmptyStr) then
     Exit;
 
-  if FSelectedRecord = EmptyStr then
-    Exit;
 
-  FDistrictController.toLocate(FSelectedRecord);
+  FDistrictController.find(FSelectedRecord);
 
   TxDistrictId.Text := FDistrictController.districtId;
   TxDescription.Text := FDistrictController.description;
+  TxCreatedDate.Text := FDistrictController.createdDate;
+  TxUpdatedDate.Text := FDistrictController.updatedDate;
 end;
 
 procedure TFMNG0001BView.update;

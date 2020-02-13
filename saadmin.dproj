@@ -208,6 +208,24 @@
         <DCCReference Include="Controllers\Modules\Managment\District\Operations\DistrictUpdate.Controller.pas"/>
         <DCCReference Include="Controllers\Modules\Managment\District\Operations\DistrictDelete.Controller.pas"/>
         <DCCReference Include="Controllers\Modules\Managment\District\Operations\DistrictDuplicate.Controller.pas"/>
+        <DCCReference Include="Models\Modules\Managment\Country\Entity\TGERPAIS.Entity.Model.pas"/>
+        <DCCReference Include="Models\Modules\Managment\Country\Country.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modules\Managment\Country\Country.Model.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\Country\Country.Controller.Interf.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\Country\Country.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\Country\Operations\CountryInsert.Controller.pas"/>
+        <DCCReference Include="Views\Modules\Managment\Country\MNG0002AView.pas">
+            <Form>FMNG0002AView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Modules\Managment\Country\MNG0002BView.pas">
+            <Form>FMNG0002BView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Modules\Managment\State\MNG0003AView.pas">
+            <Form>FMNG0003AView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

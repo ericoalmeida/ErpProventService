@@ -23,7 +23,7 @@ implementation
 
 { TManagmentFactoryView }
 
-uses MNG0001AView, MNG0001BView;
+uses MNG0001AView, MNG0001BView, MNG0002AView, MNG0002BView;
 
 constructor TManagmentFactoryView.Create;
 begin
@@ -47,6 +47,9 @@ begin
   case AValue of
     tpMNG0001AView:
       Result := TFMNG0001AView.New;
+
+    tpMNG0002AView:
+      Result := TFMNG0002AView.New
   end;
 end;
 
@@ -54,9 +57,12 @@ function TManagmentFactoryView.showProgramOfRegister
   (AValue: TTYpeRegisterPrograms): iBaseRegisterView;
 begin
   case AValue of
-     trMNG0001BView:
-       Result := TFMNG0001BView.New;
-   end;
+    trMNG0001BView:
+      Result := TFMNG0001BView.New;
+
+    trMNG0002BView:
+      Result := TFMNG0002BView.New
+  end;
 end;
 
 end.

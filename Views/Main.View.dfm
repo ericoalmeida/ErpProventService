@@ -6,7 +6,7 @@ object FMainView: TFMainView
     'Prefeitura Municipal de Parana'#237'ta/MT - Secretaria Municipal de A' +
     'gricultura'
   ClientHeight = 399
-  ClientWidth = 452
+  ClientWidth = 589
   Color = clBlack
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -22,7 +22,7 @@ object FMainView: TFMainView
   object ImLogo: TImage
     Left = 0
     Top = 159
-    Width = 452
+    Width = 589
     Height = 217
     Align = alClient
     Center = True
@@ -1931,7 +1931,7 @@ object FMainView: TFMainView
   object RbMainMenu: TdxRibbon
     Left = 0
     Top = 0
-    Width = 452
+    Width = 589
     Height = 159
     ApplicationButton.Menu = ApMainMenu
     BarManager = BrManager
@@ -1941,6 +1941,7 @@ object FMainView: TFMainView
     Contexts = <>
     TabOrder = 0
     TabStop = False
+    ExplicitWidth = 432
     object TbAdministration: TdxRibbonTab
       Active = True
       Caption = 'Administra'#231#227'o'
@@ -1968,7 +1969,7 @@ object FMainView: TFMainView
   object StStatus: TdxRibbonStatusBar
     Left = 0
     Top = 376
-    Width = 452
+    Width = 589
     Height = 23
     Panels = <
       item
@@ -1981,6 +1982,7 @@ object FMainView: TFMainView
     Font.Height = -11
     Font.Name = 'Open Sans ExtraBold'
     Font.Style = [fsBold]
+    ExplicitWidth = 432
   end
   object BrManager: TdxBarManager
     Font.Charset = DEFAULT_CHARSET
@@ -2066,7 +2068,7 @@ object FMainView: TFMainView
     object BmRotinas: TdxBar
       Caption = 'Rotinas'
       CaptionButtons = <>
-      DockedLeft = 338
+      DockedLeft = 381
       DockedTop = 0
       FloatLeft = 720
       FloatTop = 2
@@ -2090,7 +2092,7 @@ object FMainView: TFMainView
     object BmRelatorios: TdxBar
       Caption = 'Relat'#243'rios'
       CaptionButtons = <>
-      DockedLeft = 386
+      DockedLeft = 429
       DockedTop = 0
       FloatLeft = 720
       FloatTop = 2
@@ -2424,7 +2426,6 @@ object FMainView: TFMainView
         6B29ED0929795A33D7AADF3AC3252525EBEB67B9C60406A533DAAED1B57B1624
         E1D2FB2B0E4EA0F4AB25F95FFCFF03B7B981BCE2006CF60000000049454E44AE
         426082}
-      OnClick = BtMachineClick
     end
     object BtCities: TdxBarLargeButton
       Caption = 'Cidades'
@@ -2745,6 +2746,7 @@ object FMainView: TFMainView
         6620034800BC403CE002628D1A0F788DF54C60EAFD8F2EDEF9DC9252913371DE
         166092B116035800C500978623201B1B630CB696E801460EC9F8B9D52036CAA8
         560374C4F3FF05BD0A7E7E5D55CD2B0000000049454E44AE426082}
+      OnClick = BtCountriesClick
     end
     object BtServicesProvision: TdxBarLargeButton
       Caption = 'Preta'#231#227'o de servi'#231'o'

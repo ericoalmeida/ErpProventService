@@ -58,7 +58,16 @@ uses
   MNG0001BView in 'Views\Modules\Managment\District\MNG0001BView.pas' {FMNG0001BView},
   DistrictUpdate.Controller in 'Controllers\Modules\Managment\District\Operations\DistrictUpdate.Controller.pas',
   DistrictDelete.Controller in 'Controllers\Modules\Managment\District\Operations\DistrictDelete.Controller.pas',
-  DistrictDuplicate.Controller in 'Controllers\Modules\Managment\District\Operations\DistrictDuplicate.Controller.pas';
+  DistrictDuplicate.Controller in 'Controllers\Modules\Managment\District\Operations\DistrictDuplicate.Controller.pas',
+  TGERPAIS.Entity.Model in 'Models\Modules\Managment\Country\Entity\TGERPAIS.Entity.Model.pas',
+  Country.Model.Interf in 'Models\Modules\Managment\Country\Country.Model.Interf.pas',
+  Country.Model in 'Models\Modules\Managment\Country\Country.Model.pas',
+  Country.Controller.Interf in 'Controllers\Modules\Managment\Country\Country.Controller.Interf.pas',
+  Country.Controller in 'Controllers\Modules\Managment\Country\Country.Controller.pas',
+  CountryInsert.Controller in 'Controllers\Modules\Managment\Country\Operations\CountryInsert.Controller.pas',
+  MNG0002AView in 'Views\Modules\Managment\Country\MNG0002AView.pas' {FMNG0002AView},
+  MNG0002BView in 'Views\Modules\Managment\Country\MNG0002BView.pas' {FMNG0002BView},
+  MNG0003AView in 'Views\Modules\Managment\State\MNG0003AView.pas' {FMNG0003AView};
 
 {$R *.res}
 

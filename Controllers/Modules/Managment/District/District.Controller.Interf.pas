@@ -12,7 +12,7 @@ type
 
   iDistrictController = interface
     ['{72B5CC0A-D76E-4374-AC9E-D2D6E82F8506}']
-    function toLocate(AValue: string): iDistrictController;
+    function find(AValue: string): iDistrictController;
 
     function insert: iDistrictInsertController;
     function update: iDistrictUpdateController;
@@ -21,6 +21,8 @@ type
 
     function districtId: string;
     function description: string;
+    function createdDate: string;
+    function updatedDate: string;
   end;
 
   iDistrictInsertController = interface

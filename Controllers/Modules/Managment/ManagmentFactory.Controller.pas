@@ -2,7 +2,8 @@ unit ManagmentFactory.Controller;
 
 interface
 
-uses ManagmentFactory.Controller.interf, District.Controller.interf;
+uses ManagmentFactory.Controller.interf, District.Controller.interf,
+  Country.Controller.interf;
 
 type
   TManagmentFactoryController = class(TInterfacedObject,
@@ -15,13 +16,20 @@ type
     class function New: iManagmentFactoryController;
 
     function districtController: iDistrictController;
+    function countryController: iCountryController;
+
   end;
 
 implementation
 
 { TManagmentFactoryController }
 
-uses District.Controller;
+uses District.Controller, Country.Controller;
+
+function TManagmentFactoryController.countryController: iCountryController;
+begin
+  Result := TCountryController.New;
+end;
 
 constructor TManagmentFactoryController.Create;
 begin
