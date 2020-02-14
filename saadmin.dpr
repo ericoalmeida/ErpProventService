@@ -67,7 +67,9 @@ uses
   CountryInsert.Controller in 'Controllers\Modules\Managment\Country\Operations\CountryInsert.Controller.pas',
   MNG0002AView in 'Views\Modules\Managment\Country\MNG0002AView.pas' {FMNG0002AView},
   MNG0002BView in 'Views\Modules\Managment\Country\MNG0002BView.pas' {FMNG0002BView},
-  MNG0003AView in 'Views\Modules\Managment\State\MNG0003AView.pas' {FMNG0003AView};
+  MNG0003AView in 'Views\Modules\Managment\State\MNG0003AView.pas' {FMNG0003AView},
+  CountryUpdate.Controller in 'Controllers\Modules\Managment\Country\Operations\CountryUpdate.Controller.pas',
+  CountryDelete.Controller in 'Controllers\Modules\Managment\Country\Operations\CountryDelete.Controller.pas';
 
 {$R *.res}
 

@@ -131,7 +131,7 @@ inherited FMNG0001AView: TFMNG0001AView
             Left = 203
             ExplicitLeft = 203
             inherited TxBuscar: TcxTextEdit
-              Properties.CharCase = ecUpperCase
+              ExplicitHeight = 22
             end
           end
         end
@@ -197,6 +197,7 @@ inherited FMNG0001AView: TFMNG0001AView
       Size = 64
     end
     object FdDataBAIRROID: TIntegerField
+      Alignment = taCenter
       FieldName = 'BAIRROID'
     end
     object FdDataDESCRICAO: TStringField

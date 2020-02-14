@@ -67,7 +67,9 @@ end;
 
 procedure TFMNG0002BView.delete;
 begin
-
+  FCountryController
+   .delete
+    .save;
 end;
 
 procedure TFMNG0002BView.disableFields;
@@ -159,7 +161,10 @@ end;
 
 procedure TFMNG0002BView.update;
 begin
-
+  FCountryController
+   .update
+    .description(TxDescription.Text)
+     .save;
 end;
 
 end.

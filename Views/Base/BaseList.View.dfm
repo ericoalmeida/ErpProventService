@@ -137,6 +137,7 @@ inherited FBaseListView: TFBaseListView
               Margins.Right = 0
               Margins.Bottom = 0
               Align = alClient
+              Properties.CharCase = ecUpperCase
               Properties.OnChange = TxBuscarPropertiesChange
               Style.BorderStyle = ebsNone
               Style.Color = clWhite

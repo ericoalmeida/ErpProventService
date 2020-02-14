@@ -1936,12 +1936,11 @@ object FMainView: TFMainView
     ApplicationButton.Menu = ApMainMenu
     BarManager = BrManager
     ColorSchemeAccent = rcsaBlue
-    ColorSchemeName = 'Blue'
+    ColorSchemeName = 'Black'
     QuickAccessToolbar.Toolbar = BmAtalhos
     Contexts = <>
     TabOrder = 0
     TabStop = False
-    ExplicitWidth = 432
     object TbAdministration: TdxRibbonTab
       Active = True
       Caption = 'Administra'#231#227'o'
@@ -1982,7 +1981,6 @@ object FMainView: TFMainView
     Font.Height = -11
     Font.Name = 'Open Sans ExtraBold'
     Font.Style = [fsBold]
-    ExplicitWidth = 432
   end
   object BrManager: TdxBarManager
     Font.Charset = DEFAULT_CHARSET

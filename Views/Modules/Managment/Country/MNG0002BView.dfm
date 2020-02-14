@@ -10,8 +10,11 @@ inherited FMNG0002BView: TFMNG0002BView
   inherited PnContainer: TRzPanel
     Width = 502
     Height = 267
+    ExplicitWidth = 502
+    ExplicitHeight = 267
     inherited PnHeader: TRzPanel
       Width = 500
+      ExplicitWidth = 500
       inherited ImTitle: TImage
         Picture.Data = {
           0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000020
@@ -102,11 +105,14 @@ inherited FMNG0002BView: TFMNG0002BView
       inherited LbOperation: TRzLabel
         Left = 416
         Height = 26
+        ExplicitLeft = 416
       end
     end
     inherited PnProgram: TRzPanel
       Top = 248
       Width = 500
+      ExplicitTop = 248
+      ExplicitWidth = 500
       inherited LbProgram: TRzLabel
         Width = 500
         Height = 18
@@ -115,22 +121,31 @@ inherited FMNG0002BView: TFMNG0002BView
     inherited PnContainerBody: TRzPanel
       Width = 500
       Height = 207
+      ExplicitWidth = 500
+      ExplicitHeight = 207
       inherited PnFooterBody: TRzPanel
         Top = 167
         Width = 500
+        ExplicitTop = 167
+        ExplicitWidth = 500
         inherited BtSair: TcxButton
           Left = 390
+          ExplicitLeft = 390
         end
         inherited BtConfirmar: TcxButton
           Left = 282
+          ExplicitLeft = 282
         end
       end
       inherited PnContent: TRzPanel
         Width = 496
         Height = 163
+        ExplicitWidth = 496
+        ExplicitHeight = 163
         inherited RzLabel1: TRzLabel
           Top = 150
           Width = 496
+          ExplicitTop = 150
         end
         object cxLabel2: TcxLabel
           Left = 4

@@ -7,8 +7,10 @@ inherited FMNG0002AView: TFMNG0002AView
   TextHeight = 15
   inherited PnContainer: TRzPanel
     Width = 467
+    ExplicitWidth = 467
     inherited PnHeader: TRzPanel
       Width = 465
+      ExplicitWidth = 465
       inherited ImTitle: TImage
         Picture.Data = {
           0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000020
@@ -98,6 +100,7 @@ inherited FMNG0002AView: TFMNG0002AView
     end
     inherited PnProgram: TRzPanel
       Width = 465
+      ExplicitWidth = 465
       inherited LbProgram: TRzLabel
         Width = 465
         Height = 18
@@ -105,26 +108,37 @@ inherited FMNG0002AView: TFMNG0002AView
     end
     inherited PnContainerBody: TRzPanel
       Width = 465
+      ExplicitWidth = 465
       inherited PnFooterBody: TRzPanel
         Width = 465
+        ExplicitWidth = 465
         inherited BtSair: TcxButton
           Left = 355
+          ExplicitLeft = 355
         end
       end
       inherited PnContent: TRzPanel
         Width = 463
+        ExplicitWidth = 463
         inherited PnGridHeader: TRzPanel
           Width = 461
+          ExplicitWidth = 461
           inherited LbBuscar: TcxLabel
             Left = 134
             Style.IsFontAssigned = True
+            ExplicitLeft = 134
           end
           inherited PnBuscar: TRzPanel
             Left = 184
+            ExplicitLeft = 184
+            inherited TxBuscar: TcxTextEdit
+              ExplicitHeight = 22
+            end
           end
         end
         inherited PnGridFooter: TRzPanel
           Width = 461
+          ExplicitWidth = 461
           inherited LbTotalRegistros: TRzLabel
             Width = 453
             Height = 22
@@ -132,13 +146,16 @@ inherited FMNG0002AView: TFMNG0002AView
         end
         inherited PnGrid: TRzPanel
           Width = 461
+          ExplicitWidth = 461
           inherited DbDados: TcxGrid
             Width = 459
+            ExplicitWidth = 459
             inherited VwDados: TcxGridDBTableView
               DataController.DataSource = DsData
               object VwDadosPAISID: TcxGridDBColumn
                 Caption = 'N'#186
                 DataBinding.FieldName = 'PAISID'
+                HeaderAlignmentHorz = taCenter
                 Width = 60
               end
               object VwDadosDESCRICAO: TcxGridDBColumn
@@ -162,6 +179,7 @@ inherited FMNG0002AView: TFMNG0002AView
       end
       inherited PnHeaderButtons: TRzPanel
         Width = 463
+        ExplicitWidth = 463
       end
     end
   end
@@ -174,6 +192,7 @@ inherited FMNG0002AView: TFMNG0002AView
       Size = 64
     end
     object FdDataPAISID: TIntegerField
+      Alignment = taCenter
       FieldName = 'PAISID'
     end
     object FdDataDESCRICAO: TStringField

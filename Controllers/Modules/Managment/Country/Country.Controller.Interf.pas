@@ -34,21 +34,23 @@ type
 
   iCountryUpdateController = interface
     function countryModel(AValue: ICountryModel): iCountryUpdateController;
-    function selectedTemplate(AValue: TTGERPAIS): iCountryUpdateController;
+    function selectedRecord(AValue: TTGERPAIS): iCountryUpdateController;
+
+    function description(AValue: string): iCountryUpdateController;
 
     procedure save;
   end;
 
   iCountryDeleteController = interface
     function countryModel(AValue: ICountryModel): iCountryDeleteController;
-    function selectedTemplate(AValue: TTGERPAIS): iCountryDeleteController;
+    function selectedRecord(AValue: TTGERPAIS): iCountryDeleteController;
 
     procedure save;
   end;
 
   iCountryDuplicateController = interface
     function countryModel(AValue: ICountryModel): iCountryDuplicateController;
-    function selectedTemplate(AValue: TTGERPAIS): iCountryDuplicateController;
+    function selectedRecord(AValue: TTGERPAIS): iCountryDuplicateController;
 
     procedure save;
   end;

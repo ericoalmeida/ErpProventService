@@ -33,7 +33,8 @@ implementation
 
 { TCountryController }
 
-uses Facade.Model, CountryInsert.Controller;
+uses Facade.Model, CountryInsert.Controller, CountryUpdate.Controller,
+  CountryDelete.Controller;
 
 constructor TCountryController.Create;
 begin
@@ -48,7 +49,8 @@ end;
 
 function TCountryController.delete: iCountryDeleteController;
 begin
-
+  Result := TCountryDeleteController.New.countryModel(FCountryModel)
+    .selectedRecord(FRecordFound);
 end;
 
 function TCountryController.description: string;
@@ -92,7 +94,8 @@ end;
 
 function TCountryController.update: iCountryUpdateController;
 begin
-
+  Result := TCountryUpdateController.New.countryModel(FCountryModel)
+    .selectedRecord(FRecordFound);
 end;
 
 function TCountryController.updatedDate: string;
