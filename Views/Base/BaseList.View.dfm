@@ -63,12 +63,6 @@ inherited FBaseListView: TFBaseListView
         ExplicitWidth = 110
       end
     end
-    inherited PnProgram: TRzPanel
-      inherited LbProgram: TRzLabel
-        Width = 608
-        Height = 18
-      end
-    end
     inherited PnContainerBody: TRzPanel
       object PnContent: TRzPanel
         AlignWithMargins = True
@@ -138,7 +132,6 @@ inherited FBaseListView: TFBaseListView
               Margins.Bottom = 0
               Align = alClient
               Properties.CharCase = ecUpperCase
-              Properties.OnChange = TxBuscarPropertiesChange
               Style.BorderStyle = ebsNone
               Style.Color = clWhite
               StyleFocused.Color = 16577771
@@ -603,5 +596,9 @@ inherited FBaseListView: TFBaseListView
     DataSet = FdData
     Left = 188
     Top = 140
+  end
+  object FdQData: TFDQuery
+    Left = 60
+    Top = 157
   end
 end

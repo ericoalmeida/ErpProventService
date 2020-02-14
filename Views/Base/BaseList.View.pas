@@ -20,7 +20,9 @@ uses
   FireDAC.Stan.Option,
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
   FireDAC.DApt.Intf,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client, ormbr.container.DataSet.interfaces, Types.Controllers;
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, ormbr.container.DataSet.interfaces, Types.Controllers,
+  FireDAC.Stan.Async, FireDAC.DApt, dxSkinOffice2016Colorful, dxSkinOffice2016Dark,
+  dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Silver;
 
 type
   TFBaseListView = class(TFBaseView)
@@ -56,19 +58,22 @@ type
     stContentEven: TcxStyle;
     StInactive: TcxStyle;
     StSelection: TcxStyle;
-    procedure TxBuscarPropertiesChange(Sender: TObject);
+    FdQData: TFDQuery;
     procedure BtInsertClick(Sender: TObject);
     procedure BtUpdateClick(Sender: TObject);
     procedure BtShowClick(Sender: TObject);
     procedure BtDeleteClick(Sender: TObject);
     procedure BtDuplicateClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
   protected
     FOperation: TTypeOperation;
     FFieldOrder: string;
+    FRecordShow: Integer;
     FTotalRecords: integer;
 
     procedure filterRecords;
+    procedure totalRecords;
   public
   end;
 
@@ -112,21 +117,30 @@ end;
 
 procedure TFBaseListView.filterRecords;
 begin
-  FdData.Filtered := False;
+  DsData.DataSet.Filtered := False;
 
   if not(TxBuscar.Text = EmptyStr) then
   begin
-    FdData.Filter := UpperCase(FFieldOrder) + ' like ''%' +
+    DsData.DataSet.Filter := UpperCase(FFieldOrder) + ' like ''%' +
       AnsiUpperCase(TxBuscar.Text) + '%''';
 
-    FdData.Filtered := True;
+    DsData.DataSet.Filtered := True;
   end;
 end;
 
-procedure TFBaseListView.TxBuscarPropertiesChange(Sender: TObject);
+procedure TFBaseListView.FormCreate(Sender: TObject);
 begin
   inherited;
-  filterRecords;
+  FdQData.Connection := FFdConnection;
+end;
+
+procedure TFBaseListView.totalRecords;
+begin
+  FTotalRecords := DsData.DataSet.RecordCount;
+  FRecordShow   := iff(DsData.DataSet.IsEmpty, 0, 1);
+
+  LbTotalRegistros.Caption := Format('Mostrando de %d até %d de %d registros',
+    [FRecordShow, FTotalRecords, FTotalRecords]);
 end;
 
 end.

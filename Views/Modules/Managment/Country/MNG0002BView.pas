@@ -12,7 +12,8 @@ uses
   Vcl.StdCtrls, cxButtons, RzLabel, dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel,
   Base.View.interf, Types.Controllers, cxControls, cxContainer, cxEdit,
   cxTextEdit, cxLabel,
-  Country.Controller.interf;
+  Country.Controller.interf, dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Green,
+  dxSkinOffice2007Silver;
 
 type
   TFMNG0002BView = class(TFBaseRegisterView, iBaseRegisterView)
@@ -80,7 +81,10 @@ end;
 
 procedure TFMNG0002BView.duplicate;
 begin
-
+  FCountryController
+   .duplicate
+    .description(TxDescription.Text)
+     .save;
 end;
 
 procedure TFMNG0002BView.&end;

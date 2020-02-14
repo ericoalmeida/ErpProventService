@@ -13,13 +13,13 @@ type
 
   iBaseListView = interface
     ['{178B06F7-0753-49CA-9CE1-4B0AD39EBAC7}']
-    procedure insert;
-    procedure update;
-    procedure recover;
-    procedure delete;
-    procedure duplicate;
+    procedure insertRecord;
+    procedure updateRecord;
+    procedure showRecord;
+    procedure deleteRecord;
+    procedure duplicateRecord;
     procedure listRecords;
-    procedure totalRecords;
+
     procedure &end;
   end;
 
@@ -37,6 +37,7 @@ type
     procedure save;
     procedure showDataOnScreen;
     procedure disableFields;
+
     procedure &end;
   end;
 

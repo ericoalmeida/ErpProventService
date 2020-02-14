@@ -228,6 +228,20 @@
         </DCCReference>
         <DCCReference Include="Controllers\Modules\Managment\Country\Operations\CountryUpdate.Controller.pas"/>
         <DCCReference Include="Controllers\Modules\Managment\Country\Operations\CountryDelete.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\Country\Operations\CountryDuplicate.Controller.pas"/>
+        <DCCReference Include="Models\Modules\Managment\State\Entity\TGERESTADO.Entity.Model.pas"/>
+        <DCCReference Include="Models\Modules\Managment\State\State.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modules\Managment\State\State.Model.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\State\State.Controller.Interf.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\State\State.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\State\Operations\StateInsert.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\State\Operations\StateUpdate.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\State\Operations\StateDelete.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\State\Operations\StateDuplicate.Controller.pas"/>
+        <DCCReference Include="Views\Modules\Managment\State\MNG0003BView.pas">
+            <Form>FMNG0003BView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

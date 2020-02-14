@@ -3,7 +3,7 @@ unit ManagmentFactory.Controller;
 interface
 
 uses ManagmentFactory.Controller.interf, District.Controller.interf,
-  Country.Controller.interf;
+  Country.Controller.interf, State.Controller.interf;
 
 type
   TManagmentFactoryController = class(TInterfacedObject,
@@ -17,14 +17,14 @@ type
 
     function districtController: iDistrictController;
     function countryController: iCountryController;
-
+    function stateController: iStateController;
   end;
 
 implementation
 
 { TManagmentFactoryController }
 
-uses District.Controller, Country.Controller;
+uses District.Controller, Country.Controller, State.Controller;
 
 function TManagmentFactoryController.countryController: iCountryController;
 begin
@@ -50,6 +50,11 @@ end;
 class function TManagmentFactoryController.New: iManagmentFactoryController;
 begin
   Result := Self.Create;
+end;
+
+function TManagmentFactoryController.stateController: iStateController;
+begin
+  Result := TStateController.New;
 end;
 
 end.

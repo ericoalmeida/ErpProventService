@@ -69,7 +69,18 @@ uses
   MNG0002BView in 'Views\Modules\Managment\Country\MNG0002BView.pas' {FMNG0002BView},
   MNG0003AView in 'Views\Modules\Managment\State\MNG0003AView.pas' {FMNG0003AView},
   CountryUpdate.Controller in 'Controllers\Modules\Managment\Country\Operations\CountryUpdate.Controller.pas',
-  CountryDelete.Controller in 'Controllers\Modules\Managment\Country\Operations\CountryDelete.Controller.pas';
+  CountryDelete.Controller in 'Controllers\Modules\Managment\Country\Operations\CountryDelete.Controller.pas',
+  CountryDuplicate.Controller in 'Controllers\Modules\Managment\Country\Operations\CountryDuplicate.Controller.pas',
+  TGERESTADO.Entity.Model in 'Models\Modules\Managment\State\Entity\TGERESTADO.Entity.Model.pas',
+  State.Model.Interf in 'Models\Modules\Managment\State\State.Model.Interf.pas',
+  State.Model in 'Models\Modules\Managment\State\State.Model.pas',
+  State.Controller.Interf in 'Controllers\Modules\Managment\State\State.Controller.Interf.pas',
+  State.Controller in 'Controllers\Modules\Managment\State\State.Controller.pas',
+  StateInsert.Controller in 'Controllers\Modules\Managment\State\Operations\StateInsert.Controller.pas',
+  StateUpdate.Controller in 'Controllers\Modules\Managment\State\Operations\StateUpdate.Controller.pas',
+  StateDelete.Controller in 'Controllers\Modules\Managment\State\Operations\StateDelete.Controller.pas',
+  StateDuplicate.Controller in 'Controllers\Modules\Managment\State\Operations\StateDuplicate.Controller.pas',
+  MNG0003BView in 'Views\Modules\Managment\State\MNG0003BView.pas' {FMNG0003BView};
 
 {$R *.res}
 

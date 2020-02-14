@@ -65,6 +65,7 @@ type
     procedure TmMainMenuTimer(Sender: TObject);
     procedure BtDistrictClick(Sender: TObject);
     procedure BtCountriesClick(Sender: TObject);
+    procedure BtStatesClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -95,6 +96,15 @@ begin
     .modulesFacadeView
      .ManagmentFactoryView
       .showProgramOfListing(tpMNG0001AView)
+      .&end;
+end;
+
+procedure TFMainView.BtStatesClick(Sender: TObject);
+begin
+  TFacadeView.New
+    .modulesFacadeView
+     .ManagmentFactoryView
+      .showProgramOfListing(tpMNG0003AView)
       .&end;
 end;
 

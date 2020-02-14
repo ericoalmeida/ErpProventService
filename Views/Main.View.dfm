@@ -1935,8 +1935,9 @@ object FMainView: TFMainView
     Height = 159
     ApplicationButton.Menu = ApMainMenu
     BarManager = BrManager
+    Style = rs2016
     ColorSchemeAccent = rcsaBlue
-    ColorSchemeName = 'Black'
+    ColorSchemeName = 'Office2007Blue'
     QuickAccessToolbar.Toolbar = BmAtalhos
     Contexts = <>
     TabOrder = 0
@@ -2632,6 +2633,7 @@ object FMainView: TFMainView
         1AB523199C5EB78BB501260830C6A43D304060083098C0503001CE251DC01AA0
         A4BDAC8C14B497FC771DD516031648FC9875A736747D0014B597D4A67600AEFD
         07D031680A30225D330000000049454E44AE426082}
+      OnClick = BtStatesClick
     end
     object BtCountries: TdxBarLargeButton
       Caption = 'Pa'#237'ses'

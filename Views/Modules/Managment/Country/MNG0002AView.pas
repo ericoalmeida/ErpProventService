@@ -13,7 +13,9 @@ uses
   cxGridLevel, cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid,
   cxTextEdit, cxLabel, Vcl.StdCtrls, cxButtons, RzLabel, dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel,
   Base.View.interf, TGERPAIS.Entity.Model,  ormbr.container.DataSet.interfaces,
-  ormbr.container.fdmemtable;
+  ormbr.container.fdmemtable, FireDAC.Stan.Async, FireDAC.DApt, dxSkinOffice2016Colorful,
+  dxSkinOffice2016Dark, dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Green,
+  dxSkinOffice2007Silver;
 
 type
   TFMNG0002AView = class(TFBaseListView, iBaseListView)
@@ -40,13 +42,13 @@ type
     { Public declarations }
     class function new: iBaseListView;
 
-    procedure insert;
-    procedure update;
-    procedure recover;
-    procedure delete;
-    procedure duplicate;
+    procedure insertRecord;
+    procedure updateRecord;
+    procedure showRecord;
+    procedure deleteRecord;
+    procedure duplicateRecord;
+
     procedure listRecords;
-    procedure totalRecords;
 
     procedure &end;
   end;
@@ -65,7 +67,7 @@ uses Facade.View, Types.Views;
 procedure TFMNG0002AView.BtDeleteClick(Sender: TObject);
 begin
   inherited;
-  delete;
+  deleteRecord;
   listRecords;
   totalRecords;
 end;
@@ -73,7 +75,7 @@ end;
 procedure TFMNG0002AView.BtDuplicateClick(Sender: TObject);
 begin
   inherited;
-  duplicate;
+  duplicateRecord;
   listRecords;
   totalRecords;
 end;
@@ -81,7 +83,7 @@ end;
 procedure TFMNG0002AView.BtInsertClick(Sender: TObject);
 begin
   inherited;
-  insert;
+  insertRecord;
   listRecords;
   totalRecords;
 end;
@@ -89,7 +91,7 @@ end;
 procedure TFMNG0002AView.BtShowClick(Sender: TObject);
 begin
   inherited;
-  recover;
+  showRecord;
   listRecords;
   totalRecords;
 end;
@@ -97,12 +99,12 @@ end;
 procedure TFMNG0002AView.BtUpdateClick(Sender: TObject);
 begin
   inherited;
-  update;
+  updateRecord;
   listRecords;
   totalRecords;
 end;
 
-procedure TFMNG0002AView.delete;
+procedure TFMNG0002AView.deleteRecord;
 begin
  TFacadeView.New
   .modulesFacadeView
@@ -113,7 +115,7 @@ begin
      .&end;
 end;
 
-procedure TFMNG0002AView.duplicate;
+procedure TFMNG0002AView.duplicateRecord;
 begin
  TFacadeView.New
   .modulesFacadeView
@@ -145,7 +147,7 @@ begin
   totalRecords;
 end;
 
-procedure TFMNG0002AView.insert;
+procedure TFMNG0002AView.insertRecord;
 begin
  TFacadeView.New
   .modulesFacadeView
@@ -165,7 +167,7 @@ begin
   Result := Self.Create(nil);
 end;
 
-procedure TFMNG0002AView.recover;
+procedure TFMNG0002AView.showRecord;
 begin
  TFacadeView.New
   .modulesFacadeView
@@ -176,22 +178,15 @@ begin
      .&end;
 end;
 
-procedure TFMNG0002AView.totalRecords;
-begin
-  FTotalRecords := DsData.DataSet.RecordCount;
-
-  LbTotalRegistros.Caption := Format('Mostrando de 1 até %d de %d registros',
-    [FTotalRecords, FTotalRecords]);
-end;
-
 procedure TFMNG0002AView.TxBuscarPropertiesChange(Sender: TObject);
 begin
   inherited;
+
   filterRecords;
   totalRecords;
 end;
 
-procedure TFMNG0002AView.update;
+procedure TFMNG0002AView.updateRecord;
 begin
  TFacadeView.New
   .modulesFacadeView

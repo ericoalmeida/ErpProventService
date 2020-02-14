@@ -34,7 +34,7 @@ implementation
 { TCountryController }
 
 uses Facade.Model, CountryInsert.Controller, CountryUpdate.Controller,
-  CountryDelete.Controller;
+  CountryDelete.Controller, CountryDuplicate.Controller;
 
 constructor TCountryController.Create;
 begin
@@ -66,7 +66,7 @@ end;
 
 function TCountryController.duplicate: iCountryDuplicateController;
 begin
-
+  Result := TCountryDuplicateController.New.countryModel(FCountryModel);
 end;
 
 function TCountryController.insert: iCountryInsertController;

@@ -12,7 +12,8 @@ uses
   Vcl.StdCtrls, cxButtons, RzLabel, dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel,
   Vcl.Mask, RzEdit,
   cxControls, cxContainer, cxEdit, cxLabel, Types.Controllers, Base.View.interf,
-  District.Controller.interf, cxTextEdit, cxMaskEdit, cxButtonEdit;
+  District.Controller.interf, cxTextEdit, cxMaskEdit, cxButtonEdit, dxSkinOffice2007Black,
+  dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Silver;
 
 type
   TFMNG0001BView = class(TFBaseRegisterView, iBaseRegisterView)

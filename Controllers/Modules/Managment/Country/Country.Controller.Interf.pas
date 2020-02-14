@@ -50,7 +50,8 @@ type
 
   iCountryDuplicateController = interface
     function countryModel(AValue: ICountryModel): iCountryDuplicateController;
-    function selectedRecord(AValue: TTGERPAIS): iCountryDuplicateController;
+
+    function description(AValue: string): iCountryDuplicateController;
 
     procedure save;
   end;

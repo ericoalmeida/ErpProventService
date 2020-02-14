@@ -2,7 +2,14 @@ unit Connection.Controller;
 
 interface
 
-uses Connection.Controller.interf, ormbr.Factory.Interfaces;
+uses Connection.Controller.interf, ormbr.Factory.Interfaces, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.FBDef,
+  FireDAC.VCLUI.Wait, FireDAC.Comp.UI, FireDAC.Phys.IBBase, FireDAC.Phys.FB,
+  Data.DB, FireDAC.Comp.Client, FireDAC.Stan.Param, FireDAC.DatS,
+  FireDAC.DApt.Intf, FireDAC.DApt,
+  FireDAC.Comp.DataSet;
 
 type
   TConnectionController = class(TInterfacedObject, iConnectionController)
@@ -14,6 +21,7 @@ type
     class function New: iConnectionController;
 
     function currentConnection: IDBConnection;
+    function currentFdConnection: TFDConnection;
   end;
 
 implementation
@@ -34,6 +42,20 @@ begin
                  .typeDatabase
                  )
             ).dbConnection;
+end;
+
+function TConnectionController.currentFdConnection: TFDConnection;
+begin
+ Result := TFacadeModel.New
+             .ConnectionFactoryModel
+             .connectionWithDatabase(
+               TTypesConnection(
+                TFacadeModel.New
+                 .SettingsFactoryModel
+                 .connection
+                 .typeDatabase
+                 )
+            ).fdConnection;
 end;
 
 constructor TConnectionController.Create;

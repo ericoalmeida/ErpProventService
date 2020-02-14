@@ -1,9 +1,14 @@
 inherited FMNG0003AView: TFMNG0003AView
   Caption = ''
+  ClientWidth = 474
+  OnShow = FormShow
+  ExplicitWidth = 480
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
+    Width = 472
     inherited PnHeader: TRzPanel
+      Width = 470
       inherited ImTitle: TImage
         Picture.Data = {
           0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000020
@@ -75,22 +80,80 @@ inherited FMNG0003AView: TFMNG0003AView
       end
     end
     inherited PnProgram: TRzPanel
+      Width = 470
       inherited LbProgram: TRzLabel
-        Width = 608
-        Height = 18
+        Width = 470
       end
     end
     inherited PnContainerBody: TRzPanel
+      Width = 470
+      inherited PnFooterBody: TRzPanel
+        Width = 470
+        inherited BtSair: TcxButton
+          Left = 360
+        end
+      end
       inherited PnContent: TRzPanel
+        Width = 468
         inherited PnGridHeader: TRzPanel
+          Width = 466
           inherited LbBuscar: TcxLabel
+            Left = 139
             Style.IsFontAssigned = True
+          end
+          inherited PnBuscar: TRzPanel
+            Left = 189
+            inherited TxBuscar: TcxTextEdit
+              Properties.OnChange = TxBuscarPropertiesChange
+            end
           end
         end
         inherited PnGridFooter: TRzPanel
+          Width = 466
           inherited LbTotalRegistros: TRzLabel
-            Width = 596
-            Height = 22
+            Width = 458
+          end
+        end
+        inherited PnGrid: TRzPanel
+          Width = 466
+          inherited DbDados: TcxGrid
+            Width = 464
+            inherited VwDados: TcxGridDBTableView
+              DataController.DataSource = DsData
+              object VwDadosESTADOID: TcxGridDBColumn
+                Caption = 'N'#186
+                DataBinding.FieldName = 'ESTADOID'
+                Width = 60
+              end
+              object VwDadosDESCRICAO: TcxGridDBColumn
+                Caption = 'Descri'#231#227'o'
+                DataBinding.FieldName = 'DESCRICAO'
+                Width = 450
+              end
+              object VwDadosPAISDESCRICAO: TcxGridDBColumn
+                Caption = 'Pa'#237's'
+                DataBinding.FieldName = 'PAISDESCRICAO'
+                Width = 200
+              end
+              object VwDadosDATACADASTRO: TcxGridDBColumn
+                Caption = 'Data Cadastro'
+                DataBinding.FieldName = 'DATACADASTRO'
+                Width = 100
+              end
+              object VwDadosDATAATUALIZACAO: TcxGridDBColumn
+                Caption = 'Data Atualiza'#231#227'o'
+                DataBinding.FieldName = 'DATAATUALIZACAO'
+                Width = 100
+              end
+            end
+          end
+        end
+      end
+      inherited PnHeaderButtons: TRzPanel
+        Width = 468
+        inherited PnDelete: TRzPanel
+          inherited BtDelete: TcxButton
+            ExplicitTop = -1
           end
         end
       end
@@ -98,5 +161,53 @@ inherited FMNG0003AView: TFMNG0003AView
   end
   inherited StGridStyles: TcxStyleRepository
     PixelsPerInch = 96
+  end
+  inherited DsData: TDataSource
+    DataSet = FdQData
+  end
+  inherited FdQData: TFDQuery
+    SQL.Strings = (
+      'select'
+      ''
+      'est.codigo,'
+      'est.estadoid,'
+      'est.descricao,'
+      'est.paisid,'
+      'pai.descricao as paisdescricao,'
+      'est.datacadastro,'
+      'est.dataatualizacao'
+      ''
+      'from'
+      ''
+      'tgerestado est'
+      'left join tgerpais pai on (pai.codigo = est.paisid)')
+    Left = 76
+    Top = 141
+    object FdQDataCODIGO: TStringField
+      FieldName = 'CODIGO'
+      Size = 64
+    end
+    object FdQDataESTADOID: TIntegerField
+      Alignment = taCenter
+      FieldName = 'ESTADOID'
+    end
+    object FdQDataDESCRICAO: TStringField
+      FieldName = 'DESCRICAO'
+      Size = 90
+    end
+    object FdQDataPAISID: TStringField
+      FieldName = 'PAISID'
+      Size = 64
+    end
+    object FdQDataPAISDESCRICAO: TStringField
+      FieldName = 'PAISDESCRICAO'
+      Size = 60
+    end
+    object FdQDataDATACADASTRO: TSQLTimeStampField
+      FieldName = 'DATACADASTRO'
+    end
+    object FdQDataDATAATUALIZACAO: TSQLTimeStampField
+      FieldName = 'DATAATUALIZACAO'
+    end
   end
 end
