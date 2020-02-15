@@ -7,8 +7,10 @@ inherited FMNG0003AView: TFMNG0003AView
   TextHeight = 15
   inherited PnContainer: TRzPanel
     Width = 472
+    ExplicitWidth = 472
     inherited PnHeader: TRzPanel
       Width = 470
+      ExplicitWidth = 470
       inherited ImTitle: TImage
         Picture.Data = {
           0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000020
@@ -81,28 +83,36 @@ inherited FMNG0003AView: TFMNG0003AView
     end
     inherited PnProgram: TRzPanel
       Width = 470
+      ExplicitWidth = 470
       inherited LbProgram: TRzLabel
         Width = 470
       end
     end
     inherited PnContainerBody: TRzPanel
       Width = 470
+      ExplicitWidth = 470
       inherited PnFooterBody: TRzPanel
         Width = 470
+        ExplicitWidth = 470
         inherited BtSair: TcxButton
           Left = 360
+          ExplicitLeft = 360
         end
       end
       inherited PnContent: TRzPanel
         Width = 468
+        ExplicitWidth = 468
         inherited PnGridHeader: TRzPanel
           Width = 466
+          ExplicitWidth = 466
           inherited LbBuscar: TcxLabel
             Left = 139
             Style.IsFontAssigned = True
+            ExplicitLeft = 139
           end
           inherited PnBuscar: TRzPanel
             Left = 189
+            ExplicitLeft = 189
             inherited TxBuscar: TcxTextEdit
               Properties.OnChange = TxBuscarPropertiesChange
             end
@@ -110,14 +120,17 @@ inherited FMNG0003AView: TFMNG0003AView
         end
         inherited PnGridFooter: TRzPanel
           Width = 466
+          ExplicitWidth = 466
           inherited LbTotalRegistros: TRzLabel
             Width = 458
           end
         end
         inherited PnGrid: TRzPanel
           Width = 466
+          ExplicitWidth = 466
           inherited DbDados: TcxGrid
             Width = 464
+            ExplicitWidth = 464
             inherited VwDados: TcxGridDBTableView
               DataController.DataSource = DsData
               object VwDadosESTADOID: TcxGridDBColumn
@@ -151,11 +164,7 @@ inherited FMNG0003AView: TFMNG0003AView
       end
       inherited PnHeaderButtons: TRzPanel
         Width = 468
-        inherited PnDelete: TRzPanel
-          inherited BtDelete: TcxButton
-            ExplicitTop = -1
-          end
-        end
+        ExplicitWidth = 468
       end
     end
   end

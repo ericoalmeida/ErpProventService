@@ -10,7 +10,7 @@ uses
   dxSkinDevExpressStyle,
   Vcl.StdCtrls, cxButtons, RzLabel, dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel,
   Types.Controllers, dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Green,
-  dxSkinOffice2007Silver;
+  dxSkinOffice2007Silver, System.Actions, Vcl.ActnList;
 
 type
   TFBaseRegisterView = class(TFBaseView)
@@ -18,6 +18,7 @@ type
     PnContent: TRzPanel;
     RzLabel1: TRzLabel;
     LbOperation: TRzLabel;
+    AcSearchRecord: TActionList;
     procedure BtConfirmarClick(Sender: TObject);
   private
     { Private declarations }

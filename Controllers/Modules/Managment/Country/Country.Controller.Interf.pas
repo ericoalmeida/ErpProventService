@@ -12,13 +12,14 @@ type
 
   iCountryController = interface
     function find(AValue: string): iCountryController;
-    // function findById(AValue: Integer): iCountryController;
+    function findById(AValue: string): iCountryController;
 
     function insert: iCountryInsertController;
     function update: iCountryUpdateController;
     function delete: iCountryDeleteController;
     function duplicate: iCountryDuplicateController;
 
+    function codigo: string;
     function countryId: string;
     function description: string;
     function createdDate: string;

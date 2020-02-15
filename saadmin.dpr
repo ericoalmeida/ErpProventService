@@ -80,7 +80,8 @@ uses
   StateUpdate.Controller in 'Controllers\Modules\Managment\State\Operations\StateUpdate.Controller.pas',
   StateDelete.Controller in 'Controllers\Modules\Managment\State\Operations\StateDelete.Controller.pas',
   StateDuplicate.Controller in 'Controllers\Modules\Managment\State\Operations\StateDuplicate.Controller.pas',
-  MNG0003BView in 'Views\Modules\Managment\State\MNG0003BView.pas' {FMNG0003BView};
+  MNG0003BView in 'Views\Modules\Managment\State\MNG0003BView.pas' {FMNG0003BView},
+  MNG0002CView in 'Views\Modules\Managment\Country\MNG0002CView.pas' {FMNG0002CView};
 
 {$R *.res}
 

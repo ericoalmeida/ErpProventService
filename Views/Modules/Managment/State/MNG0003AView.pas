@@ -155,6 +155,7 @@ end;
 
 procedure TFMNG0003AView.listRecords;
 begin
+  FdQData.Close();
   FdQData.Open();
 end;
 

@@ -12,12 +12,6 @@ inherited FBaseSearchView: TFBaseSearchView
         ExplicitWidth = 138
       end
     end
-    inherited PnProgram: TRzPanel
-      inherited LbProgram: TRzLabel
-        Width = 608
-        Height = 18
-      end
-    end
     inherited PnContainerBody: TRzPanel
       object PnContent: TRzPanel
         AlignWithMargins = True
@@ -82,7 +76,9 @@ inherited FBaseSearchView: TFBaseSearchView
               Left = 1
               Top = 1
               Align = alClient
+              Properties.CharCase = ecUpperCase
               Style.BorderStyle = ebsNone
+              StyleFocused.Color = 16577771
               TabOrder = 0
               Width = 271
             end
@@ -154,14 +150,26 @@ inherited FBaseSearchView: TFBaseSearchView
             LookAndFeel.NativeStyle = False
             object VwDados: TcxGridDBTableView
               Navigator.Buttons.CustomButtons = <>
+              FilterBox.Position = fpTop
               DataController.Summary.DefaultGroupSummaryItems = <>
               DataController.Summary.FooterSummaryItems = <>
               DataController.Summary.SummaryGroups = <>
+              OptionsCustomize.ColumnMoving = False
+              OptionsData.CancelOnExit = False
+              OptionsData.Deleting = False
+              OptionsData.DeletingConfirmation = False
+              OptionsData.Editing = False
+              OptionsData.Inserting = False
+              OptionsSelection.CellSelect = False
               OptionsView.NoDataToDisplayInfoText = '<Sem dados para exibir>'
               OptionsView.CellAutoHeight = True
               OptionsView.ColumnAutoWidth = True
               OptionsView.GroupByBox = False
+              Styles.ContentEven = stContentEven
+              Styles.ContentOdd = stContentOdd
               Styles.Header = StHeader
+              Styles.Inactive = StInactive
+              Styles.Selection = StSelection
             end
             object LvDados: TcxGridLevel
               GridView = VwDados
@@ -171,7 +179,7 @@ inherited FBaseSearchView: TFBaseSearchView
       end
     end
   end
-  object FdDados: TFDMemTable
+  object FdData: TFDMemTable
     FetchOptions.AssignedValues = [evMode]
     FetchOptions.Mode = fmAll
     ResourceOptions.AssignedValues = [rvSilentMode]
@@ -179,13 +187,17 @@ inherited FBaseSearchView: TFBaseSearchView
     UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
     UpdateOptions.CheckRequired = False
     UpdateOptions.AutoCommitUpdates = True
-    Left = 116
-    Top = 140
+    Left = 68
+    Top = 156
   end
-  object DsDados: TDataSource
-    DataSet = FdDados
-    Left = 156
-    Top = 140
+  object DsData: TDataSource
+    DataSet = FdData
+    Left = 116
+    Top = 156
+  end
+  object FdQData: TFDQuery
+    Left = 44
+    Top = 109
   end
   object StGridStyles: TcxStyleRepository
     Left = 144
@@ -200,6 +212,44 @@ inherited FBaseSearchView: TFBaseSearchView
       Font.Name = 'Open Sans'
       Font.Style = [fsBold]
       TextColor = 5592405
+    end
+    object stContentOdd: TcxStyle
+      AssignedValues = [svColor, svFont]
+      Color = 16382457
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Open Sans'
+      Font.Style = []
+    end
+    object stContentEven: TcxStyle
+      AssignedValues = [svColor, svFont]
+      Color = clWhite
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Open Sans'
+      Font.Style = []
+    end
+    object StInactive: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 16315375
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Open Sans SemiBold'
+      Font.Style = [fsBold]
+      TextColor = clBlack
+    end
+    object StSelection: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 16315375
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Open Sans SemiBold'
+      Font.Style = [fsBold]
+      TextColor = clBlack
     end
   end
 end

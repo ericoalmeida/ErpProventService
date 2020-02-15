@@ -10,8 +10,11 @@ inherited FMNG0003BView: TFMNG0003BView
   inherited PnContainer: TRzPanel
     Width = 485
     Height = 278
+    ExplicitWidth = 485
+    ExplicitHeight = 278
     inherited PnHeader: TRzPanel
       Width = 483
+      ExplicitWidth = 483
       inherited LbTitle: TRzLabel
         Width = 62
         Height = 26
@@ -21,11 +24,14 @@ inherited FMNG0003BView: TFMNG0003BView
       inherited LbOperation: TRzLabel
         Left = 399
         Height = 26
+        ExplicitLeft = 399
       end
     end
     inherited PnProgram: TRzPanel
       Top = 259
       Width = 483
+      ExplicitTop = 259
+      ExplicitWidth = 483
       inherited LbProgram: TRzLabel
         Width = 483
         Height = 18
@@ -34,22 +40,31 @@ inherited FMNG0003BView: TFMNG0003BView
     inherited PnContainerBody: TRzPanel
       Width = 483
       Height = 218
+      ExplicitWidth = 483
+      ExplicitHeight = 218
       inherited PnFooterBody: TRzPanel
         Top = 178
         Width = 483
+        ExplicitTop = 178
+        ExplicitWidth = 483
         inherited BtSair: TcxButton
           Left = 373
+          ExplicitLeft = 373
         end
         inherited BtConfirmar: TcxButton
           Left = 265
+          ExplicitLeft = 265
         end
       end
       inherited PnContent: TRzPanel
         Width = 479
         Height = 174
+        ExplicitWidth = 479
+        ExplicitHeight = 174
         inherited RzLabel1: TRzLabel
           Top = 161
           Width = 479
+          ExplicitTop = 161
         end
         object TxUpdatedDate: TcxTextEdit
           Left = 91
@@ -70,7 +85,7 @@ inherited FMNG0003BView: TFMNG0003BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 0
+          TabOrder = 2
           Width = 214
         end
         object cxLabel2: TcxLabel
@@ -104,7 +119,7 @@ inherited FMNG0003BView: TFMNG0003BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 2
+          TabOrder = 4
           Width = 214
         end
         object cxLabel1: TcxLabel
@@ -138,7 +153,7 @@ inherited FMNG0003BView: TFMNG0003BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 4
+          TabOrder = 6
           Width = 276
         end
         object TxCountryId: TcxButtonEdit
@@ -146,6 +161,7 @@ inherited FMNG0003BView: TFMNG0003BView
           Top = 49
           Properties.Buttons = <
             item
+              Action = acFind
               Default = True
               Kind = bkEllipsis
             end>
@@ -163,12 +179,12 @@ inherited FMNG0003BView: TFMNG0003BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 5
+          TabOrder = 1
           Width = 54
         end
         object cxLabel3: TcxLabel
-          Left = 41
-          Top = 51
+          Left = 56
+          Top = 50
           Caption = 'Pa'#237's:'
           ParentFont = False
           Style.Font.Charset = ANSI_CHARSET
@@ -197,7 +213,7 @@ inherited FMNG0003BView: TFMNG0003BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 7
+          TabOrder = 0
           Width = 333
         end
         object LbDescription: TcxLabel
@@ -247,6 +263,14 @@ inherited FMNG0003BView: TFMNG0003BView
           Style.IsFontAssigned = True
         end
       end
+    end
+  end
+  inherited AcSearchRecord: TActionList
+    Left = 348
+    Top = 132
+    object acFind: TAction
+      Caption = 'acFind'
+      OnExecute = acFindExecute
     end
   end
 end

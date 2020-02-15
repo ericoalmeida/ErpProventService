@@ -23,7 +23,8 @@ uses
   Vcl.ExtCtrls, RzPanel, ormbr.container.DataSet.interfaces,
   ormbr.container.fdmemtable,
   TGERBAIRRO.Entity.Model, Base.View.interf, FireDAC.Stan.Async, FireDAC.DApt,
-  dxSkinOffice2016Colorful, dxSkinOffice2016Dark;
+  dxSkinOffice2016Colorful, dxSkinOffice2016Dark, dxSkinOffice2007Black, dxSkinOffice2007Blue,
+  dxSkinOffice2007Green, dxSkinOffice2007Silver;
 
 type
   TFMNG0001AView = class(TFBaseListView, iBaseListView)

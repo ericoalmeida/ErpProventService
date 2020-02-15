@@ -10,6 +10,7 @@ inherited FBaseRegisterView: TFBaseRegisterView
         AlignWithMargins = True
         Top = 6
         Width = 146
+        Height = 26
         Margins.Top = 5
         Margins.Bottom = 7
         Align = alLeft
@@ -22,7 +23,7 @@ inherited FBaseRegisterView: TFBaseRegisterView
         Left = 524
         Top = 6
         Width = 80
-        Height = 22
+        Height = 26
         Margins.Top = 5
         Margins.Bottom = 7
         Align = alRight
@@ -33,12 +34,13 @@ inherited FBaseRegisterView: TFBaseRegisterView
         Font.Name = 'Open Sans SemiBold'
         Font.Style = [fsBold, fsItalic]
         ParentFont = False
+        ExplicitHeight = 22
       end
     end
     inherited PnProgram: TRzPanel
       inherited LbProgram: TRzLabel
-        Width = 60
-        Height = 15
+        Width = 608
+        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
@@ -115,7 +117,7 @@ inherited FBaseRegisterView: TFBaseRegisterView
         object RzLabel1: TRzLabel
           Left = 0
           Top = 180
-          Width = 170
+          Width = 604
           Height = 13
           Align = alBottom
           Caption = 'Os campos em NEGRITO s'#227'o obrigatorios'
@@ -125,8 +127,13 @@ inherited FBaseRegisterView: TFBaseRegisterView
           Font.Name = 'Open Sans'
           Font.Style = []
           ParentFont = False
+          ExplicitWidth = 170
         end
       end
     end
+  end
+  object AcSearchRecord: TActionList
+    Left = 36
+    Top = 124
   end
 end

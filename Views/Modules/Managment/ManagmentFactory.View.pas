@@ -16,6 +16,7 @@ type
     function showProgramOfListing(AValue: TTypeListingPrograms): iBaseListView;
     function showProgramOfRegister(AValue: TTYpeRegisterPrograms)
       : iBaseRegisterView;
+    function showProgramOfSearch(AValue: TTypeSearchPrograms): IBaseSearchView;
 
   end;
 
@@ -24,7 +25,7 @@ implementation
 { TManagmentFactoryView }
 
 uses MNG0001AView, MNG0001BView, MNG0002AView, MNG0002BView, MNG0003AView,
-  MNG0003BView;
+  MNG0003BView, MNG0002CView;
 
 constructor TManagmentFactoryView.Create;
 begin
@@ -69,6 +70,16 @@ begin
 
     trMNG0003BView:
       Result := TFMNG0003BView.New;
+  end;
+end;
+
+function TManagmentFactoryView.showProgramOfSearch(AValue: TTypeSearchPrograms)
+  : IBaseSearchView;
+begin
+  case AValue of
+    tsMNG0002CView:
+      Result := TFMNG0002CView.New;
+
   end;
 end;
 

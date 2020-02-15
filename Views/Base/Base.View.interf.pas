@@ -28,17 +28,25 @@ type
     function operation(AValue: TTypeOperation): iBaseRegisterView;
     function selectedRecord(AValue: string): iBaseRegisterView;
 
-    procedure insert;
-    procedure update;
-    procedure recover;
-    procedure delete;
-    procedure duplicate;
+    procedure insertRecord;
+    procedure updateRecord;
+    procedure deleteRecord;
+    procedure duplicateRecord;
 
     procedure save;
     procedure showDataOnScreen;
     procedure disableFields;
 
     procedure &end;
+  end;
+
+  IBaseSearchView = interface
+    ['{98498B58-5550-4216-82AA-EFBE547EE8AD}']
+    function showSearch:IBaseSearchView;
+
+    procedure listRecords;
+
+    function &end: string;
   end;
 
 implementation

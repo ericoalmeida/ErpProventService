@@ -21,9 +21,9 @@ object FMainView: TFMainView
   TextHeight = 13
   object ImLogo: TImage
     Left = 0
-    Top = 159
+    Top = 158
     Width = 589
-    Height = 217
+    Height = 218
     Align = alClient
     Center = True
     Picture.Data = {
@@ -1932,12 +1932,12 @@ object FMainView: TFMainView
     Left = 0
     Top = 0
     Width = 589
-    Height = 159
+    Height = 158
     ApplicationButton.Menu = ApMainMenu
     BarManager = BrManager
     Style = rs2016
     ColorSchemeAccent = rcsaBlue
-    ColorSchemeName = 'Office2007Blue'
+    ColorSchemeName = 'Office2007Black'
     QuickAccessToolbar.Toolbar = BmAtalhos
     Contexts = <>
     TabOrder = 0

@@ -13,7 +13,7 @@ uses
   Vcl.Mask, RzEdit,
   cxControls, cxContainer, cxEdit, cxLabel, Types.Controllers, Base.View.interf,
   District.Controller.interf, cxTextEdit, cxMaskEdit, cxButtonEdit, dxSkinOffice2007Black,
-  dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Silver;
+  dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Silver, System.Actions, Vcl.ActnList;
 
 type
   TFMNG0001BView = class(TFBaseRegisterView, iBaseRegisterView)
@@ -38,11 +38,10 @@ type
     function operation(AValue: TTypeOperation): iBaseRegisterView;
     function selectedRecord(AValue: string): iBaseRegisterView;
 
-    procedure insert;
-    procedure update;
-    procedure recover;
-    procedure delete;
-    procedure duplicate;
+    procedure insertRecord;
+    procedure updateRecord;
+    procedure deleteRecord;
+    procedure duplicateRecord;
 
     procedure save;
     procedure showDataOnScreen;
@@ -67,7 +66,7 @@ begin
   inherited;
 end;
 
-procedure TFMNG0001BView.delete;
+procedure TFMNG0001BView.deleteRecord;
 begin
   FDistrictController
    .delete
@@ -81,7 +80,7 @@ begin
   BtConfirmar.Visible   := not(FOperation = toShow);
 end;
 
-procedure TFMNG0001BView.duplicate;
+procedure TFMNG0001BView.duplicateRecord;
 begin
   FDistrictController
    .duplicate
@@ -105,7 +104,7 @@ begin
     ManagmentFactoryController.districtController;
 end;
 
-procedure TFMNG0001BView.insert;
+procedure TFMNG0001BView.insertRecord;
 begin
   FDistrictController
    .insert
@@ -124,11 +123,6 @@ begin
   FOperation := AValue;
 end;
 
-procedure TFMNG0001BView.recover;
-begin
-
-end;
-
 function TFMNG0001BView.selectedRecord(AValue: string): iBaseRegisterView;
 begin
   Result := Self;
@@ -139,16 +133,16 @@ procedure TFMNG0001BView.save;
 begin
   case FOperation of
     toInsert:
-      insert;
+      insertRecord;
 
     toUpdate:
-      update;
+      updateRecord;
 
     toDelete:
-      delete;
+      deleteRecord;
 
     toDuplicate:
-      duplicate;
+      duplicateRecord;
   end;
 end;
 
@@ -166,7 +160,7 @@ begin
   TxUpdatedDate.Text := FDistrictController.updatedDate;
 end;
 
-procedure TFMNG0001BView.update;
+procedure TFMNG0001BView.updateRecord;
 begin
   FDistrictController
    .update

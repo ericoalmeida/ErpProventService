@@ -13,7 +13,7 @@ uses
   Base.View.interf, Types.Controllers, cxControls, cxContainer, cxEdit,
   cxTextEdit, cxLabel,
   Country.Controller.interf, dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Green,
-  dxSkinOffice2007Silver;
+  dxSkinOffice2007Silver, System.Actions, Vcl.ActnList;
 
 type
   TFMNG0002BView = class(TFBaseRegisterView, iBaseRegisterView)
@@ -37,11 +37,10 @@ type
     function operation(AValue: TTypeOperation): iBaseRegisterView;
     function selectedRecord(AValue: string): iBaseRegisterView;
 
-    procedure insert;
-    procedure update;
-    procedure recover;
-    procedure delete;
-    procedure duplicate;
+    procedure insertRecord;
+    procedure updateRecord;
+    procedure deleteRecord;
+    procedure duplicateRecord;
 
     procedure save;
     procedure showDataOnScreen;
@@ -66,7 +65,7 @@ begin
   inherited;
 end;
 
-procedure TFMNG0002BView.delete;
+procedure TFMNG0002BView.deleteRecord;
 begin
   FCountryController
    .delete
@@ -79,7 +78,7 @@ begin
   BtConfirmar.Visible := not(FOperation = toShow);
 end;
 
-procedure TFMNG0002BView.duplicate;
+procedure TFMNG0002BView.duplicateRecord;
 begin
   FCountryController
    .duplicate
@@ -103,7 +102,7 @@ begin
     ManagmentFactoryController.countryController
 end;
 
-procedure TFMNG0002BView.insert;
+procedure TFMNG0002BView.insertRecord;
 begin
   FCountryController
    .insert
@@ -122,25 +121,20 @@ begin
   FOperation := AValue;
 end;
 
-procedure TFMNG0002BView.recover;
-begin
-
-end;
-
 procedure TFMNG0002BView.save;
 begin
   case FOperation of
     toInsert:
-      insert;
+      insertRecord;
 
     toUpdate:
-      update;
+      updateRecord;
 
     toDelete:
-      delete;
+      deleteRecord;
 
     toDuplicate:
-      duplicate;
+      duplicateRecord;
   end;
 end;
 
@@ -163,7 +157,7 @@ begin
   TxUpdatedDate.Text := FCountryController.updatedDate;
 end;
 
-procedure TFMNG0002BView.update;
+procedure TFMNG0002BView.updateRecord;
 begin
   FCountryController
    .update

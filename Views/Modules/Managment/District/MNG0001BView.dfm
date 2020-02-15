@@ -85,13 +85,11 @@ inherited FMNG0001BView: TFMNG0001BView
       end
       inherited LbTitle: TRzLabel
         Width = 58
-        Height = 26
         Caption = 'Bairros'
         ExplicitWidth = 58
       end
       inherited LbOperation: TRzLabel
         Left = 416
-        Height = 26
         ExplicitLeft = 416
       end
     end
@@ -100,10 +98,6 @@ inherited FMNG0001BView: TFMNG0001BView
       Width = 500
       ExplicitTop = 248
       ExplicitWidth = 500
-      inherited LbProgram: TRzLabel
-        Width = 500
-        Height = 18
-      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 500

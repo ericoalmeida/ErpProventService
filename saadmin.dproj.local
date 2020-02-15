@@ -5,15 +5,15 @@
     <Transaction>2019/10/30 15:29:50.000.916,=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2020/01/16 20:26:41.000.133,=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2020/01/31 14:55:42.000.392,=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2020/01/31 14:56:17.000.140,C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Projetos\ERGServicos\Views\Main.View.pas</Transaction>
     <Transaction>2020/01/31 14:56:17.000.140,C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Projetos\ERGServicos\Views\Main.View.dfm</Transaction>
+    <Transaction>2020/01/31 14:56:17.000.140,C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Projetos\ERGServicos\Views\Main.View.pas</Transaction>
     <Transaction>2020/01/31 14:56:54.000.760,C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Projetos\ERGServicos\saadmin.dproj</Transaction>
     <Transaction>2020/02/07 21:22:54.000.013,=C:\Projetos\ERGServicos\Unit2.pas</Transaction>
     <Transaction>2020/02/07 21:23:19.000.059,C:\Projetos\ERGServicos\Unit2.pas=C:\Projetos\ERGServicos\Views\Base\Base.View.pas</Transaction>
     <Transaction>2020/02/07 21:23:19.000.059,C:\Projetos\ERGServicos\Unit2.dfm=C:\Projetos\ERGServicos\Views\Base\Base.View.dfm</Transaction>
     <Transaction>2020/02/08 06:51:45.000.264,=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
-    <Transaction>2020/02/08 06:52:18.000.516,C:\Projetos\ERGServicos\Unit1.pas=C:\Projetos\ERGServicos\Views\Base\BaseListagem.View.pas</Transaction>
     <Transaction>2020/02/08 06:52:18.000.516,C:\Projetos\ERGServicos\Unit1.dfm=C:\Projetos\ERGServicos\Views\Base\BaseListagem.View.dfm</Transaction>
+    <Transaction>2020/02/08 06:52:18.000.516,C:\Projetos\ERGServicos\Unit1.pas=C:\Projetos\ERGServicos\Views\Base\BaseListagem.View.pas</Transaction>
     <Transaction>2020/02/08 18:05:28.000.695,=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
     <Transaction>2020/02/08 18:05:57.000.886,C:\Projetos\ERGServicos\Unit1.dfm=C:\Projetos\ERGServicos\Views\Base\BaseCadastro.View.dfm</Transaction>
     <Transaction>2020/02/08 18:05:57.000.886,C:\Projetos\ERGServicos\Unit1.pas=C:\Projetos\ERGServicos\Views\Base\BaseCadastro.View.pas</Transaction>
@@ -24,18 +24,18 @@
     <Transaction>2020/02/08 18:51:04.000.278,C:\Projetos\ERGServicos\Unit1.pas=C:\Projetos\ERGServicos\Views\Base\BasePesquisa.View.pas</Transaction>
     <Transaction>2020/02/08 18:51:04.000.278,C:\Projetos\ERGServicos\Unit1.dfm=C:\Projetos\ERGServicos\Views\Base\BasePesquisa.View.dfm</Transaction>
     <Transaction>2020/02/09 15:14:37.000.577,=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
-    <Transaction>2020/02/09 15:15:20.000.385,C:\Projetos\ERGServicos\Views\Base\BaseRelatorio.View.pas=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
     <Transaction>2020/02/09 15:15:20.000.385,C:\Projetos\ERGServicos\Views\Base\BaseRelatorio.View.dfm=C:\Projetos\ERGServicos\Unit1.dfm</Transaction>
-    <Transaction>2020/02/10 06:21:40.000.818,C:\Projetos\ERGServicos\Views\Base\BaseListagem.View.pas=C:\Projetos\ERGServicos\Views\Base\BaseList.View.pas</Transaction>
+    <Transaction>2020/02/09 15:15:20.000.385,C:\Projetos\ERGServicos\Views\Base\BaseRelatorio.View.pas=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
     <Transaction>2020/02/10 06:21:40.000.818,C:\Projetos\ERGServicos\Views\Base\BaseListagem.View.dfm=C:\Projetos\ERGServicos\Views\Base\BaseList.View.dfm</Transaction>
-    <Transaction>2020/02/10 06:22:48.000.270,C:\Projetos\ERGServicos\Views\Base\BaseCadastro.View.dfm=C:\Projetos\ERGServicos\Views\Base\BaseRegister.View.dfm</Transaction>
+    <Transaction>2020/02/10 06:21:40.000.818,C:\Projetos\ERGServicos\Views\Base\BaseListagem.View.pas=C:\Projetos\ERGServicos\Views\Base\BaseList.View.pas</Transaction>
     <Transaction>2020/02/10 06:22:48.000.270,C:\Projetos\ERGServicos\Views\Base\BaseCadastro.View.pas=C:\Projetos\ERGServicos\Views\Base\BaseRegister.View.pas</Transaction>
-    <Transaction>2020/02/10 06:24:14.000.730,C:\Projetos\ERGServicos\Views\Base\BaseMensagem.View.pas=C:\Projetos\ERGServicos\Views\Base\BaseMessage.View.pas</Transaction>
+    <Transaction>2020/02/10 06:22:48.000.270,C:\Projetos\ERGServicos\Views\Base\BaseCadastro.View.dfm=C:\Projetos\ERGServicos\Views\Base\BaseRegister.View.dfm</Transaction>
     <Transaction>2020/02/10 06:24:14.000.730,C:\Projetos\ERGServicos\Views\Base\BaseMensagem.View.dfm=C:\Projetos\ERGServicos\Views\Base\BaseMessage.View.dfm</Transaction>
-    <Transaction>2020/02/10 06:26:30.000.271,C:\Projetos\ERGServicos\Views\Base\BasePesquisa.View.pas=C:\Projetos\ERGServicos\Views\Base\BaseSearch.View.pas</Transaction>
+    <Transaction>2020/02/10 06:24:14.000.730,C:\Projetos\ERGServicos\Views\Base\BaseMensagem.View.pas=C:\Projetos\ERGServicos\Views\Base\BaseMessage.View.pas</Transaction>
     <Transaction>2020/02/10 06:26:30.000.271,C:\Projetos\ERGServicos\Views\Base\BasePesquisa.View.dfm=C:\Projetos\ERGServicos\Views\Base\BaseSearch.View.dfm</Transaction>
-    <Transaction>2020/02/10 06:29:11.000.694,C:\Projetos\ERGServicos\Views\Base\BaseRelatorio.View.pas=C:\Projetos\ERGServicos\Views\Base\BaseReport.View.pas</Transaction>
+    <Transaction>2020/02/10 06:26:30.000.271,C:\Projetos\ERGServicos\Views\Base\BasePesquisa.View.pas=C:\Projetos\ERGServicos\Views\Base\BaseSearch.View.pas</Transaction>
     <Transaction>2020/02/10 06:29:11.000.694,C:\Projetos\ERGServicos\Views\Base\BaseRelatorio.View.dfm=C:\Projetos\ERGServicos\Views\Base\BaseReport.View.dfm</Transaction>
+    <Transaction>2020/02/10 06:29:11.000.694,C:\Projetos\ERGServicos\Views\Base\BaseRelatorio.View.pas=C:\Projetos\ERGServicos\Views\Base\BaseReport.View.pas</Transaction>
     <Transaction>2020/02/10 07:01:43.000.917,=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
     <Transaction>2020/02/10 07:03:09.000.536,C:\Projetos\ERGServicos\Unit1.pas=C:\Projetos\ERGServicos\Views\Messages\MES0001INF.pas</Transaction>
     <Transaction>2020/02/10 07:03:09.000.536,C:\Projetos\ERGServicos\Unit1.dfm=C:\Projetos\ERGServicos\Views\Messages\MES0001INF.dfm</Transaction>
@@ -60,8 +60,8 @@
     <Transaction>2020/02/10 07:46:58.000.798,C:\Projetos\ERGServicos\Views\Messages\MES0001.View.dfm=C:\Projetos\ERGServicos\Views\Messages\MSG0001.View.dfm</Transaction>
     <Transaction>2020/02/10 07:47:07.000.028,C:\Projetos\ERGServicos\Views\Messages\MES0002.View.pas=C:\Projetos\ERGServicos\Views\Messages\MSG0002.View.pas</Transaction>
     <Transaction>2020/02/10 07:47:07.000.028,C:\Projetos\ERGServicos\Views\Messages\MES0002.View.dfm=C:\Projetos\ERGServicos\Views\Messages\MSG0002.View.dfm</Transaction>
-    <Transaction>2020/02/10 07:47:12.000.573,C:\Projetos\ERGServicos\Views\Messages\MES0003.View.dfm=C:\Projetos\ERGServicos\Views\Messages\MSG0003.View.dfm</Transaction>
     <Transaction>2020/02/10 07:47:12.000.573,C:\Projetos\ERGServicos\Views\Messages\MES0003.View.pas=C:\Projetos\ERGServicos\Views\Messages\MSG0003.View.pas</Transaction>
+    <Transaction>2020/02/10 07:47:12.000.573,C:\Projetos\ERGServicos\Views\Messages\MES0003.View.dfm=C:\Projetos\ERGServicos\Views\Messages\MSG0003.View.dfm</Transaction>
     <Transaction>2020/02/10 07:47:17.000.897,C:\Projetos\ERGServicos\Views\Messages\MES0004.View.dfm=C:\Projetos\ERGServicos\Views\Messages\MSG0004.View.dfm</Transaction>
     <Transaction>2020/02/10 07:47:17.000.897,C:\Projetos\ERGServicos\Views\Messages\MES0004.View.pas=C:\Projetos\ERGServicos\Views\Messages\MSG0004.View.pas</Transaction>
     <Transaction>2020/02/10 07:50:24.000.065,=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
@@ -151,8 +151,8 @@
     <Transaction>2020/02/12 08:58:58.000.438,=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
     <Transaction>2020/02/12 08:59:16.000.052,C:\Projetos\ERGServicos\Unit1.pas=C:\Projetos\ERGServicos\Controllers\Modules\ModulesFacade.Controller.pas</Transaction>
     <Transaction>2020/02/12 09:12:15.000.261,=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
-    <Transaction>2020/02/12 09:14:29.000.823,C:\Projetos\ERGServicos\Unit1.pas=C:\Projetos\ERGServicos\Views\Modules\Managment\District\MNG0001AView.pas</Transaction>
     <Transaction>2020/02/12 09:14:29.000.823,C:\Projetos\ERGServicos\Unit1.dfm=C:\Projetos\ERGServicos\Views\Modules\Managment\District\MNG0001AView.dfm</Transaction>
+    <Transaction>2020/02/12 09:14:29.000.823,C:\Projetos\ERGServicos\Unit1.pas=C:\Projetos\ERGServicos\Views\Modules\Managment\District\MNG0001AView.pas</Transaction>
     <Transaction>2020/02/12 11:00:00.000.121,=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
     <Transaction>2020/02/12 11:01:03.000.229,C:\Projetos\ERGServicos\Unit1.pas=C:\Projetos\ERGServicos\Views\Modules\Managment\ManagmentFactory.View.Interf.pas</Transaction>
     <Transaction>2020/02/12 11:31:37.000.294,=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
@@ -183,8 +183,8 @@
     <Transaction>2020/02/12 20:27:41.000.799,=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
     <Transaction>2020/02/12 20:28:26.000.603,C:\Projetos\ERGServicos\Controllers\Modules\Managment\Country\Operations\CountryInsert.Controller.pas=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
     <Transaction>2020/02/13 07:07:38.000.405,=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
-    <Transaction>2020/02/13 07:08:31.000.172,C:\Projetos\ERGServicos\Views\Modules\Managment\City\MNG0002AView.dfm=C:\Projetos\ERGServicos\Unit1.dfm</Transaction>
     <Transaction>2020/02/13 07:08:31.000.172,C:\Projetos\ERGServicos\Views\Modules\Managment\City\MNG0002AView.pas=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
+    <Transaction>2020/02/13 07:08:31.000.172,C:\Projetos\ERGServicos\Views\Modules\Managment\City\MNG0002AView.dfm=C:\Projetos\ERGServicos\Unit1.dfm</Transaction>
     <Transaction>2020/02/13 07:14:02.000.870,C:\Projetos\ERGServicos\Views\Modules\Managment\Country\MNG0002AView.dfm=C:\Projetos\ERGServicos\Views\Modules\Managment\City\MNG0002AView.dfm</Transaction>
     <Transaction>2020/02/13 07:14:02.000.870,C:\Projetos\ERGServicos\Views\Modules\Managment\Country\MNG0002AView.pas=C:\Projetos\ERGServicos\Views\Modules\Managment\City\MNG0002AView.pas</Transaction>
     <Transaction>2020/02/13 07:16:16.000.037,=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
@@ -192,8 +192,8 @@
     <Transaction>2020/02/13 07:16:54.000.274,C:\Projetos\ERGServicos\Views\Modules\Managment\State\MNG0003AView.pas=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
     <Transaction>2020/02/13 07:19:52.000.603,C:\Projetos\ERGServicos\Views\Modules\Managment\State\MNG0003AView.pas=</Transaction>
     <Transaction>2020/02/13 07:20:12.000.796,=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
-    <Transaction>2020/02/13 07:20:33.000.821,C:\Projetos\ERGServicos\Views\Modules\Managment\Country\MNG0002BView.dfm=C:\Projetos\ERGServicos\Unit1.dfm</Transaction>
     <Transaction>2020/02/13 07:20:33.000.821,C:\Projetos\ERGServicos\Views\Modules\Managment\Country\MNG0002BView.pas=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
+    <Transaction>2020/02/13 07:20:33.000.821,C:\Projetos\ERGServicos\Views\Modules\Managment\Country\MNG0002BView.dfm=C:\Projetos\ERGServicos\Unit1.dfm</Transaction>
     <Transaction>2020/02/13 07:22:32.000.470,=C:\Projetos\ERGServicos\Views\Modules\Managment\State\MNG0003AView.pas</Transaction>
     <Transaction>2020/02/13 18:50:19.000.992,=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
     <Transaction>2020/02/13 18:50:56.000.223,C:\Projetos\ERGServicos\Unit1.pas=C:\Projetos\ERGServicos\Controllers\Modules\Managment\Country\Operations\CountryUpdate.Controller.pas</Transaction>
@@ -219,9 +219,12 @@
     <Transaction>2020/02/14 07:25:36.000.850,C:\Projetos\ERGServicos\Unit1.pas=C:\Projetos\ERGServicos\Controllers\Modules\Managment\State\Operations\StateDelete.Controller.pas</Transaction>
     <Transaction>2020/02/14 07:34:25.000.779,=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
     <Transaction>2020/02/14 07:34:58.000.724,C:\Projetos\ERGServicos\Unit1.pas=C:\Projetos\ERGServicos\Controllers\Modules\Managment\State\Operations\StateDuplicate.Controller.pas</Transaction>
-    <Transaction>2020/02/14 12:16:43.170,=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
-    <Transaction>2020/02/14 12:17:43.560,C:\Projetos\ERGServicos\Views\Modules\Managment\State\MNG0003BView.pas=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
-    <Transaction>2020/02/14 12:17:43.560,C:\Projetos\ERGServicos\Views\Modules\Managment\State\MNG0003BView.dfm=C:\Projetos\ERGServicos\Unit1.dfm</Transaction>
+    <Transaction>2020/02/14 12:16:43.000.170,=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
+    <Transaction>2020/02/14 12:17:43.000.560,C:\Projetos\ERGServicos\Views\Modules\Managment\State\MNG0003BView.pas=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
+    <Transaction>2020/02/14 12:17:43.000.560,C:\Projetos\ERGServicos\Views\Modules\Managment\State\MNG0003BView.dfm=C:\Projetos\ERGServicos\Unit1.dfm</Transaction>
+    <Transaction>2020/02/14 17:41:57.000.884,=C:\Projetos\ERGServicos\Unit1.pas</Transaction>
+    <Transaction>2020/02/14 17:43:12.000.244,C:\Projetos\ERGServicos\Unit1.pas=C:\Projetos\ERGServicos\Views\Modules\Managment\Country\MNG0002CView.pas</Transaction>
+    <Transaction>2020/02/14 17:43:12.000.244,C:\Projetos\ERGServicos\Unit1.dfm=C:\Projetos\ERGServicos\Views\Modules\Managment\Country\MNG0002CView.dfm</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="Controllers"/>
@@ -337,6 +340,8 @@
     <File Path="Views\Modules\Managment\Country\MNG0002AView.dfm"/>
     <File Path="Views\Modules\Managment\Country\MNG0002BView.pas"/>
     <File Path="Views\Modules\Managment\Country\MNG0002BView.dfm"/>
+    <File Path="Views\Modules\Managment\Country\MNG0002CView.pas"/>
+    <File Path="Views\Modules\Managment\Country\MNG0002CView.dfm"/>
     <File Path="Views\Modules\Managment\District"/>
     <File Path="Views\Modules\Managment\District\MNG0001AView.pas"/>
     <File Path="Views\Modules\Managment\District\MNG0001AView.dfm"/>

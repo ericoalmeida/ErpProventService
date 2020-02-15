@@ -45,6 +45,10 @@ type
   protected
     FConnection: IDBConnection;
     FFdConnection: TFDConnection;
+    FFieldOrder: string;
+    FRecordShow: Integer;
+    FTotalRecords: integer;
+
 
     function iff(AExpression: boolean; AWhenBeTrue: Integer;  AWhenBeFalse: Integer): Integer;
 

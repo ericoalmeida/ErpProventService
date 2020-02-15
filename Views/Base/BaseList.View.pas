@@ -68,9 +68,6 @@ type
   private
   protected
     FOperation: TTypeOperation;
-    FFieldOrder: string;
-    FRecordShow: Integer;
-    FTotalRecords: integer;
 
     procedure filterRecords;
     procedure totalRecords;

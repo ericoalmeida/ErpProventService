@@ -15,7 +15,9 @@ uses
   cxControls,
   cxContainer, cxEdit, cxMaskEdit, cxButtonEdit, cxLabel, cxTextEdit,
   Base.View.interf,
-  Types.Controllers, State.Controller.interf;
+  Types.Controllers, State.Controller.interf, Country.Controller.interf,
+  System.Actions,
+  Vcl.ActnList;
 
 type
   TFMNG0003BView = class(TFBaseRegisterView, iBaseRegisterView)
@@ -30,9 +32,15 @@ type
     LbDescription: TcxLabel;
     TxStateId: TcxTextEdit;
     LbDistrictId: TcxLabel;
+    acFind: TAction;
     procedure FormCreate(Sender: TObject);
+    procedure acFindExecute(Sender: TObject);
+    procedure BtConfirmarClick(Sender: TObject);
   private
     FStateController: iStateController;
+    FCountryController: iCountryController;
+
+    procedure selectCountry;
   public
     { Public declarations }
     class function new: iBaseRegisterView;
@@ -40,11 +48,10 @@ type
     function operation(AValue: TTypeOperation): iBaseRegisterView;
     function selectedRecord(AValue: string): iBaseRegisterView;
 
-    procedure insert;
-    procedure update;
-    procedure recover;
-    procedure delete;
-    procedure duplicate;
+    procedure insertRecord;
+    procedure updateRecord;
+    procedure deleteRecord;
+    procedure duplicateRecord;
 
     procedure save;
     procedure showDataOnScreen;
@@ -60,25 +67,43 @@ implementation
 
 {$R *.dfm}
 
-uses Facade.Controller;
+uses Facade.Controller, Facade.View, Types.Views;
 
 { TFMNG0003BView }
 
-procedure TFMNG0003BView.delete;
+procedure TFMNG0003BView.acFindExecute(Sender: TObject);
 begin
+  inherited;
+  selectCountry;
+end;
 
+procedure TFMNG0003BView.BtConfirmarClick(Sender: TObject);
+begin
+  save;
+  inherited;
+end;
+
+procedure TFMNG0003BView.deleteRecord;
+begin
+  FStateController
+    .delete
+      .save;
 end;
 
 procedure TFMNG0003BView.disableFields;
 begin
   TxDescription.Enabled := not(FOperation in [toShow, toDelete]);
-  TxCountryId.Enabled   := not(FOperation in [toShow, toDelete]);
-  BtConfirmar.Visible   := not(FOperation = toShow);
+  TxCountryId.Enabled := not(FOperation in [toShow, toDelete]);
+  BtConfirmar.Visible := not(FOperation = toShow);
 end;
 
-procedure TFMNG0003BView.duplicate;
+procedure TFMNG0003BView.duplicateRecord;
 begin
-
+  FStateController
+    .duplicate
+     .description(TxDescription.Text)
+      .countryId(FCountryController.codigo)
+      .save;
 end;
 
 procedure TFMNG0003BView.&end;
@@ -95,11 +120,18 @@ begin
   inherited;
   FStateController := TFacadeController.new.ModulesFacadeController.
     ManagmentFactoryController.stateController;
+
+  FCountryController := TFacadeController.new.ModulesFacadeController.
+    ManagmentFactoryController.countryController;
 end;
 
-procedure TFMNG0003BView.insert;
+procedure TFMNG0003BView.insertRecord;
 begin
-
+  FStateController
+    .insert
+     .description(TxDescription.Text)
+      .countryId(FCountryController.codigo)
+      .save;
 end;
 
 class function TFMNG0003BView.new: iBaseRegisterView;
@@ -113,14 +145,37 @@ begin
   FOperation := AValue;
 end;
 
-procedure TFMNG0003BView.recover;
-begin
-
-end;
-
 procedure TFMNG0003BView.save;
 begin
+  case FOperation of
+    toInsert:
+      insertRecord;
 
+    toUpdate:
+      updateRecord;
+
+    toDelete:
+      deleteRecord;
+
+    toDuplicate:
+      duplicateRecord;
+  end;
+end;
+
+procedure TFMNG0003BView.selectCountry;
+var
+  countryCodigo: string;
+begin
+  countryCodigo := TFacadeView.new.modulesFacadeView.ManagmentFactoryView.
+    showProgramOfSearch(tsMNG0002CView).showSearch.&end;
+
+  if countryCodigo = EmptyStr then
+    Exit;
+
+  FCountryController.find(countryCodigo);
+
+  TxCountryId.Text := FCountryController.countryId;
+  TxCountryName.Text := FCountryController.description;
 end;
 
 function TFMNG0003BView.selectedRecord(AValue: string): iBaseRegisterView;
@@ -135,18 +190,23 @@ begin
     Exit;
 
   FStateController.find(FSelectedRecord);
+  FCountryController.findById(FStateController.countryId);
 
-  TxStateId.Text     := FStateController.stateId;
+  TxStateId.Text := FStateController.stateId;
   TxDescription.Text := FStateController.description;
-  TxCountryId.Text   := FStateController.countryId;
+  TxCountryId.Text := FStateController.countryId;
   TxCountryName.Text := FStateController.countryDescription;
   TxCreatedDate.Text := FStateController.createdDate;
   TxUpdatedDate.Text := FStateController.updatedDate;
 end;
 
-procedure TFMNG0003BView.update;
+procedure TFMNG0003BView.updateRecord;
 begin
-
+  FStateController
+    .update
+     .description(TxDescription.Text)
+      .countryId(FCountryController.codigo)
+      .save;
 end;
 
 end.
