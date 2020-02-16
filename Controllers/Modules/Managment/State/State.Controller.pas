@@ -17,12 +17,14 @@ type
     class function New: iStateController;
 
     function find(AValue: string): iStateController;
+    function findById(AValue: string): iStateController;
 
     function insert: iStateInsertController;
     function update: iStateUpdateController;
     function delete: iStateDeleteController;
     function duplicate: iStateDuplicateController;
 
+    function code: string;
     function stateId: string;
     function description: string;
     function countryId: string;
@@ -37,6 +39,11 @@ implementation
 
 uses Facade.Model, StateInsert.Controller, StateUpdate.Controller,
   StateDelete.Controller, StateDuplicate.Controller;
+
+function TStateController.code: string;
+begin
+ Result := FRecordFound.CODIGO;
+end;
 
 function TStateController.countryDescription: string;
 begin
@@ -102,6 +109,14 @@ begin
 
   FRecordFound := FStateModel.DAO.FindWhere
     (Format('CODIGO = %s', [QuotedStr(AValue)])).Items[0];
+end;
+
+function TStateController.findById(AValue: string): iStateController;
+begin
+  Result := Self;
+
+  FRecordFound := FStateModel.DAO.FindWhere
+    (Format('ESTADOID = %s', [QuotedStr(AValue)])).Items[0];
 end;
 
 function TStateController.update: iStateUpdateController;

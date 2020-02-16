@@ -25,7 +25,8 @@ implementation
 { TManagmentFactoryView }
 
 uses MNG0001AView, MNG0001BView, MNG0002AView, MNG0002BView, MNG0003AView,
-  MNG0003BView, MNG0002CView;
+  MNG0003BView, MNG0002CView, MNG0004AView, MNG0004BView, MNG0003CView,
+  MNG0004CView;
 
 constructor TManagmentFactoryView.Create;
 begin
@@ -55,6 +56,9 @@ begin
 
     tpMNG0003AView:
       Result := TFMNG0003AView.New;
+
+    tpMNG0004AView:
+      Result := TFMNG0004AView.New;
   end;
 end;
 
@@ -70,6 +74,9 @@ begin
 
     trMNG0003BView:
       Result := TFMNG0003BView.New;
+
+    trMNG0004BView:
+      Result := TFMNG0004BView.New;
   end;
 end;
 
@@ -80,6 +87,11 @@ begin
     tsMNG0002CView:
       Result := TFMNG0002CView.New;
 
+    tsMNG0003CView:
+      Result := TFMNG0003CView.New;
+
+    tsMNG0004CView:
+      Result := TFMNG0004CView.New;
   end;
 end;
 

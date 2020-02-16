@@ -66,6 +66,8 @@ type
     procedure BtDistrictClick(Sender: TObject);
     procedure BtCountriesClick(Sender: TObject);
     procedure BtStatesClick(Sender: TObject);
+    procedure BtCitiesClick(Sender: TObject);
+    procedure BtClientClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -80,6 +82,21 @@ implementation
 {$R *.dfm}
 
 uses Facade.Controller, Facade.View, Types.Views;
+
+procedure TFMainView.BtCitiesClick(Sender: TObject);
+begin
+  TFacadeView.New
+    .modulesFacadeView
+     .ManagmentFactoryView
+      .showProgramOfListing(tpMNG0004AView)
+      .&end;
+end;
+
+procedure TFMainView.BtClientClick(Sender: TObject);
+begin
+TFacadeView.new.modulesFacadeView.ManagmentFactoryView.
+    showProgramOfSearch(tsMNG0004CView).showSearch.&end;
+end;
 
 procedure TFMainView.BtCountriesClick(Sender: TObject);
 begin

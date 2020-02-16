@@ -246,6 +246,38 @@
             <Form>FMNG0002CView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Models\Modules\Managment\City\Entity\TMNGCITY.Entity.Model.pas"/>
+        <DCCReference Include="Models\Modules\Managment\City\City.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modules\Managment\City\City.Model.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\City\City.Controller.Interf.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\City\City.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\City\Operations\CityInsert.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\City\Operations\CityUpdate.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\City\Operations\CityDelete.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\City\Operations\CityDuplicate.Controller.pas"/>
+        <DCCReference Include="Controllers\Utils\Utils.Controller.Interf.pas"/>
+        <DCCReference Include="Controllers\Utils\Utils.Controller.pas"/>
+        <DCCReference Include="Controllers\Utils\Constants.Controller.pas"/>
+        <DCCReference Include="Views\Modules\Receive\Client\REC0001AView.pas">
+            <Form>FREC0001AView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Modules\Managment\City\MNG0004AView.pas">
+            <Form>FMNG0004AView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Modules\Managment\City\MNG0004BView.pas">
+            <Form>FMNG0004BView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Modules\Managment\State\MNG0003CView.pas">
+            <Form>FMNG0003CView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Modules\Managment\City\MNG0004CView.pas">
+            <Form>FMNG0004CView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

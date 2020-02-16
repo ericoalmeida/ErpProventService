@@ -48,10 +48,13 @@ type
     stContentEven: TcxStyle;
     StInactive: TcxStyle;
     StSelection: TcxStyle;
+    BtConfirmar: TcxButton;
     procedure FormCreate(Sender: TObject);
+    procedure BtConfirmarClick(Sender: TObject);
   private
     { Private declarations }
   protected
+    FSelectedRecord: string;
     procedure filterRecords;
     procedure totalRecords;
 
@@ -65,6 +68,12 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFBaseSearchView.BtConfirmarClick(Sender: TObject);
+begin
+  inherited;
+  Close;
+end;
 
 procedure TFBaseSearchView.filterRecords;
 begin
@@ -89,7 +98,7 @@ end;
 procedure TFBaseSearchView.totalRecords;
 begin
   FTotalRecords := DsData.DataSet.RecordCount;
-  FRecordShow   := iff(DsData.DataSet.IsEmpty, 0, 1);
+  FRecordShow   := FUtils.iff(DsData.DataSet.IsEmpty, 0, 1);
 
   LbTotalRegistros.Caption := Format('Mostrando de %d até %d de %d registros',
     [FRecordShow, FTotalRecords, FTotalRecords]);

@@ -81,7 +81,24 @@ uses
   StateDelete.Controller in 'Controllers\Modules\Managment\State\Operations\StateDelete.Controller.pas',
   StateDuplicate.Controller in 'Controllers\Modules\Managment\State\Operations\StateDuplicate.Controller.pas',
   MNG0003BView in 'Views\Modules\Managment\State\MNG0003BView.pas' {FMNG0003BView},
-  MNG0002CView in 'Views\Modules\Managment\Country\MNG0002CView.pas' {FMNG0002CView};
+  MNG0002CView in 'Views\Modules\Managment\Country\MNG0002CView.pas' {FMNG0002CView},
+  TMNGCITY.Entity.Model in 'Models\Modules\Managment\City\Entity\TMNGCITY.Entity.Model.pas',
+  City.Model.Interf in 'Models\Modules\Managment\City\City.Model.Interf.pas',
+  City.Model in 'Models\Modules\Managment\City\City.Model.pas',
+  City.Controller.Interf in 'Controllers\Modules\Managment\City\City.Controller.Interf.pas',
+  City.Controller in 'Controllers\Modules\Managment\City\City.Controller.pas',
+  CityInsert.Controller in 'Controllers\Modules\Managment\City\Operations\CityInsert.Controller.pas',
+  CityUpdate.Controller in 'Controllers\Modules\Managment\City\Operations\CityUpdate.Controller.pas',
+  CityDelete.Controller in 'Controllers\Modules\Managment\City\Operations\CityDelete.Controller.pas',
+  CityDuplicate.Controller in 'Controllers\Modules\Managment\City\Operations\CityDuplicate.Controller.pas',
+  Utils.Controller.Interf in 'Controllers\Utils\Utils.Controller.Interf.pas',
+  Utils.Controller in 'Controllers\Utils\Utils.Controller.pas',
+  Constants.Controller in 'Controllers\Utils\Constants.Controller.pas',
+  REC0001AView in 'Views\Modules\Receive\Client\REC0001AView.pas' {FREC0001AView},
+  MNG0004AView in 'Views\Modules\Managment\City\MNG0004AView.pas' {FMNG0004AView},
+  MNG0004BView in 'Views\Modules\Managment\City\MNG0004BView.pas' {FMNG0004BView},
+  MNG0003CView in 'Views\Modules\Managment\State\MNG0003CView.pas' {FMNG0003CView},
+  MNG0004CView in 'Views\Modules\Managment\City\MNG0004CView.pas' {FMNG0004CView};
 
 {$R *.res}
 

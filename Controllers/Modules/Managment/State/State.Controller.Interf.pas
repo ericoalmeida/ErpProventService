@@ -12,12 +12,14 @@ type
 
   iStateController = interface
     function find(AValue: string): iStateController;
+    function findById(AValue: string): iStateController;
 
     function insert: iStateInsertController;
     function update: iStateUpdateController;
     function Delete: iStateDeleteController;
     function Duplicate: iStateDuplicateController;
 
+    function code: string;
     function stateId: string;
     function description: string;
     function countryId: string;

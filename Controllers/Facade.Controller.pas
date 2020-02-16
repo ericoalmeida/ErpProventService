@@ -3,7 +3,7 @@ unit Facade.Controller;
 interface
 
 uses Facade.Controller.Interf, Connection.Controller.Interf,
-  ModulesFacade.Controller.Interf;
+  ModulesFacade.Controller.Interf, Utils.Controller.Interf;
 
 type
   TFacadeController = class(TInterfacedObject, iFacadeController)
@@ -14,6 +14,8 @@ type
 
     class function New: iFacadeController;
 
+    function utils: iUtilsController;
+
     function ConnectionFactoryController: iConnectionController;
 
     function ModulesFacadeController: iModulesFacadeController;
@@ -23,7 +25,7 @@ implementation
 
 { TFacadeController }
 
-uses Connection.Controller, ModulesFacade.Controller;
+uses Connection.Controller, ModulesFacade.Controller, Utils.Controller;
 
 function TFacadeController.ConnectionFactoryController: iConnectionController;
 begin
@@ -49,6 +51,11 @@ end;
 class function TFacadeController.New: iFacadeController;
 begin
   Result := Self.Create;
+end;
+
+function TFacadeController.utils: iUtilsController;
+begin
+ result := TUtilsController.New;
 end;
 
 end.

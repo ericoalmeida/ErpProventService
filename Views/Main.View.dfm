@@ -21,9 +21,9 @@ object FMainView: TFMainView
   TextHeight = 13
   object ImLogo: TImage
     Left = 0
-    Top = 158
+    Top = 159
     Width = 589
-    Height = 218
+    Height = 217
     Align = alClient
     Center = True
     Picture.Data = {
@@ -1932,12 +1932,11 @@ object FMainView: TFMainView
     Left = 0
     Top = 0
     Width = 589
-    Height = 158
+    Height = 159
     ApplicationButton.Menu = ApMainMenu
     BarManager = BrManager
-    Style = rs2016
     ColorSchemeAccent = rcsaBlue
-    ColorSchemeName = 'Office2007Black'
+    ColorSchemeName = 'Blue'
     QuickAccessToolbar.Toolbar = BmAtalhos
     Contexts = <>
     TabOrder = 0
@@ -2239,6 +2238,7 @@ object FMainView: TFMainView
         4128ABEBDC779494B9DFB4F5A9A4B5E3D12A979C52581BD992CA9A0FEF1EEEE9
         BC0B38698C11673A8A5D4005500EE4F3C55606180102C6980CB9FA17031CF8B8
         BC35483E0000000049454E44AE426082}
+      OnClick = BtClientClick
     end
     object BtServices: TdxBarLargeButton
       Caption = 'Servi'#231'os'
@@ -2540,6 +2540,7 @@ object FMainView: TFMainView
         693FE76E01E08B4EBFAA797931554438FD4127D87717150C3242F1CEE81EB178
         67249D7C4F3861046096CB2095A80002628F2CAA9C977BBB898803F8BF489757
         E4D29B6670CBC9FD5BE9BFD22C96C3BEC476690000000049454E44AE426082}
+      OnClick = BtCitiesClick
     end
     object BtStates: TdxBarLargeButton
       Caption = 'Estados'

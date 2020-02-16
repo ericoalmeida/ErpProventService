@@ -1,9 +1,14 @@
-inherited FMNG0002AView: TFMNG0002AView
+inherited FMNG0004AView: TFMNG0004AView
   Caption = ''
+  ClientWidth = 483
+  OnShow = FormShow
+  ExplicitWidth = 489
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
+    Width = 481
     inherited PnHeader: TRzPanel
+      Width = 479
       inherited ImTitle: TImage
         Picture.Data = {
           0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000020
@@ -90,28 +95,147 @@ inherited FMNG0002AView: TFMNG0002AView
       end
     end
     inherited PnProgram: TRzPanel
+      Width = 479
       inherited LbProgram: TRzLabel
-        Width = 608
+        Width = 479
         Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
+      Width = 479
+      inherited PnFooterBody: TRzPanel
+        Width = 479
+        inherited BtSair: TcxButton
+          Left = 369
+        end
+      end
       inherited PnContent: TRzPanel
+        Width = 477
         inherited PnGridHeader: TRzPanel
+          Width = 475
           inherited LbBuscar: TcxLabel
+            Left = 148
             Style.IsFontAssigned = True
+          end
+          inherited PnBuscar: TRzPanel
+            Left = 198
           end
         end
         inherited PnGridFooter: TRzPanel
+          Width = 475
           inherited LbTotalRegistros: TRzLabel
-            Width = 596
+            Width = 467
             Height = 22
           end
         end
+        inherited PnGrid: TRzPanel
+          Width = 475
+          inherited DbDados: TcxGrid
+            Width = 473
+            inherited VwDados: TcxGridDBTableView
+              DataController.DataSource = DsData
+              object VwDadosCITYID: TcxGridDBColumn
+                Caption = 'N'#186
+                DataBinding.FieldName = 'CITYID'
+                HeaderGlyphAlignmentHorz = taCenter
+                Width = 60
+              end
+              object VwDadosNAME: TcxGridDBColumn
+                Caption = 'Nome'
+                DataBinding.FieldName = 'NAME'
+                Width = 550
+              end
+              object VwDadosZIPCODE: TcxGridDBColumn
+                Caption = 'CEP'
+                DataBinding.FieldName = 'ZIPCODE'
+                Width = 90
+              end
+              object VwDadosIBGECODE: TcxGridDBColumn
+                Caption = 'C'#243'digo IBGE'
+                DataBinding.FieldName = 'IBGECODE'
+                Width = 90
+              end
+              object VwDadosSTATENAME: TcxGridDBColumn
+                Caption = 'Estado'
+                DataBinding.FieldName = 'STATENAME'
+                Width = 355
+              end
+              object VwDadosCREATEDAT: TcxGridDBColumn
+                Caption = 'Data Cadastro'
+                DataBinding.FieldName = 'CREATEDAT'
+                Width = 100
+              end
+              object VwDadosUPDATEDAT: TcxGridDBColumn
+                Caption = 'Data Atualiza'#231#227'o'
+                DataBinding.FieldName = 'UPDATEDAT'
+                Width = 100
+              end
+            end
+          end
+        end
+      end
+      inherited PnHeaderButtons: TRzPanel
+        Width = 477
       end
     end
   end
   inherited StGridStyles: TcxStyleRepository
     PixelsPerInch = 96
+  end
+  inherited DsData: TDataSource
+    DataSet = FdQData
+  end
+  inherited FdQData: TFDQuery
+    SQL.Strings = (
+      'select'
+      ''
+      'cty.code,'
+      'cty.cityid,'
+      'cty.name,'
+      'cty.zipcode,'
+      'cty.ibgecode,'
+      'cty.stateid,'
+      'stt.descricao as statename,'
+      'cty.createdat,'
+      'cty.updatedat'
+      ''
+      'from'
+      ''
+      'TMNGCITY cty'
+      'left join TGERESTADO stt on (stt.codigo = cty.stateid)')
+    object FdQDataCODIGO: TStringField
+      Alignment = taCenter
+      FieldName = 'CODE'
+      Size = 64
+    end
+    object FdQDataCITYID: TIntegerField
+      FieldName = 'CITYID'
+    end
+    object FdQDataNAME: TStringField
+      FieldName = 'NAME'
+      Size = 155
+    end
+    object FdQDataZIPCODE: TStringField
+      FieldName = 'ZIPCODE'
+      EditMask = '00.000-000;0;_'
+      Size = 12
+    end
+    object FdQDataIBGECODE: TIntegerField
+      FieldName = 'IBGECODE'
+    end
+    object FdQDataSTATEID: TStringField
+      FieldName = 'STATEID'
+      Size = 64
+    end
+    object FdQDataSTATENAME: TStringField
+      FieldName = 'STATENAME'
+      Size = 90
+    end
+    object FdQDataCREATEDAT: TSQLTimeStampField
+      FieldName = 'CREATEDAT'
+    end
+    object FdQDataUPDATEDAT: TSQLTimeStampField
+      FieldName = 'UPDATEDAT'
+    end
   end
 end

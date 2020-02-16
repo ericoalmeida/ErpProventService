@@ -2,7 +2,8 @@ unit ManagmentFactory.Controller.interf;
 
 interface
 
-uses District.Controller.Interf, Country.Controller.Interf, State.Controller.Interf;
+uses District.Controller.Interf, Country.Controller.Interf, State.Controller.Interf,
+  City.Controller.Interf;
 
 type
  iManagmentFactoryController = interface
@@ -10,6 +11,7 @@ type
    function districtController: iDistrictController;
    function countryController: iCountryController;
    function stateController: iStateController;
+   function cityController: iCityController;
  end;
 
 implementation

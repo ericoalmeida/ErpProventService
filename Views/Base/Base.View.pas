@@ -24,7 +24,7 @@ uses
   FireDAC.Comp.Client, FireDAC.Stan.Param, FireDAC.DatS,
   FireDAC.DApt.Intf, FireDAC.DApt,
   FireDAC.Comp.DataSet, dxSkinOffice2016Colorful, dxSkinOffice2016Dark, dxSkinOffice2007Black,
-  dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Silver;
+  dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Silver, Utils.Controller.Interf;
 
 type
   TFBaseView = class(TForm)
@@ -48,9 +48,7 @@ type
     FFieldOrder: string;
     FRecordShow: Integer;
     FTotalRecords: integer;
-
-
-    function iff(AExpression: boolean; AWhenBeTrue: Integer;  AWhenBeFalse: Integer): Integer;
+    FUtils: iUtilsController;
 
   public
     { Public declarations }
@@ -84,14 +82,8 @@ begin
 
   FFdConnection := TFacadeController.New.ConnectionFactoryController.
     currentFdConnection;
-end;
 
-function TFBaseView.iff(AExpression: boolean; AWhenBeTrue, AWhenBeFalse: Integer): Integer;
-begin
- if AExpression then
-  Result := AWhenBeTrue
- else
-  Result := AWhenBeFalse;
+  FUtils := TFacadeController.New.utils;
 end;
 
 end.

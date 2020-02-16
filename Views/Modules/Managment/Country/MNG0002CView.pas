@@ -29,7 +29,6 @@ uses
 
 type
   TFMNG0002CView = class(TFBaseSearchView, IBaseSearchView)
-    BtConfirmar: TcxButton;
     FdDataCODIGO: TStringField;
     FdDataPAISID: TIntegerField;
     FdDataDESCRICAO: TStringField;
@@ -41,11 +40,11 @@ type
     procedure BtSairClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure BtConfirmarClick(Sender: TObject);
     procedure TxBuscarPropertiesChange(Sender: TObject);
+    procedure BtConfirmarClick(Sender: TObject);
   private
     FContainer: IContainerDataSet<TTGERPAIS>;
-    FSelectedRecord: string;
+
   public
     class function New: IBaseSearchView;
 
@@ -67,8 +66,6 @@ implementation
 procedure TFMNG0002CView.BtConfirmarClick(Sender: TObject);
 begin
   FSelectedRecord := FdDataCODIGO.AsString;
-
-  Close;
   inherited;
 end;
 
