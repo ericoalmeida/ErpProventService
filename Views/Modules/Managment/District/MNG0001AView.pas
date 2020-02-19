@@ -28,15 +28,18 @@ uses
 
 type
   TFMNG0001AView = class(TFBaseListView, iBaseListView)
-    FdDataBAIRROID: TIntegerField;
-    FdDataDESCRICAO: TStringField;
-    FdDataDATACADASTRO: TDateTimeField;
-    FdDataDATAATUALIZACAO: TDateTimeField;
-    VwDadosBAIRROID: TcxGridDBColumn;
-    VwDadosDESCRICAO: TcxGridDBColumn;
-    VwDadosDATACADASTRO: TcxGridDBColumn;
-    VwDadosDATAATUALIZACAO: TcxGridDBColumn;
-    FdDataCODIGO: TStringField;
+    FdQDataCODE: TStringField;
+    FdQDataCITYID: TStringField;
+    FdQDataCITYNAME: TStringField;
+    FdQDataCREATEDAT: TSQLTimeStampField;
+    FdQDataUPDATEDAT: TSQLTimeStampField;
+    FdQDataDISTRICTID: TIntegerField;
+    FdQDataDESCRIPTION: TStringField;
+    VwDadosDISTRICTID: TcxGridDBColumn;
+    VwDadosDESCRIPTION: TcxGridDBColumn;
+    VwDadosCITYNAME: TcxGridDBColumn;
+    VwDadosCREATEDAT: TcxGridDBColumn;
+    VwDadosUPDATEDAT: TcxGridDBColumn;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure TxBuscarPropertiesChange(Sender: TObject);
@@ -46,7 +49,7 @@ type
     procedure BtDeleteClick(Sender: TObject);
     procedure BtDuplicateClick(Sender: TObject);
   private
-    FContainer: IContainerDataSet<TTGERBAIRRO>;
+    FContainer: IContainerDataSet<TTMNGDISTRICT>;
   public
     class function new: iBaseListView;
 
@@ -117,7 +120,7 @@ begin
    .ManagmentFactoryView
     .showProgramOfRegister(trMNG0001BView )
      .operation(FOperation)
-     .selectedRecord(FdDataCODIGO.AsString)
+     .selectedRecord(FdQDataCODE.AsString)
      .&end;
 end;
 
@@ -128,7 +131,7 @@ begin
    .ManagmentFactoryView
     .showProgramOfRegister(trMNG0001BView)
      .operation(FOperation)
-     .selectedRecord(FdDataCODIGO.AsString)
+     .selectedRecord(FdQDataCODE.AsString)
      .&end;
 end;
 
@@ -141,13 +144,13 @@ end;
 procedure TFMNG0001AView.FormCreate(Sender: TObject);
 begin
   inherited;
-  FContainer := TContainerFDMemTable<TTGERBAIRRO>.Create(FConnection, FdData);
+  FdQData.Connection := FFdConnection;
 end;
 
 procedure TFMNG0001AView.FormShow(Sender: TObject);
 begin
   inherited;
-  FFieldOrder := 'DESCRICAO';
+  FFieldOrder := 'DESCRIPTION';
 
   { 1 } listRecords;
   { 2 } totalRecords;
@@ -165,7 +168,8 @@ end;
 
 procedure TFMNG0001AView.listRecords;
 begin
-  FContainer.OpenWhere('', FFieldOrder);
+ FdQData.Close;
+ FdQData.Open();
 end;
 
 class function TFMNG0001AView.new: iBaseListView;
@@ -180,7 +184,7 @@ begin
    .ManagmentFactoryView
     .showProgramOfRegister(trMNG0001BView)
      .operation(FOperation)
-     .selectedRecord(FdDataCODIGO.AsString)
+     .selectedRecord(FdQDataCODE.AsString)
      .&end;
 end;
 
@@ -199,7 +203,7 @@ begin
    .ManagmentFactoryView
     .showProgramOfRegister(trMNG0001BView)
      .operation(FOperation)
-     .selectedRecord(FdDataCODIGO.AsString)
+     .selectedRecord(FdQDataCODE.AsString)
      .&end;
 end;
 

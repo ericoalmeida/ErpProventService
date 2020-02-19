@@ -2,13 +2,15 @@ unit CountryInsert.Controller;
 
 interface
 
-uses Country.Controller.Interf, Country.Model.Interf, TGERPAIS.Entity.Model;
+uses Country.Controller.Interf, Country.Model.Interf, TGERPAIS.Entity.Model, System.SysUtils;
 
 type
   TCountryInsertController = class(TInterfacedObject, iCountryInsertController)
   private
     FCountryModel: ICountryModel;
-    FDescription: string;
+    FName: string;
+
+    function getCountryId: integer;
   public
     constructor Create;
     destructor Destroy; override;
@@ -16,7 +18,7 @@ type
     class function New: iCountryInsertController;
 
     function countryModel(AValue: ICountryModel): iCountryInsertController;
-    function description(AValue: string): iCountryInsertController;
+    function name(AValue: string): iCountryInsertController;
 
     procedure save;
   end;
@@ -30,16 +32,25 @@ begin
 
 end;
 
-function TCountryInsertController.description(AValue: string): iCountryInsertController;
+function TCountryInsertController.name(AValue: string): iCountryInsertController;
 begin
   Result := Self;
-  FDescription := AValue;
+  FName := AValue;
 end;
 
 destructor TCountryInsertController.Destroy;
 begin
 
   inherited;
+end;
+
+function TCountryInsertController.getCountryId: integer;
+begin
+  if FCountryModel.DAO.Find.Count <> 0 then begin
+    Result := FCountryModel.DAO.FindWhere('', 'COUNTRYID desc').Last.COUNTRYID + 1;
+  end else begin
+    Result := 1;
+  end;
 end;
 
 class function TCountryInsertController.New: iCountryInsertController;
@@ -49,9 +60,12 @@ end;
 
 procedure TCountryInsertController.save;
 begin
-  FCountryModel.Entity(TTGERPAIS.Create);
+  FCountryModel.Entity(TTMNGCOUNTRY.Create);
 
-  FCountryModel.Entity.DESCRICAO := FDescription;
+  FCountryModel.Entity.COUNTRYID := getCountryId;
+  FCountryModel.Entity.NAME      := FName;
+  FCountryModel.Entity.CREATEDAT := Now;
+  FCountryModel.Entity.UPDATEDAT := Now;
 
   FCountryModel.DAO.Insert(FCountryModel.Entity);
 end;

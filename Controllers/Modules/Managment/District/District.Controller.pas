@@ -9,7 +9,7 @@ type
   TDistrictController = class(TInterfacedObject, iDistrictController)
   private
     FDistrictModel: iDistrictModel;
-    FRecordFound: TTGERBAIRRO;
+    FRecordFound: TTMNGDISTRICT;
   public
     constructor Create;
     destructor Destroy; override;
@@ -25,6 +25,9 @@ type
 
     function districtId: string;
     function description: string;
+    function cityId: string;
+    function cityName: string;
+    function zipCode: string;
     function createdDate: string;
     function updatedDate: string;
   end;
@@ -37,6 +40,16 @@ uses Facade.Model, System.SysUtils, DistrictInsert.Controller,
   DistrictUpdate.Controller, DistrictDelete.Controller,
   DistrictDuplicate.Controller;
 
+function TDistrictController.cityId: string;
+begin
+  Result := FRecordFound.TMNGCITY.CITYID.ToString;
+end;
+
+function TDistrictController.cityName: string;
+begin
+  Result := FRecordFound.TMNGCITY.NAME;
+end;
+
 constructor TDistrictController.Create;
 begin
   FDistrictModel := TFacadeModel.New.moduleFacade.managmentFactoryModel.
@@ -45,7 +58,7 @@ end;
 
 function TDistrictController.createdDate: string;
 begin
-  Result := DateTimeToStr(FRecordFound.DATACADASTRO);
+  Result := DateTimeToStr(FRecordFound.CREATEDAT);
 end;
 
 function TDistrictController.delete: iDistrictDeleteController;
@@ -56,7 +69,7 @@ end;
 
 function TDistrictController.description: string;
 begin
-  Result := FRecordFound.DESCRICAO;
+  Result := FRecordFound.DESCRIPTION;
 end;
 
 destructor TDistrictController.Destroy;
@@ -67,7 +80,7 @@ end;
 
 function TDistrictController.districtId: string;
 begin
-  Result := FRecordFound.BAIRROID.ToString;
+  Result := FRecordFound.DISTRICTID.ToString;
 end;
 
 function TDistrictController.duplicate: iDistrictDuplicateController;
@@ -90,7 +103,7 @@ begin
   Result := Self;
 
   FRecordFound := FDistrictModel.DAO.FindWhere
-    (format('CODIGO = %s', [QuotedStr(AValue)])).Items[0];
+    (format('CODE = %s', [QuotedStr(AValue)])).Items[0];
 end;
 
 function TDistrictController.update: iDistrictUpdateController;
@@ -101,7 +114,12 @@ end;
 
 function TDistrictController.updatedDate: string;
 begin
-  Result := DateTimeToStr(FRecordFound.DATAATUALIZACAO);
+  Result := DateTimeToStr(FRecordFound.UPDATEDAT);
+end;
+
+function TDistrictController.zipCode: string;
+begin
+  Result := FRecordFound.ZIPCODE;
 end;
 
 end.

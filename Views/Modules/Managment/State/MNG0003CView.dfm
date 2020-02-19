@@ -57,6 +57,7 @@ inherited FMNG0003CView: TFMNG0003CView
             ExplicitLeft = 189
             inherited TxBuscar: TcxTextEdit
               Properties.OnChange = TxBuscarPropertiesChange
+              ExplicitHeight = 22
             end
           end
         end
@@ -76,19 +77,30 @@ inherited FMNG0003CView: TFMNG0003CView
             ExplicitWidth = 464
             inherited VwDados: TcxGridDBTableView
               DataController.DataSource = DsData
-              object VwDadosESTADOID: TcxGridDBColumn
+              object VwDadosSTATEID: TcxGridDBColumn
                 Caption = 'N'#186
-                DataBinding.FieldName = 'ESTADOID'
-                HeaderGlyphAlignmentHorz = taCenter
+                DataBinding.FieldName = 'STATEID'
+                HeaderAlignmentHorz = taCenter
               end
-              object VwDadosDESCRICAO: TcxGridDBColumn
-                Caption = 'Descri'#231#227'o'
-                DataBinding.FieldName = 'DESCRICAO'
+              object VwDadosNAME: TcxGridDBColumn
+                Caption = 'Estado'
+                DataBinding.FieldName = 'NAME'
+                Width = 155
               end
-              object VwDadosPAISDESCRICAO: TcxGridDBColumn
+              object VwDadosCOUNTRYNAME: TcxGridDBColumn
                 Caption = 'Pa'#237's'
-                DataBinding.FieldName = 'PAISDESCRICAO'
-                Width = 200
+                DataBinding.FieldName = 'COUNTRYNAME'
+                Width = 155
+              end
+              object VwDadosCREATEDAT: TcxGridDBColumn
+                Caption = 'Data Cadastro'
+                DataBinding.FieldName = 'CREATEDAT'
+                Width = 110
+              end
+              object VwDadosUPDATEDAT: TcxGridDBColumn
+                Caption = 'Ult. Atualiza'#231#227'o'
+                DataBinding.FieldName = 'UPDATEDAT'
+                Width = 155
               end
             end
           end
@@ -103,43 +115,42 @@ inherited FMNG0003CView: TFMNG0003CView
     SQL.Strings = (
       'select'
       ''
-      'est.codigo,'
-      'est.estadoid,'
-      'est.descricao,'
-      'est.paisid,'
-      'pai.descricao as paisdescricao,'
-      'est.datacadastro,'
-      'est.dataatualizacao'
+      'stt.code,'
+      'stt.stateid,'
+      'stt.name,'
+      'stt.countryid,'
+      'ctr.name  as countryName,'
+      'stt.createdat,'
+      'stt.updatedat'
       ''
       'from'
       ''
-      'tgerestado est'
-      'left join tgerpais pai on (pai.codigo = est.paisid)')
-    object FdQDataCODIGO: TStringField
-      FieldName = 'CODIGO'
+      'TMNGSTATE stt'
+      'left join TMNGCOUNTRY ctr on (ctr.code = stt.countryid)')
+    object FdQDataCODE: TStringField
+      FieldName = 'CODE'
       Size = 64
     end
-    object FdQDataESTADOID: TIntegerField
-      Alignment = taCenter
-      FieldName = 'ESTADOID'
+    object FdQDataSTATEID: TIntegerField
+      FieldName = 'STATEID'
     end
-    object FdQDataDESCRICAO: TStringField
-      FieldName = 'DESCRICAO'
+    object FdQDataNAME: TStringField
+      FieldName = 'NAME'
       Size = 90
     end
-    object FdQDataPAISID: TStringField
-      FieldName = 'PAISID'
+    object FdQDataCOUNTRYID: TStringField
+      FieldName = 'COUNTRYID'
       Size = 64
     end
-    object FdQDataPAISDESCRICAO: TStringField
-      FieldName = 'PAISDESCRICAO'
+    object FdQDataCOUNTRYNAME: TStringField
+      FieldName = 'COUNTRYNAME'
       Size = 60
     end
-    object FdQDataDATACADASTRO: TSQLTimeStampField
-      FieldName = 'DATACADASTRO'
+    object FdQDataCREATEDAT: TSQLTimeStampField
+      FieldName = 'CREATEDAT'
     end
-    object FdQDataDATAATUALIZACAO: TSQLTimeStampField
-      FieldName = 'DATAATUALIZACAO'
+    object FdQDataUPDATEDAT: TSQLTimeStampField
+      FieldName = 'UPDATEDAT'
     end
   end
   inherited StGridStyles: TcxStyleRepository

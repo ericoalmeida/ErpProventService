@@ -21,18 +21,20 @@ uses
 
 type
   TFMNG0003BView = class(TFBaseRegisterView, iBaseRegisterView)
-    TxUpdatedDate: TcxTextEdit;
-    cxLabel2: TcxLabel;
-    TxCreatedDate: TcxTextEdit;
-    cxLabel1: TcxLabel;
+    TxUpdatedAt: TcxTextEdit;
+    LbUpdatedAt: TcxLabel;
+    TxCreatedAt: TcxTextEdit;
+    LbCreatedAt: TcxLabel;
     TxCountryName: TcxTextEdit;
     TxCountryId: TcxButtonEdit;
     cxLabel3: TcxLabel;
-    TxDescription: TcxTextEdit;
+    TxName: TcxTextEdit;
     LbDescription: TcxLabel;
     TxStateId: TcxTextEdit;
     LbDistrictId: TcxLabel;
     acFind: TAction;
+    cxLabel4: TcxLabel;
+    TxInitials: TcxTextEdit;
     procedure FormCreate(Sender: TObject);
     procedure acFindExecute(Sender: TObject);
     procedure BtConfirmarClick(Sender: TObject);
@@ -92,8 +94,15 @@ end;
 
 procedure TFMNG0003BView.disableFields;
 begin
-  TxDescription.Enabled := not(FOperation in [toShow, toDelete]);
+  TxName.Enabled      := not(FOperation in [toShow, toDelete]);
   TxCountryId.Enabled := not(FOperation in [toShow, toDelete]);
+  TxInitials.Enabled  := not(FOperation in [toShow, toDelete]);
+
+  LbCreatedAt.Visible := not(FOperation in [toInsert]);
+  TxCreatedAt.Visible := not(FOperation in [toInsert]);
+  LbUpdatedAt.Visible := not(FOperation in [toInsert]);
+  TxUpdatedAt.Visible := not(FOperation in [toInsert]);
+
   BtConfirmar.Visible := not(FOperation = toShow);
 end;
 
@@ -101,9 +110,10 @@ procedure TFMNG0003BView.duplicateRecord;
 begin
   FStateController
     .duplicate
-     .description(TxDescription.Text)
-      .countryId(FCountryController.codigo)
-      .save;
+     .name(TxName.Text)
+     .initials(TxInitials.Text)
+     .countryId(FCountryController.codigo)
+    .save;
 end;
 
 procedure TFMNG0003BView.&end;
@@ -129,9 +139,10 @@ procedure TFMNG0003BView.insertRecord;
 begin
   FStateController
     .insert
-     .description(TxDescription.Text)
-      .countryId(FCountryController.codigo)
-      .save;
+     .name(TxName.Text)
+     .initials(TxInitials.Text)
+     .countryId(FCountryController.codigo)
+    .save;
 end;
 
 class function TFMNG0003BView.new: iBaseRegisterView;
@@ -192,21 +203,23 @@ begin
   FStateController.find(FSelectedRecord);
   FCountryController.findById(FStateController.countryId);
 
-  TxStateId.Text := FStateController.stateId;
-  TxDescription.Text := FStateController.description;
-  TxCountryId.Text := FStateController.countryId;
-  TxCountryName.Text := FStateController.countryDescription;
-  TxCreatedDate.Text := FStateController.createdDate;
-  TxUpdatedDate.Text := FStateController.updatedDate;
+  TxStateId.Text     := FStateController.stateId;
+  TxName.Text        := FStateController.name;
+  TxCountryId.Text   := FStateController.countryId;
+  TxCountryName.Text := FStateController.countryName;
+  TxInitials.Text    := FStateController.initials;
+  TxCreatedAt.Text   := FStateController.createdAt;
+  TxUpdatedAt.Text   := FStateController.updatedAt;
 end;
 
 procedure TFMNG0003BView.updateRecord;
 begin
   FStateController
     .update
-     .description(TxDescription.Text)
-      .countryId(FCountryController.codigo)
-      .save;
+     .name(TxName.Text)
+     .initials(TxInitials.Text)
+     .countryId(FCountryController.codigo)
+    .save;
 end;
 
 end.

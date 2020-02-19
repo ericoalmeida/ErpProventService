@@ -9,7 +9,7 @@ type
   TCountryController = class(TInterfacedObject, iCountryController)
   private
     FCountryModel: ICountryModel;
-    FRecordFound: TTGERPAIS;
+    FRecordFound: TTMNGCOUNTRY;
   public
     constructor Create;
     destructor Destroy; override;
@@ -46,7 +46,7 @@ end;
 
 function TCountryController.createdDate: string;
 begin
-  Result := DateTimeToStr(FRecordFound.DATACADASTRO);
+  Result := DateTimeToStr(FRecordFound.CREATEDAT);
 end;
 
 function TCountryController.delete: iCountryDeleteController;
@@ -57,7 +57,7 @@ end;
 
 function TCountryController.description: string;
 begin
-  Result := FRecordFound.DESCRICAO;
+  Result := FRecordFound.NAME;
 end;
 
 destructor TCountryController.Destroy;
@@ -83,12 +83,12 @@ end;
 
 function TCountryController.codigo: string;
 begin
-  Result := FRecordFound.CODIGO;
+  Result := FRecordFound.CODE;
 end;
 
 function TCountryController.countryId: string;
 begin
-  Result := FRecordFound.PAISID.ToString;
+  Result := FRecordFound.COUNTRYID.ToString;
 end;
 
 function TCountryController.find(AValue: string): iCountryController;
@@ -98,7 +98,7 @@ begin
   if AValue = EmptyStr then Exit;  
 
   FRecordFound := FCountryModel.DAO.FindWhere
-    (Format('CODIGO = %s', [QuotedStr(AValue)])).Items[0];
+    (Format('CODE = %s', [QuotedStr(AValue)])).Items[0];
 end;
 
 function TCountryController.findById(AValue: string): iCountryController;
@@ -108,7 +108,7 @@ begin
   if AValue = EmptyStr then Exit;
 
   FRecordFound := FCountryModel.DAO.FindWhere
-    (Format('PAISID = %d', [StrToInt(AValue)])).Items[0];
+    (Format('COUNTRYID = %d', [StrToInt(AValue)])).Items[0];
 end;
 
 function TCountryController.update: iCountryUpdateController;
@@ -119,7 +119,7 @@ end;
 
 function TCountryController.updatedDate: string;
 begin
-  Result := DateTimeToStr(FRecordFound.DATAATUALIZACAO);
+  Result := DateTimeToStr(FRecordFound.UPDATEDAT);
 end;
 
 end.

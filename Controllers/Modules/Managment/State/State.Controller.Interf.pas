@@ -21,16 +21,18 @@ type
 
     function code: string;
     function stateId: string;
-    function description: string;
+    function name: string;
+    function initials: string;
     function countryId: string;
-    function countryDescription: string;
-    function createdDate: string;
-    function updatedDate: string;
+    function countryName: string;
+    function createdAt: string;
+    function updatedAt: string;
   end;
 
   iStateInsertController = interface
     function stateModel(AValue: IStateModel): iStateInsertController;
-    function description(AValue: string): iStateInsertController;
+    function name(AValue: string): iStateInsertController;
+    function initials(AValue: string): iStateInsertController;
     function countryId(AValue: string): iStateInsertController;
 
     procedure save;
@@ -38,8 +40,9 @@ type
 
   iStateUpdateController = interface
     function stateModel(AValue: IStateModel): iStateUpdateController;
-    function selectedRecord(AValue: TTGERESTADO): iStateUpdateController;
-    function description(AValue: string): iStateUpdateController;
+    function selectedRecord(AValue: TTMNGSTATE): iStateUpdateController;
+    function name(AValue: string): iStateUpdateController;
+    function initials(AValue: string): iStateUpdateController;
     function countryId(AValue: string): iStateUpdateController;
 
     procedure save;
@@ -47,7 +50,7 @@ type
 
   iStateDeleteController = interface
     function stateModel(AValue: IStateModel): iStateDeleteController;
-    function selectedRecord(AValue: TTGERESTADO): iStateDeleteController;
+    function selectedRecord(AValue: TTMNGSTATE): iStateDeleteController;
 
     procedure save;
   end;
@@ -55,7 +58,8 @@ type
   iStateDuplicateController = interface
     function stateModel(AValue: IStateModel)
       : iStateDuplicateController;
-    function description(AValue: string): iStateDuplicateController;
+    function name(AValue: string): iStateDuplicateController;
+    function initials(AValue: string): iStateDuplicateController;
     function countryId(AValue: string): iStateDuplicateController;
 
     procedure save;

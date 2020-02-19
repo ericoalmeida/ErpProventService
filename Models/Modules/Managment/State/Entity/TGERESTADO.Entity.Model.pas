@@ -16,96 +16,95 @@ uses
   ormbr.types.nullable,
   ormbr.mapping.classes,
   ormbr.mapping.register,
-  ormbr.mapping.attributes, TGERPAIS.Entity.Model;
+  ormbr.mapping.attributes,
+  TGERPAIS.Entity.Model;
 
 type
   [Entity]
-  [Table('TGERESTADO', '')]
-  [PrimaryKey('CODIGO', NotInc, NoSort, False, 'Chave primária')]
-  TTGERESTADO = class
+  [Table('TMNGSTATE', '')]
+  [PrimaryKey('CODE', NotInc, NoSort, False, 'Chave primária')]
+  TTMNGSTATE = class
   private
     { Private declarations }
-    FCODIGO: String;
-    FESTADOID: Integer;
-    FDESCRICAO: String;
-    FPAISID: String;
-    FDATACADASTRO: TDateTime;
-    FDATAATUALIZACAO: Nullable<TDateTime>;
+    FCODE: String;
+    FSTATEID: Integer;
+    FNAME: String;
+    FINITIALS: String;
+    FCOUNTRYID: String;
+    FCREATEDAT: TDateTime;
+    FUPDATEDAT: TDateTime;
 
-    FTGERPAIS_0:  TTGERPAIS  ;
-    function getDataCriacao: TDateTime;
-    function getCodigo: String;
+    FTMNGCOUNTRY_0:  TTMNGCOUNTRY  ;
+    function GETCODE: String;
   public
     { Public declarations }
     constructor Create;
     destructor Destroy; override;
     [Restrictions([NotNull])]
-    [Column('CODIGO', ftString, 64)]
-    [Dictionary('CODIGO', 'Mensagem de validação', '', '', '', taLeftJustify)]
-    property CODIGO: String read getCodigo write FCODIGO;
+    [Column('CODE', ftString, 64)]
+    [Dictionary('CODE', 'Mensagem de validação', '', '', '', taLeftJustify)]
+    property CODE: String read GETCODE write FCODE;
 
     [Restrictions([NotNull])]
-    [Column('ESTADOID', ftInteger)]
-    [Dictionary('ESTADOID', 'Mensagem de validação', '', '', '', taCenter)]
-    property ESTADOID: Integer read FESTADOID write FESTADOID;
+    [Column('STATEID', ftInteger)]
+    [Dictionary('STATEID', 'Mensagem de validação', '', '', '', taCenter)]
+    property STATEID: Integer read FSTATEID write FSTATEID;
 
     [Restrictions([NotNull])]
-    [Column('DESCRICAO', ftString, 90)]
-    [Dictionary('DESCRICAO', 'Mensagem de validação', '', '', '', taLeftJustify)]
-    property DESCRICAO: String read FDESCRICAO write FDESCRICAO;
+    [Column('NAME', ftString, 90)]
+    [Dictionary('NAME', 'Mensagem de validação', '', '', '', taLeftJustify)]
+    property NAME: String read FNAME write FNAME;
 
     [Restrictions([NotNull])]
-    [Column('PAISID', ftString, 64)]
-    [ForeignKey('FK1_TGERESTADO', 'PAISID', 'TGERPAIS', 'CODIGO', SetNull, SetNull)]
-    [Dictionary('PAISID', 'Mensagem de validação', '', '', '', taLeftJustify)]
-    property PAISID: String read FPAISID write FPAISID;
+    [Column('INITIALS', ftString, 2)]
+    [Dictionary('INITIALS', 'Mensagem de validação', '', '', '', taLeftJustify)]
+    property INITIALS: String read FINITIALS write FINITIALS;
 
     [Restrictions([NotNull])]
-    [Column('DATACADASTRO', ftDateTime)]
-    [Dictionary('DATACADASTRO', 'Mensagem de validação', 'Now', '', '!##/##/####;1;_', taCenter)]
-    property DATACADASTRO: TDateTime read getDataCriacao write FDATACADASTRO;
+    [Column('COUNTRYID', ftString, 64)]
+    [ForeignKey('FK1_TMNGSTATE', 'COUNTRYID', 'TMNGCOUNTRY', 'CODE', SetNull, SetNull)]
+    [Dictionary('COUNTRYID', 'Mensagem de validação', '', '', '', taLeftJustify)]
+    property COUNTRYID: String read FCOUNTRYID write FCOUNTRYID;
 
-    [Column('DATAATUALIZACAO', ftDateTime)]
-    [Dictionary('DATAATUALIZACAO', 'Mensagem de validação', '', '', '', taCenter)]
-    property DATAATUALIZACAO: Nullable<TDateTime> read FDATAATUALIZACAO write FDATAATUALIZACAO;
+    [Restrictions([NotNull])]
+    [Column('CREATEDAT', ftDateTime)]
+    [Dictionary('CREATEDAT', 'Mensagem de validação', 'Now', '', '!##/##/####;1;_', taCenter)]
+    property CREATEDAT: TDateTime read FCREATEDAT write FCREATEDAT;
 
-    [Association(OneToOne,'PAISID','TGERPAIS','CODIGO')]
-    property TGERPAIS: TTGERPAIS read FTGERPAIS_0 write FTGERPAIS_0;
+    [Restrictions([NotNull])]
+    [Column('UPDATEDAT', ftDateTime)]
+    [Dictionary('UPDATEDAT', 'Mensagem de validação', 'Now', '', '!##/##/####;1;_', taCenter)]
+    property UPDATEDAT: TDateTime read FUPDATEDAT write FUPDATEDAT;
+
+    [Association(OneToOne,'COUNTRYID','TMNGCOUNTRY','CODE')]
+    property TMNGCOUNTRY: TTMNGCOUNTRY read FTMNGCOUNTRY_0 write FTMNGCOUNTRY_0;
 
   end;
 
 implementation
 
-constructor TTGERESTADO.Create;
+constructor TTMNGSTATE.Create;
 begin
-  FTGERPAIS_0 := TTGERPAIS.Create;
+  FTMNGCOUNTRY_0 := TTMNGCOUNTRY.Create;
 end;
 
-destructor TTGERESTADO.Destroy;
+destructor TTMNGSTATE.Destroy;
 begin
-  if Assigned(FTGERPAIS_0) then
-    FTGERPAIS_0.Free;
+  if Assigned(FTMNGCOUNTRY_0) then
+    FTMNGCOUNTRY_0.Free;
 
   inherited;
 end;
 
-function TTGERESTADO.getCodigo: String;
+function TTMNGSTATE.GETCODE: String;
 begin
-  if FCODIGO.IsEmpty then
-    FCODIGO := TGUID.NewGuid.ToString;
+  if FCODE.IsEmpty then
+   FCODE := TGUID.NewGuid.ToString;
 
-  Result := FCODIGO;
-end;
-
-function TTGERESTADO.getDataCriacao: TDateTime;
-begin
-  if FDATACADASTRO = StrToDateTime('30/12/1899 00:00') then
-  FDATACADASTRO := Now;
-
-  Result := FDATACADASTRO;
+  Result := FCODE;
 end;
 
 initialization
-  TRegisterClass.RegisterEntity(TTGERESTADO)
+  TRegisterClass.RegisterEntity(TTMNGSTATE)
 
 end.

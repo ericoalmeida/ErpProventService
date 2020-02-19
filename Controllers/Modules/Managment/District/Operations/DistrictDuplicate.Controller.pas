@@ -3,14 +3,19 @@ unit DistrictDuplicate.Controller;
 interface
 
 uses District.Controller.Interf, Districts.Model.Interf,
-  TGERBAIRRO.Entity.Model;
+  TGERBAIRRO.Entity.Model, System.SysUtils;
 
 type
   TDistrictDuplicateController = class(TInterfacedObject,
     iDistrictDuplicateController)
   private
     FDistrictModel: iDistrictModel;
+
     FDescription: string;
+    FCity: string;
+    FZipCode: string;
+
+    function getDistrictId: Integer;
   public
     constructor Create;
     destructor Destroy; override;
@@ -21,6 +26,8 @@ type
       : iDistrictDuplicateController;
 
     function description(AValue: string): iDistrictDuplicateController;
+    function cityId(AValue: string): iDistrictDuplicateController;
+    function zipCode(AValue: string): iDistrictDuplicateController;
 
     procedure save;
   end;
@@ -28,6 +35,13 @@ type
 implementation
 
 { TDistrictDuplicateController }
+
+function TDistrictDuplicateController.cityId(AValue: string)
+  : iDistrictDuplicateController;
+begin
+  Result := Self;
+  FCity := AValue;
+end;
 
 constructor TDistrictDuplicateController.Create;
 begin
@@ -47,6 +61,19 @@ begin
   inherited;
 end;
 
+function TDistrictDuplicateController.getDistrictId: Integer;
+begin
+  if FDistrictModel.DAO.Find.Count <> 0 then
+  begin
+    Result := FDistrictModel.DAO.FindWhere('', 'DISTRICTID desc')
+      .Last.DISTRICTID + 1;
+  end
+  else
+  begin
+    Result := 1;
+  end;
+end;
+
 function TDistrictDuplicateController.districtModel(AValue: iDistrictModel)
   : iDistrictDuplicateController;
 begin
@@ -61,12 +88,23 @@ end;
 
 procedure TDistrictDuplicateController.save;
 begin
-  FDistrictModel.Entity(TTGERBAIRRO.Create);
+  FDistrictModel.Entity(TTMNGDISTRICT.Create);
 
-  FDistrictModel.Entity.DESCRICAO := FDescription;
+  FDistrictModel.Entity.DISTRICTID  := getDistrictId;
+  FDistrictModel.Entity.DESCRIPTION := FDescription;
+  FDistrictModel.Entity.CITYID      := FCity;
+  FDistrictModel.Entity.ZIPCODE     := FZipCode;
+  FDistrictModel.Entity.CREATEDAT   := Now;
+  FDistrictModel.Entity.UPDATEDAT   := Now;
 
   FDistrictModel.DAO.Insert(FDistrictModel.Entity);
 end;
 
+function TDistrictDuplicateController.zipCode(AValue: string)
+  : iDistrictDuplicateController;
+begin
+  Result := Self;
+  FZipCode := AValue;
+end;
 
 end.

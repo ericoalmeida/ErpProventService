@@ -9,8 +9,8 @@ type
   TStateModel = class(TInterfacedObject, IStateModel)
   private
     FConnection: IDBConnection;
-    FEntity: TTGERESTADO;
-    FDAO: IContainerObjectSet<TTGERESTADO>;
+    FEntity: TTMNGSTATE;
+    FDAO: IContainerObjectSet<TTMNGSTATE>;
 
   public
     constructor Create;
@@ -18,10 +18,10 @@ type
 
     class function New: IStateModel;
 
-    function Entity: TTGERESTADO; overload;
-    function Entity(AValue: TTGERESTADO): IStateModel; overload;
+    function Entity: TTMNGSTATE; overload;
+    function Entity(AValue: TTMNGSTATE): IStateModel; overload;
 
-    function DAO: IContainerObjectSet<TTGERESTADO>;
+    function DAO: IContainerObjectSet<TTMNGSTATE>;
   end;
 
 implementation
@@ -33,10 +33,10 @@ uses Facade.Controller, ormbr.container.objectset;
 constructor TStateModel.Create;
 begin
    FConnection := TFacadeController.New.ConnectionFactoryController.currentConnection;
-   FDao :=  TContainerObjectSet<TTGERESTADO>.Create(FConnection, 1);
+   FDao :=  TContainerObjectSet<TTMNGSTATE>.Create(FConnection, 1);
 end;
 
-function TStateModel.DAO: IContainerObjectSet<TTGERESTADO>;
+function TStateModel.DAO: IContainerObjectSet<TTMNGSTATE>;
 begin
   result := FDAO;
 end;
@@ -47,12 +47,12 @@ begin
   inherited;
 end;
 
-function TStateModel.Entity: TTGERESTADO;
+function TStateModel.Entity: TTMNGSTATE;
 begin
   Result := FEntity;
 end;
 
-function TStateModel.Entity(AValue: TTGERESTADO): IStateModel;
+function TStateModel.Entity(AValue: TTMNGSTATE): IStateModel;
 begin
   Result := Self;
   FEntity := AValue;

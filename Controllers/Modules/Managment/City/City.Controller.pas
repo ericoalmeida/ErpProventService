@@ -17,6 +17,7 @@ type
     class function New: iCityController;
 
     function find(AValue: string): iCityController;
+    function findById(AValue: string): iCityController;
 
     function insert: iCityInsertController;
     function update: iCityUpdateController;
@@ -29,7 +30,7 @@ type
     function zipCode: string;
     function ibgeCode: string;
     function stateId: string;
-    function stateDescription: string;
+    function stateName: string;
 
     function createdAt: string;
     function updatedAt: string;
@@ -42,14 +43,14 @@ implementation
 uses Facade.Model, CityInsert.Controller, CityUpdate.Controller,
   CityDelete.Controller, CityDuplicate.Controller;
 
-function TCityController.stateDescription: string;
+function TCityController.stateName: string;
 begin
-  Result := FRecordFound.TGERESTADO.DESCRICAO;
+  Result := FRecordFound.TMNGSTATE.NAME;
 end;
 
 function TCityController.stateId: string;
 begin
-  Result := FRecordFound.TGERESTADO.ESTADOID.ToString;
+  Result := FRecordFound.TMNGSTATE.STATEID.ToString;
 end;
 
 function TCityController.code: string;
@@ -92,7 +93,7 @@ end;
 
 function TCityController.ibgeCode: string;
 begin
-  Result := FRecordFound.IBGECODE.ToString;
+  Result := inttostr(FRecordFound.IBGECODE);
 end;
 
 function TCityController.insert: iCityInsertController;
@@ -116,6 +117,14 @@ begin
 
   FRecordFound := FCityModel.DAO.FindWhere
     (Format('CODE = %s', [QuotedStr(AValue)])).Items[0];
+end;
+
+function TCityController.findById(AValue: string): iCityController;
+begin
+  Result := Self;
+
+  FRecordFound := FCityModel.DAO.FindWhere
+    (Format('CITYID = %s', [QuotedStr(AValue)])).Items[0];
 end;
 
 function TCityController.update: iCityUpdateController;

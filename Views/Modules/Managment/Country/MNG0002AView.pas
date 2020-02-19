@@ -19,15 +19,15 @@ uses
 
 type
   TFMNG0002AView = class(TFBaseListView, iBaseListView)
-    FdDataCODIGO: TStringField;
-    FdDataPAISID: TIntegerField;
-    FdDataDESCRICAO: TStringField;
-    FdDataDATACADASTRO: TDateTimeField;
-    FdDataDATAATUALIZACAO: TDateTimeField;
-    VwDadosPAISID: TcxGridDBColumn;
-    VwDadosDESCRICAO: TcxGridDBColumn;
-    VwDadosDATACADASTRO: TcxGridDBColumn;
-    VwDadosDATAATUALIZACAO: TcxGridDBColumn;
+    FdDataCODE: TStringField;
+    FdDataCOUNTRYID: TIntegerField;
+    FdDataNAME: TStringField;
+    FdDataCREATEDAT: TSQLTimeStampField;
+    FdDataUPDATEDAT: TSQLTimeStampField;
+    VwDadosCOUNTRYID: TcxGridDBColumn;
+    VwDadosNAME: TcxGridDBColumn;
+    VwDadosCREATEDAT: TcxGridDBColumn;
+    VwDadosUPDATEDAT: TcxGridDBColumn;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure TxBuscarPropertiesChange(Sender: TObject);
@@ -37,7 +37,7 @@ type
     procedure BtDeleteClick(Sender: TObject);
     procedure BtDuplicateClick(Sender: TObject);
   private
-    FContainer: IContainerDataSet<TTGERPAIS>;
+    FContainer: IContainerDataSet<TTMNGCOUNTRY>;
   public
     { Public declarations }
     class function new: iBaseListView;
@@ -111,7 +111,7 @@ begin
    .ManagmentFactoryView
     .showProgramOfRegister(trMNG0002BView)
      .operation(FOperation)
-     .selectedRecord(FdDataCODIGO.AsString)
+     .selectedRecord(FdDataCODE.AsString)
      .&end;
 end;
 
@@ -122,7 +122,7 @@ begin
    .ManagmentFactoryView
     .showProgramOfRegister(trMNG0002BView)
      .operation(FOperation)
-     .selectedRecord(FdDataCODIGO.AsString)
+     .selectedRecord(FdDataCODE.AsString)
      .&end;
 end;
 
@@ -135,13 +135,13 @@ end;
 procedure TFMNG0002AView.FormCreate(Sender: TObject);
 begin
   inherited;
-  FContainer := TContainerFDMemTable<TTGERPAIS>.Create(FConnection, FdData);
+  FContainer := TContainerFDMemTable<TTMNGCOUNTRY>.Create(FConnection, FdData);
 end;
 
 procedure TFMNG0002AView.FormShow(Sender: TObject);
 begin
   inherited;
-  FFieldOrder := 'DESCRICAO';
+  FFieldOrder := 'NAME';
 
   listRecords;
   totalRecords;
@@ -174,7 +174,7 @@ begin
    .ManagmentFactoryView
     .showProgramOfRegister(trMNG0002BView)
      .operation(FOperation)
-     .selectedRecord(FdDataCODIGO.AsString)
+     .selectedRecord(FdDataCODE.AsString)
      .&end;
 end;
 
@@ -193,7 +193,7 @@ begin
    .ManagmentFactoryView
     .showProgramOfRegister(trMNG0002BView)
      .operation(FOperation)
-     .selectedRecord(FdDataCODIGO.AsString)
+     .selectedRecord(FdDataCODE.AsString)
      .&end;
 end;
 

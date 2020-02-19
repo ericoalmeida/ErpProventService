@@ -6,9 +6,9 @@ uses ormbr.container.objectset.interfaces, TGERPAIS.Entity.Model;
 
 type
   ICountryModel = interface
-    function Entity: TTGERPAIS; overload;
-    function Entity(AValue: TTGERPAIS): ICountryModel; overload;
-    function DAO: IContainerObjectSet<TTGERPAIS>;
+    function Entity: TTMNGCOUNTRY; overload;
+    function Entity(AValue: TTMNGCOUNTRY): ICountryModel; overload;
+    function DAO: IContainerObjectSet<TTMNGCOUNTRY>;
   end;
 
 implementation

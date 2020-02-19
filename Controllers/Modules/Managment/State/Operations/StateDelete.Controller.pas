@@ -12,7 +12,7 @@ type
     FMessageConfirm: iBaseMessageView;
 
     FStateModel: IStateModel;
-    FSelectedRecord: TTGERESTADO;
+    FSelectedRecord: TTMNGSTATE;
   public
     constructor Create;
     destructor Destroy; override;
@@ -20,7 +20,7 @@ type
     class function New: iStateDeleteController;
 
     function stateModel(AValue: IStateModel): iStateDeleteController;
-    function selectedRecord(AValue: TTGERESTADO): iStateDeleteController;
+    function selectedRecord(AValue: TTMNGSTATE): iStateDeleteController;
 
     procedure save;
   end;
@@ -58,7 +58,7 @@ end;
 procedure TStateDeleteController.save;
 begin
   if FMessageConfirm.messages(Format('Deseja excluir o estado %s ?',
-    [FSelectedRecord.DESCRICAO])).&end then
+    [FSelectedRecord.NAME])).&end then
   begin
 
     try
@@ -67,13 +67,13 @@ begin
     except
       on E: Exception do
         raise Exception.Create(Format('Este estado %s não pode ser excluído!',
-          [FSelectedRecord.DESCRICAO]));
+          [FSelectedRecord.NAME]));
     end;
 
   end;
 end;
 
-function TStateDeleteController.selectedRecord(AValue: TTGERESTADO)
+function TStateDeleteController.selectedRecord(AValue: TTMNGSTATE)
   : iStateDeleteController;
 begin
   Result := Self;

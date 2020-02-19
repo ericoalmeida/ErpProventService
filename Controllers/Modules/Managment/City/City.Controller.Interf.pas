@@ -12,18 +12,20 @@ type
 
   iCityController = interface
     function find(AValue: string): iCityController;
+    function findById(AValue: string): iCityController;
 
     function insert: iCityInsertController;
     function update: iCityUpdateController;
     function Delete: iCityDeleteController;
     function Duplicate: iCityDuplicateController;
 
+    function code: string;
     function cityId: string;
     function name: string;
     function zipCode: string;
     function ibgeCode: string;
     function stateId: string;
-    function stateDescription: string;
+    function stateName: string;
 
     function createdAt: string;
     function updatedAt: string;

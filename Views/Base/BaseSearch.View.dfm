@@ -306,10 +306,12 @@ inherited FBaseSearchView: TFBaseSearchView
               OptionsView.CellAutoHeight = True
               OptionsView.ColumnAutoWidth = True
               OptionsView.GroupByBox = False
+              OptionsView.Indicator = True
               Styles.ContentEven = stContentEven
               Styles.ContentOdd = stContentOdd
               Styles.Header = StHeader
               Styles.Inactive = StInactive
+              Styles.Indicator = StIndicator
               Styles.Selection = StSelection
             end
             object LvDados: TcxGridLevel
@@ -391,6 +393,10 @@ inherited FBaseSearchView: TFBaseSearchView
       Font.Name = 'Open Sans SemiBold'
       Font.Style = [fsBold]
       TextColor = clBlack
+    end
+    object StIndicator: TcxStyle
+      AssignedValues = [svColor]
+      Color = 16579836
     end
   end
 end

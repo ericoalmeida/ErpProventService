@@ -145,7 +145,7 @@ inherited FMNG0004BView: TFMNG0004BView
           Width = 541
           ExplicitTop = 170
         end
-        object cxLabel2: TcxLabel
+        object LbUpdatedAt: TcxLabel
           Left = 3
           Top = 142
           Caption = 'Ult. Atualiza'#231#227'o:'
@@ -157,7 +157,7 @@ inherited FMNG0004BView: TFMNG0004BView
           Style.Font.Style = []
           Style.IsFontAssigned = True
         end
-        object cxLabel1: TcxLabel
+        object LbCreatedAt: TcxLabel
           Left = 30
           Top = 118
           Caption = 'Criado em:'
@@ -182,9 +182,9 @@ inherited FMNG0004BView: TFMNG0004BView
           Style.IsFontAssigned = True
         end
         object LbDescription: TcxLabel
-          Left = 30
+          Left = 50
           Top = 26
-          Caption = 'Descri'#231#227'o:'
+          Caption = 'Nome:'
           ParentFont = False
           Style.Font.Charset = ANSI_CHARSET
           Style.Font.Color = clWindowText
@@ -225,7 +225,7 @@ inherited FMNG0004BView: TFMNG0004BView
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
           TabOrder = 5
-          Width = 118
+          Width = 54
         end
         object TxName: TcxTextEdit
           Left = 96
@@ -297,7 +297,7 @@ inherited FMNG0004BView: TFMNG0004BView
           TabOrder = 8
           Width = 379
         end
-        object TxCreatedDate: TcxTextEdit
+        object TxCreatedAt: TcxTextEdit
           Left = 96
           Top = 117
           Enabled = False
@@ -317,9 +317,9 @@ inherited FMNG0004BView: TFMNG0004BView
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
           TabOrder = 9
-          Width = 214
+          Width = 142
         end
-        object TxUpdatedDate: TcxTextEdit
+        object TxUpdatedAt: TcxTextEdit
           Left = 96
           Top = 141
           Enabled = False
@@ -339,7 +339,7 @@ inherited FMNG0004BView: TFMNG0004BView
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
           TabOrder = 10
-          Width = 214
+          Width = 142
         end
         object TxZipCode: TcxTextEdit
           Left = 96

@@ -15,79 +15,97 @@ uses
   ormbr.types.nullable,
   ormbr.mapping.classes,
   ormbr.mapping.register,
-  ormbr.mapping.attributes;
+  ormbr.mapping.attributes,
+  TMNGCITY.Entity.Model;
 
 type
   [Entity]
-  [Table('TGERBAIRRO', '')]
-  [PrimaryKey('CODIGO', NotInc, NoSort, False, 'Chave primária')]
-  TTGERBAIRRO = class
+  [Table('TMNGDISTRICT', '')]
+  [PrimaryKey('CODE', NotInc, NoSort, False, 'Chave primária')]
+  TTMNGDISTRICT = class
   private
     { Private declarations }
-    FCODIGO: String;
-    FBAIRROID: Integer;
-    FDESCRICAO: String;
-    FDATACADASTRO: TDateTime;
-    FDATAATUALIZACAO: TDateTime;
-    function getCodigo: String;
-    function getDataCadastro: TDateTime;
-    function getDataAtualizacao: TDateTime;
+    FCODE: String;
+    FDISTRICTID: Integer;
+    FDESCRIPTION: String;
+    FCITYID: String;
+    FZIPCODE: String;
+    FCREATEDAT: TDateTime;
+    FUPDATEDAT: TDateTime;
+
+    FTMNGCITY_0:  TTMNGCITY  ;
+    function GETCODE: String;
   public
     { Public declarations }
+    constructor Create;
+    destructor Destroy; override;
     [Restrictions([NotNull])]
-    [Column('CODIGO', ftString, 64)]
-    [Dictionary('CODIGO', 'Mensagem de validação', '', '', '', taLeftJustify)]
-    property CODIGO: String read getCodigo write FCODIGO;
+    [Column('CODE', ftString, 64)]
+    [Dictionary('CODE', 'Mensagem de validação', '', '', '', taLeftJustify)]
+    property CODE: String read GETCODE write FCODE;
 
     [Restrictions([NotNull])]
-    [Column('BAIRROID', ftInteger)]
-    [Dictionary('BAIRROID', 'Mensagem de validação', '', '', '', taCenter)]
-    property BAIRROID: Integer read FBAIRROID write FBAIRROID;
+    [Column('DISTRICTID', ftInteger)]
+    [Dictionary('DISTRICTID', 'Mensagem de validação', '', '', '', taCenter)]
+    property DISTRICTID: Integer read FDISTRICTID write FDISTRICTID;
 
     [Restrictions([NotNull])]
-    [Column('DESCRICAO', ftString, 155)]
-    [Dictionary('DESCRICAO', 'Mensagem de validação', '', '', '', taLeftJustify)]
-    property DESCRICAO: String read FDESCRICAO write FDESCRICAO;
+    [Column('DESCRIPTION', ftString, 155)]
+    [Dictionary('DESCRIPTION', 'Mensagem de validação', '', '', '', taLeftJustify)]
+    property DESCRIPTION: String read FDESCRIPTION write FDESCRIPTION;
 
     [Restrictions([NotNull])]
-    [Column('DATACADASTRO', ftDateTime)]
-    [Dictionary('DATACADASTRO', 'Mensagem de validação', 'Now', '', '!##/##/####;1;_', taCenter)]
-    property DATACADASTRO: TDateTime read getDataCadastro write FDATACADASTRO;
+    [Column('CITYID', ftString, 64)]
+    [ForeignKey('FK1_TMNGDISTRICT', 'CITYID', 'TMNGCITY', 'CODE', SetNull, SetNull)]
+    [Dictionary('CITYID', 'Mensagem de validação', '', '', '', taLeftJustify)]
+    property CITYID: String read FCITYID write FCITYID;
 
     [Restrictions([NotNull])]
-    [Column('DATAATUALIZACAO', ftDateTime)]
-    [Dictionary('DATAATUALIZACAO', 'Mensagem de validação', 'Now', '', '!##/##/####;1;_', taCenter)]
-    property DATAATUALIZACAO: TDateTime read getDataAtualizacao write FDATAATUALIZACAO;
+    [Column('ZIPCODE', ftString, 12)]
+    [Dictionary('ZIPCODE', 'Mensagem de validação', '', '', '', taLeftJustify)]
+    property ZIPCODE: String read FZIPCODE write FZIPCODE;
+
+    [Restrictions([NotNull])]
+    [Column('CREATEDAT', ftDateTime)]
+    [Dictionary('CREATEDAT', 'Mensagem de validação', 'Now', '', '!##/##/####;1;_', taCenter)]
+    property CREATEDAT: TDateTime read FCREATEDAT write FCREATEDAT;
+
+    [Restrictions([NotNull])]
+    [Column('UPDATEDAT', ftDateTime)]
+    [Dictionary('UPDATEDAT', 'Mensagem de validação', 'Now', '', '!##/##/####;1;_', taCenter)]
+    property UPDATEDAT: TDateTime read FUPDATEDAT write FUPDATEDAT;
+
+    [Association(OneToOne,'CITYID','TMNGCITY','CODE')]
+    property TMNGCITY: TTMNGCITY read FTMNGCITY_0 write FTMNGCITY_0;
+
   end;
 
 implementation
 
-{ TTGERBAIRRO }
-
-function TTGERBAIRRO.getCodigo: String;
+constructor TTMNGDISTRICT.Create;
 begin
-  if FCODIGO.IsEmpty then
-  FCODIGO := TGUID.NewGuid.ToString;
-
-  Result := FCODIGO;
+  FTMNGCITY_0 := TTMNGCITY.Create;
 end;
 
-function TTGERBAIRRO.getDataAtualizacao: TDateTime;
+destructor TTMNGDISTRICT.Destroy;
 begin
-  FDATAATUALIZACAO := Now;
+  if Assigned(FTMNGCITY_0) then
+    FTMNGCITY_0.Free;
 
-  Result := FDATAATUALIZACAO;
+  inherited;
 end;
 
-function TTGERBAIRRO.getDataCadastro: TDateTime;
+function TTMNGDISTRICT.GETCODE: String;
 begin
-  if FDATACADASTRO = StrToDateTime('30/12/1899 00:00') then
-  FDATACADASTRO := Now;
+  if FCODE.IsEmpty then
+   FCODE := TGUID.NewGuid.ToString;
 
-  Result := FDATACADASTRO;
+  Result := FCODE;
 end;
 
 initialization
-  TRegisterClass.RegisterEntity(TTGERBAIRRO)
+  TRegisterClass.RegisterEntity(TTMNGDISTRICT)
 
 end.
+
+

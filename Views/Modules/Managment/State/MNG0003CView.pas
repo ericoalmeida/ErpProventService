@@ -27,16 +27,18 @@ uses
 
 type
   TFMNG0003CView = class(TFBaseSearchView, IBaseSearchView)
-    FdQDataCODIGO: TStringField;
-    FdQDataESTADOID: TIntegerField;
-    FdQDataDESCRICAO: TStringField;
-    FdQDataPAISID: TStringField;
-    FdQDataPAISDESCRICAO: TStringField;
-    FdQDataDATACADASTRO: TSQLTimeStampField;
-    FdQDataDATAATUALIZACAO: TSQLTimeStampField;
-    VwDadosESTADOID: TcxGridDBColumn;
-    VwDadosDESCRICAO: TcxGridDBColumn;
-    VwDadosPAISDESCRICAO: TcxGridDBColumn;
+    FdQDataCODE: TStringField;
+    FdQDataSTATEID: TIntegerField;
+    FdQDataNAME: TStringField;
+    FdQDataCOUNTRYID: TStringField;
+    FdQDataCOUNTRYNAME: TStringField;
+    FdQDataCREATEDAT: TSQLTimeStampField;
+    FdQDataUPDATEDAT: TSQLTimeStampField;
+    VwDadosSTATEID: TcxGridDBColumn;
+    VwDadosNAME: TcxGridDBColumn;
+    VwDadosCOUNTRYNAME: TcxGridDBColumn;
+    VwDadosCREATEDAT: TcxGridDBColumn;
+    VwDadosUPDATEDAT: TcxGridDBColumn;
     procedure FormShow(Sender: TObject);
     procedure BtSairClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -65,7 +67,7 @@ implementation
 
 procedure TFMNG0003CView.BtConfirmarClick(Sender: TObject);
 begin
-  FSelectedRecord := FdQDataCODIGO.AsString;
+  FSelectedRecord := FdQDataCODE.AsString;
   inherited;
 end;
 

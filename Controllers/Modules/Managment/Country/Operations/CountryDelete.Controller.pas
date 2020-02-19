@@ -12,7 +12,7 @@ type
     FMessageConfirm: iBaseMessageView;
 
     FCountryModel: ICountryModel;
-    FSelectedRecord: TTGERPAIS;
+    FSelectedRecord: TTMNGCOUNTRY;
   public
     constructor Create;
     destructor Destroy; override;
@@ -20,7 +20,7 @@ type
     class function New: iCountryDeleteController;
 
     function countryModel(AValue: ICountryModel): iCountryDeleteController;
-    function selectedRecord(AValue: TTGERPAIS): iCountryDeleteController;
+    function selectedRecord(AValue: TTMNGCOUNTRY): iCountryDeleteController;
 
     procedure save;
   end;
@@ -58,7 +58,7 @@ end;
 procedure TCountryDeleteController.save;
 begin
   if FMessageConfirm.messages(Format('Deseja excluir o país %s ?',
-    [FSelectedRecord.DESCRICAO])).&end then
+    [FSelectedRecord.NAME])).&end then
   begin
 
     try
@@ -67,13 +67,13 @@ begin
     except
       on E: Exception do
         raise Exception.Create(Format('Este país %s não pode ser excluído!',
-          [FSelectedRecord.DESCRICAO]));
+          [FSelectedRecord.NAME]));
     end;
 
   end;
 end;
 
-function TCountryDeleteController.selectedRecord(AValue: TTGERPAIS)
+function TCountryDeleteController.selectedRecord(AValue: TTMNGCOUNTRY)
   : iCountryDeleteController;
 begin
   Result := Self;

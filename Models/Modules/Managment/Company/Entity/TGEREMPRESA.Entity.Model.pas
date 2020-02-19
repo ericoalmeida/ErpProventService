@@ -37,7 +37,7 @@ type
     FTELEFONE: Nullable<String>;
     FEMAIL: Nullable<String>;
 
-    FTGERBAIRRO_0:  TTGERBAIRRO  ;
+    FTGERBAIRRO_0:  TTMNGDISTRICT  ;
     function getCODIGO: String;
   public 
     { Public declarations } 
@@ -98,7 +98,7 @@ type
     property EMAIL: Nullable<String> read FEMAIL write FEMAIL;
 
     [Association(OneToOne,'BAIRROID','TGERBAIRRO','CODIGO')]
-    property TGERBAIRRO: TTGERBAIRRO read FTGERBAIRRO_0 write FTGERBAIRRO_0;
+    property TGERBAIRRO: TTMNGDISTRICT read FTGERBAIRRO_0 write FTGERBAIRRO_0;
 
   end;
 
@@ -106,7 +106,7 @@ implementation
 
 constructor TTGEREMPRESA.Create;
 begin
-  FTGERBAIRRO_0 := TTGERBAIRRO.Create;
+  FTGERBAIRRO_0 := TTMNGDISTRICT.Create;
 end;
 
 destructor TTGEREMPRESA.Destroy;

@@ -98,11 +98,13 @@ inherited FMNG0002BView: TFMNG0002BView
       end
       inherited LbTitle: TRzLabel
         Width = 50
+        Height = 26
         Caption = 'Pa'#237'ses'
         ExplicitWidth = 50
       end
       inherited LbOperation: TRzLabel
         Left = 416
+        Height = 26
         ExplicitLeft = 416
       end
     end
@@ -111,6 +113,10 @@ inherited FMNG0002BView: TFMNG0002BView
       Width = 500
       ExplicitTop = 248
       ExplicitWidth = 500
+      inherited LbProgram: TRzLabel
+        Width = 500
+        Height = 18
+      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 500
@@ -141,10 +147,10 @@ inherited FMNG0002BView: TFMNG0002BView
           Width = 496
           ExplicitTop = 150
         end
-        object cxLabel2: TcxLabel
+        object LbUpdatedAt: TcxLabel
           Left = 4
           Top = 122
-          Caption = 'Atualizado em:'
+          Caption = 'Ult. Atualiza'#231#227'o:'
           ParentFont = False
           Style.Font.Charset = ANSI_CHARSET
           Style.Font.Color = clWindowText
@@ -153,8 +159,8 @@ inherited FMNG0002BView: TFMNG0002BView
           Style.Font.Style = []
           Style.IsFontAssigned = True
         end
-        object cxLabel1: TcxLabel
-          Left = 25
+        object LbCreatedAt: TcxLabel
+          Left = 31
           Top = 98
           Caption = 'Criado em:'
           ParentFont = False
@@ -165,8 +171,8 @@ inherited FMNG0002BView: TFMNG0002BView
           Style.Font.Style = []
           Style.IsFontAssigned = True
         end
-        object TxUpdatedDate: TcxTextEdit
-          Left = 91
+        object TxUpdatedAt: TcxTextEdit
+          Left = 97
           Top = 121
           Enabled = False
           Properties.CharCase = ecUpperCase
@@ -187,8 +193,8 @@ inherited FMNG0002BView: TFMNG0002BView
           TabOrder = 2
           Width = 214
         end
-        object TxCreatedDate: TcxTextEdit
-          Left = 91
+        object TxCreatedAt: TcxTextEdit
+          Left = 97
           Top = 97
           Enabled = False
           Properties.CharCase = ecUpperCase
@@ -209,10 +215,10 @@ inherited FMNG0002BView: TFMNG0002BView
           TabOrder = 3
           Width = 214
         end
-        object LbDescription: TcxLabel
-          Left = 25
+        object LbName: TcxLabel
+          Left = 51
           Top = 26
-          Caption = 'Descri'#231#227'o:'
+          Caption = 'Nome:'
           ParentFont = False
           Style.Font.Charset = ANSI_CHARSET
           Style.Font.Color = clWindowText
@@ -221,8 +227,8 @@ inherited FMNG0002BView: TFMNG0002BView
           Style.Font.Style = [fsBold]
           Style.IsFontAssigned = True
         end
-        object TxDescription: TcxTextEdit
-          Left = 91
+        object TxName: TcxTextEdit
+          Left = 97
           Top = 25
           Properties.CharCase = ecUpperCase
           Style.BorderColor = 12698049
@@ -244,7 +250,7 @@ inherited FMNG0002BView: TFMNG0002BView
           Width = 333
         end
         object TxCountryId: TcxTextEdit
-          Left = 91
+          Left = 97
           Top = 1
           Enabled = False
           Properties.CharCase = ecUpperCase
@@ -266,7 +272,7 @@ inherited FMNG0002BView: TFMNG0002BView
           Width = 118
         end
         object LbCountryId: TcxLabel
-          Left = 66
+          Left = 72
           Top = 2
           Caption = 'N'#186':'
           ParentFont = False
@@ -279,5 +285,9 @@ inherited FMNG0002BView: TFMNG0002BView
         end
       end
     end
+  end
+  inherited AcSearchRecord: TActionList
+    Left = 348
+    Top = 100
   end
 end

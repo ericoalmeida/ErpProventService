@@ -20,8 +20,8 @@ uses
 
 type
   TFMNG0004BView = class(TFBaseRegisterView, iBaseRegisterView)
-    cxLabel2: TcxLabel;
-    cxLabel1: TcxLabel;
+    LbUpdatedAt: TcxLabel;
+    LbCreatedAt: TcxLabel;
     cxLabel3: TcxLabel;
     LbDescription: TcxLabel;
     LbDistrictId: TcxLabel;
@@ -29,8 +29,8 @@ type
     TxName: TcxTextEdit;
     TxStateId: TcxButtonEdit;
     TxStateName: TcxTextEdit;
-    TxCreatedDate: TcxTextEdit;
-    TxUpdatedDate: TcxTextEdit;
+    TxCreatedAt: TcxTextEdit;
+    TxUpdatedAt: TcxTextEdit;
     TxZipCode: TcxTextEdit;
     cxLabel4: TcxLabel;
     cxLabel5: TcxLabel;
@@ -190,7 +190,7 @@ begin
   FStateController.find(stateCodigo);
 
   TxStateId.Text := FStateController.stateId;
-  TxStateName.Text := FStateController.description;
+  TxStateName.Text := FStateController.name;
 end;
 
 procedure TFMNG0004BView.showDataOnScreen;
@@ -204,12 +204,12 @@ begin
   TxCityId.Text := FCityController.cityId;
   TxName.Text := FCityController.name;
   TxStateId.Text := FCityController.stateId;
-  TxStateName.Text := FCityController.stateDescription;
+  TxStateName.Text := FCityController.stateName;
   TxZipCode.Text := FCityController.zipCode;
   TxIBGECode.Text := FCityController.ibgeCode;
 
-  TxCreatedDate.Text := FCityController.createdAt;
-  TxUpdatedDate.Text := FCityController.updatedAt;
+  TxCreatedAt.Text := FCityController.createdAt;
+  TxUpdatedAt.Text := FCityController.updatedAt;
 end;
 
 procedure TFMNG0004BView.updateRecord;

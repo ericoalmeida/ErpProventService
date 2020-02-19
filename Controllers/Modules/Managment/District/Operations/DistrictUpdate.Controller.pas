@@ -10,9 +10,11 @@ type
     iDistrictUpdateController)
   private
     FDistrictModel: iDistrictModel;
-    FSelectedRecord: TTGERBAIRRO;
+    FSelectedRecord: TTMNGDISTRICT;
 
     FDescricao: string;
+    FCityId: string;
+    FZipCode: string;
   public
     constructor Create;
     destructor Destroy; override;
@@ -20,15 +22,24 @@ type
     class function New: iDistrictUpdateController;
 
     function districtModel(AValue: iDistrictModel): iDistrictUpdateController;
-    function selectedDistrict(AValue: TTGERBAIRRO): iDistrictUpdateController;
+    function selectedDistrict(AValue: TTMNGDISTRICT): iDistrictUpdateController;
 
     function description(AValue: string): iDistrictUpdateController;
+    function cityId(AValue: string): iDistrictUpdateController;
+    function zipCode(AValue: string): iDistrictUpdateController;
+
     procedure save;
   end;
 
 implementation
 
 { TDistrictUpdateController }
+
+function TDistrictUpdateController.cityId(AValue: string): iDistrictUpdateController;
+begin
+  Result := Self;
+  FCityId := AValue;
+end;
 
 constructor TDistrictUpdateController.Create;
 begin
@@ -62,15 +73,24 @@ procedure TDistrictUpdateController.save;
 begin
     FDistrictModel.DAO.Modify(FSelectedRecord);
 
-    FSelectedRecord.DESCRICAO := FDescricao;
+    FSelectedRecord.DESCRIPTION := FDescricao;
+    FSelectedRecord.CITYID      := FCityId;
+    FSelectedRecord.ZIPCODE     := FZipCode;
+    FSelectedRecord.UPDATEDAT   := Now;
 
     FDistrictModel.DAO.Update(FSelectedRecord);
 end;
 
-function TDistrictUpdateController.selectedDistrict(AValue: TTGERBAIRRO): iDistrictUpdateController;
+function TDistrictUpdateController.selectedDistrict(AValue: TTMNGDISTRICT): iDistrictUpdateController;
 begin
  Result := Self;
  FSelectedRecord := AValue;
+end;
+
+function TDistrictUpdateController.zipCode(AValue: string): iDistrictUpdateController;
+begin
+  Result   := Self;
+  FZipCode := AValue;
 end;
 
 end.

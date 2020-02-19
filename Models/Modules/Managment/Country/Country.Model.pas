@@ -9,8 +9,8 @@ type
   TCountryModel = class(TInterfacedObject, ICountryModel)
   private
     FConnection: IDBConnection;
-    FEntity: TTGERPAIS;
-    FDAO: IContainerObjectSet<TTGERPAIS>;
+    FEntity: TTMNGCOUNTRY;
+    FDAO: IContainerObjectSet<TTMNGCOUNTRY>;
 
   public
     constructor Create;
@@ -18,10 +18,10 @@ type
 
     class function New: ICountryModel;
 
-    function Entity: TTGERPAIS; overload;
-    function Entity(AValue: TTGERPAIS): ICountryModel; overload;
+    function Entity: TTMNGCOUNTRY; overload;
+    function Entity(AValue: TTMNGCOUNTRY): ICountryModel; overload;
 
-    function DAO: IContainerObjectSet<TTGERPAIS>;
+    function DAO: IContainerObjectSet<TTMNGCOUNTRY>;
   end;
 
 implementation
@@ -34,10 +34,10 @@ constructor TCountryModel.Create;
 begin
   FConnection := TFacadeController.New.ConnectionFactoryController.
     currentConnection;
-  FDAO := TContainerObjectSet<TTGERPAIS>.Create(FConnection, 1);
+  FDAO := TContainerObjectSet<TTMNGCOUNTRY>.Create(FConnection, 1);
 end;
 
-function TCountryModel.DAO: IContainerObjectSet<TTGERPAIS>;
+function TCountryModel.DAO: IContainerObjectSet<TTMNGCOUNTRY>;
 begin
   Result := FDAO;
 end;
@@ -48,12 +48,12 @@ begin
   inherited;
 end;
 
-function TCountryModel.Entity: TTGERPAIS;
+function TCountryModel.Entity: TTMNGCOUNTRY;
 begin
   Result := FEntity;
 end;
 
-function TCountryModel.Entity(AValue: TTGERPAIS): ICountryModel;
+function TCountryModel.Entity(AValue: TTMNGCOUNTRY): ICountryModel;
 begin
   Result := Self;
   FEntity := AValue;

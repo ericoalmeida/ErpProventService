@@ -9,8 +9,8 @@ type
   TDistrictModel = class(TInterfacedObject, iDistrictModel)
   private
     FConnection: IDBConnection;
-    FEntity: TTGERBAIRRO;
-    FDAO: IContainerObjectSet<TTGERBAIRRO>;
+    FEntity: TTMNGDISTRICT;
+    FDAO: IContainerObjectSet<TTMNGDISTRICT>;
 
   public
     constructor Create;
@@ -18,10 +18,10 @@ type
 
     class function New: iDistrictModel;
 
-    function Entity: TTGERBAIRRO; overload;
-    function Entity(AValue: TTGERBAIRRO): iDistrictModel; overload;
+    function Entity: TTMNGDISTRICT; overload;
+    function Entity(AValue: TTMNGDISTRICT): iDistrictModel; overload;
 
-    function DAO: IContainerObjectSet<TTGERBAIRRO>;
+    function DAO: IContainerObjectSet<TTMNGDISTRICT>;
   end;
 
 implementation
@@ -33,10 +33,10 @@ uses Facade.Controller, ormbr.container.objectset;
 constructor TDistrictModel.Create;
 begin
    FConnection := TFacadeController.New.ConnectionFactoryController.currentConnection;
-   FDao :=  TContainerObjectSet<TTGERBAIRRO>.Create(FConnection, 1);
+   FDao :=  TContainerObjectSet<TTMNGDISTRICT>.Create(FConnection, 1);
 end;
 
-function TDistrictModel.DAO: IContainerObjectSet<TTGERBAIRRO>;
+function TDistrictModel.DAO: IContainerObjectSet<TTMNGDISTRICT>;
 begin
    Result := FDAO;
 end;
@@ -47,12 +47,12 @@ begin
   inherited;
 end;
 
-function TDistrictModel.Entity: TTGERBAIRRO;
+function TDistrictModel.Entity: TTMNGDISTRICT;
 begin
   Result := FEntity;
 end;
 
-function TDistrictModel.Entity(AValue: TTGERBAIRRO): iDistrictModel;
+function TDistrictModel.Entity(AValue: TTMNGDISTRICT): iDistrictModel;
 begin
   Result := Self;
   FEntity := AValue;

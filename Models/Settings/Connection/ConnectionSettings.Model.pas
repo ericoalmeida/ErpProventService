@@ -72,7 +72,7 @@ begin
   FFileIni.WriteString('Settings', 'Port',     '3050');
   FFileIni.WriteString('Settings', 'Server',   'localhost');
   FFileIni.WriteString('Settings', 'User',     'SYSDBA');
-  FFileIni.WriteString('Settings', 'Pasword',  'masterkey');
+  FFileIni.WriteString('Settings', 'Password',  'masterkey');
   FFileIni.WriteString('Settings', 'Library',  'fbclient.dll');
 end;
 
@@ -88,7 +88,7 @@ end;
 
 function TConnectionSettingsModel.password: string;
 begin
-  Result := FFileIni.ReadString('Settings', 'Password', '');
+  Result := FFileIni.ReadString('Settings', 'Password', 'masterkey');
 end;
 
 function TConnectionSettingsModel.server: string;
@@ -103,7 +103,7 @@ end;
 
 function TConnectionSettingsModel.user: string;
 begin
-  Result := FFileIni.ReadString('Settings', 'User', '');
+  Result := FFileIni.ReadString('Settings', 'User', 'SYSDBA');
 end;
 
 procedure TConnectionSettingsModel.verifyParametersConnection;

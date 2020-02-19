@@ -2,13 +2,15 @@ unit CountryDuplicate.Controller;
 
 interface
 
-uses Country.Controller.Interf, Country.Model.Interf, TGERPAIS.Entity.Model;
+uses Country.Controller.Interf, Country.Model.Interf, TGERPAIS.Entity.Model, System.SysUtils;
 
 type
   TCountryDuplicateController = class(TInterfacedObject, iCountryDuplicateController)
   private
     FCountryModel: ICountryModel;
-    FDescription: string;
+    FName: string;
+
+    function getCountryId: Integer;
   public
     constructor Create;
     destructor Destroy; override;
@@ -17,7 +19,7 @@ type
 
     function countryModel(AValue: ICountryModel): iCountryDuplicateController;
 
-    function description(AValue: string): iCountryDuplicateController;
+    function name(AValue: string): iCountryDuplicateController;
 
     procedure save;
   end;
@@ -31,16 +33,25 @@ begin
 
 end;
 
-function TCountryDuplicateController.description(AValue: string): iCountryDuplicateController;
+function TCountryDuplicateController.name(AValue: string): iCountryDuplicateController;
 begin
  Result := Self;
- FDescription := AValue;
+ FName := AValue;
 end;
 
 destructor TCountryDuplicateController.Destroy;
 begin
 
   inherited;
+end;
+
+function TCountryDuplicateController.getCountryId: Integer;
+begin
+  if FCountryModel.DAO.Find.Count <> 0 then begin
+    Result := FCountryModel.DAO.FindWhere('', 'COUNTRYID desc').Last.COUNTRYID + 1;
+  end else begin
+    Result := 1;
+  end;
 end;
 
 class function TCountryDuplicateController.New: iCountryDuplicateController;
@@ -50,9 +61,12 @@ end;
 
 procedure TCountryDuplicateController.save;
 begin
-  FCountryModel.Entity(TTGERPAIS.Create);
+  FCountryModel.Entity(TTMNGCOUNTRY.Create);
 
-  FCountryModel.Entity.DESCRICAO := FDescription;
+  FCountryModel.Entity.COUNTRYID := getCountryId;
+  FCountryModel.Entity.NAME      := FName;
+  FCountryModel.Entity.CREATEDAT := Now;
+  FCountryModel.Entity.UPDATEDAT := Now;
 
   FCountryModel.DAO.Insert(FCountryModel.Entity);
 end;

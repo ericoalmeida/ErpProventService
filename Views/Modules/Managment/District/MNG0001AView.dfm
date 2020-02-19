@@ -132,6 +132,7 @@ inherited FMNG0001AView: TFMNG0001AView
             ExplicitLeft = 203
             inherited TxBuscar: TcxTextEdit
               Properties.OnChange = TxBuscarPropertiesChange
+              ExplicitHeight = 22
             end
           end
         end
@@ -157,25 +158,30 @@ inherited FMNG0001AView: TFMNG0001AView
             ExplicitHeight = 61
             inherited VwDados: TcxGridDBTableView
               DataController.DataSource = DsData
-              object VwDadosBAIRROID: TcxGridDBColumn
+              object VwDadosDISTRICTID: TcxGridDBColumn
                 Caption = 'N'#186
-                DataBinding.FieldName = 'BAIRROID'
+                DataBinding.FieldName = 'DISTRICTID'
                 HeaderAlignmentHorz = taCenter
-                Width = 60
+                Width = 50
               end
-              object VwDadosDESCRICAO: TcxGridDBColumn
-                Caption = 'Descri'#231#227'o'
-                DataBinding.FieldName = 'DESCRICAO'
-                Width = 550
+              object VwDadosDESCRIPTION: TcxGridDBColumn
+                Caption = 'Bairro'
+                DataBinding.FieldName = 'DESCRIPTION'
+                Width = 455
               end
-              object VwDadosDATACADASTRO: TcxGridDBColumn
+              object VwDadosCITYNAME: TcxGridDBColumn
+                Caption = 'Cidade'
+                DataBinding.FieldName = 'CITYNAME'
+                Width = 255
+              end
+              object VwDadosCREATEDAT: TcxGridDBColumn
                 Caption = 'Data Cadastro'
-                DataBinding.FieldName = 'DATACADASTRO'
+                DataBinding.FieldName = 'CREATEDAT'
                 Width = 110
               end
-              object VwDadosDATAATUALIZACAO: TcxGridDBColumn
-                Caption = 'Data Atualiza'#231#227'o'
-                DataBinding.FieldName = 'DATAATUALIZACAO'
+              object VwDadosUPDATEDAT: TcxGridDBColumn
+                Caption = 'Ult. Atualiza'#231#227'o'
+                DataBinding.FieldName = 'UPDATEDAT'
                 Width = 110
               end
             end
@@ -191,24 +197,51 @@ inherited FMNG0001AView: TFMNG0001AView
   inherited StGridStyles: TcxStyleRepository
     PixelsPerInch = 96
   end
-  inherited FdData: TFDMemTable
-    object FdDataCODIGO: TStringField
-      FieldName = 'CODIGO'
+  inherited DsData: TDataSource
+    DataSet = FdQData
+  end
+  inherited FdQData: TFDQuery
+    SQL.Strings = (
+      'select'
+      ''
+      'dtr.code,'
+      'dtr.districtid,'
+      'dtr.description,'
+      'dtr.cityid,'
+      'cty.name||'#39'/'#39'||stt.initials  as cityname,'
+      'dtr.createdat,'
+      'dtr.updatedat'
+      ''
+      'from'
+      ''
+      'TMngDistrict dtr'
+      'left join TMngCity cty on (cty.code = dtr.cityid)'
+      'left join TMngState stt on (stt.code = cty.stateid)')
+    object FdQDataCODE: TStringField
+      Alignment = taCenter
+      FieldName = 'CODE'
       Size = 64
     end
-    object FdDataBAIRROID: TIntegerField
-      Alignment = taCenter
-      FieldName = 'BAIRROID'
+    object FdQDataDISTRICTID: TIntegerField
+      FieldName = 'DISTRICTID'
     end
-    object FdDataDESCRICAO: TStringField
-      FieldName = 'DESCRICAO'
+    object FdQDataDESCRIPTION: TStringField
+      FieldName = 'DESCRIPTION'
       Size = 155
     end
-    object FdDataDATACADASTRO: TDateTimeField
-      FieldName = 'DATACADASTRO'
+    object FdQDataCITYID: TStringField
+      FieldName = 'CITYID'
+      Size = 64
     end
-    object FdDataDATAATUALIZACAO: TDateTimeField
-      FieldName = 'DATAATUALIZACAO'
+    object FdQDataCITYNAME: TStringField
+      FieldName = 'CITYNAME'
+      Size = 155
+    end
+    object FdQDataCREATEDAT: TSQLTimeStampField
+      FieldName = 'CREATEDAT'
+    end
+    object FdQDataUPDATEDAT: TSQLTimeStampField
+      FieldName = 'UPDATEDAT'
     end
   end
 end

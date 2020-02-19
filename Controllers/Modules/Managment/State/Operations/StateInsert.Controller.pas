@@ -2,14 +2,17 @@ unit StateInsert.Controller;
 
 interface
 
-uses State.Controller.Interf, State.Model.Interf, TGERESTADO.Entity.Model;
+uses State.Controller.Interf, State.Model.Interf, TGERESTADO.Entity.Model, System.SysUtils;
 
 type
   TStateInsertController = class(TInterfacedObject, iStateInsertController)
   private
     FStateModel: IStateModel;
-    FDescription: string;
+    FName: string;
+    FInitials: string;
     FCountryId: string;
+
+    function getStateId: Integer;
   public
     constructor Create;
     destructor Destroy; override;
@@ -18,7 +21,8 @@ type
 
     function stateModel(AValue: IStateModel): iStateInsertController;
 
-    function description(AValue: string): iStateInsertController;
+    function name(AValue: string): iStateInsertController;
+    function initials(AValue: string): iStateInsertController;
     function countryId(AValue: string): iStateInsertController;
 
     procedure save;
@@ -39,16 +43,25 @@ begin
 
 end;
 
-function TStateInsertController.description(AValue: string): iStateInsertController;
+function TStateInsertController.name(AValue: string): iStateInsertController;
 begin
   Result := Self;
-  FDescription := AValue;
+  FName := AValue;
 end;
 
 destructor TStateInsertController.Destroy;
 begin
 
   inherited;
+end;
+
+function TStateInsertController.getStateId: Integer;
+begin
+  if FStateModel.DAO.Find.Count <> 0 then begin
+    Result := FStateModel.DAO.FindWhere('', 'STATEID desc').Last.STATEID + 1;
+  end else begin
+    Result := 1;
+  end;
 end;
 
 class function TStateInsertController.New: iStateInsertController;
@@ -58,12 +71,22 @@ end;
 
 procedure TStateInsertController.save;
 begin
-  FStateModel.Entity(TTGERESTADO.Create);
+  FStateModel.Entity(TTMNGSTATE.Create);
 
-  FStateModel.Entity.DESCRICAO := FDescription;
-  FStateModel.Entity.PAISID    := FCountryId;
+  FStateModel.Entity.STATEID    := getStateId;
+  FStateModel.Entity.NAME       := FName;
+  FStateModel.Entity.COUNTRYID  := FCountryId;
+  FStateModel.Entity.INITIALS   := FInitials;
+  FStateModel.Entity.CREATEDAT  := Now;
+  FStateModel.Entity.UPDATEDAT  := Now;
 
   FStateModel.DAO.Insert(FStateModel.Entity);
+end;
+
+function TStateInsertController.initials(AValue: string): iStateInsertController;
+begin
+  Result := Self;
+  FInitials := AValue;
 end;
 
 function TStateInsertController.stateModel(AValue: IStateModel): iStateInsertController;

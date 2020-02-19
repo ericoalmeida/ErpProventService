@@ -49,6 +49,7 @@ type
     StInactive: TcxStyle;
     StSelection: TcxStyle;
     BtConfirmar: TcxButton;
+    StIndicator: TcxStyle;
     procedure FormCreate(Sender: TObject);
     procedure BtConfirmarClick(Sender: TObject);
   private

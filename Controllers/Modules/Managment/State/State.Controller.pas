@@ -9,7 +9,7 @@ type
   TStateController = class(TInterfacedObject, iStateController)
   private
     FStateModel: IStateModel;
-    FRecordFound: TTGERESTADO;
+    FRecordFound: TTMNGSTATE;
   public
     constructor Create;
     destructor Destroy; override;
@@ -26,11 +26,12 @@ type
 
     function code: string;
     function stateId: string;
-    function description: string;
+    function name: string;
+    function initials: string;
     function countryId: string;
-    function countryDescription: string;
-    function createdDate: string;
-    function updatedDate: string;
+    function countryName: string;
+    function createdAt: string;
+    function updatedAt: string;
   end;
 
 implementation
@@ -42,17 +43,17 @@ uses Facade.Model, StateInsert.Controller, StateUpdate.Controller,
 
 function TStateController.code: string;
 begin
- Result := FRecordFound.CODIGO;
+ Result := FRecordFound.CODE;
 end;
 
-function TStateController.countryDescription: string;
+function TStateController.countryName: string;
 begin
-  Result := FRecordFound.TGERPAIS.DESCRICAO;
+  Result := FRecordFound.TMNGCOUNTRY.NAME;
 end;
 
 function TStateController.countryId: string;
 begin
-  Result := FRecordFound.TGERPAIS.PAISID.ToString;
+  Result := FRecordFound.TMNGCOUNTRY.COUNTRYID.ToString;
 end;
 
 constructor TStateController.Create;
@@ -61,9 +62,9 @@ begin
     stateModel;
 end;
 
-function TStateController.createdDate: string;
+function TStateController.createdAt: string;
 begin
-  Result := DateTimeToStr(FRecordFound.DATACADASTRO);
+  Result := DateTimeToStr(FRecordFound.CREATEDAT);
 end;
 
 function TStateController.delete: iStateDeleteController;
@@ -72,9 +73,9 @@ begin
     .selectedRecord(FRecordFound);
 end;
 
-function TStateController.description: string;
+function TStateController.name: string;
 begin
-  Result := FRecordFound.DESCRICAO;
+  Result := FRecordFound.NAME;
 end;
 
 destructor TStateController.Destroy;
@@ -86,6 +87,11 @@ end;
 function TStateController.duplicate: iStateDuplicateController;
 begin
   Result := TStateDuplicateController.New.stateModel(FStateModel);
+end;
+
+function TStateController.initials: string;
+begin
+  Result := FRecordFound.INITIALS;
 end;
 
 function TStateController.insert: iStateInsertController;
@@ -100,7 +106,7 @@ end;
 
 function TStateController.stateId: string;
 begin
-  Result := FRecordFound.ESTADOID.ToString;
+  Result := FRecordFound.STATEID.ToString;
 end;
 
 function TStateController.find(AValue: string): iStateController;
@@ -108,7 +114,7 @@ begin
   Result := Self;
 
   FRecordFound := FStateModel.DAO.FindWhere
-    (Format('CODIGO = %s', [QuotedStr(AValue)])).Items[0];
+    (Format('CODE = %s', [QuotedStr(AValue)])).Items[0];
 end;
 
 function TStateController.findById(AValue: string): iStateController;
@@ -116,7 +122,7 @@ begin
   Result := Self;
 
   FRecordFound := FStateModel.DAO.FindWhere
-    (Format('ESTADOID = %s', [QuotedStr(AValue)])).Items[0];
+    (Format('STATEID = %s', [QuotedStr(AValue)])).Items[0];
 end;
 
 function TStateController.update: iStateUpdateController;
@@ -125,9 +131,9 @@ begin
     .selectedRecord(FRecordFound);
 end;
 
-function TStateController.updatedDate: string;
+function TStateController.updatedAt: string;
 begin
-  Result := DateTimeToStr(FRecordFound.DATAATUALIZACAO);
+  Result := DateTimeToStr(FRecordFound.UPDATEDAT);
 end;
 
 end.

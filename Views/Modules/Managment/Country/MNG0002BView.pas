@@ -17,12 +17,12 @@ uses
 
 type
   TFMNG0002BView = class(TFBaseRegisterView, iBaseRegisterView)
-    cxLabel2: TcxLabel;
-    cxLabel1: TcxLabel;
-    TxUpdatedDate: TcxTextEdit;
-    TxCreatedDate: TcxTextEdit;
-    LbDescription: TcxLabel;
-    TxDescription: TcxTextEdit;
+    LbUpdatedAt: TcxLabel;
+    LbCreatedAt: TcxLabel;
+    TxUpdatedAt: TcxTextEdit;
+    TxCreatedAt: TcxTextEdit;
+    LbName: TcxLabel;
+    TxName: TcxTextEdit;
     TxCountryId: TcxTextEdit;
     LbCountryId: TcxLabel;
     procedure FormCreate(Sender: TObject);
@@ -74,7 +74,13 @@ end;
 
 procedure TFMNG0002BView.disableFields;
 begin
-  TxDescription.Enabled := not(FOperation in [toShow, toDelete]);
+  TxName.Enabled := not(FOperation in [toShow, toDelete]);
+
+  LbCreatedAt.Visible := not(FOperation in [toInsert]);
+  TxCreatedAt.Visible := not(FOperation in [toInsert]);
+  LbUpdatedAt.Visible := not(FOperation in [toInsert]);
+  TxUpdatedAt.Visible := not(FOperation in [toInsert]);
+
   BtConfirmar.Visible := not(FOperation = toShow);
 end;
 
@@ -82,7 +88,7 @@ procedure TFMNG0002BView.duplicateRecord;
 begin
   FCountryController
    .duplicate
-    .description(TxDescription.Text)
+    .name(TxName.Text)
      .save;
 end;
 
@@ -106,7 +112,7 @@ procedure TFMNG0002BView.insertRecord;
 begin
   FCountryController
    .insert
-    .description(TxDescription.Text)
+    .name(TxName.Text)
     .save;
 end;
 
@@ -151,17 +157,17 @@ begin
 
   FCountryController.find(FSelectedRecord);
 
-  TxCountryId.Text := FCountryController.countryId;
-  TxDescription.Text := FCountryController.description;
-  TxCreatedDate.Text := FCountryController.createdDate;
-  TxUpdatedDate.Text := FCountryController.updatedDate;
+  TxCountryId.Text   := FCountryController.countryId;
+  TxName.Text        := FCountryController.description;
+  TxCreatedAt.Text   := FCountryController.createdDate;
+  TxUpdatedAt.Text   := FCountryController.updatedDate;
 end;
 
 procedure TFMNG0002BView.updateRecord;
 begin
   FCountryController
    .update
-    .description(TxDescription.Text)
+    .name(TxName.Text)
      .save;
 end;
 

@@ -17,18 +17,20 @@ uses
 
 type
   TFMNG0003AView = class(TFBaseListView, iBaseListView)
-    VwDadosESTADOID: TcxGridDBColumn;
-    VwDadosDESCRICAO: TcxGridDBColumn;
-    VwDadosPAISDESCRICAO: TcxGridDBColumn;
-    VwDadosDATACADASTRO: TcxGridDBColumn;
-    VwDadosDATAATUALIZACAO: TcxGridDBColumn;
-    FdQDataCODIGO: TStringField;
-    FdQDataESTADOID: TIntegerField;
-    FdQDataDESCRICAO: TStringField;
-    FdQDataPAISID: TStringField;
-    FdQDataPAISDESCRICAO: TStringField;
-    FdQDataDATACADASTRO: TSQLTimeStampField;
-    FdQDataDATAATUALIZACAO: TSQLTimeStampField;
+    FdQDataCODE: TStringField;
+    FdQDataSTATEID: TIntegerField;
+    FdQDataNAME: TStringField;
+    FdQDataINITIALS: TStringField;
+    FdQDataCOUNTRYID: TStringField;
+    FdQDataCOUNTRYNAME: TStringField;
+    FdQDataCREATEDAT: TSQLTimeStampField;
+    FdQDataUPDATEDAT: TSQLTimeStampField;
+    VwDadosSTATEID: TcxGridDBColumn;
+    VwDadosNAME: TcxGridDBColumn;
+    VwDadosINITIALS: TcxGridDBColumn;
+    VwDadosCOUNTRYNAME: TcxGridDBColumn;
+    VwDadosCREATEDAT: TcxGridDBColumn;
+    VwDadosUPDATEDAT: TcxGridDBColumn;
     procedure FormShow(Sender: TObject);
     procedure TxBuscarPropertiesChange(Sender: TObject);
     procedure BtInsertClick(Sender: TObject);
@@ -113,7 +115,7 @@ begin
    .ManagmentFactoryView
     .showProgramOfRegister(trMNG0003BView)
      .operation(FOperation)
-     .selectedRecord(FdQDataCODIGO.AsString)
+     .selectedRecord(FdQDataCODE.AsString)
      .&end;
 end;
 
@@ -124,7 +126,7 @@ begin
    .ManagmentFactoryView
     .showProgramOfRegister(trMNG0003BView)
      .operation(FOperation)
-     .selectedRecord(FdQDataCODIGO.AsString)
+     .selectedRecord(FdQDataCODE.AsString)
      .&end;
 end;
 
@@ -171,7 +173,7 @@ begin
    .ManagmentFactoryView
     .showProgramOfRegister(trMNG0003BView)
      .operation(FOperation)
-     .selectedRecord(FdQDataCODIGO.AsString)
+     .selectedRecord(FdQDataCODE.AsString)
      .&end;
 end;
 
@@ -190,7 +192,7 @@ begin
    .ManagmentFactoryView
     .showProgramOfRegister(trMNG0003BView)
      .operation(FOperation)
-     .selectedRecord(FdQDataCODIGO.AsString)
+     .selectedRecord(FdQDataCODE.AsString)
      .&end;
 end;
 

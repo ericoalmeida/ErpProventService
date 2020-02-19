@@ -59,6 +59,7 @@ type
     StInactive: TcxStyle;
     StSelection: TcxStyle;
     FdQData: TFDQuery;
+    StIndicator: TcxStyle;
     procedure BtInsertClick(Sender: TObject);
     procedure BtUpdateClick(Sender: TObject);
     procedure BtShowClick(Sender: TObject);

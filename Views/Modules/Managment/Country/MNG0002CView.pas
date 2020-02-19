@@ -29,21 +29,27 @@ uses
 
 type
   TFMNG0002CView = class(TFBaseSearchView, IBaseSearchView)
-    FdDataCODIGO: TStringField;
-    FdDataPAISID: TIntegerField;
-    FdDataDESCRICAO: TStringField;
-    FdDataDATACADASTRO: TDateTimeField;
-    FdDataDATAATUALIZACAO: TDateTimeField;
-    VwDadosPAISID: TcxGridDBColumn;
-    VwDadosDESCRICAO: TcxGridDBColumn;
-    VwDadosDATACADASTRO: TcxGridDBColumn;
+    FdQDataCODE: TStringField;
+    FdQDataNAME: TStringField;
+    FdQDataCREATEDAT: TSQLTimeStampField;
+    FdQDataUPDATEDAT: TStringField;
+    FdQDataCOUNTRYID: TIntegerField;
+    FdDataCODE: TStringField;
+    FdDataCOUNTRYID: TIntegerField;
+    FdDataNAME: TStringField;
+    FdDataCREATEDAT: TSQLTimeStampField;
+    VwDadosCOUNTRYID: TcxGridDBColumn;
+    VwDadosNAME: TcxGridDBColumn;
+    VwDadosCREATEDAT: TcxGridDBColumn;
+    FdDataUPDATEDAT: TSQLTimeStampField;
+    VwDadosUPDATEDAT: TcxGridDBColumn;
     procedure BtSairClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure TxBuscarPropertiesChange(Sender: TObject);
     procedure BtConfirmarClick(Sender: TObject);
   private
-    FContainer: IContainerDataSet<TTGERPAIS>;
+    FContainer: IContainerDataSet<TTMNGCOUNTRY>;
 
   public
     class function New: IBaseSearchView;
@@ -65,7 +71,7 @@ implementation
 
 procedure TFMNG0002CView.BtConfirmarClick(Sender: TObject);
 begin
-  FSelectedRecord := FdDataCODIGO.AsString;
+  FSelectedRecord := FdDataCODE.AsString;
   inherited;
 end;
 
@@ -87,13 +93,13 @@ begin
   Self.Height := Screen.Height - 400;
   Self.Width  := Screen.Width  - 400;
 
-  FContainer := TContainerFDMemTable<TTGERPAIS>.Create(FConnection, FdData);
+  FContainer := TContainerFDMemTable<TTMNGCOUNTRY>.Create(FConnection, FdData);
 end;
 
 procedure TFMNG0002CView.FormShow(Sender: TObject);
 begin
   inherited;
-  FFieldOrder := 'DESCRICAO';
+  FFieldOrder := 'NAME';
 
   {1 } listRecords;
   {2 } totalRecords;

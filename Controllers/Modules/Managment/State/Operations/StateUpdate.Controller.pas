@@ -2,15 +2,16 @@ unit StateUpdate.Controller;
 
 interface
 
-uses State.Controller.Interf, State.Model.Interf, TGERESTADO.Entity.Model;
+uses State.Controller.Interf, State.Model.Interf, TGERESTADO.Entity.Model, System.SysUtils;
 
 type
   TStateUpdateController = class(TInterfacedObject, iStateUpdateController)
   private
    FStateModel: IStateModel;
-   FSelectedRecord: TTGERESTADO;
+   FSelectedRecord: TTMNGSTATE;
 
-   FDescription : string;
+   FName     : string;
+   FInitials    : string;
    FCountryId: string;
   public
     constructor Create;
@@ -19,9 +20,11 @@ type
     class function New: iStateUpdateController;
 
     function stateModel(AValue: IStateModel): iStateUpdateController;
-    function selectedRecord(AValue: TTGERESTADO): iStateUpdateController;
+    function selectedRecord(AValue: TTMNGSTATE): iStateUpdateController;
 
-    function description(AValue: string): iStateUpdateController;
+    function name(AValue: string): iStateUpdateController;
+    function initials(AValue: string): iStateUpdateController;
+
     function countryId(AValue: string): iStateUpdateController;
 
     procedure save;
@@ -48,10 +51,10 @@ begin
 
 end;
 
-function TStateUpdateController.description(AValue: string): iStateUpdateController;
+function TStateUpdateController.name(AValue: string): iStateUpdateController;
 begin
  Result := Self;
- FDescription := AValue;
+ FName := AValue;
 end;
 
 destructor TStateUpdateController.Destroy;
@@ -69,16 +72,24 @@ procedure TStateUpdateController.save;
 begin
   FStateModel.DAO.Modify(FSelectedRecord);
 
-  FSelectedRecord.DESCRICAO := FDescription;
-  FSelectedRecord.PAISID := FCountryId;
+  FSelectedRecord.NAME      := FName;
+  FSelectedRecord.COUNTRYID := FCountryId;
+  FSelectedRecord.INITIALS  := FInitials;
+  FSelectedRecord.UPDATEDAT := Now;
 
   FStateModel.DAO.Update(FSelectedRecord);
 end;
 
-function TStateUpdateController.selectedRecord(AValue: TTGERESTADO): iStateUpdateController;
+function TStateUpdateController.selectedRecord(AValue: TTMNGSTATE): iStateUpdateController;
 begin
   Result := Self;
   FSelectedRecord := AValue;
+end;
+
+function TStateUpdateController.initials(AValue: string): iStateUpdateController;
+begin
+  Result := Self;
+  FInitials := AValue;
 end;
 
 end.

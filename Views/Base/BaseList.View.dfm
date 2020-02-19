@@ -65,8 +65,8 @@ inherited FBaseListView: TFBaseListView
     end
     inherited PnProgram: TRzPanel
       inherited LbProgram: TRzLabel
-        Width = 60
-        Height = 15
+        Width = 608
+        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
@@ -162,8 +162,8 @@ inherited FBaseListView: TFBaseListView
             AlignWithMargins = True
             Left = 4
             Top = 5
-            Width = 199
-            Height = 17
+            Width = 596
+            Height = 22
             Margins.Top = 4
             Margins.Bottom = 2
             Align = alClient
@@ -175,6 +175,8 @@ inherited FBaseListView: TFBaseListView
             Font.Style = []
             ParentFont = False
             BorderColor = 15066597
+            ExplicitWidth = 199
+            ExplicitHeight = 17
           end
         end
         object PnGrid: TRzPanel
@@ -223,10 +225,12 @@ inherited FBaseListView: TFBaseListView
               OptionsView.CellAutoHeight = True
               OptionsView.ColumnAutoWidth = True
               OptionsView.GroupByBox = False
+              OptionsView.Indicator = True
               Styles.ContentEven = stContentEven
               Styles.ContentOdd = stContentOdd
               Styles.Header = StHeader
               Styles.Inactive = StInactive
+              Styles.Indicator = StIndicator
               Styles.Selection = StSelection
             end
             object LvDados: TcxGridLevel
@@ -583,6 +587,10 @@ inherited FBaseListView: TFBaseListView
       Font.Name = 'Open Sans SemiBold'
       Font.Style = [fsBold]
       TextColor = clBlack
+    end
+    object StIndicator: TcxStyle
+      AssignedValues = [svColor]
+      Color = 16579836
     end
   end
   object FdData: TFDMemTable

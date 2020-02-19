@@ -6,9 +6,9 @@ uses ormbr.container.objectset.interfaces, TGERESTADO.Entity.Model;
 
 type
   IStateModel = interface
-    function Entity: TTGERESTADO; overload;
-    function Entity(AValue: TTGERESTADO): IStateModel; overload;
-    function DAO: IContainerObjectSet<TTGERESTADO>;
+    function Entity: TTMNGSTATE; overload;
+    function Entity(AValue: TTMNGSTATE): IStateModel; overload;
+    function DAO: IContainerObjectSet<TTMNGSTATE>;
   end;
 
 implementation

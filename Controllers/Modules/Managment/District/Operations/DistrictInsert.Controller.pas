@@ -3,14 +3,19 @@ unit DistrictInsert.Controller;
 interface
 
 uses District.Controller.Interf, Districts.Model.Interf,
-  TGERBAIRRO.Entity.Model;
+  TGERBAIRRO.Entity.Model, System.SysUtils;
 
 type
   TDistrictInsertController = class(TInterfacedObject,
     iDistrictInsertController)
   private
     FDistrictModel: iDistrictModel;
+
     FDescription: string;
+    FCityId: string;
+    FZipCode: string;
+
+    function getDistrictId: Integer;
   public
     constructor Create;
     destructor Destroy; override;
@@ -18,7 +23,10 @@ type
     class function New: iDistrictInsertController;
 
     function districtModel(AValue: iDistrictModel): iDistrictInsertController;
+
     function description(AValue: string): iDistrictInsertController;
+    function cityId(AValue: string): iDistrictInsertController;
+    function zipCode(AValue: string): iDistrictInsertController;
 
     procedure save;
   end;
@@ -26,6 +34,12 @@ type
 implementation
 
 { TDistrictInsertController }
+
+function TDistrictInsertController.cityId(AValue: string): iDistrictInsertController;
+begin
+  Result := Self;
+  FCityId := AValue;
+end;
 
 constructor TDistrictInsertController.Create;
 begin
@@ -52,6 +66,15 @@ begin
   FDistrictModel := AValue;
 end;
 
+function TDistrictInsertController.getDistrictId: Integer;
+begin
+  if FDistrictModel.DAO.Find.Count <> 0 then  begin
+    Result := FDistrictModel.DAO.FindWhere('', 'DISTRICTID desc').Last.DISTRICTID + 1;
+  end else begin
+    Result := 1;
+  end;
+end;
+
 class function TDistrictInsertController.New: iDistrictInsertController;
 begin
   Result := Self.Create;
@@ -59,11 +82,22 @@ end;
 
 procedure TDistrictInsertController.save;
 begin
-  FDistrictModel.Entity(TTGERBAIRRO.Create);
+  FDistrictModel.Entity(TTMNGDISTRICT.Create);
 
-  FDistrictModel.Entity.DESCRICAO := FDescription;
+  FDistrictModel.Entity.DISTRICTID  := getDistrictId;
+  FDistrictModel.Entity.DESCRIPTION := FDescription;
+  FDistrictModel.Entity.CITYID      := FCityId;
+  FDistrictModel.Entity.ZIPCODE     := FZipCode;
+  FDistrictModel.Entity.CREATEDAT   := Now;
+  FDistrictModel.Entity.UPDATEDAT   := Now;
 
   FDistrictModel.DAO.Insert(FDistrictModel.Entity);
+end;
+
+function TDistrictInsertController.zipCode(AValue: string): iDistrictInsertController;
+begin
+  Result := Self;
+  FZipCode := AValue;
 end;
 
 end.

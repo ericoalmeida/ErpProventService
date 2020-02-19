@@ -103,6 +103,7 @@ inherited FMNG0002AView: TFMNG0002AView
       ExplicitWidth = 465
       inherited LbProgram: TRzLabel
         Width = 465
+        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
@@ -132,6 +133,7 @@ inherited FMNG0002AView: TFMNG0002AView
             ExplicitLeft = 184
             inherited TxBuscar: TcxTextEdit
               Properties.OnChange = TxBuscarPropertiesChange
+              ExplicitHeight = 22
             end
           end
         end
@@ -140,6 +142,7 @@ inherited FMNG0002AView: TFMNG0002AView
           ExplicitWidth = 461
           inherited LbTotalRegistros: TRzLabel
             Width = 453
+            Height = 22
           end
         end
         inherited PnGrid: TRzPanel
@@ -150,26 +153,26 @@ inherited FMNG0002AView: TFMNG0002AView
             ExplicitWidth = 459
             inherited VwDados: TcxGridDBTableView
               DataController.DataSource = DsData
-              object VwDadosPAISID: TcxGridDBColumn
+              object VwDadosCOUNTRYID: TcxGridDBColumn
                 Caption = 'N'#186
-                DataBinding.FieldName = 'PAISID'
+                DataBinding.FieldName = 'COUNTRYID'
                 HeaderAlignmentHorz = taCenter
-                Width = 60
+                Width = 50
               end
-              object VwDadosDESCRICAO: TcxGridDBColumn
-                Caption = 'Descri'#231#227'o'
-                DataBinding.FieldName = 'DESCRICAO'
-                Width = 350
+              object VwDadosNAME: TcxGridDBColumn
+                Caption = 'Pa'#237's'
+                DataBinding.FieldName = 'NAME'
+                Width = 255
               end
-              object VwDadosDATACADASTRO: TcxGridDBColumn
-                Caption = 'Data Cadastro'
-                DataBinding.FieldName = 'DATACADASTRO'
-                Width = 100
+              object VwDadosCREATEDAT: TcxGridDBColumn
+                Caption = 'Data Cria'#231#227'o'
+                DataBinding.FieldName = 'CREATEDAT'
+                Width = 110
               end
-              object VwDadosDATAATUALIZACAO: TcxGridDBColumn
-                Caption = 'Data Atualiza'#231#227'o'
-                DataBinding.FieldName = 'DATAATUALIZACAO'
-                Width = 100
+              object VwDadosUPDATEDAT: TcxGridDBColumn
+                Caption = 'Ult. Atualiza'#231#227'o'
+                DataBinding.FieldName = 'UPDATEDAT'
+                Width = 110
               end
             end
           end
@@ -185,23 +188,22 @@ inherited FMNG0002AView: TFMNG0002AView
     PixelsPerInch = 96
   end
   inherited FdData: TFDMemTable
-    object FdDataCODIGO: TStringField
-      FieldName = 'CODIGO'
+    object FdDataCODE: TStringField
+      FieldName = 'CODE'
       Size = 64
     end
-    object FdDataPAISID: TIntegerField
-      Alignment = taCenter
-      FieldName = 'PAISID'
+    object FdDataCOUNTRYID: TIntegerField
+      FieldName = 'COUNTRYID'
     end
-    object FdDataDESCRICAO: TStringField
-      FieldName = 'DESCRICAO'
+    object FdDataNAME: TStringField
+      FieldName = 'NAME'
       Size = 60
     end
-    object FdDataDATACADASTRO: TDateTimeField
-      FieldName = 'DATACADASTRO'
+    object FdDataCREATEDAT: TSQLTimeStampField
+      FieldName = 'CREATEDAT'
     end
-    object FdDataDATAATUALIZACAO: TDateTimeField
-      FieldName = 'DATAATUALIZACAO'
+    object FdDataUPDATEDAT: TSQLTimeStampField
+      FieldName = 'UPDATEDAT'
     end
   end
 end

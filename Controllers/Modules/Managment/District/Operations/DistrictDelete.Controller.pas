@@ -12,7 +12,7 @@ type
     FMessageConfirm: iBaseMessageView;
 
     FDistrictModel: iDistrictModel;
-    FSelectedRecord: TTGERBAIRRO;
+    FSelectedRecord: TTMNGDISTRICT;
   public
     constructor Create;
     destructor Destroy; override;
@@ -20,7 +20,7 @@ type
     class function New: iDistrictDeleteController;
 
     function districtModel(AValue: iDistrictModel): iDistrictDeleteController;
-    function selectedDistrict(AValue: TTGERBAIRRO): iDistrictDeleteController;
+    function selectedDistrict(AValue: TTMNGDISTRICT): iDistrictDeleteController;
 
     procedure save;
   end;
@@ -58,7 +58,7 @@ end;
 procedure TDistrictDeleteController.save;
 begin
   if FMessageConfirm.messages(Format('Deseja excluir o bairro %s ?',
-    [FSelectedRecord.DESCRICAO])).&end then
+    [FSelectedRecord.DESCRIPTION])).&end then
   begin
 
     try
@@ -67,13 +67,13 @@ begin
     except
       on E: Exception do
         raise Exception.Create(Format('O Bairro %s não pode ser excluído!',
-          [FSelectedRecord.DESCRICAO]));
+          [FSelectedRecord.DESCRIPTION]));
     end;
 
   end;
 end;
 
-function TDistrictDeleteController.selectedDistrict(AValue: TTGERBAIRRO)
+function TDistrictDeleteController.selectedDistrict(AValue: TTMNGDISTRICT)
   : iDistrictDeleteController;
 begin
   Result := Self;

@@ -86,6 +86,7 @@ inherited FMNG0003AView: TFMNG0003AView
       ExplicitWidth = 470
       inherited LbProgram: TRzLabel
         Width = 470
+        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
@@ -115,6 +116,7 @@ inherited FMNG0003AView: TFMNG0003AView
             ExplicitLeft = 189
             inherited TxBuscar: TcxTextEdit
               Properties.OnChange = TxBuscarPropertiesChange
+              ExplicitHeight = 22
             end
           end
         end
@@ -123,6 +125,7 @@ inherited FMNG0003AView: TFMNG0003AView
           ExplicitWidth = 466
           inherited LbTotalRegistros: TRzLabel
             Width = 458
+            Height = 22
           end
         end
         inherited PnGrid: TRzPanel
@@ -133,30 +136,36 @@ inherited FMNG0003AView: TFMNG0003AView
             ExplicitWidth = 464
             inherited VwDados: TcxGridDBTableView
               DataController.DataSource = DsData
-              object VwDadosESTADOID: TcxGridDBColumn
+              object VwDadosSTATEID: TcxGridDBColumn
                 Caption = 'N'#186
-                DataBinding.FieldName = 'ESTADOID'
-                Width = 60
+                DataBinding.FieldName = 'STATEID'
+                HeaderAlignmentHorz = taCenter
+                Width = 50
               end
-              object VwDadosDESCRICAO: TcxGridDBColumn
-                Caption = 'Descri'#231#227'o'
-                DataBinding.FieldName = 'DESCRICAO'
-                Width = 450
+              object VwDadosNAME: TcxGridDBColumn
+                Caption = 'Estado'
+                DataBinding.FieldName = 'NAME'
+                Width = 250
               end
-              object VwDadosPAISDESCRICAO: TcxGridDBColumn
+              object VwDadosINITIALS: TcxGridDBColumn
+                Caption = 'Sigla'
+                DataBinding.FieldName = 'INITIALS'
+                Width = 40
+              end
+              object VwDadosCOUNTRYNAME: TcxGridDBColumn
                 Caption = 'Pa'#237's'
-                DataBinding.FieldName = 'PAISDESCRICAO'
-                Width = 200
+                DataBinding.FieldName = 'COUNTRYNAME'
+                Width = 100
               end
-              object VwDadosDATACADASTRO: TcxGridDBColumn
+              object VwDadosCREATEDAT: TcxGridDBColumn
                 Caption = 'Data Cadastro'
-                DataBinding.FieldName = 'DATACADASTRO'
-                Width = 100
+                DataBinding.FieldName = 'CREATEDAT'
+                Width = 110
               end
-              object VwDadosDATAATUALIZACAO: TcxGridDBColumn
-                Caption = 'Data Atualiza'#231#227'o'
-                DataBinding.FieldName = 'DATAATUALIZACAO'
-                Width = 100
+              object VwDadosUPDATEDAT: TcxGridDBColumn
+                Caption = 'Ult. Atualiza'#231#227'o'
+                DataBinding.FieldName = 'UPDATEDAT'
+                Width = 110
               end
             end
           end
@@ -178,45 +187,50 @@ inherited FMNG0003AView: TFMNG0003AView
     SQL.Strings = (
       'select'
       ''
-      'est.codigo,'
-      'est.estadoid,'
-      'est.descricao,'
-      'est.paisid,'
-      'pai.descricao as paisdescricao,'
-      'est.datacadastro,'
-      'est.dataatualizacao'
+      'stt.code,'
+      'stt.stateid,'
+      'stt.name,'
+      'stt.initials,'
+      'stt.countryid,'
+      'ctr.name  as countryname,'
+      'stt.createdat,'
+      'stt.updatedat'
       ''
       'from'
       ''
-      'tgerestado est'
-      'left join tgerpais pai on (pai.codigo = est.paisid)')
+      'TMngState stt'
+      'left join TMngCountry ctr on (ctr.code = stt.countryid)')
     Left = 76
     Top = 141
-    object FdQDataCODIGO: TStringField
-      FieldName = 'CODIGO'
+    object FdQDataCODE: TStringField
+      FieldName = 'CODE'
       Size = 64
     end
-    object FdQDataESTADOID: TIntegerField
+    object FdQDataSTATEID: TIntegerField
       Alignment = taCenter
-      FieldName = 'ESTADOID'
+      FieldName = 'STATEID'
     end
-    object FdQDataDESCRICAO: TStringField
-      FieldName = 'DESCRICAO'
+    object FdQDataNAME: TStringField
+      FieldName = 'NAME'
       Size = 90
     end
-    object FdQDataPAISID: TStringField
-      FieldName = 'PAISID'
+    object FdQDataINITIALS: TStringField
+      FieldName = 'INITIALS'
+      Size = 2
+    end
+    object FdQDataCOUNTRYID: TStringField
+      FieldName = 'COUNTRYID'
       Size = 64
     end
-    object FdQDataPAISDESCRICAO: TStringField
-      FieldName = 'PAISDESCRICAO'
+    object FdQDataCOUNTRYNAME: TStringField
+      FieldName = 'COUNTRYNAME'
       Size = 60
     end
-    object FdQDataDATACADASTRO: TSQLTimeStampField
-      FieldName = 'DATACADASTRO'
+    object FdQDataCREATEDAT: TSQLTimeStampField
+      FieldName = 'CREATEDAT'
     end
-    object FdQDataDATAATUALIZACAO: TSQLTimeStampField
-      FieldName = 'DATAATUALIZACAO'
+    object FdQDataUPDATEDAT: TSQLTimeStampField
+      FieldName = 'UPDATEDAT'
     end
   end
 end
