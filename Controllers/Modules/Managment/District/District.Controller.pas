@@ -17,12 +17,14 @@ type
     class function New: iDistrictController;
 
     function find(AValue: string): iDistrictController;
+    function findById(AValue: string): iDistrictController;
 
     function insert: iDistrictInsertController;
     function update: iDistrictUpdateController;
     function delete: iDistrictDeleteController;
     function duplicate: iDistrictDuplicateController;
 
+    function code: string;
     function districtId: string;
     function description: string;
     function cityId: string;
@@ -42,12 +44,17 @@ uses Facade.Model, System.SysUtils, DistrictInsert.Controller,
 
 function TDistrictController.cityId: string;
 begin
-  Result := FRecordFound.TMNGCITY.CITYID.ToString;
+  Result := FRecordFound.TMNGCITY.cityId.ToString;
 end;
 
 function TDistrictController.cityName: string;
 begin
   Result := FRecordFound.TMNGCITY.NAME;
+end;
+
+function TDistrictController.code: string;
+begin
+  Result := FRecordFound.code;
 end;
 
 constructor TDistrictController.Create;
@@ -69,7 +76,7 @@ end;
 
 function TDistrictController.description: string;
 begin
-  Result := FRecordFound.DESCRIPTION;
+  Result := FRecordFound.description;
 end;
 
 destructor TDistrictController.Destroy;
@@ -80,7 +87,7 @@ end;
 
 function TDistrictController.districtId: string;
 begin
-  Result := FRecordFound.DISTRICTID.ToString;
+  Result := FRecordFound.districtId.ToString;
 end;
 
 function TDistrictController.duplicate: iDistrictDuplicateController;
@@ -106,6 +113,14 @@ begin
     (format('CODE = %s', [QuotedStr(AValue)])).Items[0];
 end;
 
+function TDistrictController.findById(AValue: string): iDistrictController;
+begin
+  Result := Self;
+
+  FRecordFound := FDistrictModel.DAO.FindWhere(format('DISTRICTID = %d',
+    [StrToInt(AValue)])).Items[0];
+end;
+
 function TDistrictController.update: iDistrictUpdateController;
 begin
   Result := TDistrictUpdateController.New.districtModel(FDistrictModel)
@@ -119,7 +134,7 @@ end;
 
 function TDistrictController.zipCode: string;
 begin
-  Result := FRecordFound.ZIPCODE;
+  Result := FRecordFound.zipCode;
 end;
 
 end.

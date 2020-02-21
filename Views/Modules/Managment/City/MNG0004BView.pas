@@ -16,7 +16,7 @@ uses
   RzPanel, cxControls, cxContainer, cxEdit, cxMaskEdit, cxButtonEdit,
   cxTextEdit, cxLabel,
   Base.View.interf, Types.Controllers, State.Controller.interf,
-  City.Controller.interf;
+  City.Controller.interf, dxSkinDarkRoom, dxSkinDarkSide;
 
 type
   TFMNG0004BView = class(TFBaseRegisterView, iBaseRegisterView)
@@ -94,12 +94,13 @@ end;
 
 procedure TFMNG0004BView.disableFields;
 begin
-  TxName.Enabled := not(FOperation in [toShow, toDelete]);
-  TxStateId.Enabled := not(FOperation in [toShow, toDelete]);
-  TxZipCode.Enabled := not(FOperation in [toShow, toDelete]);
+  TxName.Enabled     := not(FOperation in [toShow, toDelete]);
+  TxStateId.Enabled  := not(FOperation in [toShow, toDelete]);
+  TxZipCode.Enabled  := not(FOperation in [toShow, toDelete]);
   TxIBGECode.Enabled := not(FOperation in [toShow, toDelete]);
 
-  BtConfirmar.Visible := not(FOperation = toShow);
+  PnButtonConfirm.Visible := not(FOperation = toShow);
+  BtConfirmar.Visible     := not(FOperation = toShow);
 end;
 
 procedure TFMNG0004BView.duplicateRecord;

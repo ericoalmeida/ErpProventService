@@ -2,7 +2,9 @@ unit ManagmentFactory.Model.Interf;
 
 interface
 
-uses Districts.Model.Interf, Country.Model.Interf, State.Model.Interf, City.Model.Interf;
+uses Districts.Model.Interf, Country.Model.Interf, State.Model.Interf,
+  City.Model.Interf,
+  Company.Model.Interf;
 
 type
   iManagmentFactoryModel = interface
@@ -11,6 +13,7 @@ type
     function countryModel: ICountryModel;
     function stateModel: IStateModel;
     function cityModel: iCityModel;
+    function companyModel: ICompanyModel;
   end;
 
 implementation

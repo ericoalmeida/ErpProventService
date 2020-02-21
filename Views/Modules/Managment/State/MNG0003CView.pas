@@ -23,7 +23,7 @@ uses
   cxGridCustomTableView,
   cxGridTableView, cxGridDBTableView, cxGrid, cxTextEdit, cxLabel, Vcl.StdCtrls,
   cxButtons, RzLabel,
-  dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel, Base.View.interf;
+  dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel, Base.View.interf, dxSkinDarkRoom, dxSkinDarkSide;
 
 type
   TFMNG0003CView = class(TFBaseSearchView, IBaseSearchView)
@@ -91,6 +91,7 @@ end;
 procedure TFMNG0003CView.FormShow(Sender: TObject);
 begin
   inherited;
+  FFieldOrder := 'NAME';
 
   listRecords;
   totalRecords;

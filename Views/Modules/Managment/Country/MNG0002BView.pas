@@ -13,7 +13,7 @@ uses
   Base.View.interf, Types.Controllers, cxControls, cxContainer, cxEdit,
   cxTextEdit, cxLabel,
   Country.Controller.interf, dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Green,
-  dxSkinOffice2007Silver, System.Actions, Vcl.ActnList;
+  dxSkinOffice2007Silver, System.Actions, Vcl.ActnList, dxSkinDarkRoom, dxSkinDarkSide;
 
 type
   TFMNG0002BView = class(TFBaseRegisterView, iBaseRegisterView)
@@ -76,12 +76,8 @@ procedure TFMNG0002BView.disableFields;
 begin
   TxName.Enabled := not(FOperation in [toShow, toDelete]);
 
-  LbCreatedAt.Visible := not(FOperation in [toInsert]);
-  TxCreatedAt.Visible := not(FOperation in [toInsert]);
-  LbUpdatedAt.Visible := not(FOperation in [toInsert]);
-  TxUpdatedAt.Visible := not(FOperation in [toInsert]);
-
-  BtConfirmar.Visible := not(FOperation = toShow);
+  PnButtonConfirm.Visible := not(FOperation = toShow);
+  BtConfirmar.Visible     := not(FOperation = toShow);
 end;
 
 procedure TFMNG0002BView.duplicateRecord;

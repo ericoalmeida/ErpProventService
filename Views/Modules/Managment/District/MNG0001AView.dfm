@@ -94,10 +94,6 @@ inherited FMNG0001AView: TFMNG0001AView
       Width = 484
       ExplicitTop = 271
       ExplicitWidth = 484
-      inherited LbProgram: TRzLabel
-        Width = 484
-        Height = 18
-      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 484
@@ -109,9 +105,11 @@ inherited FMNG0001AView: TFMNG0001AView
         Width = 484
         ExplicitTop = 190
         ExplicitWidth = 484
-        inherited BtSair: TcxButton
-          Left = 374
-          ExplicitLeft = 374
+        inherited PnButtonCancel: TRzPanel
+          inherited BtSair: TcxButton
+            Left = 374
+            ExplicitLeft = 374
+          end
         end
       end
       inherited PnContent: TRzPanel
@@ -141,10 +139,6 @@ inherited FMNG0001AView: TFMNG0001AView
           Width = 480
           ExplicitTop = 106
           ExplicitWidth = 480
-          inherited LbTotalRegistros: TRzLabel
-            Width = 472
-            Height = 22
-          end
         end
         inherited PnGrid: TRzPanel
           Width = 480

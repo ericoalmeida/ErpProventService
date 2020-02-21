@@ -25,7 +25,7 @@ uses
   Vcl.ExtCtrls, RzPanel,
   Base.View.interf, FireDAC.Stan.Async, FireDAC.DApt,
   ormbr.container.DataSet.interfaces,
-  ormbr.container.fdmemtable, TGERPAIS.Entity.Model;
+  ormbr.container.fdmemtable, TGERPAIS.Entity.Model, dxSkinDarkRoom, dxSkinDarkSide;
 
 type
   TFMNG0002CView = class(TFBaseSearchView, IBaseSearchView)

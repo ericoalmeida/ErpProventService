@@ -6,7 +6,7 @@ object FMainView: TFMainView
     'Prefeitura Municipal de Parana'#237'ta/MT - Secretaria Municipal de A' +
     'gricultura'
   ClientHeight = 399
-  ClientWidth = 589
+  ClientWidth = 398
   Color = clBlack
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -22,7 +22,7 @@ object FMainView: TFMainView
   object ImLogo: TImage
     Left = 0
     Top = 159
-    Width = 589
+    Width = 398
     Height = 217
     Align = alClient
     Center = True
@@ -1931,7 +1931,7 @@ object FMainView: TFMainView
   object RbMainMenu: TdxRibbon
     Left = 0
     Top = 0
-    Width = 589
+    Width = 398
     Height = 159
     ApplicationButton.Menu = ApMainMenu
     BarManager = BrManager
@@ -1942,7 +1942,6 @@ object FMainView: TFMainView
     TabOrder = 0
     TabStop = False
     object TbAdministration: TdxRibbonTab
-      Active = True
       Caption = 'Administra'#231#227'o'
       Groups = <
         item
@@ -1957,6 +1956,7 @@ object FMainView: TFMainView
       Index = 0
     end
     object TbSupervisor: TdxRibbonTab
+      Active = True
       Caption = 'Supervisor'
       Groups = <
         item
@@ -1968,7 +1968,7 @@ object FMainView: TFMainView
   object StStatus: TdxRibbonStatusBar
     Left = 0
     Top = 376
-    Width = 589
+    Width = 398
     Height = 23
     Panels = <
       item
@@ -3373,6 +3373,7 @@ object FMainView: TFMainView
         5CFA4104146E7E2140621884253E910364F4462F3D7DC43D7AEC58863740BDEF
         27260B0981636E1EF4AA43903C9BEBA5659A7F263D91129AA8D1CBEFBCF04DFE
         0FEC23633717F643DC0000000049454E44AE426082}
+      OnClick = BtEmpresasClick
     end
     object BtUsuarios: TdxBarLargeButton
       Caption = 'Usu'#225'rios'

@@ -124,7 +124,7 @@ begin
   Result := Self;
 
   FRecordFound := FCityModel.DAO.FindWhere
-    (Format('CITYID = %s', [QuotedStr(AValue)])).Items[0];
+    (Format('CITYID = %d', [StrToInt(AValue)])).Items[0];
 end;
 
 function TCityController.update: iCityUpdateController;

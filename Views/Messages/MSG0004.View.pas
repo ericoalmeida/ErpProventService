@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, BaseMessage.View, cxGraphics, cxLookAndFeels,
   cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore, dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle,
   cxControls, cxContainer, cxEdit, cxLabel, Vcl.StdCtrls, cxButtons, RzLabel, dxGDIPlusClasses,
-  Vcl.ExtCtrls, RzPanel, Base.View.interf, cxTextEdit, cxMemo;
+  Vcl.ExtCtrls, RzPanel, Base.View.interf, cxTextEdit, cxMemo, dxSkinDarkRoom, dxSkinDarkSide;
 
 type
   TFMSG0004View = class(TFBaseMessageView, iBaseMessageView)

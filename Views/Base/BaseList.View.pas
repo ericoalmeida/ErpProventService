@@ -22,7 +22,8 @@ uses
   FireDAC.DApt.Intf,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, ormbr.container.DataSet.interfaces, Types.Controllers,
   FireDAC.Stan.Async, FireDAC.DApt, dxSkinOffice2016Colorful, dxSkinOffice2016Dark,
-  dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Silver;
+  dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Silver,
+  dxSkinDarkRoom, dxSkinDarkSide;
 
 type
   TFBaseListView = class(TFBaseView)
@@ -66,6 +67,7 @@ type
     procedure BtDeleteClick(Sender: TObject);
     procedure BtDuplicateClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
   protected
     FOperation: TTypeOperation;
@@ -117,7 +119,7 @@ procedure TFBaseListView.filterRecords;
 begin
   DsData.DataSet.Filtered := False;
 
-  if not(TxBuscar.Text = EmptyStr) then
+  if not(TxBuscar.Text = EmptyStr) and not(FFieldOrder = EmptyStr) then
   begin
     DsData.DataSet.Filter := UpperCase(FFieldOrder) + ' like ''%' +
       AnsiUpperCase(TxBuscar.Text) + '%''';
@@ -130,6 +132,14 @@ procedure TFBaseListView.FormCreate(Sender: TObject);
 begin
   inherited;
   FdQData.Connection := FFdConnection;
+end;
+
+procedure TFBaseListView.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  inherited;
+  if Key = VK_ESCAPE then
+    Close;
 end;
 
 procedure TFBaseListView.totalRecords;

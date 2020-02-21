@@ -7,13 +7,12 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, BaseMessage.View, cxGraphics, cxLookAndFeels,
   cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore, dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle,
   cxControls, cxContainer, cxEdit, cxLabel, Vcl.StdCtrls, cxButtons, RzLabel, dxGDIPlusClasses,
-  Vcl.ExtCtrls, RzPanel, Base.View.interf, cxTextEdit, cxMemo;
+  Vcl.ExtCtrls, RzPanel, Base.View.interf, cxTextEdit, cxMemo, dxSkinDarkRoom, dxSkinDarkSide;
 
 type
   TFMSG0002View = class(TFBaseMessageView, iBaseMessageView)
-    BtOk: TcxButton;
-    procedure BtOkClick(Sender: TObject);
     procedure BtSairClick(Sender: TObject);
+    procedure BtConfirmarClick(Sender: TObject);
   private
 
   public
@@ -32,7 +31,7 @@ implementation
 
 { TFMSG0002View }
 
-procedure TFMSG0002View.BtOkClick(Sender: TObject);
+procedure TFMSG0002View.BtConfirmarClick(Sender: TObject);
 begin
   FAnswer := True;
   Close;

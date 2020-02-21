@@ -177,15 +177,23 @@ inherited FMNG0002CView: TFMNG0002CView
             inherited VwDados: TcxGridDBTableView
               DataController.DataSource = DsData
               object VwDadosCOUNTRYID: TcxGridDBColumn
+                Caption = 'N'#186
                 DataBinding.FieldName = 'COUNTRYID'
+                HeaderAlignmentHorz = taCenter
+                Width = 50
               end
               object VwDadosNAME: TcxGridDBColumn
+                Caption = 'Pa'#237's'
                 DataBinding.FieldName = 'NAME'
+                Width = 255
               end
               object VwDadosCREATEDAT: TcxGridDBColumn
+                Caption = 'Data Cadastro'
                 DataBinding.FieldName = 'CREATEDAT'
+                Width = 110
               end
               object VwDadosUPDATEDAT: TcxGridDBColumn
+                Caption = 'Ult. Atualiza'#231#227'o'
                 DataBinding.FieldName = 'UPDATEDAT'
               end
             end

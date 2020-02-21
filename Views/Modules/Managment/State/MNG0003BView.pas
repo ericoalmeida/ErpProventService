@@ -17,7 +17,7 @@ uses
   Base.View.interf,
   Types.Controllers, State.Controller.interf, Country.Controller.interf,
   System.Actions,
-  Vcl.ActnList;
+  Vcl.ActnList, dxSkinDarkRoom, dxSkinDarkSide;
 
 type
   TFMNG0003BView = class(TFBaseRegisterView, iBaseRegisterView)
@@ -98,12 +98,8 @@ begin
   TxCountryId.Enabled := not(FOperation in [toShow, toDelete]);
   TxInitials.Enabled  := not(FOperation in [toShow, toDelete]);
 
-  LbCreatedAt.Visible := not(FOperation in [toInsert]);
-  TxCreatedAt.Visible := not(FOperation in [toInsert]);
-  LbUpdatedAt.Visible := not(FOperation in [toInsert]);
-  TxUpdatedAt.Visible := not(FOperation in [toInsert]);
-
-  BtConfirmar.Visible := not(FOperation = toShow);
+  PnButtonConfirm.Visible := not(FOperation = toShow);
+  BtConfirmar.Visible     := not(FOperation = toShow);
 end;
 
 procedure TFMNG0003BView.duplicateRecord;

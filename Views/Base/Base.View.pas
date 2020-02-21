@@ -24,7 +24,8 @@ uses
   FireDAC.Comp.Client, FireDAC.Stan.Param, FireDAC.DatS,
   FireDAC.DApt.Intf, FireDAC.DApt,
   FireDAC.Comp.DataSet, dxSkinOffice2016Colorful, dxSkinOffice2016Dark, dxSkinOffice2007Black,
-  dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Silver, Utils.Controller.Interf;
+  dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Silver, Utils.Controller.Interf,
+  dxSkinDarkRoom, dxSkinDarkSide;
 
 type
   TFBaseView = class(TForm)
@@ -37,6 +38,7 @@ type
     PnContainerBody: TRzPanel;
     PnFooterBody: TRzPanel;
     BtSair: TcxButton;
+    PnButtonCancel: TRzPanel;
     procedure FormCreate(Sender: TObject);
     procedure BtSairClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);

@@ -178,7 +178,6 @@
         <DCCReference Include="Controllers\Connection\Connection.Controller.pas"/>
         <DCCReference Include="Controllers\Facade.Controller.Interf.pas"/>
         <DCCReference Include="Controllers\Facade.Controller.pas"/>
-        <DCCReference Include="Models\Modules\Managment\Company\Entity\TGEREMPRESA.Entity.Model.pas"/>
         <DCCReference Include="Models\Modules\Managment\Districts\Entity\TGERBAIRRO.Entity.Model.pas"/>
         <DCCReference Include="Models\Modules\Managment\Districts\Districts.Model.Interf.pas"/>
         <DCCReference Include="Models\Modules\Managment\Districts\Districts.Model.pas"/>
@@ -276,6 +275,23 @@
         </DCCReference>
         <DCCReference Include="Views\Modules\Managment\City\MNG0004CView.pas">
             <Form>FMNG0004CView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Models\Modules\Managment\Company\Entity\TMNGCOMPANY.Entity.Model.pas"/>
+        <DCCReference Include="Models\Modules\Managment\Company\Company.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modules\Managment\Company\Company.Model.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\Company\Company.Controller.Interf.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\Company\Company.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\Company\Operations\CompanyInsert.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\Company\Operations\CompanyUpdate.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\Company\Operations\CompanyDelete.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\Company\Operations\CompanyDuplicate.Controller.pas"/>
+        <DCCReference Include="Views\Modules\Managment\Company\MNG0005AView.pas">
+            <Form>FMNG0005AView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Modules\Managment\Company\MNG0005BView.pas">
+            <Form>FMNG0005BView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
@@ -1012,6 +1028,7 @@
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">False</Platform>
             </Platforms>
+            <ModelSupport>False</ModelSupport>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>

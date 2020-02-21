@@ -3,7 +3,7 @@ unit ManagmentFactory.Model;
 interface
 
 uses ManagmentFactory.Model.Interf, Districts.Model.Interf,
-  Country.Model.Interf, State.Model.Interf, City.Model.Interf;
+  Country.Model.Interf, State.Model.Interf, City.Model.Interf, Company.Model.Interf;
 
 type
   TManagmentFactoryModel = class(TInterfacedObject, iManagmentFactoryModel)
@@ -18,17 +18,23 @@ type
     function countryModel: ICountryModel;
     function stateModel: IStateModel;
     function cityModel: iCityModel;
+    function companyModel: ICompanyModel;
   end;
 
 implementation
 
 { TManagmentFactoryModel }
 
-uses Districts.Model, Country.Model, State.Model, City.Model;
+uses Districts.Model, Country.Model, State.Model, City.Model, Company.Model;
 
 function TManagmentFactoryModel.cityModel: iCityModel;
 begin
   Result := TCityModel.New;
+end;
+
+function TManagmentFactoryModel.companyModel: ICompanyModel;
+begin
+ Result := TCompanyModel.New;
 end;
 
 function TManagmentFactoryModel.countryModel: ICountryModel;

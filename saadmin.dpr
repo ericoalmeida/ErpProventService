@@ -35,7 +35,6 @@ uses
   Connection.Controller in 'Controllers\Connection\Connection.Controller.pas',
   Facade.Controller.Interf in 'Controllers\Facade.Controller.Interf.pas',
   Facade.Controller in 'Controllers\Facade.Controller.pas',
-  TGEREMPRESA.Entity.Model in 'Models\Modules\Managment\Company\Entity\TGEREMPRESA.Entity.Model.pas',
   TGERBAIRRO.Entity.Model in 'Models\Modules\Managment\Districts\Entity\TGERBAIRRO.Entity.Model.pas',
   Districts.Model.Interf in 'Models\Modules\Managment\Districts\Districts.Model.Interf.pas',
   Districts.Model in 'Models\Modules\Managment\Districts\Districts.Model.pas',
@@ -98,7 +97,18 @@ uses
   MNG0004AView in 'Views\Modules\Managment\City\MNG0004AView.pas' {FMNG0004AView},
   MNG0004BView in 'Views\Modules\Managment\City\MNG0004BView.pas' {FMNG0004BView},
   MNG0003CView in 'Views\Modules\Managment\State\MNG0003CView.pas' {FMNG0003CView},
-  MNG0004CView in 'Views\Modules\Managment\City\MNG0004CView.pas' {FMNG0004CView};
+  MNG0004CView in 'Views\Modules\Managment\City\MNG0004CView.pas' {FMNG0004CView},
+  TMNGCOMPANY.Entity.Model in 'Models\Modules\Managment\Company\Entity\TMNGCOMPANY.Entity.Model.pas',
+  Company.Model.Interf in 'Models\Modules\Managment\Company\Company.Model.Interf.pas',
+  Company.Model in 'Models\Modules\Managment\Company\Company.Model.pas',
+  Company.Controller.Interf in 'Controllers\Modules\Managment\Company\Company.Controller.Interf.pas',
+  Company.Controller in 'Controllers\Modules\Managment\Company\Company.Controller.pas',
+  CompanyInsert.Controller in 'Controllers\Modules\Managment\Company\Operations\CompanyInsert.Controller.pas',
+  CompanyUpdate.Controller in 'Controllers\Modules\Managment\Company\Operations\CompanyUpdate.Controller.pas',
+  CompanyDelete.Controller in 'Controllers\Modules\Managment\Company\Operations\CompanyDelete.Controller.pas',
+  CompanyDuplicate.Controller in 'Controllers\Modules\Managment\Company\Operations\CompanyDuplicate.Controller.pas',
+  MNG0005AView in 'Views\Modules\Managment\Company\MNG0005AView.pas' {FMNG0005AView},
+  MNG0005BView in 'Views\Modules\Managment\Company\MNG0005BView.pas' {FMNG0005BView};
 
 {$R *.res}
 

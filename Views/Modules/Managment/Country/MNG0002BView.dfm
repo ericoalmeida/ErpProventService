@@ -128,13 +128,11 @@ inherited FMNG0002BView: TFMNG0002BView
         Width = 500
         ExplicitTop = 167
         ExplicitWidth = 500
-        inherited BtSair: TcxButton
-          Left = 390
-          ExplicitLeft = 390
+        inherited PnButtonCancel: TRzPanel
+          Left = 389
         end
-        inherited BtConfirmar: TcxButton
-          Left = 282
-          ExplicitLeft = 282
+        inherited PnButtonConfirm: TRzPanel
+          Left = 276
         end
       end
       inherited PnContent: TRzPanel
@@ -142,7 +140,7 @@ inherited FMNG0002BView: TFMNG0002BView
         Height = 163
         ExplicitWidth = 496
         ExplicitHeight = 163
-        inherited RzLabel1: TRzLabel
+        inherited LbObs: TRzLabel
           Top = 150
           Width = 496
           ExplicitTop = 150

@@ -24,7 +24,7 @@ uses
   dxSkinOffice2007Blue,
   dxSkinOffice2007Green, dxSkinOffice2007Silver, System.Actions, Vcl.ActnList,
   FireDAC.Stan.Async,
-  FireDAC.DApt;
+  FireDAC.DApt, dxSkinDarkRoom, dxSkinDarkSide;
 
 type
   TFBaseSearchView = class(TFBaseView)
@@ -48,8 +48,9 @@ type
     stContentEven: TcxStyle;
     StInactive: TcxStyle;
     StSelection: TcxStyle;
-    BtConfirmar: TcxButton;
     StIndicator: TcxStyle;
+    PnButtonConfirm: TRzPanel;
+    BtConfirmar: TcxButton;
     procedure FormCreate(Sender: TObject);
     procedure BtConfirmarClick(Sender: TObject);
   private

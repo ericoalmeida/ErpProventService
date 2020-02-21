@@ -10,15 +10,16 @@ uses
   dxSkinDevExpressStyle,
   Vcl.StdCtrls, cxButtons, RzLabel, dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel,
   Types.Controllers, dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Green,
-  dxSkinOffice2007Silver, System.Actions, Vcl.ActnList;
+  dxSkinOffice2007Silver, System.Actions, Vcl.ActnList, dxSkinDarkRoom, dxSkinDarkSide;
 
 type
   TFBaseRegisterView = class(TFBaseView)
-    BtConfirmar: TcxButton;
     PnContent: TRzPanel;
-    RzLabel1: TRzLabel;
+    LbObs: TRzLabel;
     LbOperation: TRzLabel;
     AcSearchRecord: TActionList;
+    PnButtonConfirm: TRzPanel;
+    BtConfirmar: TcxButton;
     procedure BtConfirmarClick(Sender: TObject);
   private
     { Private declarations }

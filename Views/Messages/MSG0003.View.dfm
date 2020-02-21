@@ -85,6 +85,18 @@ inherited FMSG0003View: TFMSG0003View
       end
     end
     inherited PnContainerBody: TRzPanel
+      inherited PnFooterBody: TRzPanel
+        inherited PnButtonConfirm: TRzPanel
+          Visible = False
+          ExplicitLeft = 220
+          ExplicitTop = 4
+          inherited BtConfirmar: TcxButton
+            OnClick = nil
+            ExplicitLeft = 2
+            ExplicitWidth = 106
+          end
+        end
+      end
       inherited PnContent: TRzPanel
         inherited MmMessage: TcxMemo
           Style.Color = 208
@@ -92,8 +104,6 @@ inherited FMSG0003View: TFMSG0003View
           Style.IsFontAssigned = True
           StyleDisabled.Color = 208
           StyleDisabled.TextColor = clWhite
-          ExplicitWidth = 445
-          ExplicitHeight = 70
         end
       end
     end

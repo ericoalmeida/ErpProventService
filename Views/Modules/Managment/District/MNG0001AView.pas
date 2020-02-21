@@ -24,7 +24,7 @@ uses
   ormbr.container.fdmemtable,
   TGERBAIRRO.Entity.Model, Base.View.interf, FireDAC.Stan.Async, FireDAC.DApt,
   dxSkinOffice2016Colorful, dxSkinOffice2016Dark, dxSkinOffice2007Black, dxSkinOffice2007Blue,
-  dxSkinOffice2007Green, dxSkinOffice2007Silver;
+  dxSkinOffice2007Green, dxSkinOffice2007Silver, dxSkinDarkRoom, dxSkinDarkSide;
 
 type
   TFMNG0001AView = class(TFBaseListView, iBaseListView)
@@ -49,7 +49,7 @@ type
     procedure BtDeleteClick(Sender: TObject);
     procedure BtDuplicateClick(Sender: TObject);
   private
-    FContainer: IContainerDataSet<TTMNGDISTRICT>;
+
   public
     class function new: iBaseListView;
 

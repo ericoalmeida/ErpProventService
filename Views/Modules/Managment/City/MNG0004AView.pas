@@ -39,6 +39,7 @@ type
     procedure BtShowClick(Sender: TObject);
     procedure BtDeleteClick(Sender: TObject);
     procedure BtDuplicateClick(Sender: TObject);
+    procedure TxBuscarPropertiesChange(Sender: TObject);
   private
     { Private declarations }
   public
@@ -142,7 +143,7 @@ end;
 procedure TFMNG0004AView.FormShow(Sender: TObject);
 begin
   inherited;
-  FFieldOrder := 'NOME';
+  FFieldOrder := 'NAME';
 
   listRecords;
   totalRecords;
@@ -178,6 +179,14 @@ begin
      .operation(FOperation)
       .selectedRecord(FdQDataCODIGO.AsString)
      .&end;
+end;
+
+procedure TFMNG0004AView.TxBuscarPropertiesChange(Sender: TObject);
+begin
+  inherited;
+
+  filterRecords;
+  totalRecords;
 end;
 
 procedure TFMNG0004AView.updateRecord;

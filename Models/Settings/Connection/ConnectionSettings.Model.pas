@@ -35,12 +35,12 @@ implementation
 
 function TConnectionSettingsModel.database: string;
 begin
-  Result := FFileIni.ReadString('Settings', 'Database', '');
+  Result := FFileIni.ReadString('Settings', 'database', '');
 end;
 
 function TConnectionSettingsModel.lib: string;
 begin
-  Result := FFileIni.ReadString('Settings', 'Library', '');
+  Result := FFileIni.ReadString('Settings', 'library', '');
 end;
 
 constructor TConnectionSettingsModel.Create;
@@ -60,20 +60,20 @@ end;
 
 function TConnectionSettingsModel.driver: string;
 begin
-  Result := FFileIni.ReadString('Settings', 'Driver', 'FB');
+  Result := FFileIni.ReadString('Settings', 'driver', 'FB');
 end;
 
 procedure TConnectionSettingsModel.saveParametersDefaultConnection;
 begin
-  FFileIni.WriteInteger('Settings', 'TypeDatabase', 0);
+  FFileIni.WriteInteger('Settings', 'typeDatabase', 0);
 
-  FFileIni.WriteString('Settings', 'Database', 'c:\ergsis\dados\ergdados.fdb');
-  FFileIni.WriteString('Settings', 'Driver',   'FB');
-  FFileIni.WriteString('Settings', 'Port',     '3050');
-  FFileIni.WriteString('Settings', 'Server',   'localhost');
-  FFileIni.WriteString('Settings', 'User',     'SYSDBA');
-  FFileIni.WriteString('Settings', 'Password',  'masterkey');
-  FFileIni.WriteString('Settings', 'Library',  'fbclient.dll');
+  FFileIni.WriteString('Settings', 'database', 'c:\ergsis\dados\ergdados.fdb');
+  FFileIni.WriteString('Settings', 'driver',   'FB');
+  FFileIni.WriteString('Settings', 'port',     '3050');
+  FFileIni.WriteString('Settings', 'server',   'localhost');
+  FFileIni.WriteString('Settings', 'user',     'SYSDBA');
+  FFileIni.WriteString('Settings', 'password',  'masterkey');
+  FFileIni.WriteString('Settings', 'library',  'fbclient.dll');
 end;
 
 class function TConnectionSettingsModel.new: iConnectionSettingsModel;
@@ -83,27 +83,27 @@ end;
 
 function TConnectionSettingsModel.port: string;
 begin
-  Result := FFileIni.ReadString('Settings', 'Port', '');
+  Result := FFileIni.ReadString('Settings', 'port', '');
 end;
 
 function TConnectionSettingsModel.password: string;
 begin
-  Result := FFileIni.ReadString('Settings', 'Password', 'masterkey');
+  Result := FFileIni.ReadString('Settings', 'password', 'masterkey');
 end;
 
 function TConnectionSettingsModel.server: string;
 begin
-  Result := FFileIni.ReadString('Settings', 'Server', '');
+  Result := FFileIni.ReadString('Settings', 'server', '');
 end;
 
 function TConnectionSettingsModel.typeDatabase: integer;
 begin
-  Result := FFileIni.ReadInteger('Settings', 'TypeDatabase', 0);
+  Result := FFileIni.ReadInteger('Settings', 'typeDatabase', 0);
 end;
 
 function TConnectionSettingsModel.user: string;
 begin
-  Result := FFileIni.ReadString('Settings', 'User', 'SYSDBA');
+  Result := FFileIni.ReadString('Settings', 'user', 'sysdba');
 end;
 
 procedure TConnectionSettingsModel.verifyParametersConnection;

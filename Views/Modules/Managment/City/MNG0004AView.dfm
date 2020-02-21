@@ -101,7 +101,6 @@ inherited FMNG0004AView: TFMNG0004AView
       ExplicitWidth = 479
       inherited LbProgram: TRzLabel
         Width = 479
-        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
@@ -130,7 +129,7 @@ inherited FMNG0004AView: TFMNG0004AView
             Left = 198
             ExplicitLeft = 198
             inherited TxBuscar: TcxTextEdit
-              ExplicitHeight = 22
+              Properties.OnChange = TxBuscarPropertiesChange
             end
           end
         end
@@ -139,7 +138,6 @@ inherited FMNG0004AView: TFMNG0004AView
           ExplicitWidth = 475
           inherited LbTotalRegistros: TRzLabel
             Width = 467
-            Height = 22
           end
         end
         inherited PnGrid: TRzPanel

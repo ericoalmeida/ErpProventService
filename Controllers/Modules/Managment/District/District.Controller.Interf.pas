@@ -13,12 +13,14 @@ type
   iDistrictController = interface
     ['{72B5CC0A-D76E-4374-AC9E-D2D6E82F8506}']
     function find(AValue: string): iDistrictController;
+    function findById(AValue: string): iDistrictController;
 
     function insert: iDistrictInsertController;
     function update: iDistrictUpdateController;
     function delete: iDistrictDeleteController;
     function duplicate: iDistrictDuplicateController;
 
+    function code: string;
     function districtId: string;
     function description: string;
     function cityId: string;

@@ -57,7 +57,7 @@ end;
 
 procedure TCityDeleteController.save;
 begin
-  if FMessageConfirm.messages(Format('Deseja excluir o bairro %s ?',
+  if FMessageConfirm.messages(Format('Deseja excluir a cidade %s ?',
     [FSelectedRecord.NAME])).&end then
   begin
 
@@ -66,7 +66,7 @@ begin
 
     except
       on E: Exception do
-        raise Exception.Create(Format('O Bairro %s não pode ser excluído!',
+        raise Exception.Create(Format('A cidade %s não pode ser excluído!',
           [FSelectedRecord.NAME]));
     end;
 

@@ -16,7 +16,7 @@ uses
   dxSkinOffice2007Black,
   dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Silver,
   System.Actions, Vcl.ActnList,
-  City.Controller.interf;
+  City.Controller.interf, dxSkinDarkRoom, dxSkinDarkSide;
 
 type
   TFMNG0001BView = class(TFBaseRegisterView, iBaseRegisterView)
@@ -93,11 +93,7 @@ begin
   TxCityId.Enabled      := not(FOperation in [toShow, toDelete]);
   TxZipCode.Enabled     := not(FOperation in [toShow, toDelete]);
 
-  LbCreatedAt.Visible   := not(FOperation in [toInsert]);
-  TxCreatedDate.Visible := not(FOperation in [toInsert]);
-  LbUpdatedAt.Visible   := not(FOperation in [toInsert]);
-  TxUpdatedDate.Visible := not(FOperation in [toInsert]);
-
+  PnButtonConfirm.Visible := not(FOperation = toShow);
   BtConfirmar.Visible := not(FOperation = toShow);
 end;
 

@@ -55,7 +55,7 @@ begin
     FDatabase.Params.Database := FSettings.database;
     FDatabase.Params.Add('server=' + FSettings.server);
     FDatabase.Params.Add('port=' + FSettings.port);
-    FDatabase.Params.Add('username=' + FSettings.user);
+    FDatabase.Params.Add('User_Name=' + FSettings.user);
     FDatabase.Params.Add('password=' + FSettings.password);
     FDatabase.Connected := true;
 

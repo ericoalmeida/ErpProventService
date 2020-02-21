@@ -11,11 +11,21 @@ inherited FMSG0001View: TFMSG0001View
       end
     end
     inherited PnContainerBody: TRzPanel
+      inherited PnFooterBody: TRzPanel
+        inherited PnButtonConfirm: TRzPanel
+          Visible = False
+          ExplicitLeft = 220
+          ExplicitTop = 4
+          inherited BtConfirmar: TcxButton
+            OnClick = nil
+            ExplicitLeft = 2
+            ExplicitWidth = 106
+          end
+        end
+      end
       inherited PnContent: TRzPanel
         inherited MmMessage: TcxMemo
           Style.IsFontAssigned = True
-          ExplicitWidth = 445
-          ExplicitHeight = 70
         end
       end
     end

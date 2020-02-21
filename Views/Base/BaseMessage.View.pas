@@ -7,12 +7,14 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Base.View, cxGraphics, cxLookAndFeels,
   cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore, dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle,
   Vcl.StdCtrls, cxButtons, RzLabel, dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel, cxControls,
-  cxContainer, cxEdit, cxLabel, cxTextEdit, cxMemo;
+  cxContainer, cxEdit, cxLabel, cxTextEdit, cxMemo, dxSkinDarkRoom, dxSkinDarkSide;
 
 type
   TFBaseMessageView = class(TFBaseView)
     PnContent: TRzPanel;
     MmMessage: TcxMemo;
+    PnButtonConfirm: TRzPanel;
+    BtConfirmar: TcxButton;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
