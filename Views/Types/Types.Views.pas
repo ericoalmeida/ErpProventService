@@ -11,7 +11,7 @@ type
   TTypeRegisterPrograms = (trMNG0001BView, trMNG0002BView, trMNG0003BView,
     trMNG0004BView, trMNG0005BView, trMNG0006BView);
 
-  TTypeSearchPrograms = (tsMNG0002CView, tsMNG0003CView, tsMNG0004CView);
+  TTypeSearchPrograms = (tsMNG0001CView, tsMNG0002CView, tsMNG0003CView, tsMNG0004CView);
 
 implementation
 

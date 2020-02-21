@@ -31,7 +31,6 @@ type
     PnContent: TRzPanel;
     PnGridHeader: TRzPanel;
     LbBuscar: TcxLabel;
-    PnBuscar: TRzPanel;
     TxBuscar: TcxTextEdit;
     PnGridFooter: TRzPanel;
     LbTotalRegistros: TRzLabel;
@@ -51,7 +50,6 @@ type
     StIndicator: TcxStyle;
     PnButtonConfirm: TRzPanel;
     BtConfirmar: TcxButton;
-    procedure FormCreate(Sender: TObject);
     procedure BtConfirmarClick(Sender: TObject);
   private
     { Private declarations }
@@ -88,13 +86,6 @@ begin
 
     DsData.DataSet.Filtered := True;
   end;
-end;
-
-procedure TFBaseSearchView.FormCreate(Sender: TObject);
-begin
-  inherited;
-  Self.Height := Screen.Height - 300;
-  Self.Width := Screen.Width - 300;
 end;
 
 procedure TFBaseSearchView.totalRecords;

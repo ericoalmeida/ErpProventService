@@ -1,20 +1,20 @@
 inherited FMNG0005BView: TFMNG0005BView
   Caption = 'Empresa'
-  ClientHeight = 378
-  ClientWidth = 606
+  ClientHeight = 391
+  ClientWidth = 694
   Visible = False
-  ExplicitWidth = 612
-  ExplicitHeight = 407
+  ExplicitWidth = 700
+  ExplicitHeight = 420
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
-    Width = 604
-    Height = 376
-    ExplicitWidth = 604
-    ExplicitHeight = 376
+    Width = 692
+    Height = 389
+    ExplicitWidth = 692
+    ExplicitHeight = 389
     inherited PnHeader: TRzPanel
-      Width = 602
-      ExplicitWidth = 602
+      Width = 690
+      ExplicitWidth = 690
       inherited ImTitle: TImage
         Width = 24
         Picture.Data = {
@@ -75,47 +75,57 @@ inherited FMNG0005BView: TFMNG0005BView
         ExplicitWidth = 69
       end
       inherited LbOperation: TRzLabel
-        Left = 518
+        Left = 606
         Height = 26
-        ExplicitLeft = 518
+        ExplicitLeft = 606
       end
     end
     inherited PnProgram: TRzPanel
-      Top = 357
-      Width = 602
-      ExplicitTop = 357
-      ExplicitWidth = 602
+      Top = 370
+      Width = 690
+      ExplicitTop = 370
+      ExplicitWidth = 690
       inherited LbProgram: TRzLabel
-        Width = 602
+        Width = 690
         Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
-      Width = 602
-      Height = 316
-      ExplicitWidth = 602
-      ExplicitHeight = 316
+      Width = 690
+      Height = 329
+      ExplicitWidth = 690
+      ExplicitHeight = 329
       inherited PnFooterBody: TRzPanel
-        Top = 276
-        Width = 602
-        ExplicitTop = 276
-        ExplicitWidth = 602
+        Top = 289
+        Width = 690
+        ExplicitTop = 289
+        ExplicitWidth = 690
         inherited PnButtonCancel: TRzPanel
-          Left = 491
+          Left = 579
+          ExplicitLeft = 579
+          inherited BtSair: TcxButton
+            ExplicitHeight = 29
+          end
         end
         inherited PnButtonConfirm: TRzPanel
-          Left = 378
+          Left = 466
+          ExplicitLeft = 466
+          inherited BtConfirmar: TcxButton
+            ExplicitTop = 2
+            ExplicitWidth = 106
+            ExplicitHeight = 29
+          end
         end
       end
       inherited PnContent: TRzPanel
-        Width = 598
-        Height = 272
-        ExplicitWidth = 598
-        ExplicitHeight = 272
+        Width = 686
+        Height = 285
+        ExplicitWidth = 686
+        ExplicitHeight = 285
         inherited LbObs: TRzLabel
-          Top = 259
-          Width = 598
-          ExplicitTop = 259
+          Top = 272
+          Width = 686
+          ExplicitTop = 272
         end
         object LbUpdatedAt: TcxLabel
           Left = 1
@@ -282,6 +292,7 @@ inherited FMNG0005BView: TFMNG0005BView
           Top = 137
           Properties.Buttons = <
             item
+              Action = AcSelectDistrict
               Default = True
               Kind = bkEllipsis
             end>
@@ -349,7 +360,7 @@ inherited FMNG0005BView: TFMNG0005BView
           Style.IsFontAssigned = True
         end
         object TxIE: TcxTextEdit
-          Left = 386
+          Left = 502
           Top = 81
           Properties.CharCase = ecUpperCase
           Style.BorderColor = 12698049
@@ -371,7 +382,7 @@ inherited FMNG0005BView: TFMNG0005BView
           Width = 171
         end
         object LbIE: TcxLabel
-          Left = 343
+          Left = 459
           Top = 82
           Caption = 'RG/IE:'
           ParentFont = False
@@ -437,7 +448,7 @@ inherited FMNG0005BView: TFMNG0005BView
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
           TabOrder = 1
-          Width = 484
+          Width = 600
         end
         object LbFancyName: TcxLabel
           Left = 13
@@ -471,7 +482,7 @@ inherited FMNG0005BView: TFMNG0005BView
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
           TabOrder = 0
-          Width = 484
+          Width = 600
         end
         object LbName: TcxLabel
           Left = 27
@@ -525,5 +536,9 @@ inherited FMNG0005BView: TFMNG0005BView
   inherited AcSearchRecord: TActionList
     Left = 316
     Top = 244
+    object AcSelectDistrict: TAction
+      Caption = 'AcSelectDistrict'
+      OnExecute = AcSelectDistrictExecute
+    end
   end
 end

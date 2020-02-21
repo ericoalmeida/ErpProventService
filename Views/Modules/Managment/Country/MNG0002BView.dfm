@@ -1,19 +1,19 @@
 inherited FMNG0002BView: TFMNG0002BView
   Caption = 'Pa'#237'ses'
-  ClientHeight = 269
-  ClientWidth = 504
+  ClientHeight = 291
+  ClientWidth = 594
   Visible = False
-  ExplicitWidth = 510
-  ExplicitHeight = 298
+  ExplicitWidth = 600
+  ExplicitHeight = 320
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
-    Width = 502
-    Height = 267
+    Width = 592
+    Height = 289
     ExplicitWidth = 502
     ExplicitHeight = 267
     inherited PnHeader: TRzPanel
-      Width = 500
+      Width = 590
       ExplicitWidth = 500
       inherited ImTitle: TImage
         Picture.Data = {
@@ -103,51 +103,61 @@ inherited FMNG0002BView: TFMNG0002BView
         ExplicitWidth = 50
       end
       inherited LbOperation: TRzLabel
-        Left = 416
+        Left = 506
         Height = 26
         ExplicitLeft = 416
       end
     end
     inherited PnProgram: TRzPanel
-      Top = 248
-      Width = 500
+      Top = 270
+      Width = 590
       ExplicitTop = 248
       ExplicitWidth = 500
       inherited LbProgram: TRzLabel
-        Width = 500
+        Width = 590
         Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
-      Width = 500
-      Height = 207
+      Width = 590
+      Height = 229
       ExplicitWidth = 500
       ExplicitHeight = 207
       inherited PnFooterBody: TRzPanel
-        Top = 167
-        Width = 500
+        Top = 189
+        Width = 590
         ExplicitTop = 167
         ExplicitWidth = 500
         inherited PnButtonCancel: TRzPanel
-          Left = 389
+          Left = 479
+          ExplicitLeft = 389
+          inherited BtSair: TcxButton
+            ExplicitHeight = 29
+          end
         end
         inherited PnButtonConfirm: TRzPanel
-          Left = 276
+          Left = 366
+          ExplicitLeft = 276
+          inherited BtConfirmar: TcxButton
+            ExplicitTop = 2
+            ExplicitWidth = 106
+            ExplicitHeight = 29
+          end
         end
       end
       inherited PnContent: TRzPanel
-        Width = 496
-        Height = 163
+        Width = 586
+        Height = 185
         ExplicitWidth = 496
         ExplicitHeight = 163
         inherited LbObs: TRzLabel
-          Top = 150
-          Width = 496
+          Top = 172
+          Width = 586
           ExplicitTop = 150
         end
         object LbUpdatedAt: TcxLabel
           Left = 4
-          Top = 122
+          Top = 141
           Caption = 'Ult. Atualiza'#231#227'o:'
           ParentFont = False
           Style.Font.Charset = ANSI_CHARSET
@@ -159,7 +169,7 @@ inherited FMNG0002BView: TFMNG0002BView
         end
         object LbCreatedAt: TcxLabel
           Left = 31
-          Top = 98
+          Top = 117
           Caption = 'Criado em:'
           ParentFont = False
           Style.Font.Charset = ANSI_CHARSET
@@ -171,7 +181,7 @@ inherited FMNG0002BView: TFMNG0002BView
         end
         object TxUpdatedAt: TcxTextEdit
           Left = 97
-          Top = 121
+          Top = 140
           Enabled = False
           Properties.CharCase = ecUpperCase
           Style.BorderColor = 12698049
@@ -189,11 +199,11 @@ inherited FMNG0002BView: TFMNG0002BView
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
           TabOrder = 2
-          Width = 214
+          Width = 159
         end
         object TxCreatedAt: TcxTextEdit
           Left = 97
-          Top = 97
+          Top = 116
           Enabled = False
           Properties.CharCase = ecUpperCase
           Style.BorderColor = 12698049
@@ -211,7 +221,7 @@ inherited FMNG0002BView: TFMNG0002BView
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
           TabOrder = 3
-          Width = 214
+          Width = 159
         end
         object LbName: TcxLabel
           Left = 51
@@ -245,7 +255,7 @@ inherited FMNG0002BView: TFMNG0002BView
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
           TabOrder = 5
-          Width = 333
+          Width = 472
         end
         object TxCountryId: TcxTextEdit
           Left = 97

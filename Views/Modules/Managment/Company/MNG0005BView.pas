@@ -41,11 +41,15 @@ type
     LbName: TcxLabel;
     TxCompanyId: TcxTextEdit;
     LbCompanyId: TcxLabel;
+    AcSelectDistrict: TAction;
     procedure FormCreate(Sender: TObject);
     procedure BtConfirmarClick(Sender: TObject);
+    procedure AcSelectDistrictExecute(Sender: TObject);
   private
     FCompanyController: iCompanyController;
     FDistrictController: iDistrictController;
+
+    procedure selectDistrict;
   public
     class function New: iBaseRegisterView;
 
@@ -71,8 +75,14 @@ implementation
 
 {$R *.dfm}
 
-uses Facade.Controller;
+uses Facade.Controller, Facade.View, Types.Views;
 { TFMNG0005BView }
+
+procedure TFMNG0005BView.AcSelectDistrictExecute(Sender: TObject);
+begin
+  inherited;
+  selectDistrict;
+end;
 
 procedure TFMNG0005BView.BtConfirmarClick(Sender: TObject);
 begin
@@ -177,6 +187,22 @@ begin
     toDuplicate:
       duplicateRecord;
   end;
+end;
+
+procedure TFMNG0005BView.selectDistrict;
+var
+  districtCode: string;
+begin
+  districtCode := TFacadeView.New.modulesFacadeView.ManagmentFactoryView.
+    showProgramOfSearch(tsMNG0001CView).showSearch.&end;
+
+  if districtCode = EmptyStr then
+    Exit;
+
+  FDistrictController.find(districtCode);
+
+  TxDistrictId.Text   := FDistrictController.districtId;
+  TxDistrictName.Text := FDistrictController.description;
 end;
 
 function TFMNG0005BView.selectedRecord(AValue: string): iBaseRegisterView;

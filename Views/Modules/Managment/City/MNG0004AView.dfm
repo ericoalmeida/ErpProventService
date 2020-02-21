@@ -109,9 +109,9 @@ inherited FMNG0004AView: TFMNG0004AView
       inherited PnFooterBody: TRzPanel
         Width = 479
         ExplicitWidth = 479
-        inherited BtSair: TcxButton
-          Left = 369
-          ExplicitLeft = 369
+        inherited PnButtonCancel: TRzPanel
+          Left = 365
+          ExplicitLeft = 365
         end
       end
       inherited PnContent: TRzPanel
@@ -125,12 +125,9 @@ inherited FMNG0004AView: TFMNG0004AView
             Style.IsFontAssigned = True
             ExplicitLeft = 148
           end
-          inherited PnBuscar: TRzPanel
-            Left = 198
-            ExplicitLeft = 198
-            inherited TxBuscar: TcxTextEdit
-              Properties.OnChange = TxBuscarPropertiesChange
-            end
+          inherited TxBuscar: TcxTextEdit
+            Left = 194
+            Properties.OnChange = TxBuscarPropertiesChange
           end
         end
         inherited PnGridFooter: TRzPanel

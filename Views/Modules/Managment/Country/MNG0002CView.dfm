@@ -1,20 +1,20 @@
 inherited FMNG0002CView: TFMNG0002CView
   Caption = 'Pesquisa de Pa'#237'ses'
-  ClientHeight = 257
-  ClientWidth = 485
+  ClientHeight = 321
+  ClientWidth = 674
   Visible = False
   OnShow = FormShow
-  ExplicitWidth = 491
-  ExplicitHeight = 286
+  ExplicitWidth = 680
+  ExplicitHeight = 350
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
-    Width = 483
-    Height = 255
+    Width = 672
+    Height = 319
     ExplicitWidth = 483
     ExplicitHeight = 255
     inherited PnHeader: TRzPanel
-      Width = 481
+      Width = 670
       ExplicitWidth = 481
       inherited ImTitle: TImage
         Picture.Data = {
@@ -104,74 +104,69 @@ inherited FMNG0002CView: TFMNG0002CView
       end
     end
     inherited PnProgram: TRzPanel
-      Top = 236
-      Width = 481
+      Top = 300
+      Width = 670
       ExplicitTop = 236
       ExplicitWidth = 481
       inherited LbProgram: TRzLabel
-        Width = 481
-        Height = 18
+        Width = 670
       end
     end
     inherited PnContainerBody: TRzPanel
-      Width = 481
-      Height = 195
+      Width = 670
+      Height = 259
       ExplicitWidth = 481
       ExplicitHeight = 195
       inherited PnFooterBody: TRzPanel
-        Top = 155
-        Width = 481
+        Top = 219
+        Width = 670
         ExplicitTop = 155
         ExplicitWidth = 481
-        inherited BtSair: TcxButton
-          Left = 371
-          ExplicitLeft = 371
+        inherited PnButtonCancel: TRzPanel
+          Left = 556
+          ExplicitLeft = 367
         end
-        inherited BtConfirmar: TcxButton
-          Left = 263
-          ExplicitLeft = 263
+        inherited PnButtonConfirm: TRzPanel
+          Left = 443
+          ExplicitLeft = 254
         end
       end
       inherited PnContent: TRzPanel
-        Width = 479
-        Height = 153
+        Width = 668
+        Height = 217
         ExplicitWidth = 479
         ExplicitHeight = 153
         inherited PnGridHeader: TRzPanel
-          Width = 477
+          Width = 666
           ExplicitWidth = 477
           inherited LbBuscar: TcxLabel
-            Left = 150
+            Left = 339
             Style.IsFontAssigned = True
             ExplicitLeft = 150
           end
-          inherited PnBuscar: TRzPanel
-            Left = 200
-            ExplicitLeft = 200
-            inherited TxBuscar: TcxTextEdit
-              Properties.OnChange = TxBuscarPropertiesChange
-              ExplicitHeight = 22
-            end
+          inherited TxBuscar: TcxTextEdit
+            Left = 388
+            Properties.OnChange = TxBuscarPropertiesChange
+            ExplicitLeft = 388
           end
         end
         inherited PnGridFooter: TRzPanel
-          Top = 122
-          Width = 477
+          Top = 186
+          Width = 666
           ExplicitTop = 122
           ExplicitWidth = 477
           inherited LbTotalRegistros: TRzLabel
-            Width = 469
-            Height = 22
+            Width = 658
           end
         end
         inherited PnGrid: TRzPanel
-          Width = 477
-          Height = 79
+          Width = 666
+          Height = 143
           ExplicitWidth = 477
           ExplicitHeight = 79
           inherited DbDados: TcxGrid
-            Width = 475
-            Height = 77
+            Width = 664
+            Height = 141
             ExplicitWidth = 475
             ExplicitHeight = 77
             inherited VwDados: TcxGridDBTableView
@@ -185,7 +180,7 @@ inherited FMNG0002CView: TFMNG0002CView
               object VwDadosNAME: TcxGridDBColumn
                 Caption = 'Pa'#237's'
                 DataBinding.FieldName = 'NAME'
-                Width = 255
+                Width = 355
               end
               object VwDadosCREATEDAT: TcxGridDBColumn
                 Caption = 'Data Cadastro'
@@ -195,6 +190,7 @@ inherited FMNG0002CView: TFMNG0002CView
               object VwDadosUPDATEDAT: TcxGridDBColumn
                 Caption = 'Ult. Atualiza'#231#227'o'
                 DataBinding.FieldName = 'UPDATEDAT'
+                Width = 110
               end
             end
           end

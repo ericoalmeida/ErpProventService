@@ -31,7 +31,7 @@ uses
   dxSkinWhiteprint, dxSkinXmas2008Blue, dxRibbonCustomizationForm, dxBar,
   dxBarApplicationMenu,
   dxRibbon, cxClasses, dxStatusBar, dxRibbonStatusBar, dxGDIPlusClasses,
-  Vcl.ExtCtrls;
+  Vcl.ExtCtrls, System.ImageList, Vcl.ImgList, cxImageList;
 
 type
   TFMainView = class(TForm)
@@ -45,9 +45,6 @@ type
     BtClient: TdxBarLargeButton;
     BtServices: TdxBarLargeButton;
     BtMachine: TdxBarLargeButton;
-    BtCities: TdxBarLargeButton;
-    BtStates: TdxBarLargeButton;
-    BtCountries: TdxBarLargeButton;
     BmAtalhos: TdxBar;
     BmRotinas: TdxBar;
     BtServicesProvision: TdxBarLargeButton;
@@ -56,18 +53,24 @@ type
     BtReportServicesProvision: TdxBarLargeButton;
     BtReportCost: TdxBarLargeButton;
     TmMainMenu: TTimer;
-    BtDistrict: TdxBarLargeButton;
     BtTypeCost: TdxBarLargeButton;
-    BmSupervisor: TdxBar;
-    TbSupervisor: TdxRibbonTab;
+    BmGeral: TdxBar;
+    TbGeral: TdxRibbonTab;
     BtEmpresas: TdxBarLargeButton;
     BtUsuarios: TdxBarLargeButton;
+    BtDistrict: TdxBarLargeButton;
+    BtCity: TdxBarLargeButton;
+    BtStates: TdxBarLargeButton;
+    BtCountry: TdxBarLargeButton;
+    BtFinanceOpr: TdxBarLargeButton;
+    BtCashBook: TdxBarLargeButton;
+    BtReportCashBook: TdxBarLargeButton;
     procedure TmMainMenuTimer(Sender: TObject);
-    procedure BtDistrictClick(Sender: TObject);
-    procedure BtCountriesClick(Sender: TObject);
-    procedure BtStatesClick(Sender: TObject);
-    procedure BtCitiesClick(Sender: TObject);
     procedure BtEmpresasClick(Sender: TObject);
+    procedure BtCountryClick(Sender: TObject);
+    procedure BtStatesClick(Sender: TObject);
+    procedure BtCityClick(Sender: TObject);
+    procedure BtDistrictClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -83,21 +86,12 @@ implementation
 
 uses Facade.Controller, Facade.View, Types.Views;
 
-procedure TFMainView.BtCitiesClick(Sender: TObject);
+procedure TFMainView.BtEmpresasClick(Sender: TObject);
 begin
   TFacadeView.New
     .modulesFacadeView
      .ManagmentFactoryView
-      .showProgramOfListing(tpMNG0004AView)
-      .&end;
-end;
-
-procedure TFMainView.BtCountriesClick(Sender: TObject);
-begin
-  TFacadeView.New
-    .modulesFacadeView
-     .ManagmentFactoryView
-      .showProgramOfListing(tpMNG0002AView)
+      .showProgramOfListing(tpMNG0005AView)
       .&end;
 end;
 
@@ -110,12 +104,12 @@ begin
       .&end;
 end;
 
-procedure TFMainView.BtEmpresasClick(Sender: TObject);
+procedure TFMainView.BtCityClick(Sender: TObject);
 begin
   TFacadeView.New
     .modulesFacadeView
      .ManagmentFactoryView
-      .showProgramOfListing(tpMNG0005AView)
+      .showProgramOfListing(tpMNG0004AView)
       .&end;
 end;
 
@@ -125,6 +119,15 @@ begin
     .modulesFacadeView
      .ManagmentFactoryView
       .showProgramOfListing(tpMNG0003AView)
+      .&end;
+end;
+
+procedure TFMainView.BtCountryClick(Sender: TObject);
+begin
+  TFacadeView.New
+    .modulesFacadeView
+     .ManagmentFactoryView
+      .showProgramOfListing(tpMNG0002AView)
       .&end;
 end;
 

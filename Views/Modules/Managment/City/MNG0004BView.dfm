@@ -1,19 +1,19 @@
 inherited FMNG0004BView: TFMNG0004BView
   Caption = 'Cidades'
-  ClientHeight = 289
-  ClientWidth = 549
+  ClientHeight = 291
+  ClientWidth = 594
   Visible = False
-  ExplicitWidth = 555
-  ExplicitHeight = 318
+  ExplicitWidth = 600
+  ExplicitHeight = 320
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
-    Width = 547
-    Height = 287
+    Width = 592
+    Height = 289
     ExplicitWidth = 547
     ExplicitHeight = 287
     inherited PnHeader: TRzPanel
-      Width = 545
+      Width = 590
       ExplicitWidth = 545
       inherited ImTitle: TImage
         Picture.Data = {
@@ -101,46 +101,56 @@ inherited FMNG0004BView: TFMNG0004BView
         ExplicitWidth = 62
       end
       inherited LbOperation: TRzLabel
-        Left = 461
+        Left = 506
         Height = 26
         ExplicitLeft = 461
       end
     end
     inherited PnProgram: TRzPanel
-      Top = 268
-      Width = 545
+      Top = 270
+      Width = 590
       ExplicitTop = 268
       ExplicitWidth = 545
       inherited LbProgram: TRzLabel
-        Width = 545
+        Width = 590
         Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
-      Width = 545
-      Height = 227
+      Width = 590
+      Height = 229
       ExplicitWidth = 545
       ExplicitHeight = 227
       inherited PnFooterBody: TRzPanel
-        Top = 187
-        Width = 545
+        Top = 189
+        Width = 590
         ExplicitTop = 187
         ExplicitWidth = 545
         inherited PnButtonCancel: TRzPanel
-          Left = 434
+          Left = 479
+          ExplicitLeft = 434
+          inherited BtSair: TcxButton
+            ExplicitHeight = 29
+          end
         end
         inherited PnButtonConfirm: TRzPanel
-          Left = 321
+          Left = 366
+          ExplicitLeft = 321
+          inherited BtConfirmar: TcxButton
+            ExplicitTop = 2
+            ExplicitWidth = 106
+            ExplicitHeight = 29
+          end
         end
       end
       inherited PnContent: TRzPanel
-        Width = 541
-        Height = 183
+        Width = 586
+        Height = 185
         ExplicitWidth = 541
         ExplicitHeight = 183
         inherited LbObs: TRzLabel
-          Top = 170
-          Width = 541
+          Top = 172
+          Width = 586
           ExplicitTop = 170
         end
         object LbUpdatedAt: TcxLabel
@@ -245,7 +255,7 @@ inherited FMNG0004BView: TFMNG0004BView
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
           TabOrder = 6
-          Width = 437
+          Width = 489
         end
         object TxStateId: TcxButtonEdit
           Left = 96
@@ -293,7 +303,7 @@ inherited FMNG0004BView: TFMNG0004BView
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
           TabOrder = 8
-          Width = 379
+          Width = 431
         end
         object TxCreatedAt: TcxTextEdit
           Left = 96
@@ -374,7 +384,7 @@ inherited FMNG0004BView: TFMNG0004BView
           Style.IsFontAssigned = True
         end
         object cxLabel5: TcxLabel
-          Left = 313
+          Left = 365
           Top = 74
           Caption = 'C'#243'digo IBGE:'
           ParentFont = False
@@ -387,7 +397,7 @@ inherited FMNG0004BView: TFMNG0004BView
           Style.IsFontAssigned = True
         end
         object TxIBGECode: TcxTextEdit
-          Left = 391
+          Left = 443
           Top = 73
           Properties.CharCase = ecUpperCase
           Style.BorderColor = 12698049

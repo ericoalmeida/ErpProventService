@@ -1,16 +1,19 @@
 inherited FMNG0004CView: TFMNG0004CView
   Caption = 'Pesquisa de Cidades'
-  ClientWidth = 493
+  ClientHeight = 321
+  ClientWidth = 674
   Visible = False
   OnShow = FormShow
-  ExplicitWidth = 499
+  ExplicitWidth = 680
+  ExplicitHeight = 350
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
-    Width = 491
+    Width = 672
+    Height = 319
     ExplicitWidth = 491
     inherited PnHeader: TRzPanel
-      Width = 489
+      Width = 670
       ExplicitWidth = 489
       inherited LbTitle: TRzLabel
         Width = 160
@@ -19,61 +22,63 @@ inherited FMNG0004CView: TFMNG0004CView
       end
     end
     inherited PnProgram: TRzPanel
-      Width = 489
+      Top = 300
+      Width = 670
       ExplicitWidth = 489
       inherited LbProgram: TRzLabel
-        Width = 489
-        Height = 18
+        Width = 670
       end
     end
     inherited PnContainerBody: TRzPanel
-      Width = 489
+      Width = 670
+      Height = 259
       ExplicitWidth = 489
       inherited PnFooterBody: TRzPanel
-        Width = 489
+        Top = 219
+        Width = 670
         ExplicitWidth = 489
-        inherited BtSair: TcxButton
-          Left = 379
-          ExplicitLeft = 379
+        inherited PnButtonCancel: TRzPanel
+          Left = 556
+          ExplicitLeft = 375
         end
-        inherited BtConfirmar: TcxButton
-          Left = 271
-          ExplicitLeft = 271
+        inherited PnButtonConfirm: TRzPanel
+          Left = 443
+          ExplicitLeft = 262
         end
       end
       inherited PnContent: TRzPanel
-        Width = 487
+        Width = 668
+        Height = 217
         ExplicitWidth = 487
         inherited PnGridHeader: TRzPanel
-          Width = 485
+          Width = 666
           ExplicitWidth = 485
           inherited LbBuscar: TcxLabel
-            Left = 158
+            Left = 339
             Style.IsFontAssigned = True
             ExplicitLeft = 158
           end
-          inherited PnBuscar: TRzPanel
-            Left = 208
-            ExplicitLeft = 208
-            inherited TxBuscar: TcxTextEdit
-              Properties.OnChange = TxBuscarPropertiesChange
-              ExplicitHeight = 22
-            end
+          inherited TxBuscar: TcxTextEdit
+            Left = 388
+            Properties.OnChange = TxBuscarPropertiesChange
+            ExplicitLeft = 388
           end
         end
         inherited PnGridFooter: TRzPanel
-          Width = 485
+          Top = 186
+          Width = 666
           ExplicitWidth = 485
           inherited LbTotalRegistros: TRzLabel
-            Width = 477
-            Height = 22
+            Width = 658
           end
         end
         inherited PnGrid: TRzPanel
-          Width = 485
+          Width = 666
+          Height = 143
           ExplicitWidth = 485
           inherited DbDados: TcxGrid
-            Width = 483
+            Width = 664
+            Height = 141
             ExplicitWidth = 483
             inherited VwDados: TcxGridDBTableView
               DataController.DataSource = DsData
@@ -95,7 +100,7 @@ inherited FMNG0004CView: TFMNG0004CView
               object VwDadosIBGECODE: TcxGridDBColumn
                 Caption = 'C'#243'digo IBGE'
                 DataBinding.FieldName = 'IBGECODE'
-                Width = 60
+                Width = 80
               end
               object VwDadosSTATENAME: TcxGridDBColumn
                 Caption = 'Estado'

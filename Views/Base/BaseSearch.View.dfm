@@ -92,6 +92,12 @@ inherited FBaseSearchView: TFBaseSearchView
         ExplicitWidth = 138
       end
     end
+    inherited PnProgram: TRzPanel
+      inherited LbProgram: TRzLabel
+        Width = 608
+        Height = 18
+      end
+    end
     inherited PnContainerBody: TRzPanel
       inherited PnFooterBody: TRzPanel
         inherited PnButtonCancel: TRzPanel
@@ -114,7 +120,6 @@ inherited FBaseSearchView: TFBaseSearchView
           BorderWidth = 1
           Color = 14803425
           TabOrder = 1
-          ExplicitLeft = 494
           object BtConfirmar: TcxButton
             AlignWithMargins = True
             Left = 2
@@ -214,30 +219,27 @@ inherited FBaseSearchView: TFBaseSearchView
             Style.Font.Style = []
             Style.IsFontAssigned = True
           end
-          object PnBuscar: TRzPanel
+          object TxBuscar: TcxTextEdit
             AlignWithMargins = True
-            Left = 327
+            Left = 326
             Top = 7
-            Width = 273
-            Height = 24
+            Margins.Left = 0
             Margins.Top = 6
             Margins.Bottom = 6
             Align = alRight
-            BorderOuter = fsNone
-            BorderColor = 15314790
-            BorderWidth = 1
-            Color = clWhite
+            Properties.CharCase = ecUpperCase
+            Style.BorderColor = 11382189
+            Style.BorderStyle = ebsSingle
+            Style.Color = 14803425
+            Style.HotTrack = False
+            Style.LookAndFeel.NativeStyle = False
+            StyleDisabled.LookAndFeel.NativeStyle = False
+            StyleFocused.BorderColor = 14120960
+            StyleFocused.Color = 16511461
+            StyleFocused.LookAndFeel.NativeStyle = False
+            StyleHot.LookAndFeel.NativeStyle = False
             TabOrder = 1
-            object TxBuscar: TcxTextEdit
-              Left = 1
-              Top = 1
-              Align = alClient
-              Properties.CharCase = ecUpperCase
-              Style.BorderStyle = ebsNone
-              StyleFocused.Color = 16577771
-              TabOrder = 0
-              Width = 271
-            end
+            Width = 274
           end
         end
         object PnGridFooter: TRzPanel

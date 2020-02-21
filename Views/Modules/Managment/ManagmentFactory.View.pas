@@ -26,7 +26,7 @@ implementation
 
 uses MNG0001AView, MNG0001BView, MNG0002AView, MNG0002BView, MNG0003AView,
   MNG0003BView, MNG0002CView, MNG0004AView, MNG0004BView, MNG0003CView,
-  MNG0004CView, MNG0005AView, MNG0005BView;
+  MNG0004CView, MNG0005AView, MNG0005BView, MNG0001CView;
 
 constructor TManagmentFactoryView.Create;
 begin
@@ -90,6 +90,9 @@ function TManagmentFactoryView.showProgramOfSearch(AValue: TTypeSearchPrograms)
   : IBaseSearchView;
 begin
   case AValue of
+    tsMNG0001CView:
+      Result := TFMNG0001CView.New;
+
     tsMNG0002CView:
       Result := TFMNG0002CView.New;
 

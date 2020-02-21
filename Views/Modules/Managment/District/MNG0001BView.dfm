@@ -1,19 +1,19 @@
 inherited FMNG0001BView: TFMNG0001BView
   Caption = 'Bairros'
-  ClientHeight = 281
-  ClientWidth = 504
+  ClientHeight = 291
+  ClientWidth = 594
   Visible = False
-  ExplicitWidth = 510
-  ExplicitHeight = 310
+  ExplicitWidth = 600
+  ExplicitHeight = 320
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
-    Width = 502
-    Height = 279
+    Width = 592
+    Height = 289
     ExplicitWidth = 502
     ExplicitHeight = 279
     inherited PnHeader: TRzPanel
-      Width = 500
+      Width = 590
       ExplicitWidth = 500
       inherited ImTitle: TImage
         Picture.Data = {
@@ -90,46 +90,56 @@ inherited FMNG0001BView: TFMNG0001BView
         ExplicitWidth = 58
       end
       inherited LbOperation: TRzLabel
-        Left = 416
+        Left = 506
         Height = 26
         ExplicitLeft = 416
       end
     end
     inherited PnProgram: TRzPanel
-      Top = 260
-      Width = 500
+      Top = 270
+      Width = 590
       ExplicitTop = 260
       ExplicitWidth = 500
       inherited LbProgram: TRzLabel
-        Width = 500
+        Width = 590
         Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
-      Width = 500
-      Height = 219
+      Width = 590
+      Height = 229
       ExplicitWidth = 500
       ExplicitHeight = 219
       inherited PnFooterBody: TRzPanel
-        Top = 179
-        Width = 500
+        Top = 189
+        Width = 590
         ExplicitTop = 179
         ExplicitWidth = 500
         inherited PnButtonCancel: TRzPanel
-          Left = 389
+          Left = 479
+          ExplicitLeft = 389
+          inherited BtSair: TcxButton
+            ExplicitHeight = 29
+          end
         end
         inherited PnButtonConfirm: TRzPanel
-          Left = 276
+          Left = 366
+          ExplicitLeft = 276
+          inherited BtConfirmar: TcxButton
+            ExplicitTop = 2
+            ExplicitWidth = 106
+            ExplicitHeight = 29
+          end
         end
       end
       inherited PnContent: TRzPanel
-        Width = 496
-        Height = 175
+        Width = 586
+        Height = 185
         ExplicitWidth = 496
         ExplicitHeight = 175
         inherited LbObs: TRzLabel
-          Top = 162
-          Width = 496
+          Top = 172
+          Width = 586
           ExplicitTop = 162
         end
         object LbDistrictId: TcxLabel
@@ -220,7 +230,7 @@ inherited FMNG0001BView: TFMNG0001BView
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
           TabOrder = 0
-          Width = 333
+          Width = 486
         end
         object LbCreatedAt: TcxLabel
           Left = 25
@@ -313,7 +323,7 @@ inherited FMNG0001BView: TFMNG0001BView
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
           TabOrder = 10
-          Width = 276
+          Width = 429
         end
         object cxLabel3: TcxLabel
           Left = 41

@@ -1,111 +1,113 @@
-inherited FMNG0003CView: TFMNG0003CView
-  Caption = 'Pesquisa de Estados'
-  ClientHeight = 321
+inherited FMNG0001CView: TFMNG0001CView
+  Caption = 'Bairros'
+  ClientHeight = 291
   ClientWidth = 674
   Visible = False
   OnShow = FormShow
   ExplicitWidth = 680
-  ExplicitHeight = 350
+  ExplicitHeight = 320
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
     Width = 672
-    Height = 319
-    ExplicitWidth = 472
+    Height = 289
+    ExplicitWidth = 672
+    ExplicitHeight = 319
     inherited PnHeader: TRzPanel
       Width = 670
-      ExplicitWidth = 470
+      ExplicitWidth = 670
       inherited LbTitle: TRzLabel
-        Width = 160
-        Caption = 'Pesquisa de Estados'
-        ExplicitWidth = 160
+        Width = 155
+        Caption = 'Pesquisa de bairros'
+        ExplicitWidth = 155
       end
     end
     inherited PnProgram: TRzPanel
-      Top = 300
+      Top = 270
       Width = 670
-      ExplicitWidth = 470
+      ExplicitTop = 300
+      ExplicitWidth = 670
       inherited LbProgram: TRzLabel
         Width = 670
+        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
       Width = 670
-      Height = 259
-      ExplicitWidth = 470
+      Height = 229
+      ExplicitWidth = 670
+      ExplicitHeight = 259
       inherited PnFooterBody: TRzPanel
-        Top = 219
+        Top = 189
         Width = 670
-        ExplicitWidth = 470
+        ExplicitTop = 219
+        ExplicitWidth = 670
         inherited PnButtonCancel: TRzPanel
           Left = 556
-          ExplicitLeft = 356
+          ExplicitLeft = 556
         end
         inherited PnButtonConfirm: TRzPanel
           Left = 443
-          ExplicitLeft = 243
+          ExplicitLeft = 443
         end
       end
       inherited PnContent: TRzPanel
         Width = 668
-        Height = 217
-        ExplicitWidth = 468
+        Height = 187
+        ExplicitWidth = 668
+        ExplicitHeight = 217
         inherited PnGridHeader: TRzPanel
           Width = 666
-          ExplicitWidth = 466
+          ExplicitWidth = 666
           inherited LbBuscar: TcxLabel
             Left = 339
             Style.IsFontAssigned = True
-            ExplicitLeft = 139
+            ExplicitLeft = 339
           end
           inherited TxBuscar: TcxTextEdit
             Left = 388
             Properties.OnChange = TxBuscarPropertiesChange
             ExplicitLeft = 388
+            ExplicitHeight = 24
           end
         end
         inherited PnGridFooter: TRzPanel
-          Top = 186
+          Top = 156
           Width = 666
-          ExplicitWidth = 466
+          ExplicitTop = 186
+          ExplicitWidth = 666
           inherited LbTotalRegistros: TRzLabel
             Width = 658
+            Height = 22
           end
         end
         inherited PnGrid: TRzPanel
           Width = 666
-          Height = 143
-          ExplicitWidth = 466
+          Height = 113
+          ExplicitWidth = 666
+          ExplicitHeight = 143
           inherited DbDados: TcxGrid
             Width = 664
-            Height = 141
-            ExplicitWidth = 464
+            Height = 111
+            ExplicitWidth = 664
+            ExplicitHeight = 141
             inherited VwDados: TcxGridDBTableView
               DataController.DataSource = DsData
-              object VwDadosSTATEID: TcxGridDBColumn
+              object VwDadosDISTRICTID: TcxGridDBColumn
                 Caption = 'N'#186
-                DataBinding.FieldName = 'STATEID'
+                DataBinding.FieldName = 'DISTRICTID'
                 HeaderAlignmentHorz = taCenter
+                Width = 50
               end
-              object VwDadosNAME: TcxGridDBColumn
-                Caption = 'Estado'
-                DataBinding.FieldName = 'NAME'
-                Width = 185
+              object VwDadosDESCRIPTION: TcxGridDBColumn
+                Caption = 'Bairro'
+                DataBinding.FieldName = 'DESCRIPTION'
+                Width = 295
               end
-              object VwDadosCOUNTRYNAME: TcxGridDBColumn
-                Caption = 'Pa'#237's'
-                DataBinding.FieldName = 'COUNTRYNAME'
-                Width = 155
-              end
-              object VwDadosCREATEDAT: TcxGridDBColumn
-                Caption = 'Data Cadastro'
-                DataBinding.FieldName = 'CREATEDAT'
-                Width = 110
-              end
-              object VwDadosUPDATEDAT: TcxGridDBColumn
-                Caption = 'Ult. Atualiza'#231#227'o'
-                DataBinding.FieldName = 'UPDATEDAT'
-                Width = 110
+              object VwDadosCITYNAME: TcxGridDBColumn
+                Caption = 'Cidade'
+                DataBinding.FieldName = 'CITYNAME'
+                Width = 255
               end
             end
           end
@@ -120,36 +122,39 @@ inherited FMNG0003CView: TFMNG0003CView
     SQL.Strings = (
       'select'
       ''
-      'stt.code,'
-      'stt.stateid,'
-      'stt.name,'
-      'stt.countryid,'
-      'ctr.name  as countryName,'
-      'stt.createdat,'
-      'stt.updatedat'
+      'dtr.code,'
+      'dtr.districtid,'
+      'dtr.description,'
+      'dtr.cityid,'
+      'cty.name||'#39'/'#39'||stt.initials  as cityname,'
+      'dtr.createdat,'
+      'dtr.updatedat'
       ''
       'from'
       ''
-      'TMNGSTATE stt'
-      'left join TMNGCOUNTRY ctr on (ctr.code = stt.countryid)')
+      'TMngDistrict dtr'
+      'left join TMngCity cty on (cty.code = dtr.cityid)'
+      'left join TMngState stt on (stt.code = cty.stateid)')
     object FdQDataCODE: TStringField
+      Alignment = taCenter
       FieldName = 'CODE'
       Size = 64
     end
-    object FdQDataSTATEID: TIntegerField
-      FieldName = 'STATEID'
+    object FdQDataDISTRICTID: TIntegerField
+      Alignment = taCenter
+      FieldName = 'DISTRICTID'
     end
-    object FdQDataNAME: TStringField
-      FieldName = 'NAME'
-      Size = 90
+    object FdQDataDESCRIPTION: TStringField
+      FieldName = 'DESCRIPTION'
+      Size = 155
     end
-    object FdQDataCOUNTRYID: TStringField
-      FieldName = 'COUNTRYID'
+    object FdQDataCITYID: TStringField
+      FieldName = 'CITYID'
       Size = 64
     end
-    object FdQDataCOUNTRYNAME: TStringField
-      FieldName = 'COUNTRYNAME'
-      Size = 60
+    object FdQDataCITYNAME: TStringField
+      FieldName = 'CITYNAME'
+      Size = 155
     end
     object FdQDataCREATEDAT: TSQLTimeStampField
       FieldName = 'CREATEDAT'

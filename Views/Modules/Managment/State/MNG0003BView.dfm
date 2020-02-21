@@ -1,19 +1,19 @@
 inherited FMNG0003BView: TFMNG0003BView
   Caption = 'Estados'
-  ClientHeight = 280
-  ClientWidth = 487
+  ClientHeight = 291
+  ClientWidth = 594
   Visible = False
-  ExplicitWidth = 493
-  ExplicitHeight = 309
+  ExplicitWidth = 600
+  ExplicitHeight = 320
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
-    Width = 485
-    Height = 278
+    Width = 592
+    Height = 289
     ExplicitWidth = 485
     ExplicitHeight = 278
     inherited PnHeader: TRzPanel
-      Width = 483
+      Width = 590
       ExplicitWidth = 483
       inherited ImTitle: TImage
         Picture.Data = {
@@ -86,46 +86,56 @@ inherited FMNG0003BView: TFMNG0003BView
         ExplicitWidth = 62
       end
       inherited LbOperation: TRzLabel
-        Left = 399
+        Left = 506
         Height = 26
         ExplicitLeft = 399
       end
     end
     inherited PnProgram: TRzPanel
-      Top = 259
-      Width = 483
+      Top = 270
+      Width = 590
       ExplicitTop = 259
       ExplicitWidth = 483
       inherited LbProgram: TRzLabel
-        Width = 483
+        Width = 590
         Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
-      Width = 483
-      Height = 218
+      Width = 590
+      Height = 229
       ExplicitWidth = 483
       ExplicitHeight = 218
       inherited PnFooterBody: TRzPanel
-        Top = 178
-        Width = 483
+        Top = 189
+        Width = 590
         ExplicitTop = 178
         ExplicitWidth = 483
         inherited PnButtonCancel: TRzPanel
-          Left = 372
+          Left = 479
+          ExplicitLeft = 372
+          inherited BtSair: TcxButton
+            ExplicitHeight = 29
+          end
         end
         inherited PnButtonConfirm: TRzPanel
-          Left = 259
+          Left = 366
+          ExplicitLeft = 259
+          inherited BtConfirmar: TcxButton
+            ExplicitTop = 2
+            ExplicitWidth = 106
+            ExplicitHeight = 29
+          end
         end
       end
       inherited PnContent: TRzPanel
-        Width = 479
-        Height = 174
+        Width = 586
+        Height = 185
         ExplicitWidth = 479
         ExplicitHeight = 174
         inherited LbObs: TRzLabel
-          Top = 161
-          Width = 479
+          Top = 172
+          Width = 586
           ExplicitTop = 161
         end
         object TxUpdatedAt: TcxTextEdit
@@ -198,7 +208,7 @@ inherited FMNG0003BView: TFMNG0003BView
         end
         object TxCountryName: TcxTextEdit
           Left = 154
-          Top = 73
+          Top = 49
           Enabled = False
           Properties.CharCase = ecUpperCase
           Style.BorderColor = 12698049
@@ -216,11 +226,11 @@ inherited FMNG0003BView: TFMNG0003BView
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
           TabOrder = 7
-          Width = 276
+          Width = 423
         end
         object TxCountryId: TcxButtonEdit
           Left = 97
-          Top = 73
+          Top = 49
           Properties.Buttons = <
             item
               Action = acFind
@@ -246,7 +256,7 @@ inherited FMNG0003BView: TFMNG0003BView
         end
         object cxLabel3: TcxLabel
           Left = 62
-          Top = 74
+          Top = 50
           Caption = 'Pa'#237's:'
           ParentFont = False
           Style.Font.Charset = ANSI_CHARSET
@@ -276,7 +286,7 @@ inherited FMNG0003BView: TFMNG0003BView
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
           TabOrder = 0
-          Width = 333
+          Width = 375
         end
         object LbDescription: TcxLabel
           Left = 51
@@ -325,8 +335,8 @@ inherited FMNG0003BView: TFMNG0003BView
           Style.IsFontAssigned = True
         end
         object cxLabel4: TcxLabel
-          Left = 59
-          Top = 50
+          Left = 485
+          Top = 26
           Caption = 'Sigla:'
           ParentFont = False
           Style.Font.Charset = ANSI_CHARSET
@@ -337,8 +347,8 @@ inherited FMNG0003BView: TFMNG0003BView
           Style.IsFontAssigned = True
         end
         object TxInitials: TcxTextEdit
-          Left = 97
-          Top = 49
+          Left = 523
+          Top = 25
           Properties.CharCase = ecUpperCase
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle

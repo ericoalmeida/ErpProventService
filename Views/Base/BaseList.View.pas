@@ -51,7 +51,6 @@ type
     StHeader: TcxStyle;
     RzOptionShow: TRzPanel;
     BtOptionShow: TcxButton;
-    PnBuscar: TRzPanel;
     TxBuscar: TcxTextEdit;
     FdData: TFDMemTable;
     DsData: TDataSource;

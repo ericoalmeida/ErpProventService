@@ -73,7 +73,6 @@ inherited FMNG0005AView: TFMNG0005AView
       ExplicitWidth = 481
       inherited LbProgram: TRzLabel
         Width = 481
-        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
@@ -82,9 +81,9 @@ inherited FMNG0005AView: TFMNG0005AView
       inherited PnFooterBody: TRzPanel
         Width = 481
         ExplicitWidth = 481
-        inherited BtSair: TcxButton
-          Left = 371
-          ExplicitLeft = 371
+        inherited PnButtonCancel: TRzPanel
+          Left = 367
+          ExplicitLeft = 367
         end
       end
       inherited PnContent: TRzPanel
@@ -98,13 +97,9 @@ inherited FMNG0005AView: TFMNG0005AView
             Style.IsFontAssigned = True
             ExplicitLeft = 150
           end
-          inherited PnBuscar: TRzPanel
-            Left = 200
-            ExplicitLeft = 200
-            inherited TxBuscar: TcxTextEdit
-              Properties.OnChange = TxBuscarPropertiesChange
-              ExplicitHeight = 22
-            end
+          inherited TxBuscar: TcxTextEdit
+            Left = 196
+            Properties.OnChange = TxBuscarPropertiesChange
           end
         end
         inherited PnGridFooter: TRzPanel
@@ -112,7 +107,6 @@ inherited FMNG0005AView: TFMNG0005AView
           ExplicitWidth = 477
           inherited LbTotalRegistros: TRzLabel
             Width = 469
-            Height = 22
           end
         end
         inherited PnGrid: TRzPanel

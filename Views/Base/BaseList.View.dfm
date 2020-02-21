@@ -65,11 +65,18 @@ inherited FBaseListView: TFBaseListView
         ExplicitWidth = 110
       end
     end
+    inherited PnProgram: TRzPanel
+      inherited LbProgram: TRzLabel
+        Width = 608
+        Height = 18
+      end
+    end
     inherited PnContainerBody: TRzPanel
       inherited PnFooterBody: TRzPanel
         inherited PnButtonCancel: TRzPanel
           inherited BtSair: TcxButton
             ExplicitLeft = 2
+            ExplicitTop = 4
             ExplicitWidth = 106
             ExplicitHeight = 29
           end
@@ -107,8 +114,8 @@ inherited FBaseListView: TFBaseListView
             604
             38)
           object LbBuscar: TcxLabel
-            Left = 277
-            Top = 8
+            Left = 270
+            Top = 7
             Anchors = [akRight, akBottom]
             Caption = 'Buscar:'
             ParentFont = False
@@ -119,36 +126,30 @@ inherited FBaseListView: TFBaseListView
             Style.Font.Style = []
             Style.IsFontAssigned = True
           end
-          object PnBuscar: TRzPanel
+          object TxBuscar: TcxTextEdit
             AlignWithMargins = True
-            Left = 327
+            Left = 323
             Top = 7
-            Width = 273
-            Height = 24
+            Margins.Left = 0
             Margins.Top = 6
             Margins.Bottom = 6
             Align = alRight
-            BorderOuter = fsNone
-            BorderColor = 15314790
-            BorderWidth = 1
-            Color = clWhite
+            Properties.CharCase = ecUpperCase
+            Style.BorderColor = 11382189
+            Style.BorderStyle = ebsSingle
+            Style.Color = 14803425
+            Style.HotTrack = False
+            Style.LookAndFeel.NativeStyle = False
+            StyleDisabled.LookAndFeel.NativeStyle = False
+            StyleFocused.BorderColor = 14120960
+            StyleFocused.Color = 16511461
+            StyleFocused.LookAndFeel.NativeStyle = False
+            StyleHot.LookAndFeel.NativeStyle = False
             TabOrder = 1
-            object TxBuscar: TcxTextEdit
-              AlignWithMargins = True
-              Left = 1
-              Top = 1
-              Margins.Left = 0
-              Margins.Top = 0
-              Margins.Right = 0
-              Margins.Bottom = 0
-              Align = alClient
-              Properties.CharCase = ecUpperCase
-              Style.BorderStyle = ebsNone
-              Style.Color = clWhite
-              StyleFocused.Color = 16577771
-              TabOrder = 0
-              Width = 271
-            end
+            ExplicitLeft = 326
+            ExplicitTop = 1
+            ExplicitHeight = 36
+            Width = 277
           end
         end
         object PnGridFooter: TRzPanel
@@ -304,10 +305,6 @@ inherited FBaseListView: TFBaseListView
             SpeedButtonOptions.Transparent = True
             TabOrder = 0
             OnClick = BtDuplicateClick
-            ExplicitLeft = 1
-            ExplicitTop = 1
-            ExplicitWidth = 38
-            ExplicitHeight = 38
           end
         end
         object PnDelete: TRzPanel
@@ -358,10 +355,6 @@ inherited FBaseListView: TFBaseListView
             SpeedButtonOptions.Transparent = True
             TabOrder = 0
             OnClick = BtDeleteClick
-            ExplicitLeft = 1
-            ExplicitTop = 1
-            ExplicitWidth = 38
-            ExplicitHeight = 38
           end
         end
         object PnShow: TRzPanel
@@ -415,10 +408,6 @@ inherited FBaseListView: TFBaseListView
             SpeedButtonOptions.Transparent = True
             TabOrder = 0
             OnClick = BtShowClick
-            ExplicitLeft = 1
-            ExplicitTop = 1
-            ExplicitWidth = 38
-            ExplicitHeight = 38
           end
         end
         object PnUpdate: TRzPanel
@@ -470,10 +459,6 @@ inherited FBaseListView: TFBaseListView
             SpeedButtonOptions.Transparent = True
             TabOrder = 0
             OnClick = BtUpdateClick
-            ExplicitLeft = 1
-            ExplicitTop = 1
-            ExplicitWidth = 38
-            ExplicitHeight = 38
           end
         end
         object PnInsert: TRzPanel
@@ -524,10 +509,6 @@ inherited FBaseListView: TFBaseListView
             SpeedButtonOptions.Transparent = True
             TabOrder = 0
             OnClick = BtInsertClick
-            ExplicitLeft = 1
-            ExplicitTop = 1
-            ExplicitWidth = 38
-            ExplicitHeight = 38
           end
         end
         object RzOptionShow: TRzPanel
@@ -586,10 +567,6 @@ inherited FBaseListView: TFBaseListView
             SpeedButtonOptions.Flat = True
             SpeedButtonOptions.Transparent = True
             TabOrder = 0
-            ExplicitLeft = 1
-            ExplicitTop = 1
-            ExplicitWidth = 38
-            ExplicitHeight = 38
           end
         end
       end

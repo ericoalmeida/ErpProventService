@@ -13,7 +13,7 @@ uses
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client,
   FireDAC.Comp.DataSet, cxClasses, cxGridLevel, cxGridCustomView, cxGridCustomTableView,
   cxGridTableView, cxGridDBTableView, cxGrid, cxTextEdit, cxLabel, Vcl.StdCtrls, cxButtons, RzLabel,
-  dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel, Base.View.interf;
+  dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel, Base.View.interf, dxSkinDarkRoom, dxSkinDarkSide;
 
 type
   TFMNG0004AView = class(TFBaseListView, iBaseListView)
@@ -41,7 +41,7 @@ type
     procedure BtDuplicateClick(Sender: TObject);
     procedure TxBuscarPropertiesChange(Sender: TObject);
   private
-    { Private declarations }
+    class var Finstance: iBaseListView;
   public
     { Public declarations }
     class function New: iBaseListView;

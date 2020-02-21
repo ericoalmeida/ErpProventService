@@ -13,7 +13,8 @@ uses
   cxGridLevel, cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid,
   cxTextEdit, cxLabel, Vcl.StdCtrls, cxButtons, RzLabel, dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel,
   FireDAC.Stan.Async, FireDAC.DApt, Base.View.interf, dxSkinOffice2016Colorful, dxSkinOffice2016Dark,
-  dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Silver;
+  dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Silver,
+  dxSkinDarkRoom, dxSkinDarkSide;
 
 type
   TFMNG0003AView = class(TFBaseListView, iBaseListView)
@@ -39,7 +40,7 @@ type
     procedure BtDeleteClick(Sender: TObject);
     procedure BtDuplicateClick(Sender: TObject);
   private
-    { Private declarations }
+
   public
     class function new: iBaseListView;
 
