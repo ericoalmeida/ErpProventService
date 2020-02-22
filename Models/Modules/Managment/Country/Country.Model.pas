@@ -3,7 +3,7 @@ unit Country.Model;
 interface
 
 uses Country.Model.Interf, ormbr.container.objectset.interfaces,
-  ormbr.Factory.interfaces, TGERPAIS.Entity.Model;
+  ormbr.Factory.interfaces, TMNGCOUNTRY.Entity.Model;
 
 type
   TCountryModel = class(TInterfacedObject, ICountryModel)

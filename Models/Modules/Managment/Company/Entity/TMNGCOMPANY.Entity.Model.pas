@@ -16,7 +16,7 @@ uses
   ormbr.mapping.classes,
   ormbr.mapping.register,
   ormbr.mapping.attributes,
-  TGERBAIRRO.Entity.Model;
+  TMNGDISTRICT.Entity.Model;
 
 type
   [Entity]

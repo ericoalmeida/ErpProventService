@@ -2,7 +2,7 @@ unit State.Controller.Interf;
 
 interface
 
-uses State.Model.Interf, TGERESTADO.Entity.Model;
+uses State.Model.Interf, TMNGSTATE.Entity.Model;
 
 type
   iStateInsertController = interface;

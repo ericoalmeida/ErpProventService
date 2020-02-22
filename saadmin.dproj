@@ -178,7 +178,7 @@
         <DCCReference Include="Controllers\Connection\Connection.Controller.pas"/>
         <DCCReference Include="Controllers\Facade.Controller.Interf.pas"/>
         <DCCReference Include="Controllers\Facade.Controller.pas"/>
-        <DCCReference Include="Models\Modules\Managment\Districts\Entity\TGERBAIRRO.Entity.Model.pas"/>
+        <DCCReference Include="Models\Modules\Managment\Districts\Entity\TMNGDISTRICT.Entity.Model.pas"/>
         <DCCReference Include="Models\Modules\Managment\Districts\Districts.Model.Interf.pas"/>
         <DCCReference Include="Models\Modules\Managment\Districts\Districts.Model.pas"/>
         <DCCReference Include="Models\Modules\Managment\ManagmentFactory.Model.Interf.pas"/>
@@ -207,7 +207,7 @@
         <DCCReference Include="Controllers\Modules\Managment\District\Operations\DistrictUpdate.Controller.pas"/>
         <DCCReference Include="Controllers\Modules\Managment\District\Operations\DistrictDelete.Controller.pas"/>
         <DCCReference Include="Controllers\Modules\Managment\District\Operations\DistrictDuplicate.Controller.pas"/>
-        <DCCReference Include="Models\Modules\Managment\Country\Entity\TGERPAIS.Entity.Model.pas"/>
+        <DCCReference Include="Models\Modules\Managment\Country\Entity\TMNGCOUNTRY.Entity.Model.pas"/>
         <DCCReference Include="Models\Modules\Managment\Country\Country.Model.Interf.pas"/>
         <DCCReference Include="Models\Modules\Managment\Country\Country.Model.pas"/>
         <DCCReference Include="Controllers\Modules\Managment\Country\Country.Controller.Interf.pas"/>
@@ -228,7 +228,7 @@
         <DCCReference Include="Controllers\Modules\Managment\Country\Operations\CountryUpdate.Controller.pas"/>
         <DCCReference Include="Controllers\Modules\Managment\Country\Operations\CountryDelete.Controller.pas"/>
         <DCCReference Include="Controllers\Modules\Managment\Country\Operations\CountryDuplicate.Controller.pas"/>
-        <DCCReference Include="Models\Modules\Managment\State\Entity\TGERESTADO.Entity.Model.pas"/>
+        <DCCReference Include="Models\Modules\Managment\State\Entity\TMNGSTATE.Entity.Model.pas"/>
         <DCCReference Include="Models\Modules\Managment\State\State.Model.Interf.pas"/>
         <DCCReference Include="Models\Modules\Managment\State\State.Model.pas"/>
         <DCCReference Include="Controllers\Modules\Managment\State\State.Controller.Interf.pas"/>
@@ -298,6 +298,16 @@
             <Form>FMNG0001CView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Controllers\Utils\BCrypt.Controller.pas"/>
+        <DCCReference Include="Models\Modules\Managment\User\Entity\TMNGUSER.Entity.Model.pas"/>
+        <DCCReference Include="Models\Modules\Managment\User\User.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modules\Managment\User\User.Model.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\User\User.Controller.Interf.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\User\User.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\User\Operations\UserInsert.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\User\Operations\UserUpdate.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\User\Operations\UserDelete.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\User\Operations\UserDuplicate.Controller.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

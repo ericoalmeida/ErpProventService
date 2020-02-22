@@ -35,7 +35,7 @@ uses
   Connection.Controller in 'Controllers\Connection\Connection.Controller.pas',
   Facade.Controller.Interf in 'Controllers\Facade.Controller.Interf.pas',
   Facade.Controller in 'Controllers\Facade.Controller.pas',
-  TGERBAIRRO.Entity.Model in 'Models\Modules\Managment\Districts\Entity\TGERBAIRRO.Entity.Model.pas',
+  TMNGDISTRICT.Entity.Model in 'Models\Modules\Managment\Districts\Entity\TMNGDISTRICT.Entity.Model.pas',
   Districts.Model.Interf in 'Models\Modules\Managment\Districts\Districts.Model.Interf.pas',
   Districts.Model in 'Models\Modules\Managment\Districts\Districts.Model.pas',
   ManagmentFactory.Model.Interf in 'Models\Modules\Managment\ManagmentFactory.Model.Interf.pas',
@@ -58,7 +58,7 @@ uses
   DistrictUpdate.Controller in 'Controllers\Modules\Managment\District\Operations\DistrictUpdate.Controller.pas',
   DistrictDelete.Controller in 'Controllers\Modules\Managment\District\Operations\DistrictDelete.Controller.pas',
   DistrictDuplicate.Controller in 'Controllers\Modules\Managment\District\Operations\DistrictDuplicate.Controller.pas',
-  TGERPAIS.Entity.Model in 'Models\Modules\Managment\Country\Entity\TGERPAIS.Entity.Model.pas',
+  TMNGCOUNTRY.Entity.Model in 'Models\Modules\Managment\Country\Entity\TMNGCOUNTRY.Entity.Model.pas',
   Country.Model.Interf in 'Models\Modules\Managment\Country\Country.Model.Interf.pas',
   Country.Model in 'Models\Modules\Managment\Country\Country.Model.pas',
   Country.Controller.Interf in 'Controllers\Modules\Managment\Country\Country.Controller.Interf.pas',
@@ -70,7 +70,7 @@ uses
   CountryUpdate.Controller in 'Controllers\Modules\Managment\Country\Operations\CountryUpdate.Controller.pas',
   CountryDelete.Controller in 'Controllers\Modules\Managment\Country\Operations\CountryDelete.Controller.pas',
   CountryDuplicate.Controller in 'Controllers\Modules\Managment\Country\Operations\CountryDuplicate.Controller.pas',
-  TGERESTADO.Entity.Model in 'Models\Modules\Managment\State\Entity\TGERESTADO.Entity.Model.pas',
+  TMNGSTATE.Entity.Model in 'Models\Modules\Managment\State\Entity\TMNGSTATE.Entity.Model.pas',
   State.Model.Interf in 'Models\Modules\Managment\State\State.Model.Interf.pas',
   State.Model in 'Models\Modules\Managment\State\State.Model.pas',
   State.Controller.Interf in 'Controllers\Modules\Managment\State\State.Controller.Interf.pas',
@@ -109,7 +109,17 @@ uses
   CompanyDuplicate.Controller in 'Controllers\Modules\Managment\Company\Operations\CompanyDuplicate.Controller.pas',
   MNG0005AView in 'Views\Modules\Managment\Company\MNG0005AView.pas' {FMNG0005AView},
   MNG0005BView in 'Views\Modules\Managment\Company\MNG0005BView.pas' {FMNG0005BView},
-  MNG0001CView in 'Views\Modules\Managment\District\MNG0001CView.pas' {FMNG0001CView};
+  MNG0001CView in 'Views\Modules\Managment\District\MNG0001CView.pas' {FMNG0001CView},
+  BCrypt.Controller in 'Controllers\Utils\BCrypt.Controller.pas',
+  TMNGUSER.Entity.Model in 'Models\Modules\Managment\User\Entity\TMNGUSER.Entity.Model.pas',
+  User.Model.Interf in 'Models\Modules\Managment\User\User.Model.Interf.pas',
+  User.Model in 'Models\Modules\Managment\User\User.Model.pas',
+  User.Controller.Interf in 'Controllers\Modules\Managment\User\User.Controller.Interf.pas',
+  User.Controller in 'Controllers\Modules\Managment\User\User.Controller.pas',
+  UserInsert.Controller in 'Controllers\Modules\Managment\User\Operations\UserInsert.Controller.pas',
+  UserUpdate.Controller in 'Controllers\Modules\Managment\User\Operations\UserUpdate.Controller.pas',
+  UserDelete.Controller in 'Controllers\Modules\Managment\User\Operations\UserDelete.Controller.pas',
+  UserDuplicate.Controller in 'Controllers\Modules\Managment\User\Operations\UserDuplicate.Controller.pas';
 
 {$R *.res}
 

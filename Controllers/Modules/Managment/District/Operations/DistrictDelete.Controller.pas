@@ -2,7 +2,7 @@ unit DistrictDelete.Controller;
 
 interface
 
-uses District.Controller.Interf, TGERBAIRRO.Entity.Model,
+uses District.Controller.Interf, TMNGDISTRICT.Entity.Model,
   Districts.Model.Interf, Base.View.Interf;
 
 type

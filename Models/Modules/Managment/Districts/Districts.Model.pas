@@ -3,7 +3,7 @@ unit Districts.Model;
 interface
 
 uses Districts.Model.Interf, ormbr.container.objectset.interfaces,
-  ormbr.Factory.interfaces, TGERBAIRRO.Entity.Model;
+  ormbr.Factory.interfaces, TMNGDISTRICT.Entity.Model;
 
 type
   TDistrictModel = class(TInterfacedObject, iDistrictModel)

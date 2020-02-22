@@ -1,4 +1,4 @@
-unit TGERPAIS.Entity.Model;
+unit TMNGCOUNTRY.Entity.Model;
 
 interface
 

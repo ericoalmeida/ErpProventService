@@ -1,4 +1,4 @@
-unit TMNGCITY.Entity.Model;
+unit TMNGDISTRICT.Entity.Model;
 
 interface
 
@@ -16,25 +16,24 @@ uses
   ormbr.mapping.classes,
   ormbr.mapping.register,
   ormbr.mapping.attributes,
-  TMNGSTATE.Entity.Model;
+  TMNGCITY.Entity.Model;
 
 type
   [Entity]
-  [Table('TMNGCITY', '')]
+  [Table('TMNGDISTRICT', '')]
   [PrimaryKey('CODE', NotInc, NoSort, False, 'Chave primária')]
-  TTMNGCITY = class
+  TTMNGDISTRICT = class
   private
     { Private declarations }
     FCODE: String;
-    FCITYID: Integer;
-    FNAME: String;
+    FDISTRICTID: Integer;
+    FDESCRIPTION: String;
+    FCITYID: String;
     FZIPCODE: String;
-    FIBGECODE: Nullable<Integer>;
-    FSTATEID: String;
     FCREATEDAT: TDateTime;
     FUPDATEDAT: TDateTime;
 
-    FTMNGSTATE_0:  TTMNGSTATE  ;
+    FTMNGCITY_0:  TTMNGCITY  ;
     function GETCODE: String;
   public
     { Public declarations }
@@ -46,29 +45,25 @@ type
     property CODE: String read GETCODE write FCODE;
 
     [Restrictions([NotNull])]
-    [Column('CITYID', ftInteger)]
-    [Dictionary('CITYID', 'Mensagem de validação', '', '', '', taCenter)]
-    property CITYID: Integer read FCITYID write FCITYID;
+    [Column('DISTRICTID', ftInteger)]
+    [Dictionary('DISTRICTID', 'Mensagem de validação', '', '', '', taCenter)]
+    property DISTRICTID: Integer read FDISTRICTID write FDISTRICTID;
 
     [Restrictions([NotNull])]
-    [Column('NAME', ftString, 155)]
-    [Dictionary('NAME', 'Mensagem de validação', '', '', '', taLeftJustify)]
-    property NAME: String read FNAME write FNAME;
+    [Column('DESCRIPTION', ftString, 155)]
+    [Dictionary('DESCRIPTION', 'Mensagem de validação', '', '', '', taLeftJustify)]
+    property DESCRIPTION: String read FDESCRIPTION write FDESCRIPTION;
+
+    [Restrictions([NotNull])]
+    [Column('CITYID', ftString, 64)]
+    [ForeignKey('FK1_TMNGDISTRICT', 'CITYID', 'TMNGCITY', 'CODE', SetNull, SetNull)]
+    [Dictionary('CITYID', 'Mensagem de validação', '', '', '', taLeftJustify)]
+    property CITYID: String read FCITYID write FCITYID;
 
     [Restrictions([NotNull])]
     [Column('ZIPCODE', ftString, 12)]
     [Dictionary('ZIPCODE', 'Mensagem de validação', '', '', '', taLeftJustify)]
     property ZIPCODE: String read FZIPCODE write FZIPCODE;
-
-    [Column('IBGECODE', ftInteger)]
-    [Dictionary('IBGECODE', 'Mensagem de validação', '', '', '', taCenter)]
-    property IBGECODE: Nullable<Integer> read FIBGECODE write FIBGECODE;
-
-    [Restrictions([NotNull])]
-    [Column('STATEID', ftString, 64)]
-    [ForeignKey('FK1_TMNGCITY', 'STATEID', 'TMNGSTATE', 'CODE', SetNull, SetNull)]
-    [Dictionary('STATEID', 'Mensagem de validação', '', '', '', taLeftJustify)]
-    property STATEID: String read FSTATEID write FSTATEID;
 
     [Restrictions([NotNull])]
     [Column('CREATEDAT', ftDateTime)]
@@ -80,27 +75,27 @@ type
     [Dictionary('UPDATEDAT', 'Mensagem de validação', 'Now', '', '!##/##/####;1;_', taCenter)]
     property UPDATEDAT: TDateTime read FUPDATEDAT write FUPDATEDAT;
 
-    [Association(OneToOne,'STATEID','TMNGSTATE','CODE')]
-    property TMNGSTATE: TTMNGSTATE read FTMNGSTATE_0 write FTMNGSTATE_0;
+    [Association(OneToOne,'CITYID','TMNGCITY','CODE')]
+    property TMNGCITY: TTMNGCITY read FTMNGCITY_0 write FTMNGCITY_0;
 
   end;
 
 implementation
 
-constructor TTMNGCITY.Create;
+constructor TTMNGDISTRICT.Create;
 begin
-  FTMNGSTATE_0 := TTMNGSTATE.Create;
+  FTMNGCITY_0 := TTMNGCITY.Create;
 end;
 
-destructor TTMNGCITY.Destroy;
+destructor TTMNGDISTRICT.Destroy;
 begin
-  if Assigned(FTMNGSTATE_0) then
-    FTMNGSTATE_0.Free;
+  if Assigned(FTMNGCITY_0) then
+    FTMNGCITY_0.Free;
 
   inherited;
 end;
 
-function TTMNGCITY.GETCODE: String;
+function TTMNGDISTRICT.GETCODE: String;
 begin
   if FCODE.IsEmpty then
    FCODE := TGUID.NewGuid.ToString;
@@ -109,6 +104,8 @@ begin
 end;
 
 initialization
-  TRegisterClass.RegisterEntity(TTMNGCITY)
+  TRegisterClass.RegisterEntity(TTMNGDISTRICT)
 
 end.
+
+

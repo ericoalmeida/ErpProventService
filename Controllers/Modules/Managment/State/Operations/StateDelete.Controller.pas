@@ -2,7 +2,7 @@ unit StateDelete.Controller;
 
 interface
 
-uses State.Controller.Interf, TGERESTADO.Entity.Model,
+uses State.Controller.Interf, TMNGSTATE.Entity.Model,
   State.Model.Interf, Base.View.Interf;
 
 type

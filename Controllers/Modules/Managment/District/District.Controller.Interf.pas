@@ -2,7 +2,7 @@ unit District.Controller.Interf;
 
 interface
 
-uses Districts.Model.Interf, TGERBAIRRO.Entity.Model;
+uses Districts.Model.Interf, TMNGDISTRICT.Entity.Model;
 
 type
   iDistrictInsertController = interface;

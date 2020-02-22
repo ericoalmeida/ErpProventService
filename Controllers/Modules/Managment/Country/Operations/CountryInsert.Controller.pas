@@ -2,7 +2,7 @@ unit CountryInsert.Controller;
 
 interface
 
-uses Country.Controller.Interf, Country.Model.Interf, TGERPAIS.Entity.Model, System.SysUtils;
+uses Country.Controller.Interf, Country.Model.Interf, TMNGCOUNTRY.Entity.Model, System.SysUtils;
 
 type
   TCountryInsertController = class(TInterfacedObject, iCountryInsertController)

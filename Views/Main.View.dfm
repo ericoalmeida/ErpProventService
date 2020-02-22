@@ -1941,7 +1941,6 @@ object FMainView: TFMainView
     Contexts = <>
     TabOrder = 0
     TabStop = False
-    ExplicitWidth = 946
     object TbAdministration: TdxRibbonTab
       Active = True
       Caption = 'Administra'#231#227'o'
@@ -1982,7 +1981,6 @@ object FMainView: TFMainView
     Font.Height = -11
     Font.Name = 'Open Sans ExtraBold'
     Font.Style = [fsBold]
-    ExplicitWidth = 946
   end
   object BrManager: TdxBarManager
     Font.Charset = DEFAULT_CHARSET
@@ -2056,7 +2054,7 @@ object FMainView: TFMainView
     object BmRotinas: TdxBar
       Caption = 'Rotinas'
       CaptionButtons = <>
-      DockedLeft = 346
+      DockedLeft = 394
       DockedTop = 0
       FloatLeft = 720
       FloatTop = 2
@@ -2084,7 +2082,7 @@ object FMainView: TFMainView
     object BmRelatorios: TdxBar
       Caption = 'Relat'#243'rios'
       CaptionButtons = <>
-      DockedLeft = 560
+      DockedLeft = 647
       DockedTop = 0
       FloatLeft = 720
       FloatTop = 2
@@ -2358,9 +2356,9 @@ object FMainView: TFMainView
         00000049454E44AE426082}
     end
     object BtMachine: TdxBarLargeButton
-      Caption = 'Maquin'#225'rios'
+      Caption = 'Ve'#237'culos/Maquin'#225'rios'
       Category = 0
-      Hint = 'Maquin'#225'rios'
+      Hint = 'Ve'#237'culos/Maquin'#225'rios'
       Visible = ivAlways
       Glyph.SourceDPI = 96
       Glyph.Data = {
@@ -2544,9 +2542,9 @@ object FMainView: TFMainView
         00000049454E44AE426082}
     end
     object BtCost: TdxBarLargeButton
-      Caption = 'Despesas com maquin'#225'rios'
+      Caption = 'Despesas com ve'#237'culos/maquin'#225'rios'
       Category = 0
-      Hint = 'Despesas com maquin'#225'rios'
+      Hint = 'Despesas com ve'#237'culos/maquin'#225'rios'
       Visible = ivAlways
       Glyph.SourceDPI = 96
       Glyph.Data = {
@@ -2714,9 +2712,9 @@ object FMainView: TFMainView
         4E44AE426082}
     end
     object BtReportCost: TdxBarLargeButton
-      Caption = 'Despesas com maquin'#225'rios'
+      Caption = 'Despesas com ve'#237'culos/maquin'#225'rios'
       Category = 0
-      Hint = 'Despesas com maquin'#225'rios'
+      Hint = 'Despesas com ve'#237'culos/maquin'#225'rios'
       Visible = ivAlways
       Glyph.SourceDPI = 96
       Glyph.Data = {
@@ -3685,6 +3683,12 @@ object FMainView: TFMainView
         CB53228C564703F868C068E078BD7FC744AE2958FC399C304FBD560AA601E4D3
         FD77EC2BF95211609209DC78B818F9E4F10F4824A6D94EC853CD000000004945
         4E44AE426082}
+    end
+    object dxBarLargeButton1: TdxBarLargeButton
+      Caption = 'Colaboradores'
+      Category = 0
+      Hint = 'Colaboradores'
+      Visible = ivAlways
     end
   end
   object ApMainMenu: TdxBarApplicationMenu

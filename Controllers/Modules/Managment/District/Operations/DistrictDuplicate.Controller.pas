@@ -3,7 +3,7 @@ unit DistrictDuplicate.Controller;
 interface
 
 uses District.Controller.Interf, Districts.Model.Interf,
-  TGERBAIRRO.Entity.Model, System.SysUtils;
+  TMNGDISTRICT.Entity.Model, System.SysUtils;
 
 type
   TDistrictDuplicateController = class(TInterfacedObject,

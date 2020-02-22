@@ -1,5 +1,4 @@
-unit TGERESTADO.Entity.Model;
-
+unit TMNGUSER.Entity.Model;
 
 interface
 
@@ -16,55 +15,61 @@ uses
   ormbr.types.nullable,
   ormbr.mapping.classes,
   ormbr.mapping.register,
-  ormbr.mapping.attributes,
-  TGERPAIS.Entity.Model;
+  ormbr.mapping.attributes;
 
 type
   [Entity]
-  [Table('TMNGSTATE', '')]
+  [Table('TMNGUSER', '')]
   [PrimaryKey('CODE', NotInc, NoSort, False, 'Chave primária')]
-  TTMNGSTATE = class
+  TTMNGUSER = class
   private
     { Private declarations }
     FCODE: String;
-    FSTATEID: Integer;
+    FUSERID: Integer;
     FNAME: String;
-    FINITIALS: String;
-    FCOUNTRYID: String;
+    FEMAIL: String;
+    FUSERNAME: String;
+    FKEYPASS: String;
+    FSTATUS: Integer;
     FCREATEDAT: TDateTime;
     FUPDATEDAT: TDateTime;
-
-    FTMNGCOUNTRY_0:  TTMNGCOUNTRY  ;
     function GETCODE: String;
   public
     { Public declarations }
-    constructor Create;
-    destructor Destroy; override;
     [Restrictions([NotNull])]
     [Column('CODE', ftString, 64)]
     [Dictionary('CODE', 'Mensagem de validação', '', '', '', taLeftJustify)]
     property CODE: String read GETCODE write FCODE;
 
     [Restrictions([NotNull])]
-    [Column('STATEID', ftInteger)]
-    [Dictionary('STATEID', 'Mensagem de validação', '', '', '', taCenter)]
-    property STATEID: Integer read FSTATEID write FSTATEID;
+    [Column('USERID', ftInteger)]
+    [Dictionary('USERID', 'Mensagem de validação', '', '', '', taCenter)]
+    property USERID: Integer read FUSERID write FUSERID;
 
     [Restrictions([NotNull])]
-    [Column('NAME', ftString, 90)]
+    [Column('NAME', ftString, 95)]
     [Dictionary('NAME', 'Mensagem de validação', '', '', '', taLeftJustify)]
     property NAME: String read FNAME write FNAME;
 
     [Restrictions([NotNull])]
-    [Column('INITIALS', ftString, 2)]
-    [Dictionary('INITIALS', 'Mensagem de validação', '', '', '', taLeftJustify)]
-    property INITIALS: String read FINITIALS write FINITIALS;
+    [Column('EMAIL', ftString, 90)]
+    [Dictionary('EMAIL', 'Mensagem de validação', '', '', '', taLeftJustify)]
+    property EMAIL: String read FEMAIL write FEMAIL;
 
     [Restrictions([NotNull])]
-    [Column('COUNTRYID', ftString, 64)]
-    [ForeignKey('FK1_TMNGSTATE', 'COUNTRYID', 'TMNGCOUNTRY', 'CODE', SetNull, SetNull)]
-    [Dictionary('COUNTRYID', 'Mensagem de validação', '', '', '', taLeftJustify)]
-    property COUNTRYID: String read FCOUNTRYID write FCOUNTRYID;
+    [Column('USERNAME', ftString, 30)]
+    [Dictionary('USERNAME', 'Mensagem de validação', '', '', '', taLeftJustify)]
+    property USERNAME: String read FUSERNAME write FUSERNAME;
+
+    [Restrictions([NotNull])]
+    [Column('KEYPASS', ftString, 64)]
+    [Dictionary('KEYPASS', 'Mensagem de validação', '', '', '', taLeftJustify)]
+    property KEYPASS: String read FKEYPASS write FKEYPASS;
+
+    [Restrictions([NotNull])]
+    [Column('STATUS', ftInteger)]
+    [Dictionary('STATUS', 'Mensagem de validação', '', '', '', taCenter)]
+    property STATUS: Integer read FSTATUS write FSTATUS;
 
     [Restrictions([NotNull])]
     [Column('CREATEDAT', ftDateTime)]
@@ -75,28 +80,13 @@ type
     [Column('UPDATEDAT', ftDateTime)]
     [Dictionary('UPDATEDAT', 'Mensagem de validação', 'Now', '', '!##/##/####;1;_', taCenter)]
     property UPDATEDAT: TDateTime read FUPDATEDAT write FUPDATEDAT;
-
-    [Association(OneToOne,'COUNTRYID','TMNGCOUNTRY','CODE')]
-    property TMNGCOUNTRY: TTMNGCOUNTRY read FTMNGCOUNTRY_0 write FTMNGCOUNTRY_0;
-
   end;
 
 implementation
 
-constructor TTMNGSTATE.Create;
-begin
-  FTMNGCOUNTRY_0 := TTMNGCOUNTRY.Create;
-end;
+{ TTMNGUSER }
 
-destructor TTMNGSTATE.Destroy;
-begin
-  if Assigned(FTMNGCOUNTRY_0) then
-    FTMNGCOUNTRY_0.Free;
-
-  inherited;
-end;
-
-function TTMNGSTATE.GETCODE: String;
+function TTMNGUSER.GETCODE: String;
 begin
   if FCODE.IsEmpty then
    FCODE := TGUID.NewGuid.ToString;
@@ -105,6 +95,6 @@ begin
 end;
 
 initialization
-  TRegisterClass.RegisterEntity(TTMNGSTATE)
+  TRegisterClass.RegisterEntity(TTMNGUSER)
 
 end.

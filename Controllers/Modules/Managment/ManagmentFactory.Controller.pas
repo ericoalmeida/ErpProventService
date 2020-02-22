@@ -4,7 +4,7 @@ interface
 
 uses ManagmentFactory.Controller.interf, District.Controller.interf,
   Country.Controller.interf, State.Controller.interf, City.Controller.interf,
-  Company.Controller.interf;
+  Company.Controller.interf, User.Controller.interf;
 
 type
   TManagmentFactoryController = class(TInterfacedObject,
@@ -21,6 +21,7 @@ type
     function stateController: iStateController;
     function cityController: iCityController;
     function companyController: iCompanyController;
+    function userController: iUserController;
   end;
 
 implementation
@@ -28,7 +29,7 @@ implementation
 { TManagmentFactoryController }
 
 uses District.Controller, Country.Controller, State.Controller, City.Controller,
-  Company.Controller;
+  Company.Controller, User.Controller;
 
 function TManagmentFactoryController.cityController: iCityController;
 begin
@@ -69,6 +70,11 @@ end;
 function TManagmentFactoryController.stateController: iStateController;
 begin
   Result := TStateController.New;
+end;
+
+function TManagmentFactoryController.userController: iUserController;
+begin
+  Result := TUserController.New;
 end;
 
 end.

@@ -4,7 +4,7 @@ interface
 
 uses Districts.Model.Interf, Country.Model.Interf, State.Model.Interf,
   City.Model.Interf,
-  Company.Model.Interf;
+  Company.Model.Interf, User.Model.Interf;
 
 type
   iManagmentFactoryModel = interface
@@ -14,6 +14,7 @@ type
     function stateModel: IStateModel;
     function cityModel: iCityModel;
     function companyModel: ICompanyModel;
+    function userModel: IUserModel;
   end;
 
 implementation

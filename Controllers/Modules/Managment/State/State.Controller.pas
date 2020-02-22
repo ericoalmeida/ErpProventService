@@ -2,7 +2,7 @@ unit State.Controller;
 
 interface
 
-uses State.Controller.Interf, State.Model.Interf, TGERESTADO.Entity.Model,
+uses State.Controller.Interf, State.Model.Interf, TMNGSTATE.Entity.Model,
   System.SysUtils;
 
 type

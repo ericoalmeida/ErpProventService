@@ -11,8 +11,8 @@ inherited FMNG0002CView: TFMNG0002CView
   inherited PnContainer: TRzPanel
     Width = 672
     Height = 319
-    ExplicitWidth = 483
-    ExplicitHeight = 255
+    ExplicitWidth = 672
+    ExplicitHeight = 319
     inherited PnHeader: TRzPanel
       Width = 670
       ExplicitWidth = 481
@@ -108,15 +108,12 @@ inherited FMNG0002CView: TFMNG0002CView
       Width = 670
       ExplicitTop = 236
       ExplicitWidth = 481
-      inherited LbProgram: TRzLabel
-        Width = 670
-      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 670
       Height = 259
-      ExplicitWidth = 481
-      ExplicitHeight = 195
+      ExplicitWidth = 670
+      ExplicitHeight = 259
       inherited PnFooterBody: TRzPanel
         Top = 219
         Width = 670
@@ -134,15 +131,15 @@ inherited FMNG0002CView: TFMNG0002CView
       inherited PnContent: TRzPanel
         Width = 668
         Height = 217
-        ExplicitWidth = 479
-        ExplicitHeight = 153
+        ExplicitWidth = 668
+        ExplicitHeight = 217
         inherited PnGridHeader: TRzPanel
           Width = 666
-          ExplicitWidth = 477
+          ExplicitWidth = 666
           inherited LbBuscar: TcxLabel
             Left = 339
             Style.IsFontAssigned = True
-            ExplicitLeft = 150
+            ExplicitLeft = 339
           end
           inherited TxBuscar: TcxTextEdit
             Left = 388
@@ -155,9 +152,6 @@ inherited FMNG0002CView: TFMNG0002CView
           Width = 666
           ExplicitTop = 122
           ExplicitWidth = 477
-          inherited LbTotalRegistros: TRzLabel
-            Width = 658
-          end
         end
         inherited PnGrid: TRzPanel
           Width = 666

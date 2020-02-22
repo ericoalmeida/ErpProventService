@@ -2,7 +2,7 @@ unit CountryDelete.Controller;
 
 interface
 
-uses Country.Controller.Interf, TGERPAIS.Entity.Model,
+uses Country.Controller.Interf, TMNGCOUNTRY.Entity.Model,
   Country.Model.Interf, Base.View.Interf;
 
 type

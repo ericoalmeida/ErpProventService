@@ -2,7 +2,7 @@ unit Country.Controller;
 
 interface
 
-uses Country.Controller.Interf, Country.Model.Interf, TGERPAIS.Entity.Model,
+uses Country.Controller.Interf, Country.Model.Interf, TMNGCOUNTRY.Entity.Model,
   System.SysUtils;
 
 type

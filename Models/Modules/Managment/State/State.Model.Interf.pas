@@ -2,7 +2,7 @@ unit State.Model.Interf;
 
 interface
 
-uses ormbr.container.objectset.interfaces, TGERESTADO.Entity.Model;
+uses ormbr.container.objectset.interfaces, TMNGSTATE.Entity.Model;
 
 type
   IStateModel = interface

@@ -31,7 +31,7 @@ uses
   dxSkinWhiteprint, dxSkinXmas2008Blue, dxRibbonCustomizationForm, dxBar,
   dxBarApplicationMenu,
   dxRibbon, cxClasses, dxStatusBar, dxRibbonStatusBar, dxGDIPlusClasses,
-  Vcl.ExtCtrls, System.ImageList, Vcl.ImgList, cxImageList;
+  Vcl.ExtCtrls, System.ImageList, Vcl.ImgList, cxImageList, cxContainer, cxEdit, cxTextEdit, cxMemo;
 
 type
   TFMainView = class(TForm)
@@ -65,6 +65,7 @@ type
     BtFinanceOpr: TdxBarLargeButton;
     BtCashBook: TdxBarLargeButton;
     BtReportCashBook: TdxBarLargeButton;
+    dxBarLargeButton1: TdxBarLargeButton;
     procedure TmMainMenuTimer(Sender: TObject);
     procedure BtEmpresasClick(Sender: TObject);
     procedure BtCountryClick(Sender: TObject);

@@ -3,7 +3,7 @@ unit State.Model;
 interface
 
 uses State.Model.Interf, ormbr.container.objectset.interfaces,
-  ormbr.Factory.interfaces, TGERESTADO.Entity.Model;
+  ormbr.Factory.interfaces, TMNGSTATE.Entity.Model;
 
 type
   TStateModel = class(TInterfacedObject, IStateModel)

@@ -2,7 +2,7 @@ unit District.Controller;
 
 interface
 
-uses District.Controller.Interf, TGERBAIRRO.Entity.Model,
+uses District.Controller.Interf, TMNGDISTRICT.Entity.Model,
   Districts.Model.Interf;
 
 type

@@ -12,7 +12,7 @@ uses
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Comp.DataSet, FireDAC.Comp.Client, cxClasses,
   cxGridLevel, cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid,
   cxTextEdit, cxLabel, Vcl.StdCtrls, cxButtons, RzLabel, dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel,
-  Base.View.interf, TGERPAIS.Entity.Model,  ormbr.container.DataSet.interfaces,
+  Base.View.interf, TMNGCOUNTRY.Entity.Model,  ormbr.container.DataSet.interfaces,
   ormbr.container.fdmemtable, FireDAC.Stan.Async, FireDAC.DApt, dxSkinOffice2016Colorful,
   dxSkinOffice2016Dark, dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Green,
   dxSkinOffice2007Silver, dxSkinDarkRoom, dxSkinDarkSide;
