@@ -21,6 +21,12 @@ type
     function find(AValue: string): iUserController;
     function autenticate(AUser: string; APassword: string): Boolean;
 
+    function userNameExists(AUserName: string): Boolean; overload;
+    function userNameExists(AUserCode: string; AUserName: string): Boolean; overload;
+
+    function emailExists(AEmail: string): Boolean; overload;
+    function emailExists(AUserCode: string; AEmail: string): Boolean; overload;
+
     function insert: iUserInsertController;
     function update: iUserUpdateController;
     function delete: iUserDeleteController;
@@ -79,6 +85,24 @@ begin
   Result := FRecordFound.USERNAME;
 end;
 
+function TUserController.userNameExists(AUserCode, AUserName: string): Boolean;
+begin
+  Result := false;
+
+  if FUserModel.DAO.FindWhere
+    (Format('CODE <> %s and USERNAME = %s', [QuotedStr(AUserCode), QuotedStr(AUserName)])).Count > 0 then
+  Result := True;
+end;
+
+function TUserController.userNameExists(AUserName: string): Boolean;
+begin
+  Result := false;
+
+  if FUserModel.DAO.FindWhere
+    (Format('USERNAME = %s', [QuotedStr(AUserName)])).Count > 0 then
+  Result := True;
+end;
+
 constructor TUserController.Create;
 begin
   FUserModel := TFacadeModel.New.moduleFacade.managmentFactoryModel.
@@ -110,6 +134,24 @@ end;
 function TUserController.email: string;
 begin
   Result := FRecordFound.EMAIL;
+end;
+
+function TUserController.emailExists(AEmail: string): Boolean;
+begin
+  Result := false;
+
+  if FUserModel.DAO.FindWhere
+    (Format('EMAIL = %s', [QuotedStr(AEmail)])).Count > 0 then
+  Result := True;
+end;
+
+function TUserController.emailExists(AUserCode: string; AEmail: string): Boolean;
+begin
+  Result := false;
+
+  if FUserModel.DAO.FindWhere
+    (Format('CODE <> %s and EMAIL = %s', [QuotedStr(AUserCode), QuotedStr(AEmail)])).Count > 0 then
+  Result := True;
 end;
 
 function TUserController.insert: iUserInsertController;

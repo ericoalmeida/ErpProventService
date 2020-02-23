@@ -119,7 +119,10 @@ uses
   UserInsert.Controller in 'Controllers\Modules\Managment\User\Operations\UserInsert.Controller.pas',
   UserUpdate.Controller in 'Controllers\Modules\Managment\User\Operations\UserUpdate.Controller.pas',
   UserDelete.Controller in 'Controllers\Modules\Managment\User\Operations\UserDelete.Controller.pas',
-  UserDuplicate.Controller in 'Controllers\Modules\Managment\User\Operations\UserDuplicate.Controller.pas';
+  UserDuplicate.Controller in 'Controllers\Modules\Managment\User\Operations\UserDuplicate.Controller.pas',
+  MNG0006AView in 'Views\Modules\Managment\User\MNG0006AView.pas' {FMNG0006AView},
+  MNG0006BView in 'Views\Modules\Managment\User\MNG0006BView.pas' {FMNG0006BView},
+  MSG0005.View in 'Views\Messages\MSG0005.View.pas' {FMSG0005View};
 
 {$R *.res}
 

@@ -69,14 +69,12 @@ inherited FMNG0005BView: TFMNG0005BView
       inherited LbTitle: TRzLabel
         Left = 36
         Width = 69
-        Height = 26
         Caption = 'Empresa'
         ExplicitLeft = 36
         ExplicitWidth = 69
       end
       inherited LbOperation: TRzLabel
         Left = 606
-        Height = 26
         ExplicitLeft = 606
       end
     end
@@ -87,7 +85,6 @@ inherited FMNG0005BView: TFMNG0005BView
       ExplicitWidth = 690
       inherited LbProgram: TRzLabel
         Width = 690
-        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
@@ -103,18 +100,10 @@ inherited FMNG0005BView: TFMNG0005BView
         inherited PnButtonCancel: TRzPanel
           Left = 579
           ExplicitLeft = 579
-          inherited BtSair: TcxButton
-            ExplicitHeight = 29
-          end
         end
         inherited PnButtonConfirm: TRzPanel
           Left = 466
           ExplicitLeft = 466
-          inherited BtConfirmar: TcxButton
-            ExplicitTop = 2
-            ExplicitWidth = 106
-            ExplicitHeight = 29
-          end
         end
       end
       inherited PnContent: TRzPanel
@@ -199,6 +188,7 @@ inherited FMNG0005BView: TFMNG0005BView
           Left = 277
           Top = 161
           Properties.CharCase = ecLowerCase
+          Properties.OnChange = TxEmailPropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
           Style.HotTrack = False
@@ -234,6 +224,7 @@ inherited FMNG0005BView: TFMNG0005BView
           Left = 73
           Top = 161
           Properties.CharCase = ecUpperCase
+          Properties.OnChange = TxPhoneNumberPropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
           Style.HotTrack = False
@@ -297,6 +288,7 @@ inherited FMNG0005BView: TFMNG0005BView
               Kind = bkEllipsis
             end>
           Properties.CharCase = ecUpperCase
+          Properties.OnChange = TxDistrictIdPropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
           Style.HotTrack = False
@@ -329,6 +321,7 @@ inherited FMNG0005BView: TFMNG0005BView
           Left = 73
           Top = 113
           Properties.CharCase = ecUpperCase
+          Properties.OnChange = TxAddressPropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
           Style.HotTrack = False
@@ -363,6 +356,7 @@ inherited FMNG0005BView: TFMNG0005BView
           Left = 502
           Top = 81
           Properties.CharCase = ecUpperCase
+          Properties.OnChange = TxIEPropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
           Style.HotTrack = False
@@ -398,6 +392,7 @@ inherited FMNG0005BView: TFMNG0005BView
           Left = 73
           Top = 81
           Properties.CharCase = ecUpperCase
+          Properties.OnChange = TxCNPJPropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
           Style.HotTrack = False
@@ -432,6 +427,7 @@ inherited FMNG0005BView: TFMNG0005BView
           Left = 73
           Top = 57
           Properties.CharCase = ecUpperCase
+          Properties.OnChange = TxFancyNamePropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
           Style.HotTrack = False
@@ -466,6 +462,7 @@ inherited FMNG0005BView: TFMNG0005BView
           Left = 73
           Top = 33
           Properties.CharCase = ecUpperCase
+          Properties.OnChange = TxNamePropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
           Style.HotTrack = False

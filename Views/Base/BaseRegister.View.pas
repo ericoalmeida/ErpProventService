@@ -10,7 +10,8 @@ uses
   dxSkinDevExpressStyle,
   Vcl.StdCtrls, cxButtons, RzLabel, dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel,
   Types.Controllers, dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Green,
-  dxSkinOffice2007Silver, System.Actions, Vcl.ActnList, dxSkinDarkRoom, dxSkinDarkSide;
+  dxSkinOffice2007Silver, System.Actions, Vcl.ActnList, dxSkinDarkRoom, dxSkinDarkSide, cxControls,
+  cxContainer, cxEdit, cxMaskEdit, cxDropDownEdit, cxTextEdit;
 
 type
   TFBaseRegisterView = class(TFBaseView)
@@ -23,10 +24,11 @@ type
     procedure BtConfirmarClick(Sender: TObject);
   private
     { Private declarations }
-
-  protected
+   protected
     FOperation: TTypeOperation;
     FSelectedRecord: string;
+
+    procedure changeDataAnyFields;
 
     procedure showCurrentOperation;
   public
@@ -39,12 +41,19 @@ var
 implementation
 
 {$R *.dfm}
+
+uses Facade.View, Types.Views;
 { TFBaseRegisterView }
 
 procedure TFBaseRegisterView.BtConfirmarClick(Sender: TObject);
 begin
   inherited;
   Close;
+end;
+
+procedure TFBaseRegisterView.changeDataAnyFields;
+begin
+  BtConfirmar.Enabled := True;
 end;
 
 procedure TFBaseRegisterView.showCurrentOperation;

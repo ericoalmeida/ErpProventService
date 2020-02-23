@@ -38,6 +38,9 @@ type
     procedure FormCreate(Sender: TObject);
     procedure acFindExecute(Sender: TObject);
     procedure BtConfirmarClick(Sender: TObject);
+    procedure TxNamePropertiesChange(Sender: TObject);
+    procedure TxInitialsPropertiesChange(Sender: TObject);
+    procedure TxCountryIdPropertiesChange(Sender: TObject);
   private
     FStateController: iStateController;
     FCountryController: iCountryController;
@@ -204,8 +207,29 @@ begin
   TxCountryId.Text   := FStateController.countryId;
   TxCountryName.Text := FStateController.countryName;
   TxInitials.Text    := FStateController.initials;
+
   TxCreatedAt.Text   := FStateController.createdAt;
   TxUpdatedAt.Text   := FStateController.updatedAt;
+
+  BtConfirmar.Enabled := False;
+end;
+
+procedure TFMNG0003BView.TxCountryIdPropertiesChange(Sender: TObject);
+begin
+  inherited;
+  changeDataAnyFields;
+end;
+
+procedure TFMNG0003BView.TxInitialsPropertiesChange(Sender: TObject);
+begin
+  inherited;
+  changeDataAnyFields;
+end;
+
+procedure TFMNG0003BView.TxNamePropertiesChange(Sender: TObject);
+begin
+  inherited;
+  changeDataAnyFields;
 end;
 
 procedure TFMNG0003BView.updateRecord;

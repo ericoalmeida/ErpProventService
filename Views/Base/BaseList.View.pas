@@ -23,7 +23,7 @@ uses
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, ormbr.container.DataSet.interfaces, Types.Controllers,
   FireDAC.Stan.Async, FireDAC.DApt, dxSkinOffice2016Colorful, dxSkinOffice2016Dark,
   dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Silver,
-  dxSkinDarkRoom, dxSkinDarkSide;
+  dxSkinDarkRoom, dxSkinDarkSide, System.ImageList, Vcl.ImgList, cxImageList;
 
 type
   TFBaseListView = class(TFBaseView)
@@ -60,6 +60,7 @@ type
     StSelection: TcxStyle;
     FdQData: TFDQuery;
     StIndicator: TcxStyle;
+    IlImages: TcxImageList;
     procedure BtInsertClick(Sender: TObject);
     procedure BtUpdateClick(Sender: TObject);
     procedure BtShowClick(Sender: TObject);
@@ -67,8 +68,11 @@ type
     procedure BtDuplicateClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure VwDadosCustomDrawCell(Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
   private
   protected
+    FColumnStatus: TcxGridColumn;
     FOperation: TTypeOperation;
 
     procedure filterRecords;
@@ -148,6 +152,21 @@ begin
 
   LbTotalRegistros.Caption := Format('Mostrando de %d até %d de %d registros',
     [FRecordShow, FTotalRecords, FTotalRecords]);
+end;
+
+procedure TFBaseListView.VwDadosCustomDrawCell(Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+  inherited;
+   try
+    if (AViewInfo.GridRecord.Values[FColumnStatus.Index] = 1) then
+    begin
+       ACanvas.Font.Style := [fsStrikeOut];
+       ACanvas.Font.Color := $009f9a7d;
+    end;
+  except
+    on E: Exception do
+  end;
 end;
 
 end.

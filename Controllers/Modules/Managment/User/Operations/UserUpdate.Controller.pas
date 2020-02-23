@@ -77,7 +77,9 @@ begin
  bcrypt := TBCrypt.Create;
 
   try
+    if not(AValue = EmptyStr) then
     FKeyPass  := bcrypt.HashPassword(AValue, 14);
+
   finally
     bcrypt.Free;
   end;
@@ -98,12 +100,14 @@ procedure TUserUpdateController.save;
 begin
   FUserModel.DAO.Modify(FSelectedRecord);
 
-  FSelectedRecord.NAME     := FName;
-  FSelectedRecord.EMAIL    := FEmail;
-  FSelectedRecord.USERNAME := FUserName;
-  FSelectedRecord.KEYPASS  := FKeyPass;
-  FSelectedRecord.STATUS   := FStatus;
+  FSelectedRecord.NAME        := FName;
+  FSelectedRecord.EMAIL       := FEmail;
+  FSelectedRecord.USERNAME    := FUserName;
 
+  if not(FKeyPass = EmptyStr) then
+  FSelectedRecord.KEYPASS     := FKeyPass;
+
+  FSelectedRecord.STATUS      := FStatus;
   FSelectedRecord.UPDATEDAT   := Now;
 
   FUserModel.DAO.Update(FSelectedRecord);

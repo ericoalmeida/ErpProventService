@@ -1,16 +1,20 @@
 inherited FMNG0005AView: TFMNG0005AView
   Caption = ''
-  ClientWidth = 485
+  ClientHeight = 301
+  ClientWidth = 494
   OnShow = FormShow
-  ExplicitWidth = 491
+  ExplicitWidth = 500
+  ExplicitHeight = 330
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
-    Width = 483
-    ExplicitWidth = 483
+    Width = 492
+    Height = 299
+    ExplicitWidth = 492
+    ExplicitHeight = 299
     inherited PnHeader: TRzPanel
-      Width = 481
-      ExplicitWidth = 481
+      Width = 490
+      ExplicitWidth = 490
       inherited ImTitle: TImage
         Width = 24
         Picture.Data = {
@@ -69,52 +73,67 @@ inherited FMNG0005AView: TFMNG0005AView
       end
     end
     inherited PnProgram: TRzPanel
-      Width = 481
-      ExplicitWidth = 481
+      Top = 280
+      Width = 490
+      ExplicitTop = 280
+      ExplicitWidth = 490
       inherited LbProgram: TRzLabel
-        Width = 481
+        Width = 490
       end
     end
     inherited PnContainerBody: TRzPanel
-      Width = 481
-      ExplicitWidth = 481
+      Width = 490
+      Height = 239
+      ExplicitWidth = 490
+      ExplicitHeight = 239
       inherited PnFooterBody: TRzPanel
-        Width = 481
-        ExplicitWidth = 481
+        Top = 199
+        Width = 490
+        ExplicitTop = 199
+        ExplicitWidth = 490
         inherited PnButtonCancel: TRzPanel
-          Left = 367
-          ExplicitLeft = 367
+          Left = 376
+          ExplicitLeft = 376
         end
       end
       inherited PnContent: TRzPanel
-        Width = 479
-        ExplicitWidth = 479
+        Width = 488
+        Height = 146
+        ExplicitWidth = 488
+        ExplicitHeight = 146
         inherited PnGridHeader: TRzPanel
-          Width = 477
-          ExplicitWidth = 477
+          Width = 486
+          ExplicitWidth = 486
           inherited LbBuscar: TcxLabel
-            Left = 150
+            Left = 159
             Style.IsFontAssigned = True
-            ExplicitLeft = 150
+            ExplicitLeft = 159
           end
           inherited TxBuscar: TcxTextEdit
-            Left = 196
+            Left = 205
             Properties.OnChange = TxBuscarPropertiesChange
+            ExplicitLeft = 205
           end
         end
         inherited PnGridFooter: TRzPanel
-          Width = 477
-          ExplicitWidth = 477
+          Top = 115
+          Width = 486
+          ExplicitTop = 115
+          ExplicitWidth = 486
           inherited LbTotalRegistros: TRzLabel
-            Width = 469
+            Width = 478
           end
         end
         inherited PnGrid: TRzPanel
-          Width = 477
-          ExplicitWidth = 477
+          Width = 486
+          Height = 72
+          ExplicitWidth = 486
+          ExplicitHeight = 72
           inherited DbDados: TcxGrid
-            Width = 475
-            ExplicitWidth = 475
+            Width = 484
+            Height = 70
+            ExplicitWidth = 484
+            ExplicitHeight = 70
             inherited VwDados: TcxGridDBTableView
               DataController.DataSource = DsData
               object VwDadosCOMPANYID: TcxGridDBColumn
@@ -153,8 +172,8 @@ inherited FMNG0005AView: TFMNG0005AView
         end
       end
       inherited PnHeaderButtons: TRzPanel
-        Width = 479
-        ExplicitWidth = 479
+        Width = 488
+        ExplicitWidth = 488
       end
     end
   end
@@ -207,5 +226,8 @@ inherited FMNG0005AView: TFMNG0005AView
     object FdQDataUPDATEDAT: TSQLTimeStampField
       FieldName = 'UPDATEDAT'
     end
+  end
+  inherited IlImages: TcxImageList
+    FormatVersion = 1
   end
 end

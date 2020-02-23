@@ -6,7 +6,7 @@ object FMainView: TFMainView
     'Prefeitura Municipal de Parana'#237'ta/MT - Secretaria Municipal de A' +
     'gricultura'
   ClientHeight = 491
-  ClientWidth = 935
+  ClientWidth = 676
   Color = clBlack
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -22,7 +22,7 @@ object FMainView: TFMainView
   object ImLogo: TImage
     Left = 0
     Top = 159
-    Width = 935
+    Width = 676
     Height = 309
     Align = alClient
     Center = True
@@ -1931,18 +1931,17 @@ object FMainView: TFMainView
   object RbMainMenu: TdxRibbon
     Left = 0
     Top = 0
-    Width = 935
+    Width = 676
     Height = 159
     ApplicationButton.Menu = ApMainMenu
     BarManager = BrManager
     ColorSchemeAccent = rcsaBlue
-    ColorSchemeName = 'Black'
+    ColorSchemeName = 'Blue'
     QuickAccessToolbar.Toolbar = BmAtalhos
     Contexts = <>
     TabOrder = 0
     TabStop = False
     object TbAdministration: TdxRibbonTab
-      Active = True
       Caption = 'Administra'#231#227'o'
       Groups = <
         item
@@ -1957,6 +1956,7 @@ object FMainView: TFMainView
       Index = 0
     end
     object TbGeral: TdxRibbonTab
+      Active = True
       Caption = 'Geral'
       Groups = <
         item
@@ -1968,7 +1968,7 @@ object FMainView: TFMainView
   object StStatus: TdxRibbonStatusBar
     Left = 0
     Top = 468
-    Width = 935
+    Width = 676
     Height = 23
     Panels = <
       item
@@ -2054,7 +2054,7 @@ object FMainView: TFMainView
     object BmRotinas: TdxBar
       Caption = 'Rotinas'
       CaptionButtons = <>
-      DockedLeft = 394
+      DockedLeft = 266
       DockedTop = 0
       FloatLeft = 720
       FloatTop = 2
@@ -2082,7 +2082,7 @@ object FMainView: TFMainView
     object BmRelatorios: TdxBar
       Caption = 'Relat'#243'rios'
       CaptionButtons = <>
-      DockedLeft = 647
+      DockedLeft = 494
       DockedTop = 0
       FloatLeft = 720
       FloatTop = 2
@@ -3072,6 +3072,7 @@ object FMainView: TFMainView
         CF09F4EFB5F3FB1624DFC83E77B4E7896C3BF32D4B620A4153D878E364C07813
         88F25D810E74021D53F3ED3AC0D12EB337C00F179A129001B80117600312401C
         30B9BC506CFE0BF30DE0EDF9A4E39F0000000049454E44AE426082}
+      OnClick = BtUsuariosClick
     end
     object BtDistrict: TdxBarLargeButton
       Caption = 'Bairros'

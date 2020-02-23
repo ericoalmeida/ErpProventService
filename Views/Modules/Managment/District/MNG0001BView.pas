@@ -37,6 +37,9 @@ type
     procedure FormCreate(Sender: TObject);
     procedure BtConfirmarClick(Sender: TObject);
     procedure acSelectCityExecute(Sender: TObject);
+    procedure TxDescriptionPropertiesChange(Sender: TObject);
+    procedure TxCityIdPropertiesChange(Sender: TObject);
+    procedure TxZipCodePropertiesChange(Sender: TObject);
   private
     FDistrictController: iDistrictController;
     FCityController: iCityController;
@@ -203,8 +206,29 @@ begin
   TxCityId.Text      := FDistrictController.cityId;
   TxCityName.Text    := FDistrictController.cityName;
   TxZipCode.Text     := FDistrictController.zipCode;
+
   TxCreatedDate.Text := FDistrictController.createdDate;
   TxUpdatedDate.Text := FDistrictController.updatedDate;
+
+  BtConfirmar.Enabled := False;
+end;
+
+procedure TFMNG0001BView.TxCityIdPropertiesChange(Sender: TObject);
+begin
+  inherited;
+  changeDataAnyFields;
+end;
+
+procedure TFMNG0001BView.TxDescriptionPropertiesChange(Sender: TObject);
+begin
+  inherited;
+  changeDataAnyFields;
+end;
+
+procedure TFMNG0001BView.TxZipCodePropertiesChange(Sender: TObject);
+begin
+  inherited;
+  changeDataAnyFields;
 end;
 
 procedure TFMNG0001BView.updateRecord;

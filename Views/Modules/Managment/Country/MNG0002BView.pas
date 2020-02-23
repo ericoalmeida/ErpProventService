@@ -27,6 +27,7 @@ type
     LbCountryId: TcxLabel;
     procedure FormCreate(Sender: TObject);
     procedure BtConfirmarClick(Sender: TObject);
+    procedure TxNamePropertiesChange(Sender: TObject);
   private
     FCountryController: iCountryController;
 
@@ -155,8 +156,17 @@ begin
 
   TxCountryId.Text   := FCountryController.countryId;
   TxName.Text        := FCountryController.description;
+
   TxCreatedAt.Text   := FCountryController.createdDate;
   TxUpdatedAt.Text   := FCountryController.updatedDate;
+
+  BtConfirmar.Enabled := False;
+end;
+
+procedure TFMNG0002BView.TxNamePropertiesChange(Sender: TObject);
+begin
+  inherited;
+  changeDataAnyFields;
 end;
 
 procedure TFMNG0002BView.updateRecord;

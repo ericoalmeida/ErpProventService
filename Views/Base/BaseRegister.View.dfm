@@ -37,16 +37,26 @@ inherited FBaseRegisterView: TFBaseRegisterView
         ExplicitHeight = 22
       end
     end
+    inherited PnProgram: TRzPanel
+      inherited LbProgram: TRzLabel
+        Width = 608
+        Height = 18
+      end
+    end
     inherited PnContainerBody: TRzPanel
       inherited PnFooterBody: TRzPanel
         inherited PnButtonCancel: TRzPanel
           Left = 497
           Margins.Right = 0
+          ExplicitLeft = 497
           inherited BtSair: TcxButton
             Left = 1
             Width = 107
             Margins.Left = 0
             Caption = 'C&ancelar'
+            ExplicitLeft = 1
+            ExplicitWidth = 107
+            ExplicitHeight = 29
           end
         end
         object PnButtonConfirm: TRzPanel
@@ -62,7 +72,6 @@ inherited FBaseRegisterView: TFBaseRegisterView
           BorderWidth = 1
           Color = 14803425
           TabOrder = 1
-          ExplicitLeft = 494
           object BtConfirmar: TcxButton
             AlignWithMargins = True
             Left = 2
@@ -75,6 +84,7 @@ inherited FBaseRegisterView: TFBaseRegisterView
             Margins.Bottom = 0
             Align = alClient
             Caption = '&Confirmar'
+            Enabled = False
             LookAndFeel.Kind = lfOffice11
             LookAndFeel.NativeStyle = False
             LookAndFeel.ScrollbarMode = sbmDefault
@@ -114,9 +124,6 @@ inherited FBaseRegisterView: TFBaseRegisterView
             Font.Style = [fsBold]
             ParentFont = False
             OnClick = BtConfirmarClick
-            ExplicitTop = 4
-            ExplicitWidth = 108
-            ExplicitHeight = 28
           end
         end
       end

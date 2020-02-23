@@ -45,6 +45,14 @@ type
     procedure FormCreate(Sender: TObject);
     procedure BtConfirmarClick(Sender: TObject);
     procedure AcSelectDistrictExecute(Sender: TObject);
+    procedure TxNamePropertiesChange(Sender: TObject);
+    procedure TxFancyNamePropertiesChange(Sender: TObject);
+    procedure TxCNPJPropertiesChange(Sender: TObject);
+    procedure TxIEPropertiesChange(Sender: TObject);
+    procedure TxAddressPropertiesChange(Sender: TObject);
+    procedure TxDistrictIdPropertiesChange(Sender: TObject);
+    procedure TxPhoneNumberPropertiesChange(Sender: TObject);
+    procedure TxEmailPropertiesChange(Sender: TObject);
   private
     FCompanyController: iCompanyController;
     FDistrictController: iDistrictController;
@@ -232,6 +240,56 @@ begin
 
   TxCreatedAt.Text := FCompanyController.createdAt;
   TxUpdatedAt.Text := FCompanyController.updatedAt;
+
+  BtConfirmar.Enabled := False;
+end;
+
+procedure TFMNG0005BView.TxAddressPropertiesChange(Sender: TObject);
+begin
+  inherited;
+  changeDataAnyFields;
+end;
+
+procedure TFMNG0005BView.TxCNPJPropertiesChange(Sender: TObject);
+begin
+  inherited;
+  changeDataAnyFields;
+end;
+
+procedure TFMNG0005BView.TxDistrictIdPropertiesChange(Sender: TObject);
+begin
+  inherited;
+  changeDataAnyFields;
+end;
+
+procedure TFMNG0005BView.TxEmailPropertiesChange(Sender: TObject);
+begin
+  inherited;
+  changeDataAnyFields;
+end;
+
+procedure TFMNG0005BView.TxFancyNamePropertiesChange(Sender: TObject);
+begin
+  inherited;
+  changeDataAnyFields;
+end;
+
+procedure TFMNG0005BView.TxIEPropertiesChange(Sender: TObject);
+begin
+  inherited;
+  changeDataAnyFields;
+end;
+
+procedure TFMNG0005BView.TxNamePropertiesChange(Sender: TObject);
+begin
+  inherited;
+  changeDataAnyFields;
+end;
+
+procedure TFMNG0005BView.TxPhoneNumberPropertiesChange(Sender: TObject);
+begin
+  inherited;
+  changeDataAnyFields;
 end;
 
 procedure TFMNG0005BView.updateRecord;

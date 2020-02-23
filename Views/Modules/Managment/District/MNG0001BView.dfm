@@ -10,11 +10,11 @@ inherited FMNG0001BView: TFMNG0001BView
   inherited PnContainer: TRzPanel
     Width = 592
     Height = 289
-    ExplicitWidth = 502
-    ExplicitHeight = 279
+    ExplicitWidth = 592
+    ExplicitHeight = 289
     inherited PnHeader: TRzPanel
       Width = 590
-      ExplicitWidth = 500
+      ExplicitWidth = 590
       inherited ImTitle: TImage
         Picture.Data = {
           0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000020
@@ -85,62 +85,51 @@ inherited FMNG0001BView: TFMNG0001BView
       end
       inherited LbTitle: TRzLabel
         Width = 58
-        Height = 26
         Caption = 'Bairros'
         ExplicitWidth = 58
       end
       inherited LbOperation: TRzLabel
         Left = 506
-        Height = 26
-        ExplicitLeft = 416
+        ExplicitLeft = 506
       end
     end
     inherited PnProgram: TRzPanel
       Top = 270
       Width = 590
-      ExplicitTop = 260
-      ExplicitWidth = 500
+      ExplicitTop = 270
+      ExplicitWidth = 590
       inherited LbProgram: TRzLabel
         Width = 590
-        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
       Width = 590
       Height = 229
-      ExplicitWidth = 500
-      ExplicitHeight = 219
+      ExplicitWidth = 590
+      ExplicitHeight = 229
       inherited PnFooterBody: TRzPanel
         Top = 189
         Width = 590
-        ExplicitTop = 179
-        ExplicitWidth = 500
+        ExplicitTop = 189
+        ExplicitWidth = 590
         inherited PnButtonCancel: TRzPanel
           Left = 479
-          ExplicitLeft = 389
-          inherited BtSair: TcxButton
-            ExplicitHeight = 29
-          end
+          ExplicitLeft = 479
         end
         inherited PnButtonConfirm: TRzPanel
           Left = 366
-          ExplicitLeft = 276
-          inherited BtConfirmar: TcxButton
-            ExplicitTop = 2
-            ExplicitWidth = 106
-            ExplicitHeight = 29
-          end
+          ExplicitLeft = 366
         end
       end
       inherited PnContent: TRzPanel
         Width = 586
         Height = 185
-        ExplicitWidth = 496
-        ExplicitHeight = 175
+        ExplicitWidth = 586
+        ExplicitHeight = 185
         inherited LbObs: TRzLabel
           Top = 172
           Width = 586
-          ExplicitTop = 162
+          ExplicitTop = 172
         end
         object LbDistrictId: TcxLabel
           Left = 66
@@ -214,6 +203,7 @@ inherited FMNG0001BView: TFMNG0001BView
           Left = 91
           Top = 25
           Properties.CharCase = ecUpperCase
+          Properties.OnChange = TxDescriptionPropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
           Style.HotTrack = False
@@ -288,6 +278,7 @@ inherited FMNG0001BView: TFMNG0001BView
               Kind = bkEllipsis
             end>
           Properties.CharCase = ecUpperCase
+          Properties.OnChange = TxCityIdPropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
           Style.HotTrack = False
@@ -341,6 +332,7 @@ inherited FMNG0001BView: TFMNG0001BView
           Left = 91
           Top = 73
           Properties.CharCase = ecUpperCase
+          Properties.OnChange = TxZipCodePropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
           Style.HotTrack = False

@@ -308,6 +308,18 @@
         <DCCReference Include="Controllers\Modules\Managment\User\Operations\UserUpdate.Controller.pas"/>
         <DCCReference Include="Controllers\Modules\Managment\User\Operations\UserDelete.Controller.pas"/>
         <DCCReference Include="Controllers\Modules\Managment\User\Operations\UserDuplicate.Controller.pas"/>
+        <DCCReference Include="Views\Modules\Managment\User\MNG0006AView.pas">
+            <Form>FMNG0006AView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Modules\Managment\User\MNG0006BView.pas">
+            <Form>FMNG0006BView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Messages\MSG0005.View.pas">
+            <Form>FMSG0005View</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

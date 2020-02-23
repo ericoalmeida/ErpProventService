@@ -39,6 +39,10 @@ type
     procedure acSearchStateExecute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure BtConfirmarClick(Sender: TObject);
+    procedure TxNamePropertiesChange(Sender: TObject);
+    procedure TxStateIdPropertiesChange(Sender: TObject);
+    procedure TxZipCodePropertiesChange(Sender: TObject);
+    procedure TxIBGECodePropertiesChange(Sender: TObject);
   private
     FCityController: iCityController;
     FStateController: iStateController;
@@ -211,6 +215,32 @@ begin
 
   TxCreatedAt.Text := FCityController.createdAt;
   TxUpdatedAt.Text := FCityController.updatedAt;
+
+  BtConfirmar.Enabled := False;
+end;
+
+procedure TFMNG0004BView.TxIBGECodePropertiesChange(Sender: TObject);
+begin
+  inherited;
+ changeDataAnyFields;
+end;
+
+procedure TFMNG0004BView.TxNamePropertiesChange(Sender: TObject);
+begin
+  inherited;
+  changeDataAnyFields;
+end;
+
+procedure TFMNG0004BView.TxStateIdPropertiesChange(Sender: TObject);
+begin
+  inherited;
+  changeDataAnyFields;
+end;
+
+procedure TFMNG0004BView.TxZipCodePropertiesChange(Sender: TObject);
+begin
+  inherited;
+  changeDataAnyFields;
 end;
 
 procedure TFMNG0004BView.updateRecord;

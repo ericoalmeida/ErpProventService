@@ -14,7 +14,7 @@ uses
   FireDAC.Comp.DataSet, cxClasses, cxGridLevel, cxGridCustomView, cxGridCustomTableView,
   cxGridTableView, cxGridDBTableView, cxGrid, cxTextEdit, cxLabel, Vcl.StdCtrls, cxButtons, RzLabel,
   dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel, Base.View.interf, dxSkinDarkRoom, dxSkinDarkSide,
-  Types.Views;
+  Types.Views, System.ImageList, Vcl.ImgList, cxImageList;
 
 type
   TFMNG0005AView = class(TFBaseListView, iBaseListView)

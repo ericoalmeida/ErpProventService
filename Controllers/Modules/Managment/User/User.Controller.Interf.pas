@@ -14,6 +14,11 @@ type
     function find(AValue: string): iUserController;
     function autenticate(AUser: string; APassword: string): Boolean;
 
+    function userNameExists(AUserName: string): Boolean; overload;
+    function userNameExists(AUserCode: string; AUserName: string): Boolean; overload;
+    function emailExists(AEmail: string): Boolean; overload;
+    function emailExists(AUserCode: string; AEmail: string): Boolean; overload;
+
     function insert: iUserInsertController;
     function update: iUserUpdateController;
     function delete: iUserDeleteController;
