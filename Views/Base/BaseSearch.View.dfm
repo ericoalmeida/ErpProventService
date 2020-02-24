@@ -92,21 +92,8 @@ inherited FBaseSearchView: TFBaseSearchView
         ExplicitWidth = 138
       end
     end
-    inherited PnProgram: TRzPanel
-      inherited LbProgram: TRzLabel
-        Width = 608
-        Height = 18
-      end
-    end
     inherited PnContainerBody: TRzPanel
       inherited PnFooterBody: TRzPanel
-        inherited PnButtonCancel: TRzPanel
-          inherited BtSair: TcxButton
-            ExplicitLeft = 2
-            ExplicitWidth = 106
-            ExplicitHeight = 29
-          end
-        end
         object PnButtonConfirm: TRzPanel
           AlignWithMargins = True
           Left = 381
@@ -330,6 +317,7 @@ inherited FBaseSearchView: TFBaseSearchView
               Styles.Inactive = StInactive
               Styles.Indicator = StIndicator
               Styles.Selection = StSelection
+              OnColumnHeaderClick = VwDadosColumnHeaderClick
             end
             object LvDados: TcxGridLevel
               GridView = VwDados
@@ -414,6 +402,20 @@ inherited FBaseSearchView: TFBaseSearchView
     object StIndicator: TcxStyle
       AssignedValues = [svColor]
       Color = 16579836
+    end
+    object StDefaultColumn: TcxStyle
+    end
+    object StDefaultHeaderColumn: TcxStyle
+      AssignedValues = [svColor]
+      Color = 16579836
+    end
+    object StColumnSelected: TcxStyle
+      AssignedValues = [svColor]
+      Color = 13434879
+    end
+    object StHeaderColumnSelected: TcxStyle
+      AssignedValues = [svColor]
+      Color = 14869218
     end
   end
 end

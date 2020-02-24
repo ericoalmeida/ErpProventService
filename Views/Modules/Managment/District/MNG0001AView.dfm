@@ -94,6 +94,10 @@ inherited FMNG0001AView: TFMNG0001AView
       Width = 484
       ExplicitTop = 271
       ExplicitWidth = 484
+      inherited LbProgram: TRzLabel
+        Width = 484
+        Height = 18
+      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 484
@@ -108,9 +112,6 @@ inherited FMNG0001AView: TFMNG0001AView
         inherited PnButtonCancel: TRzPanel
           Left = 370
           ExplicitLeft = 370
-          inherited BtSair: TcxButton
-            ExplicitTop = 2
-          end
         end
       end
       inherited PnContent: TRzPanel
@@ -130,7 +131,6 @@ inherited FMNG0001AView: TFMNG0001AView
             Left = 199
             Properties.OnChange = TxBuscarPropertiesChange
             ExplicitLeft = 199
-            ExplicitTop = 7
             ExplicitHeight = 24
           end
         end
@@ -139,6 +139,10 @@ inherited FMNG0001AView: TFMNG0001AView
           Width = 480
           ExplicitTop = 106
           ExplicitWidth = 480
+          inherited LbTotalRegistros: TRzLabel
+            Width = 472
+            Height = 22
+          end
         end
         inherited PnGrid: TRzPanel
           Width = 480
@@ -156,26 +160,76 @@ inherited FMNG0001AView: TFMNG0001AView
                 Caption = 'N'#186
                 DataBinding.FieldName = 'DISTRICTID'
                 HeaderAlignmentHorz = taCenter
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.Focusing = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
                 Width = 50
               end
               object VwDadosDESCRIPTION: TcxGridDBColumn
                 Caption = 'Bairro'
                 DataBinding.FieldName = 'DESCRIPTION'
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.Focusing = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
                 Width = 455
               end
               object VwDadosCITYNAME: TcxGridDBColumn
                 Caption = 'Cidade'
                 DataBinding.FieldName = 'CITYNAME'
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.Focusing = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
                 Width = 255
               end
               object VwDadosCREATEDAT: TcxGridDBColumn
                 Caption = 'Data Cadastro'
                 DataBinding.FieldName = 'CREATEDAT'
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.Focusing = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
                 Width = 110
               end
               object VwDadosUPDATEDAT: TcxGridDBColumn
                 Caption = 'Ult. Atualiza'#231#227'o'
                 DataBinding.FieldName = 'UPDATEDAT'
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.Focusing = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
                 Width = 110
               end
             end
@@ -237,5 +291,8 @@ inherited FMNG0001AView: TFMNG0001AView
     object FdQDataUPDATEDAT: TSQLTimeStampField
       FieldName = 'UPDATEDAT'
     end
+  end
+  inherited IlImages: TcxImageList
+    FormatVersion = 1
   end
 end

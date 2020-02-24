@@ -2,7 +2,8 @@ unit ModulesFacade.View;
 
 interface
 
-uses ModulesFacade.View.Interf, ManagmentFactory.View.Interf;
+uses ModulesFacade.View.Interf, ManagmentFactory.View.Interf,
+  AssetsFactory.View.Interf;
 
 type
   TModulesFacadeView = class(TInterfacedObject, iModulesFacadeView)
@@ -13,6 +14,7 @@ type
 
     class function New: iModulesFacadeView;
 
+    function assetsFactoryView: iAssetsFactoryView;
     function ManagmentFactoryView: iManagmentFactoryView;
   end;
 
@@ -20,7 +22,12 @@ implementation
 
 { TModulesFacadeView }
 
-uses ManagmentFactory.View;
+uses ManagmentFactory.View, AssetsFactory.View;
+
+function TModulesFacadeView.assetsFactoryView: iAssetsFactoryView;
+begin
+  Result := TAssetsFactoryView.New;
+end;
 
 constructor TModulesFacadeView.Create;
 begin
@@ -35,7 +42,7 @@ end;
 
 function TModulesFacadeView.ManagmentFactoryView: iManagmentFactoryView;
 begin
- Result := TManagmentFactoryView.New;
+  Result := TManagmentFactoryView.New;
 end;
 
 class function TModulesFacadeView.New: iModulesFacadeView;

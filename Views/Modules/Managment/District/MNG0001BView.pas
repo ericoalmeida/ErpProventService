@@ -210,7 +210,8 @@ begin
   TxCreatedDate.Text := FDistrictController.createdDate;
   TxUpdatedDate.Text := FDistrictController.updatedDate;
 
-  BtConfirmar.Enabled := False;
+  if not(FOperation in [toDelete]) then
+    BtConfirmar.Enabled := False;
 end;
 
 procedure TFMNG0001BView.TxCityIdPropertiesChange(Sender: TObject);

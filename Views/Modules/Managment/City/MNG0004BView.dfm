@@ -96,11 +96,13 @@ inherited FMNG0004BView: TFMNG0004BView
       end
       inherited LbTitle: TRzLabel
         Width = 62
+        Height = 26
         Caption = 'Cidades'
         ExplicitWidth = 62
       end
       inherited LbOperation: TRzLabel
         Left = 506
+        Height = 26
         ExplicitLeft = 506
       end
     end
@@ -111,6 +113,7 @@ inherited FMNG0004BView: TFMNG0004BView
       ExplicitWidth = 590
       inherited LbProgram: TRzLabel
         Width = 590
+        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel

@@ -61,6 +61,10 @@ type
     FdQData: TFDQuery;
     StIndicator: TcxStyle;
     IlImages: TcxImageList;
+    StDefaultColumn: TcxStyle;
+    StColumnSelected: TcxStyle;
+    StHeaderColumnSelected: TcxStyle;
+    StDefaultHeaderColumn: TcxStyle;
     procedure BtInsertClick(Sender: TObject);
     procedure BtUpdateClick(Sender: TObject);
     procedure BtShowClick(Sender: TObject);
@@ -70,6 +74,7 @@ type
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure VwDadosCustomDrawCell(Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
       AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure VwDadosColumnHeaderClick(Sender: TcxGridTableView; AColumn: TcxGridColumn);
   private
   protected
     FColumnStatus: TcxGridColumn;
@@ -77,6 +82,7 @@ type
 
     procedure filterRecords;
     procedure totalRecords;
+
   public
   end;
 
@@ -152,6 +158,23 @@ begin
 
   LbTotalRegistros.Caption := Format('Mostrando de %d até %d de %d registros',
     [FRecordShow, FTotalRecords, FTotalRecords]);
+end;
+
+procedure TFBaseListView.VwDadosColumnHeaderClick(Sender: TcxGridTableView; AColumn: TcxGridColumn);
+var
+  I: Integer;
+begin
+  inherited;
+  FFieldOrder := prepareStringOrderField(AColumn.Name);
+
+  for I := 0 to Pred(VwDados.ColumnCount) do
+    begin
+      VwDados.Columns[I].Styles.Header  := StDefaultHeaderColumn;
+      VwDados.Columns[I].Styles.Content := StDefaultColumn;
+    end;
+
+  AColumn.Styles.Header  := StHeaderColumnSelected;
+  AColumn.Styles.Content := StColumnSelected;
 end;
 
 procedure TFBaseListView.VwDadosCustomDrawCell(Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;

@@ -211,7 +211,8 @@ begin
   TxCreatedAt.Text   := FStateController.createdAt;
   TxUpdatedAt.Text   := FStateController.updatedAt;
 
-  BtConfirmar.Enabled := False;
+  if not(FOperation in [toDelete]) then
+    BtConfirmar.Enabled := False;
 end;
 
 procedure TFMNG0003BView.TxCountryIdPropertiesChange(Sender: TObject);

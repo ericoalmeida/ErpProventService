@@ -241,7 +241,8 @@ begin
   TxCreatedAt.Text := FCompanyController.createdAt;
   TxUpdatedAt.Text := FCompanyController.updatedAt;
 
-  BtConfirmar.Enabled := False;
+  if not(FOperation in [toDelete]) then
+    BtConfirmar.Enabled := False;
 end;
 
 procedure TFMNG0005BView.TxAddressPropertiesChange(Sender: TObject);

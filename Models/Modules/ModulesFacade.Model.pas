@@ -2,7 +2,8 @@ unit ModulesFacade.Model;
 
 interface
 
-uses ModulesFacade.Model.Interf, ManagmentFactory.Model.Interf;
+uses ModulesFacade.Model.Interf, ManagmentFactory.Model.Interf,
+  AssetsFactory.Model.Interf;
 
 type
   TModulesFacadeModel = class(TInterfacedObject, iModulesFacadeModel)
@@ -14,13 +15,19 @@ type
     class function New: iModulesFacadeModel;
 
     function managmentFactoryModel: iManagmentFactoryModel;
+    function assetsFactoryModel: iAssetsFactoryModel;
   end;
 
 implementation
 
 { TModulesFacadeModel }
 
-uses ManagmentFactory.Model;
+uses ManagmentFactory.Model, AssetsFactory.Model;
+
+function TModulesFacadeModel.assetsFactoryModel: iAssetsFactoryModel;
+begin
+  Result := TAssetsFactoryModel.New;
+end;
 
 constructor TModulesFacadeModel.Create;
 begin

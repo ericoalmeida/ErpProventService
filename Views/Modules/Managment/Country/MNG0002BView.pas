@@ -160,7 +160,8 @@ begin
   TxCreatedAt.Text   := FCountryController.createdDate;
   TxUpdatedAt.Text   := FCountryController.updatedDate;
 
-  BtConfirmar.Enabled := False;
+  if not(FOperation in [toDelete]) then
+    BtConfirmar.Enabled := False;
 end;
 
 procedure TFMNG0002BView.TxNamePropertiesChange(Sender: TObject);

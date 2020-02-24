@@ -213,7 +213,8 @@ begin
   TxCreatedAt.Text    := FUserController.createdAt;
   TxUpdatedAt.Text    := FUserController.updatedAt;
 
-  BtConfirmar.Enabled := False;
+  if not(FOperation in [toDelete]) then
+    BtConfirmar.Enabled := False;
 end;
 
 procedure TFMNG0006BView.showMessageDuplicatedMail;

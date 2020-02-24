@@ -95,11 +95,13 @@ inherited FMNG0006BView: TFMNG0006BView
       end
       inherited LbTitle: TRzLabel
         Width = 71
+        Height = 26
         Caption = 'Usu'#225'rios'
         ExplicitWidth = 71
       end
       inherited LbOperation: TRzLabel
         Left = 506
+        Height = 26
         ExplicitLeft = 506
       end
     end
@@ -110,6 +112,7 @@ inherited FMNG0006BView: TFMNG0006BView
       ExplicitWidth = 590
       inherited LbProgram: TRzLabel
         Width = 590
+        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel

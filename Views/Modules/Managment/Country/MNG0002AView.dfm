@@ -10,10 +10,11 @@ inherited FMNG0002AView: TFMNG0002AView
   inherited PnContainer: TRzPanel
     Width = 492
     Height = 299
-    ExplicitWidth = 467
+    ExplicitWidth = 492
+    ExplicitHeight = 299
     inherited PnHeader: TRzPanel
       Width = 490
-      ExplicitWidth = 465
+      ExplicitWidth = 490
       inherited ImTitle: TImage
         Picture.Data = {
           0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000020
@@ -104,7 +105,8 @@ inherited FMNG0002AView: TFMNG0002AView
     inherited PnProgram: TRzPanel
       Top = 280
       Width = 490
-      ExplicitWidth = 465
+      ExplicitTop = 280
+      ExplicitWidth = 490
       inherited LbProgram: TRzLabel
         Width = 490
         Height = 18
@@ -113,43 +115,43 @@ inherited FMNG0002AView: TFMNG0002AView
     inherited PnContainerBody: TRzPanel
       Width = 490
       Height = 239
-      ExplicitWidth = 465
+      ExplicitWidth = 490
+      ExplicitHeight = 239
       inherited PnFooterBody: TRzPanel
         Top = 199
         Width = 490
-        ExplicitWidth = 465
+        ExplicitTop = 199
+        ExplicitWidth = 490
         inherited PnButtonCancel: TRzPanel
           Left = 376
-          ExplicitLeft = 351
-          inherited BtSair: TcxButton
-            ExplicitTop = 2
-          end
+          ExplicitLeft = 376
         end
       end
       inherited PnContent: TRzPanel
         Width = 488
         Height = 146
-        ExplicitWidth = 463
+        ExplicitWidth = 488
+        ExplicitHeight = 146
         inherited PnGridHeader: TRzPanel
           Width = 486
-          ExplicitWidth = 461
+          ExplicitWidth = 486
           inherited LbBuscar: TcxLabel
             Left = 159
             Style.IsFontAssigned = True
-            ExplicitLeft = 134
+            ExplicitLeft = 159
           end
           inherited TxBuscar: TcxTextEdit
             Left = 205
             Properties.OnChange = TxBuscarPropertiesChange
-            ExplicitLeft = 180
-            ExplicitTop = 7
+            ExplicitLeft = 205
             ExplicitHeight = 24
           end
         end
         inherited PnGridFooter: TRzPanel
           Top = 115
           Width = 486
-          ExplicitWidth = 461
+          ExplicitTop = 115
+          ExplicitWidth = 486
           inherited LbTotalRegistros: TRzLabel
             Width = 478
             Height = 22
@@ -158,32 +160,74 @@ inherited FMNG0002AView: TFMNG0002AView
         inherited PnGrid: TRzPanel
           Width = 486
           Height = 72
-          ExplicitWidth = 461
+          ExplicitWidth = 486
+          ExplicitHeight = 72
           inherited DbDados: TcxGrid
             Width = 484
             Height = 70
-            ExplicitWidth = 459
+            ExplicitWidth = 484
+            ExplicitHeight = 70
             inherited VwDados: TcxGridDBTableView
               DataController.DataSource = DsData
               object VwDadosCOUNTRYID: TcxGridDBColumn
                 Caption = 'N'#186
                 DataBinding.FieldName = 'COUNTRYID'
                 HeaderAlignmentHorz = taCenter
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.Focusing = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
                 Width = 50
               end
               object VwDadosNAME: TcxGridDBColumn
                 Caption = 'Pa'#237's'
                 DataBinding.FieldName = 'NAME'
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.Focusing = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
                 Width = 255
               end
               object VwDadosCREATEDAT: TcxGridDBColumn
                 Caption = 'Data Cria'#231#227'o'
                 DataBinding.FieldName = 'CREATEDAT'
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.Focusing = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
                 Width = 110
               end
               object VwDadosUPDATEDAT: TcxGridDBColumn
                 Caption = 'Ult. Atualiza'#231#227'o'
                 DataBinding.FieldName = 'UPDATEDAT'
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.Focusing = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
                 Width = 110
               end
             end
@@ -192,7 +236,7 @@ inherited FMNG0002AView: TFMNG0002AView
       end
       inherited PnHeaderButtons: TRzPanel
         Width = 488
-        ExplicitWidth = 463
+        ExplicitWidth = 488
       end
     end
   end
@@ -217,5 +261,8 @@ inherited FMNG0002AView: TFMNG0002AView
     object FdDataUPDATEDAT: TSQLTimeStampField
       FieldName = 'UPDATEDAT'
     end
+  end
+  inherited IlImages: TcxImageList
+    FormatVersion = 1
   end
 end

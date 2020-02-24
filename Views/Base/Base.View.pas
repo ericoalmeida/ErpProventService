@@ -52,6 +52,7 @@ type
     FTotalRecords: integer;
     FUtils: iUtilsController;
 
+    function prepareStringOrderField(AValue: string): string;
   public
     { Public declarations }
   end;
@@ -86,6 +87,13 @@ begin
     currentFdConnection;
 
   FUtils := TFacadeController.New.utils;
+end;
+
+function TFBaseView.prepareStringOrderField(AValue: string): string;
+begin
+  AValue := StringReplace(AValue, 'VwDados', '',  [rfReplaceAll, rfIgnoreCase]);
+
+  Result := AValue;
 end;
 
 end.

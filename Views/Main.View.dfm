@@ -1942,6 +1942,7 @@ object FMainView: TFMainView
     TabOrder = 0
     TabStop = False
     object TbAdministration: TdxRibbonTab
+      Active = True
       Caption = 'Administra'#231#227'o'
       Groups = <
         item
@@ -1956,7 +1957,6 @@ object FMainView: TFMainView
       Index = 0
     end
     object TbGeral: TdxRibbonTab
-      Active = True
       Caption = 'Geral'
       Groups = <
         item
@@ -2054,7 +2054,7 @@ object FMainView: TFMainView
     object BmRotinas: TdxBar
       Caption = 'Rotinas'
       CaptionButtons = <>
-      DockedLeft = 266
+      DockedLeft = 396
       DockedTop = 0
       FloatLeft = 720
       FloatTop = 2
@@ -2082,7 +2082,7 @@ object FMainView: TFMainView
     object BmRelatorios: TdxBar
       Caption = 'Relat'#243'rios'
       CaptionButtons = <>
-      DockedLeft = 494
+      DockedLeft = 471
       DockedTop = 0
       FloatLeft = 720
       FloatTop = 2
@@ -2542,9 +2542,9 @@ object FMainView: TFMainView
         00000049454E44AE426082}
     end
     object BtCost: TdxBarLargeButton
-      Caption = 'Despesas com ve'#237'culos/maquin'#225'rios'
+      Caption = 'Despesas com ve'#237'culos/maquinas'
       Category = 0
-      Hint = 'Despesas com ve'#237'culos/maquin'#225'rios'
+      Hint = 'Despesas com ve'#237'culos/maquinas'
       Visible = ivAlways
       Glyph.SourceDPI = 96
       Glyph.Data = {
@@ -2712,9 +2712,9 @@ object FMainView: TFMainView
         4E44AE426082}
     end
     object BtReportCost: TdxBarLargeButton
-      Caption = 'Despesas com ve'#237'culos/maquin'#225'rios'
+      Caption = 'Despesas com ve'#237'culos/maquinas'
       Category = 0
-      Hint = 'Despesas com ve'#237'culos/maquin'#225'rios'
+      Hint = 'Despesas com ve'#237'culos/maquinas'
       Visible = ivAlways
       Glyph.SourceDPI = 96
       Glyph.Data = {
@@ -2798,9 +2798,9 @@ object FMainView: TFMainView
         4E44AE426082}
     end
     object BtTypeCost: TdxBarLargeButton
-      Caption = 'Tipo de despesas'
+      Caption = 'Tipo de despesas com ve'#237'culos/maquinas'
       Category = 0
-      Hint = 'Tipo de despesas'
+      Hint = 'Tipo de despesas com ve'#237'culos/maquinas'
       Visible = ivAlways
       Glyph.SourceDPI = 96
       Glyph.Data = {
@@ -2880,6 +2880,7 @@ object FMainView: TFMainView
         8E3C65E6336484E98E7397ECC03BAF0F8BAD2F05C2EFF3EE99B378DB43D2AED1
         AB9B50C441AA8FF86DFF5E00A23E0064BC2D7C6BE460552FAC08FF1DB3307BA4
         7501F0FD055252C89F2A16627F0000000049454E44AE426082}
+      OnClick = BtTypeCostClick
     end
     object BtEmpresas: TdxBarLargeButton
       Caption = 'Empresas'

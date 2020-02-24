@@ -14,7 +14,7 @@ uses
   cxTextEdit, cxLabel, Vcl.StdCtrls, cxButtons, RzLabel, dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel,
   FireDAC.Stan.Async, FireDAC.DApt, Base.View.interf, dxSkinOffice2016Colorful, dxSkinOffice2016Dark,
   dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Silver,
-  dxSkinDarkRoom, dxSkinDarkSide;
+  dxSkinDarkRoom, dxSkinDarkSide, System.ImageList, Vcl.ImgList, cxImageList;
 
 type
   TFMNG0003AView = class(TFBaseListView, iBaseListView)

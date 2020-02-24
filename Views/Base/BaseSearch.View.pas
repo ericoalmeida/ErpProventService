@@ -50,7 +50,12 @@ type
     StIndicator: TcxStyle;
     PnButtonConfirm: TRzPanel;
     BtConfirmar: TcxButton;
+    StDefaultColumn: TcxStyle;
+    StDefaultHeaderColumn: TcxStyle;
+    StColumnSelected: TcxStyle;
+    StHeaderColumnSelected: TcxStyle;
     procedure BtConfirmarClick(Sender: TObject);
+    procedure VwDadosColumnHeaderClick(Sender: TcxGridTableView; AColumn: TcxGridColumn);
   private
     { Private declarations }
   protected
@@ -95,6 +100,24 @@ begin
 
   LbTotalRegistros.Caption := Format('Mostrando de %d até %d de %d registros',
     [FRecordShow, FTotalRecords, FTotalRecords]);
+end;
+
+procedure TFBaseSearchView.VwDadosColumnHeaderClick(Sender: TcxGridTableView;
+  AColumn: TcxGridColumn);
+var
+  I: Integer;
+begin
+  inherited;
+  FFieldOrder := prepareStringOrderField(AColumn.Name);
+
+  for I := 0 to Pred(VwDados.ColumnCount) do
+    begin
+      VwDados.Columns[I].Styles.Header  := StDefaultHeaderColumn;
+      VwDados.Columns[I].Styles.Content := StDefaultColumn;
+    end;
+
+  AColumn.Styles.Header  := StHeaderColumnSelected;
+  AColumn.Styles.Content := StColumnSelected;
 end;
 
 end.

@@ -122,7 +122,24 @@ uses
   UserDuplicate.Controller in 'Controllers\Modules\Managment\User\Operations\UserDuplicate.Controller.pas',
   MNG0006AView in 'Views\Modules\Managment\User\MNG0006AView.pas' {FMNG0006AView},
   MNG0006BView in 'Views\Modules\Managment\User\MNG0006BView.pas' {FMNG0006BView},
-  MSG0005.View in 'Views\Messages\MSG0005.View.pas' {FMSG0005View};
+  MSG0005.View in 'Views\Messages\MSG0005.View.pas' {FMSG0005View},
+  TASSTYPEEXPENSE.Entity.Model in 'Models\Modules\Assets\TypeExpense\Entity\TASSTYPEEXPENSE.Entity.Model.pas',
+  TypeExpense.Model.Interf in 'Models\Modules\Assets\TypeExpense\TypeExpense.Model.Interf.pas',
+  TypeExpense.Model in 'Models\Modules\Assets\TypeExpense\TypeExpense.Model.pas',
+  AssetsFactory.Model.Interf in 'Models\Modules\Assets\AssetsFactory.Model.Interf.pas',
+  AssetsFactory.Model in 'Models\Modules\Assets\AssetsFactory.Model.pas',
+  AssetsFactory.Controller.interf in 'Controllers\Modules\Assets\AssetsFactory.Controller.interf.pas',
+  AssetsFactory.Controller in 'Controllers\Modules\Assets\AssetsFactory.Controller.pas',
+  TypeExpense.Controller.Interf in 'Controllers\Modules\Assets\TypeExpense\TypeExpense.Controller.Interf.pas',
+  TypeExpenseInsert.Controller in 'Controllers\Modules\Assets\TypeExpense\Operations\TypeExpenseInsert.Controller.pas',
+  TypeExpenseUpdate.Controller in 'Controllers\Modules\Assets\TypeExpense\Operations\TypeExpenseUpdate.Controller.pas',
+  TypeExpenseDelete.Controller in 'Controllers\Modules\Assets\TypeExpense\Operations\TypeExpenseDelete.Controller.pas',
+  TypeExpenseDuplicate.Controller in 'Controllers\Modules\Assets\TypeExpense\Operations\TypeExpenseDuplicate.Controller.pas',
+  TypeExpense.Controller in 'Controllers\Modules\Assets\TypeExpense\TypeExpense.Controller.pas',
+  ASS0001AView in 'Views\Modules\Assets\TypeExpense\ASS0001AView.pas' {FASS0001AView},
+  AssetsFactory.View.Interf in 'Views\Modules\Assets\AssetsFactory.View.Interf.pas',
+  AssetsFactory.View in 'Views\Modules\Assets\AssetsFactory.View.pas',
+  ASS0001BView in 'Views\Modules\Assets\TypeExpense\ASS0001BView.pas' {FASS0001BView};
 
 {$R *.res}
 

@@ -272,9 +272,6 @@ object FBaseView: TFBaseView
             Font.Style = [fsBold]
             ParentFont = False
             OnClick = BtSairClick
-            ExplicitLeft = 498
-            ExplicitWidth = 108
-            ExplicitHeight = 36
           end
         end
       end

@@ -73,6 +73,7 @@ type
     procedure BtCityClick(Sender: TObject);
     procedure BtDistrictClick(Sender: TObject);
     procedure BtUsuariosClick(Sender: TObject);
+    procedure BtTypeCostClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -121,6 +122,15 @@ begin
     .modulesFacadeView
      .ManagmentFactoryView
       .showProgramOfListing(tpMNG0003AView)
+      .&end;
+end;
+
+procedure TFMainView.BtTypeCostClick(Sender: TObject);
+begin
+  TFacadeView.New
+    .modulesFacadeView
+     .assetsFactoryView
+      .showProgramOfListing(tpASS0001AView)
       .&end;
 end;
 

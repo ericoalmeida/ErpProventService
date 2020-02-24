@@ -53,9 +53,8 @@ type
     procedure TxBuscarPropertiesChange(Sender: TObject);
   private
     FContainer: IContainerDataSet<TTMNGUSER>;
-    { Private declarations }
+
   public
-    { Public declarations }
     class function New: iBaseListView;
 
     procedure insertRecord;

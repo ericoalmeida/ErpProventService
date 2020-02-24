@@ -216,7 +216,8 @@ begin
   TxCreatedAt.Text := FCityController.createdAt;
   TxUpdatedAt.Text := FCityController.updatedAt;
 
-  BtConfirmar.Enabled := False;
+  if not(FOperation in [toDelete]) then
+    BtConfirmar.Enabled := False;
 end;
 
 procedure TFMNG0004BView.TxIBGECodePropertiesChange(Sender: TObject);

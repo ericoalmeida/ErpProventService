@@ -40,7 +40,6 @@ type
     procedure BtDeleteClick(Sender: TObject);
     procedure BtDuplicateClick(Sender: TObject);
   private
-    class var Finstance: iBaseListView;
   public
     class function New: iBaseListView;
 

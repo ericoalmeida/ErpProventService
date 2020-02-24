@@ -320,6 +320,29 @@
             <Form>FMSG0005View</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Models\Modules\Assets\TypeExpense\Entity\TASSTYPEEXPENSE.Entity.Model.pas"/>
+        <DCCReference Include="Models\Modules\Assets\TypeExpense\TypeExpense.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modules\Assets\TypeExpense\TypeExpense.Model.pas"/>
+        <DCCReference Include="Models\Modules\Assets\AssetsFactory.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modules\Assets\AssetsFactory.Model.pas"/>
+        <DCCReference Include="Controllers\Modules\Assets\AssetsFactory.Controller.interf.pas"/>
+        <DCCReference Include="Controllers\Modules\Assets\AssetsFactory.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Assets\TypeExpense\TypeExpense.Controller.Interf.pas"/>
+        <DCCReference Include="Controllers\Modules\Assets\TypeExpense\Operations\TypeExpenseInsert.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Assets\TypeExpense\Operations\TypeExpenseUpdate.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Assets\TypeExpense\Operations\TypeExpenseDelete.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Assets\TypeExpense\Operations\TypeExpenseDuplicate.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Assets\TypeExpense\TypeExpense.Controller.pas"/>
+        <DCCReference Include="Views\Modules\Assets\TypeExpense\ASS0001AView.pas">
+            <Form>FASS0001AView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Modules\Assets\AssetsFactory.View.Interf.pas"/>
+        <DCCReference Include="Views\Modules\Assets\AssetsFactory.View.pas"/>
+        <DCCReference Include="Views\Modules\Assets\TypeExpense\ASS0001BView.pas">
+            <Form>FASS0001BView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

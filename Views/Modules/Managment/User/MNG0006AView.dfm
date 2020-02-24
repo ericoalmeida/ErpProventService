@@ -106,6 +106,7 @@ inherited FMNG0006AView: TFMNG0006AView
       ExplicitWidth = 490
       inherited LbProgram: TRzLabel
         Width = 490
+        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
@@ -121,11 +122,6 @@ inherited FMNG0006AView: TFMNG0006AView
         inherited PnButtonCancel: TRzPanel
           Left = 376
           ExplicitLeft = 376
-          inherited BtSair: TcxButton
-            ExplicitLeft = 2
-            ExplicitWidth = 106
-            ExplicitHeight = 29
-          end
         end
       end
       inherited PnContent: TRzPanel
@@ -154,6 +150,7 @@ inherited FMNG0006AView: TFMNG0006AView
           ExplicitWidth = 486
           inherited LbTotalRegistros: TRzLabel
             Width = 478
+            Height = 22
           end
         end
         inherited PnGrid: TRzPanel
@@ -171,21 +168,57 @@ inherited FMNG0006AView: TFMNG0006AView
               object VwDadosUSERID: TcxGridDBColumn
                 Caption = 'N'#186
                 DataBinding.FieldName = 'USERID'
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
                 Width = 50
               end
               object VwDadosNAME: TcxGridDBColumn
                 Caption = 'Nome'
                 DataBinding.FieldName = 'NAME'
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
                 Width = 255
               end
               object VwDadosEMAIL: TcxGridDBColumn
                 Caption = 'Email'
                 DataBinding.FieldName = 'EMAIL'
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
                 Width = 255
               end
               object VwDadosUSERNAME: TcxGridDBColumn
                 Caption = 'Usu'#225'rio'
                 DataBinding.FieldName = 'USERNAME'
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
                 Width = 135
               end
               object VwDadosSTATUS: TcxGridDBColumn
@@ -201,22 +234,49 @@ inherited FMNG0006AView: TFMNG0006AView
                   end
                   item
                     Description = 'INATIVO'
-                    ImageIndex = 3
+                    ImageIndex = 6
                     Value = 1
                   end>
                 Properties.PopupAlignment = taCenter
                 HeaderAlignmentHorz = taCenter
                 HeaderGlyphAlignmentHorz = taCenter
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
                 Width = 65
               end
               object VwDadosCREATEDAT: TcxGridDBColumn
                 Caption = 'Data Cadastro'
                 DataBinding.FieldName = 'CREATEDAT'
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
                 Width = 110
               end
               object VwDadosUPDATEDAT: TcxGridDBColumn
                 Caption = 'Ult. Atualiza'#231#227'o'
                 DataBinding.FieldName = 'UPDATEDAT'
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
                 Width = 110
               end
             end
