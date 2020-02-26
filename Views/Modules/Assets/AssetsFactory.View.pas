@@ -23,7 +23,7 @@ implementation
 
 { TAssetsFactoryView }
 
-uses ASS0001AView, ASS0001BView;
+uses ASS0001AView, ASS0001BView, ASS0002AView, ASS0002BView;
 
 constructor TAssetsFactoryView.Create;
 begin
@@ -47,6 +47,10 @@ begin
   case AValue of
     tpASS0001AView:
       Result := TFASS0001AView.New;
+
+    tpASS0002AView:
+      Result := TFASS0002AView.New;
+
   end;
 end;
 
@@ -56,6 +60,9 @@ begin
   case AValue of
     trASS0001BView:
       Result := TFASS0001BView.New;
+
+    trASS0002BView:
+      Result := TFASS0002BView.New;
   end;
 end;
 

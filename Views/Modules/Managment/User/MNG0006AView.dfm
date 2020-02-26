@@ -141,6 +141,7 @@ inherited FMNG0006AView: TFMNG0006AView
             Left = 205
             Properties.OnChange = TxBuscarPropertiesChange
             ExplicitLeft = 205
+            ExplicitHeight = 24
           end
         end
         inherited PnGridFooter: TRzPanel

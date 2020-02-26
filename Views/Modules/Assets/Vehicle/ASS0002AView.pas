@@ -1,4 +1,4 @@
-unit ASS0001AView;
+unit ASS0002AView;
 
 interface
 
@@ -22,34 +22,43 @@ uses
   cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid, cxTextEdit,
   cxLabel,
   Vcl.StdCtrls, cxButtons, RzLabel, dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel,
-  Base.View.interf, TASSTYPEEXPENSE.Entity.Model, cxImageComboBox;
+  Base.View.interf, TASSVEHICLE.Entity.Model, cxImageComboBox;
 
 type
-  TFASS0001AView = class(TFBaseListView, iBaseListView)
+  TFASS0002AView = class(TFBaseListView, iBaseListView)
     FdQDataCODE: TStringField;
-    FdQDataTYPEEXPENSEID: TIntegerField;
+    FdQDataVEHICLEID: TIntegerField;
     FdQDataDESCRIPTION: TStringField;
+    FdQDataMODEL: TStringField;
+    FdQDataBRAND: TStringField;
+    FdQDataCATEGORY: TStringField;
+    FdQDataBOARD: TStringField;
     FdQDataSTATUS: TIntegerField;
     FdQDataUSERNAME: TStringField;
     FdQDataCREATEDAT: TSQLTimeStampField;
     FdQDataUPDATEDAT: TSQLTimeStampField;
-    VwDadosTYPEEXPENSEID: TcxGridDBColumn;
+    VwDadosVEHICLEID: TcxGridDBColumn;
     VwDadosDESCRIPTION: TcxGridDBColumn;
+    VwDadosMODEL: TcxGridDBColumn;
+    VwDadosBRAND: TcxGridDBColumn;
+    VwDadosCATEGORY: TcxGridDBColumn;
+    VwDadosBOARD: TcxGridDBColumn;
     VwDadosSTATUS: TcxGridDBColumn;
     VwDadosUSERNAME: TcxGridDBColumn;
     VwDadosCREATEDAT: TcxGridDBColumn;
     VwDadosUPDATEDAT: TcxGridDBColumn;
+    procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure TxBuscarPropertiesChange(Sender: TObject);
     procedure BtInsertClick(Sender: TObject);
     procedure BtUpdateClick(Sender: TObject);
     procedure BtShowClick(Sender: TObject);
     procedure BtDeleteClick(Sender: TObject);
     procedure BtDuplicateClick(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
-    procedure FormShow(Sender: TObject);
-    procedure TxBuscarPropertiesChange(Sender: TObject);
   private
 
   public
+    { Public declarations }
     class function New: iBaseListView;
 
     procedure insertRecord;
@@ -64,16 +73,16 @@ type
   end;
 
 var
-  FASS0001AView: TFASS0001AView;
+  FASS0002AView: TFASS0002AView;
 
 implementation
 
 {$R *.dfm}
 
 uses Facade.View, Types.Views;
-{ TFASS0001AView }
+{ TFASS0002AView }
 
-procedure TFASS0001AView.BtDeleteClick(Sender: TObject);
+procedure TFASS0002AView.BtDeleteClick(Sender: TObject);
 begin
   inherited;
 
@@ -82,7 +91,7 @@ begin
   {3 } totalRecords;
 end;
 
-procedure TFASS0001AView.BtDuplicateClick(Sender: TObject);
+procedure TFASS0002AView.BtDuplicateClick(Sender: TObject);
 begin
   inherited;
 
@@ -91,7 +100,7 @@ begin
   {3 } totalRecords;
 end;
 
-procedure TFASS0001AView.BtInsertClick(Sender: TObject);
+procedure TFASS0002AView.BtInsertClick(Sender: TObject);
 begin
   inherited;
 
@@ -100,7 +109,7 @@ begin
   {3 } totalRecords;
 end;
 
-procedure TFASS0001AView.BtShowClick(Sender: TObject);
+procedure TFASS0002AView.BtShowClick(Sender: TObject);
 begin
   inherited;
 
@@ -109,7 +118,7 @@ begin
   {3 } totalRecords;
 end;
 
-procedure TFASS0001AView.BtUpdateClick(Sender: TObject);
+procedure TFASS0002AView.BtUpdateClick(Sender: TObject);
 begin
   inherited;
 
@@ -118,97 +127,97 @@ begin
   {3 } totalRecords;
 end;
 
-procedure TFASS0001AView.deleteRecord;
+procedure TFASS0002AView.deleteRecord;
 begin
  TFacadeView.New
   .modulesFacadeView
    .assetsFactoryView
-    .showProgramOfRegister(trASS0001BView)
+    .showProgramOfRegister(trASS0002BView)
      .operation(FOperation)
      .selectedRecord(FdQDataCODE.AsString)
      .&end;
 end;
 
-procedure TFASS0001AView.duplicateRecord;
+procedure TFASS0002AView.duplicateRecord;
 begin
  TFacadeView.New
   .modulesFacadeView
    .assetsFactoryView
-    .showProgramOfRegister(trASS0001BView)
+    .showProgramOfRegister(trASS0002BView)
      .operation(FOperation)
      .selectedRecord(FdQDataCODE.AsString)
      .&end;
 end;
 
-procedure TFASS0001AView.&end;
+procedure TFASS0002AView.&end;
 begin
 
   Show;
 end;
 
-procedure TFASS0001AView.FormCreate(Sender: TObject);
+procedure TFASS0002AView.FormCreate(Sender: TObject);
 begin
   inherited;
-  FColumnStatus      := VwDadosSTATUS;
   FdQData.Connection := FFdConnection;
+  FColumnStatus      := VwDadosSTATUS;
 end;
 
-procedure TFASS0001AView.FormShow(Sender: TObject);
+procedure TFASS0002AView.FormShow(Sender: TObject);
 begin
   inherited;
   FFieldOrder := 'DESCRIPTION';
 
-  {1 } listRecords;
-  {2 } totalRecords;
+  { 1 } listRecords;
+  { 2 } totalRecords;
 end;
 
-procedure TFASS0001AView.insertRecord;
+procedure TFASS0002AView.insertRecord;
 begin
  TFacadeView.New
   .modulesFacadeView
    .assetsFactoryView
-    .showProgramOfRegister(trASS0001BView)
+    .showProgramOfRegister(trASS0002BView)
      .operation(FOperation)
      .&end;
 end;
 
-procedure TFASS0001AView.listRecords;
+procedure TFASS0002AView.listRecords;
 begin
-    FdQData.ParamByName('companyId').AsString := FSessionCompany;
-    FdQData.Close;
-    FdQData.Open();
+  FdQData.ParamByName('companyId').AsString := FSessionCompany;
+  FdQData.Close;
+  FdQData.Open();
 end;
 
-class function TFASS0001AView.New: iBaseListView;
+class function TFASS0002AView.New: iBaseListView;
 begin
   Result := Self.Create(nil);
 end;
 
-procedure TFASS0001AView.showRecord;
+procedure TFASS0002AView.showRecord;
 begin
  TFacadeView.New
   .modulesFacadeView
    .assetsFactoryView
-    .showProgramOfRegister(trASS0001BView)
+    .showProgramOfRegister(trASS0002BView)
      .operation(FOperation)
      .selectedRecord(FdQDataCODE.AsString)
      .&end;
 end;
 
-procedure TFASS0001AView.TxBuscarPropertiesChange(Sender: TObject);
+procedure TFASS0002AView.TxBuscarPropertiesChange(Sender: TObject);
 begin
   inherited;
 
-  {1 } filterRecords;
-  {2 } totalRecords;
+  filterRecords;
+  totalRecords;
 end;
 
-procedure TFASS0001AView.updateRecord;
+procedure TFASS0002AView.updateRecord;
 begin
  TFacadeView.New
   .modulesFacadeView
    .assetsFactoryView
-    .showProgramOfRegister(trASS0001BView)
+    .showProgramOfRegister(trASS0002BView)
      .operation(FOperation)
      .selectedRecord(FdQDataCODE.AsString)
      .&end;

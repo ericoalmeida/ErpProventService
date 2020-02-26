@@ -10,8 +10,11 @@ inherited FASS0001BView: TFASS0001BView
   inherited PnContainer: TRzPanel
     Width = 592
     Height = 289
+    ExplicitWidth = 592
+    ExplicitHeight = 289
     inherited PnHeader: TRzPanel
       Width = 590
+      ExplicitWidth = 590
       inherited ImTitle: TImage
         Picture.Data = {
           0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000020
@@ -77,35 +80,46 @@ inherited FASS0001BView: TFASS0001BView
       inherited LbOperation: TRzLabel
         Left = 506
         Height = 26
+        ExplicitLeft = 506
       end
     end
     inherited PnProgram: TRzPanel
       Top = 270
       Width = 590
+      ExplicitTop = 270
+      ExplicitWidth = 590
       inherited LbProgram: TRzLabel
         Width = 590
-        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
       Width = 590
       Height = 229
+      ExplicitWidth = 590
+      ExplicitHeight = 229
       inherited PnFooterBody: TRzPanel
         Top = 189
         Width = 590
+        ExplicitTop = 189
+        ExplicitWidth = 590
         inherited PnButtonCancel: TRzPanel
           Left = 479
+          ExplicitLeft = 479
         end
         inherited PnButtonConfirm: TRzPanel
           Left = 366
+          ExplicitLeft = 366
         end
       end
       inherited PnContent: TRzPanel
         Width = 586
         Height = 185
+        ExplicitWidth = 586
+        ExplicitHeight = 185
         inherited LbObs: TRzLabel
           Top = 172
           Width = 586
+          ExplicitTop = 172
         end
         object TxUpdatedDate: TcxTextEdit
           Left = 91
@@ -242,6 +256,46 @@ inherited FASS0001BView: TFASS0001BView
           Style.Font.Height = -11
           Style.Font.Name = 'Open Sans'
           Style.Font.Style = []
+          Style.IsFontAssigned = True
+        end
+        object CbStatus: TcxComboBox
+          Left = 435
+          Top = 2
+          ParentFont = False
+          Properties.Items.Strings = (
+            'Ativo'
+            'Inativo')
+          Properties.OnChange = CbStatusPropertiesChange
+          Style.BorderColor = 12698049
+          Style.BorderStyle = ebsSingle
+          Style.Font.Charset = ANSI_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -11
+          Style.Font.Name = 'Open Sans'
+          Style.Font.Style = []
+          Style.HotTrack = False
+          Style.LookAndFeel.NativeStyle = False
+          Style.ButtonStyle = btsFlat
+          Style.IsFontAssigned = True
+          StyleDisabled.BorderColor = 12698049
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleDisabled.TextColor = clBlack
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 8
+          Text = 'Ativo'
+          Width = 142
+        end
+        object LbStatus: TcxLabel
+          Left = 387
+          Top = 3
+          Caption = 'Status:'
+          ParentFont = False
+          Style.Font.Charset = ANSI_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -11
+          Style.Font.Name = 'Open Sans'
+          Style.Font.Style = [fsBold]
           Style.IsFontAssigned = True
         end
       end

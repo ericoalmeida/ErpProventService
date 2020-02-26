@@ -11,7 +11,11 @@ type
     iTypeExpenseInsertController)
   private
     FTypeExpenseModel: iTypeExpenseModel;
+
+    FCompanyId: string;
     FDescription: string;
+    FStatus: Integer;
+    FUserId: string;
 
     function getTypeExpenseId: Integer;
   public
@@ -23,7 +27,10 @@ type
     function typeExpenseModel(AValue: iTypeExpenseModel)
       : iTypeExpenseInsertController;
 
+    function companyId(AValue: string): iTypeExpenseInsertController;
     function description(AValue: string): iTypeExpenseInsertController;
+    function status(AValue: Integer): iTypeExpenseInsertController;
+    function userId(AValue: string): iTypeExpenseInsertController;
 
     procedure save;
   end;
@@ -31,6 +38,12 @@ type
 implementation
 
 { TTypeExpenseInsertController }
+
+function TTypeExpenseInsertController.companyId(AValue: string): iTypeExpenseInsertController;
+begin
+  Result := Self;
+  FCompanyId := AValue;
+end;
 
 constructor TTypeExpenseInsertController.Create;
 begin
@@ -59,8 +72,8 @@ function TTypeExpenseInsertController.getTypeExpenseId: Integer;
 begin
   if FTypeExpenseModel.DAO.Find.Count <> 0 then
   begin
-    Result := FTypeExpenseModel.DAO.FindWhere('', 'TYPEEXPENSEID desc')
-      .Last.TYPEEXPENSEID + 1;
+    Result := FTypeExpenseModel.DAO.FindWhere(Format('COMPANYID = %s',
+      [QuotedStr(FCompanyId)]), 'TYPEEXPENSEID desc').Last.TYPEEXPENSEID + 1;
   end
   else
   begin
@@ -72,12 +85,21 @@ procedure TTypeExpenseInsertController.save;
 begin
   FTypeExpenseModel.Entity(TTASSTYPEEXPENSE.Create);
 
+  FTypeExpenseModel.Entity.COMPANYID     := FCompanyId;
   FTypeExpenseModel.Entity.TYPEEXPENSEID := getTypeExpenseId;
   FTypeExpenseModel.Entity.DESCRIPTION   := FDescription;
+  FTypeExpenseModel.Entity.STATUS        := FStatus;
+  FTypeExpenseModel.Entity.USERID        := FUserId;
   FTypeExpenseModel.Entity.CREATEDAT     := Now;
   FTypeExpenseModel.Entity.UPDATEDAT     := Now;
 
   FTypeExpenseModel.DAO.Insert(FTypeExpenseModel.Entity);
+end;
+
+function TTypeExpenseInsertController.status(AValue: Integer): iTypeExpenseInsertController;
+begin
+  Result := Self;
+  FStatus := AValue;
 end;
 
 function TTypeExpenseInsertController.typeExpenseModel
@@ -85,6 +107,12 @@ function TTypeExpenseInsertController.typeExpenseModel
 begin
   Result := Self;
   FTypeExpenseModel := AValue;
+end;
+
+function TTypeExpenseInsertController.userId(AValue: string): iTypeExpenseInsertController;
+begin
+  Result := Self;
+  FUserId := AValue;
 end;
 
 end.

@@ -139,7 +139,18 @@ uses
   ASS0001AView in 'Views\Modules\Assets\TypeExpense\ASS0001AView.pas' {FASS0001AView},
   AssetsFactory.View.Interf in 'Views\Modules\Assets\AssetsFactory.View.Interf.pas',
   AssetsFactory.View in 'Views\Modules\Assets\AssetsFactory.View.pas',
-  ASS0001BView in 'Views\Modules\Assets\TypeExpense\ASS0001BView.pas' {FASS0001BView};
+  ASS0001BView in 'Views\Modules\Assets\TypeExpense\ASS0001BView.pas' {FASS0001BView},
+  TASSVEHICLE.Entity.Model in 'Models\Modules\Assets\Vehicle\Entity\TASSVEHICLE.Entity.Model.pas',
+  Vehicle.Model.Interf in 'Models\Modules\Assets\Vehicle\Vehicle.Model.Interf.pas',
+  Vehicle.Model in 'Models\Modules\Assets\Vehicle\Vehicle.Model.pas',
+  Vehicle.Controller.Interf in 'Controllers\Modules\Assets\Vehicle\Vehicle.Controller.Interf.pas',
+  VehicleInsert.Controller in 'Controllers\Modules\Assets\Vehicle\Operations\VehicleInsert.Controller.pas',
+  VehicleUpdate.Controller in 'Controllers\Modules\Assets\Vehicle\Operations\VehicleUpdate.Controller.pas',
+  VehicleDelete.Controller in 'Controllers\Modules\Assets\Vehicle\Operations\VehicleDelete.Controller.pas',
+  VehicleDuplicate.Controller in 'Controllers\Modules\Assets\Vehicle\Operations\VehicleDuplicate.Controller.pas',
+  Vehicle.Controller in 'Controllers\Modules\Assets\Vehicle\Vehicle.Controller.pas',
+  ASS0002AView in 'Views\Modules\Assets\Vehicle\ASS0002AView.pas' {FASS0002AView},
+  ASS0002BView in 'Views\Modules\Assets\Vehicle\ASS0002BView.pas' {FASS0002BView};
 
 {$R *.res}
 

@@ -11,7 +11,10 @@ type
    FTypeExpenseModel: ITypeExpenseModel;
    FSelectedRecord: TTASSTYPEEXPENSE;
 
+   FCompanyId: string;
    FDescription: string;
+   FStatus: Integer;
+   FUserId: string;
   public
     constructor Create;
     destructor Destroy; override;
@@ -21,7 +24,10 @@ type
     function typeExpenseModel(AValue: ITypeExpenseModel): iTypeExpenseUpdateController;
     function selectedRecord(AValue: TTASSTYPEEXPENSE): iTypeExpenseUpdateController;
 
+    function companyId(AValue: string): iTypeExpenseUpdateController;
     function description(AValue: string): iTypeExpenseUpdateController;
+    function status(AValue: Integer): iTypeExpenseUpdateController;
+    function userId(AValue: string): iTypeExpenseUpdateController;
 
     procedure save;
   end;
@@ -34,6 +40,18 @@ function TTypeExpenseUpdateController.typeExpenseModel(AValue: ITypeExpenseModel
 begin
   Result := Self;
   FTypeExpenseModel := AValue;
+end;
+
+function TTypeExpenseUpdateController.companyId(AValue: string): iTypeExpenseUpdateController;
+begin
+ Result := Self;
+ FCompanyId := AValue;
+end;
+
+function TTypeExpenseUpdateController.userId(AValue: string): iTypeExpenseUpdateController;
+begin
+ Result := Self;
+ FUserId := AValue;
 end;
 
 constructor TTypeExpenseUpdateController.Create;
@@ -62,7 +80,10 @@ procedure TTypeExpenseUpdateController.save;
 begin
   FTypeExpenseModel.DAO.Modify(FSelectedRecord);
 
+  FSelectedRecord.COMPANYID   := FCompanyId;
   FSelectedRecord.DESCRIPTION := FDescription;
+  FSelectedRecord.STATUS      := FStatus;
+  FSelectedRecord.USERID      := FUserId;
   FSelectedRecord.UPDATEDAT   := Now;
 
   FTypeExpenseModel.DAO.Update(FSelectedRecord);
@@ -72,6 +93,12 @@ function TTypeExpenseUpdateController.selectedRecord(AValue: TTASSTYPEEXPENSE): 
 begin
   Result := Self;
   FSelectedRecord := AValue;
+end;
+
+function TTypeExpenseUpdateController.status(AValue: Integer): iTypeExpenseUpdateController;
+begin
+ Result := Self;
+ FStatus := AValue;
 end;
 
 end.

@@ -2,7 +2,8 @@ unit AssetsFactory.Controller;
 
 interface
 
-uses AssetsFactory.Controller.interf, TypeExpense.Controller.interf;
+uses AssetsFactory.Controller.interf, TypeExpense.Controller.interf,
+  Vehicle.Controller.interf;
 
 type
   TAssetsFactoryController = class(TInterfacedObject, iAssetsFactoryController)
@@ -13,14 +14,15 @@ type
 
     class function New: iAssetsFactoryController;
 
-    function TypeExpense: iTypeExpenseController;
+    function TypeExpenseController: iTypeExpenseController;
+    function vehicleController: iVehicleController;
   end;
 
 implementation
 
 { TAssetsFactoryController }
 
-uses TypeExpense.Controller;
+uses TypeExpense.Controller, Vehicle.Controller;
 
 constructor TAssetsFactoryController.Create;
 begin
@@ -38,9 +40,14 @@ begin
   Result := Self.Create;
 end;
 
-function TAssetsFactoryController.TypeExpense: iTypeExpenseController;
+function TAssetsFactoryController.TypeExpenseController: iTypeExpenseController;
 begin
   Result := TTypeExpenseController.New;
+end;
+
+function TAssetsFactoryController.vehicleController: iVehicleController;
+begin
+  Result := TVehicleController.New;
 end;
 
 end.

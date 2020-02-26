@@ -343,6 +343,23 @@
             <Form>FASS0001BView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Models\Modules\Assets\Vehicle\Entity\TASSVEHICLE.Entity.Model.pas"/>
+        <DCCReference Include="Models\Modules\Assets\Vehicle\Vehicle.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modules\Assets\Vehicle\Vehicle.Model.pas"/>
+        <DCCReference Include="Controllers\Modules\Assets\Vehicle\Vehicle.Controller.Interf.pas"/>
+        <DCCReference Include="Controllers\Modules\Assets\Vehicle\Operations\VehicleInsert.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Assets\Vehicle\Operations\VehicleUpdate.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Assets\Vehicle\Operations\VehicleDelete.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Assets\Vehicle\Operations\VehicleDuplicate.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Assets\Vehicle\Vehicle.Controller.pas"/>
+        <DCCReference Include="Views\Modules\Assets\Vehicle\ASS0002AView.pas">
+            <Form>FASS0002AView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Modules\Assets\Vehicle\ASS0002BView.pas">
+            <Form>FASS0002BView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

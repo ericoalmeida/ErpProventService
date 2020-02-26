@@ -1,4 +1,4 @@
-unit TASSTYPEEXPENSE.Entity.Model;
+unit TASSVEHICLE.Entity.Model;
 
 interface
 
@@ -21,15 +21,19 @@ uses
 
 type
   [Entity]
-  [Table('TASSTYPEEXPENSE', '')]
+  [Table('TASSVEHICLE', '')]
   [PrimaryKey('COMPANYID, CODE', NotInc, NoSort, False, 'Chave primária')]
-  TTASSTYPEEXPENSE = class
+  TTASSVEHICLE = class
   private
     { Private declarations }
     FCOMPANYID: String;
     FCODE: String;
-    FTYPEEXPENSEID: Integer;
+    FVEHICLEID: Integer;
     FDESCRIPTION: String;
+    FMODEL: String;
+    FBRAND: String;
+    FCATEGORY: String;
+    FBOARD: Nullable<String>;
     FSTATUS: Integer;
     FUSERID: String;
     FCREATEDAT: TDateTime;
@@ -44,7 +48,7 @@ type
     destructor Destroy; override;
     [Restrictions([NotNull])]
     [Column('COMPANYID', ftString, 64)]
-    [ForeignKey('FK1_TASSTYPEEXPENSE', 'COMPANYID', 'TMNGCOMPANY', 'CODE', SetNull, SetNull)]
+    [ForeignKey('FK1_TASSVEHICLE', 'COMPANYID', 'TMNGCOMPANY', 'CODE', SetNull, SetNull)]
     [Dictionary('COMPANYID', 'Mensagem de validação', '', '', '', taLeftJustify)]
     property COMPANYID: String read FCOMPANYID write FCOMPANYID;
 
@@ -54,14 +58,33 @@ type
     property CODE: String read GETCODE write FCODE;
 
     [Restrictions([NotNull])]
-    [Column('TYPEEXPENSEID', ftInteger)]
-    [Dictionary('TYPEEXPENSEID', 'Mensagem de validação', '', '', '', taCenter)]
-    property TYPEEXPENSEID: Integer read FTYPEEXPENSEID write FTYPEEXPENSEID;
+    [Column('VEHICLEID', ftInteger)]
+    [Dictionary('VEHICLEID', 'Mensagem de validação', '', '', '', taCenter)]
+    property VEHICLEID: Integer read FVEHICLEID write FVEHICLEID;
 
     [Restrictions([NotNull])]
-    [Column('DESCRIPTION', ftString, 95)]
+    [Column('DESCRIPTION', ftString, 75)]
     [Dictionary('DESCRIPTION', 'Mensagem de validação', '', '', '', taLeftJustify)]
     property DESCRIPTION: String read FDESCRIPTION write FDESCRIPTION;
+
+    [Restrictions([NotNull])]
+    [Column('MODEL', ftString, 65)]
+    [Dictionary('MODEL', 'Mensagem de validação', '', '', '', taLeftJustify)]
+    property MODEL: String read FMODEL write FMODEL;
+
+    [Restrictions([NotNull])]
+    [Column('BRAND', ftString, 65)]
+    [Dictionary('BRAND', 'Mensagem de validação', '', '', '', taLeftJustify)]
+    property BRAND: String read FBRAND write FBRAND;
+
+    [Restrictions([NotNull])]
+    [Column('CATEGORY', ftString, 65)]
+    [Dictionary('CATEGORY', 'Mensagem de validação', '', '', '', taLeftJustify)]
+    property CATEGORY: String read FCATEGORY write FCATEGORY;
+
+    [Column('BOARD', ftString, 18)]
+    [Dictionary('BOARD', 'Mensagem de validação', '', '', '', taLeftJustify)]
+    property BOARD: Nullable<String> read FBOARD write FBOARD;
 
     [Restrictions([NotNull])]
     [Column('STATUS', ftInteger)]
@@ -70,7 +93,7 @@ type
 
     [Restrictions([NotNull])]
     [Column('USERID', ftString, 64)]
-    [ForeignKey('FK2_TASSTYPEEXPENSE', 'USERID', 'TMNGUSER', 'CODE', SetNull, SetNull)]
+    [ForeignKey('FK2_TASSVEHICLE', 'USERID', 'TMNGUSER', 'CODE', SetNull, SetNull)]
     [Dictionary('USERID', 'Mensagem de validação', '', '', '', taLeftJustify)]
     property USERID: String read FUSERID write FUSERID;
 
@@ -94,13 +117,13 @@ type
 
 implementation
 
-constructor TTASSTYPEEXPENSE.Create;
+constructor TTASSVEHICLE.Create;
 begin
   FTMNGCOMPANY_0 := TTMNGCOMPANY.Create;
   FTMNGUSER_1 := TTMNGUSER.Create;
 end;
 
-destructor TTASSTYPEEXPENSE.Destroy;
+destructor TTASSVEHICLE.Destroy;
 begin
   if Assigned(FTMNGCOMPANY_0) then
     FTMNGCOMPANY_0.Free;
@@ -111,7 +134,7 @@ begin
   inherited;
 end;
 
-function TTASSTYPEEXPENSE.GETCODE: String;
+function TTASSVEHICLE.GETCODE: String;
 begin
   if FCODE.IsEmpty then
   FCODE := TGUID.NewGuid.ToString;
@@ -120,6 +143,6 @@ begin
 end;
 
 initialization
-  TRegisterClass.RegisterEntity(TTASSTYPEEXPENSE)
+  TRegisterClass.RegisterEntity(TTASSVEHICLE)
 
 end.

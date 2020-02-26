@@ -24,9 +24,12 @@ type
     function delete: iTypeExpenseDeleteController;
     function duplicate: iTypeExpenseDuplicateController;
 
+    function companyId: string;
     function code: string;
     function typeExpenseId: string;
     function description: string;
+    function status: Integer;
+    function userId: string;
     function createdAt: string;
     function updatedAt: string;
   end;
@@ -48,10 +51,15 @@ begin
   Result := FRecordFound.typeExpenseId.ToString;
 end;
 
+function TTypeExpenseController.companyId: string;
+begin
+  Result := FRecordFound.COMPANYID;
+end;
+
 constructor TTypeExpenseController.Create;
 begin
   FTypeExpenseModel := TFacadeModel.New.moduleFacade.assetsFactoryModel.
-    TypeExpense;
+    TypeExpenseModel;
 end;
 
 function TTypeExpenseController.createdAt: string;
@@ -93,6 +101,11 @@ begin
   Result := Self.Create;
 end;
 
+function TTypeExpenseController.status: Integer;
+begin
+  Result := FRecordFound.status;
+end;
+
 function TTypeExpenseController.find(AValue: string): iTypeExpenseController;
 begin
   Result := Self;
@@ -110,6 +123,11 @@ end;
 function TTypeExpenseController.updatedAt: string;
 begin
   Result := DateTimeToStr(FRecordFound.updatedAt);
+end;
+
+function TTypeExpenseController.userId: string;
+begin
+ Result := FRecordFound.TMNGUSER.USERID.ToString;
 end;
 
 end.

@@ -51,6 +51,8 @@ type
     FRecordShow: Integer;
     FTotalRecords: integer;
     FUtils: iUtilsController;
+    FSessionCompany: string;
+    FSessionUser: string;
 
     function prepareStringOrderField(AValue: string): string;
   public
@@ -87,6 +89,10 @@ begin
     currentFdConnection;
 
   FUtils := TFacadeController.New.utils;
+
+  //temporariamente
+  FSessionCompany := '{4FC5A103-F75F-43E9-AA50-E454DA804E20}';
+  FSessionUser := '{177524BA-A3DA-4ECC-BFA4-388A3A06DF9F}';
 end;
 
 function TFBaseView.prepareStringOrderField(AValue: string): string;

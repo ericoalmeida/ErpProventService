@@ -66,6 +66,8 @@ type
     BtCashBook: TdxBarLargeButton;
     BtReportCashBook: TdxBarLargeButton;
     dxBarLargeButton1: TdxBarLargeButton;
+    dxBarLargeButton2: TdxBarLargeButton;
+    dxBarLargeButton3: TdxBarLargeButton;
     procedure TmMainMenuTimer(Sender: TObject);
     procedure BtEmpresasClick(Sender: TObject);
     procedure BtCountryClick(Sender: TObject);
@@ -74,6 +76,7 @@ type
     procedure BtDistrictClick(Sender: TObject);
     procedure BtUsuariosClick(Sender: TObject);
     procedure BtTypeCostClick(Sender: TObject);
+    procedure BtMachineClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -95,6 +98,15 @@ begin
     .modulesFacadeView
      .ManagmentFactoryView
       .showProgramOfListing(tpMNG0005AView)
+      .&end;
+end;
+
+procedure TFMainView.BtMachineClick(Sender: TObject);
+begin
+  TFacadeView.New
+    .modulesFacadeView
+     .assetsFactoryView
+      .showProgramOfListing(tpASS0002AView)
       .&end;
 end;
 

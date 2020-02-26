@@ -12,7 +12,7 @@ uses
   Vcl.ActnList, Vcl.StdCtrls,
   cxButtons, RzLabel, dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel, Base.View.interf,
   Types.Controllers, cxControls, cxContainer, cxEdit, cxLabel, cxTextEdit,
-  TypeExpense.Controller.interf;
+  TypeExpense.Controller.interf, cxMaskEdit, cxDropDownEdit;
 
 type
   TFASS0001BView = class(TFBaseRegisterView, iBaseRegisterView)
@@ -24,9 +24,12 @@ type
     LbDescription: TcxLabel;
     TxTypeExpenseId: TcxTextEdit;
     LbExpenseId: TcxLabel;
+    CbStatus: TcxComboBox;
+    LbStatus: TcxLabel;
     procedure FormCreate(Sender: TObject);
     procedure BtConfirmarClick(Sender: TObject);
     procedure TxDescriptionPropertiesChange(Sender: TObject);
+    procedure CbStatusPropertiesChange(Sender: TObject);
   private
     FTypeExpenseController: iTypeExpenseController;
   public
@@ -64,6 +67,12 @@ begin
   inherited;
 end;
 
+procedure TFASS0001BView.CbStatusPropertiesChange(Sender: TObject);
+begin
+  inherited;
+  changeDataAnyFields;
+end;
+
 procedure TFASS0001BView.deleteRecord;
 begin
   FTypeExpenseController
@@ -83,8 +92,11 @@ procedure TFASS0001BView.duplicateRecord;
 begin
   FTypeExpenseController
    .duplicate
+    .companyId(FSessionCompany)
     .description(TxDescription.Text)
-    .save;
+    .status(CbStatus.ItemIndex)
+    .userId(FSessionUser)
+   .save;
 end;
 
 procedure TFASS0001BView.&end;
@@ -100,15 +112,18 @@ procedure TFASS0001BView.FormCreate(Sender: TObject);
 begin
   inherited;
   FTypeExpenseController := TFacadeController.New.ModulesFacadeController.
-    AssetsFactoryController.TypeExpense;
+    AssetsFactoryController.typeExpenseController;
 end;
 
 procedure TFASS0001BView.insertRecord;
 begin
   FTypeExpenseController
    .insert
+    .companyId(FSessionCompany)
     .description(TxDescription.Text)
-    .save;
+    .status(CbStatus.ItemIndex)
+    .userId(FSessionUser)
+   .save;
 end;
 
 class function TFASS0001BView.New: iBaseRegisterView;
@@ -172,8 +187,11 @@ procedure TFASS0001BView.updateRecord;
 begin
   FTypeExpenseController
    .update
+    .companyId(FSessionCompany)
     .description(TxDescription.Text)
-    .save;
+    .status(CbStatus.ItemIndex)
+    .userId(FSessionUser)
+   .save;
 end;
 
 end.
