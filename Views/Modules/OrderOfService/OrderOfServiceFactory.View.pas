@@ -1,19 +1,18 @@
-unit OrdemOfServiceFactory.View;
+unit OrderOfServiceFactory.View;
 
 interface
 
-uses OrdemOfServiceFactory.View.Interf, Types.Views, Base.View.Interf,
-  ORD0001AView;
+uses OrderOfServiceFactory.View.Interf, Types.Views, Base.View.Interf;
 
 type
-  TOrdemOfServiceFactoryView = class(TInterfacedObject,
-    iOrdemOfServiceFactoryView)
+  TOrderOfServiceFactoryView = class(TInterfacedObject,
+    iOrderOfServiceFactoryView)
   private
   public
     constructor Create;
     destructor Destroy; override;
 
-    class function New: iOrdemOfServiceFactoryView;
+    class function New: iOrderOfServiceFactoryView;
 
     function showProgramOfListing(AValue: TTypeListingPrograms): iBaseListView;
     function showProgramOfRegister(AValue: TTypeRegisterPrograms)
@@ -26,23 +25,25 @@ implementation
 
 { TOrdemOfServiceFactoryView }
 
-constructor TOrdemOfServiceFactoryView.Create;
+uses ORD0001AView, ORD0001BView;
+
+constructor TOrderOfServiceFactoryView.Create;
 begin
 
 end;
 
-destructor TOrdemOfServiceFactoryView.Destroy;
+destructor TOrderOfServiceFactoryView.Destroy;
 begin
 
   inherited;
 end;
 
-class function TOrdemOfServiceFactoryView.New: iOrdemOfServiceFactoryView;
+class function TOrderOfServiceFactoryView.New: iOrderOfServiceFactoryView;
 begin
   Result := Self.Create;
 end;
 
-function TOrdemOfServiceFactoryView.showProgramOfListing
+function TOrderOfServiceFactoryView.showProgramOfListing
   (AValue: TTypeListingPrograms): iBaseListView;
 begin
   case AValue of
@@ -51,17 +52,16 @@ begin
   end;
 end;
 
-function TOrdemOfServiceFactoryView.showProgramOfRegister
+function TOrderOfServiceFactoryView.showProgramOfRegister
   (AValue: TTypeRegisterPrograms): iBaseRegisterView;
 begin
   case AValue of
-    trMNG0001BView:
-      ;
+    trORD0001BView:
+      Result := TFORD0001BView.New;
   end;
-
 end;
 
-function TOrdemOfServiceFactoryView.showProgramOfSearch
+function TOrderOfServiceFactoryView.showProgramOfSearch
   (AValue: TTypeSearchPrograms): IBaseSearchView;
 begin
 

@@ -28,7 +28,7 @@ type
     function serviceId: string;
     function description: string;
     function measuredUnit: string;
-    function price: string;
+    function price: Currency;
     function status: Integer;
     function createdAt: string;
     function updatedAt: string;
@@ -103,9 +103,9 @@ begin
   Result := Self.Create;
 end;
 
-function TServiceController.price: string;
+function TServiceController.price: Currency;
 begin
-  Result := FRecordFound.price.ToString;
+  Result := FRecordFound.PRICE;
 end;
 
 function TServiceController.find(AValue: string): iServiceController;

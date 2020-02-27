@@ -3,7 +3,7 @@ unit ModulesFacade.View;
 interface
 
 uses ModulesFacade.View.Interf, ManagmentFactory.View.Interf,
-  AssetsFactory.View.Interf, OrdemOfServiceFactory.View.Interf;
+  AssetsFactory.View.Interf, OrderOfServiceFactory.View.Interf;
 
 type
   TModulesFacadeView = class(TInterfacedObject, iModulesFacadeView)
@@ -16,14 +16,14 @@ type
 
     function assetsFactoryView: iAssetsFactoryView;
     function ManagmentFactoryView: iManagmentFactoryView;
-    function ordemOfService: iOrdemOfServiceFactoryView;
+    function ordemOfService: iOrderOfServiceFactoryView;
   end;
 
 implementation
 
 { TModulesFacadeView }
 
-uses ManagmentFactory.View, AssetsFactory.View, OrdemOfServiceFactory.View;
+uses ManagmentFactory.View, AssetsFactory.View, OrderOfServiceFactory.View;
 
 function TModulesFacadeView.assetsFactoryView: iAssetsFactoryView;
 begin
@@ -51,9 +51,9 @@ begin
   Result := Self.Create;
 end;
 
-function TModulesFacadeView.ordemOfService: iOrdemOfServiceFactoryView;
+function TModulesFacadeView.ordemOfService: iOrderOfServiceFactoryView;
 begin
-  Result := TOrdemOfServiceFactoryView.New;
+  Result := TOrderOfServiceFactoryView.New;
 end;
 
 end.

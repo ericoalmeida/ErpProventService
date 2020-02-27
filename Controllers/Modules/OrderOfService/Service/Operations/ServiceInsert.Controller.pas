@@ -13,7 +13,7 @@ type
     FCompanyId: string;
     FDescription: string;
     FMeasuredUnit: string;
-    FPrice: Double;
+    FPrice: Currency;
     FStatus: Integer;
     FUserId: string;
 
@@ -29,7 +29,7 @@ type
     function companyId(AValue: string): iServiceInsertController;
     function description(AValue: string): iServiceInsertController;
     function measuredUnit(AValue: string): iServiceInsertController;
-    function price(AValue: string): iServiceInsertController;
+    function price(AValue: Currency): iServiceInsertController;
     function status(AValue: Integer): iServiceInsertController;
     function userId(AValue: string): iServiceInsertController;
 
@@ -68,10 +68,10 @@ begin
   Result := Self.Create;
 end;
 
-function TServiceInsertController.price(AValue: string): iServiceInsertController;
+function TServiceInsertController.price(AValue: Currency): iServiceInsertController;
 begin
   Result := Self;
-  FPrice := AValue.ToDouble;
+  FPrice := AValue;
 end;
 
 function TServiceInsertController.getServiceId: Integer;

@@ -22,7 +22,7 @@ type
     function serviceId: string;
     function description: string;
     function measuredUnit: string;
-    function price: string;
+    function price: Currency;
     function status: Integer;
     function createdAt: string;
     function updatedAt: string;
@@ -34,7 +34,7 @@ type
     function companyId(AValue: string): iServiceInsertController;
     function description(AValue: string): iServiceInsertController;
     function measuredUnit(AValue: string): iServiceInsertController;
-    function price(AValue: string): iServiceInsertController;
+    function price(AValue: Currency): iServiceInsertController;
     function status(AValue: Integer): iServiceInsertController;
     function userId(AValue: string): iServiceInsertController;
 
@@ -48,7 +48,7 @@ type
     function companyId(AValue: string): iServiceUpdateController;
     function description(AValue: string): iServiceUpdateController;
     function measuredUnit(AValue: string): iServiceUpdateController;
-    function price(AValue: string): iServiceUpdateController;
+    function price(AValue: Currency): iServiceUpdateController;
     function status(AValue: Integer): iServiceUpdateController;
     function userId(AValue: string): iServiceUpdateController;
 
@@ -68,7 +68,7 @@ type
     function companyId(AValue: string): iServiceDuplicateController;
     function description(AValue: string): iServiceDuplicateController;
     function measuredUnit(AValue: string): iServiceDuplicateController;
-    function price(AValue: string): iServiceDuplicateController;
+    function price(AValue: Currency): iServiceDuplicateController;
     function status(AValue: Integer): iServiceDuplicateController;
     function userId(AValue: string): iServiceDuplicateController;
 

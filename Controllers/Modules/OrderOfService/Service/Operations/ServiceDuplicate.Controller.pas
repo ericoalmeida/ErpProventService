@@ -13,7 +13,7 @@ type
     FCompanyId: string;
     FDescription: string;
     FMeasuredUnit: string;
-    FPrice: Double;
+    FPrice: Currency;
     FStatus: Integer;
     FUserId: string;
 
@@ -29,7 +29,7 @@ type
     function companyId(AValue: string): iServiceDuplicateController;
     function description(AValue: string): iServiceDuplicateController;
     function measuredUnit(AValue: string): iServiceDuplicateController;
-    function price(AValue: string): iServiceDuplicateController;
+    function price(AValue: Currency): iServiceDuplicateController;
     function status(AValue: Integer): iServiceDuplicateController;
     function userId(AValue: string): iServiceDuplicateController;
 
@@ -68,10 +68,10 @@ begin
   Result := Self.Create;
 end;
 
-function TServiceDuplicateController.price(AValue: string): iServiceDuplicateController;
+function TServiceDuplicateController.price(AValue: Currency): iServiceDuplicateController;
 begin
   Result := Self;
-  FPrice := AValue.ToDouble;
+  FPrice := AValue;
 end;
 
 function TServiceDuplicateController.getServiceId: Integer;
@@ -103,6 +103,7 @@ begin
   FServiceModel.Entity.MEASUREDUNIT := FMeasuredUnit;
   FServiceModel.Entity.PRICE        := FPrice;
   FServiceModel.Entity.STATUS       := FStatus;
+  FServiceModel.Entity.USERID       := FUserId;
   FServiceModel.Entity.CREATEDAT    := Now;
   FServiceModel.Entity.UPDATEDAT    := Now;
 

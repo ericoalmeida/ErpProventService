@@ -45,7 +45,6 @@ type
     BtClient: TdxBarLargeButton;
     BtServices: TdxBarLargeButton;
     BtMachine: TdxBarLargeButton;
-    BmAtalhos: TdxBar;
     BmRotinas: TdxBar;
     BtServicesProvision: TdxBarLargeButton;
     BtCost: TdxBarLargeButton;
@@ -54,7 +53,6 @@ type
     BtReportCost: TdxBarLargeButton;
     TmMainMenu: TTimer;
     BtTypeCost: TdxBarLargeButton;
-    BmGeral: TdxBar;
     TbGeral: TdxRibbonTab;
     BtEmpresas: TdxBarLargeButton;
     BtUsuarios: TdxBarLargeButton;
@@ -65,9 +63,12 @@ type
     BtFinanceOpr: TdxBarLargeButton;
     BtCashBook: TdxBarLargeButton;
     BtReportCashBook: TdxBarLargeButton;
-    dxBarLargeButton1: TdxBarLargeButton;
     dxBarLargeButton2: TdxBarLargeButton;
     dxBarLargeButton3: TdxBarLargeButton;
+    bmMainTools: TdxBar;
+    dxBarButton1: TdxBarButton;
+    dxBarButton2: TdxBarButton;
+    BmGeral: TdxBar;
     procedure TmMainMenuTimer(Sender: TObject);
     procedure BtEmpresasClick(Sender: TObject);
     procedure BtCountryClick(Sender: TObject);
@@ -78,7 +79,6 @@ type
     procedure BtTypeCostClick(Sender: TObject);
     procedure BtMachineClick(Sender: TObject);
     procedure BtServicesClick(Sender: TObject);
-    procedure BtFinanceOprClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -101,22 +101,6 @@ begin
      .ManagmentFactoryView
       .showProgramOfListing(tpMNG0005AView)
       .&end;
-end;
-
-procedure TFMainView.BtFinanceOprClick(Sender: TObject);
-begin
-  TFacadeController.New
-   .ModulesFacadeController
-    .OrdemOfServiceController
-     .serviceController
-      .insert
-       .companyId('{4FC5A103-F75F-43E9-AA50-E454DA804E20}')
-       .description('GRADIAGEM')
-       .measuredUnit('HR')
-       .price('65')
-       .status(0)
-       .userId('{177524BA-A3DA-4ECC-BFA4-388A3A06DF9F}')
-      .save;
 end;
 
 procedure TFMainView.BtMachineClick(Sender: TObject);

@@ -46,6 +46,11 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure TxBuscarPropertiesChange(Sender: TObject);
+    procedure BtInsertClick(Sender: TObject);
+    procedure BtUpdateClick(Sender: TObject);
+    procedure BtShowClick(Sender: TObject);
+    procedure BtDeleteClick(Sender: TObject);
+    procedure BtDuplicateClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -68,16 +73,75 @@ var
 implementation
 
 {$R *.dfm}
+
+uses Facade.View, Types.Views;
 { TFORD0001AView }
+
+procedure TFORD0001AView.BtDeleteClick(Sender: TObject);
+begin
+  inherited;
+
+  {1 } deleteRecord;
+  {2 } listRecords;
+  {3 } totalRecords;
+end;
+
+procedure TFORD0001AView.BtDuplicateClick(Sender: TObject);
+begin
+  inherited;
+
+  {1 } duplicateRecord;
+  {2 } listRecords;
+  {3 } totalRecords;
+end;
+
+procedure TFORD0001AView.BtInsertClick(Sender: TObject);
+begin
+  inherited;
+
+  {1 } insertRecord;
+  {2 } listRecords;
+  {3 } totalRecords;
+end;
+
+procedure TFORD0001AView.BtShowClick(Sender: TObject);
+begin
+  inherited;
+
+  {1 } showRecord;
+  {2 } listRecords;
+  {3 } totalRecords;
+end;
+
+procedure TFORD0001AView.BtUpdateClick(Sender: TObject);
+begin
+  inherited;
+
+  {1 } updateRecord;
+  {2 } listRecords;
+  {3 } totalRecords;
+end;
 
 procedure TFORD0001AView.deleteRecord;
 begin
-
+ TFacadeView.New
+  .modulesFacadeView
+   .ordemOfService
+    .showProgramOfRegister(trORD0001BView)
+     .operation(FOperation)
+     .selectedRecord(FdQDataCODE.AsString)
+     .&end;
 end;
 
 procedure TFORD0001AView.duplicateRecord;
 begin
-
+ TFacadeView.New
+  .modulesFacadeView
+   .ordemOfService
+    .showProgramOfRegister(trORD0001BView)
+     .operation(FOperation)
+     .selectedRecord(FdQDataCODE.AsString)
+     .&end;
 end;
 
 procedure TFORD0001AView.&end;
@@ -95,6 +159,7 @@ end;
 procedure TFORD0001AView.FormShow(Sender: TObject);
 begin
   inherited;
+  FFieldOrder := 'DESCRIPTION';
 
   listRecords;
   totalRecords;
@@ -102,7 +167,12 @@ end;
 
 procedure TFORD0001AView.insertRecord;
 begin
-
+ TFacadeView.New
+  .modulesFacadeView
+   .ordemOfService
+    .showProgramOfRegister(trORD0001BView)
+     .operation(FOperation)
+     .&end;
 end;
 
 procedure TFORD0001AView.listRecords;
@@ -119,7 +189,13 @@ end;
 
 procedure TFORD0001AView.showRecord;
 begin
-
+ TFacadeView.New
+  .modulesFacadeView
+   .ordemOfService
+    .showProgramOfRegister(trORD0001BView)
+     .operation(FOperation)
+     .selectedRecord(FdQDataCODE.AsString)
+     .&end;
 end;
 
 procedure TFORD0001AView.TxBuscarPropertiesChange(Sender: TObject);
@@ -132,7 +208,13 @@ end;
 
 procedure TFORD0001AView.updateRecord;
 begin
-
+ TFacadeView.New
+  .modulesFacadeView
+   .ordemOfService
+    .showProgramOfRegister(trORD0001BView)
+     .operation(FOperation)
+     .selectedRecord(FdQDataCODE.AsString)
+     .&end;
 end;
 
 end.
