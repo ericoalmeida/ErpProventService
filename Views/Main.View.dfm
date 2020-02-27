@@ -1936,7 +1936,7 @@ object FMainView: TFMainView
     ApplicationButton.Menu = ApMainMenu
     BarManager = BrManager
     ColorSchemeAccent = rcsaBlue
-    ColorSchemeName = 'Blue'
+    ColorSchemeName = 'Silver'
     QuickAccessToolbar.Toolbar = BmAtalhos
     Contexts = <>
     TabOrder = 0
@@ -2362,6 +2362,7 @@ object FMainView: TFMainView
         43AFE03226100801F70CE2CF06122579BC29EFC507ABB2573BA54B7F6571C984
         F8BB95E05E9524C3B9A876D2F289B8EF5FC72EDCE7F11F04311D30C2D9605F00
         00000049454E44AE426082}
+      OnClick = BtServicesClick
     end
     object BtMachine: TdxBarLargeButton
       Caption = 'Ve'#237'culos/Maquin'#225'rios'
@@ -3578,6 +3579,7 @@ object FMainView: TFMainView
         AED1788C78777F1EBB66F103E30550F3BFB4FABEE292B27DD89ADE9EF6ED975B
         DFF88D78AD8114909B5155E3FCA7EDCC478C283EBE28E053C004003198F1845D
         7BDA5E5EC3FE8FF23FD12B1FBFDF8357760000000049454E44AE426082}
+      OnClick = BtFinanceOprClick
     end
     object BtCashBook: TdxBarLargeButton
       Caption = 'Livro Caixa'

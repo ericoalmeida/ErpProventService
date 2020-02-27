@@ -82,6 +82,7 @@ end;
 
 procedure TFASS0001BView.disableFields;
 begin
+  CbStatus.Enabled := not(FOperation in [toShow, toDelete]);
   TxDescription.Enabled := not(FOperation in [toShow, toDelete]);
 
   PnButtonConfirm.Visible := not(FOperation = toShow);

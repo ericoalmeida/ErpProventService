@@ -3,7 +3,7 @@ unit ModulesFacade.Controller;
 interface
 
 uses ModulesFacade.Controller.interf, ManagmentFactory.Controller.interf,
-  AssetsFactory.Controller.interf;
+  AssetsFactory.Controller.interf, OrdemOfServiceFactory.Controller.interf;
 
 type
   TModulesFacadeController = class(TInterfacedObject, iModulesFacadeController)
@@ -16,13 +16,15 @@ type
 
     function ManagmentFactoryController: iManagmentFactoryController;
     function AssetsFactoryController: iAssetsFactoryController;
+    function OrdemOfServiceController: iOrdemOfServiceFactoryController;
   end;
 
 implementation
 
 { TModulesFacadeController }
 
-uses ManagmentFactory.Controller, AssetsFactory.Controller;
+uses ManagmentFactory.Controller, AssetsFactory.Controller,
+  OrdemOfServiceFactory.Controller;
 
 function TModulesFacadeController.AssetsFactoryController
   : iAssetsFactoryController;
@@ -50,6 +52,12 @@ end;
 class function TModulesFacadeController.New: iModulesFacadeController;
 begin
   Result := Self.Create;
+end;
+
+function TModulesFacadeController.OrdemOfServiceController
+  : iOrdemOfServiceFactoryController;
+begin
+  Result := TOrdemOfServiceFactoryController.New;
 end;
 
 end.

@@ -90,6 +90,7 @@ inherited FASS0001BView: TFASS0001BView
       ExplicitWidth = 590
       inherited LbProgram: TRzLabel
         Width = 590
+        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel

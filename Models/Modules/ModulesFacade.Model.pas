@@ -3,7 +3,7 @@ unit ModulesFacade.Model;
 interface
 
 uses ModulesFacade.Model.Interf, ManagmentFactory.Model.Interf,
-  AssetsFactory.Model.Interf;
+  AssetsFactory.Model.Interf, OrdemOfServiceFactory.Model.Interf;
 
 type
   TModulesFacadeModel = class(TInterfacedObject, iModulesFacadeModel)
@@ -16,13 +16,14 @@ type
 
     function managmentFactoryModel: iManagmentFactoryModel;
     function assetsFactoryModel: iAssetsFactoryModel;
+    function ordemOfService: IOrdemOfServiceFactoryModel;
   end;
 
 implementation
 
 { TModulesFacadeModel }
 
-uses ManagmentFactory.Model, AssetsFactory.Model;
+uses ManagmentFactory.Model, AssetsFactory.Model, OrdemOfServiceFactory.Model;
 
 function TModulesFacadeModel.assetsFactoryModel: iAssetsFactoryModel;
 begin
@@ -48,6 +49,11 @@ end;
 class function TModulesFacadeModel.New: iModulesFacadeModel;
 begin
   Result := Self.Create;
+end;
+
+function TModulesFacadeModel.ordemOfService: IOrdemOfServiceFactoryModel;
+begin
+  Result := TOrdemOfServiceFactoryModel.New;
 end;
 
 end.

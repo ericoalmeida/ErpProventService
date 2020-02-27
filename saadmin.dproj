@@ -360,6 +360,25 @@
             <Form>FASS0002BView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Models\Modules\OrdemOfService\Service\Entity\TORDSERVICE.Entity.Model.pas"/>
+        <DCCReference Include="Models\Modules\OrdemOfService\Service\Service.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modules\OrdemOfService\Service\Service.Model.pas"/>
+        <DCCReference Include="Models\Modules\OrdemOfService\OrdemOfServiceFactory.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modules\OrdemOfService\OrdemOfServiceFactory.Model.pas"/>
+        <DCCReference Include="Controllers\Modules\OrdemOfService\Service\Service.Controller.Interf.pas"/>
+        <DCCReference Include="Controllers\Modules\OrdemOfService\OrdemOfServiceFactory.Controller.Interf.pas"/>
+        <DCCReference Include="Controllers\Modules\OrdemOfService\OrdemOfServiceFactory.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\OrdemOfService\Service\Operations\ServiceInsert.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\OrdemOfService\Service\Operations\ServiceDuplicate.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\OrdemOfService\Service\Operations\ServiceUpdate.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\OrdemOfService\Service\Operations\ServiceDelete.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\OrdemOfService\Service\Service.Controller.pas"/>
+        <DCCReference Include="Views\Modules\OrdemOfService\Service\ORD0001AView.pas">
+            <Form>FORD0001AView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Modules\OrdemOfService\OrdemOfServiceFactory.View.Interf.pas"/>
+        <DCCReference Include="Views\Modules\OrdemOfService\OrdemOfServiceFactory.View.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

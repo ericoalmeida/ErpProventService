@@ -150,7 +150,23 @@ uses
   VehicleDuplicate.Controller in 'Controllers\Modules\Assets\Vehicle\Operations\VehicleDuplicate.Controller.pas',
   Vehicle.Controller in 'Controllers\Modules\Assets\Vehicle\Vehicle.Controller.pas',
   ASS0002AView in 'Views\Modules\Assets\Vehicle\ASS0002AView.pas' {FASS0002AView},
-  ASS0002BView in 'Views\Modules\Assets\Vehicle\ASS0002BView.pas' {FASS0002BView};
+  ASS0002BView in 'Views\Modules\Assets\Vehicle\ASS0002BView.pas' {FASS0002BView},
+  TORDSERVICE.Entity.Model in 'Models\Modules\OrdemOfService\Service\Entity\TORDSERVICE.Entity.Model.pas',
+  Service.Model.Interf in 'Models\Modules\OrdemOfService\Service\Service.Model.Interf.pas',
+  Service.Model in 'Models\Modules\OrdemOfService\Service\Service.Model.pas',
+  OrdemOfServiceFactory.Model.Interf in 'Models\Modules\OrdemOfService\OrdemOfServiceFactory.Model.Interf.pas',
+  OrdemOfServiceFactory.Model in 'Models\Modules\OrdemOfService\OrdemOfServiceFactory.Model.pas',
+  Service.Controller.Interf in 'Controllers\Modules\OrdemOfService\Service\Service.Controller.Interf.pas',
+  OrdemOfServiceFactory.Controller.Interf in 'Controllers\Modules\OrdemOfService\OrdemOfServiceFactory.Controller.Interf.pas',
+  OrdemOfServiceFactory.Controller in 'Controllers\Modules\OrdemOfService\OrdemOfServiceFactory.Controller.pas',
+  ServiceInsert.Controller in 'Controllers\Modules\OrdemOfService\Service\Operations\ServiceInsert.Controller.pas',
+  ServiceDuplicate.Controller in 'Controllers\Modules\OrdemOfService\Service\Operations\ServiceDuplicate.Controller.pas',
+  ServiceUpdate.Controller in 'Controllers\Modules\OrdemOfService\Service\Operations\ServiceUpdate.Controller.pas',
+  ServiceDelete.Controller in 'Controllers\Modules\OrdemOfService\Service\Operations\ServiceDelete.Controller.pas',
+  Service.Controller in 'Controllers\Modules\OrdemOfService\Service\Service.Controller.pas',
+  ORD0001AView in 'Views\Modules\OrdemOfService\Service\ORD0001AView.pas' {FORD0001AView},
+  OrdemOfServiceFactory.View.Interf in 'Views\Modules\OrdemOfService\OrdemOfServiceFactory.View.Interf.pas',
+  OrdemOfServiceFactory.View in 'Views\Modules\OrdemOfService\OrdemOfServiceFactory.View.pas';
 
 {$R *.res}
 

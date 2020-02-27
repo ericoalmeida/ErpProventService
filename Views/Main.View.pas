@@ -77,6 +77,8 @@ type
     procedure BtUsuariosClick(Sender: TObject);
     procedure BtTypeCostClick(Sender: TObject);
     procedure BtMachineClick(Sender: TObject);
+    procedure BtServicesClick(Sender: TObject);
+    procedure BtFinanceOprClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -99,6 +101,22 @@ begin
      .ManagmentFactoryView
       .showProgramOfListing(tpMNG0005AView)
       .&end;
+end;
+
+procedure TFMainView.BtFinanceOprClick(Sender: TObject);
+begin
+  TFacadeController.New
+   .ModulesFacadeController
+    .OrdemOfServiceController
+     .serviceController
+      .insert
+       .companyId('{4FC5A103-F75F-43E9-AA50-E454DA804E20}')
+       .description('GRADIAGEM')
+       .measuredUnit('HR')
+       .price('65')
+       .status(0)
+       .userId('{177524BA-A3DA-4ECC-BFA4-388A3A06DF9F}')
+      .save;
 end;
 
 procedure TFMainView.BtMachineClick(Sender: TObject);
@@ -125,6 +143,15 @@ begin
     .modulesFacadeView
      .ManagmentFactoryView
       .showProgramOfListing(tpMNG0004AView)
+      .&end;
+end;
+
+procedure TFMainView.BtServicesClick(Sender: TObject);
+begin
+  TFacadeView.New
+    .modulesFacadeView
+     .ordemOfService
+      .showProgramOfListing(tpORD0001AView)
       .&end;
 end;
 
