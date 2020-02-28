@@ -58,7 +58,7 @@ end;
 
 constructor TServiceController.Create;
 begin
-  FServiceModel := TFacadeModel.New.moduleFacade.ordemOfService.serviceModel;
+  FServiceModel := TFacadeModel.New.moduleFacade.orderOfServiceFactoryModel.serviceModel;
 end;
 
 function TServiceController.createdAt: string;

@@ -122,7 +122,7 @@ procedure TFORD0001BView.FormCreate(Sender: TObject);
 begin
   inherited;
   FServiceController := TFacadeController.New.ModulesFacadeController.
-    OrdemOfServiceController.serviceController;
+    OrderOfServiceFactoryController.serviceController;
 end;
 
 procedure TFORD0001BView.insertRecord;

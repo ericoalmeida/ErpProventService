@@ -1,4 +1,4 @@
-inherited FORD0001AView: TFORD0001AView
+inherited FSTO0001AView: TFSTO0001AView
   Caption = ''
   ClientHeight = 301
   ClientWidth = 494
@@ -85,9 +85,9 @@ inherited FORD0001AView: TFORD0001AView
           E7F11F04311D30C2D9605F0000000049454E44AE426082}
       end
       inherited LbTitle: TRzLabel
-        Width = 65
-        Caption = 'Servi'#231'os'
-        ExplicitWidth = 65
+        Width = 130
+        Caption = 'Produtos SINAPI'
+        ExplicitWidth = 130
       end
     end
     inherited PnProgram: TRzPanel
@@ -95,6 +95,10 @@ inherited FORD0001AView: TFORD0001AView
       Width = 490
       ExplicitTop = 280
       ExplicitWidth = 490
+      inherited LbProgram: TRzLabel
+        Width = 490
+        Height = 18
+      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 490
@@ -135,6 +139,10 @@ inherited FORD0001AView: TFORD0001AView
           Width = 486
           ExplicitTop = 115
           ExplicitWidth = 486
+          inherited LbTotalRegistros: TRzLabel
+            Width = 478
+            Height = 22
+          end
         end
         inherited PnGrid: TRzPanel
           Width = 486
@@ -148,28 +156,106 @@ inherited FORD0001AView: TFORD0001AView
             ExplicitHeight = 70
             inherited VwDados: TcxGridDBTableView
               DataController.DataSource = DsData
-              object VwDadosSERVICEID: TcxGridDBColumn
+              object VwDadosPRODUCTID: TcxGridDBColumn
                 Caption = 'N'#186
-                DataBinding.FieldName = 'SERVICEID'
-                Width = 45
+                DataBinding.FieldName = 'PRODUCTID'
+                HeaderAlignmentHorz = taCenter
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
+                Width = 35
+              end
+              object VwDadosCODE_SINAPI: TcxGridDBColumn
+                Caption = 'C'#243'd. SINAPI'
+                DataBinding.FieldName = 'CODE_SINAPI'
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
+                Width = 85
               end
               object VwDadosDESCRIPTION: TcxGridDBColumn
                 Caption = 'Descri'#231#227'o'
                 DataBinding.FieldName = 'DESCRIPTION'
-                Width = 300
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
+                Width = 415
               end
-              object VwDadosMEASUREDUNIT: TcxGridDBColumn
-                Caption = 'U. Medida'
-                DataBinding.FieldName = 'MEASUREDUNIT'
-                Width = 55
+              object VwDadosUNITMEASURE: TcxGridDBColumn
+                Caption = 'UM'
+                DataBinding.FieldName = 'UNITMEASURE'
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
+                Width = 40
               end
-              object VwDadosPRICE: TcxGridDBColumn
-                Caption = 'Pre'#231'o'
-                DataBinding.FieldName = 'PRICE'
-                Width = 70
+              object VwDadosORIGINPRICE: TcxGridDBColumn
+                Caption = 'Orig. Pre'#231'o'
+                DataBinding.FieldName = 'ORIGINPRICE'
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
+                Width = 75
+              end
+              object VwDadosAVERAGEPRICE: TcxGridDBColumn
+                Caption = 'Pre'#231'o M'#233'dio'
+                DataBinding.FieldName = 'AVERAGEPRICE'
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
+                Width = 75
+              end
+              object VwDadosAVERAGEPRICE_SINAPI: TcxGridDBColumn
+                Caption = 'Pr. M'#233'dio SINAPI'
+                DataBinding.FieldName = 'AVERAGEPRICE_SINAPI'
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
+                Width = 105
               end
               object VwDadosSTATUS: TcxGridDBColumn
-                Caption = 'Status'
                 DataBinding.FieldName = 'STATUS'
                 PropertiesClassName = 'TcxImageComboBoxProperties'
                 Properties.Alignment.Horz = taCenter
@@ -185,22 +271,58 @@ inherited FORD0001AView: TFORD0001AView
                     ImageIndex = 6
                     Value = 1
                   end>
-                Width = 75
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
+                Width = 70
               end
               object VwDadosUSERNAME: TcxGridDBColumn
                 Caption = 'Usu'#225'rio'
                 DataBinding.FieldName = 'USERNAME'
-                Width = 125
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
+                Width = 75
               end
               object VwDadosCREATEDAT: TcxGridDBColumn
-                Caption = 'Data Cria'#231#227'o'
+                Caption = 'Data Cadastro'
                 DataBinding.FieldName = 'CREATEDAT'
-                Width = 110
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
+                Width = 85
               end
               object VwDadosUPDATEDAT: TcxGridDBColumn
                 Caption = 'Ult. Atualiza'#231#227'o'
                 DataBinding.FieldName = 'UPDATEDAT'
-                Width = 110
+                Options.Editing = False
+                Options.Filtering = False
+                Options.FilteringWithFindPanel = False
+                Options.FilteringAddValueItems = False
+                Options.FilteringFilteredItemsList = False
+                Options.FilteringMRUItemsList = False
+                Options.FilteringPopup = False
+                Options.FilteringPopupMultiSelect = False
+                Options.Moving = False
+                Width = 90
               end
             end
           end
@@ -222,45 +344,60 @@ inherited FORD0001AView: TFORD0001AView
     SQL.Strings = (
       'select'
       ''
-      'srv.code,'
-      'srv.serviceid,'
-      'srv.description,'
-      'srv.measuredunit,'
-      'srv.price,'
-      'srv.status,'
+      'prd.code,'
+      'prd.productid,'
+      'prd.code_sinapi,'
+      'prd.description,'
+      'prd.unitmeasure,'
+      'prd.originprice,'
+      'prd.averageprice,'
+      'prd.averageprice_sinapi,'
+      'prd.status,'
       'lpad(usr.userid, 3,'#39'0'#39') ||'#39'- '#39'||usr.name as username,'
-      'srv.createdat,'
-      'srv.updatedat'
+      'prd.createdat,'
+      'prd.updatedat'
       ''
       'from'
       ''
-      'tordservice srv'
-      'left join tmnguser usr on (usr.code = srv.userid)'
+      'tstoproduct prd'
+      'left join tmnguser usr on (usr.code = prd.userid)'
       ''
-      'where srv.companyid = :companyId')
+      'where prd.companyid = :companyId')
     ParamData = <
       item
         Name = 'COMPANYID'
-        DataType = ftString
         ParamType = ptInput
       end>
     object FdQDataCODE: TStringField
       FieldName = 'CODE'
       Size = 64
     end
-    object FdQDataSERVICEID: TIntegerField
-      FieldName = 'SERVICEID'
+    object FdQDataPRODUCTID: TIntegerField
+      Alignment = taCenter
+      FieldName = 'PRODUCTID'
+    end
+    object FdQDataCODE_SINAPI: TStringField
+      FieldName = 'CODE_SINAPI'
+      Size = 22
     end
     object FdQDataDESCRIPTION: TStringField
       FieldName = 'DESCRIPTION'
-      Size = 95
+      Size = 550
     end
-    object FdQDataMEASUREDUNIT: TStringField
-      FieldName = 'MEASUREDUNIT'
-      Size = 2
+    object FdQDataUNITMEASURE: TStringField
+      FieldName = 'UNITMEASURE'
+      Size = 10
     end
-    object FdQDataPRICE: TBCDField
-      FieldName = 'PRICE'
+    object FdQDataORIGINPRICE: TStringField
+      FieldName = 'ORIGINPRICE'
+      Size = 10
+    end
+    object FdQDataAVERAGEPRICE: TBCDField
+      FieldName = 'AVERAGEPRICE'
+      currency = True
+    end
+    object FdQDataAVERAGEPRICE_SINAPI: TBCDField
+      FieldName = 'AVERAGEPRICE_SINAPI'
       currency = True
     end
     object FdQDataSTATUS: TIntegerField

@@ -383,6 +383,29 @@
             <Form>FORD0001BView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Models\Modules\Stock\Product\Entity\TSTOPRODUCT.Entity.Model.pas"/>
+        <DCCReference Include="Models\Modules\Stock\Product\Product.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modules\Stock\Product\Product.Model.pas"/>
+        <DCCReference Include="Models\Modules\Stock\StockFactory.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modules\Stock\StockFactory.Model.pas"/>
+        <DCCReference Include="Controllers\Modules\Stock\Product\Product.Controller.interf.pas"/>
+        <DCCReference Include="Controllers\Modules\Stock\Product\Operations\ProductInsert.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Stock\Product\Operations\ProductUpdate.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Stock\Product\Operations\ProductDelete.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Stock\Product\Operations\ProductDuplicate.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Stock\Product\Product.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Stock\StockFactory.Controller.Interf.pas"/>
+        <DCCReference Include="Controllers\Modules\Stock\StockFactory.Controller.pas"/>
+        <DCCReference Include="Views\Modules\Stock\SinapiProduct\STO0001AView.pas">
+            <Form>FSTO0001AView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Modules\Stock\StockFactory.View.Interf.pas"/>
+        <DCCReference Include="Views\Modules\Stock\StockFactory.View.pas"/>
+        <DCCReference Include="Views\Modules\Stock\SinapiProduct\STO0001BView.pas">
+            <Form>FSTO0001BView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

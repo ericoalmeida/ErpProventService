@@ -126,7 +126,7 @@ procedure TFORD0001AView.deleteRecord;
 begin
  TFacadeView.New
   .modulesFacadeView
-   .ordemOfService
+   .orderOfServiceFactory
     .showProgramOfRegister(trORD0001BView)
      .operation(FOperation)
      .selectedRecord(FdQDataCODE.AsString)
@@ -137,7 +137,7 @@ procedure TFORD0001AView.duplicateRecord;
 begin
  TFacadeView.New
   .modulesFacadeView
-   .ordemOfService
+   .orderOfServiceFactory
     .showProgramOfRegister(trORD0001BView)
      .operation(FOperation)
      .selectedRecord(FdQDataCODE.AsString)
@@ -169,7 +169,7 @@ procedure TFORD0001AView.insertRecord;
 begin
  TFacadeView.New
   .modulesFacadeView
-   .ordemOfService
+   .orderOfServiceFactory
     .showProgramOfRegister(trORD0001BView)
      .operation(FOperation)
      .&end;
@@ -191,7 +191,7 @@ procedure TFORD0001AView.showRecord;
 begin
  TFacadeView.New
   .modulesFacadeView
-   .ordemOfService
+   .orderOfServiceFactory
     .showProgramOfRegister(trORD0001BView)
      .operation(FOperation)
      .selectedRecord(FdQDataCODE.AsString)
@@ -210,7 +210,7 @@ procedure TFORD0001AView.updateRecord;
 begin
  TFacadeView.New
   .modulesFacadeView
-   .ordemOfService
+   .orderOfServiceFactory
     .showProgramOfRegister(trORD0001BView)
      .operation(FOperation)
      .selectedRecord(FdQDataCODE.AsString)

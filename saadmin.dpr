@@ -167,7 +167,24 @@ uses
   ORD0001AView in 'Views\Modules\OrderOfService\Service\ORD0001AView.pas' {FORD0001AView},
   OrderOfServiceFactory.View.Interf in 'Views\Modules\OrderOfService\OrderOfServiceFactory.View.Interf.pas',
   OrderOfServiceFactory.View in 'Views\Modules\OrderOfService\OrderOfServiceFactory.View.pas',
-  ORD0001BView in 'Views\Modules\OrderOfService\Service\ORD0001BView.pas' {FORD0001BView};
+  ORD0001BView in 'Views\Modules\OrderOfService\Service\ORD0001BView.pas' {FORD0001BView},
+  TSTOPRODUCT.Entity.Model in 'Models\Modules\Stock\Product\Entity\TSTOPRODUCT.Entity.Model.pas',
+  Product.Model.Interf in 'Models\Modules\Stock\Product\Product.Model.Interf.pas',
+  Product.Model in 'Models\Modules\Stock\Product\Product.Model.pas',
+  StockFactory.Model.Interf in 'Models\Modules\Stock\StockFactory.Model.Interf.pas',
+  StockFactory.Model in 'Models\Modules\Stock\StockFactory.Model.pas',
+  Product.Controller.interf in 'Controllers\Modules\Stock\Product\Product.Controller.interf.pas',
+  ProductInsert.Controller in 'Controllers\Modules\Stock\Product\Operations\ProductInsert.Controller.pas',
+  ProductUpdate.Controller in 'Controllers\Modules\Stock\Product\Operations\ProductUpdate.Controller.pas',
+  ProductDelete.Controller in 'Controllers\Modules\Stock\Product\Operations\ProductDelete.Controller.pas',
+  ProductDuplicate.Controller in 'Controllers\Modules\Stock\Product\Operations\ProductDuplicate.Controller.pas',
+  Product.Controller in 'Controllers\Modules\Stock\Product\Product.Controller.pas',
+  StockFactory.Controller.Interf in 'Controllers\Modules\Stock\StockFactory.Controller.Interf.pas',
+  StockFactory.Controller in 'Controllers\Modules\Stock\StockFactory.Controller.pas',
+  STO0001AView in 'Views\Modules\Stock\SinapiProduct\STO0001AView.pas' {FSTO0001AView},
+  StockFactory.View.Interf in 'Views\Modules\Stock\StockFactory.View.Interf.pas',
+  StockFactory.View in 'Views\Modules\Stock\StockFactory.View.pas',
+  STO0001BView in 'Views\Modules\Stock\SinapiProduct\STO0001BView.pas' {FSTO0001BView};
 
 {$R *.res}
 

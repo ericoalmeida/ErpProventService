@@ -64,7 +64,7 @@ type
     BtCashBook: TdxBarLargeButton;
     BtReportCashBook: TdxBarLargeButton;
     dxBarLargeButton2: TdxBarLargeButton;
-    dxBarLargeButton3: TdxBarLargeButton;
+    BtSinapiProduct: TdxBarLargeButton;
     bmMainTools: TdxBar;
     dxBarButton1: TdxBarButton;
     dxBarButton2: TdxBarButton;
@@ -79,6 +79,7 @@ type
     procedure BtTypeCostClick(Sender: TObject);
     procedure BtMachineClick(Sender: TObject);
     procedure BtServicesClick(Sender: TObject);
+    procedure BtSinapiProductClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -134,8 +135,17 @@ procedure TFMainView.BtServicesClick(Sender: TObject);
 begin
   TFacadeView.New
     .modulesFacadeView
-     .ordemOfService
+     .orderOfServiceFactory
       .showProgramOfListing(tpORD0001AView)
+      .&end;
+end;
+
+procedure TFMainView.BtSinapiProductClick(Sender: TObject);
+begin
+  TFacadeView.New
+    .modulesFacadeView
+     .stockFactory
+      .showProgramOfListing(tpSTO0001AView)
       .&end;
 end;
 

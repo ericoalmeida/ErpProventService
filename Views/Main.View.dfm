@@ -21,9 +21,9 @@ object FMainView: TFMainView
   TextHeight = 13
   object ImLogo: TImage
     Left = 0
-    Top = 157
+    Top = 159
     Width = 632
-    Height = 218
+    Height = 216
     Align = alClient
     Center = True
     Picture.Data = {
@@ -1932,11 +1932,11 @@ object FMainView: TFMainView
     Left = 0
     Top = 0
     Width = 632
-    Height = 157
+    Height = 159
     ApplicationButton.Menu = ApMainMenu
     BarManager = BrManager
     ColorSchemeAccent = rcsaBlue
-    ColorSchemeName = 'DevExpressStyle'
+    ColorSchemeName = 'Blue'
     QuickAccessToolbar.Toolbar = bmMainTools
     Contexts = <>
     TabOrder = 0
@@ -2019,7 +2019,7 @@ object FMainView: TFMainView
         end
         item
           Visible = True
-          ItemName = 'dxBarLargeButton3'
+          ItemName = 'BtSinapiProduct'
         end
         item
           Visible = True
@@ -2046,7 +2046,7 @@ object FMainView: TFMainView
     object BmRotinas: TdxBar
       Caption = 'Rotinas'
       CaptionButtons = <>
-      DockedLeft = 412
+      DockedLeft = 427
       DockedTop = 0
       FloatLeft = 720
       FloatTop = 2
@@ -2074,7 +2074,7 @@ object FMainView: TFMainView
     object BmRelatorios: TdxBar
       Caption = 'Relat'#243'rios'
       CaptionButtons = <>
-      DockedLeft = 488
+      DockedLeft = 502
       DockedTop = 0
       FloatLeft = 720
       FloatTop = 2
@@ -3525,7 +3525,7 @@ object FMainView: TFMainView
       Caption = 'Opera'#231#245'es Financeiras'
       Category = 0
       Hint = 'Opera'#231#245'es Financeiras'
-      Visible = ivAlways
+      Visible = ivNever
       LargeGlyph.SourceDPI = 96
       LargeGlyph.Data = {
         89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
@@ -3592,7 +3592,7 @@ object FMainView: TFMainView
       Caption = 'Livro Caixa'
       Category = 0
       Hint = 'Livro Caixa'
-      Visible = ivAlways
+      Visible = ivNever
       LargeGlyph.SourceDPI = 96
       LargeGlyph.Data = {
         89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
@@ -3647,7 +3647,7 @@ object FMainView: TFMainView
       Caption = 'Livro Caixa'
       Category = 0
       Hint = 'Livro Caixa'
-      Visible = ivAlways
+      Visible = ivNever
       LargeGlyph.SourceDPI = 96
       LargeGlyph.Data = {
         89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
@@ -3806,10 +3806,10 @@ object FMainView: TFMainView
         1158C9248800F2BA886C05FA44C4390B6012220C24817A20C2FF5736300A8C88
         88CDA4FE0B5DB0B1A0723AE2060000000049454E44AE426082}
     end
-    object dxBarLargeButton3: TdxBarLargeButton
-      Caption = 'Produtos'
+    object BtSinapiProduct: TdxBarLargeButton
+      Caption = 'Produtos SINAPI'
       Category = 0
-      Hint = 'Produtos'
+      Hint = 'Produtos SINAPI'
       Visible = ivAlways
       Glyph.SourceDPI = 96
       Glyph.Data = {
@@ -3909,6 +3909,7 @@ object FMainView: TFMainView
         43AFE03226100801F70CE2CF06122579BC29EFC507ABB2573BA54B7F6571C984
         F8BB95E05E9524C3B9A876D2F289B8EF5FC72EDCE7F11F04311D30C2D9605F00
         00000049454E44AE426082}
+      OnClick = BtSinapiProductClick
     end
     object dxBarButton1: TdxBarButton
       Category = 0
