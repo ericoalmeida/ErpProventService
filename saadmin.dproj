@@ -383,17 +383,17 @@
             <Form>FORD0001BView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="Models\Modules\Stock\Product\Entity\TSTOPRODUCT.Entity.Model.pas"/>
-        <DCCReference Include="Models\Modules\Stock\Product\Product.Model.Interf.pas"/>
-        <DCCReference Include="Models\Modules\Stock\Product\Product.Model.pas"/>
+        <DCCReference Include="Models\Modules\Stock\SinapiProduct\Entity\TSTOSINAPIPRODUCT.Entity.Model.pas"/>
+        <DCCReference Include="Models\Modules\Stock\SinapiProduct\SinapiProduct.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modules\Stock\SinapiProduct\SinapiProduct.Model.pas"/>
         <DCCReference Include="Models\Modules\Stock\StockFactory.Model.Interf.pas"/>
         <DCCReference Include="Models\Modules\Stock\StockFactory.Model.pas"/>
-        <DCCReference Include="Controllers\Modules\Stock\Product\Product.Controller.interf.pas"/>
-        <DCCReference Include="Controllers\Modules\Stock\Product\Operations\ProductInsert.Controller.pas"/>
-        <DCCReference Include="Controllers\Modules\Stock\Product\Operations\ProductUpdate.Controller.pas"/>
-        <DCCReference Include="Controllers\Modules\Stock\Product\Operations\ProductDelete.Controller.pas"/>
-        <DCCReference Include="Controllers\Modules\Stock\Product\Operations\ProductDuplicate.Controller.pas"/>
-        <DCCReference Include="Controllers\Modules\Stock\Product\Product.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Stock\SinapiProduct\SinapiProduct.Controller.interf.pas"/>
+        <DCCReference Include="Controllers\Modules\Stock\SinapiProduct\Operations\SinapiProductInsert.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Stock\SinapiProduct\Operations\SinapiProductUpdate.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Stock\SinapiProduct\Operations\SinapiProductDelete.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Stock\SinapiProduct\Operations\SinapiProductDuplicate.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Stock\SinapiProduct\SinapiProduct.Controller.pas"/>
         <DCCReference Include="Controllers\Modules\Stock\StockFactory.Controller.Interf.pas"/>
         <DCCReference Include="Controllers\Modules\Stock\StockFactory.Controller.pas"/>
         <DCCReference Include="Views\Modules\Stock\SinapiProduct\STO0001AView.pas">

@@ -9,7 +9,7 @@ uses
   dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, System.Actions, Vcl.ActnList, Vcl.StdCtrls,
   cxButtons, RzLabel, dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel, cxControls, cxContainer, cxEdit,
   cxMaskEdit, cxDropDownEdit, cxLabel, cxTextEdit, cxMemo, cxCurrencyEdit, Base.View.interf,
-  Types.Controllers, Product.Controller.interf;
+  Types.Controllers, SinapiProduct.Controller.interf;
 
 type
   TFSTO0001BView = class(TFBaseRegisterView, iBaseRegisterView)
@@ -43,7 +43,7 @@ type
     procedure TxAveragePriceSinapiPropertiesChange(Sender: TObject);
     procedure BtConfirmarClick(Sender: TObject);
   private
-    FProductController: iProductController;
+    FSinapiProductController: iSinapiProductController;
   public
     class function New: iBaseRegisterView;
 
@@ -88,7 +88,7 @@ end;
 
 procedure TFSTO0001BView.deleteRecord;
 begin
-   FProductController
+   FSinapiProductController
     .delete
      .save;
 end;
@@ -109,7 +109,7 @@ end;
 
 procedure TFSTO0001BView.duplicateRecord;
 begin
-  FProductController
+  FSinapiProductController
    .duplicate
     .companyId(FSessionCompany)
     .codeSinapi(TxCodeSinapi.Text)
@@ -135,13 +135,13 @@ end;
 procedure TFSTO0001BView.FormCreate(Sender: TObject);
 begin
   inherited;
-  FProductController := TFacadeController.New.ModulesFacadeController.
-    StockFactoryController.productController;
+  FSinapiProductController := TFacadeController.New.ModulesFacadeController.
+    StockFactoryController.sinapiProductController;
 end;
 
 procedure TFSTO0001BView.insertRecord;
 begin
-  FProductController
+  FSinapiProductController
    .insert
     .companyId(FSessionCompany)
     .codeSinapi(TxCodeSinapi.Text)
@@ -194,21 +194,22 @@ begin
   if (FOperation in [toInsert]) or (FSelectedRecord = EmptyStr) then
     Exit;
 
-  FProductController.find(FSelectedRecord);
+  FSinapiProductController.find(FSelectedRecord);
 
-  TxProductId.Text := FProductController.productId;
-  TxDescription.Text := FProductController.description;
+  TxProductId.Text := FSinapiProductController.productId;
+  TxDescription.Text := FSinapiProductController.description;
 
   if not(FOperation in [toDuplicate]) then
-  TxCodeSinapi.Text := FProductController.codeSinapi;
+  TxCodeSinapi.Text := FSinapiProductController.codeSinapi;
 
-  TxUnitMeasure.Text := FProductController.unitMeasure;
-  TxOriginPrice.Text := FProductController.originPrice;
-  TxAveragePrice.Value := FProductController.averagePrice;
-  TxAveragePriceSinapi.Value := FProductController.averagePriceSinapi;
+  TxUnitMeasure.Text := FSinapiProductController.unitMeasure;
+  TxOriginPrice.Text := FSinapiProductController.originPrice;
+  TxAveragePrice.Value := FSinapiProductController.averagePrice;
+  TxAveragePriceSinapi.Value := FSinapiProductController.averagePriceSinapi;
+  CbStatus.ItemIndex  := FSinapiProductController.status;
 
-  TxCreatedDate.Text := FProductController.createdAt;
-  TxUpdatedDate.Text := FProductController.updatedAt;
+  TxCreatedDate.Text := FSinapiProductController.createdAt;
+  TxUpdatedDate.Text := FSinapiProductController.updatedAt;
 
   if not(FOperation in [toDelete]) then
     BtConfirmar.Enabled := False;
@@ -252,7 +253,7 @@ end;
 
 procedure TFSTO0001BView.updateRecord;
 begin
-  FProductController
+  FSinapiProductController
    .update
     .companyId(FSessionCompany)
     .codeSinapi(TxCodeSinapi.Text)

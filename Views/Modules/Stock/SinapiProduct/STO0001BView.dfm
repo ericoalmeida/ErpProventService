@@ -10,8 +10,11 @@ inherited FSTO0001BView: TFSTO0001BView
   inherited PnContainer: TRzPanel
     Width = 592
     Height = 323
+    ExplicitWidth = 592
+    ExplicitHeight = 323
     inherited PnHeader: TRzPanel
       Width = 590
+      ExplicitWidth = 590
       inherited ImTitle: TImage
         Picture.Data = {
           0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000020
@@ -83,42 +86,48 @@ inherited FSTO0001BView: TFSTO0001BView
       end
       inherited LbTitle: TRzLabel
         Width = 130
-        Height = 26
         Caption = 'Produtos SINAPI'
         ExplicitWidth = 130
       end
       inherited LbOperation: TRzLabel
         Left = 506
-        Height = 26
+        ExplicitLeft = 506
       end
     end
     inherited PnProgram: TRzPanel
       Top = 304
       Width = 590
-      inherited LbProgram: TRzLabel
-        Width = 590
-        Height = 18
-      end
+      ExplicitTop = 304
+      ExplicitWidth = 590
     end
     inherited PnContainerBody: TRzPanel
       Width = 590
       Height = 263
+      ExplicitWidth = 590
+      ExplicitHeight = 263
       inherited PnFooterBody: TRzPanel
         Top = 223
         Width = 590
+        ExplicitTop = 223
+        ExplicitWidth = 590
         inherited PnButtonCancel: TRzPanel
           Left = 479
+          ExplicitLeft = 479
         end
         inherited PnButtonConfirm: TRzPanel
           Left = 366
+          ExplicitLeft = 366
         end
       end
       inherited PnContent: TRzPanel
         Width = 586
         Height = 219
+        ExplicitWidth = 586
+        ExplicitHeight = 219
         inherited LbObs: TRzLabel
           Top = 206
           Width = 586
+          ExplicitTop = 206
         end
         object TxProductId: TcxTextEdit
           Left = 91

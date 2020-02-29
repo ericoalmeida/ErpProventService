@@ -2,7 +2,7 @@ unit StockFactory.Model;
 
 interface
 
-uses StockFactory.Model.Interf, Product.Model.Interf;
+uses StockFactory.Model.Interf, SinapiProduct.Model.Interf;
 
 type
   TStockFactoryModel = class(TInterfacedObject, iStockFactoryModel)
@@ -13,14 +13,14 @@ type
 
     class function New: iStockFactoryModel;
 
-    function productModel: IProductModel;
+    function sinapiProductModel: iSinapiProductModel;
   end;
 
 implementation
 
 { TStockFactoryModel }
 
-uses Product.Model;
+uses SinapiProduct.Model;
 
 constructor TStockFactoryModel.Create;
 begin
@@ -38,9 +38,9 @@ begin
   Result := Self.Create;
 end;
 
-function TStockFactoryModel.productModel: IProductModel;
+function TStockFactoryModel.sinapiProductModel: iSinapiProductModel;
 begin
-  Result := TProductModel.New;
+  Result := TSinapiProductModel.New;
 end;
 
 end.

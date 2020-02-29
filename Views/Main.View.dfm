@@ -1936,7 +1936,7 @@ object FMainView: TFMainView
     ApplicationButton.Menu = ApMainMenu
     BarManager = BrManager
     ColorSchemeAccent = rcsaBlue
-    ColorSchemeName = 'Blue'
+    ColorSchemeName = 'Black'
     QuickAccessToolbar.Toolbar = bmMainTools
     Contexts = <>
     TabOrder = 0

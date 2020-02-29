@@ -6,7 +6,7 @@ uses Product.Model.Interf, ormbr.container.objectset.interfaces,
   ormbr.Factory.interfaces, TSTOPRODUCT.Entity.Model;
 
 type
-  TProductModel = class(TInterfacedObject, IProductModel)
+  TProductModel = class(TInterfacedObject, iSinapiProductModel)
   private
     FConnection: IDBConnection;
     FEntity: TTSTOPRODUCT;
@@ -16,10 +16,10 @@ type
     constructor Create;
     destructor Destroy; override;
 
-    class function New: IProductModel;
+    class function New: iSinapiProductModel;
 
     function Entity: TTSTOPRODUCT; overload;
-    function Entity(AValue: TTSTOPRODUCT): IProductModel; overload;
+    function Entity(AValue: TTSTOPRODUCT): iSinapiProductModel; overload;
 
     function DAO: IContainerObjectSet<TTSTOPRODUCT>;
   end;
@@ -53,13 +53,13 @@ begin
   result := FEntity;
 end;
 
-function TProductModel.Entity(AValue: TTSTOPRODUCT): IProductModel;
+function TProductModel.Entity(AValue: TTSTOPRODUCT): iSinapiProductModel;
 begin
   result := Self;
   FEntity := AValue;
 end;
 
-class function TProductModel.New: IProductModel;
+class function TProductModel.New: iSinapiProductModel;
 begin
   result := Self.Create;
 end;

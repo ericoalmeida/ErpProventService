@@ -2,7 +2,7 @@ unit StockFactory.Controller;
 
 interface
 
-uses StockFactory.Controller.Interf, Product.Controller.Interf;
+uses StockFactory.Controller.Interf, SinapiProduct.Controller.Interf;
 
 type
   TStockFactoryController = class(TInterfacedObject, iStockFactoryController)
@@ -13,7 +13,7 @@ type
 
     class function New: iStockFactoryController;
 
-    function productController: iProductController;
+    function sinapiProductController: iSinapiProductController;
 
   end;
 
@@ -21,7 +21,7 @@ implementation
 
 { TStockFactoryController }
 
-uses Product.Controller;
+uses SinapiProduct.Controller;
 
 constructor TStockFactoryController.Create;
 begin
@@ -39,9 +39,9 @@ begin
   Result := Self.Create;
 end;
 
-function TStockFactoryController.productController: iProductController;
+function TStockFactoryController.sinapiProductController: iSinapiProductController;
 begin
-  Result := TProductController.New;
+  Result := TSinapiProductController.New;
 end;
 
 end.
