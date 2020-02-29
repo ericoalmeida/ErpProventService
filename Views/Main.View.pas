@@ -69,6 +69,10 @@ type
     dxBarButton1: TdxBarButton;
     dxBarButton2: TdxBarButton;
     BmGeral: TdxBar;
+    TbConstrutoras: TdxRibbonTab;
+    TbConstrutorasCad: TdxBar;
+    BtOrcamento: TdxBarLargeButton;
+    BtCotacao: TdxBarLargeButton;
     procedure TmMainMenuTimer(Sender: TObject);
     procedure BtEmpresasClick(Sender: TObject);
     procedure BtCountryClick(Sender: TObject);

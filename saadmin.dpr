@@ -184,7 +184,10 @@ uses
   STO0001AView in 'Views\Modules\Stock\SinapiProduct\STO0001AView.pas' {FSTO0001AView},
   StockFactory.View.Interf in 'Views\Modules\Stock\StockFactory.View.Interf.pas',
   StockFactory.View in 'Views\Modules\Stock\StockFactory.View.pas',
-  STO0001BView in 'Views\Modules\Stock\SinapiProduct\STO0001BView.pas' {FSTO0001BView};
+  STO0001BView in 'Views\Modules\Stock\SinapiProduct\STO0001BView.pas' {FSTO0001BView},
+  ImportSinapiProduct.Controller.interf in 'Controllers\Modules\Stock\ImportProduct\ImportSinapiProduct.Controller.interf.pas',
+  ImportSinapiProductOperation.Controller in 'Controllers\Modules\Stock\ImportProduct\Operation\ImportSinapiProductOperation.Controller.pas',
+  ImportSinapiProduct.Controller in 'Controllers\Modules\Stock\ImportProduct\ImportSinapiProduct.Controller.pas';
 
 {$R *.res}
 
