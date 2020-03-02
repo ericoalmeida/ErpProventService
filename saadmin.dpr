@@ -187,7 +187,8 @@ uses
   STO0001BView in 'Views\Modules\Stock\SinapiProduct\STO0001BView.pas' {FSTO0001BView},
   ImportSinapiProduct.Controller.interf in 'Controllers\Modules\Stock\ImportProduct\ImportSinapiProduct.Controller.interf.pas',
   ImportSinapiProductOperation.Controller in 'Controllers\Modules\Stock\ImportProduct\Operation\ImportSinapiProductOperation.Controller.pas',
-  ImportSinapiProduct.Controller in 'Controllers\Modules\Stock\ImportProduct\ImportSinapiProduct.Controller.pas';
+  ImportSinapiProduct.Controller in 'Controllers\Modules\Stock\ImportProduct\ImportSinapiProduct.Controller.pas',
+  STO0001CView in 'Views\Modules\Stock\SinapiProduct\STO0001CView.pas' {FSTO0001CView};
 
 {$R *.res}
 

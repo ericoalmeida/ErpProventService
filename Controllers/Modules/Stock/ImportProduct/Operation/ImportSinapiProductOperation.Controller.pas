@@ -3,7 +3,7 @@ unit ImportSinapiProductOperation.Controller;
 interface
 
 uses ImportSinapiProduct.Controller.interf, SinapiProduct.Model.interf,
-  TSTOSINAPIPRODUCT.Entity.Model;
+  TSTOSINAPIPRODUCT.Entity.Model, System.SysUtils;
 
 type
   TImportSinapiProductOperationController = class(TInterfacedObject,
@@ -23,6 +23,8 @@ type
     FAveragePriceSinapi: Currency;
     FStatus: Integer;
     FUserId: string;
+
+    function getProductId: Integer;
   public
     constructor Create;
     destructor Destroy; override;
@@ -55,6 +57,9 @@ type
     function status(AValue: Integer): iImportSinapiProductOperationController;
     function userId(AValue: string): iImportSinapiProductOperationController;
 
+    procedure createSiapiProduct;
+    procedure updateSiapiProduct;
+
     procedure save;
   end;
 
@@ -65,25 +70,29 @@ implementation
 function TImportSinapiProductOperationController.averagePrice(AValue: Currency)
   : iImportSinapiProductOperationController;
 begin
-
+  Result := Self;
+  FAveragePrice := AValue;
 end;
 
 function TImportSinapiProductOperationController.averagePriceSinapi
   (AValue: Currency): iImportSinapiProductOperationController;
 begin
-
+  Result := Self;
+  FAveragePriceSinapi := AValue;
 end;
 
 function TImportSinapiProductOperationController.codeSinapi(AValue: string)
   : iImportSinapiProductOperationController;
 begin
-
+  Result := Self;
+  FCodeSinapi := AValue;
 end;
 
 function TImportSinapiProductOperationController.companyId(AValue: string)
   : iImportSinapiProductOperationController;
 begin
-
+  Result := Self;
+  FCompanyId := AValue;
 end;
 
 constructor TImportSinapiProductOperationController.Create;
@@ -91,10 +100,31 @@ begin
 
 end;
 
+procedure TImportSinapiProductOperationController.createSiapiProduct;
+begin
+  FSinapiProductModel.Entity(TTSTOSINAPIPRODUCT.Create);
+
+  FSinapiProductModel.Entity.COMPANYID           := FCompanyId;
+  FSinapiProductModel.Entity.PRODUCTID           := getProductId;
+  FSinapiProductModel.Entity.CODE_SINAPI         := FCodeSinapi;
+  FSinapiProductModel.Entity.DESCRIPTION         := FDescription;
+  FSinapiProductModel.Entity.UNITMEASURE         := FUnitMeasure;
+  FSinapiProductModel.Entity.ORIGINPRICE         := FOriginPrice;
+  FSinapiProductModel.Entity.AVERAGEPRICE        := FAveragePrice;
+  FSinapiProductModel.Entity.AVERAGEPRICE_SINAPI := FAveragePriceSinapi;
+  FSinapiProductModel.Entity.STATUS              := FStatus;
+  FSinapiProductModel.Entity.USERID              := FUserId;
+  FSinapiProductModel.Entity.CREATEDAT           := Now;
+  FSinapiProductModel.Entity.UPDATEDAT           := Now;
+
+  FSinapiProductModel.DAO.Insert(FSinapiProductModel.Entity);
+end;
+
 function TImportSinapiProductOperationController.currentProduct(
   AValue: TTSTOSINAPIPRODUCT): iImportSinapiProductOperationController;
 begin
   Result := Self;
+
   FCurrentProduct := AValue;
   FProductFound := not(AValue = nil);
 end;
@@ -102,13 +132,27 @@ end;
 function TImportSinapiProductOperationController.description(AValue: string)
   : iImportSinapiProductOperationController;
 begin
-
+  Result := Self;
+  FDescription := AValue;
 end;
 
 destructor TImportSinapiProductOperationController.Destroy;
 begin
 
   inherited;
+end;
+
+function TImportSinapiProductOperationController.getProductId: Integer;
+begin
+  if FSinapiProductModel.DAO.Find.Count <> 0 then
+  begin
+    Result := FSinapiProductModel.DAO.FindWhere(Format('COMPANYID = %s',
+      [QuotedStr(FCompanyId)]), 'PRODUCTID desc').Last.PRODUCTID + 1;
+  end
+  else
+  begin
+    Result := 1;
+  end;
 end;
 
 function TImportSinapiProductOperationController.importSinapiProductController
@@ -128,12 +172,16 @@ end;
 function TImportSinapiProductOperationController.originPrice(AValue: string)
   : iImportSinapiProductOperationController;
 begin
-
+  Result := Self;
+  FOriginPrice := AValue;
 end;
 
 procedure TImportSinapiProductOperationController.save;
 begin
-
+ if FProductFound then
+  updateSiapiProduct
+  else
+  createSiapiProduct;
 end;
 
 function TImportSinapiProductOperationController.sinapiProductModel
@@ -146,19 +194,40 @@ end;
 function TImportSinapiProductOperationController.status(AValue: Integer)
   : iImportSinapiProductOperationController;
 begin
-
+  Result := Self;
+  FStatus := AValue;
 end;
 
 function TImportSinapiProductOperationController.unitMeasure(AValue: string)
   : iImportSinapiProductOperationController;
 begin
+  Result := Self;
+  FUnitMeasure := AValue;
+end;
 
+procedure TImportSinapiProductOperationController.updateSiapiProduct;
+begin
+  FSinapiProductModel.DAO.Modify(FCurrentProduct);
+
+  FCurrentProduct.companyId := FCompanyId;
+  FCurrentProduct.CODE_SINAPI := FCodeSinapi;
+  FCurrentProduct.description := FDescription;
+  FCurrentProduct.unitMeasure := FUnitMeasure;
+  FCurrentProduct.originPrice := FOriginPrice;
+  FCurrentProduct.averagePrice := FAveragePrice;
+  FCurrentProduct.AVERAGEPRICE_SINAPI := FAveragePriceSinapi;
+  FCurrentProduct.status := FStatus;
+  FCurrentProduct.userId := FUserId;
+  FCurrentProduct.UPDATEDAT := Now;
+
+  FSinapiProductModel.DAO.Update(FCurrentProduct);
 end;
 
 function TImportSinapiProductOperationController.userId(AValue: string)
   : iImportSinapiProductOperationController;
 begin
-
+  Result := Self;
+  FUserId := AValue;
 end;
 
 end.

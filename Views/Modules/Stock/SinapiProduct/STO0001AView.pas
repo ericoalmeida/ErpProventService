@@ -41,6 +41,8 @@ type
     VwDadosUSERNAME: TcxGridDBColumn;
     VwDadosCREATEDAT: TcxGridDBColumn;
     VwDadosUPDATEDAT: TcxGridDBColumn;
+    PnImport: TRzPanel;
+    BtImport: TcxButton;
     procedure TxBuscarPropertiesChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -49,6 +51,7 @@ type
     procedure BtShowClick(Sender: TObject);
     procedure BtDeleteClick(Sender: TObject);
     procedure BtDuplicateClick(Sender: TObject);
+    procedure BtImportClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -72,7 +75,7 @@ implementation
 
 {$R *.dfm}
 
-uses Facade.View, Types.Views;
+uses Facade.View, Types.Views, STO0001CView;
 
 { TFSTO0001AView }
 
@@ -92,6 +95,15 @@ begin
   {1} duplicateRecord;
   {2} listRecords;
   {3} totalRecords;
+end;
+
+procedure TFSTO0001AView.BtImportClick(Sender: TObject);
+begin
+  inherited;
+  TFSTO0001CView.New.&end;
+
+  {1} listRecords;
+  {2} totalRecords;
 end;
 
 procedure TFSTO0001AView.BtInsertClick(Sender: TObject);

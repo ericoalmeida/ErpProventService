@@ -42,6 +42,9 @@ type
     function status(AValue: Integer): iImportSinapiProductOperationController;
     function userId(AValue: string): iImportSinapiProductOperationController;
 
+    procedure createSiapiProduct;
+    procedure updateSiapiProduct;
+
     procedure save;
   end;
 

@@ -28,7 +28,7 @@ implementation
 
 { TImportSinapiProductController }
 
-uses Facade.Model;
+uses Facade.Model, ImportSinapiProductOperation.Controller;
 
 constructor TImportSinapiProductController.Create;
 begin
@@ -47,13 +47,22 @@ function TImportSinapiProductController.find(AValue: string)
 begin
   Result := Self;
 
-  FRecordFound := FSinapiProductModel.DAO.FindWhere(Format('CODE_SINAPI = %s',
-    [QuotedStr(AValue)])).Items[0];
+  try
+    FRecordFound := FSinapiProductModel.DAO.FindWhere
+      (Format('CODE_SINAPI = %s', [QuotedStr(AValue)])).Items[0];
+
+  except
+    on E: Exception do
+  end;
+
 end;
 
 function TImportSinapiProductController.import: iImportSinapiProductOperationController;
 begin
-  //Result :=
+  Result := TImportSinapiProductOperationController
+            .New
+            .importSinapiProductController(Self)
+            .sinapiProductModel(FSinapiProductModel)
 end;
 
 class function TImportSinapiProductController.New

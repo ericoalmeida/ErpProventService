@@ -86,11 +86,13 @@ inherited FSTO0001BView: TFSTO0001BView
       end
       inherited LbTitle: TRzLabel
         Width = 130
+        Height = 26
         Caption = 'Produtos SINAPI'
         ExplicitWidth = 130
       end
       inherited LbOperation: TRzLabel
         Left = 506
+        Height = 26
         ExplicitLeft = 506
       end
     end
@@ -99,6 +101,10 @@ inherited FSTO0001BView: TFSTO0001BView
       Width = 590
       ExplicitTop = 304
       ExplicitWidth = 590
+      inherited LbProgram: TRzLabel
+        Width = 590
+        Height = 18
+      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 590
@@ -274,6 +280,7 @@ inherited FSTO0001BView: TFSTO0001BView
         object TxAveragePrice: TcxCurrencyEdit
           Left = 91
           Top = 113
+          EditValue = 0.000000000000000000
           Properties.OnChange = TxAveragePricePropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
@@ -448,6 +455,7 @@ inherited FSTO0001BView: TFSTO0001BView
   object TxAveragePriceSinapi: TcxCurrencyEdit [6]
     Left = 471
     Top = 157
+    EditValue = 0.000000000000000000
     Properties.OnChange = TxAveragePriceSinapiPropertiesChange
     Style.BorderColor = 12698049
     Style.BorderStyle = ebsSingle
