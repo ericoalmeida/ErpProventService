@@ -3,7 +3,8 @@ unit ModulesFacade.View.Interf;
 interface
 
 uses Types.Views, ManagmentFactory.View.Interf, AssetsFactory.View.Interf,
-  OrderOfServiceFactory.View.Interf, StockFactory.View.Interf;
+  OrderOfServiceFactory.View.Interf, StockFactory.View.Interf, PayFactory.View.Interf,
+  ReceiveFactory.View.Interf;
 
 type
   iModulesFacadeView = interface
@@ -12,6 +13,8 @@ type
     function ManagmentFactoryView: iManagmentFactoryView;
     function orderOfServiceFactory: iOrderOfServiceFactoryView;
     function stockFactory: iStockFactoryView;
+    function payFactory: iPayFactoryView;
+    function receiveFactory: iReceiveFactoryView;
   end;
 
 implementation

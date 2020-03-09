@@ -2,7 +2,8 @@ unit OrderOfServiceFactory.Controller;
 
 interface
 
-uses OrderOfServiceFactory.Controller.Interf, Service.Controller.Interf;
+uses OrderOfServiceFactory.Controller.Interf, Service.Controller.Interf,
+  Operators.Controller.Interf;
 
 type
   TOrderOfServiceFactoryController = class(TInterfacedObject,
@@ -15,13 +16,14 @@ type
     class function New: iOrderOfServiceFactoryController;
 
     function serviceController: iServiceController;
+    function oepratorController: iOperatorController;
   end;
 
 implementation
 
 { TOrdemOfServiceFactoryController }
 
-uses Service.Controller;
+uses Service.Controller, Operators.Controller;
 
 constructor TOrderOfServiceFactoryController.Create;
 begin
@@ -38,6 +40,12 @@ class function TOrderOfServiceFactoryController.New
   : iOrderOfServiceFactoryController;
 begin
   Result := Self.Create;
+end;
+
+function TOrderOfServiceFactoryController.oepratorController
+  : iOperatorController;
+begin
+  Result := TOperatorController.New;
 end;
 
 function TOrderOfServiceFactoryController.serviceController: iServiceController;

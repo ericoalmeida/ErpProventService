@@ -1,9 +1,20 @@
 inherited FREC0001AView: TFREC0001AView
   Caption = ''
+  ClientHeight = 301
+  ClientWidth = 494
+  OnShow = FormShow
+  ExplicitWidth = 500
+  ExplicitHeight = 330
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
+    Width = 492
+    Height = 299
+    ExplicitWidth = 492
+    ExplicitHeight = 299
     inherited PnHeader: TRzPanel
+      Width = 490
+      ExplicitWidth = 490
       inherited ImTitle: TImage
         Picture.Data = {
           0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000020
@@ -83,28 +94,203 @@ inherited FREC0001AView: TFREC0001AView
       end
     end
     inherited PnProgram: TRzPanel
+      Top = 280
+      Width = 490
+      ExplicitTop = 280
+      ExplicitWidth = 490
       inherited LbProgram: TRzLabel
-        Width = 608
+        Width = 490
         Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
+      Width = 490
+      Height = 239
+      ExplicitWidth = 490
+      ExplicitHeight = 239
+      inherited PnFooterBody: TRzPanel
+        Top = 199
+        Width = 490
+        ExplicitTop = 199
+        ExplicitWidth = 490
+        inherited PnButtonCancel: TRzPanel
+          Left = 376
+          ExplicitLeft = 376
+        end
+      end
       inherited PnContent: TRzPanel
+        Width = 488
+        Height = 146
+        ExplicitWidth = 488
+        ExplicitHeight = 146
         inherited PnGridHeader: TRzPanel
+          Width = 486
+          ExplicitWidth = 486
           inherited LbBuscar: TcxLabel
+            Left = 152
             Style.IsFontAssigned = True
+            ExplicitLeft = 152
+          end
+          inherited TxBuscar: TcxTextEdit
+            Left = 205
+            Properties.OnChange = TxBuscarPropertiesChange
+            ExplicitLeft = 205
+            ExplicitHeight = 24
           end
         end
         inherited PnGridFooter: TRzPanel
+          Top = 115
+          Width = 486
+          ExplicitTop = 115
+          ExplicitWidth = 486
           inherited LbTotalRegistros: TRzLabel
-            Width = 596
+            Width = 478
             Height = 22
           end
         end
+        inherited PnGrid: TRzPanel
+          Width = 486
+          Height = 72
+          ExplicitWidth = 486
+          ExplicitHeight = 72
+          inherited DbDados: TcxGrid
+            Width = 484
+            Height = 70
+            ExplicitWidth = 484
+            ExplicitHeight = 70
+            inherited VwDados: TcxGridDBTableView
+              DataController.DataSource = DsData
+              object VwDadosPERSONID: TcxGridDBColumn
+                Caption = 'N'#186
+                DataBinding.FieldName = 'PERSONID'
+                HeaderAlignmentHorz = taCenter
+                Width = 45
+              end
+              object VwDadosNAME: TcxGridDBColumn
+                Caption = 'Nome'
+                DataBinding.FieldName = 'NAME'
+                Width = 455
+              end
+              object VwDadosPHONENUMBER: TcxGridDBColumn
+                Caption = 'Fone'
+                DataBinding.FieldName = 'PHONENUMBER'
+                Width = 80
+              end
+              object VwDadosEMAIL: TcxGridDBColumn
+                Caption = 'Email'
+                DataBinding.FieldName = 'EMAIL'
+                Width = 100
+              end
+              object VwDadosSTATUS: TcxGridDBColumn
+                Caption = 'Status'
+                DataBinding.FieldName = 'STATUS'
+                PropertiesClassName = 'TcxImageComboBoxProperties'
+                Properties.Alignment.Horz = taCenter
+                Properties.Images = IlImages
+                Properties.Items = <
+                  item
+                    Description = 'ATIVO'
+                    ImageIndex = 4
+                    Value = 0
+                  end
+                  item
+                    Description = 'INATIVO'
+                    ImageIndex = 6
+                    Value = 1
+                  end>
+                Width = 60
+              end
+              object VwDadosUSERNAME: TcxGridDBColumn
+                Caption = 'Usu'#225'rio'
+                DataBinding.FieldName = 'USERNAME'
+                Width = 100
+              end
+              object VwDadosCREATEDAT: TcxGridDBColumn
+                Caption = 'Data Cadastro'
+                DataBinding.FieldName = 'CREATEDAT'
+                Width = 110
+              end
+              object VwDadosUPDATEDAT: TcxGridDBColumn
+                Caption = 'Ult. Atualiza'#231#227'o'
+                DataBinding.FieldName = 'UPDATEDAT'
+                Width = 110
+              end
+            end
+          end
+        end
+      end
+      inherited PnHeaderButtons: TRzPanel
+        Width = 488
+        ExplicitWidth = 488
       end
     end
   end
   inherited StGridStyles: TcxStyleRepository
     PixelsPerInch = 96
+  end
+  inherited DsData: TDataSource
+    DataSet = FdQData
+  end
+  inherited FdQData: TFDQuery
+    SQL.Strings = (
+      'select'
+      ''
+      'prs.code,'
+      'prs.personid,'
+      'prs.name,'
+      'prs.phonenumber,'
+      'prs.email,'
+      'prs.status,'
+      'lpad(usr.userid, 3,'#39'0'#39') ||'#39'- '#39'||usr.name as username,'
+      'prs.createdat,'
+      'prs.updatedat'
+      ''
+      'from'
+      ''
+      'tmngperson prs'
+      'left join tmnguser usr on (usr.code = prs.userid)'
+      ''
+      'where prs.companyid = :companyid and'
+      'prs.persontype = 0')
+    ParamData = <
+      item
+        Name = 'COMPANYID'
+        ParamType = ptInput
+      end>
+    object FdQDataCODE: TStringField
+      FieldName = 'CODE'
+      Size = 64
+    end
+    object FdQDataPERSONID: TIntegerField
+      FieldName = 'PERSONID'
+    end
+    object FdQDataNAME: TStringField
+      FieldName = 'NAME'
+      Size = 190
+    end
+    object FdQDataPHONENUMBER: TStringField
+      FieldName = 'PHONENUMBER'
+      Size = 15
+    end
+    object FdQDataEMAIL: TStringField
+      FieldName = 'EMAIL'
+      Size = 185
+    end
+    object FdQDataSTATUS: TIntegerField
+      FieldName = 'STATUS'
+    end
+    object FdQDataUSERNAME: TStringField
+      FieldName = 'USERNAME'
+      Size = 30
+    end
+    object FdQDataCREATEDAT: TSQLTimeStampField
+      FieldName = 'CREATEDAT'
+    end
+    object FdQDataUPDATEDAT: TSQLTimeStampField
+      FieldName = 'UPDATEDAT'
+    end
+  end
+  inherited IlImages: TcxImageList
+    FormatVersion = 1
   end
 end

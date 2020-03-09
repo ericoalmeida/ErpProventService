@@ -73,6 +73,8 @@ type
     TbConstrutorasCad: TdxBar;
     BtOrcamento: TdxBarLargeButton;
     BtCotacao: TdxBarLargeButton;
+    BtOperators: TdxBarLargeButton;
+    dxBarLargeButton3: TdxBarLargeButton;
     procedure TmMainMenuTimer(Sender: TObject);
     procedure BtEmpresasClick(Sender: TObject);
     procedure BtCountryClick(Sender: TObject);
@@ -84,6 +86,9 @@ type
     procedure BtMachineClick(Sender: TObject);
     procedure BtServicesClick(Sender: TObject);
     procedure BtSinapiProductClick(Sender: TObject);
+    procedure BtClientClick(Sender: TObject);
+    procedure dxBarLargeButton2Click(Sender: TObject);
+    procedure BtOperatorsClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -114,6 +119,15 @@ begin
     .modulesFacadeView
      .assetsFactoryView
       .showProgramOfListing(tpASS0002AView)
+      .&end;
+end;
+
+procedure TFMainView.BtOperatorsClick(Sender: TObject);
+begin
+  TFacadeView.New
+    .modulesFacadeView
+     .orderOfServiceFactory
+      .showProgramOfListing(tpORD0002AView)
       .&end;
 end;
 
@@ -177,6 +191,24 @@ begin
     .modulesFacadeView
      .ManagmentFactoryView
       .showProgramOfListing(tpMNG0006AView)
+      .&end;
+end;
+
+procedure TFMainView.dxBarLargeButton2Click(Sender: TObject);
+begin
+  TFacadeView.New
+    .modulesFacadeView
+     .payFactory
+      .showProgramOfListing(tpPAY0001AView)
+      .&end;
+end;
+
+procedure TFMainView.BtClientClick(Sender: TObject);
+begin
+  TFacadeView.New
+    .modulesFacadeView
+     .receiveFactory
+      .showProgramOfListing(tpREC0001AView)
       .&end;
 end;
 

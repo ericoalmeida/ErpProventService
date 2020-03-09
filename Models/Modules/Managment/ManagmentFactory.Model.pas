@@ -5,7 +5,7 @@ interface
 uses ManagmentFactory.Model.Interf, Districts.Model.Interf,
   Country.Model.Interf, State.Model.Interf, City.Model.Interf,
   Company.Model.Interf,
-  User.Model.Interf;
+  User.Model.Interf, Person.Model.Interf;
 
 type
   TManagmentFactoryModel = class(TInterfacedObject, iManagmentFactoryModel)
@@ -22,6 +22,7 @@ type
     function cityModel: iCityModel;
     function companyModel: ICompanyModel;
     function userModel: IUserModel;
+    function personModel: IPersonModel;
   end;
 
 implementation
@@ -29,7 +30,7 @@ implementation
 { TManagmentFactoryModel }
 
 uses Districts.Model, Country.Model, State.Model, City.Model, Company.Model,
-  User.Model;
+  User.Model, Person.Model;
 
 function TManagmentFactoryModel.cityModel: iCityModel;
 begin
@@ -65,6 +66,11 @@ end;
 class function TManagmentFactoryModel.New: iManagmentFactoryModel;
 begin
   Result := Self.Create;
+end;
+
+function TManagmentFactoryModel.personModel: IPersonModel;
+begin
+  Result := TPersonModel.New;
 end;
 
 function TManagmentFactoryModel.stateModel: IStateModel;

@@ -1,6 +1,7 @@
 inherited FBaseRegisterView: TFBaseRegisterView
   Caption = 'FBaseRegisterView'
   FormStyle = fsNormal
+  Visible = False
   WindowState = wsNormal
   PixelsPerInch = 96
   TextHeight = 15
@@ -56,7 +57,6 @@ inherited FBaseRegisterView: TFBaseRegisterView
             Caption = 'C&ancelar'
             ExplicitLeft = 1
             ExplicitWidth = 107
-            ExplicitHeight = 29
           end
         end
         object PnButtonConfirm: TRzPanel

@@ -413,6 +413,48 @@
             <Form>FSTO0001CView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Models\Modules\Managment\Person\Entity\TMNGPERSON.Entity.Model.pas"/>
+        <DCCReference Include="Models\Modules\Managment\Person\Person.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modules\Managment\Person\Person.Model.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\Person\Person.Controller.Interf.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\Person\Operations\PersonUpdate.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\Person\Operations\PersonDelete.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\Person\Operations\PersonDuplicate.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\Person\Operations\PersonInsert.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\Managment\Person\Person.Controller.pas"/>
+        <DCCReference Include="Views\Modules\Pay\Provider\PAY0001AView.pas">
+            <Form>FPAY0001AView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Modules\Pay\PayFactory.View.Interf.pas"/>
+        <DCCReference Include="Views\Modules\Pay\PayFactory.View.pas"/>
+        <DCCReference Include="Views\Modules\Receive\ReceiveFactory.View.Interf.pas"/>
+        <DCCReference Include="Views\Modules\Receive\ReceiveFactory.View.pas"/>
+        <DCCReference Include="Views\Modules\Receive\Client\REC0001BView.pas">
+            <Form>FREC0001BView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Modules\Pay\Provider\PAY0001BView.pas">
+            <Form>FPAY0001BView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Models\Modules\OrderOfService\Operator\Entity\TORDOPERATOR.Entity.Model.pas"/>
+        <DCCReference Include="Models\Modules\OrderOfService\Operator\Operators.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modules\OrderOfService\Operator\Operators.Model.pas"/>
+        <DCCReference Include="Controllers\Modules\OrderOfService\Operator\Operators.Controller.Interf.pas"/>
+        <DCCReference Include="Controllers\Modules\OrderOfService\Operator\Operations\OperatorsInsert.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\OrderOfService\Operator\Operations\OperatorsUpdate.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\OrderOfService\Operator\Operations\OperatorsDelete.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\OrderOfService\Operator\Operations\OperatorsDuplicate.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\OrderOfService\Operator\Operators.Controller.pas"/>
+        <DCCReference Include="Views\Modules\OrderOfService\Operator\ORD0002AView.pas">
+            <Form>FORD0002AView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Modules\OrderOfService\Operator\ORD0002BView.pas">
+            <Form>FORD0002BView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

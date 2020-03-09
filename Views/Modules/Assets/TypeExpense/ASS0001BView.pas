@@ -112,6 +112,7 @@ end;
 procedure TFASS0001BView.FormCreate(Sender: TObject);
 begin
   inherited;
+
   FTypeExpenseController := TFacadeController.New.ModulesFacadeController.
     AssetsFactoryController.typeExpenseController;
 end;
