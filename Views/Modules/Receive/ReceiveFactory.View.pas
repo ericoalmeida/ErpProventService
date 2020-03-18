@@ -24,7 +24,7 @@ implementation
 
 { TReceiveFactoryView }
 
-uses REC0001AView, REC0001BView;
+uses REC0001AView, REC0001BView, REC0001CView, PAY0001CView;
 
 constructor TReceiveFactoryView.Create;
 begin
@@ -63,7 +63,13 @@ end;
 function TReceiveFactoryView.showProgramOfSearch(AValue: TTypeSearchPrograms)
   : IBaseSearchView;
 begin
+  case AValue of
+    tsREC0001CView:
+      Result := TFREC0001CView.New;
 
+    tsPAY0001CView:
+      Result := TFPAY0001CView.New;
+  end;
 end;
 
 end.

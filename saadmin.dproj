@@ -455,6 +455,31 @@
             <Form>FORD0002BView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Models\Modules\OrderOfService\ServiceProvided\ServiceProvided.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modules\OrderOfService\ServiceProvided\ServiceProvided.Model.pas"/>
+        <DCCReference Include="Controllers\Modules\OrderOfService\ServiceProvided\ServiceProvided.Controller.Interf.pas"/>
+        <DCCReference Include="Controllers\Modules\OrderOfService\ServiceProvided\Operations\ServiceProvidedInsert.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\OrderOfService\ServiceProvided\Operations\ServiceProvidedDuplicate.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\OrderOfService\ServiceProvided\Operations\ServiceProvidedDelete.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\OrderOfService\ServiceProvided\Operations\ServiceProvidedUpdate.Controller.pas"/>
+        <DCCReference Include="Controllers\Modules\OrderOfService\ServiceProvided\ServiceProvided.Controller.pas"/>
+        <DCCReference Include="Views\Modules\OrderOfService\ServiceProvided\ORD0003AView.pas">
+            <Form>FORD0003AView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Modules\OrderOfService\ServiceProvided\ORD0003BView.pas">
+            <Form>FORD0003BView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Models\Modules\OrderOfService\ServiceProvided\Entity\TORDSERVICESPROVIDED.Entity.Model.pas"/>
+        <DCCReference Include="Views\Modules\Receive\Client\REC0001CView.pas">
+            <Form>FREC0001CView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Modules\Pay\Provider\PAY0001CView.pas">
+            <Form>FPAY0001CView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

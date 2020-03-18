@@ -60,9 +60,19 @@ inherited FBaseListView: TFBaseListView
           7EFA3F5A7488EAD33F5F200000000049454E44AE426082}
       end
       inherited LbTitle: TRzLabel
-        Width = 110
+        Width = 127
+        Height = 25
         Caption = 'Base list form'
-        ExplicitWidth = 110
+        Font.Height = -19
+        Font.Name = 'Ubuntu'
+        ExplicitWidth = 127
+        ExplicitHeight = 25
+      end
+    end
+    inherited PnProgram: TRzPanel
+      inherited LbProgram: TRzLabel
+        Width = 608
+        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel

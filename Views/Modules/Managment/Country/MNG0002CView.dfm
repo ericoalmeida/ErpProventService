@@ -15,7 +15,7 @@ inherited FMNG0002CView: TFMNG0002CView
     ExplicitHeight = 319
     inherited PnHeader: TRzPanel
       Width = 670
-      ExplicitWidth = 481
+      ExplicitWidth = 670
       inherited ImTitle: TImage
         Picture.Data = {
           0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000020
@@ -98,16 +98,20 @@ inherited FMNG0002CView: TFMNG0002CView
           454E44AE426082}
       end
       inherited LbTitle: TRzLabel
-        Width = 148
+        Width = 168
         Caption = 'Pesquisa de Pa'#237'ses'
-        ExplicitWidth = 148
+        ExplicitWidth = 168
       end
     end
     inherited PnProgram: TRzPanel
       Top = 300
       Width = 670
-      ExplicitTop = 236
-      ExplicitWidth = 481
+      ExplicitTop = 300
+      ExplicitWidth = 670
+      inherited LbProgram: TRzLabel
+        Width = 670
+        Height = 18
+      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 670
@@ -117,15 +121,15 @@ inherited FMNG0002CView: TFMNG0002CView
       inherited PnFooterBody: TRzPanel
         Top = 219
         Width = 670
-        ExplicitTop = 155
-        ExplicitWidth = 481
+        ExplicitTop = 219
+        ExplicitWidth = 670
         inherited PnButtonCancel: TRzPanel
           Left = 556
-          ExplicitLeft = 367
+          ExplicitLeft = 556
         end
         inherited PnButtonConfirm: TRzPanel
           Left = 443
-          ExplicitLeft = 254
+          ExplicitLeft = 443
         end
       end
       inherited PnContent: TRzPanel
@@ -145,24 +149,29 @@ inherited FMNG0002CView: TFMNG0002CView
             Left = 388
             Properties.OnChange = TxBuscarPropertiesChange
             ExplicitLeft = 388
+            ExplicitHeight = 24
           end
         end
         inherited PnGridFooter: TRzPanel
           Top = 186
           Width = 666
-          ExplicitTop = 122
-          ExplicitWidth = 477
+          ExplicitTop = 186
+          ExplicitWidth = 666
+          inherited LbTotalRegistros: TRzLabel
+            Width = 658
+            Height = 22
+          end
         end
         inherited PnGrid: TRzPanel
           Width = 666
           Height = 143
-          ExplicitWidth = 477
-          ExplicitHeight = 79
+          ExplicitWidth = 666
+          ExplicitHeight = 143
           inherited DbDados: TcxGrid
             Width = 664
             Height = 141
-            ExplicitWidth = 475
-            ExplicitHeight = 77
+            ExplicitWidth = 664
+            ExplicitHeight = 141
             inherited VwDados: TcxGridDBTableView
               DataController.DataSource = DsData
               object VwDadosCOUNTRYID: TcxGridDBColumn

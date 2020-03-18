@@ -269,7 +269,7 @@ inherited FASS0001AView: TFASS0001AView
       'tasstypeexpense exp'
       'left join tmnguser usr on (usr.code = exp.userid)'
       ''
-      'where exp.companyid = :companyId')
+      'where exp.companyid = :companyid')
     ParamData = <
       item
         Name = 'COMPANYID'

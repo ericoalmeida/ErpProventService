@@ -89,6 +89,7 @@ type
     procedure BtClientClick(Sender: TObject);
     procedure dxBarLargeButton2Click(Sender: TObject);
     procedure BtOperatorsClick(Sender: TObject);
+    procedure BtServicesProvisionClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -155,6 +156,15 @@ begin
     .modulesFacadeView
      .orderOfServiceFactory
       .showProgramOfListing(tpORD0001AView)
+      .&end;
+end;
+
+procedure TFMainView.BtServicesProvisionClick(Sender: TObject);
+begin
+  TFacadeView.New
+    .modulesFacadeView
+     .orderOfServiceFactory
+      .showProgramOfListing(tpORD0003AView)
       .&end;
 end;
 

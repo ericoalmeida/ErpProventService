@@ -17,6 +17,7 @@ type
     class function New: iPersonController;
 
     function find(AValue: string): iPersonController;
+    function findById(AValue: string): iPersonController;
 
     function insert: iPersonInsertController;
     function update: iPersonUpdateController;
@@ -150,6 +151,14 @@ begin
 
   FRecordFound := FPersonModel.DAO.FindWhere
     (Format('CODE = %s', [QuotedStr(AValue)])).Items[0];
+end;
+
+function TPersonController.findById(AValue: string): iPersonController;
+begin
+  Result := Self;
+
+  FRecordFound := FPersonModel.DAO.FindWhere(Format('PERSONID = %s',
+    [QuotedStr(AValue)])).Items[0];
 end;
 
 function TPersonController.update: iPersonUpdateController;

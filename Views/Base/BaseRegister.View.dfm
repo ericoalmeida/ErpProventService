@@ -10,20 +10,23 @@ inherited FBaseRegisterView: TFBaseRegisterView
       inherited LbTitle: TRzLabel
         AlignWithMargins = True
         Top = 6
-        Width = 146
+        Width = 170
         Height = 26
         Margins.Top = 5
         Margins.Bottom = 7
         Align = alLeft
         Caption = 'Base register form'
+        Font.Height = -19
+        Font.Name = 'Ubuntu'
         ExplicitTop = 6
-        ExplicitWidth = 146
+        ExplicitWidth = 170
+        ExplicitHeight = 25
       end
       object LbOperation: TRzLabel
         AlignWithMargins = True
-        Left = 524
+        Left = 525
         Top = 6
-        Width = 80
+        Width = 79
         Height = 26
         Margins.Top = 5
         Margins.Bottom = 7
@@ -32,10 +35,11 @@ inherited FBaseRegisterView: TFBaseRegisterView
         Font.Charset = ANSI_CHARSET
         Font.Color = 5592405
         Font.Height = -16
-        Font.Name = 'Open Sans SemiBold'
-        Font.Style = [fsBold, fsItalic]
+        Font.Name = 'Ubuntu Medium'
+        Font.Style = [fsItalic]
         ParentFont = False
-        ExplicitHeight = 22
+        ExplicitLeft = 515
+        ExplicitHeight = 21
       end
     end
     inherited PnProgram: TRzPanel

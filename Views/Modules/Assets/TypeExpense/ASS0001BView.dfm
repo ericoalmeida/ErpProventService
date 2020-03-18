@@ -2,7 +2,6 @@ inherited FASS0001BView: TFASS0001BView
   Caption = 'Tipo de despesas com ve'#237'culo/maquinas'
   ClientHeight = 291
   ClientWidth = 594
-  Visible = False
   ExplicitWidth = 600
   ExplicitHeight = 320
   PixelsPerInch = 96

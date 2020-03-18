@@ -87,9 +87,19 @@ inherited FBaseSearchView: TFBaseSearchView
           00000049454E44AE426082}
       end
       inherited LbTitle: TRzLabel
-        Width = 138
+        Width = 159
+        Height = 25
         Caption = 'Base search form'
-        ExplicitWidth = 138
+        Font.Height = -19
+        Font.Name = 'Ubuntu'
+        ExplicitWidth = 159
+        ExplicitHeight = 25
+      end
+    end
+    inherited PnProgram: TRzPanel
+      inherited LbProgram: TRzLabel
+        Width = 608
+        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel

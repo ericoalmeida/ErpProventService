@@ -3,7 +3,7 @@ unit OrderOfServiceFactory.Model;
 interface
 
 uses OrderOfServiceFactory.Model.Interf, Service.Model.Interf,
-  Operators.Model.Interf;
+  Operators.Model.Interf, ServiceProvided.Model.Interf;
 
 type
   TOrderOfServiceFactoryModel = class(TInterfacedObject,
@@ -17,13 +17,14 @@ type
 
     function serviceModel: IServiceModel;
     function operatorModel: IOperatorModel;
+    function serviceProvidedModel: IServiceProvidedModel;
   end;
 
 implementation
 
 { TOrderOfServiceFactoryModel }
 
-uses Service.Model, Operators.Model;
+uses Service.Model, Operators.Model, ServiceProvided.Model;
 
 constructor TOrderOfServiceFactoryModel.Create;
 begin
@@ -49,6 +50,12 @@ end;
 function TOrderOfServiceFactoryModel.serviceModel: IServiceModel;
 begin
   Result := TServiceModel.New;
+end;
+
+function TOrderOfServiceFactoryModel.serviceProvidedModel
+  : IServiceProvidedModel;
+begin
+  Result := TServiceProvidedModel.New;
 end;
 
 end.

@@ -99,9 +99,13 @@ inherited FBaseMessageView: TFBaseMessageView
           FF0362546FFDF639EEA90000000049454E44AE426082}
       end
       inherited LbTitle: TRzLabel
-        Width = 154
+        Width = 178
+        Height = 25
         Caption = 'Base message form'
-        ExplicitWidth = 154
+        Font.Height = -19
+        Font.Name = 'Ubuntu'
+        ExplicitWidth = 178
+        ExplicitHeight = 25
       end
     end
     inherited PnProgram: TRzPanel
@@ -111,6 +115,7 @@ inherited FBaseMessageView: TFBaseMessageView
       ExplicitWidth = 447
       inherited LbProgram: TRzLabel
         Width = 447
+        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
@@ -153,9 +158,6 @@ inherited FBaseMessageView: TFBaseMessageView
               6FA0673A017880CBEFC309D50002F0BF03C5148A5699E7E19C0000000049454E
               44AE426082}
             OptionsImage.Spacing = 5
-            ExplicitLeft = 2
-            ExplicitWidth = 106
-            ExplicitHeight = 29
           end
         end
         object PnButtonConfirm: TRzPanel
@@ -171,8 +173,6 @@ inherited FBaseMessageView: TFBaseMessageView
           BorderWidth = 1
           Color = 14803425
           TabOrder = 1
-          ExplicitLeft = 88
-          ExplicitTop = 5
           object BtConfirmar: TcxButton
             AlignWithMargins = True
             Left = 2
@@ -223,8 +223,6 @@ inherited FBaseMessageView: TFBaseMessageView
             Font.Name = 'Open Sans SemiBold'
             Font.Style = [fsBold]
             ParentFont = False
-            ExplicitLeft = 40
-            ExplicitWidth = 68
           end
         end
       end

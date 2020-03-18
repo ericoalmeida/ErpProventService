@@ -25,7 +25,7 @@ implementation
 
 { TOrdemOfServiceFactoryView }
 
-uses ORD0001AView, ORD0001BView, ORD0002AView, ORD0002BView;
+uses ORD0001AView, ORD0001BView, ORD0002AView, ORD0002BView, ORD0003AView, ORD0003BView;
 
 constructor TOrderOfServiceFactoryView.Create;
 begin
@@ -52,6 +52,9 @@ begin
 
     tpORD0002AView:
       Result := TFORD0002AView.New;
+
+    tpORD0003AView:
+      Result := TFORD0003AView.New;
   end;
 end;
 
@@ -64,6 +67,9 @@ begin
 
     trORD0002BView:
       Result := TFORD0002BView.New;
+
+    trORD0003BView:
+      Result := TFORD0003BView.New;
   end;
 end;
 

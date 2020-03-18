@@ -17,6 +17,7 @@ type
     class function New: iOperatorController;
 
     function find(AValue: string): iOperatorController;
+    function findById(AValue: string): iOperatorController;
 
     function insert: iOperatorInsertController;
     function update: iOperatorUpdateController;
@@ -102,6 +103,14 @@ begin
 
   FRecordFound := FOperatorModel.DAO.FindWhere
     (Format('CODE = %s', [QuotedStr(AValue)])).Items[0];
+end;
+
+function TOperatorController.findById(AValue: string): iOperatorController;
+begin
+  Result := Self;
+
+  FRecordFound := FOperatorModel.DAO.FindWhere
+    (Format('OPERATORID = %s', [QuotedStr(AValue)])).Items[0];
 end;
 
 function TOperatorController.update: iOperatorUpdateController;

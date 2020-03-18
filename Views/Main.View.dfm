@@ -21,9 +21,9 @@ object FMainView: TFMainView
   TextHeight = 13
   object ImLogo: TImage
     Left = 0
-    Top = 159
+    Top = 157
     Width = 632
-    Height = 216
+    Height = 218
     Align = alClient
     Center = True
     Picture.Data = {
@@ -1932,11 +1932,11 @@ object FMainView: TFMainView
     Left = 0
     Top = 0
     Width = 632
-    Height = 159
+    Height = 157
     ApplicationButton.Menu = ApMainMenu
     BarManager = BrManager
     ColorSchemeAccent = rcsaBlue
-    ColorSchemeName = 'Blue'
+    ColorSchemeName = 'DevExpressDarkStyle'
     QuickAccessToolbar.Toolbar = bmMainTools
     Contexts = <>
     TabOrder = 0
@@ -2056,7 +2056,7 @@ object FMainView: TFMainView
     object BmRotinas: TdxBar
       Caption = 'Rotinas'
       CaptionButtons = <>
-      DockedLeft = 411
+      DockedLeft = 412
       DockedTop = 0
       FloatLeft = 720
       FloatTop = 2
@@ -2084,7 +2084,7 @@ object FMainView: TFMainView
     object BmRelatorios: TdxBar
       Caption = 'Relat'#243'rios'
       CaptionButtons = <>
-      DockedLeft = 486
+      DockedLeft = 488
       DockedTop = 0
       FloatLeft = 720
       FloatTop = 2
@@ -2499,9 +2499,9 @@ object FMainView: TFMainView
       OnClick = BtMachineClick
     end
     object BtServicesProvision: TdxBarLargeButton
-      Caption = 'Preta'#231#227'o de servi'#231'o'
+      Caption = 'Ordem de Servi'#231'os'
       Category = 0
-      Hint = 'Preta'#231#227'o de servi'#231'o'
+      Hint = 'Ordem de Servi'#231'os'
       Visible = ivAlways
       Glyph.SourceDPI = 96
       Glyph.Data = {
@@ -2601,6 +2601,7 @@ object FMainView: TFMainView
         43AFE03226100801F70CE2CF06122579BC29EFC507ABB2573BA54B7F6571C984
         F8BB95E05E9524C3B9A876D2F289B8EF5FC72EDCE7F11F04311D30C2D9605F00
         00000049454E44AE426082}
+      OnClick = BtServicesProvisionClick
     end
     object BtCost: TdxBarLargeButton
       Caption = 'Despesas com ve'#237'culos/maquinas'

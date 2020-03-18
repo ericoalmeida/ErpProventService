@@ -30,7 +30,6 @@ type
     FdQDataTYPEEXPENSEID: TIntegerField;
     FdQDataDESCRIPTION: TStringField;
     FdQDataSTATUS: TIntegerField;
-    FdQDataUSERNAME: TStringField;
     FdQDataCREATEDAT: TSQLTimeStampField;
     FdQDataUPDATEDAT: TSQLTimeStampField;
     VwDadosTYPEEXPENSEID: TcxGridDBColumn;
@@ -39,6 +38,7 @@ type
     VwDadosUSERNAME: TcxGridDBColumn;
     VwDadosCREATEDAT: TcxGridDBColumn;
     VwDadosUPDATEDAT: TcxGridDBColumn;
+    FdQDataUSERNAME: TStringField;
     procedure BtInsertClick(Sender: TObject);
     procedure BtUpdateClick(Sender: TObject);
     procedure BtShowClick(Sender: TObject);

@@ -18,6 +18,7 @@ type
     class function New: iVehicleController;
 
     function find(AValue: string): iVehicleController;
+    function findById(AValue: string): iVehicleController;
 
     function insert: iVehicleInsertController;
     function update: iVehicleUpdateController;
@@ -68,7 +69,7 @@ end;
 
 function TVehicleController.vehicleId: string;
 begin
-  Result := FRecordFound.vehicleId.ToString;
+  Result := FRecordFound.VEHICLEID.ToString;
 end;
 
 constructor TVehicleController.Create;
@@ -130,6 +131,14 @@ begin
 
   FRecordFound := FVehicleModel.DAO.FindWhere
     (Format('CODE = %s', [QuotedStr(AValue)])).Items[0];
+end;
+
+function TVehicleController.findById(AValue: string): iVehicleController;
+begin
+  Result := Self;
+
+  FRecordFound := FVehicleModel.DAO.FindWhere
+    (Format('VEHICLEID = %s', [QuotedStr(AValue)])).Items[0];
 end;
 
 function TVehicleController.update: iVehicleUpdateController;

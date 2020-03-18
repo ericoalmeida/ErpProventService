@@ -215,7 +215,20 @@ uses
   OperatorsDuplicate.Controller in 'Controllers\Modules\OrderOfService\Operator\Operations\OperatorsDuplicate.Controller.pas',
   Operators.Controller in 'Controllers\Modules\OrderOfService\Operator\Operators.Controller.pas',
   ORD0002AView in 'Views\Modules\OrderOfService\Operator\ORD0002AView.pas' {FORD0002AView},
-  ORD0002BView in 'Views\Modules\OrderOfService\Operator\ORD0002BView.pas' {FORD0002BView};
+  ORD0002BView in 'Views\Modules\OrderOfService\Operator\ORD0002BView.pas' {FORD0002BView},
+  ServiceProvided.Model.Interf in 'Models\Modules\OrderOfService\ServiceProvided\ServiceProvided.Model.Interf.pas',
+  ServiceProvided.Model in 'Models\Modules\OrderOfService\ServiceProvided\ServiceProvided.Model.pas',
+  ServiceProvided.Controller.Interf in 'Controllers\Modules\OrderOfService\ServiceProvided\ServiceProvided.Controller.Interf.pas',
+  ServiceProvidedInsert.Controller in 'Controllers\Modules\OrderOfService\ServiceProvided\Operations\ServiceProvidedInsert.Controller.pas',
+  ServiceProvidedDuplicate.Controller in 'Controllers\Modules\OrderOfService\ServiceProvided\Operations\ServiceProvidedDuplicate.Controller.pas',
+  ServiceProvidedDelete.Controller in 'Controllers\Modules\OrderOfService\ServiceProvided\Operations\ServiceProvidedDelete.Controller.pas',
+  ServiceProvidedUpdate.Controller in 'Controllers\Modules\OrderOfService\ServiceProvided\Operations\ServiceProvidedUpdate.Controller.pas',
+  ServiceProvided.Controller in 'Controllers\Modules\OrderOfService\ServiceProvided\ServiceProvided.Controller.pas',
+  ORD0003AView in 'Views\Modules\OrderOfService\ServiceProvided\ORD0003AView.pas' {FORD0003AView},
+  ORD0003BView in 'Views\Modules\OrderOfService\ServiceProvided\ORD0003BView.pas' {FORD0003BView},
+  TORDSERVICESPROVIDED.Entity.Model in 'Models\Modules\OrderOfService\ServiceProvided\Entity\TORDSERVICESPROVIDED.Entity.Model.pas',
+  REC0001CView in 'Views\Modules\Receive\Client\REC0001CView.pas' {FREC0001CView},
+  PAY0001CView in 'Views\Modules\Pay\Provider\PAY0001CView.pas' {FPAY0001CView};
 
 {$R *.res}
 

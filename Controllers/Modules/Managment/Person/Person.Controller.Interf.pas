@@ -12,6 +12,7 @@ type
 
   iPersonController = interface
     function find(AValue: string): iPersonController;
+    function findById(AValue: string): iPersonController;
 
     function insert: iPersonInsertController;
     function update: iPersonUpdateController;

@@ -12,6 +12,7 @@ type
 
   iServiceController = interface
     function find(AValue: string): iServiceController;
+    function findById(AValue: string): iServiceController;
 
     function insert: iServiceInsertController;
     function update: iServiceUpdateController;
@@ -22,7 +23,9 @@ type
     function serviceId: string;
     function description: string;
     function measuredUnit: string;
+    function priceUnit: string;
     function price: Currency;
+
     function status: Integer;
     function createdAt: string;
     function updatedAt: string;

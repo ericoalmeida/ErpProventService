@@ -30,7 +30,7 @@ type
 
     procedure changeDataAnyFields;
 
-    procedure showCurrentOperation;
+    procedure showCurrentOperation; virtual;
   public
     { Public declarations }
   end;

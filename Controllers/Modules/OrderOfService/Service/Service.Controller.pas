@@ -18,6 +18,7 @@ type
     class function New: iServiceController;
 
     function find(AValue: string): iServiceController;
+    function findById(AValue: string): iServiceController;
 
     function insert: iServiceInsertController;
     function update: iServiceUpdateController;
@@ -28,6 +29,7 @@ type
     function serviceId: string;
     function description: string;
     function measuredUnit: string;
+    function priceUnit: string;
     function price: Currency;
     function status: Integer;
     function createdAt: string;
@@ -48,7 +50,7 @@ end;
 
 function TServiceController.serviceId: string;
 begin
-  Result := FRecordFound.serviceId.ToString;
+  Result := FRecordFound.SERVICEID.ToString;
 end;
 
 function TServiceController.status: Integer;
@@ -108,12 +110,26 @@ begin
   Result := FRecordFound.PRICE;
 end;
 
+function TServiceController.priceUnit: string;
+begin
+  Result := Format('R$ %s / %s', [FormatCurr('0.00#,##', FRecordFound.price),
+    FRecordFound.measuredUnit]);
+end;
+
 function TServiceController.find(AValue: string): iServiceController;
 begin
   Result := Self;
 
   FRecordFound := FServiceModel.DAO.FindWhere
     (Format('CODE = %s', [QuotedStr(AValue)])).Items[0];
+end;
+
+function TServiceController.findById(AValue: string): iServiceController;
+begin
+  Result := Self;
+
+  FRecordFound := FServiceModel.DAO.FindWhere
+    (Format('SERVICEID = %s', [QuotedStr(AValue)])).Items[0];
 end;
 
 function TServiceController.update: iServiceUpdateController;

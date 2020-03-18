@@ -12,6 +12,7 @@ type
 
   iOperatorController = interface
     function find(AValue: string): iOperatorController;
+    function findById(AValue: string): iOperatorController;
 
     function insert: iOperatorInsertController;
     function update: iOperatorUpdateController;

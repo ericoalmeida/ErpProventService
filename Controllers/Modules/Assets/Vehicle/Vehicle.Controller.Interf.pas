@@ -12,6 +12,7 @@ type
 
   iVehicleController = interface
     function find(AValue: string): iVehicleController;
+    function findById(AValue: string): iVehicleController;
 
     function insert: iVehicleInsertController;
     function update: iVehicleUpdateController;
