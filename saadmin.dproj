@@ -480,6 +480,14 @@
             <Form>FPAY0001CView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Views\Modules\OrderOfService\Operator\ORD0002CView.pas">
+            <Form>FORD0002CView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Modules\Assets\Vehicle\ASS0002CView.pas">
+            <Form>FASS0002CView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

@@ -2,6 +2,7 @@ inherited FORD0003BView: TFORD0003BView
   Caption = 'Ordens de servi'#231'o'
   ClientHeight = 357
   ClientWidth = 644
+  OnShow = FormShow
   ExplicitWidth = 650
   ExplicitHeight = 386
   PixelsPerInch = 96
@@ -274,6 +275,7 @@ inherited FORD0003BView: TFORD0003BView
           Top = 55
           Properties.Buttons = <
             item
+              Action = ActSelectOperator
               Default = True
               Kind = bkEllipsis
             end>
@@ -335,6 +337,7 @@ inherited FORD0003BView: TFORD0003BView
           Top = 80
           Properties.Buttons = <
             item
+              Action = ActSelectVehicle
               Default = True
               Kind = bkEllipsis
             end>
@@ -542,7 +545,6 @@ inherited FORD0003BView: TFORD0003BView
         object TxTotalHours: TERGTotalHorasEdit
           Left = 105
           Top = 129
-          EditValue = 0.000000000000000000
           Properties.DisplayFormat = '00:00:00;'
           Properties.OnChange = TxTotalHoursPropertiesChange
           Style.BorderColor = 12698049
@@ -669,11 +671,19 @@ inherited FORD0003BView: TFORD0003BView
     Transparent = True
   end
   inherited AcSearchRecord: TActionList
-    Left = 236
-    Top = 332
+    Left = 244
+    Top = 284
     object ActSelectClient: TAction
       Caption = 'ActSelectClient'
       OnExecute = ActSelectClientExecute
+    end
+    object ActSelectOperator: TAction
+      Caption = 'ActSelectOperator'
+      OnExecute = ActSelectOperatorExecute
+    end
+    object ActSelectVehicle: TAction
+      Caption = 'ActSelectVehicle'
+      OnExecute = ActSelectVehicleExecute
     end
   end
 end

@@ -25,7 +25,9 @@ implementation
 
 { TOrdemOfServiceFactoryView }
 
-uses ORD0001AView, ORD0001BView, ORD0002AView, ORD0002BView, ORD0003AView, ORD0003BView;
+uses ORD0001AView, ORD0001BView, ORD0002AView, ORD0002BView, ORD0003AView,
+  ORD0003BView,
+  ORD0002CView;
 
 constructor TOrderOfServiceFactoryView.Create;
 begin
@@ -76,7 +78,10 @@ end;
 function TOrderOfServiceFactoryView.showProgramOfSearch
   (AValue: TTypeSearchPrograms): IBaseSearchView;
 begin
-
+  case AValue of
+    tsORD0002CView:
+      Result := TFORD0002CView.New;
+  end;
 end;
 
 end.

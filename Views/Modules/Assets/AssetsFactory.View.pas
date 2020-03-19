@@ -23,7 +23,7 @@ implementation
 
 { TAssetsFactoryView }
 
-uses ASS0001AView, ASS0001BView, ASS0002AView, ASS0002BView;
+uses ASS0001AView, ASS0001BView, ASS0002AView, ASS0002BView, ASS0002CView;
 
 constructor TAssetsFactoryView.Create;
 begin
@@ -69,7 +69,10 @@ end;
 function TAssetsFactoryView.showProgramOfSearch(AValue: TTypeSearchPrograms)
   : IBaseSearchView;
 begin
-
+  case AValue of
+    tsASS0002CView:
+      Result := TFASS0002CView.New;
+  end;
 end;
 
 end.

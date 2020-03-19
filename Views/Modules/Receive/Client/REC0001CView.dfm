@@ -1,16 +1,16 @@
 inherited FREC0001CView: TFREC0001CView
   Caption = 'Pesquisa de Clientes'
-  ClientHeight = 321
+  ClientHeight = 291
   ClientWidth = 674
   Visible = False
   OnShow = FormShow
   ExplicitWidth = 680
-  ExplicitHeight = 350
+  ExplicitHeight = 320
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
     Width = 672
-    Height = 319
+    Height = 289
     ExplicitWidth = 672
     ExplicitHeight = 319
     inherited PnHeader: TRzPanel
@@ -95,7 +95,7 @@ inherited FREC0001CView: TFREC0001CView
       end
     end
     inherited PnProgram: TRzPanel
-      Top = 300
+      Top = 270
       Width = 670
       ExplicitTop = 300
       ExplicitWidth = 670
@@ -106,11 +106,11 @@ inherited FREC0001CView: TFREC0001CView
     end
     inherited PnContainerBody: TRzPanel
       Width = 670
-      Height = 259
+      Height = 229
       ExplicitWidth = 670
       ExplicitHeight = 259
       inherited PnFooterBody: TRzPanel
-        Top = 219
+        Top = 189
         Width = 670
         ExplicitTop = 219
         ExplicitWidth = 670
@@ -125,7 +125,7 @@ inherited FREC0001CView: TFREC0001CView
       end
       inherited PnContent: TRzPanel
         Width = 668
-        Height = 217
+        Height = 187
         ExplicitWidth = 668
         ExplicitHeight = 217
         inherited PnGridHeader: TRzPanel
@@ -144,7 +144,7 @@ inherited FREC0001CView: TFREC0001CView
           end
         end
         inherited PnGridFooter: TRzPanel
-          Top = 186
+          Top = 156
           Width = 666
           ExplicitTop = 186
           ExplicitWidth = 666
@@ -155,12 +155,12 @@ inherited FREC0001CView: TFREC0001CView
         end
         inherited PnGrid: TRzPanel
           Width = 666
-          Height = 143
+          Height = 113
           ExplicitWidth = 666
           ExplicitHeight = 143
           inherited DbDados: TcxGrid
             Width = 664
-            Height = 141
+            Height = 111
             ExplicitWidth = 664
             ExplicitHeight = 141
             inherited VwDados: TcxGridDBTableView

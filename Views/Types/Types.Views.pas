@@ -16,7 +16,8 @@ type
     trSTO0001BView, trREC0001BView, trPAY0001BView);
 
   TTypeSearchPrograms = (tsMNG0001CView, tsMNG0002CView, tsMNG0003CView,
-    tsMNG0004CView, tsREC0001CView, tsPAY0001CView);
+    tsMNG0004CView, tsREC0001CView, tsPAY0001CView, tsORD0002CView,
+    tsASS0002CView);
 
 implementation
 

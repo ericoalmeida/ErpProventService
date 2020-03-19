@@ -228,7 +228,9 @@ uses
   ORD0003BView in 'Views\Modules\OrderOfService\ServiceProvided\ORD0003BView.pas' {FORD0003BView},
   TORDSERVICESPROVIDED.Entity.Model in 'Models\Modules\OrderOfService\ServiceProvided\Entity\TORDSERVICESPROVIDED.Entity.Model.pas',
   REC0001CView in 'Views\Modules\Receive\Client\REC0001CView.pas' {FREC0001CView},
-  PAY0001CView in 'Views\Modules\Pay\Provider\PAY0001CView.pas' {FPAY0001CView};
+  PAY0001CView in 'Views\Modules\Pay\Provider\PAY0001CView.pas' {FPAY0001CView},
+  ORD0002CView in 'Views\Modules\OrderOfService\Operator\ORD0002CView.pas' {FORD0002CView},
+  ASS0002CView in 'Views\Modules\Assets\Vehicle\ASS0002CView.pas' {FASS0002CView};
 
 {$R *.res}
 

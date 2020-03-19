@@ -46,6 +46,8 @@ type
     TxTotalHours: TERGTotalHorasEdit;
     cxLabel10: TcxLabel;
     cxLabel6: TcxLabel;
+    ActSelectOperator: TAction;
+    ActSelectVehicle: TAction;
     procedure FormCreate(Sender: TObject);
     procedure TxDataPropertiesChange(Sender: TObject);
     procedure TxClientIdPropertiesChange(Sender: TObject);
@@ -57,6 +59,9 @@ type
     procedure ActSelectClientExecute(Sender: TObject);
     procedure TxTotalHoursExit(Sender: TObject);
     procedure TxTotalKmPropertiesChange(Sender: TObject);
+    procedure ActSelectOperatorExecute(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure ActSelectVehicleExecute(Sender: TObject);
   private
     FServiceProvidedController: iServiceProvidedController;
     FClientController: iPersonController;
@@ -67,6 +72,8 @@ type
     procedure calcularValorTotalPelasHorasTrabalhadas(AValue: Integer);
 
     procedure selectClient;
+    procedure selectOperator;
+    procedure selectVehicle;
   protected
     procedure showCurrentOperation; override;
     procedure disabledFieldsOnCanceledOs;
@@ -104,6 +111,18 @@ begin
   inherited;
 
   selectClient;
+end;
+
+procedure TFORD0003BView.ActSelectOperatorExecute(Sender: TObject);
+begin
+  inherited;
+  selectOperator;
+end;
+
+procedure TFORD0003BView.ActSelectVehicleExecute(Sender: TObject);
+begin
+  inherited;
+  selectVehicle;
 end;
 
 procedure TFORD0003BView.BtConfirmarClick(Sender: TObject);
@@ -183,8 +202,8 @@ begin
     .companyId(FSessionCompany)
     .providedAt(TxData.Date)
     .clientId(FClientController.code)
-    .operatorId('{E03DB770-8D79-43D1-BCE4-A9071CB47B18}')
-    .machineId('{F3CB5316-6AA2-4FC5-93BD-B128E692CCF7}')
+    .operatorId(FOperatorController.code)
+    .machineId(FVehicleController.code)
     .serviceId('{DDC3284A-E0F3-46BE-B8AA-6C72B84E73A8}')
     .totalHours(TxTotalHours.Hours)
     .totalKm(TxTotalKm.Value)
@@ -221,6 +240,14 @@ begin
     OrderOfServiceFactoryController.serviceController;
 end;
 
+procedure TFORD0003BView.FormShow(Sender: TObject);
+begin
+  inherited;
+
+  if FOperation = toInsert then
+  TxTotalHours.Value := 0;
+end;
+
 procedure TFORD0003BView.insertRecord;
 begin
   FServiceProvidedController
@@ -228,8 +255,8 @@ begin
     .companyId(FSessionCompany)
     .providedAt(TxData.Date)
     .clientId(FClientController.code)
-    .operatorId('{E03DB770-8D79-43D1-BCE4-A9071CB47B18}')
-    .machineId('{F3CB5316-6AA2-4FC5-93BD-B128E692CCF7}')
+    .operatorId(FOperatorController.code)
+    .machineId(FVehicleController.code)
     .serviceId('{DDC3284A-E0F3-46BE-B8AA-6C72B84E73A8}')
     .totalHours(TxTotalHours.Hours)
     .totalKm(TxTotalKm.Value)
@@ -285,6 +312,36 @@ function TFORD0003BView.selectedRecord(AValue: string): iBaseRegisterView;
 begin
   Result := Self;
   FSelectedRecord := AValue;
+end;
+
+procedure TFORD0003BView.selectOperator;
+var
+  codeOperator: string;
+begin
+  codeOperator := TFacadeView.new.modulesFacadeView.orderOfServiceFactory.
+    showProgramOfSearch(tsORD0002CView).showSearch.&end;
+
+    if codeOperator = EmptyStr then Exit;
+
+    FOperatorController.find(codeOperator);
+
+    TxOperatorId.Text   := FOperatorController.operatorId;
+    TxOperatorName.Text := FOperatorController.name;
+end;
+
+procedure TFORD0003BView.selectVehicle;
+var
+  codeVehicle: string;
+begin
+  codeVehicle := TFacadeView.new.modulesFacadeView.assetsFactoryView.
+    showProgramOfSearch(tsASS0002CView).showSearch.&end;
+
+    if codeVehicle = EmptyStr then Exit;
+
+    FVehicleController.find(codeVehicle);
+
+    TxMachine.Text     := FVehicleController.vehicleId;
+    TxMachineName.Text := FVehicleController.description;
 end;
 
 procedure TFORD0003BView.showCurrentOperation;
@@ -390,8 +447,8 @@ begin
     .companyId(FSessionCompany)
     .providedAt(TxData.Date)
     .clientId(FClientController.code)
-    .operatorId('{AA5906A6-7660-4717-B0E7-5F9086629D51}')
-    .machineId('{F3CB5316-6AA2-4FC5-93BD-B128E692CCF7}')
+    .operatorId(FOperatorController.code)
+    .machineId(FVehicleController.code)
     .serviceId('{DDC3284A-E0F3-46BE-B8AA-6C72B84E73A8}')
     .totalHours(TxTotalHours.Hours)
     .totalKm(TxTotalKm.Value)
