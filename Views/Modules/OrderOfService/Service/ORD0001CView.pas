@@ -1,4 +1,4 @@
-unit ORD0002CView;
+unit ORD0001CView;
 
 interface
 
@@ -16,25 +16,12 @@ uses
   dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel, Base.View.interf;
 
 type
-  TFORD0002CView = class(TFBaseSearchView, IBaseSearchView)
-    FdQDataCODE: TStringField;
-    FdQDataOPERATORID: TIntegerField;
-    FdQDataNAME: TStringField;
-    FdQDataSTATUS: TIntegerField;
-    FdQDataUSERNAME: TStringField;
-    FdQDataCREATEDAT: TSQLTimeStampField;
-    FdQDataUPDATEDAT: TSQLTimeStampField;
-    VwDadosOPERATORID: TcxGridDBColumn;
-    VwDadosNAME: TcxGridDBColumn;
-    VwDadosUPDATEDAT: TcxGridDBColumn;
-    procedure FormShow(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
+  TFORD0001CView = class(TFBaseSearchView, IBaseSearchView)
     procedure BtConfirmarClick(Sender: TObject);
-    procedure TxBuscarPropertiesChange(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
-    { Public declarations }
     class function New: IBaseSearchView;
 
     function showSearch:IBaseSearchView;
@@ -45,68 +32,48 @@ type
   end;
 
 var
-  FORD0002CView: TFORD0002CView;
+  FORD0001CView: TFORD0001CView;
 
 implementation
 
 {$R *.dfm}
 
-{ TFORD0002CView }
-
-procedure TFORD0002CView.BtConfirmarClick(Sender: TObject);
+function TFORD0001CView.&end: string;
 begin
-  FSelectedRecord := FdQDataCODE.AsString;
-  inherited;
+  Result := FSelectedRecord;
 end;
 
-function TFORD0002CView.&end: string;
-begin
-   Result := FSelectedRecord;
-end;
-
-procedure TFORD0002CView.FormCreate(Sender: TObject);
+procedure TFORD0001CView.FormCreate(Sender: TObject);
 begin
   inherited;
+
   Self.Height := Screen.Height - 400;
   Self.Width  := Screen.Width  - 400;
 
   FdQData.Connection := FFdConnection;
 end;
 
-procedure TFORD0002CView.FormShow(Sender: TObject);
+procedure TFORD0001CView.BtConfirmarClick(Sender: TObject);
 begin
+  FSelectedRecord := '';
   inherited;
-  FFieldOrder := 'NAME';
-
-  listRecords;
-  totalRecords;
 end;
 
-procedure TFORD0002CView.listRecords;
+procedure TFORD0001CView.listRecords;
 begin
-    FdQData.ParamByName('companyId').AsString := FSessionCompany;
-    FdQData.Close;
-    FdQData.Open();
+
 end;
 
-class function TFORD0002CView.New: IBaseSearchView;
+class function TFORD0001CView.New: IBaseSearchView;
 begin
   Result := Self.Create(nil);
 end;
 
-function TFORD0002CView.showSearch: IBaseSearchView;
+function TFORD0001CView.showSearch: IBaseSearchView;
 begin
   Result := Self;
 
   ShowModal;
-end;
-
-procedure TFORD0002CView.TxBuscarPropertiesChange(Sender: TObject);
-begin
-  inherited;
-
-  filterRecords;
-  totalRecords;
 end;
 
 end.

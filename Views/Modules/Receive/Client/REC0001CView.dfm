@@ -12,7 +12,7 @@ inherited FREC0001CView: TFREC0001CView
     Width = 672
     Height = 289
     ExplicitWidth = 672
-    ExplicitHeight = 319
+    ExplicitHeight = 289
     inherited PnHeader: TRzPanel
       Width = 670
       ExplicitWidth = 670
@@ -97,7 +97,7 @@ inherited FREC0001CView: TFREC0001CView
     inherited PnProgram: TRzPanel
       Top = 270
       Width = 670
-      ExplicitTop = 300
+      ExplicitTop = 270
       ExplicitWidth = 670
       inherited LbProgram: TRzLabel
         Width = 670
@@ -108,11 +108,11 @@ inherited FREC0001CView: TFREC0001CView
       Width = 670
       Height = 229
       ExplicitWidth = 670
-      ExplicitHeight = 259
+      ExplicitHeight = 229
       inherited PnFooterBody: TRzPanel
         Top = 189
         Width = 670
-        ExplicitTop = 219
+        ExplicitTop = 189
         ExplicitWidth = 670
         inherited PnButtonCancel: TRzPanel
           Left = 556
@@ -127,7 +127,7 @@ inherited FREC0001CView: TFREC0001CView
         Width = 668
         Height = 187
         ExplicitWidth = 668
-        ExplicitHeight = 217
+        ExplicitHeight = 187
         inherited PnGridHeader: TRzPanel
           Width = 666
           ExplicitWidth = 666
@@ -146,7 +146,7 @@ inherited FREC0001CView: TFREC0001CView
         inherited PnGridFooter: TRzPanel
           Top = 156
           Width = 666
-          ExplicitTop = 186
+          ExplicitTop = 156
           ExplicitWidth = 666
           inherited LbTotalRegistros: TRzLabel
             Width = 658
@@ -157,12 +157,12 @@ inherited FREC0001CView: TFREC0001CView
           Width = 666
           Height = 113
           ExplicitWidth = 666
-          ExplicitHeight = 143
+          ExplicitHeight = 113
           inherited DbDados: TcxGrid
             Width = 664
             Height = 111
             ExplicitWidth = 664
-            ExplicitHeight = 141
+            ExplicitHeight = 111
             inherited VwDados: TcxGridDBTableView
               DataController.DataSource = DsData
               object VwDadosPERSONID: TcxGridDBColumn

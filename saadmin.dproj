@@ -488,6 +488,10 @@
             <Form>FASS0002CView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Views\Modules\OrderOfService\Service\ORD0001CView.pas">
+            <Form>FORD0001CView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

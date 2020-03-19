@@ -48,6 +48,7 @@ type
     cxLabel6: TcxLabel;
     ActSelectOperator: TAction;
     ActSelectVehicle: TAction;
+    ActSelectService: TAction;
     procedure FormCreate(Sender: TObject);
     procedure TxDataPropertiesChange(Sender: TObject);
     procedure TxClientIdPropertiesChange(Sender: TObject);
@@ -62,6 +63,7 @@ type
     procedure ActSelectOperatorExecute(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure ActSelectVehicleExecute(Sender: TObject);
+    procedure ActSelectServiceExecute(Sender: TObject);
   private
     FServiceProvidedController: iServiceProvidedController;
     FClientController: iPersonController;
@@ -74,6 +76,7 @@ type
     procedure selectClient;
     procedure selectOperator;
     procedure selectVehicle;
+    procedure selectService;
   protected
     procedure showCurrentOperation; override;
     procedure disabledFieldsOnCanceledOs;
@@ -117,6 +120,12 @@ procedure TFORD0003BView.ActSelectOperatorExecute(Sender: TObject);
 begin
   inherited;
   selectOperator;
+end;
+
+procedure TFORD0003BView.ActSelectServiceExecute(Sender: TObject);
+begin
+  inherited;
+  selectService;
 end;
 
 procedure TFORD0003BView.ActSelectVehicleExecute(Sender: TObject);
@@ -327,6 +336,21 @@ begin
 
     TxOperatorId.Text   := FOperatorController.operatorId;
     TxOperatorName.Text := FOperatorController.name;
+end;
+
+procedure TFORD0003BView.selectService;
+var
+  codeService: string;
+begin
+  codeService := TFacadeView.new.modulesFacadeView.orderOfServiceFactory.
+    showProgramOfSearch(tsORD0001CView).showSearch.&end;
+
+    if codeService = EmptyStr then Exit;
+
+    FServiceController.find(codeService);
+
+    TxServiceId.Text     := FServiceController.serviceId;
+    TxServiceName.Text   := FServiceController.description;
 end;
 
 procedure TFORD0003BView.selectVehicle;

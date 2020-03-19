@@ -593,6 +593,7 @@ inherited FORD0003BView: TFORD0003BView
     Top = 149
     Properties.Buttons = <
       item
+        Action = ActSelectService
         Default = True
         Kind = bkEllipsis
       end>
@@ -684,6 +685,10 @@ inherited FORD0003BView: TFORD0003BView
     object ActSelectVehicle: TAction
       Caption = 'ActSelectVehicle'
       OnExecute = ActSelectVehicleExecute
+    end
+    object ActSelectService: TAction
+      Caption = 'ActSelectService'
+      OnExecute = ActSelectServiceExecute
     end
   end
 end

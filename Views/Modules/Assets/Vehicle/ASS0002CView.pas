@@ -80,6 +80,10 @@ end;
 procedure TFASS0002CView.FormCreate(Sender: TObject);
 begin
   inherited;
+
+  Self.Height := Screen.Height - 400;
+  Self.Width  := Screen.Width  - 400;
+
   FdQData.Connection := FFdConnection;
 end;
 

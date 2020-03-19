@@ -140,6 +140,7 @@ inherited FORD0002CView: TFORD0002CView
             Left = 388
             Properties.OnChange = TxBuscarPropertiesChange
             ExplicitLeft = 388
+            ExplicitHeight = 24
           end
         end
         inherited PnGridFooter: TRzPanel
