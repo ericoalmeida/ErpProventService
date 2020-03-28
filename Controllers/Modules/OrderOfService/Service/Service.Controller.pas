@@ -28,9 +28,9 @@ type
     function code: string;
     function serviceId: string;
     function description: string;
-    function measuredUnit: string;
     function priceUnit: string;
     function price: Currency;
+    function paymentType: Integer;
     function status: Integer;
     function createdAt: string;
     function updatedAt: string;
@@ -95,14 +95,14 @@ begin
   Result := TServiceInsertController.New.serviceModel(FServiceModel);
 end;
 
-function TServiceController.measuredUnit: string;
-begin
-  Result := FRecordFound.measuredUnit;
-end;
-
 class function TServiceController.New: iServiceController;
 begin
   Result := Self.Create;
+end;
+
+function TServiceController.paymentType: Integer;
+begin
+  Result := FRecordFound.PAYMENTTYPE;
 end;
 
 function TServiceController.price: Currency;
@@ -112,8 +112,7 @@ end;
 
 function TServiceController.priceUnit: string;
 begin
-  Result := Format('R$ %s / %s', [FormatCurr('0.00#,##', FRecordFound.price),
-    FRecordFound.measuredUnit]);
+  Result := Format('R$ %s', [FormatCurr('0.00#,##', FRecordFound.price)]);
 end;
 
 function TServiceController.find(AValue: string): iServiceController;

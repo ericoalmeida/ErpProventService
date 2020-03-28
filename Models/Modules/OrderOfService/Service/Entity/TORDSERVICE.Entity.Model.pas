@@ -30,7 +30,7 @@ type
     FCODE: String;
     FSERVICEID: Integer;
     FDESCRIPTION: String;
-    FMEASUREDUNIT: String;
+    FPAYMENTTYPE: Integer;
     FPRICE: Double;
     FSTATUS: Integer;
     FUSERID: String;
@@ -66,9 +66,9 @@ type
     property DESCRIPTION: String read FDESCRIPTION write FDESCRIPTION;
 
     [Restrictions([NotNull])]
-    [Column('MEASUREDUNIT', ftString, 2)]
-    [Dictionary('MEASUREDUNIT', 'Mensagem de validação', '', '', '', taLeftJustify)]
-    property MEASUREDUNIT: String read FMEASUREDUNIT write FMEASUREDUNIT;
+    [Column('PAYMENTTYPE', ftInteger)]
+    [Dictionary('PAYMENTTYPE', 'Mensagem de validação', '', '', '', taCenter)]
+    property PAYMENTTYPE: Integer read FPAYMENTTYPE write FPAYMENTTYPE;
 
     [Restrictions([NotNull])]
     [Column('PRICE', ftBCD, 18, 4)]
@@ -135,4 +135,3 @@ initialization
   TRegisterClass.RegisterEntity(TTORDSERVICE)
 
 end.
-

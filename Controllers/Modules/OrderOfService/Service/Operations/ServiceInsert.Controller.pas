@@ -12,7 +12,7 @@ type
     FServiceModel: IServiceModel;
     FCompanyId: string;
     FDescription: string;
-    FMeasuredUnit: string;
+    FPaymentType: Integer;
     FPrice: Currency;
     FStatus: Integer;
     FUserId: string;
@@ -28,7 +28,7 @@ type
 
     function companyId(AValue: string): iServiceInsertController;
     function description(AValue: string): iServiceInsertController;
-    function measuredUnit(AValue: string): iServiceInsertController;
+    function paymentType(AValue: Integer): iServiceInsertController;
     function price(AValue: Currency): iServiceInsertController;
     function status(AValue: Integer): iServiceInsertController;
     function userId(AValue: string): iServiceInsertController;
@@ -87,10 +87,10 @@ begin
   end;
 end;
 
-function TServiceInsertController.measuredUnit(AValue: string): iServiceInsertController;
+function TServiceInsertController.paymentType(AValue: Integer): iServiceInsertController;
 begin
   Result := Self;
-  FMeasuredUnit := AValue;
+  FPaymentType := AValue;
 end;
 
 procedure TServiceInsertController.save;
@@ -100,7 +100,7 @@ begin
   FServiceModel.Entity.COMPANYID    := FCompanyId;
   FServiceModel.Entity.SERVICEID    := getServiceId;
   FServiceModel.Entity.DESCRIPTION  := FDescription;
-  FServiceModel.Entity.MEASUREDUNIT := FMeasuredUnit;
+  FServiceModel.Entity.PAYMENTTYPE  := FPaymentType;
   FServiceModel.Entity.PRICE        := FPrice;
   FServiceModel.Entity.STATUS       := FStatus;
   FServiceModel.Entity.USERID       := FUserId;

@@ -14,7 +14,7 @@ type
 
     FCompanyId: string;
     FDescription: string;
-    FMeasuredUnit: string;
+    FPaymentType: Integer;
     FPrice: Currency;
     FStatus: Integer;
     FUserId: string;
@@ -30,7 +30,7 @@ type
 
     function companyId(AValue: string): iServiceUpdateController;
     function description(AValue: string): iServiceUpdateController;
-    function measuredUnit(AValue: string): iServiceUpdateController;
+    function paymentType(AValue: Integer): iServiceUpdateController;
     function price(AValue: Currency): iServiceUpdateController;
     function status(AValue: Integer): iServiceUpdateController;
     function userId(AValue: string): iServiceUpdateController;
@@ -84,10 +84,10 @@ begin
   inherited;
 end;
 
-function TServiceUpdateController.measuredUnit(AValue: string): iServiceUpdateController;
+function TServiceUpdateController.paymentType(AValue: Integer): iServiceUpdateController;
 begin
  Result := Self;
- FMeasuredUnit := AValue;
+ FPaymentType := AValue;
 end;
 
 class function TServiceUpdateController.New: iServiceUpdateController;
@@ -107,7 +107,7 @@ begin
 
   FSelectedRecord.COMPANYID    := FCompanyId;
   FSelectedRecord.DESCRIPTION  := FDescription;
-  FSelectedRecord.MEASUREDUNIT := FMeasuredUnit;
+  FSelectedRecord.PAYMENTTYPE  := FPaymentType;
   FSelectedRecord.PRICE        := FPrice;
   FSelectedRecord.STATUS       := FStatus;
   FSelectedRecord.UPDATEDAT    := Now;

@@ -2,7 +2,6 @@ inherited FORD0001BView: TFORD0001BView
   Caption = 'Servi'#231'os'
   ClientHeight = 291
   ClientWidth = 594
-  Visible = False
   ExplicitWidth = 600
   ExplicitHeight = 320
   PixelsPerInch = 96
@@ -85,12 +84,14 @@ inherited FORD0001BView: TFORD0001BView
           E7F11F04311D30C2D9605F0000000049454E44AE426082}
       end
       inherited LbTitle: TRzLabel
-        Width = 65
+        Width = 78
+        Height = 26
         Caption = 'Servi'#231'os'
-        ExplicitWidth = 65
+        ExplicitWidth = 78
       end
       inherited LbOperation: TRzLabel
-        Left = 506
+        Left = 507
+        Height = 26
         ExplicitLeft = 506
       end
     end
@@ -99,6 +100,10 @@ inherited FORD0001BView: TFORD0001BView
       Width = 590
       ExplicitTop = 270
       ExplicitWidth = 590
+      inherited LbProgram: TRzLabel
+        Width = 590
+        Height = 18
+      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 590
@@ -308,7 +313,7 @@ inherited FORD0001BView: TFORD0001BView
         end
         object LbUserName: TcxLabel
           Left = 7
-          Top = 50
+          Top = 94
           Caption = 'Unid. Medida:'
           ParentFont = False
           Style.Font.Charset = ANSI_CHARSET
@@ -321,7 +326,7 @@ inherited FORD0001BView: TFORD0001BView
         end
         object TxMeasuredUnit: TcxTextEdit
           Left = 91
-          Top = 49
+          Top = 93
           Properties.CharCase = ecUpperCase
           Properties.MaxLength = 2
           Properties.OnChange = TxMeasuredUnitPropertiesChange
@@ -373,6 +378,47 @@ inherited FORD0001BView: TFORD0001BView
           StyleHot.LookAndFeel.NativeStyle = False
           TabOrder = 3
           Width = 149
+        end
+        object CbPaymentType: TcxComboBox
+          Left = 91
+          Top = 49
+          ParentFont = False
+          Properties.Items.Strings = (
+            'Hora trabalhada'
+            'Quilometro rodado'
+            'Gratuito')
+          Properties.OnChange = CbStatusPropertiesChange
+          Style.BorderColor = 12698049
+          Style.BorderStyle = ebsSingle
+          Style.Font.Charset = ANSI_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -11
+          Style.Font.Name = 'Open Sans'
+          Style.Font.Style = []
+          Style.HotTrack = False
+          Style.LookAndFeel.NativeStyle = False
+          Style.ButtonStyle = btsFlat
+          Style.IsFontAssigned = True
+          StyleDisabled.BorderColor = 12698049
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleDisabled.TextColor = clBlack
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 14
+          Text = 'Hora trabalhada'
+          Width = 142
+        end
+        object cxLabel2: TcxLabel
+          Left = 15
+          Top = 50
+          Caption = 'Pagamento:'
+          ParentFont = False
+          Style.Font.Charset = ANSI_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -11
+          Style.Font.Name = 'Open Sans'
+          Style.Font.Style = [fsBold]
+          Style.IsFontAssigned = True
         end
       end
     end

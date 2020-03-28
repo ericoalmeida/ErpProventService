@@ -30,6 +30,8 @@ type
     TxMeasuredUnit: TcxTextEdit;
     cxLabel1: TcxLabel;
     TxPrice: TcxCurrencyEdit;
+    cxLabel2: TcxLabel;
+    CbPaymentType: TcxComboBox;
     procedure FormCreate(Sender: TObject);
     procedure CbStatusPropertiesChange(Sender: TObject);
     procedure TxDescriptionPropertiesChange(Sender: TObject);
@@ -102,7 +104,7 @@ begin
    .duplicate
     .companyId(FSessionCompany)
     .description(TxDescription.Text)
-    .measuredUnit(TxMeasuredUnit.Text)
+    .paymentType(CbPaymentType.ItemIndex)
     .price(TxPrice.Value)
     .status(CbStatus.ItemIndex)
     .userId(FSessionUser)
@@ -131,7 +133,7 @@ begin
    .insert
     .companyId(FSessionCompany)
     .description(TxDescription.Text)
-    .measuredUnit(TxMeasuredUnit.Text)
+    .paymentType(CbPaymentType.ItemIndex)
     .price(TxPrice.Value)
     .status(CbStatus.ItemIndex)
     .userId(FSessionUser)
@@ -179,10 +181,10 @@ begin
 
   FServiceController.find(FSelectedRecord);
 
-  TxServiceId.Text     := FServiceController.serviceId;
-  TxDescription.Text   := FServiceController.description;
-  TxMeasuredUnit.Text  := FServiceController.measuredUnit;
-  TxPrice.Value        := FServiceController.price;
+  TxServiceId.Text         := FServiceController.serviceId;
+  TxDescription.Text       := FServiceController.description;
+  CbPaymentType.ItemIndex  := FServiceController.paymentType;
+  TxPrice.Value            := FServiceController.price;
 
   TxCreatedDate.Text    := FServiceController.createdAt;
   TxUpdatedDate.Text    := FServiceController.updatedAt;
@@ -215,7 +217,7 @@ begin
    .update
     .companyId(FSessionCompany)
     .description(TxDescription.Text)
-    .measuredUnit(TxMeasuredUnit.Text)
+    .paymentType(CbPaymentType.ItemIndex)
     .price(TxPrice.Value)
     .status(CbStatus.ItemIndex)
     .userId(FSessionUser)

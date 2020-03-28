@@ -2,9 +2,7 @@ object FMainView: TFMainView
   Left = 0
   Top = 0
   BorderStyle = bsSingle
-  Caption = 
-    'Prefeitura Municipal de Parana'#237'ta/MT - Secretaria Municipal de A' +
-    'gricultura'
+  Caption = 'Or'#231'amento F'#225'cil'
   ClientHeight = 398
   ClientWidth = 632
   Color = clBlack
@@ -21,9 +19,9 @@ object FMainView: TFMainView
   TextHeight = 13
   object ImLogo: TImage
     Left = 0
-    Top = 157
+    Top = 159
     Width = 632
-    Height = 218
+    Height = 216
     Align = alClient
     Center = True
     Picture.Data = {
@@ -1932,11 +1930,11 @@ object FMainView: TFMainView
     Left = 0
     Top = 0
     Width = 632
-    Height = 157
+    Height = 159
     ApplicationButton.Menu = ApMainMenu
     BarManager = BrManager
     ColorSchemeAccent = rcsaBlue
-    ColorSchemeName = 'DevExpressDarkStyle'
+    ColorSchemeName = 'Blue'
     QuickAccessToolbar.Toolbar = bmMainTools
     Contexts = <>
     TabOrder = 0
@@ -1963,7 +1961,6 @@ object FMainView: TFMainView
           Caption = ''
           ToolbarName = 'TbConstrutorasCad'
         end>
-      Visible = False
       Index = 1
     end
     object TbGeral: TdxRibbonTab
@@ -1983,7 +1980,7 @@ object FMainView: TFMainView
     Panels = <
       item
         PanelStyleClassName = 'TdxStatusBarTextPanelStyle'
-        Text = 'PREFEITURA MUNICIPAL DE PARANA'#205'TA/MT - SECRETARIA DE AGRICULTURA'
+        Text = 'OR'#199'AMENTO F'#193'CIL'
       end>
     Ribbon = RbMainMenu
     Font.Charset = ANSI_CHARSET
@@ -2056,7 +2053,7 @@ object FMainView: TFMainView
     object BmRotinas: TdxBar
       Caption = 'Rotinas'
       CaptionButtons = <>
-      DockedLeft = 412
+      DockedLeft = 411
       DockedTop = 0
       FloatLeft = 720
       FloatTop = 2
@@ -2084,7 +2081,7 @@ object FMainView: TFMainView
     object BmRelatorios: TdxBar
       Caption = 'Relat'#243'rios'
       CaptionButtons = <>
-      DockedLeft = 488
+      DockedLeft = 486
       DockedTop = 0
       FloatLeft = 720
       FloatTop = 2
@@ -3752,7 +3749,7 @@ object FMainView: TFMainView
       Caption = 'Fornecedores'
       Category = 0
       Hint = 'Fornecedores'
-      Visible = ivNever
+      Visible = ivAlways
       Glyph.SourceDPI = 96
       Glyph.Data = {
         89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
