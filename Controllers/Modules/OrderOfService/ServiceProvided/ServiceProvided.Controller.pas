@@ -136,6 +136,9 @@ end;
 
 function TServiceProvidedController.machineId: string;
 begin
+  Result := EmptyStr;
+
+  if FRecordFound.MACHINEID.HasValue then
   Result := FRecordFound.TASSVEHICLE.VEHICLEID.ToString;
 end;
 
@@ -146,6 +149,9 @@ end;
 
 function TServiceProvidedController.operatorId: string;
 begin
+  Result := EmptyStr;
+
+  if FRecordFound.OPERATORID.HasValue then
   Result := FRecordFound.TORDOPERATOR.OPERATORID.ToString;
 end;
 

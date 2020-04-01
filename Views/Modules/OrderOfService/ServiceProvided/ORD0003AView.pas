@@ -22,7 +22,7 @@ uses
   cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid, cxTextEdit,
   cxLabel,
   Vcl.StdCtrls, cxButtons, RzLabel, dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel,
-  Base.View.interf, cxImageComboBox;
+  Base.View.interf, cxImageComboBox, UCrpeClasses, UCrpe32, UCrpeDS;
 
 type
   TFORD0003AView = class(TFBaseListView, iBaseListView)

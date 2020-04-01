@@ -35,8 +35,8 @@ type
     FSERVICEPROVIDEDID: Integer;
     FPROVIDEDAT: TDateTime;
     FCLIENTID: String;
-    FOPERATORID: String;
-    FMACHINEID: String;
+    FOPERATORID: Nullable<String>;
+    FMACHINEID: Nullable<String>;
     FSERVICEID: String;
     FTOTALKM: Nullable<Double>;
     FTOTALHOURS: Nullable<Integer>;
@@ -84,17 +84,15 @@ type
     [Dictionary('CLIENTID', 'Mensagem de validação', '', '', '', taLeftJustify)]
     property CLIENTID: String read FCLIENTID write FCLIENTID;
 
-    [Restrictions([NotNull])]
     [Column('OPERATORID', ftString, 64)]
     [ForeignKey('FK2_TORDSERVICESPROVIDED', 'COMPANYID, OPERATORID', 'TORDOPERATOR', 'COMPANYID, CODE', SetNull, SetNull)]
     [Dictionary('OPERATORID', 'Mensagem de validação', '', '', '', taLeftJustify)]
-    property OPERATORID: String read FOPERATORID write FOPERATORID;
+    property OPERATORID: Nullable<String> read FOPERATORID write FOPERATORID;
 
-    [Restrictions([NotNull])]
     [Column('MACHINEID', ftString, 64)]
     [ForeignKey('FK3_TORDSERVICESPROVIDED', 'COMPANYID, MACHINEID', 'TASSVEHICLE', 'COMPANYID, CODE', SetNull, SetNull)]
     [Dictionary('MACHINEID', 'Mensagem de validação', '', '', '', taLeftJustify)]
-    property MACHINEID: String read FMACHINEID write FMACHINEID;
+    property MACHINEID: Nullable<String> read FMACHINEID write FMACHINEID;
 
     [Restrictions([NotNull])]
     [Column('SERVICEID', ftString, 64)]
@@ -107,7 +105,7 @@ type
     property TOTALKM: Nullable<Double> read FTOTALKM write FTOTALKM;
 
     [Column('TOTALHOURS', ftInteger)]
-    [Dictionary('TOTALHOURS', 'Mensagem de validação', '', '', '', taCenter)]
+    [Dictionary('TOTALHOURS', 'Mensagem de validação', '0', '', '', taCenter)]
     property TOTALHOURS: Nullable<Integer> read FTOTALHOURS write FTOTALHOURS;
 
     [Restrictions([NotNull])]

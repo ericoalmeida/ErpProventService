@@ -3,6 +3,7 @@ inherited FORD0001CView: TFORD0001CView
   ClientHeight = 291
   ClientWidth = 674
   Visible = False
+  OnShow = FormShow
   ExplicitWidth = 680
   ExplicitHeight = 320
   PixelsPerInch = 96
@@ -10,8 +11,11 @@ inherited FORD0001CView: TFORD0001CView
   inherited PnContainer: TRzPanel
     Width = 672
     Height = 289
+    ExplicitWidth = 672
+    ExplicitHeight = 289
     inherited PnHeader: TRzPanel
       Width = 670
+      ExplicitWidth = 670
       inherited ImTitle: TImage
         Picture.Data = {
           0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000020
@@ -90,6 +94,8 @@ inherited FORD0001CView: TFORD0001CView
     inherited PnProgram: TRzPanel
       Top = 270
       Width = 670
+      ExplicitTop = 270
+      ExplicitWidth = 670
       inherited LbProgram: TRzLabel
         Width = 670
         Height = 18
@@ -98,32 +104,46 @@ inherited FORD0001CView: TFORD0001CView
     inherited PnContainerBody: TRzPanel
       Width = 670
       Height = 229
+      ExplicitWidth = 670
+      ExplicitHeight = 229
       inherited PnFooterBody: TRzPanel
         Top = 189
         Width = 670
+        ExplicitTop = 189
+        ExplicitWidth = 670
         inherited PnButtonCancel: TRzPanel
           Left = 556
+          ExplicitLeft = 556
         end
         inherited PnButtonConfirm: TRzPanel
           Left = 443
+          ExplicitLeft = 443
         end
       end
       inherited PnContent: TRzPanel
         Width = 668
         Height = 187
+        ExplicitWidth = 668
+        ExplicitHeight = 187
         inherited PnGridHeader: TRzPanel
           Width = 666
+          ExplicitWidth = 666
           inherited LbBuscar: TcxLabel
             Left = 339
             Style.IsFontAssigned = True
+            ExplicitLeft = 339
           end
           inherited TxBuscar: TcxTextEdit
             Left = 388
+            ExplicitLeft = 388
+            ExplicitHeight = 24
           end
         end
         inherited PnGridFooter: TRzPanel
           Top = 156
           Width = 666
+          ExplicitTop = 156
+          ExplicitWidth = 666
           inherited LbTotalRegistros: TRzLabel
             Width = 658
             Height = 22
@@ -132,12 +152,67 @@ inherited FORD0001CView: TFORD0001CView
         inherited PnGrid: TRzPanel
           Width = 666
           Height = 113
+          ExplicitWidth = 666
+          ExplicitHeight = 113
           inherited DbDados: TcxGrid
             Width = 664
             Height = 111
+            ExplicitWidth = 664
+            ExplicitHeight = 111
+            inherited VwDados: TcxGridDBTableView
+              DataController.DataSource = DsData
+              object VwDadosSERVICEID: TcxGridDBColumn
+                DataBinding.FieldName = 'SERVICEID'
+              end
+              object VwDadosDESCRIPTION: TcxGridDBColumn
+                DataBinding.FieldName = 'DESCRIPTION'
+              end
+              object VwDadosUPDATEDAT: TcxGridDBColumn
+                DataBinding.FieldName = 'UPDATEDAT'
+              end
+            end
           end
         end
       end
+    end
+  end
+  inherited DsData: TDataSource
+    DataSet = FdQData
+  end
+  inherited FdQData: TFDQuery
+    SQL.Strings = (
+      'select'
+      ''
+      'srv.code,'
+      'srv.serviceid,'
+      'srv.description,'
+      'srv.updatedat'
+      ''
+      'from'
+      ''
+      'tordservice srv'
+      'left join tmnguser usr on (usr.code = srv.userid)'
+      ''
+      'where srv.companyid = :companyId'
+      'and srv.status = 0')
+    ParamData = <
+      item
+        Name = 'COMPANYID'
+        ParamType = ptInput
+      end>
+    object FdQDataCODE: TStringField
+      FieldName = 'CODE'
+      Size = 64
+    end
+    object FdQDataSERVICEID: TIntegerField
+      FieldName = 'SERVICEID'
+    end
+    object FdQDataDESCRIPTION: TStringField
+      FieldName = 'DESCRIPTION'
+      Size = 95
+    end
+    object FdQDataUPDATEDAT: TSQLTimeStampField
+      FieldName = 'UPDATEDAT'
     end
   end
   inherited StGridStyles: TcxStyleRepository

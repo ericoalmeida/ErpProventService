@@ -137,6 +137,8 @@ function TVehicleController.findById(AValue: string): iVehicleController;
 begin
   Result := Self;
 
+  if AValue = EmptyStr then Exit;
+
   FRecordFound := FVehicleModel.DAO.FindWhere
     (Format('VEHICLEID = %s', [QuotedStr(AValue)])).Items[0];
 end;

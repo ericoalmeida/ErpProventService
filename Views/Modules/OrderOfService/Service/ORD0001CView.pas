@@ -17,8 +17,16 @@ uses
 
 type
   TFORD0001CView = class(TFBaseSearchView, IBaseSearchView)
+    FdQDataCODE: TStringField;
+    FdQDataSERVICEID: TIntegerField;
+    FdQDataDESCRIPTION: TStringField;
+    VwDadosSERVICEID: TcxGridDBColumn;
+    VwDadosDESCRIPTION: TcxGridDBColumn;
+    FdQDataUPDATEDAT: TSQLTimeStampField;
+    VwDadosUPDATEDAT: TcxGridDBColumn;
     procedure BtConfirmarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -53,15 +61,24 @@ begin
   FdQData.Connection := FFdConnection;
 end;
 
+procedure TFORD0001CView.FormShow(Sender: TObject);
+begin
+  inherited;
+
+  listRecords
+end;
+
 procedure TFORD0001CView.BtConfirmarClick(Sender: TObject);
 begin
-  FSelectedRecord := '';
+  FSelectedRecord := FdQDataCODE.AsString;
   inherited;
 end;
 
 procedure TFORD0001CView.listRecords;
 begin
-
+  FdQData.ParamByName('companyId').AsString := FSessionCompany;
+  FdQData.Close;
+  FdQData.Open();
 end;
 
 class function TFORD0001CView.New: IBaseSearchView;

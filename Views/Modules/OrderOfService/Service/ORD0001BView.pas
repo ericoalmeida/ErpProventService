@@ -26,8 +26,6 @@ type
     LbCreatedAt: TcxLabel;
     TxUpdatedDate: TcxTextEdit;
     LbUpdatedAt: TcxLabel;
-    LbUserName: TcxLabel;
-    TxMeasuredUnit: TcxTextEdit;
     cxLabel1: TcxLabel;
     TxPrice: TcxCurrencyEdit;
     cxLabel2: TcxLabel;
@@ -38,6 +36,7 @@ type
     procedure TxMeasuredUnitPropertiesChange(Sender: TObject);
     procedure TxPricePropertiesChange(Sender: TObject);
     procedure BtConfirmarClick(Sender: TObject);
+    procedure CbPaymentTypePropertiesChange(Sender: TObject);
   private
     FServiceController: iServiceController;
   public
@@ -74,10 +73,27 @@ begin
   inherited;
 end;
 
+procedure TFORD0001BView.CbPaymentTypePropertiesChange(Sender: TObject);
+begin
+  inherited;
+  changeDataAnyFields;
+
+  if CbPaymentType.ItemIndex = 2 then begin
+    TxPrice.Value   := 0;
+    TxPrice.Enabled := False;
+  end
+   else
+  begin
+    TxPrice.Enabled := True;
+  end;
+end;
+
 procedure TFORD0001BView.CbStatusPropertiesChange(Sender: TObject);
 begin
   inherited;
   changeDataAnyFields;
+
+
 end;
 
 procedure TFORD0001BView.deleteRecord;
@@ -91,11 +107,13 @@ procedure TFORD0001BView.disableFields;
 begin
   CbStatus.Enabled       := not(FOperation in [toShow, toDelete]);
   TxDescription.Enabled  := not(FOperation in [toShow, toDelete]);
-  TxMeasuredUnit.Enabled := not(FOperation in [toShow, toDelete]);
+  CbPaymentType.Enabled  := not(FOperation in [toShow, toDelete]);
   TxPrice.Enabled        := not(FOperation in [toShow, toDelete]);
 
+  TxPrice.Enabled        := not(FServiceController.paymentType = 2);
+
   PnButtonConfirm.Visible := not(FOperation = toShow);
-  BtConfirmar.Visible := not(FOperation = toShow);
+  BtConfirmar.Visible     := not(FOperation = toShow);
 end;
 
 procedure TFORD0001BView.duplicateRecord;

@@ -92,7 +92,7 @@ inherited FORD0001BView: TFORD0001BView
       inherited LbOperation: TRzLabel
         Left = 507
         Height = 26
-        ExplicitLeft = 506
+        ExplicitLeft = 507
       end
     end
     inherited PnProgram: TRzPanel
@@ -153,7 +153,7 @@ inherited FORD0001BView: TFORD0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 4
+          TabOrder = 3
           Width = 54
         end
         object LbVehicleId: TcxLabel
@@ -262,7 +262,7 @@ inherited FORD0001BView: TFORD0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 8
+          TabOrder = 7
           Width = 134
         end
         object LbCreatedAt: TcxLabel
@@ -296,7 +296,7 @@ inherited FORD0001BView: TFORD0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 10
+          TabOrder = 9
           Width = 134
         end
         object LbUpdatedAt: TcxLabel
@@ -310,43 +310,6 @@ inherited FORD0001BView: TFORD0001BView
           Style.Font.Name = 'Open Sans'
           Style.Font.Style = []
           Style.IsFontAssigned = True
-        end
-        object LbUserName: TcxLabel
-          Left = 7
-          Top = 94
-          Caption = 'Unid. Medida:'
-          ParentFont = False
-          Style.Font.Charset = ANSI_CHARSET
-          Style.Font.Color = clWindowText
-          Style.Font.Height = -11
-          Style.Font.Name = 'Open Sans'
-          Style.Font.Style = [fsBold]
-          Style.IsFontAssigned = True
-          Transparent = True
-        end
-        object TxMeasuredUnit: TcxTextEdit
-          Left = 91
-          Top = 93
-          Properties.CharCase = ecUpperCase
-          Properties.MaxLength = 2
-          Properties.OnChange = TxMeasuredUnitPropertiesChange
-          Style.BorderColor = 12698049
-          Style.BorderStyle = ebsSingle
-          Style.HotTrack = False
-          Style.LookAndFeel.Kind = lfUltraFlat
-          Style.LookAndFeel.NativeStyle = False
-          StyleDisabled.BorderColor = 12698049
-          StyleDisabled.LookAndFeel.Kind = lfUltraFlat
-          StyleDisabled.LookAndFeel.NativeStyle = False
-          StyleDisabled.TextColor = clBlack
-          StyleFocused.BorderColor = 15314790
-          StyleFocused.Color = 16577771
-          StyleFocused.LookAndFeel.Kind = lfUltraFlat
-          StyleFocused.LookAndFeel.NativeStyle = False
-          StyleHot.LookAndFeel.Kind = lfUltraFlat
-          StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 2
-          Width = 70
         end
         object cxLabel1: TcxLabel
           Left = 391
@@ -376,7 +339,7 @@ inherited FORD0001BView: TFORD0001BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 3
+          TabOrder = 2
           Width = 149
         end
         object CbPaymentType: TcxComboBox
@@ -387,7 +350,7 @@ inherited FORD0001BView: TFORD0001BView
             'Hora trabalhada'
             'Quilometro rodado'
             'Gratuito')
-          Properties.OnChange = CbStatusPropertiesChange
+          Properties.OnChange = CbPaymentTypePropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
           Style.Font.Charset = ANSI_CHARSET
@@ -404,7 +367,7 @@ inherited FORD0001BView: TFORD0001BView
           StyleDisabled.TextColor = clBlack
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 14
+          TabOrder = 12
           Text = 'Hora trabalhada'
           Width = 142
         end

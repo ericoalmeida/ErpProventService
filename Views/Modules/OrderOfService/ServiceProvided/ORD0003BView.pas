@@ -12,7 +12,7 @@ uses
   cxDropDownEdit, cxCalendar, Base.View.interf, Types.Controllers, ServiceProvided.Controller.Interf,
   Person.Controller.Interf, Operators.Controller.Interf, Service.Controller.Interf,
   Vehicle.Controller.Interf, cxSpinEdit, cxTimeEdit, cxMemo, ERGTotalHorasEdit, Math, Vcl.Mask,
-  RzEdit;
+  RzEdit, Utils.Controller.Interf;
 
 type
   TFORD0003BView = class(TFBaseRegisterView, iBaseRegisterView)
@@ -70,6 +70,9 @@ type
     FOperatorController: iOperatorController;
     FServiceController: iServiceController;
     FVehicleController: iVehicleController;
+
+    FCodeOperator:  string;
+    FCodeVehicle:  string;
 
     procedure calcularValorTotalPelasHorasTrabalhadas(AValue: Integer);
 
@@ -211,9 +214,9 @@ begin
     .companyId(FSessionCompany)
     .providedAt(TxData.Date)
     .clientId(FClientController.code)
-    .operatorId(FOperatorController.code)
-    .machineId(FVehicleController.code)
-    .serviceId('{DDC3284A-E0F3-46BE-B8AA-6C72B84E73A8}')
+    .operatorId(FCodeOperator)
+    .machineId(FCodeVehicle)
+    .serviceId(FServiceController.code)
     .totalHours(TxTotalHours.Hours)
     .totalKm(TxTotalKm.Value)
     .total(TxTotal.Value)
@@ -255,6 +258,9 @@ begin
 
   if FOperation = toInsert then
   TxTotalHours.Value := 0;
+
+  if TxData.Enabled then  
+  TxData.SetFocus;
 end;
 
 procedure TFORD0003BView.insertRecord;
@@ -264,9 +270,9 @@ begin
     .companyId(FSessionCompany)
     .providedAt(TxData.Date)
     .clientId(FClientController.code)
-    .operatorId(FOperatorController.code)
-    .machineId(FVehicleController.code)
-    .serviceId('{DDC3284A-E0F3-46BE-B8AA-6C72B84E73A8}')
+    .operatorId(FCodeOperator)
+    .machineId(FCodeVehicle)
+    .serviceId(FServiceController.code)
     .totalHours(TxTotalHours.Hours)
     .totalKm(TxTotalKm.Value)
     .total(TxTotal.Value)
@@ -324,15 +330,13 @@ begin
 end;
 
 procedure TFORD0003BView.selectOperator;
-var
-  codeOperator: string;
 begin
-  codeOperator := TFacadeView.new.modulesFacadeView.orderOfServiceFactory.
+  FCodeOperator := TFacadeView.new.modulesFacadeView.orderOfServiceFactory.
     showProgramOfSearch(tsORD0002CView).showSearch.&end;
 
-    if codeOperator = EmptyStr then Exit;
+    if FCodeOperator = EmptyStr then Exit;
 
-    FOperatorController.find(codeOperator);
+    FOperatorController.find(FCodeOperator);
 
     TxOperatorId.Text   := FOperatorController.operatorId;
     TxOperatorName.Text := FOperatorController.name;
@@ -354,15 +358,13 @@ begin
 end;
 
 procedure TFORD0003BView.selectVehicle;
-var
-  codeVehicle: string;
 begin
-  codeVehicle := TFacadeView.new.modulesFacadeView.assetsFactoryView.
+    FCodeVehicle := TFacadeView.new.modulesFacadeView.assetsFactoryView.
     showProgramOfSearch(tsASS0002CView).showSearch.&end;
 
-    if codeVehicle = EmptyStr then Exit;
+    if FCodeVehicle = EmptyStr then Exit;
 
-    FVehicleController.find(codeVehicle);
+    FVehicleController.find(FCodeVehicle);
 
     TxMachine.Text     := FVehicleController.vehicleId;
     TxMachineName.Text := FVehicleController.description;
@@ -396,10 +398,20 @@ begin
   TxData.Date               := FServiceProvidedController.providedAt;
   TxClientId.Text           := FClientController.personId;
   TxClientName.Text         := FClientController.name;
-  TxOperatorId.Text         := FOperatorController.operatorId;
-  TxOperatorName.Text       := FOperatorController.name;
-  TxMachine.Text            := FVehicleController.vehicleId;
-  TxMachineName.Text        := FVehicleController.description;
+
+
+  if not(FServiceProvidedController.operatorId.IsEmpty) then
+  begin
+    TxOperatorId.Text := FOperatorController.operatorId;
+    TxOperatorName.Text := FOperatorController.name;
+  end;
+
+  if not(FServiceProvidedController.machineId.IsEmpty) then
+  begin
+    TxMachine.Text := FVehicleController.vehicleId;
+    TxMachineName.Text := FVehicleController.description;
+  end;
+
   TxServiceId.Text          := FServiceController.serviceId;
   TxServiceName.Text        := FServiceController.description;
   TxUnityPrice.Value        := FServiceController.price;
@@ -429,12 +441,22 @@ procedure TFORD0003BView.TxMachinePropertiesChange(Sender: TObject);
 begin
   inherited;
   changeDataAnyFields;
+
+  if TxMachine.Text = EmptyStr then
+   begin
+     FCodeVehicle := EmptyStr;
+   end;
 end;
 
 procedure TFORD0003BView.TxOperatorIdPropertiesChange(Sender: TObject);
 begin
   inherited;
   changeDataAnyFields;
+
+  if TxOperatorId.Text = EmptyStr then
+   begin
+     FCodeOperator := EmptyStr;
+   end;
 end;
 
 procedure TFORD0003BView.TxServiceIdPropertiesChange(Sender: TObject);
@@ -471,9 +493,9 @@ begin
     .companyId(FSessionCompany)
     .providedAt(TxData.Date)
     .clientId(FClientController.code)
-    .operatorId(FOperatorController.code)
-    .machineId(FVehicleController.code)
-    .serviceId('{DDC3284A-E0F3-46BE-B8AA-6C72B84E73A8}')
+    .operatorId(FCodeOperator)
+    .machineId(FCodeVehicle)
+    .serviceId(FServiceController.code)
     .totalHours(TxTotalHours.Hours)
     .totalKm(TxTotalKm.Value)
     .total(TxTotal.Value)

@@ -233,6 +233,10 @@ inherited FORD0003AView: TFORD0003AView
       inherited PnHeaderButtons: TRzPanel
         Width = 488
         ExplicitWidth = 488
+        inherited RzOptionShow: TRzPanel
+          inherited BtOptionShow: TcxButton
+          end
+        end
       end
     end
   end

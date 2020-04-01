@@ -109,6 +109,9 @@ function TOperatorController.findById(AValue: string): iOperatorController;
 begin
   Result := Self;
 
+  if AValue = EmptyStr then Exit;
+  
+
   FRecordFound := FOperatorModel.DAO.FindWhere
     (Format('OPERATORID = %s', [QuotedStr(AValue)])).Items[0];
 end;
