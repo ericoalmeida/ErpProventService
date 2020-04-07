@@ -299,7 +299,7 @@ inherited FORD0003BView: TFORD0003BView
           Width = 54
         end
         object cxLabel1: TcxLabel
-          Left = 43
+          Left = 42
           Top = 58
           Caption = 'Operador:'
           ParentFont = False
@@ -308,6 +308,7 @@ inherited FORD0003BView: TFORD0003BView
           Style.Font.Height = -11
           Style.Font.Name = 'Open Sans'
           Style.Font.Style = []
+          Style.TextStyle = []
           Style.IsFontAssigned = True
         end
         object TxMachineName: TcxTextEdit
@@ -523,8 +524,8 @@ inherited FORD0003BView: TFORD0003BView
           Width = 94
         end
         object TxTotalKm: TcxCurrencyEdit
-          Left = 105
-          Top = 153
+          Left = 314
+          Top = 129
           EditValue = 0.000000000000000000
           Properties.DisplayFormat = '0.0km'
           Properties.OnChange = TxTotalKmPropertiesChange
@@ -540,6 +541,7 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
           TabOrder = 6
+          Visible = False
           Width = 112
         end
         object TxTotalHours: TERGTotalHorasEdit
@@ -559,9 +561,49 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
           TabOrder = 5
+          Visible = False
           OnExit = TxTotalHoursExit
           Hours = 0
           Width = 112
+        end
+        object ERGButtonEdit1: TERGButtonEdit
+          Left = 525
+          Top = 209
+          Properties.Buttons = <
+            item
+              Default = True
+              Kind = bkEllipsis
+            end>
+          Style.BorderColor = 12698049
+          Style.BorderStyle = ebsSingle
+          Style.HotTrack = False
+          Style.LookAndFeel.NativeStyle = False
+          Style.TextStyle = []
+          Style.ButtonStyle = btsOffice11
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 22
+          labelTitle = LbTeste
+          Width = 100
+        end
+        object Button1: TButton
+          Left = 261
+          Top = 216
+          Width = 75
+          Height = 25
+          Caption = 'Button1'
+          TabOrder = 23
+          OnClick = Button1Click
+        end
+        object Button2: TButton
+          Left = 342
+          Top = 216
+          Width = 75
+          Height = 25
+          Caption = 'Button1'
+          TabOrder = 24
+          OnClick = Button2Click
         end
       end
     end
@@ -642,7 +684,7 @@ inherited FORD0003BView: TFORD0003BView
     Style.IsFontAssigned = True
     Transparent = True
   end
-  object cxLabel10: TcxLabel [5]
+  object LbTotalHours: TcxLabel [5]
     Left = 38
     Top = 174
     Caption = 'Total horas:'
@@ -655,10 +697,11 @@ inherited FORD0003BView: TFORD0003BView
     Style.IsFontAssigned = True
     StyleDisabled.TextStyle = [fsBold]
     Transparent = True
+    Visible = False
   end
-  object cxLabel6: TcxLabel [6]
-    Left = 51
-    Top = 198
+  object LbTotalKm: TcxLabel [6]
+    Left = 259
+    Top = 174
     Caption = 'Total KM:'
     ParentFont = False
     Style.Font.Charset = ANSI_CHARSET
@@ -668,6 +711,22 @@ inherited FORD0003BView: TFORD0003BView
     Style.Font.Style = []
     Style.IsFontAssigned = True
     StyleDisabled.TextStyle = []
+    Transparent = True
+    Visible = False
+  end
+  object LbTeste: TcxLabel [7]
+    Left = 458
+    Top = 254
+    Caption = 'Total horas:'
+    ParentFont = False
+    Style.Font.Charset = ANSI_CHARSET
+    Style.Font.Color = clWindowText
+    Style.Font.Height = -11
+    Style.Font.Name = 'Open Sans'
+    Style.Font.Style = []
+    Style.TextStyle = []
+    Style.IsFontAssigned = True
+    StyleDisabled.TextStyle = [fsBold]
     Transparent = True
   end
   inherited AcSearchRecord: TActionList
