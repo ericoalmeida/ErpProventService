@@ -38,14 +38,7 @@ inherited FBaseRegisterView: TFBaseRegisterView
         Font.Name = 'Ubuntu Medium'
         Font.Style = [fsItalic]
         ParentFont = False
-        ExplicitLeft = 515
         ExplicitHeight = 21
-      end
-    end
-    inherited PnProgram: TRzPanel
-      inherited LbProgram: TRzLabel
-        Width = 608
-        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
@@ -127,7 +120,6 @@ inherited FBaseRegisterView: TFBaseRegisterView
             Font.Name = 'Open Sans SemiBold'
             Font.Style = [fsBold]
             ParentFont = False
-            OnClick = BtConfirmarClick
           end
         end
       end

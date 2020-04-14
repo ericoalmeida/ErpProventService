@@ -17,7 +17,7 @@ uses
   Base.View.interf,
   Types.Controllers, State.Controller.interf, Country.Controller.interf,
   System.Actions,
-  Vcl.ActnList, dxSkinDarkRoom, dxSkinDarkSide;
+  Vcl.ActnList, dxSkinDarkRoom, dxSkinDarkSide, ERGTextEdit, ERGButtonEdit;
 
 type
   TFMNG0003BView = class(TFBaseRegisterView, iBaseRegisterView)
@@ -26,15 +26,15 @@ type
     TxCreatedAt: TcxTextEdit;
     LbCreatedAt: TcxLabel;
     TxCountryName: TcxTextEdit;
-    TxCountryId: TcxButtonEdit;
     cxLabel3: TcxLabel;
-    TxName: TcxTextEdit;
     LbDescription: TcxLabel;
     TxStateId: TcxTextEdit;
     LbDistrictId: TcxLabel;
     acFind: TAction;
     cxLabel4: TcxLabel;
-    TxInitials: TcxTextEdit;
+    TxName: TERGTextEdit;
+    TxInitials: TERGTextEdit;
+    TxCountryId: TERGButtonEdit;
     procedure FormCreate(Sender: TObject);
     procedure acFindExecute(Sender: TObject);
     procedure BtConfirmarClick(Sender: TObject);
@@ -84,8 +84,11 @@ end;
 
 procedure TFMNG0003BView.BtConfirmarClick(Sender: TObject);
 begin
+  if not(validate) then Exit;
+
   save;
-  inherited;
+
+  Close;
 end;
 
 procedure TFMNG0003BView.deleteRecord;

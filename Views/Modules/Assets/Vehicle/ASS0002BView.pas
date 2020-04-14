@@ -9,13 +9,12 @@ uses
   dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, System.Actions, Vcl.ActnList, Vcl.StdCtrls,
   cxButtons, RzLabel, dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel, cxControls, cxContainer, cxEdit,
   cxLabel, cxTextEdit, cxMaskEdit, cxDropDownEdit, Base.View.interf, Types.Controllers,
-  Vehicle.Controller.Interf;
+  Vehicle.Controller.Interf, ERGTextEdit;
 
 type
   TFASS0002BView = class(TFBaseRegisterView, iBaseRegisterView)
     TxVehicleId: TcxTextEdit;
     LbVehicleId: TcxLabel;
-    TxDescription: TcxTextEdit;
     LbDescription: TcxLabel;
     TxCreatedDate: TcxTextEdit;
     LbCreatedAt: TcxLabel;
@@ -24,13 +23,14 @@ type
     CbStatus: TcxComboBox;
     LbStatus: TcxLabel;
     LbUserName: TcxLabel;
-    TxModel: TcxTextEdit;
     cxLabel1: TcxLabel;
-    TxBrand: TcxTextEdit;
     cxLabel2: TcxLabel;
-    TxCategory: TcxTextEdit;
     cxLabel3: TcxLabel;
-    TxBoard: TcxTextEdit;
+    TxDescription: TERGTextEdit;
+    TxModel: TERGTextEdit;
+    TxCategory: TERGTextEdit;
+    TxBrand: TERGTextEdit;
+    TxBoard: TERGTextEdit;
     procedure FormCreate(Sender: TObject);
     procedure TxDescriptionPropertiesChange(Sender: TObject);
     procedure TxModelPropertiesChange(Sender: TObject);
@@ -72,8 +72,11 @@ uses Facade.Controller;
 
 procedure TFASS0002BView.BtConfirmarClick(Sender: TObject);
 begin
-  inherited;
+  if not(validate) then Exit;
+
   save;
+
+  Close;
 end;
 
 procedure TFASS0002BView.CbStatusPropertiesChange(Sender: TObject);

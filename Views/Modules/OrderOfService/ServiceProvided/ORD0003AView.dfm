@@ -4,9 +4,9 @@ inherited FORD0003AView: TFORD0003AView
   ClientWidth = 494
   OnShow = FormShow
   ExplicitWidth = 500
-  ExplicitHeight = 330
+  ExplicitHeight = 329
   PixelsPerInch = 96
-  TextHeight = 15
+  TextHeight = 14
   inherited PnContainer: TRzPanel
     Width = 492
     Height = 299
@@ -85,9 +85,9 @@ inherited FORD0003AView: TFORD0003AView
           E7F11F04311D30C2D9605F0000000049454E44AE426082}
       end
       inherited LbTitle: TRzLabel
-        Width = 170
+        Width = 176
         Caption = 'Ordem de servi'#231'os'
-        ExplicitWidth = 170
+        ExplicitWidth = 176
       end
     end
     inherited PnProgram: TRzPanel
@@ -233,10 +233,6 @@ inherited FORD0003AView: TFORD0003AView
       inherited PnHeaderButtons: TRzPanel
         Width = 488
         ExplicitWidth = 488
-        inherited RzOptionShow: TRzPanel
-          inherited BtOptionShow: TcxButton
-          end
-        end
       end
     end
   end

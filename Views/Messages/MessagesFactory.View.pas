@@ -22,7 +22,7 @@ implementation
 
 { TMessagesFactoryView }
 
-uses MSG0001.View, MSG0002.View, MSG0003.View, MSG0004.View;
+uses MSG0001.View, MSG0002.View, MSG0003.View, MSG0004.View, MSG0005.View;
 
 constructor TMessagesFactoryView.Create;
 begin
@@ -47,6 +47,7 @@ begin
     tmConfirmation: Result := TFMSG0002View.new;
     tmError: Result := TFMSG0003View.new;
     tmWarning: Result := TFMSG0004View.new;
+    tmRequired: Result := TFMSG0005View.new;
   end;
 end;
 

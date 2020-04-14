@@ -3,7 +3,7 @@ unit Types.Views;
 interface
 
 type
-  TTypeMessageView = (tmInformation, tmConfirmation, tmError, tmWarning);
+  TTypeMessageView = (tmInformation, tmConfirmation, tmError, tmWarning, tmRequired);
 
   TTypeListingPrograms = (tpMNG0001AView, tpMNG0002AView, tpMNG0003AView,
     tpMNG0004AView, tpMNG0005AView, tpMNG0006AView, tpASS0001AView,

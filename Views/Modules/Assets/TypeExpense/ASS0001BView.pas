@@ -12,7 +12,7 @@ uses
   Vcl.ActnList, Vcl.StdCtrls,
   cxButtons, RzLabel, dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel, Base.View.interf,
   Types.Controllers, cxControls, cxContainer, cxEdit, cxLabel, cxTextEdit,
-  TypeExpense.Controller.interf, cxMaskEdit, cxDropDownEdit;
+  TypeExpense.Controller.interf, cxMaskEdit, cxDropDownEdit, ERGTextEdit;
 
 type
   TFASS0001BView = class(TFBaseRegisterView, iBaseRegisterView)
@@ -20,12 +20,12 @@ type
     LbUpdatedAt: TcxLabel;
     TxCreatedDate: TcxTextEdit;
     LbCreatedAt: TcxLabel;
-    TxDescription: TcxTextEdit;
     LbDescription: TcxLabel;
     TxTypeExpenseId: TcxTextEdit;
     LbExpenseId: TcxLabel;
     CbStatus: TcxComboBox;
     LbStatus: TcxLabel;
+    TxDescription: TERGTextEdit;
     procedure FormCreate(Sender: TObject);
     procedure BtConfirmarClick(Sender: TObject);
     procedure TxDescriptionPropertiesChange(Sender: TObject);
@@ -62,9 +62,11 @@ uses Facade.Controller;
 
 procedure TFASS0001BView.BtConfirmarClick(Sender: TObject);
 begin
+  if not(validate) then Exit;
+
   save;
 
-  inherited;
+  Close;
 end;
 
 procedure TFASS0001BView.CbStatusPropertiesChange(Sender: TObject);

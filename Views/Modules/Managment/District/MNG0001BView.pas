@@ -16,7 +16,8 @@ uses
   dxSkinOffice2007Black,
   dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Silver,
   System.Actions, Vcl.ActnList,
-  City.Controller.interf, dxSkinDarkRoom, dxSkinDarkSide;
+  City.Controller.interf, dxSkinDarkRoom, dxSkinDarkSide, ERGTextEdit,
+  ERGButtonEdit;
 
 type
   TFMNG0001BView = class(TFBaseRegisterView, iBaseRegisterView)
@@ -24,16 +25,16 @@ type
     LbDescription: TcxLabel;
     TxCreatedDate: TcxTextEdit;
     TxUpdatedDate: TcxTextEdit;
-    TxDescription: TcxTextEdit;
     LbCreatedAt: TcxLabel;
     LbUpdatedAt: TcxLabel;
     TxDistrictId: TcxTextEdit;
-    TxCityId: TcxButtonEdit;
     TxCityName: TcxTextEdit;
     cxLabel3: TcxLabel;
     acSelectCity: TAction;
-    TxZipCode: TcxTextEdit;
     LbCEP: TcxLabel;
+    TxZipCode: TERGTextEdit;
+    TxDescription: TERGTextEdit;
+    TxCityId: TERGButtonEdit;
     procedure FormCreate(Sender: TObject);
     procedure BtConfirmarClick(Sender: TObject);
     procedure acSelectCityExecute(Sender: TObject);
@@ -81,8 +82,11 @@ end;
 
 procedure TFMNG0001BView.BtConfirmarClick(Sender: TObject);
 begin
+  if not(validate) then Exit;
+
   save;
-  inherited;
+
+  Close;
 end;
 
 procedure TFMNG0001BView.deleteRecord;
@@ -167,7 +171,7 @@ begin
 
     TxCityId.Text   := FCityController.cityId;
     TxCityName.Text := FCityController.name;
-    TxZipCode.Text      := FCityController.zipCode;
+    TxZipCode.Text  := FCityController.zipCode;
 end;
 
 function TFMNG0001BView.selectedRecord(AValue: string): iBaseRegisterView;

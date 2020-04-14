@@ -225,6 +225,7 @@ object FBaseView: TFBaseView
             Top = 2
             Width = 106
             Height = 29
+            Cursor = crHandPoint
             Margins.Left = 1
             Margins.Top = 1
             Margins.Right = 1

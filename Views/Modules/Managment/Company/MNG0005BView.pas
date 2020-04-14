@@ -14,7 +14,8 @@ uses
   cxContainer, cxEdit,
   cxMaskEdit, cxButtonEdit, cxTextEdit, cxLabel, RzTabs, dxBarBuiltInMenu, cxPC,
   Base.View.interf,
-  Types.Controllers, Company.Controller.interf, District.Controller.interf;
+  Types.Controllers, Company.Controller.interf, District.Controller.interf,
+  ERGButtonEdit, ERGTextEdit;
 
 type
   TFMNG0005BView = class(TFBaseRegisterView, iBaseRegisterView)
@@ -27,21 +28,21 @@ type
     TxPhoneNumber: TcxTextEdit;
     LbPhoneNumber: TcxLabel;
     TxDistrictName: TcxTextEdit;
-    TxDistrictId: TcxButtonEdit;
     LbDistrictId: TcxLabel;
-    TxAddress: TcxTextEdit;
     LbAddress: TcxLabel;
     TxIE: TcxTextEdit;
     LbIE: TcxLabel;
-    TxCNPJ: TcxTextEdit;
     LbCNPJ: TcxLabel;
-    TxFancyName: TcxTextEdit;
     LbFancyName: TcxLabel;
-    TxName: TcxTextEdit;
     LbName: TcxLabel;
     TxCompanyId: TcxTextEdit;
     LbCompanyId: TcxLabel;
     AcSelectDistrict: TAction;
+    TxDistrictId: TERGButtonEdit;
+    TxName: TERGTextEdit;
+    TxFancyName: TERGTextEdit;
+    TxCNPJ: TERGTextEdit;
+    TxAddress: TERGTextEdit;
     procedure FormCreate(Sender: TObject);
     procedure BtConfirmarClick(Sender: TObject);
     procedure AcSelectDistrictExecute(Sender: TObject);
@@ -94,8 +95,11 @@ end;
 
 procedure TFMNG0005BView.BtConfirmarClick(Sender: TObject);
 begin
+  if not(validate) then Exit;
+
   save;
-  inherited;
+
+  Close;
 end;
 
 procedure TFMNG0005BView.deleteRecord;

@@ -3,7 +3,7 @@ inherited FASS0001BView: TFASS0001BView
   ClientHeight = 291
   ClientWidth = 594
   ExplicitWidth = 600
-  ExplicitHeight = 320
+  ExplicitHeight = 319
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
@@ -71,15 +71,13 @@ inherited FASS0001BView: TFASS0001BView
           44AE426082}
       end
       inherited LbTitle: TRzLabel
-        Width = 320
-        Height = 26
+        Width = 360
         Caption = 'Tipo de despesas com ve'#237'culo/maquinas'
-        ExplicitWidth = 320
+        ExplicitWidth = 360
       end
       inherited LbOperation: TRzLabel
-        Left = 506
-        Height = 26
-        ExplicitLeft = 506
+        Left = 507
+        ExplicitLeft = 507
       end
     end
     inherited PnProgram: TRzPanel
@@ -89,7 +87,6 @@ inherited FASS0001BView: TFASS0001BView
       ExplicitWidth = 590
       inherited LbProgram: TRzLabel
         Width = 590
-        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
@@ -109,6 +106,9 @@ inherited FASS0001BView: TFASS0001BView
         inherited PnButtonConfirm: TRzPanel
           Left = 366
           ExplicitLeft = 366
+          inherited BtConfirmar: TcxButton
+            OnClick = BtConfirmarClick
+          end
         end
       end
       inherited PnContent: TRzPanel
@@ -189,29 +189,6 @@ inherited FASS0001BView: TFASS0001BView
           Style.Font.Style = []
           Style.IsFontAssigned = True
         end
-        object TxDescription: TcxTextEdit
-          Left = 91
-          Top = 25
-          Properties.CharCase = ecUpperCase
-          Properties.OnChange = TxDescriptionPropertiesChange
-          Style.BorderColor = 12698049
-          Style.BorderStyle = ebsSingle
-          Style.HotTrack = False
-          Style.LookAndFeel.Kind = lfUltraFlat
-          Style.LookAndFeel.NativeStyle = False
-          StyleDisabled.BorderColor = 12698049
-          StyleDisabled.LookAndFeel.Kind = lfUltraFlat
-          StyleDisabled.LookAndFeel.NativeStyle = False
-          StyleDisabled.TextColor = clBlack
-          StyleFocused.BorderColor = 15314790
-          StyleFocused.Color = 16577771
-          StyleFocused.LookAndFeel.Kind = lfUltraFlat
-          StyleFocused.LookAndFeel.NativeStyle = False
-          StyleHot.LookAndFeel.Kind = lfUltraFlat
-          StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 4
-          Width = 486
-        end
         object LbDescription: TcxLabel
           Left = 25
           Top = 26
@@ -243,7 +220,7 @@ inherited FASS0001BView: TFASS0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 6
+          TabOrder = 5
           Width = 54
         end
         object LbExpenseId: TcxLabel
@@ -268,6 +245,7 @@ inherited FASS0001BView: TFASS0001BView
           Properties.OnChange = CbStatusPropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
+          Style.Color = 13815295
           Style.Font.Charset = ANSI_CHARSET
           Style.Font.Color = clWindowText
           Style.Font.Height = -11
@@ -275,14 +253,14 @@ inherited FASS0001BView: TFASS0001BView
           Style.Font.Style = []
           Style.HotTrack = False
           Style.LookAndFeel.NativeStyle = False
-          Style.ButtonStyle = btsFlat
+          Style.ButtonStyle = btsOffice11
           Style.IsFontAssigned = True
           StyleDisabled.BorderColor = 12698049
           StyleDisabled.LookAndFeel.NativeStyle = False
           StyleDisabled.TextColor = clBlack
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 8
+          TabOrder = 7
           Text = 'Ativo'
           Width = 142
         end
@@ -297,6 +275,34 @@ inherited FASS0001BView: TFASS0001BView
           Style.Font.Name = 'Open Sans'
           Style.Font.Style = [fsBold]
           Style.IsFontAssigned = True
+        end
+        object TxDescription: TERGTextEdit
+          Left = 91
+          Top = 25
+          ParentFont = False
+          Properties.OnChange = TxDescriptionPropertiesChange
+          Style.BorderColor = 12698049
+          Style.BorderStyle = ebsSingle
+          Style.Color = 13815295
+          Style.Font.Charset = ANSI_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -11
+          Style.Font.Name = 'Open Sans'
+          Style.Font.Style = []
+          Style.HotTrack = False
+          Style.LookAndFeel.NativeStyle = False
+          Style.IsFontAssigned = True
+          StyleDisabled.BorderColor = 12698049
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleDisabled.TextColor = clBlack
+          StyleFocused.BorderColor = 15314790
+          StyleFocused.Color = 16577771
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 9
+          Required = True
+          FieldName = 'Descri'#231#227'o'
+          Width = 486
         end
       end
     end

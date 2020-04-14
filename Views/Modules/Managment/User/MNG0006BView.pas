@@ -12,20 +12,15 @@ uses
   Vcl.ActnList, Vcl.StdCtrls,
   cxButtons, RzLabel, dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel, Base.View.interf,
   Types.Controllers, cxControls, cxContainer, cxEdit, cxMaskEdit, cxDropDownEdit, cxLabel,
-  cxTextEdit, User.Controller.Interf;
+  cxTextEdit, User.Controller.Interf, ERGTextEdit;
 
 type
   TFMNG0006BView = class(TFBaseRegisterView, iBaseRegisterView)
-    TxEmail: TcxTextEdit;
     LbEmail: TcxLabel;
-    TxKeyPass: TcxTextEdit;
-    TxName: TcxTextEdit;
     LbName: TcxLabel;
     TxUserId: TcxTextEdit;
     LbUserId: TcxLabel;
-    CbStatus: TcxComboBox;
     LbStatus: TcxLabel;
-    TxUserName: TcxTextEdit;
     LbUserName: TcxLabel;
     LbUpdatedAt: TcxLabel;
     LbCreatedAt: TcxLabel;
@@ -34,6 +29,11 @@ type
     LbKeyPass: TcxLabel;
     PnUpdateKey: TRzPanel;
     BtUpdatePassword: TcxButton;
+    CbStatus: TcxComboBox;
+    TxName: TERGTextEdit;
+    TxEmail: TERGTextEdit;
+    TxUserName: TERGTextEdit;
+    TxKeyPass: TERGTextEdit;
     procedure FormCreate(Sender: TObject);
     procedure BtUpdatePasswordClick(Sender: TObject);
     procedure CbStatusPropertiesChange(Sender: TObject);
@@ -84,8 +84,11 @@ begin
   {1} if userMailExists then Exit;
   {2} if userNameExists then Exit;
 
-  {3} save;
-  inherited;
+  if not(validate) then Exit;
+
+  {3}save;
+
+  {4}Close;
 end;
 
 procedure TFMNG0006BView.BtUpdatePasswordClick(Sender: TObject);

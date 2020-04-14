@@ -16,7 +16,8 @@ uses
   RzPanel, cxControls, cxContainer, cxEdit, cxMaskEdit, cxButtonEdit,
   cxTextEdit, cxLabel,
   Base.View.interf, Types.Controllers, State.Controller.interf,
-  City.Controller.interf, dxSkinDarkRoom, dxSkinDarkSide;
+  City.Controller.interf, dxSkinDarkRoom, dxSkinDarkSide, ERGTextEdit,
+  ERGButtonEdit;
 
 type
   TFMNG0004BView = class(TFBaseRegisterView, iBaseRegisterView)
@@ -26,16 +27,16 @@ type
     LbDescription: TcxLabel;
     LbDistrictId: TcxLabel;
     TxCityId: TcxTextEdit;
-    TxName: TcxTextEdit;
-    TxStateId: TcxButtonEdit;
     TxStateName: TcxTextEdit;
     TxCreatedAt: TcxTextEdit;
     TxUpdatedAt: TcxTextEdit;
-    TxZipCode: TcxTextEdit;
     cxLabel4: TcxLabel;
     cxLabel5: TcxLabel;
     TxIBGECode: TcxTextEdit;
     acSearchState: TAction;
+    TxName: TERGTextEdit;
+    TxStateId: TERGButtonEdit;
+    TxZipCode: TERGTextEdit;
     procedure acSearchStateExecute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure BtConfirmarClick(Sender: TObject);
@@ -85,8 +86,11 @@ end;
 
 procedure TFMNG0004BView.BtConfirmarClick(Sender: TObject);
 begin
+  if not(validate) then Exit;
+
   save;
-  inherited;
+
+  Close;
 end;
 
 procedure TFMNG0004BView.deleteRecord;

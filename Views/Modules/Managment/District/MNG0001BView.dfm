@@ -2,9 +2,8 @@ inherited FMNG0001BView: TFMNG0001BView
   Caption = 'Bairros'
   ClientHeight = 291
   ClientWidth = 594
-  Visible = False
   ExplicitWidth = 600
-  ExplicitHeight = 320
+  ExplicitHeight = 319
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
@@ -84,15 +83,13 @@ inherited FMNG0001BView: TFMNG0001BView
           F33F041C35D479E1CE980000000049454E44AE426082}
       end
       inherited LbTitle: TRzLabel
-        Width = 58
-        Height = 26
+        Width = 66
         Caption = 'Bairros'
-        ExplicitWidth = 58
+        ExplicitWidth = 66
       end
       inherited LbOperation: TRzLabel
-        Left = 506
-        Height = 26
-        ExplicitLeft = 506
+        Left = 507
+        ExplicitLeft = 507
       end
     end
     inherited PnProgram: TRzPanel
@@ -102,7 +99,6 @@ inherited FMNG0001BView: TFMNG0001BView
       ExplicitWidth = 590
       inherited LbProgram: TRzLabel
         Width = 590
-        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
@@ -122,6 +118,9 @@ inherited FMNG0001BView: TFMNG0001BView
         inherited PnButtonConfirm: TRzPanel
           Left = 366
           ExplicitLeft = 366
+          inherited BtConfirmar: TcxButton
+            OnClick = BtConfirmarClick
+          end
         end
       end
       inherited PnContent: TRzPanel
@@ -177,7 +176,7 @@ inherited FMNG0001BView: TFMNG0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 5
+          TabOrder = 2
           Width = 134
         end
         object TxUpdatedDate: TcxTextEdit
@@ -199,31 +198,8 @@ inherited FMNG0001BView: TFMNG0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 6
+          TabOrder = 3
           Width = 134
-        end
-        object TxDescription: TcxTextEdit
-          Left = 91
-          Top = 25
-          Properties.CharCase = ecUpperCase
-          Properties.OnChange = TxDescriptionPropertiesChange
-          Style.BorderColor = 12698049
-          Style.BorderStyle = ebsSingle
-          Style.HotTrack = False
-          Style.LookAndFeel.Kind = lfUltraFlat
-          Style.LookAndFeel.NativeStyle = False
-          StyleDisabled.BorderColor = 12698049
-          StyleDisabled.LookAndFeel.Kind = lfUltraFlat
-          StyleDisabled.LookAndFeel.NativeStyle = False
-          StyleDisabled.TextColor = clBlack
-          StyleFocused.BorderColor = 15314790
-          StyleFocused.Color = 16577771
-          StyleFocused.LookAndFeel.Kind = lfUltraFlat
-          StyleFocused.LookAndFeel.NativeStyle = False
-          StyleHot.LookAndFeel.Kind = lfUltraFlat
-          StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 0
-          Width = 486
         end
         object LbCreatedAt: TcxLabel
           Left = 25
@@ -268,33 +244,7 @@ inherited FMNG0001BView: TFMNG0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 9
-          Width = 54
-        end
-        object TxCityId: TcxButtonEdit
-          Left = 91
-          Top = 49
-          Properties.Buttons = <
-            item
-              Action = acSelectCity
-              Default = True
-              Kind = bkEllipsis
-            end>
-          Properties.CharCase = ecUpperCase
-          Properties.OnChange = TxCityIdPropertiesChange
-          Style.BorderColor = 12698049
-          Style.BorderStyle = ebsSingle
-          Style.HotTrack = False
-          Style.LookAndFeel.NativeStyle = False
-          Style.ButtonStyle = bts3D
-          Style.ButtonTransparency = ebtAlways
-          StyleDisabled.BorderColor = 12698049
-          StyleDisabled.LookAndFeel.NativeStyle = False
-          StyleFocused.BorderColor = 15314790
-          StyleFocused.Color = 16577771
-          StyleFocused.LookAndFeel.NativeStyle = False
-          StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 1
+          TabOrder = 6
           Width = 54
         end
         object TxCityName: TcxTextEdit
@@ -316,7 +266,7 @@ inherited FMNG0001BView: TFMNG0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 10
+          TabOrder = 7
           Width = 429
         end
         object cxLabel3: TcxLabel
@@ -331,29 +281,6 @@ inherited FMNG0001BView: TFMNG0001BView
           Style.Font.Style = [fsBold]
           Style.IsFontAssigned = True
         end
-        object TxZipCode: TcxTextEdit
-          Left = 91
-          Top = 73
-          Properties.CharCase = ecUpperCase
-          Properties.OnChange = TxZipCodePropertiesChange
-          Style.BorderColor = 12698049
-          Style.BorderStyle = ebsSingle
-          Style.HotTrack = False
-          Style.LookAndFeel.Kind = lfUltraFlat
-          Style.LookAndFeel.NativeStyle = False
-          StyleDisabled.BorderColor = 12698049
-          StyleDisabled.LookAndFeel.Kind = lfUltraFlat
-          StyleDisabled.LookAndFeel.NativeStyle = False
-          StyleDisabled.TextColor = clBlack
-          StyleFocused.BorderColor = 15314790
-          StyleFocused.Color = 16577771
-          StyleFocused.LookAndFeel.Kind = lfUltraFlat
-          StyleFocused.LookAndFeel.NativeStyle = False
-          StyleHot.LookAndFeel.Kind = lfUltraFlat
-          StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 2
-          Width = 134
-        end
         object LbCEP: TcxLabel
           Left = 58
           Top = 74
@@ -366,8 +293,90 @@ inherited FMNG0001BView: TFMNG0001BView
           Style.Font.Style = [fsBold]
           Style.IsFontAssigned = True
         end
+        object TxDescription: TERGTextEdit
+          Left = 91
+          Top = 25
+          ParentFont = False
+          Properties.OnChange = TxDescriptionPropertiesChange
+          Style.BorderColor = 12698049
+          Style.BorderStyle = ebsSingle
+          Style.Color = 13815295
+          Style.Font.Charset = ANSI_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -11
+          Style.Font.Name = 'Open Sans'
+          Style.Font.Style = []
+          Style.HotTrack = False
+          Style.LookAndFeel.NativeStyle = False
+          Style.IsFontAssigned = True
+          StyleDisabled.BorderColor = 12698049
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleDisabled.TextColor = clBlack
+          StyleFocused.BorderColor = 15314790
+          StyleFocused.Color = 16577771
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 10
+          Required = True
+          FieldName = 'Descri'#231#227'o'
+          Width = 486
+        end
+        object TxCityId: TERGButtonEdit
+          Left = 91
+          Top = 49
+          Properties.Buttons = <
+            item
+              Default = True
+              Kind = bkEllipsis
+            end>
+          Style.BorderColor = 12698049
+          Style.BorderStyle = ebsSingle
+          Style.Color = 13815295
+          Style.HotTrack = False
+          Style.LookAndFeel.NativeStyle = False
+          Style.ButtonStyle = btsOffice11
+          StyleDisabled.BorderColor = 12698049
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleDisabled.TextColor = clBlack
+          StyleFocused.BorderColor = 15314790
+          StyleFocused.Color = 16577771
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 11
+          Required = True
+          FieldName = 'Cidade'
+          Width = 57
+        end
       end
     end
+  end
+  object TxZipCode: TERGTextEdit [1]
+    Left = 95
+    Top = 117
+    ParentFont = False
+    Properties.OnChange = TxZipCodePropertiesChange
+    Style.BorderColor = 12698049
+    Style.BorderStyle = ebsSingle
+    Style.Color = 13815295
+    Style.Font.Charset = ANSI_CHARSET
+    Style.Font.Color = clWindowText
+    Style.Font.Height = -11
+    Style.Font.Name = 'Open Sans'
+    Style.Font.Style = []
+    Style.HotTrack = False
+    Style.LookAndFeel.NativeStyle = False
+    Style.IsFontAssigned = True
+    StyleDisabled.BorderColor = 12698049
+    StyleDisabled.LookAndFeel.NativeStyle = False
+    StyleDisabled.TextColor = clBlack
+    StyleFocused.BorderColor = 15314790
+    StyleFocused.Color = 16577771
+    StyleFocused.LookAndFeel.NativeStyle = False
+    StyleHot.LookAndFeel.NativeStyle = False
+    TabOrder = 1
+    Required = True
+    FieldName = 'CEP'
+    Width = 134
   end
   inherited AcSearchRecord: TActionList
     Left = 380

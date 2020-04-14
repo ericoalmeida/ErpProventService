@@ -19,9 +19,9 @@ object FMainView: TFMainView
   TextHeight = 13
   object ImLogo: TImage
     Left = 0
-    Top = 159
+    Top = 157
     Width = 632
-    Height = 216
+    Height = 218
     Align = alClient
     Center = True
     Picture.Data = {
@@ -1930,11 +1930,11 @@ object FMainView: TFMainView
     Left = 0
     Top = 0
     Width = 632
-    Height = 159
+    Height = 157
     ApplicationButton.Menu = ApMainMenu
     BarManager = BrManager
     ColorSchemeAccent = rcsaBlue
-    ColorSchemeName = 'Blue'
+    ColorSchemeName = 'DevExpressDarkStyle'
     QuickAccessToolbar.Toolbar = bmMainTools
     Contexts = <>
     TabOrder = 0
@@ -2053,7 +2053,7 @@ object FMainView: TFMainView
     object BmRotinas: TdxBar
       Caption = 'Rotinas'
       CaptionButtons = <>
-      DockedLeft = 411
+      DockedLeft = 413
       DockedTop = 0
       FloatLeft = 720
       FloatTop = 2
@@ -2081,7 +2081,7 @@ object FMainView: TFMainView
     object BmRelatorios: TdxBar
       Caption = 'Relat'#243'rios'
       CaptionButtons = <>
-      DockedLeft = 486
+      DockedLeft = 488
       DockedTop = 0
       FloatLeft = 720
       FloatTop = 2

@@ -2,9 +2,8 @@ inherited FMNG0006BView: TFMNG0006BView
   Caption = 'Usu'#225'rios'
   ClientHeight = 291
   ClientWidth = 594
-  Visible = False
   ExplicitWidth = 600
-  ExplicitHeight = 320
+  ExplicitHeight = 319
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
@@ -94,15 +93,13 @@ inherited FMNG0006BView: TFMNG0006BView
           454E44AE426082}
       end
       inherited LbTitle: TRzLabel
-        Width = 71
-        Height = 26
+        Width = 79
         Caption = 'Usu'#225'rios'
-        ExplicitWidth = 71
+        ExplicitWidth = 79
       end
       inherited LbOperation: TRzLabel
-        Left = 506
-        Height = 26
-        ExplicitLeft = 506
+        Left = 507
+        ExplicitLeft = 507
       end
     end
     inherited PnProgram: TRzPanel
@@ -112,7 +109,6 @@ inherited FMNG0006BView: TFMNG0006BView
       ExplicitWidth = 590
       inherited LbProgram: TRzLabel
         Width = 590
-        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
@@ -132,6 +128,9 @@ inherited FMNG0006BView: TFMNG0006BView
         inherited PnButtonConfirm: TRzPanel
           Left = 366
           ExplicitLeft = 366
+          inherited BtConfirmar: TcxButton
+            OnClick = BtConfirmarClick
+          end
         end
       end
       inherited PnContent: TRzPanel
@@ -144,29 +143,6 @@ inherited FMNG0006BView: TFMNG0006BView
           Width = 586
           ExplicitTop = 172
         end
-        object TxEmail: TcxTextEdit
-          Left = 96
-          Top = 49
-          Properties.CharCase = ecLowerCase
-          Properties.OnChange = TxEmailPropertiesChange
-          Style.BorderColor = 12698049
-          Style.BorderStyle = ebsSingle
-          Style.HotTrack = False
-          Style.LookAndFeel.Kind = lfUltraFlat
-          Style.LookAndFeel.NativeStyle = False
-          StyleDisabled.BorderColor = 12698049
-          StyleDisabled.LookAndFeel.Kind = lfUltraFlat
-          StyleDisabled.LookAndFeel.NativeStyle = False
-          StyleDisabled.TextColor = clBlack
-          StyleFocused.BorderColor = 15314790
-          StyleFocused.Color = 16577771
-          StyleFocused.LookAndFeel.Kind = lfUltraFlat
-          StyleFocused.LookAndFeel.NativeStyle = False
-          StyleHot.LookAndFeel.Kind = lfUltraFlat
-          StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 2
-          Width = 489
-        end
         object LbEmail: TcxLabel
           Left = 53
           Top = 50
@@ -175,69 +151,19 @@ inherited FMNG0006BView: TFMNG0006BView
           Style.Font.Charset = ANSI_CHARSET
           Style.Font.Color = clWindowText
           Style.Font.Height = -11
-          Style.Font.Name = 'Open Sans'
+          Style.Font.Name = 'Ubuntu'
           Style.Font.Style = [fsBold]
           Style.IsFontAssigned = True
         end
-        object TxKeyPass: TcxTextEdit
-          Left = 443
-          Top = 73
-          Enabled = False
-          Properties.CharCase = ecUpperCase
-          Properties.EchoMode = eemPassword
-          Properties.PasswordChar = '#'
-          Properties.OnChange = TxKeyPassPropertiesChange
-          Style.BorderColor = 12698049
-          Style.BorderStyle = ebsSingle
-          Style.HotTrack = False
-          Style.LookAndFeel.Kind = lfUltraFlat
-          Style.LookAndFeel.NativeStyle = False
-          StyleDisabled.BorderColor = 12698049
-          StyleDisabled.LookAndFeel.Kind = lfUltraFlat
-          StyleDisabled.LookAndFeel.NativeStyle = False
-          StyleDisabled.TextColor = clBlack
-          StyleFocused.BorderColor = 15314790
-          StyleFocused.Color = 16577771
-          StyleFocused.LookAndFeel.Kind = lfUltraFlat
-          StyleFocused.LookAndFeel.NativeStyle = False
-          StyleHot.LookAndFeel.Kind = lfUltraFlat
-          StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 4
-          TextHint = '********'
-          Width = 142
-        end
-        object TxName: TcxTextEdit
-          Left = 96
-          Top = 25
-          Properties.CharCase = ecUpperCase
-          Properties.OnChange = TxNamePropertiesChange
-          Style.BorderColor = 12698049
-          Style.BorderStyle = ebsSingle
-          Style.HotTrack = False
-          Style.LookAndFeel.Kind = lfUltraFlat
-          Style.LookAndFeel.NativeStyle = False
-          StyleDisabled.BorderColor = 12698049
-          StyleDisabled.LookAndFeel.Kind = lfUltraFlat
-          StyleDisabled.LookAndFeel.NativeStyle = False
-          StyleDisabled.TextColor = clBlack
-          StyleFocused.BorderColor = 15314790
-          StyleFocused.Color = 16577771
-          StyleFocused.LookAndFeel.Kind = lfUltraFlat
-          StyleFocused.LookAndFeel.NativeStyle = False
-          StyleHot.LookAndFeel.Kind = lfUltraFlat
-          StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 1
-          Width = 489
-        end
         object LbName: TcxLabel
-          Left = 50
-          Top = 26
+          Left = 53
+          Top = 25
           Caption = 'Nome:'
           ParentFont = False
           Style.Font.Charset = ANSI_CHARSET
           Style.Font.Color = clWindowText
           Style.Font.Height = -11
-          Style.Font.Name = 'Open Sans'
+          Style.Font.Name = 'Ubuntu'
           Style.Font.Style = [fsBold]
           Style.IsFontAssigned = True
         end
@@ -260,7 +186,7 @@ inherited FMNG0006BView: TFMNG0006BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 6
+          TabOrder = 2
           Width = 54
         end
         object LbUserId: TcxLabel
@@ -275,34 +201,6 @@ inherited FMNG0006BView: TFMNG0006BView
           Style.Font.Style = []
           Style.IsFontAssigned = True
         end
-        object CbStatus: TcxComboBox
-          Left = 443
-          Top = 1
-          ParentFont = False
-          Properties.Items.Strings = (
-            'Ativo'
-            'Inativo')
-          Properties.OnChange = CbStatusPropertiesChange
-          Style.BorderColor = 12698049
-          Style.BorderStyle = ebsSingle
-          Style.Font.Charset = ANSI_CHARSET
-          Style.Font.Color = clWindowText
-          Style.Font.Height = -11
-          Style.Font.Name = 'Open Sans'
-          Style.Font.Style = []
-          Style.HotTrack = False
-          Style.LookAndFeel.NativeStyle = False
-          Style.ButtonStyle = btsFlat
-          Style.IsFontAssigned = True
-          StyleDisabled.BorderColor = 12698049
-          StyleDisabled.LookAndFeel.NativeStyle = False
-          StyleDisabled.TextColor = clBlack
-          StyleFocused.LookAndFeel.NativeStyle = False
-          StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 0
-          Text = 'Ativo'
-          Width = 142
-        end
         object LbStatus: TcxLabel
           Left = 395
           Top = 2
@@ -311,7 +209,7 @@ inherited FMNG0006BView: TFMNG0006BView
           Style.Font.Charset = ANSI_CHARSET
           Style.Font.Color = clWindowText
           Style.Font.Height = -11
-          Style.Font.Name = 'Open Sans'
+          Style.Font.Name = 'Ubuntu'
           Style.Font.Style = [fsBold]
           Style.IsFontAssigned = True
         end
@@ -358,7 +256,7 @@ inherited FMNG0006BView: TFMNG0006BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 11
+          TabOrder = 7
           Width = 142
         end
         object TxUpdatedAt: TcxTextEdit
@@ -380,7 +278,7 @@ inherited FMNG0006BView: TFMNG0006BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 12
+          TabOrder = 8
           Width = 142
         end
         object PnUpdateKey: TRzPanel
@@ -394,7 +292,7 @@ inherited FMNG0006BView: TFMNG0006BView
           BorderColor = 11382189
           BorderWidth = 1
           Color = 14803425
-          TabOrder = 13
+          TabOrder = 9
           object BtUpdatePassword: TcxButton
             AlignWithMargins = True
             Left = 2
@@ -450,46 +348,168 @@ inherited FMNG0006BView: TFMNG0006BView
             OnClick = BtUpdatePasswordClick
           end
         end
+        object CbStatus: TcxComboBox
+          Left = 443
+          Top = 1
+          ParentFont = False
+          Properties.Items.Strings = (
+            'Ativo'
+            'Inativo')
+          Properties.OnChange = CbStatusPropertiesChange
+          Style.BorderColor = 12698049
+          Style.BorderStyle = ebsSingle
+          Style.Color = 13815295
+          Style.Font.Charset = ANSI_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -11
+          Style.Font.Name = 'Open Sans'
+          Style.Font.Style = []
+          Style.HotTrack = False
+          Style.LookAndFeel.NativeStyle = False
+          Style.ButtonStyle = btsOffice11
+          Style.IsFontAssigned = True
+          StyleDisabled.BorderColor = 12698049
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleDisabled.TextColor = clBlack
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 10
+          Text = 'Ativo'
+          Width = 142
+        end
+        object TxName: TERGTextEdit
+          Left = 96
+          Top = 25
+          ParentFont = False
+          Properties.OnChange = TxNamePropertiesChange
+          Style.BorderColor = 12698049
+          Style.BorderStyle = ebsSingle
+          Style.Color = 13815295
+          Style.Font.Charset = ANSI_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -11
+          Style.Font.Name = 'Open Sans'
+          Style.Font.Style = []
+          Style.HotTrack = False
+          Style.LookAndFeel.NativeStyle = False
+          Style.IsFontAssigned = True
+          StyleDisabled.BorderColor = 12698049
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleDisabled.TextColor = clBlack
+          StyleFocused.BorderColor = 15314790
+          StyleFocused.Color = 16577771
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 11
+          Required = True
+          FieldName = 'Nome'
+          Width = 489
+        end
+        object TxEmail: TERGTextEdit
+          Left = 96
+          Top = 49
+          ParentFont = False
+          Properties.OnChange = TxEmailPropertiesChange
+          Style.BorderColor = 12698049
+          Style.BorderStyle = ebsSingle
+          Style.Color = 13815295
+          Style.Font.Charset = ANSI_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -11
+          Style.Font.Name = 'Open Sans'
+          Style.Font.Style = []
+          Style.HotTrack = False
+          Style.LookAndFeel.NativeStyle = False
+          Style.IsFontAssigned = True
+          StyleDisabled.BorderColor = 12698049
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleDisabled.TextColor = clBlack
+          StyleFocused.BorderColor = 15314790
+          StyleFocused.Color = 16577771
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 12
+          Required = True
+          FieldName = 'Email'
+          Width = 489
+        end
+        object TxUserName: TERGTextEdit
+          Left = 96
+          Top = 73
+          ParentFont = False
+          Properties.OnChange = TxUserNamePropertiesChange
+          Style.BorderColor = 12698049
+          Style.BorderStyle = ebsSingle
+          Style.Color = 13815295
+          Style.Font.Charset = ANSI_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -11
+          Style.Font.Name = 'Open Sans'
+          Style.Font.Style = []
+          Style.HotTrack = False
+          Style.LookAndFeel.NativeStyle = False
+          Style.IsFontAssigned = True
+          StyleDisabled.BorderColor = 12698049
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleDisabled.TextColor = clBlack
+          StyleFocused.BorderColor = 15314790
+          StyleFocused.Color = 16577771
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 13
+          Required = True
+          FieldName = 'Usu'#225'rio'
+          Width = 142
+        end
+        object TxKeyPass: TERGTextEdit
+          Left = 444
+          Top = 73
+          Enabled = False
+          ParentFont = False
+          Properties.EchoMode = eemPassword
+          Properties.PasswordChar = '*'
+          Properties.OnChange = TxKeyPassPropertiesChange
+          Style.BorderColor = 12698049
+          Style.BorderStyle = ebsSingle
+          Style.Color = 13815295
+          Style.Font.Charset = ANSI_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -11
+          Style.Font.Name = 'Open Sans'
+          Style.Font.Style = []
+          Style.HotTrack = False
+          Style.LookAndFeel.NativeStyle = False
+          Style.IsFontAssigned = True
+          StyleDisabled.BorderColor = 12698049
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleDisabled.TextColor = clBlack
+          StyleFocused.BorderColor = 15314790
+          StyleFocused.Color = 16577771
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 14
+          TextHint = '******'
+          Required = True
+          FieldName = 'Senha'
+          Width = 142
+        end
       end
     end
   end
-  object TxUserName: TcxTextEdit [1]
-    Left = 100
+  object LbUserName: TcxLabel [1]
+    Left = 47
     Top = 117
-    Properties.CharCase = ecUpperCase
-    Properties.OnChange = TxUserNamePropertiesChange
-    Style.BorderColor = 12698049
-    Style.BorderStyle = ebsSingle
-    Style.HotTrack = False
-    Style.LookAndFeel.Kind = lfUltraFlat
-    Style.LookAndFeel.NativeStyle = False
-    StyleDisabled.BorderColor = 12698049
-    StyleDisabled.LookAndFeel.Kind = lfUltraFlat
-    StyleDisabled.LookAndFeel.NativeStyle = False
-    StyleDisabled.TextColor = clBlack
-    StyleFocused.BorderColor = 15314790
-    StyleFocused.Color = 16577771
-    StyleFocused.LookAndFeel.Kind = lfUltraFlat
-    StyleFocused.LookAndFeel.NativeStyle = False
-    StyleHot.LookAndFeel.Kind = lfUltraFlat
-    StyleHot.LookAndFeel.NativeStyle = False
-    TabOrder = 3
-    Width = 141
-  end
-  object LbUserName: TcxLabel [2]
-    Left = 45
-    Top = 118
     Caption = 'Usu'#225'rio:'
     ParentFont = False
     Style.Font.Charset = ANSI_CHARSET
     Style.Font.Color = clWindowText
     Style.Font.Height = -11
-    Style.Font.Name = 'Open Sans'
+    Style.Font.Name = 'Ubuntu'
     Style.Font.Style = [fsBold]
     Style.IsFontAssigned = True
     Transparent = True
   end
-  object LbKeyPass: TcxLabel [3]
+  object LbKeyPass: TcxLabel [2]
     Left = 401
     Top = 118
     Caption = 'Senha:'
@@ -497,7 +517,7 @@ inherited FMNG0006BView: TFMNG0006BView
     Style.Font.Charset = ANSI_CHARSET
     Style.Font.Color = clWindowText
     Style.Font.Height = -11
-    Style.Font.Name = 'Open Sans'
+    Style.Font.Name = 'Ubuntu'
     Style.Font.Style = [fsBold]
     Style.IsFontAssigned = True
     Transparent = True

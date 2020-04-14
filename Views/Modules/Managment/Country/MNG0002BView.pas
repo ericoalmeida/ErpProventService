@@ -13,7 +13,8 @@ uses
   Base.View.interf, Types.Controllers, cxControls, cxContainer, cxEdit,
   cxTextEdit, cxLabel,
   Country.Controller.interf, dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Green,
-  dxSkinOffice2007Silver, System.Actions, Vcl.ActnList, dxSkinDarkRoom, dxSkinDarkSide;
+  dxSkinOffice2007Silver, System.Actions, Vcl.ActnList, dxSkinDarkRoom, dxSkinDarkSide,
+  ERGTextEdit;
 
 type
   TFMNG0002BView = class(TFBaseRegisterView, iBaseRegisterView)
@@ -22,9 +23,9 @@ type
     TxUpdatedAt: TcxTextEdit;
     TxCreatedAt: TcxTextEdit;
     LbName: TcxLabel;
-    TxName: TcxTextEdit;
     TxCountryId: TcxTextEdit;
     LbCountryId: TcxLabel;
+    TxName: TERGTextEdit;
     procedure FormCreate(Sender: TObject);
     procedure BtConfirmarClick(Sender: TObject);
     procedure TxNamePropertiesChange(Sender: TObject);
@@ -62,8 +63,11 @@ uses Facade.Controller;
 
 procedure TFMNG0002BView.BtConfirmarClick(Sender: TObject);
 begin
+  if not(validate) then Exit;
+
   save;
-  inherited;
+
+  Close;
 end;
 
 procedure TFMNG0002BView.deleteRecord;

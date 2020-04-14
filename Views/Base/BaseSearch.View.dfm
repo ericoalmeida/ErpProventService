@@ -96,12 +96,6 @@ inherited FBaseSearchView: TFBaseSearchView
         ExplicitHeight = 25
       end
     end
-    inherited PnProgram: TRzPanel
-      inherited LbProgram: TRzLabel
-        Width = 608
-        Height = 18
-      end
-    end
     inherited PnContainerBody: TRzPanel
       inherited PnFooterBody: TRzPanel
         object PnButtonConfirm: TRzPanel
@@ -123,6 +117,7 @@ inherited FBaseSearchView: TFBaseSearchView
             Top = 2
             Width = 106
             Height = 29
+            Cursor = crHandPoint
             Margins.Left = 1
             Margins.Top = 1
             Margins.Right = 1

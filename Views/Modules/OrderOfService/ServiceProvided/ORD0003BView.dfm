@@ -4,7 +4,7 @@ inherited FORD0003BView: TFORD0003BView
   ClientWidth = 644
   OnShow = FormShow
   ExplicitWidth = 650
-  ExplicitHeight = 386
+  ExplicitHeight = 385
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
@@ -245,7 +245,7 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 9
+          TabOrder = 8
           Width = 461
         end
         object TxOperatorName: TcxTextEdit
@@ -404,7 +404,7 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 15
+          TabOrder = 14
           Width = 134
         end
         object TxCreatedDate: TcxTextEdit
@@ -544,56 +544,13 @@ inherited FORD0003BView: TFORD0003BView
           Visible = False
           Width = 112
         end
-        object TxTotalHours: TERGTotalHorasEdit
-          Left = 105
-          Top = 129
-          Properties.DisplayFormat = '00:00:00;'
-          Properties.OnChange = TxTotalHoursPropertiesChange
-          Style.BorderColor = 12698049
-          Style.BorderStyle = ebsSingle
-          Style.HotTrack = False
-          Style.LookAndFeel.NativeStyle = False
-          StyleDisabled.BorderColor = 12698049
-          StyleDisabled.LookAndFeel.NativeStyle = False
-          StyleDisabled.TextColor = clBlack
-          StyleFocused.BorderColor = 15314790
-          StyleFocused.Color = 16577771
-          StyleFocused.LookAndFeel.NativeStyle = False
-          StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 5
-          Visible = False
-          OnExit = TxTotalHoursExit
-          Hours = 0
-          Width = 112
-        end
-        object ERGButtonEdit1: TERGButtonEdit
-          Left = 525
-          Top = 209
-          Properties.Buttons = <
-            item
-              Default = True
-              Kind = bkEllipsis
-            end>
-          Style.BorderColor = 12698049
-          Style.BorderStyle = ebsSingle
-          Style.HotTrack = False
-          Style.LookAndFeel.NativeStyle = False
-          Style.TextStyle = []
-          Style.ButtonStyle = btsOffice11
-          StyleDisabled.LookAndFeel.NativeStyle = False
-          StyleFocused.LookAndFeel.NativeStyle = False
-          StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 22
-          labelTitle = LbTeste
-          Width = 100
-        end
         object Button1: TButton
           Left = 261
           Top = 216
           Width = 75
           Height = 25
           Caption = 'Button1'
-          TabOrder = 23
+          TabOrder = 20
           OnClick = Button1Click
         end
         object Button2: TButton
@@ -602,7 +559,7 @@ inherited FORD0003BView: TFORD0003BView
           Width = 75
           Height = 25
           Caption = 'Button1'
-          TabOrder = 24
+          TabOrder = 22
           OnClick = Button2Click
         end
       end
