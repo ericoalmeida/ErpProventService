@@ -13,24 +13,20 @@ uses
   cxButtons, RzLabel, dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel, cxControls,
   cxContainer, cxEdit,
   cxMaskEdit, cxButtonEdit, cxLabel, cxTextEdit, cxDropDownEdit,
-  Base.View.interf, Types.Controllers, Person.Controller.interf, District.Controller.Interf;
+  Base.View.interf, Types.Controllers, Person.Controller.interf, District.Controller.Interf,
+  ERGTextEdit, ERGButtonEdit;
 
 type
   TFREC0001BView = class(TFBaseRegisterView, iBaseRegisterView)
     TxCompanyId: TcxTextEdit;
     LbCompanyId: TcxLabel;
     LbName: TcxLabel;
-    TxName: TcxTextEdit;
     LbFancyName: TcxLabel;
-    TxFancyName: TcxTextEdit;
     LbCNPJ: TcxLabel;
-    TxCNPJ: TcxTextEdit;
     LbIE: TcxLabel;
     TxIE: TcxTextEdit;
     LbAddress: TcxLabel;
-    TxAddress: TcxTextEdit;
     LbDistrictId: TcxLabel;
-    TxDistrictId: TcxButtonEdit;
     TxDistrictName: TcxTextEdit;
     LbPhoneNumber: TcxLabel;
     TxPhoneNumber: TcxTextEdit;
@@ -43,6 +39,11 @@ type
     CbStatus: TcxComboBox;
     LbStatus: TcxLabel;
     ActSelectDistrict: TAction;
+    TxDistrictId: TERGButtonEdit;
+    TxAddress: TERGTextEdit;
+    TxCNPJ: TERGTextEdit;
+    TxFancyName: TERGTextEdit;
+    TxName: TERGTextEdit;
     procedure FormCreate(Sender: TObject);
     procedure CbStatusPropertiesChange(Sender: TObject);
     procedure TxNamePropertiesChange(Sender: TObject);
@@ -96,9 +97,11 @@ end;
 
 procedure TFREC0001BView.BtConfirmarClick(Sender: TObject);
 begin
+  if not(validate) then Exit;
+
   save;
 
-  inherited;
+  Close;
 end;
 
 procedure TFREC0001BView.CbStatusPropertiesChange(Sender: TObject);

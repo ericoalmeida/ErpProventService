@@ -9,24 +9,20 @@ uses
   dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, System.Actions, Vcl.ActnList, Vcl.StdCtrls,
   cxButtons, RzLabel, dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel, cxControls, cxContainer, cxEdit,
   cxMaskEdit, cxButtonEdit, cxLabel, cxTextEdit, cxDropDownEdit, Base.View.interf, Types.Controllers,
-  Person.Controller.Interf, District.Controller.Interf;
+  Person.Controller.Interf, District.Controller.Interf, ERGTextEdit,
+  ERGButtonEdit;
 
 type
   TFPAY0001BView = class(TFBaseRegisterView, iBaseRegisterView)
     TxCompanyId: TcxTextEdit;
     LbCompanyId: TcxLabel;
     LbName: TcxLabel;
-    TxName: TcxTextEdit;
     LbFancyName: TcxLabel;
-    TxFancyName: TcxTextEdit;
     LbCNPJ: TcxLabel;
-    TxCNPJ: TcxTextEdit;
     LbIE: TcxLabel;
     TxIE: TcxTextEdit;
     LbAddress: TcxLabel;
-    TxAddress: TcxTextEdit;
     LbDistrictId: TcxLabel;
-    TxDistrictId: TcxButtonEdit;
     TxDistrictName: TcxTextEdit;
     LbPhoneNumber: TcxLabel;
     TxPhoneNumber: TcxTextEdit;
@@ -39,6 +35,11 @@ type
     LbStatus: TcxLabel;
     CbStatus: TcxComboBox;
     ActSelectDistrict: TAction;
+    TxDistrictId: TERGButtonEdit;
+    TxAddress: TERGTextEdit;
+    TxCNPJ: TERGTextEdit;
+    TxFancyName: TERGTextEdit;
+    TxName: TERGTextEdit;
     procedure FormCreate(Sender: TObject);
     procedure ActSelectDistrictExecute(Sender: TObject);
     procedure TxNamePropertiesChange(Sender: TObject);
@@ -93,9 +94,11 @@ end;
 
 procedure TFPAY0001BView.BtConfirmarClick(Sender: TObject);
 begin
+  if not(validate) then Exit;
+
   save;
 
-  inherited;
+  Close;
 end;
 
 procedure TFPAY0001BView.CbStatusPropertiesChange(Sender: TObject);

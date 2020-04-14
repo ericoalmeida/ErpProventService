@@ -123,6 +123,9 @@ inherited FORD0003BView: TFORD0003BView
         inherited PnButtonConfirm: TRzPanel
           Left = 416
           ExplicitLeft = 416
+          inherited BtConfirmar: TcxButton
+            OnClick = BtConfirmarClick
+          end
         end
       end
       inherited PnContent: TRzPanel
@@ -171,7 +174,7 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 4
+          TabOrder = 0
           Width = 54
         end
         object LbDistrictId: TcxLabel
@@ -198,34 +201,6 @@ inherited FORD0003BView: TFORD0003BView
           Style.Font.Style = [fsBold]
           Style.IsFontAssigned = True
         end
-        object TxClientId: TcxButtonEdit
-          Left = 105
-          Top = 30
-          Properties.Buttons = <
-            item
-              Action = ActSelectClient
-              Default = True
-              Kind = bkEllipsis
-            end>
-          Properties.CharCase = ecUpperCase
-          Properties.OnChange = TxClientIdPropertiesChange
-          Style.BorderColor = 12698049
-          Style.BorderStyle = ebsSingle
-          Style.HotTrack = False
-          Style.LookAndFeel.NativeStyle = False
-          Style.ButtonStyle = bts3D
-          Style.ButtonTransparency = ebtAlways
-          StyleDisabled.BorderColor = 12698049
-          StyleDisabled.Color = clBtnFace
-          StyleDisabled.LookAndFeel.NativeStyle = False
-          StyleDisabled.TextColor = clBlack
-          StyleFocused.BorderColor = 15314790
-          StyleFocused.Color = 16577771
-          StyleFocused.LookAndFeel.NativeStyle = False
-          StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 1
-          Width = 54
-        end
         object TxClientName: TcxTextEdit
           Left = 161
           Top = 30
@@ -245,7 +220,7 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 8
+          TabOrder = 4
           Width = 461
         end
         object TxOperatorName: TcxTextEdit
@@ -267,36 +242,8 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 10
+          TabOrder = 6
           Width = 461
-        end
-        object TxOperatorId: TcxButtonEdit
-          Left = 105
-          Top = 55
-          Properties.Buttons = <
-            item
-              Action = ActSelectOperator
-              Default = True
-              Kind = bkEllipsis
-            end>
-          Properties.CharCase = ecUpperCase
-          Properties.OnChange = TxOperatorIdPropertiesChange
-          Style.BorderColor = 12698049
-          Style.BorderStyle = ebsSingle
-          Style.HotTrack = False
-          Style.LookAndFeel.NativeStyle = False
-          Style.ButtonStyle = bts3D
-          Style.ButtonTransparency = ebtAlways
-          StyleDisabled.BorderColor = 12698049
-          StyleDisabled.Color = clBtnFace
-          StyleDisabled.LookAndFeel.NativeStyle = False
-          StyleDisabled.TextColor = clBlack
-          StyleFocused.BorderColor = 15314790
-          StyleFocused.Color = 16577771
-          StyleFocused.LookAndFeel.NativeStyle = False
-          StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 2
-          Width = 54
         end
         object cxLabel1: TcxLabel
           Left = 42
@@ -330,36 +277,8 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 12
+          TabOrder = 8
           Width = 461
-        end
-        object TxMachine: TcxButtonEdit
-          Left = 105
-          Top = 80
-          Properties.Buttons = <
-            item
-              Action = ActSelectVehicle
-              Default = True
-              Kind = bkEllipsis
-            end>
-          Properties.CharCase = ecUpperCase
-          Properties.OnChange = TxMachinePropertiesChange
-          Style.BorderColor = 12698049
-          Style.BorderStyle = ebsSingle
-          Style.HotTrack = False
-          Style.LookAndFeel.NativeStyle = False
-          Style.ButtonStyle = bts3D
-          Style.ButtonTransparency = ebtAlways
-          StyleDisabled.BorderColor = 12698049
-          StyleDisabled.Color = clBtnFace
-          StyleDisabled.LookAndFeel.NativeStyle = False
-          StyleDisabled.TextColor = clBlack
-          StyleFocused.BorderColor = 15314790
-          StyleFocused.Color = 16577771
-          StyleFocused.LookAndFeel.NativeStyle = False
-          StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 3
-          Width = 54
         end
         object cxLabel2: TcxLabel
           Left = 4
@@ -404,7 +323,7 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 14
+          TabOrder = 10
           Width = 134
         end
         object TxCreatedDate: TcxTextEdit
@@ -426,7 +345,7 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 16
+          TabOrder = 12
           Width = 134
         end
         object LbCreatedAt: TcxLabel
@@ -470,7 +389,7 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 19
+          TabOrder = 15
           Width = 94
         end
         object cxLabel7: TcxLabel
@@ -485,24 +404,6 @@ inherited FORD0003BView: TFORD0003BView
           Style.Font.Style = [fsBold]
           Style.IsFontAssigned = True
           Transparent = True
-        end
-        object TxData: TcxDateEdit
-          Left = 464
-          Top = 1
-          Properties.OnChange = TxDataPropertiesChange
-          Style.BorderColor = 12698049
-          Style.BorderStyle = ebsSingle
-          Style.HotTrack = False
-          Style.LookAndFeel.NativeStyle = False
-          Style.ButtonStyle = bts3D
-          StyleDisabled.BorderColor = 12698049
-          StyleDisabled.Color = clBtnFace
-          StyleDisabled.LookAndFeel.NativeStyle = False
-          StyleDisabled.TextColor = clBlack
-          StyleFocused.LookAndFeel.NativeStyle = False
-          StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 0
-          Width = 158
         end
         object TxUnityPrice: TcxCurrencyEdit
           Left = 528
@@ -520,7 +421,7 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 21
+          TabOrder = 17
           Width = 94
         end
         object TxTotalKm: TcxCurrencyEdit
@@ -540,7 +441,7 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 6
+          TabOrder = 2
           Visible = False
           Width = 112
         end
@@ -550,7 +451,7 @@ inherited FORD0003BView: TFORD0003BView
           Width = 75
           Height = 25
           Caption = 'Button1'
-          TabOrder = 20
+          TabOrder = 16
           OnClick = Button1Click
         end
         object Button2: TButton
@@ -559,8 +460,140 @@ inherited FORD0003BView: TFORD0003BView
           Width = 75
           Height = 25
           Caption = 'Button1'
-          TabOrder = 22
+          TabOrder = 18
           OnClick = Button2Click
+        end
+        object TxData: TERGDateEdit
+          Left = 464
+          Top = 1
+          Properties.OnChange = TxDataPropertiesChange
+          Style.BorderColor = 12698049
+          Style.BorderStyle = ebsSingle
+          Style.Color = 13815295
+          Style.HotTrack = False
+          Style.LookAndFeel.NativeStyle = False
+          Style.ButtonStyle = btsOffice11
+          StyleDisabled.BorderColor = 12698049
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleDisabled.TextColor = clBlack
+          StyleFocused.BorderColor = 15314790
+          StyleFocused.Color = 16577771
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 19
+          Required = True
+          FieldName = 'Data'
+          Width = 158
+        end
+        object TxClientId: TERGButtonEdit
+          Left = 104
+          Top = 30
+          Properties.Buttons = <
+            item
+              Action = ActSelectClient
+              Default = True
+              Kind = bkEllipsis
+            end>
+          Properties.OnChange = TxClientIdPropertiesChange
+          Style.BorderColor = 12698049
+          Style.BorderStyle = ebsSingle
+          Style.Color = 13815295
+          Style.HotTrack = False
+          Style.LookAndFeel.NativeStyle = False
+          Style.ButtonStyle = btsOffice11
+          StyleDisabled.BorderColor = 12698049
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleDisabled.TextColor = clBlack
+          StyleFocused.BorderColor = 15314790
+          StyleFocused.Color = 16577771
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 20
+          Required = True
+          FieldName = 'Cliente'
+          Width = 57
+        end
+        object TxOperatorId: TERGButtonEdit
+          Left = 104
+          Top = 55
+          Properties.Buttons = <
+            item
+              Action = ActSelectOperator
+              Default = True
+              Kind = bkEllipsis
+            end>
+          Properties.OnChange = TxOperatorIdPropertiesChange
+          Style.BorderColor = 12698049
+          Style.BorderStyle = ebsSingle
+          Style.Color = 13815295
+          Style.HotTrack = False
+          Style.LookAndFeel.NativeStyle = False
+          Style.ButtonStyle = btsOffice11
+          StyleDisabled.BorderColor = 12698049
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleDisabled.TextColor = clBlack
+          StyleFocused.BorderColor = 15314790
+          StyleFocused.Color = 16577771
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 21
+          FieldName = 'Operador'
+          Width = 57
+        end
+        object TxMachine: TERGButtonEdit
+          Left = 104
+          Top = 80
+          Properties.Buttons = <
+            item
+              Action = ActSelectVehicle
+              Default = True
+              Kind = bkEllipsis
+            end>
+          Properties.OnChange = TxMachinePropertiesChange
+          Style.BorderColor = 12698049
+          Style.BorderStyle = ebsSingle
+          Style.Color = 13815295
+          Style.HotTrack = False
+          Style.LookAndFeel.NativeStyle = False
+          Style.ButtonStyle = btsOffice11
+          StyleDisabled.BorderColor = 12698049
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleDisabled.TextColor = clBlack
+          StyleFocused.BorderColor = 15314790
+          StyleFocused.Color = 16577771
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 22
+          FieldName = 'M'#225'quina/Ve'#237'culo'
+          Width = 57
+        end
+        object TxServiceId: TERGButtonEdit
+          Left = 104
+          Top = 105
+          Properties.Buttons = <
+            item
+              Action = ActSelectService
+              Default = True
+              Kind = bkEllipsis
+            end>
+          Properties.OnChange = TxServiceIdPropertiesChange
+          Style.BorderColor = 12698049
+          Style.BorderStyle = ebsSingle
+          Style.Color = 13815295
+          Style.HotTrack = False
+          Style.LookAndFeel.NativeStyle = False
+          Style.ButtonStyle = btsOffice11
+          StyleDisabled.BorderColor = 12698049
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleDisabled.TextColor = clBlack
+          StyleFocused.BorderColor = 15314790
+          StyleFocused.Color = 16577771
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 23
+          Required = True
+          FieldName = 'Servi'#231'o'
+          Width = 57
         end
       end
     end
@@ -587,35 +620,7 @@ inherited FORD0003BView: TFORD0003BView
     TabOrder = 1
     Width = 461
   end
-  object TxServiceId: TcxButtonEdit [2]
-    Left = 109
-    Top = 149
-    Properties.Buttons = <
-      item
-        Action = ActSelectService
-        Default = True
-        Kind = bkEllipsis
-      end>
-    Properties.CharCase = ecUpperCase
-    Properties.OnChange = TxServiceIdPropertiesChange
-    Style.BorderColor = 12698049
-    Style.BorderStyle = ebsSingle
-    Style.HotTrack = False
-    Style.LookAndFeel.NativeStyle = False
-    Style.ButtonStyle = bts3D
-    Style.ButtonTransparency = ebtAlways
-    StyleDisabled.BorderColor = 12698049
-    StyleDisabled.Color = clBtnFace
-    StyleDisabled.LookAndFeel.NativeStyle = False
-    StyleDisabled.TextColor = clBlack
-    StyleFocused.BorderColor = 15314790
-    StyleFocused.Color = 16577771
-    StyleFocused.LookAndFeel.NativeStyle = False
-    StyleHot.LookAndFeel.NativeStyle = False
-    TabOrder = 4
-    Width = 54
-  end
-  object cxLabel4: TcxLabel [3]
+  object cxLabel4: TcxLabel [2]
     Left = 57
     Top = 150
     Caption = 'Servi'#231'o:'
@@ -628,7 +633,7 @@ inherited FORD0003BView: TFORD0003BView
     Style.IsFontAssigned = True
     Transparent = True
   end
-  object cxLabel8: TcxLabel [4]
+  object cxLabel8: TcxLabel [3]
     Left = 428
     Top = 46
     Caption = 'Data:'
@@ -641,7 +646,7 @@ inherited FORD0003BView: TFORD0003BView
     Style.IsFontAssigned = True
     Transparent = True
   end
-  object LbTotalHours: TcxLabel [5]
+  object LbTotalHours: TcxLabel [4]
     Left = 38
     Top = 174
     Caption = 'Total horas:'
@@ -656,7 +661,7 @@ inherited FORD0003BView: TFORD0003BView
     Transparent = True
     Visible = False
   end
-  object LbTotalKm: TcxLabel [6]
+  object LbTotalKm: TcxLabel [5]
     Left = 259
     Top = 174
     Caption = 'Total KM:'
@@ -671,7 +676,7 @@ inherited FORD0003BView: TFORD0003BView
     Transparent = True
     Visible = False
   end
-  object LbTeste: TcxLabel [7]
+  object LbTeste: TcxLabel [6]
     Left = 458
     Top = 254
     Caption = 'Total horas:'

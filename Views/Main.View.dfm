@@ -2,7 +2,7 @@ object FMainView: TFMainView
   Left = 0
   Top = 0
   BorderStyle = bsSingle
-  Caption = 'Or'#231'amento F'#225'cil'
+  Caption = 'Prefeitura Municipal de Parana'#237'ta'
   ClientHeight = 398
   ClientWidth = 632
   Color = clBlack
@@ -1961,6 +1961,7 @@ object FMainView: TFMainView
           Caption = ''
           ToolbarName = 'TbConstrutorasCad'
         end>
+      Visible = False
       Index = 1
     end
     object TbGeral: TdxRibbonTab
@@ -1980,7 +1981,7 @@ object FMainView: TFMainView
     Panels = <
       item
         PanelStyleClassName = 'TdxStatusBarTextPanelStyle'
-        Text = 'OR'#199'AMENTO F'#193'CIL'
+        Text = 'Prefeitura Municipal de Parana'#237'ta'
       end>
     Ribbon = RbMainMenu
     Font.Charset = ANSI_CHARSET

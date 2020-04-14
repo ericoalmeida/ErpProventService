@@ -3,7 +3,7 @@ inherited FORD0001BView: TFORD0001BView
   ClientHeight = 291
   ClientWidth = 594
   ExplicitWidth = 600
-  ExplicitHeight = 320
+  ExplicitHeight = 319
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
@@ -122,6 +122,9 @@ inherited FORD0001BView: TFORD0001BView
         inherited PnButtonConfirm: TRzPanel
           Left = 366
           ExplicitLeft = 366
+          inherited BtConfirmar: TcxButton
+            OnClick = BtConfirmarClick
+          end
         end
       end
       inherited PnContent: TRzPanel
@@ -153,7 +156,7 @@ inherited FORD0001BView: TFORD0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 3
+          TabOrder = 1
           Width = 54
         end
         object LbVehicleId: TcxLabel
@@ -168,34 +171,6 @@ inherited FORD0001BView: TFORD0001BView
           Style.Font.Style = []
           Style.IsFontAssigned = True
         end
-        object CbStatus: TcxComboBox
-          Left = 443
-          Top = 1
-          ParentFont = False
-          Properties.Items.Strings = (
-            'Ativo'
-            'Inativo')
-          Properties.OnChange = CbStatusPropertiesChange
-          Style.BorderColor = 12698049
-          Style.BorderStyle = ebsSingle
-          Style.Font.Charset = ANSI_CHARSET
-          Style.Font.Color = clWindowText
-          Style.Font.Height = -11
-          Style.Font.Name = 'Open Sans'
-          Style.Font.Style = []
-          Style.HotTrack = False
-          Style.LookAndFeel.NativeStyle = False
-          Style.ButtonStyle = btsFlat
-          Style.IsFontAssigned = True
-          StyleDisabled.BorderColor = 12698049
-          StyleDisabled.LookAndFeel.NativeStyle = False
-          StyleDisabled.TextColor = clBlack
-          StyleFocused.LookAndFeel.NativeStyle = False
-          StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 0
-          Text = 'Ativo'
-          Width = 142
-        end
         object LbStatus: TcxLabel
           Left = 395
           Top = 2
@@ -204,32 +179,9 @@ inherited FORD0001BView: TFORD0001BView
           Style.Font.Charset = ANSI_CHARSET
           Style.Font.Color = clWindowText
           Style.Font.Height = -11
-          Style.Font.Name = 'Open Sans'
+          Style.Font.Name = 'Ubuntu'
           Style.Font.Style = [fsBold]
           Style.IsFontAssigned = True
-        end
-        object TxDescription: TcxTextEdit
-          Left = 91
-          Top = 25
-          Properties.CharCase = ecUpperCase
-          Properties.OnChange = TxDescriptionPropertiesChange
-          Style.BorderColor = 12698049
-          Style.BorderStyle = ebsSingle
-          Style.HotTrack = False
-          Style.LookAndFeel.Kind = lfUltraFlat
-          Style.LookAndFeel.NativeStyle = False
-          StyleDisabled.BorderColor = 12698049
-          StyleDisabled.LookAndFeel.Kind = lfUltraFlat
-          StyleDisabled.LookAndFeel.NativeStyle = False
-          StyleDisabled.TextColor = clBlack
-          StyleFocused.BorderColor = 15314790
-          StyleFocused.Color = 16577771
-          StyleFocused.LookAndFeel.Kind = lfUltraFlat
-          StyleFocused.LookAndFeel.NativeStyle = False
-          StyleHot.LookAndFeel.Kind = lfUltraFlat
-          StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 1
-          Width = 494
         end
         object LbDescription: TcxLabel
           Left = 25
@@ -239,7 +191,7 @@ inherited FORD0001BView: TFORD0001BView
           Style.Font.Charset = ANSI_CHARSET
           Style.Font.Color = clWindowText
           Style.Font.Height = -11
-          Style.Font.Name = 'Open Sans'
+          Style.Font.Name = 'Ubuntu'
           Style.Font.Style = [fsBold]
           Style.IsFontAssigned = True
         end
@@ -262,7 +214,7 @@ inherited FORD0001BView: TFORD0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 7
+          TabOrder = 5
           Width = 134
         end
         object LbCreatedAt: TcxLabel
@@ -296,7 +248,7 @@ inherited FORD0001BView: TFORD0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 9
+          TabOrder = 7
           Width = 134
         end
         object LbUpdatedAt: TcxLabel
@@ -312,20 +264,20 @@ inherited FORD0001BView: TFORD0001BView
           Style.IsFontAssigned = True
         end
         object cxLabel1: TcxLabel
-          Left = 391
-          Top = 50
+          Left = 398
+          Top = 49
           Caption = 'Pre'#231'o:'
           ParentFont = False
           Style.Font.Charset = ANSI_CHARSET
           Style.Font.Color = clWindowText
           Style.Font.Height = -11
-          Style.Font.Name = 'Open Sans'
+          Style.Font.Name = 'Ubuntu'
           Style.Font.Style = [fsBold]
           Style.IsFontAssigned = True
           Transparent = True
         end
         object TxPrice: TcxCurrencyEdit
-          Left = 435
+          Left = 443
           Top = 49
           Properties.OnChange = TxPricePropertiesChange
           Style.BorderColor = 12698049
@@ -339,8 +291,8 @@ inherited FORD0001BView: TFORD0001BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 2
-          Width = 149
+          TabOrder = 0
+          Width = 141
         end
         object CbPaymentType: TcxComboBox
           Left = 91
@@ -353,6 +305,7 @@ inherited FORD0001BView: TFORD0001BView
           Properties.OnChange = CbPaymentTypePropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
+          Style.Color = 13815295
           Style.Font.Charset = ANSI_CHARSET
           Style.Font.Color = clWindowText
           Style.Font.Height = -11
@@ -367,24 +320,81 @@ inherited FORD0001BView: TFORD0001BView
           StyleDisabled.TextColor = clBlack
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 12
+          TabOrder = 10
           Text = 'Hora trabalhada'
           Width = 142
         end
         object cxLabel2: TcxLabel
-          Left = 15
+          Left = 18
           Top = 50
           Caption = 'Pagamento:'
           ParentFont = False
           Style.Font.Charset = ANSI_CHARSET
           Style.Font.Color = clWindowText
           Style.Font.Height = -11
-          Style.Font.Name = 'Open Sans'
+          Style.Font.Name = 'Ubuntu'
           Style.Font.Style = [fsBold]
           Style.IsFontAssigned = True
         end
+        object CbStatus: TcxComboBox
+          Left = 443
+          Top = 1
+          ParentFont = False
+          Properties.Items.Strings = (
+            'Ativo'
+            'Inativo')
+          Properties.OnChange = CbStatusPropertiesChange
+          Style.BorderColor = 12698049
+          Style.BorderStyle = ebsSingle
+          Style.Color = clWhite
+          Style.Font.Charset = ANSI_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -11
+          Style.Font.Name = 'Open Sans'
+          Style.Font.Style = []
+          Style.HotTrack = False
+          Style.LookAndFeel.NativeStyle = False
+          Style.ButtonStyle = btsOffice11
+          Style.IsFontAssigned = True
+          StyleDisabled.BorderColor = 12698049
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleDisabled.TextColor = clBlack
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 12
+          Text = 'Ativo'
+          Width = 142
+        end
       end
     end
+  end
+  object TxDescription: TERGTextEdit [1]
+    Left = 95
+    Top = 69
+    ParentFont = False
+    Properties.OnChange = TxDescriptionPropertiesChange
+    Style.BorderColor = 12698049
+    Style.BorderStyle = ebsSingle
+    Style.Color = 13815295
+    Style.Font.Charset = ANSI_CHARSET
+    Style.Font.Color = clWindowText
+    Style.Font.Height = -11
+    Style.Font.Name = 'Open Sans'
+    Style.Font.Style = []
+    Style.HotTrack = False
+    Style.LookAndFeel.NativeStyle = False
+    Style.IsFontAssigned = True
+    StyleDisabled.BorderColor = 12698049
+    StyleDisabled.LookAndFeel.NativeStyle = False
+    StyleDisabled.TextColor = clBlack
+    StyleFocused.BorderColor = 15314790
+    StyleFocused.Color = 16577771
+    StyleFocused.LookAndFeel.NativeStyle = False
+    StyleHot.LookAndFeel.NativeStyle = False
+    TabOrder = 1
+    Required = True
+    FieldName = 'Descri'#231#227'o'
+    Width = 493
   end
   inherited AcSearchRecord: TActionList
     Left = 52

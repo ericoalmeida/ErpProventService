@@ -69,10 +69,12 @@ inherited FASS0002BView: TFASS0002BView
           006CF60000000049454E44AE426082}
       end
       inherited LbTitle: TRzLabel
+        Height = 26
         Caption = 'Ve'#237'culos/M'#225'quinas'
       end
       inherited LbOperation: TRzLabel
         Left = 507
+        Height = 26
         ExplicitLeft = 507
       end
     end
@@ -83,6 +85,7 @@ inherited FASS0002BView: TFASS0002BView
       ExplicitWidth = 590
       inherited LbProgram: TRzLabel
         Width = 590
+        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
@@ -241,7 +244,7 @@ inherited FASS0002BView: TFASS0002BView
           Properties.OnChange = CbStatusPropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
-          Style.Color = 13815295
+          Style.Color = clWhite
           Style.Font.Charset = ANSI_CHARSET
           Style.Font.Color = clWindowText
           Style.Font.Height = -11

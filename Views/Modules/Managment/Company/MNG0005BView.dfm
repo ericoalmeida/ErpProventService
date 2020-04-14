@@ -68,12 +68,14 @@ inherited FMNG0005BView: TFMNG0005BView
       inherited LbTitle: TRzLabel
         Left = 36
         Width = 79
+        Height = 26
         Caption = 'Empresa'
         ExplicitLeft = 36
         ExplicitWidth = 79
       end
       inherited LbOperation: TRzLabel
         Left = 607
+        Height = 26
         ExplicitLeft = 607
       end
     end
@@ -84,6 +86,7 @@ inherited FMNG0005BView: TFMNG0005BView
       ExplicitWidth = 690
       inherited LbProgram: TRzLabel
         Width = 690
+        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
@@ -415,6 +418,7 @@ inherited FMNG0005BView: TFMNG0005BView
           Top = 137
           Properties.Buttons = <
             item
+              Action = AcSelectDistrict
               Default = True
               Kind = bkEllipsis
             end>

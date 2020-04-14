@@ -3,14 +3,17 @@ inherited FORD0002BView: TFORD0002BView
   ClientHeight = 291
   ClientWidth = 594
   ExplicitWidth = 600
-  ExplicitHeight = 320
+  ExplicitHeight = 319
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
     Width = 592
     Height = 289
+    ExplicitWidth = 592
+    ExplicitHeight = 289
     inherited PnHeader: TRzPanel
       Width = 590
+      ExplicitWidth = 590
       inherited ImTitle: TImage
         Picture.Data = {
           0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000020
@@ -84,68 +87,58 @@ inherited FORD0002BView: TFORD0002BView
           D50EA00353C0A470CFF8378CEBA5445BE33D750000000049454E44AE426082}
       end
       inherited LbTitle: TRzLabel
-        Width = 201
+        Width = 225
+        Height = 26
         Caption = 'Operadores de m'#225'quinas'
-        ExplicitWidth = 201
+        ExplicitWidth = 225
       end
       inherited LbOperation: TRzLabel
-        Left = 506
+        Left = 507
+        Height = 26
+        ExplicitLeft = 506
       end
     end
     inherited PnProgram: TRzPanel
       Top = 270
       Width = 590
+      ExplicitTop = 270
+      ExplicitWidth = 590
       inherited LbProgram: TRzLabel
         Width = 590
+        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
       Width = 590
       Height = 229
+      ExplicitWidth = 590
+      ExplicitHeight = 229
       inherited PnFooterBody: TRzPanel
         Top = 189
         Width = 590
+        ExplicitTop = 189
+        ExplicitWidth = 590
         inherited PnButtonCancel: TRzPanel
           Left = 479
+          ExplicitLeft = 479
         end
         inherited PnButtonConfirm: TRzPanel
           Left = 366
+          ExplicitLeft = 366
+          inherited BtConfirmar: TcxButton
+            OnClick = BtConfirmarClick
+          end
         end
       end
       inherited PnContent: TRzPanel
         Width = 586
         Height = 185
+        ExplicitWidth = 586
+        ExplicitHeight = 185
         inherited LbObs: TRzLabel
           Top = 172
           Width = 586
-        end
-        object CbStatus: TcxComboBox
-          Left = 435
-          Top = 2
-          ParentFont = False
-          Properties.Items.Strings = (
-            'Ativo'
-            'Inativo')
-          Properties.OnChange = CbStatusPropertiesChange
-          Style.BorderColor = 12698049
-          Style.BorderStyle = ebsSingle
-          Style.Font.Charset = ANSI_CHARSET
-          Style.Font.Color = clWindowText
-          Style.Font.Height = -11
-          Style.Font.Name = 'Open Sans'
-          Style.Font.Style = []
-          Style.HotTrack = False
-          Style.LookAndFeel.NativeStyle = False
-          Style.ButtonStyle = btsFlat
-          Style.IsFontAssigned = True
-          StyleDisabled.BorderColor = 12698049
-          StyleDisabled.LookAndFeel.NativeStyle = False
-          StyleDisabled.TextColor = clBlack
-          StyleFocused.LookAndFeel.NativeStyle = False
-          StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 0
-          Text = 'Ativo'
-          Width = 142
+          ExplicitTop = 172
         end
         object LbStatus: TcxLabel
           Left = 387
@@ -155,7 +148,7 @@ inherited FORD0002BView: TFORD0002BView
           Style.Font.Charset = ANSI_CHARSET
           Style.Font.Color = clWindowText
           Style.Font.Height = -11
-          Style.Font.Name = 'Open Sans'
+          Style.Font.Name = 'Ubuntu'
           Style.Font.Style = [fsBold]
           Style.IsFontAssigned = True
         end
@@ -178,7 +171,7 @@ inherited FORD0002BView: TFORD0002BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 2
+          TabOrder = 1
           Width = 54
         end
         object LbExpenseId: TcxLabel
@@ -201,32 +194,9 @@ inherited FORD0002BView: TFORD0002BView
           Style.Font.Charset = ANSI_CHARSET
           Style.Font.Color = clWindowText
           Style.Font.Height = -11
-          Style.Font.Name = 'Open Sans'
+          Style.Font.Name = 'Ubuntu'
           Style.Font.Style = [fsBold]
           Style.IsFontAssigned = True
-        end
-        object TxDescription: TcxTextEdit
-          Left = 91
-          Top = 25
-          Properties.CharCase = ecUpperCase
-          Properties.OnChange = TxDescriptionPropertiesChange
-          Style.BorderColor = 12698049
-          Style.BorderStyle = ebsSingle
-          Style.HotTrack = False
-          Style.LookAndFeel.Kind = lfUltraFlat
-          Style.LookAndFeel.NativeStyle = False
-          StyleDisabled.BorderColor = 12698049
-          StyleDisabled.LookAndFeel.Kind = lfUltraFlat
-          StyleDisabled.LookAndFeel.NativeStyle = False
-          StyleDisabled.TextColor = clBlack
-          StyleFocused.BorderColor = 15314790
-          StyleFocused.Color = 16577771
-          StyleFocused.LookAndFeel.Kind = lfUltraFlat
-          StyleFocused.LookAndFeel.NativeStyle = False
-          StyleHot.LookAndFeel.Kind = lfUltraFlat
-          StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 5
-          Width = 486
         end
         object LbCreatedAt: TcxLabel
           Left = 25
@@ -259,7 +229,7 @@ inherited FORD0002BView: TFORD0002BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 7
+          TabOrder = 5
           Width = 134
         end
         object LbUpdatedAt: TcxLabel
@@ -293,10 +263,67 @@ inherited FORD0002BView: TFORD0002BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 9
+          TabOrder = 7
           Width = 134
+        end
+        object CbStatus: TcxComboBox
+          Left = 441
+          Top = 1
+          ParentFont = False
+          Properties.Items.Strings = (
+            'Ativo'
+            'Inativo')
+          Properties.OnChange = CbStatusPropertiesChange
+          Style.BorderColor = 12698049
+          Style.BorderStyle = ebsSingle
+          Style.Color = clWhite
+          Style.Font.Charset = ANSI_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -11
+          Style.Font.Name = 'Open Sans'
+          Style.Font.Style = []
+          Style.HotTrack = False
+          Style.LookAndFeel.NativeStyle = False
+          Style.ButtonStyle = btsOffice11
+          Style.IsFontAssigned = True
+          StyleDisabled.BorderColor = 12698049
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleDisabled.TextColor = clBlack
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 8
+          Text = 'Ativo'
+          Width = 142
         end
       end
     end
+  end
+  object TxDescription: TERGTextEdit [1]
+    Left = 95
+    Top = 69
+    ParentFont = False
+    Properties.OnChange = TxDescriptionPropertiesChange
+    Style.BorderColor = 12698049
+    Style.BorderStyle = ebsSingle
+    Style.Color = 13815295
+    Style.Font.Charset = ANSI_CHARSET
+    Style.Font.Color = clWindowText
+    Style.Font.Height = -11
+    Style.Font.Name = 'Open Sans'
+    Style.Font.Style = []
+    Style.HotTrack = False
+    Style.LookAndFeel.NativeStyle = False
+    Style.IsFontAssigned = True
+    StyleDisabled.BorderColor = 12698049
+    StyleDisabled.LookAndFeel.NativeStyle = False
+    StyleDisabled.TextColor = clBlack
+    StyleFocused.BorderColor = 15314790
+    StyleFocused.Color = 16577771
+    StyleFocused.LookAndFeel.NativeStyle = False
+    StyleHot.LookAndFeel.NativeStyle = False
+    TabOrder = 1
+    Required = True
+    FieldName = 'Descri'#231#227'o'
+    Width = 492
   end
 end

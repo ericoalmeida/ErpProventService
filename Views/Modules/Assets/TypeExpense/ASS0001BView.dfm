@@ -72,11 +72,13 @@ inherited FASS0001BView: TFASS0001BView
       end
       inherited LbTitle: TRzLabel
         Width = 360
+        Height = 26
         Caption = 'Tipo de despesas com ve'#237'culo/maquinas'
         ExplicitWidth = 360
       end
       inherited LbOperation: TRzLabel
         Left = 507
+        Height = 26
         ExplicitLeft = 507
       end
     end
@@ -87,6 +89,7 @@ inherited FASS0001BView: TFASS0001BView
       ExplicitWidth = 590
       inherited LbProgram: TRzLabel
         Width = 590
+        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
@@ -245,7 +248,7 @@ inherited FASS0001BView: TFASS0001BView
           Properties.OnChange = CbStatusPropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
-          Style.Color = 13815295
+          Style.Color = clWhite
           Style.Font.Charset = ANSI_CHARSET
           Style.Font.Color = clWindowText
           Style.Font.Height = -11

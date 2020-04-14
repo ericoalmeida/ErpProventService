@@ -95,11 +95,13 @@ inherited FMNG0004BView: TFMNG0004BView
       end
       inherited LbTitle: TRzLabel
         Width = 70
+        Height = 26
         Caption = 'Cidades'
         ExplicitWidth = 70
       end
       inherited LbOperation: TRzLabel
         Left = 507
+        Height = 26
         ExplicitLeft = 507
       end
     end
@@ -110,6 +112,7 @@ inherited FMNG0004BView: TFMNG0004BView
       ExplicitWidth = 590
       inherited LbProgram: TRzLabel
         Width = 590
+        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
@@ -373,6 +376,7 @@ inherited FMNG0004BView: TFMNG0004BView
           Top = 49
           Properties.Buttons = <
             item
+              Action = acSearchState
               Default = True
               Kind = bkEllipsis
             end>

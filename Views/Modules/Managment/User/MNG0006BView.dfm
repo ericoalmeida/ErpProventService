@@ -94,11 +94,13 @@ inherited FMNG0006BView: TFMNG0006BView
       end
       inherited LbTitle: TRzLabel
         Width = 79
+        Height = 26
         Caption = 'Usu'#225'rios'
         ExplicitWidth = 79
       end
       inherited LbOperation: TRzLabel
         Left = 507
+        Height = 26
         ExplicitLeft = 507
       end
     end
@@ -109,6 +111,7 @@ inherited FMNG0006BView: TFMNG0006BView
       ExplicitWidth = 590
       inherited LbProgram: TRzLabel
         Width = 590
+        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
@@ -358,7 +361,7 @@ inherited FMNG0006BView: TFMNG0006BView
           Properties.OnChange = CbStatusPropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
-          Style.Color = 13815295
+          Style.Color = clWhite
           Style.Font.Charset = ANSI_CHARSET
           Style.Font.Color = clWindowText
           Style.Font.Height = -11

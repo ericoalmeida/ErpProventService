@@ -12,23 +12,19 @@ uses
   cxDropDownEdit, cxCalendar, Base.View.interf, Types.Controllers, ServiceProvided.Controller.Interf,
   Person.Controller.Interf, Operators.Controller.Interf, Service.Controller.Interf,
   Vehicle.Controller.Interf, cxSpinEdit, cxTimeEdit, cxMemo, Math, Vcl.Mask,
-  RzEdit, Utils.Controller.Interf,  System.UITypes;
+  RzEdit, Utils.Controller.Interf,  System.UITypes, ERGDateEdit, ERGButtonEdit;
 
 type
   TFORD0003BView = class(TFBaseRegisterView, iBaseRegisterView)
     TxServiceProvidedId: TcxTextEdit;
     LbDistrictId: TcxLabel;
     cxLabel3: TcxLabel;
-    TxClientId: TcxButtonEdit;
     TxClientName: TcxTextEdit;
     TxOperatorName: TcxTextEdit;
-    TxOperatorId: TcxButtonEdit;
     cxLabel1: TcxLabel;
     TxMachineName: TcxTextEdit;
-    TxMachine: TcxButtonEdit;
     cxLabel2: TcxLabel;
     TxServiceName: TcxTextEdit;
-    TxServiceId: TcxButtonEdit;
     cxLabel4: TcxLabel;
     LbUpdatedAt: TcxLabel;
     TxUpdatedDate: TcxTextEdit;
@@ -37,7 +33,6 @@ type
     cxLabel5: TcxLabel;
     TxTotal: TcxCurrencyEdit;
     cxLabel7: TcxLabel;
-    TxData: TcxDateEdit;
     cxLabel8: TcxLabel;
     LbCanceled: TRzLabel;
     ActSelectClient: TAction;
@@ -51,6 +46,11 @@ type
     LbTeste: TcxLabel;
     Button1: TButton;
     Button2: TButton;
+    TxData: TERGDateEdit;
+    TxClientId: TERGButtonEdit;
+    TxOperatorId: TERGButtonEdit;
+    TxMachine: TERGButtonEdit;
+    TxServiceId: TERGButtonEdit;
     procedure FormCreate(Sender: TObject);
     procedure TxDataPropertiesChange(Sender: TObject);
     procedure TxClientIdPropertiesChange(Sender: TObject);
@@ -146,9 +146,11 @@ procedure TFORD0003BView.BtConfirmarClick(Sender: TObject);
 begin
   PnButtonConfirm.SetFocus;
 
+  if not(validate) then Exit;
+
   save;
 
-  inherited;
+  Close;
 end;
 
 procedure TFORD0003BView.Button1Click(Sender: TObject);

@@ -12,15 +12,13 @@ uses
   Vcl.ActnList, Vcl.StdCtrls,
   cxButtons, RzLabel, dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel, Base.View.interf, Types.Controllers,
   cxControls, cxContainer, cxEdit, cxMaskEdit, cxDropDownEdit, cxLabel, cxTextEdit,
-  Service.Controller.Interf, cxCurrencyEdit;
+  Service.Controller.Interf, cxCurrencyEdit, ERGTextEdit;
 
 type
   TFORD0001BView = class(TFBaseRegisterView, iBaseRegisterView)
     TxServiceId: TcxTextEdit;
     LbVehicleId: TcxLabel;
-    CbStatus: TcxComboBox;
     LbStatus: TcxLabel;
-    TxDescription: TcxTextEdit;
     LbDescription: TcxLabel;
     TxCreatedDate: TcxTextEdit;
     LbCreatedAt: TcxLabel;
@@ -30,6 +28,8 @@ type
     TxPrice: TcxCurrencyEdit;
     cxLabel2: TcxLabel;
     CbPaymentType: TcxComboBox;
+    CbStatus: TcxComboBox;
+    TxDescription: TERGTextEdit;
     procedure FormCreate(Sender: TObject);
     procedure CbStatusPropertiesChange(Sender: TObject);
     procedure TxDescriptionPropertiesChange(Sender: TObject);
@@ -69,8 +69,11 @@ uses Facade.Controller;
 
 procedure TFORD0001BView.BtConfirmarClick(Sender: TObject);
 begin
+  if not(validate) then Exit;
+
   save;
-  inherited;
+
+  Close;
 end;
 
 procedure TFORD0001BView.CbPaymentTypePropertiesChange(Sender: TObject);
@@ -92,8 +95,6 @@ procedure TFORD0001BView.CbStatusPropertiesChange(Sender: TObject);
 begin
   inherited;
   changeDataAnyFields;
-
-
 end;
 
 procedure TFORD0001BView.deleteRecord;

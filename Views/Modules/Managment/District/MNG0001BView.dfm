@@ -84,11 +84,13 @@ inherited FMNG0001BView: TFMNG0001BView
       end
       inherited LbTitle: TRzLabel
         Width = 66
+        Height = 26
         Caption = 'Bairros'
         ExplicitWidth = 66
       end
       inherited LbOperation: TRzLabel
         Left = 507
+        Height = 26
         ExplicitLeft = 507
       end
     end
@@ -99,6 +101,7 @@ inherited FMNG0001BView: TFMNG0001BView
       ExplicitWidth = 590
       inherited LbProgram: TRzLabel
         Width = 590
+        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
@@ -146,14 +149,14 @@ inherited FMNG0001BView: TFMNG0001BView
           Style.IsFontAssigned = True
         end
         object LbDescription: TcxLabel
-          Left = 25
-          Top = 26
+          Left = 28
+          Top = 25
           Caption = 'Descri'#231#227'o:'
           ParentFont = False
           Style.Font.Charset = ANSI_CHARSET
           Style.Font.Color = clWindowText
           Style.Font.Height = -11
-          Style.Font.Name = 'Open Sans'
+          Style.Font.Name = 'Ubuntu'
           Style.Font.Style = [fsBold]
           Style.IsFontAssigned = True
         end
@@ -270,14 +273,14 @@ inherited FMNG0001BView: TFMNG0001BView
           Width = 429
         end
         object cxLabel3: TcxLabel
-          Left = 41
-          Top = 50
+          Left = 44
+          Top = 49
           Caption = 'Cidade:'
           ParentFont = False
           Style.Font.Charset = ANSI_CHARSET
           Style.Font.Color = clWindowText
           Style.Font.Height = -11
-          Style.Font.Name = 'Open Sans'
+          Style.Font.Name = 'Ubuntu'
           Style.Font.Style = [fsBold]
           Style.IsFontAssigned = True
         end
@@ -289,7 +292,7 @@ inherited FMNG0001BView: TFMNG0001BView
           Style.Font.Charset = ANSI_CHARSET
           Style.Font.Color = clWindowText
           Style.Font.Height = -11
-          Style.Font.Name = 'Open Sans'
+          Style.Font.Name = 'Ubuntu'
           Style.Font.Style = [fsBold]
           Style.IsFontAssigned = True
         end
@@ -326,6 +329,7 @@ inherited FMNG0001BView: TFMNG0001BView
           Top = 49
           Properties.Buttons = <
             item
+              Action = acSelectCity
               Default = True
               Kind = bkEllipsis
             end>
