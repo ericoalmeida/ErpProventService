@@ -41,6 +41,12 @@ inherited FBaseRegisterView: TFBaseRegisterView
         ExplicitHeight = 21
       end
     end
+    inherited PnProgram: TRzPanel
+      inherited LbProgram: TRzLabel
+        Width = 608
+        Height = 18
+      end
+    end
     inherited PnContainerBody: TRzPanel
       inherited PnFooterBody: TRzPanel
         inherited PnButtonCancel: TRzPanel

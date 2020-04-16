@@ -13,7 +13,8 @@ uses
   dxSkinOffice2007Silver, System.Actions, Vcl.ActnList, dxSkinDarkRoom, dxSkinDarkSide, cxControls,
   cxContainer, cxEdit, cxMaskEdit, cxDropDownEdit, cxTextEdit, Vcl.ComCtrls,
   dxCore, cxDateUtils, cxMemo, ERGMemoEdit, cxButtonEdit, ERGButtonEdit,
-  cxCalendar, ERGDateEdit, ERGNumberEdit, ERGTextEdit, Base.View.interf;
+  cxCalendar, ERGDateEdit, ERGNumberEdit, ERGTextEdit, Base.View.interf,
+  cxCurrencyEdit, ERGCurrencyEdit, ERGORDTimerEdit;
 
 type
   TFBaseRegisterView = class(TFBaseView)
@@ -26,7 +27,7 @@ type
   private
     { Private declarations }
    protected
- 
+
     FRequiredFields: TStringList;
     FOperation: TTypeOperation;
     FSelectedRecord: string;
@@ -96,64 +97,90 @@ begin
   FRequiredFields := TStringList.Create;
 
   try
- 
+
     for I := 0 to Pred(Self.ComponentCount) do
     begin
       if Self.Components[I] is TERGTextEdit then
-        if TERGTextEdit(Self.Components[I]).Enabled then
-          if TERGTextEdit(Self.Components[I]).Required then
-            if TERGTextEdit(Self.Components[I]).IsEmpty then
-            begin
-              Result := False;
+        if TERGTextEdit(Self.Components[I]).Visible then
+          if TERGTextEdit(Self.Components[I]).Enabled then
+            if TERGTextEdit(Self.Components[I]).Required then
+              if TERGTextEdit(Self.Components[I]).IsEmpty then
+              begin
+                Result := False;
 
-              FRequiredFields.Add(TERGTextEdit(Self.Components[I]).FieldName);
-            end;
+                FRequiredFields.Add(TERGTextEdit(Self.Components[I]).FieldName);
+              end;
 
       if Self.Components[I] is TERGDateEdit then
-        if TERGDateEdit(Self.Components[I]).Enabled then
-          if TERGDateEdit(Self.Components[I]).Required then
-            if TERGDateEdit(Self.Components[I]).IsEmpty then
-            begin
-              Result := False;
+        if TERGDateEdit(Self.Components[I]).Visible then
+          if TERGDateEdit(Self.Components[I]).Enabled then
+            if TERGDateEdit(Self.Components[I]).Required then
+              if TERGDateEdit(Self.Components[I]).IsEmpty then
+              begin
+                Result := False;
 
-              FRequiredFields.Add(TERGDateEdit(Self.Components[I]).FieldName);
-            end;
+                FRequiredFields.Add(TERGDateEdit(Self.Components[I]).FieldName);
+              end;
 
       if Self.Components[I] is TERGButtonEdit then
-        if TERGButtonEdit(Self.Components[I]).Enabled then
-          if TERGButtonEdit(Self.Components[I]).Required then
-            if TERGButtonEdit(Self.Components[I]).IsEmpty then
-            begin
-              Result := False;
+        if TERGButtonEdit(Self.Components[I]).Visible then
+          if TERGButtonEdit(Self.Components[I]).Enabled then
+            if TERGButtonEdit(Self.Components[I]).Required then
+              if TERGButtonEdit(Self.Components[I]).IsEmpty then
+              begin
+                Result := False;
 
-              FRequiredFields.Add(TERGButtonEdit(Self.Components[I]).FieldName);
-            end;
+                FRequiredFields.Add(TERGButtonEdit(Self.Components[I])
+                  .FieldName);
+              end;
 
       if Self.Components[I] is TERGMemo then
-        if TERGMemo(Self.Components[I]).Enabled then
-          if TERGMemo(Self.Components[I]).Required then
-            if TERGMemo(Self.Components[I]).IsEmpty then
-            begin
-              Result := False;
+        if TERGMemo(Self.Components[I]).Visible then
+          if TERGMemo(Self.Components[I]).Enabled then
+            if TERGMemo(Self.Components[I]).Required then
+              if TERGMemo(Self.Components[I]).IsEmpty then
+              begin
+                Result := False;
 
-              FRequiredFields.Add(TERGMemo(Self.Components[I]).FieldName);
-            end;
+                FRequiredFields.Add(TERGMemo(Self.Components[I]).FieldName);
+              end;
+
+      if Self.Components[I] is TERGCurrencyEdit1 then
+        if TERGCurrencyEdit1(Self.Components[I]).Visible then
+          if TERGCurrencyEdit1(Self.Components[I]).Enabled then
+            if TERGCurrencyEdit1(Self.Components[I]).Required then
+              if TERGCurrencyEdit1(Self.Components[I]).IsEmpty then
+              begin
+                Result := False;
+
+                FRequiredFields.Add(TERGCurrencyEdit1(Self.Components[I])
+                  .FieldName);
+              end;
+
+      if Self.Components[I] is TERGORDTimerEdit then
+        if TERGORDTimerEdit(Self.Components[I]).Visible then
+          if TERGORDTimerEdit(Self.Components[I]).Enabled then
+            if TERGORDTimerEdit(Self.Components[I]).Required then
+              if TERGORDTimerEdit(Self.Components[I]).IsEmpty then
+              begin
+                Result := False;
+
+                FRequiredFields.Add(TERGORDTimerEdit(Self.Components[I])
+                  .FieldName);
+              end;
 
     end;
 
     if not(Result) then
     begin
 
-     TFacadeView.New
-      .messagesFactoryView
-      .typeMessage(tmRequired)
-      .Messages(FRequiredFields.Text)
-      .&end;
+      TFacadeView.New.messagesFactoryView.typeMessage(tmRequired)
+        .Messages(FRequiredFields.Text).&end;
 
     end;
 
   finally
-     FRequiredFields.Free;
+    FRequiredFields.Free;
   end;
 
 end;

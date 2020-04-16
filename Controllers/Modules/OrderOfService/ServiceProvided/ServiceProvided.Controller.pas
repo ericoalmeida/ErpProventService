@@ -80,17 +80,8 @@ begin
 end;
 
 function TServiceProvidedController.totalHours: Integer;
-var
- Hour, Minutes, Seconds: Integer;
 begin
-  Hour    := FRecordFound.TOTALHOURS.Value div 3600;
-  Seconds := FRecordFound.TOTALHOURS.Value mod 3600;
-  Minutes := Seconds div 60;
-  Seconds := Seconds mod 60;
-
-  Result := StrToInt(FormatFloat('00', Hour) +
-                     FormatFloat('00', Minutes) +
-                     FormatFloat('00', Seconds));
+  Result := FRecordFound.TOTALHOURS.Value;
 end;
 
 function TServiceProvidedController.totalKm: Double;

@@ -12,7 +12,8 @@ uses
   cxDropDownEdit, cxCalendar, Base.View.interf, Types.Controllers, ServiceProvided.Controller.Interf,
   Person.Controller.Interf, Operators.Controller.Interf, Service.Controller.Interf,
   Vehicle.Controller.Interf, cxSpinEdit, cxTimeEdit, cxMemo, Math, Vcl.Mask,
-  RzEdit, Utils.Controller.Interf,  System.UITypes, ERGDateEdit, ERGButtonEdit;
+  RzEdit, Utils.Controller.Interf,  System.UITypes, ERGDateEdit, ERGButtonEdit,
+  ERGORDTimerEdit, ERGCurrencyEdit;
 
 type
   TFORD0003BView = class(TFBaseRegisterView, iBaseRegisterView)
@@ -37,20 +38,18 @@ type
     LbCanceled: TRzLabel;
     ActSelectClient: TAction;
     TxUnityPrice: TcxCurrencyEdit;
-    TxTotalKm: TcxCurrencyEdit;
     LbTotalHours: TcxLabel;
     LbTotalKm: TcxLabel;
     ActSelectOperator: TAction;
     ActSelectVehicle: TAction;
     ActSelectService: TAction;
-    LbTeste: TcxLabel;
-    Button1: TButton;
-    Button2: TButton;
     TxData: TERGDateEdit;
     TxClientId: TERGButtonEdit;
     TxOperatorId: TERGButtonEdit;
     TxMachine: TERGButtonEdit;
     TxServiceId: TERGButtonEdit;
+    TxTotalHours: TERGORDTimerEdit;
+    TxTotalKm: TERGCurrencyEdit1;
     procedure FormCreate(Sender: TObject);
     procedure TxDataPropertiesChange(Sender: TObject);
     procedure TxClientIdPropertiesChange(Sender: TObject);
@@ -60,14 +59,12 @@ type
     procedure TxTotalHoursPropertiesChange(Sender: TObject);
     procedure BtConfirmarClick(Sender: TObject);
     procedure ActSelectClientExecute(Sender: TObject);
-    procedure TxTotalHoursExit(Sender: TObject);
     procedure TxTotalKmPropertiesChange(Sender: TObject);
     procedure ActSelectOperatorExecute(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure ActSelectVehicleExecute(Sender: TObject);
     procedure ActSelectServiceExecute(Sender: TObject);
-    procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
+    procedure TxTotalHoursExit(Sender: TObject);
   private
     FServiceProvidedController: iServiceProvidedController;
     FClientController: iPersonController;
@@ -153,18 +150,6 @@ begin
   Close;
 end;
 
-procedure TFORD0003BView.Button1Click(Sender: TObject);
-begin
-  inherited;
-  LbTeste.Style.Font.Style := LbTeste.Style.Font.Style + [fsBold];
-end;
-
-procedure TFORD0003BView.Button2Click(Sender: TObject);
-begin
-  inherited;
-  LbTeste.Style.Font.Style := LbTeste.Style.Font.Style - [fsBold];
-end;
-
 procedure TFORD0003BView.calcularValorTotalPelasHorasTrabalhadas(AValue: Integer);
 var
  pricePerMinute: Currency;
@@ -177,8 +162,9 @@ begin
   Minutes := Hour * 60;
   Minutes := Minutes + Seconds div 60;
 
-  pricePerMinute := (FServiceController.price / 60);  //60 minutos por hora
-  TxTotal.Value  := (pricePerMinute * Minutes);
+  TxUnityPrice.Value := FServiceController.price;
+  pricePerMinute     := (FServiceController.price / 60);  //60 minutos por hora
+  TxTotal.Value      := (pricePerMinute * Minutes);
 end;
 
 procedure TFORD0003BView.deleteRecord;
@@ -195,7 +181,7 @@ begin
   TxOperatorId.Enabled    := False;
   TxMachine.Enabled       := False;
   TxServiceId.Enabled     := False;
-  //TxTotalHours.Enabled    := False;
+  TxTotalHours.Enabled    := False;
   TxTotalKm.Enabled       := False;
 
   LbCanceled.Visible := True;
@@ -211,7 +197,7 @@ begin
   TxOperatorId.Enabled  := not(FOperation in [toShow, toDelete]);
   TxMachine.Enabled     := not(FOperation in [toShow, toDelete]);
   TxServiceId.Enabled   := not(FOperation in [toShow, toDelete]);
-  //TxTotalHours.Enabled  := not(FOperation in [toShow, toDelete]);
+  TxTotalHours.Enabled  := not(FOperation in [toShow, toDelete]);
   TxTotalKm.Enabled     := not(FOperation in [toShow, toDelete]);
 
 
@@ -236,7 +222,7 @@ begin
     .operatorId(FCodeOperator)
     .machineId(FCodeVehicle)
     .serviceId(FServiceController.code)
-    .totalHours(0{TxTotalHours.Hours})
+    .totalHours(TxTotalHours.toSeconds)
     .totalKm(TxTotalKm.Value)
     .total(TxTotal.Value)
     .userId(FSessionUser)
@@ -276,7 +262,7 @@ begin
   inherited;
 
   if FOperation = toInsert then
-  //TxTotalHours.Value := 0;
+  TxTotalHours.Value := 0;
 
   if TxData.Enabled then  
   TxData.SetFocus;
@@ -292,7 +278,7 @@ begin
     .operatorId(FCodeOperator)
     .machineId(FCodeVehicle)
     .serviceId(FServiceController.code)
-    .totalHours(0{TxTotalHours.Hours})
+    .totalHours(TxTotalHours.toSeconds)
     .totalKm(TxTotalKm.Value)
     .total(TxTotal.Value)
     .userId(FSessionUser)
@@ -374,6 +360,7 @@ begin
 
     TxServiceId.Text     := FServiceController.serviceId;
     TxServiceName.Text   := FServiceController.description;
+    TxUnityPrice.Text    := FServiceController.priceUnit;
 
     showFieldsKmOrHour;
 end;
@@ -436,11 +423,11 @@ begin
   TxServiceId.Text          := FServiceController.serviceId;
   TxServiceName.Text        := FServiceController.description;
   TxUnityPrice.Value        := FServiceController.price;
-  //TxTotalHours.Value        := FServiceProvidedController.totalHours;
   TxTotalKm.Value           := FServiceProvidedController.totalKm;
   TxTotal.Value             := FServiceProvidedController.total;
   TxCreatedDate.Text        := FServiceProvidedController.createdAt;
   TxUpdatedDate.Text        := FServiceProvidedController.updatedAt;
+  TxTotalHours.toHours(FServiceProvidedController.totalHours);
 
   if not(FOperation in [toDelete]) then
     BtConfirmar.Enabled := False;
@@ -455,9 +442,9 @@ begin
      LbTotalHours.Visible := True;
      LbTotalHours.Left    := 38;
      LbTotalHours.Top     := 174;
-     //TxTotalHours.Visible := True;
-     //TxTotalHours.Left    := 105;
-     //TxTotalHours.Top     := 129;
+     TxTotalHours.Visible := True;
+     TxTotalHours.Left    := 105;
+     TxTotalHours.Top     := 129;
 
 
      LbTotalKm.Visible := False;
@@ -472,9 +459,9 @@ begin
      LbTotalHours.Visible := False;
      LbTotalHours.Left    := 38;
      LbTotalHours.Top     := 174;
-     //TxTotalHours.Visible := False;
-     //TxTotalHours.Left    := 105;
-     //TxTotalHours.Top     := 129;
+     TxTotalHours.Visible := False;
+     TxTotalHours.Left    := 105;
+     TxTotalHours.Top     := 129;
 
 
      LbTotalKm.Visible := True;
@@ -490,9 +477,9 @@ begin
      LbTotalHours.Visible := False;
      LbTotalHours.Left    := 38;
      LbTotalHours.Top     := 174;
-     //TxTotalHours.Visible := False;
-     //TxTotalHours.Left    := 105;
-     //TxTotalHours.Top     := 129;
+     TxTotalHours.Visible := False;
+     TxTotalHours.Left    := 105;
+     TxTotalHours.Top     := 129;
 
 
      LbTotalKm.Visible := False;
@@ -551,7 +538,7 @@ end;
 procedure TFORD0003BView.TxTotalHoursExit(Sender: TObject);
 begin
   inherited;
-  calcularValorTotalPelasHorasTrabalhadas(0{TxTotalHours.Hours});
+  calcularValorTotalPelasHorasTrabalhadas(TxTotalHours.toSeconds);
 end;
 
 procedure TFORD0003BView.TxTotalHoursPropertiesChange(Sender: TObject);
@@ -576,7 +563,7 @@ begin
     .operatorId(FCodeOperator)
     .machineId(FCodeVehicle)
     .serviceId(FServiceController.code)
-    .totalHours(0{TxTotalHours.Hours})
+    .totalHours(TxTotalHours.toSeconds)
     .totalKm(TxTotalKm.Value)
     .total(TxTotal.Value)
     .userId(FSessionUser)
