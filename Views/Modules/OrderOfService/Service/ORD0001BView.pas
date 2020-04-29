@@ -111,7 +111,7 @@ begin
   CbPaymentType.Enabled  := not(FOperation in [toShow, toDelete]);
   TxPrice.Enabled        := not(FOperation in [toShow, toDelete]);
 
-  TxPrice.Enabled        := not(FServiceController.paymentType = 2);
+  TxPrice.Enabled        := not(FOperation in [toShow, toDelete]);
 
   PnButtonConfirm.Visible := not(FOperation = toShow);
   BtConfirmar.Visible     := not(FOperation = toShow);

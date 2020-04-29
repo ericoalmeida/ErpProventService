@@ -80,6 +80,7 @@ begin
   {1 } deleteRecord;
   {2 } listRecords;
   {3 } totalRecords;
+  {4 } disableButtonsWhenfdQDataEmpty;
 end;
 
 procedure TFASS0001AView.BtDuplicateClick(Sender: TObject);
@@ -89,6 +90,7 @@ begin
   {1 } duplicateRecord;
   {2 } listRecords;
   {3 } totalRecords;
+  {4 } disableButtonsWhenfdQDataEmpty;
 end;
 
 procedure TFASS0001AView.BtInsertClick(Sender: TObject);
@@ -98,6 +100,7 @@ begin
   {1 } insertRecord;
   {2 } listRecords;
   {3 } totalRecords;
+  {4 } disableButtonsWhenfdQDataEmpty;
 end;
 
 procedure TFASS0001AView.BtShowClick(Sender: TObject);
@@ -107,6 +110,7 @@ begin
   {1 } showRecord;
   {2 } listRecords;
   {3 } totalRecords;
+  {4 } disableButtonsWhenfdQDataEmpty;
 end;
 
 procedure TFASS0001AView.BtUpdateClick(Sender: TObject);
@@ -116,6 +120,7 @@ begin
   {1 } updateRecord;
   {2 } listRecords;
   {3 } totalRecords;
+  {4 } disableButtonsWhenfdQDataEmpty;
 end;
 
 procedure TFASS0001AView.deleteRecord;
@@ -160,6 +165,7 @@ begin
 
   {1 } listRecords;
   {2 } totalRecords;
+  {3 } disableButtonsWhenfdQDataEmpty;
 end;
 
 procedure TFASS0001AView.insertRecord;

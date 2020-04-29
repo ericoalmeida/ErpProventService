@@ -83,6 +83,8 @@ type
     procedure filterRecords;
     procedure totalRecords;
 
+    procedure disableButtonsWhenfdQDataEmpty;
+    procedure disableButtonsWhenfdDataEmpty;
   public
   end;
 
@@ -122,6 +124,22 @@ procedure TFBaseListView.BtUpdateClick(Sender: TObject);
 begin
   inherited;
   FOperation := toUpdate;
+end;
+
+procedure TFBaseListView.disableButtonsWhenfdDataEmpty;
+begin
+  BtUpdate.Enabled := not(FdData.IsEmpty);
+  BtShow.Enabled := not(FdData.IsEmpty);
+  BtDelete.Enabled := not(FdData.IsEmpty);
+  BtDuplicate.Enabled := not(FdData.IsEmpty);
+end;
+
+procedure TFBaseListView.disableButtonsWhenfdQDataEmpty;
+begin
+  BtUpdate.Enabled := not(FdQData.IsEmpty);
+  BtShow.Enabled := not(FdQData.IsEmpty);
+  BtDelete.Enabled := not(FdQData.IsEmpty);
+  BtDuplicate.Enabled := not(FdQData.IsEmpty);
 end;
 
 procedure TFBaseListView.filterRecords;

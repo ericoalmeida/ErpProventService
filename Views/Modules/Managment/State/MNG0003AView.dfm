@@ -76,9 +76,9 @@ inherited FMNG0003AView: TFMNG0003AView
           82}
       end
       inherited LbTitle: TRzLabel
-        Width = 62
+        Width = 72
         Caption = 'Estados'
-        ExplicitWidth = 62
+        ExplicitWidth = 72
       end
     end
     inherited PnProgram: TRzPanel

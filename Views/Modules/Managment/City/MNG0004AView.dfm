@@ -91,9 +91,9 @@ inherited FMNG0004AView: TFMNG0004AView
           00000049454E44AE426082}
       end
       inherited LbTitle: TRzLabel
-        Width = 62
+        Width = 70
         Caption = 'Cidades'
-        ExplicitWidth = 62
+        ExplicitWidth = 70
       end
     end
     inherited PnProgram: TRzPanel

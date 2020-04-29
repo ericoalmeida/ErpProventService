@@ -4,7 +4,7 @@ inherited FMNG0001AView: TFMNG0001AView
   ClientWidth = 488
   OnShow = FormShow
   ExplicitWidth = 494
-  ExplicitHeight = 321
+  ExplicitHeight = 320
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
@@ -84,9 +84,9 @@ inherited FMNG0001AView: TFMNG0001AView
           F33F041C35D479E1CE980000000049454E44AE426082}
       end
       inherited LbTitle: TRzLabel
-        Width = 58
+        Width = 66
         Caption = 'Bairros'
-        ExplicitWidth = 58
+        ExplicitWidth = 66
       end
     end
     inherited PnProgram: TRzPanel

@@ -4,7 +4,7 @@ inherited FMNG0006AView: TFMNG0006AView
   ClientWidth = 494
   OnShow = FormShow
   ExplicitWidth = 500
-  ExplicitHeight = 330
+  ExplicitHeight = 329
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
@@ -94,9 +94,9 @@ inherited FMNG0006AView: TFMNG0006AView
           454E44AE426082}
       end
       inherited LbTitle: TRzLabel
-        Width = 71
+        Width = 79
         Caption = 'Usu'#225'rios'
-        ExplicitWidth = 71
+        ExplicitWidth = 79
       end
     end
     inherited PnProgram: TRzPanel

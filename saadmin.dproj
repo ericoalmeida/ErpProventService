@@ -492,6 +492,14 @@
             <Form>FORD0001CView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Views\Modules\OrderOfService\ServiceProvided\ORD0003DView.pas">
+            <Form>FBaseReportView1</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Base\BaseReportWindow.View.pas">
+            <Form>FBaseReportWindowView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -518,7 +526,7 @@
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="3">
-                <DeployFile LocalName="windows\saadmin.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="..\ERGServicos\windows\saadmin.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>saadmin.exe</RemoteName>
                         <Overwrite>true</Overwrite>

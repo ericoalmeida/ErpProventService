@@ -69,41 +69,46 @@ uses Facade.View;
 procedure TFMNG0005AView.BtDeleteClick(Sender: TObject);
 begin
   inherited;
-  deleteRecord;
-  listRecords;
-  totalRecords;
+  {1 } deleteRecord;
+  {2 } listRecords;
+  {3 } totalRecords;
+  {4 } disableButtonsWhenfdQDataEmpty;
 end;
 
 procedure TFMNG0005AView.BtDuplicateClick(Sender: TObject);
 begin
   inherited;
-  duplicateRecord;
-  listRecords;
-  totalRecords;
+  {1 } duplicateRecord;
+  {2 } listRecords;
+  {3 } totalRecords;
+  {4 } disableButtonsWhenfdQDataEmpty;
 end;
 
 procedure TFMNG0005AView.BtInsertClick(Sender: TObject);
 begin
   inherited;
-  insertRecord;
-  listRecords;
-  totalRecords;
+  {1 } insertRecord;
+  {2 } listRecords;
+  {3 } totalRecords;
+  {4 } disableButtonsWhenfdQDataEmpty;
 end;
 
 procedure TFMNG0005AView.BtShowClick(Sender: TObject);
 begin
   inherited;
-  showRecord;
-  listRecords;
-  totalRecords;
+  {1 } showRecord;
+  {2 } listRecords;
+  {3 } totalRecords;
+  {4 } disableButtonsWhenfdQDataEmpty;
 end;
 
 procedure TFMNG0005AView.BtUpdateClick(Sender: TObject);
 begin
   inherited;
-  updateRecord;
-  listRecords;
-  totalRecords;
+  {1 } updateRecord;
+  {2 } listRecords;
+  {3 } totalRecords;
+  {4 } disableButtonsWhenfdQDataEmpty;
 end;
 
 procedure TFMNG0005AView.deleteRecord;
@@ -147,6 +152,7 @@ begin
 
   {1 } listRecords;
   {2 } totalRecords;
+  {3 } disableButtonsWhenfdQDataEmpty;
 end;
 
 procedure TFMNG0005AView.insertRecord;

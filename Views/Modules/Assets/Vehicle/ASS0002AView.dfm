@@ -4,7 +4,7 @@ inherited FASS0002AView: TFASS0002AView
   ClientWidth = 494
   OnShow = FormShow
   ExplicitWidth = 500
-  ExplicitHeight = 330
+  ExplicitHeight = 329
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
@@ -70,9 +70,9 @@ inherited FASS0002AView: TFASS0002AView
           006CF60000000049454E44AE426082}
       end
       inherited LbTitle: TRzLabel
-        Width = 153
+        Width = 170
         Caption = 'Veiculos/M'#225'quinas'
-        ExplicitWidth = 153
+        ExplicitWidth = 170
       end
     end
     inherited PnProgram: TRzPanel

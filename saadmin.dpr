@@ -231,7 +231,9 @@ uses
   PAY0001CView in 'Views\Modules\Pay\Provider\PAY0001CView.pas' {FPAY0001CView},
   ORD0002CView in 'Views\Modules\OrderOfService\Operator\ORD0002CView.pas' {FORD0002CView},
   ASS0002CView in 'Views\Modules\Assets\Vehicle\ASS0002CView.pas' {FASS0002CView},
-  ORD0001CView in 'Views\Modules\OrderOfService\Service\ORD0001CView.pas' {FORD0001CView};
+  ORD0001CView in 'Views\Modules\OrderOfService\Service\ORD0001CView.pas' {FORD0001CView},
+  ORD0003DView in 'Views\Modules\OrderOfService\ServiceProvided\ORD0003DView.pas' {FBaseReportView1},
+  BaseReportWindow.View in 'Views\Base\BaseReportWindow.View.pas' {FBaseReportWindowView};
 
 {$R *.res}
 

@@ -19,9 +19,9 @@ object FMainView: TFMainView
   TextHeight = 13
   object ImLogo: TImage
     Left = 0
-    Top = 157
+    Top = 159
     Width = 632
-    Height = 218
+    Height = 216
     Align = alClient
     Center = True
     Picture.Data = {
@@ -1930,11 +1930,11 @@ object FMainView: TFMainView
     Left = 0
     Top = 0
     Width = 632
-    Height = 157
+    Height = 159
     ApplicationButton.Menu = ApMainMenu
     BarManager = BrManager
     ColorSchemeAccent = rcsaBlue
-    ColorSchemeName = 'DevExpressDarkStyle'
+    ColorSchemeName = 'Silver'
     QuickAccessToolbar.Toolbar = bmMainTools
     Contexts = <>
     TabOrder = 0
@@ -1981,7 +1981,7 @@ object FMainView: TFMainView
     Panels = <
       item
         PanelStyleClassName = 'TdxStatusBarTextPanelStyle'
-        Text = 'Prefeitura Municipal de Parana'#237'ta'
+        Text = 'PREFEITURA MUNICIPAL DE PARANA'#205'TA'
       end>
     Ribbon = RbMainMenu
     Font.Charset = ANSI_CHARSET
@@ -2054,7 +2054,7 @@ object FMainView: TFMainView
     object BmRotinas: TdxBar
       Caption = 'Rotinas'
       CaptionButtons = <>
-      DockedLeft = 413
+      DockedLeft = 412
       DockedTop = 0
       FloatLeft = 720
       FloatTop = 2
@@ -2082,7 +2082,7 @@ object FMainView: TFMainView
     object BmRelatorios: TdxBar
       Caption = 'Relat'#243'rios'
       CaptionButtons = <>
-      DockedLeft = 488
+      DockedLeft = 486
       DockedTop = 0
       FloatLeft = 720
       FloatTop = 2
@@ -3750,7 +3750,7 @@ object FMainView: TFMainView
       Caption = 'Fornecedores'
       Category = 0
       Hint = 'Fornecedores'
-      Visible = ivAlways
+      Visible = ivNever
       Glyph.SourceDPI = 96
       Glyph.Data = {
         89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF

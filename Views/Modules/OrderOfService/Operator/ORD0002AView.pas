@@ -70,44 +70,49 @@ procedure TFORD0002AView.BtDeleteClick(Sender: TObject);
 begin
   inherited;
 
-  { 1 } deleteRecord;
-  { 2 } listRecords;
-  { 3 } totalRecords;
+  {1 } deleteRecord;
+  {2 } listRecords;
+  {3 } totalRecords;
+  {4 } disableButtonsWhenfdQDataEmpty;
 end;
 
 procedure TFORD0002AView.BtDuplicateClick(Sender: TObject);
 begin
   inherited;
 
-  { 1 } duplicateRecord;
-  { 2 } listRecords;
-  { 3 } totalRecords;
+  {1 } duplicateRecord;
+  {2 } listRecords;
+  {3 } totalRecords;
+  {4 } disableButtonsWhenfdQDataEmpty;
 end;
 
 procedure TFORD0002AView.BtInsertClick(Sender: TObject);
 begin
   inherited;
 
-  { 1 } insertRecord;
-  { 2 } listRecords;
-  { 3 } totalRecords;
+  {1 } insertRecord;
+  {2 } listRecords;
+  {3 } totalRecords;
+  {4 } disableButtonsWhenfdQDataEmpty;
 end;
 
 procedure TFORD0002AView.BtShowClick(Sender: TObject);
 begin
   inherited;
-  { 1 } showRecord;
-  { 2 } listRecords;
-  { 3 } totalRecords;
+  {1 } showRecord;
+  {2 } listRecords;
+  {3 } totalRecords;
+  {4 } disableButtonsWhenfdQDataEmpty;
 end;
 
 procedure TFORD0002AView.BtUpdateClick(Sender: TObject);
 begin
   inherited;
 
-  { 1 } updateRecord;
-  { 2 } listRecords;
-  { 3 } totalRecords;
+  {1 } updateRecord;
+  {2 } listRecords;
+  {3 } totalRecords;
+  {4 } disableButtonsWhenfdQDataEmpty;
 end;
 
 procedure TFORD0002AView.deleteRecord;
@@ -153,6 +158,7 @@ begin
 
   {1 } listRecords;
   {2 } totalRecords;
+  {3 } disableButtonsWhenfdQDataEmpty;
 end;
 
 procedure TFORD0002AView.insertRecord;

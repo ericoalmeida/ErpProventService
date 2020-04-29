@@ -86,6 +86,7 @@ begin
   {1 } deleteRecord;
   {2 } listRecords;
   {3 } totalRecords;
+  {4 } disableButtonsWhenfdDataEmpty;
 end;
 
 procedure TFMNG0006AView.BtDuplicateClick(Sender: TObject);
@@ -95,6 +96,7 @@ begin
   {1 } duplicateRecord;
   {2 } listRecords;
   {3 } totalRecords;
+  {4 } disableButtonsWhenfdDataEmpty;
 end;
 
 procedure TFMNG0006AView.BtInsertClick(Sender: TObject);
@@ -104,6 +106,7 @@ begin
   {1 } insertRecord;
   {2 } listRecords;
   {3 } totalRecords;
+  {4 } disableButtonsWhenfdDataEmpty;
 end;
 
 procedure TFMNG0006AView.BtShowClick(Sender: TObject);
@@ -113,6 +116,7 @@ begin
   {1 } showRecord;
   {2 } listRecords;
   {3 } totalRecords;
+  {4 } disableButtonsWhenfdDataEmpty;
 end;
 
 procedure TFMNG0006AView.BtUpdateClick(Sender: TObject);
@@ -122,6 +126,7 @@ begin
   {1 } updateRecord;
   {2 } listRecords;
   {3 } totalRecords;
+  {4 } disableButtonsWhenfdDataEmpty;
 end;
 
 procedure TFMNG0006AView.deleteRecord;
@@ -165,6 +170,7 @@ begin
 
   {1 } listRecords;
   {2 } totalRecords;
+  {3 } disableButtonsWhenfdDataEmpty;
 end;
 
 procedure TFMNG0006AView.insertRecord;
