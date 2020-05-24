@@ -232,8 +232,9 @@ uses
   ORD0002CView in 'Views\Modules\OrderOfService\Operator\ORD0002CView.pas' {FORD0002CView},
   ASS0002CView in 'Views\Modules\Assets\Vehicle\ASS0002CView.pas' {FASS0002CView},
   ORD0001CView in 'Views\Modules\OrderOfService\Service\ORD0001CView.pas' {FORD0001CView},
-  ORD0003DView in 'Views\Modules\OrderOfService\ServiceProvided\ORD0003DView.pas' {FBaseReportView1},
-  BaseReportWindow.View in 'Views\Base\BaseReportWindow.View.pas' {FBaseReportWindowView};
+  ORD0003DView in 'Views\Modules\OrderOfService\ServiceProvided\ORD0003DView.pas' {FORD0003DView},
+  BaseReportWindow.View in 'Views\Base\BaseReportWindow.View.pas' {FBaseReportWindowView},
+  BaseReport.View.interf in 'Views\Base\BaseReport.View.interf.pas';
 
 {$R *.res}
 

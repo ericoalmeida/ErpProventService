@@ -57,6 +57,7 @@ type
     procedure BtShowClick(Sender: TObject);
     procedure BtDeleteClick(Sender: TObject);
     procedure BtDuplicateClick(Sender: TObject);
+    procedure BtOptionShowClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -80,7 +81,7 @@ implementation
 
 {$R *.dfm}
 
-uses Facade.View, Types.Views;
+uses Facade.View, Types.Views, Facade.View.interf;
 
 { TFORD0003AView }
 
@@ -109,6 +110,16 @@ begin
   {1 } insertRecord;
   {2 } listRecords;
   {3 } totalRecords;
+end;
+
+procedure TFORD0003AView.BtOptionShowClick(Sender: TObject);
+begin
+  inherited;
+  TFacadeView.New
+   .modulesFacadeView
+    .orderOfServiceFactory
+     .showORD0003DReport
+     .show;
 end;
 
 procedure TFORD0003AView.BtShowClick(Sender: TObject);

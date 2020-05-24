@@ -3,16 +3,17 @@ unit ORD0003DView;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, BaseReport.View, FireDAC.Stan.Intf,
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   FireDAC.UI.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Phys,
   FireDAC.Phys.FB, FireDAC.Phys.FBDef, FireDAC.VCLUI.Wait, Data.DB,
-  FireDAC.Comp.Client, FireDAC.Comp.DataSet, RLReport;
+  FireDAC.Comp.Client, FireDAC.Comp.DataSet, RLReport, BaseReport.View.interf;
 
 type
-  TFBaseReportView1 = class(TFBaseReportView)
+  TFORD0003DView = class(TFBaseReportView, iORD0003DReport)
     RLDBText1: TRLDBText;
     FdQDataCOMPANYNAME: TStringField;
     FdQDataCOMPANYFANCYNAME: TStringField;
@@ -42,14 +43,27 @@ type
   private
     { Private declarations }
   public
-    { Public declarations }
+    class function New: iORD0003DReport;
+
+    procedure show;
   end;
 
 var
-  FBaseReportView1: TFBaseReportView1;
+  FORD0003DView: TFORD0003DView;
 
 implementation
 
 {$R *.dfm}
+{ TFORD0003DView }
+
+class function TFORD0003DView.New: iORD0003DReport;
+begin
+  Result := self.Create(nil);
+end;
+
+procedure TFORD0003DView.show;
+begin
+  ShowModal;
+end;
 
 end.

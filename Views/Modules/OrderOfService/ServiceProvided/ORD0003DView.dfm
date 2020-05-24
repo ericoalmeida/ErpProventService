@@ -1,5 +1,8 @@
-inherited FBaseReportView1: TFBaseReportView1
+inherited FORD0003DView: TFORD0003DView
+  BorderIcons = [biSystemMenu, biMaximize]
   Caption = 'Rela'#231#226'o de ordens de servi'#231'o'
+  ClientHeight = 497
+  ExplicitHeight = 525
   PixelsPerInch = 96
   TextHeight = 13
   inherited RpBaseView: TRLReport

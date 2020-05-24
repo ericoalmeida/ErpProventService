@@ -3,7 +3,8 @@ unit Types.Views;
 interface
 
 type
-  TTypeMessageView = (tmInformation, tmConfirmation, tmError, tmWarning, tmRequired);
+  TTypeMessageView = (tmInformation, tmConfirmation, tmError, tmWarning,
+    tmRequired);
 
   TTypeListingPrograms = (tpMNG0001AView, tpMNG0002AView, tpMNG0003AView,
     tpMNG0004AView, tpMNG0005AView, tpMNG0006AView, tpASS0001AView,
@@ -18,6 +19,8 @@ type
   TTypeSearchPrograms = (tsMNG0001CView, tsMNG0002CView, tsMNG0003CView,
     tsMNG0004CView, tsREC0001CView, tsPAY0001CView, tsORD0002CView,
     tsASS0002CView, tsORD0001CView);
+
+  TTypeReportPrograms = (trORD0003DReport);
 
 implementation
 

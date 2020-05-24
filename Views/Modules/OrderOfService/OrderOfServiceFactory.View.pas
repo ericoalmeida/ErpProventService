@@ -2,7 +2,8 @@ unit OrderOfServiceFactory.View;
 
 interface
 
-uses OrderOfServiceFactory.View.Interf, Types.Views, Base.View.Interf;
+uses OrderOfServiceFactory.View.Interf, Types.Views, Base.View.Interf,
+  BaseReport.View.interf;
 
 type
   TOrderOfServiceFactoryView = class(TInterfacedObject,
@@ -18,6 +19,7 @@ type
     function showProgramOfRegister(AValue: TTypeRegisterPrograms)
       : iBaseRegisterView;
     function showProgramOfSearch(AValue: TTypeSearchPrograms): IBaseSearchView;
+    function showORD0003DReport: iORD0003DReport;
 
   end;
 
@@ -27,7 +29,7 @@ implementation
 
 uses ORD0001AView, ORD0001BView, ORD0002AView, ORD0002BView, ORD0003AView,
   ORD0003BView,
-  ORD0002CView, ORD0001CView;
+  ORD0002CView, ORD0001CView, ORD0003DView;
 
 constructor TOrderOfServiceFactoryView.Create;
 begin
@@ -43,6 +45,11 @@ end;
 class function TOrderOfServiceFactoryView.New: iOrderOfServiceFactoryView;
 begin
   Result := Self.Create;
+end;
+
+function TOrderOfServiceFactoryView.showORD0003DReport: iORD0003DReport;
+begin
+  Result := TFORD0003DView.New;
 end;
 
 function TOrderOfServiceFactoryView.showProgramOfListing
