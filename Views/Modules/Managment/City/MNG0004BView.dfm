@@ -3,7 +3,7 @@ inherited FMNG0004BView: TFMNG0004BView
   ClientHeight = 291
   ClientWidth = 594
   ExplicitWidth = 600
-  ExplicitHeight = 319
+  ExplicitHeight = 320
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
@@ -226,7 +226,7 @@ inherited FMNG0004BView: TFMNG0004BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 5
+          TabOrder = 9
           Width = 54
         end
         object TxStateName: TcxTextEdit
@@ -248,7 +248,7 @@ inherited FMNG0004BView: TFMNG0004BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 6
+          TabOrder = 10
           Width = 431
         end
         object TxCreatedAt: TcxTextEdit
@@ -270,7 +270,7 @@ inherited FMNG0004BView: TFMNG0004BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 7
+          TabOrder = 11
           Width = 142
         end
         object TxUpdatedAt: TcxTextEdit
@@ -292,7 +292,7 @@ inherited FMNG0004BView: TFMNG0004BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 8
+          TabOrder = 12
           Width = 142
         end
         object cxLabel4: TcxLabel
@@ -340,13 +340,14 @@ inherited FMNG0004BView: TFMNG0004BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 11
+          TabOrder = 3
           Width = 142
         end
         object TxName: TERGTextEdit
           Left = 96
           Top = 25
           ParentFont = False
+          Properties.CharCase = ecUpperCase
           Properties.OnChange = TxNamePropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
@@ -366,7 +367,7 @@ inherited FMNG0004BView: TFMNG0004BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 12
+          TabOrder = 0
           Required = True
           FieldName = 'Nome'
           Width = 489
@@ -380,6 +381,7 @@ inherited FMNG0004BView: TFMNG0004BView
               Default = True
               Kind = bkEllipsis
             end>
+          Properties.CharCase = ecUpperCase
           Properties.OnChange = TxStateIdPropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
@@ -394,7 +396,7 @@ inherited FMNG0004BView: TFMNG0004BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 13
+          TabOrder = 1
           Required = True
           FieldName = 'Estado'
           Width = 57
@@ -403,6 +405,7 @@ inherited FMNG0004BView: TFMNG0004BView
           Left = 96
           Top = 73
           ParentFont = False
+          Properties.CharCase = ecUpperCase
           Properties.OnChange = TxZipCodePropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
@@ -422,7 +425,7 @@ inherited FMNG0004BView: TFMNG0004BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 14
+          TabOrder = 2
           Required = True
           FieldName = 'CEP'
           Width = 142

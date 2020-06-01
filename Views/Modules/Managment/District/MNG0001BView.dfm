@@ -3,7 +3,7 @@ inherited FMNG0001BView: TFMNG0001BView
   ClientHeight = 291
   ClientWidth = 594
   ExplicitWidth = 600
-  ExplicitHeight = 319
+  ExplicitHeight = 320
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
@@ -179,7 +179,7 @@ inherited FMNG0001BView: TFMNG0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 2
+          TabOrder = 4
           Width = 134
         end
         object TxUpdatedDate: TcxTextEdit
@@ -201,7 +201,7 @@ inherited FMNG0001BView: TFMNG0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 3
+          TabOrder = 5
           Width = 134
         end
         object LbCreatedAt: TcxLabel
@@ -247,7 +247,7 @@ inherited FMNG0001BView: TFMNG0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 6
+          TabOrder = 8
           Width = 54
         end
         object TxCityName: TcxTextEdit
@@ -269,7 +269,7 @@ inherited FMNG0001BView: TFMNG0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 7
+          TabOrder = 9
           Width = 429
         end
         object cxLabel3: TcxLabel
@@ -300,6 +300,7 @@ inherited FMNG0001BView: TFMNG0001BView
           Left = 91
           Top = 25
           ParentFont = False
+          Properties.CharCase = ecUpperCase
           Properties.OnChange = TxDescriptionPropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
@@ -319,7 +320,7 @@ inherited FMNG0001BView: TFMNG0001BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 10
+          TabOrder = 0
           Required = True
           FieldName = 'Descri'#231#227'o'
           Width = 486
@@ -333,6 +334,7 @@ inherited FMNG0001BView: TFMNG0001BView
               Default = True
               Kind = bkEllipsis
             end>
+          Properties.CharCase = ecUpperCase
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
           Style.Color = 13815295
@@ -346,7 +348,7 @@ inherited FMNG0001BView: TFMNG0001BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 11
+          TabOrder = 1
           Required = True
           FieldName = 'Cidade'
           Width = 57
@@ -358,6 +360,7 @@ inherited FMNG0001BView: TFMNG0001BView
     Left = 95
     Top = 117
     ParentFont = False
+    Properties.CharCase = ecUpperCase
     Properties.OnChange = TxZipCodePropertiesChange
     Style.BorderColor = 12698049
     Style.BorderStyle = ebsSingle

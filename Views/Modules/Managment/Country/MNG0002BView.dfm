@@ -3,7 +3,7 @@ inherited FMNG0002BView: TFMNG0002BView
   ClientHeight = 291
   ClientWidth = 594
   ExplicitWidth = 600
-  ExplicitHeight = 319
+  ExplicitHeight = 320
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
@@ -97,11 +97,13 @@ inherited FMNG0002BView: TFMNG0002BView
       end
       inherited LbTitle: TRzLabel
         Width = 57
+        Height = 26
         Caption = 'Pa'#237'ses'
         ExplicitWidth = 57
       end
       inherited LbOperation: TRzLabel
         Left = 507
+        Height = 26
         ExplicitLeft = 507
       end
     end
@@ -112,6 +114,7 @@ inherited FMNG0002BView: TFMNG0002BView
       ExplicitWidth = 590
       inherited LbProgram: TRzLabel
         Width = 590
+        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
@@ -264,6 +267,7 @@ inherited FMNG0002BView: TFMNG0002BView
           Left = 97
           Top = 25
           ParentFont = False
+          Properties.CharCase = ecUpperCase
           Properties.OnChange = TxNamePropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle

@@ -3,7 +3,7 @@ inherited FMNG0006BView: TFMNG0006BView
   ClientHeight = 291
   ClientWidth = 594
   ExplicitWidth = 600
-  ExplicitHeight = 319
+  ExplicitHeight = 320
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
@@ -189,7 +189,7 @@ inherited FMNG0006BView: TFMNG0006BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 2
+          TabOrder = 7
           Width = 54
         end
         object LbUserId: TcxLabel
@@ -259,7 +259,7 @@ inherited FMNG0006BView: TFMNG0006BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 7
+          TabOrder = 12
           Width = 142
         end
         object TxUpdatedAt: TcxTextEdit
@@ -281,7 +281,7 @@ inherited FMNG0006BView: TFMNG0006BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 8
+          TabOrder = 13
           Width = 142
         end
         object PnUpdateKey: TRzPanel
@@ -295,7 +295,7 @@ inherited FMNG0006BView: TFMNG0006BView
           BorderColor = 11382189
           BorderWidth = 1
           Color = 14803425
-          TabOrder = 9
+          TabOrder = 14
           object BtUpdatePassword: TcxButton
             AlignWithMargins = True
             Left = 2
@@ -376,7 +376,7 @@ inherited FMNG0006BView: TFMNG0006BView
           StyleDisabled.TextColor = clBlack
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 10
+          TabOrder = 0
           Text = 'Ativo'
           Width = 142
         end
@@ -384,6 +384,7 @@ inherited FMNG0006BView: TFMNG0006BView
           Left = 96
           Top = 25
           ParentFont = False
+          Properties.CharCase = ecUpperCase
           Properties.OnChange = TxNamePropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
@@ -403,7 +404,7 @@ inherited FMNG0006BView: TFMNG0006BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 11
+          TabOrder = 1
           Required = True
           FieldName = 'Nome'
           Width = 489
@@ -412,6 +413,7 @@ inherited FMNG0006BView: TFMNG0006BView
           Left = 96
           Top = 49
           ParentFont = False
+          Properties.CharCase = ecLowerCase
           Properties.OnChange = TxEmailPropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
@@ -431,7 +433,7 @@ inherited FMNG0006BView: TFMNG0006BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 12
+          TabOrder = 2
           Required = True
           FieldName = 'Email'
           Width = 489
@@ -440,6 +442,7 @@ inherited FMNG0006BView: TFMNG0006BView
           Left = 96
           Top = 73
           ParentFont = False
+          Properties.CharCase = ecUpperCase
           Properties.OnChange = TxUserNamePropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
@@ -459,7 +462,7 @@ inherited FMNG0006BView: TFMNG0006BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 13
+          TabOrder = 3
           Required = True
           FieldName = 'Usu'#225'rio'
           Width = 142
@@ -490,7 +493,7 @@ inherited FMNG0006BView: TFMNG0006BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 14
+          TabOrder = 4
           TextHint = '******'
           Required = True
           FieldName = 'Senha'

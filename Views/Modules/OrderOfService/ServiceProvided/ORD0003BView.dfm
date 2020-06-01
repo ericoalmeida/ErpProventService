@@ -4,7 +4,7 @@ inherited FORD0003BView: TFORD0003BView
   ClientWidth = 644
   OnShow = FormShow
   ExplicitWidth = 650
-  ExplicitHeight = 385
+  ExplicitHeight = 386
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
@@ -174,7 +174,7 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 0
+          TabOrder = 7
           Width = 54
         end
         object LbDistrictId: TcxLabel
@@ -220,7 +220,7 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 3
+          TabOrder = 10
           Width = 461
         end
         object TxOperatorName: TcxTextEdit
@@ -242,7 +242,7 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 5
+          TabOrder = 12
           Width = 461
         end
         object cxLabel1: TcxLabel
@@ -277,7 +277,7 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 7
+          TabOrder = 14
           Width = 461
         end
         object cxLabel2: TcxLabel
@@ -323,7 +323,7 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 9
+          TabOrder = 16
           Width = 134
         end
         object TxCreatedDate: TcxTextEdit
@@ -345,7 +345,7 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 11
+          TabOrder = 18
           Width = 134
         end
         object LbCreatedAt: TcxLabel
@@ -389,7 +389,7 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 14
+          TabOrder = 21
           Width = 94
         end
         object cxLabel7: TcxLabel
@@ -421,7 +421,7 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 15
+          TabOrder = 22
           Width = 94
         end
         object TxData: TERGDateEdit
@@ -441,7 +441,7 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 16
+          TabOrder = 0
           Required = True
           FieldName = 'Data'
           Width = 158
@@ -469,7 +469,7 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 17
+          TabOrder = 1
           Required = True
           FieldName = 'Cliente'
           Width = 57
@@ -497,7 +497,7 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 18
+          TabOrder = 2
           FieldName = 'Operador'
           Width = 57
         end
@@ -524,7 +524,7 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 19
+          TabOrder = 3
           FieldName = 'M'#225'quina/Ve'#237'culo'
           Width = 57
         end
@@ -551,7 +551,7 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 20
+          TabOrder = 4
           Required = True
           FieldName = 'Servi'#231'o'
           Width = 57
@@ -562,6 +562,7 @@ inherited FORD0003BView: TFORD0003BView
           EditValue = 0.000000000000000000
           ParentFont = False
           Properties.DisplayFormat = '00:00:00'
+          Properties.OnChange = TxTotalHoursPropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
           Style.Color = 13815295
@@ -580,7 +581,7 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 21
+          TabOrder = 5
           Visible = False
           OnExit = TxTotalHoursExit
           Required = True
@@ -605,8 +606,9 @@ inherited FORD0003BView: TFORD0003BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 22
+          TabOrder = 6
           Visible = False
+          OnExit = TxTotalKmExit
           Required = True
           FieldName = 'Total KM'
           Width = 112

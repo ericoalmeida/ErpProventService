@@ -3,7 +3,7 @@ inherited FORD0002BView: TFORD0002BView
   ClientHeight = 291
   ClientWidth = 594
   ExplicitWidth = 600
-  ExplicitHeight = 319
+  ExplicitHeight = 320
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
@@ -95,7 +95,7 @@ inherited FORD0002BView: TFORD0002BView
       inherited LbOperation: TRzLabel
         Left = 507
         Height = 26
-        ExplicitLeft = 506
+        ExplicitLeft = 507
       end
     end
     inherited PnProgram: TRzPanel
@@ -171,7 +171,7 @@ inherited FORD0002BView: TFORD0002BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 1
+          TabOrder = 2
           Width = 54
         end
         object LbExpenseId: TcxLabel
@@ -229,7 +229,7 @@ inherited FORD0002BView: TFORD0002BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 5
+          TabOrder = 6
           Width = 134
         end
         object LbUpdatedAt: TcxLabel
@@ -263,7 +263,7 @@ inherited FORD0002BView: TFORD0002BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 7
+          TabOrder = 8
           Width = 134
         end
         object CbStatus: TcxComboBox
@@ -291,7 +291,7 @@ inherited FORD0002BView: TFORD0002BView
           StyleDisabled.TextColor = clBlack
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 8
+          TabOrder = 0
           Text = 'Ativo'
           Width = 142
         end
@@ -302,6 +302,7 @@ inherited FORD0002BView: TFORD0002BView
     Left = 95
     Top = 69
     ParentFont = False
+    Properties.CharCase = ecUpperCase
     Properties.OnChange = TxDescriptionPropertiesChange
     Style.BorderColor = 12698049
     Style.BorderStyle = ebsSingle

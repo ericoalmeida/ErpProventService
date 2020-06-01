@@ -3,7 +3,7 @@ inherited FREC0001BView: TFREC0001BView
   ClientHeight = 391
   ClientWidth = 694
   ExplicitWidth = 700
-  ExplicitHeight = 419
+  ExplicitHeight = 420
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
@@ -95,7 +95,7 @@ inherited FREC0001BView: TFREC0001BView
       inherited LbOperation: TRzLabel
         Left = 607
         Height = 26
-        ExplicitLeft = 606
+        ExplicitLeft = 607
       end
     end
     inherited PnProgram: TRzPanel
@@ -159,7 +159,7 @@ inherited FREC0001BView: TFREC0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 0
+          TabOrder = 9
           Width = 54
         end
         object LbCompanyId: TcxLabel
@@ -243,7 +243,7 @@ inherited FREC0001BView: TFREC0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 6
+          TabOrder = 4
           Width = 142
         end
         object LbAddress: TcxLabel
@@ -289,7 +289,7 @@ inherited FREC0001BView: TFREC0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 9
+          TabOrder = 17
           Width = 394
         end
         object LbPhoneNumber: TcxLabel
@@ -325,7 +325,7 @@ inherited FREC0001BView: TFREC0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 11
+          TabOrder = 7
           Width = 142
         end
         object LbEmail: TcxLabel
@@ -361,7 +361,7 @@ inherited FREC0001BView: TFREC0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 13
+          TabOrder = 8
           Width = 247
         end
         object LbCreatedAt: TcxLabel
@@ -395,7 +395,7 @@ inherited FREC0001BView: TFREC0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 15
+          TabOrder = 21
           Width = 142
         end
         object LbUpdatedAt: TcxLabel
@@ -429,7 +429,7 @@ inherited FREC0001BView: TFREC0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 17
+          TabOrder = 23
           Width = 142
         end
         object CbStatus: TcxComboBox
@@ -456,7 +456,7 @@ inherited FREC0001BView: TFREC0001BView
           StyleDisabled.TextColor = clBlack
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 18
+          TabOrder = 0
           Text = 'Ativo'
           Width = 142
         end
@@ -495,7 +495,7 @@ inherited FREC0001BView: TFREC0001BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 20
+          TabOrder = 6
           Required = True
           FieldName = 'Bairro'
           Width = 57
@@ -504,6 +504,7 @@ inherited FREC0001BView: TFREC0001BView
           Left = 73
           Top = 113
           ParentFont = False
+          Properties.CharCase = ecUpperCase
           Properties.OnChange = TxAddressPropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
@@ -523,7 +524,7 @@ inherited FREC0001BView: TFREC0001BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 21
+          TabOrder = 5
           Required = True
           FieldName = 'Endere'#231'o'
           Width = 451
@@ -532,6 +533,7 @@ inherited FREC0001BView: TFREC0001BView
           Left = 73
           Top = 81
           ParentFont = False
+          Properties.CharCase = ecUpperCase
           Properties.OnChange = TxFancyNamePropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
@@ -551,7 +553,7 @@ inherited FREC0001BView: TFREC0001BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 22
+          TabOrder = 3
           Required = True
           FieldName = 'CPF/CNPJ'
           Width = 150
@@ -560,6 +562,7 @@ inherited FREC0001BView: TFREC0001BView
           Left = 73
           Top = 57
           ParentFont = False
+          Properties.CharCase = ecUpperCase
           Properties.OnChange = TxFancyNamePropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
@@ -579,7 +582,7 @@ inherited FREC0001BView: TFREC0001BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 23
+          TabOrder = 2
           Required = True
           FieldName = 'Fantasia'
           Width = 600
@@ -588,6 +591,7 @@ inherited FREC0001BView: TFREC0001BView
           Left = 73
           Top = 33
           ParentFont = False
+          Properties.CharCase = ecUpperCase
           Properties.OnChange = TxNamePropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
@@ -607,7 +611,7 @@ inherited FREC0001BView: TFREC0001BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 24
+          TabOrder = 1
           Required = True
           FieldName = 'Nome'
           Width = 600

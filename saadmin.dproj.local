@@ -648,8 +648,8 @@
     <Transaction>2020/04/25 08:13:54.000.772,=C:\Projetos\ErpProvideService\Unit1.pas</Transaction>
     <Transaction>2020/04/25 08:14:40.000.663,C:\Projetos\ErpProvideService\Unit1.pas=C:\Projetos\ErpProvideService\Views\Base\BaseReportWindow.View.pas</Transaction>
     <Transaction>2020/04/25 08:14:40.000.663,C:\Projetos\ErpProvideService\Unit1.dfm=C:\Projetos\ErpProvideService\Views\Base\BaseReportWindow.View.dfm</Transaction>
-    <Transaction>2020/05/24 06:59:11.585,=C:\Projetos\ErpProvideService\Unit1.pas</Transaction>
-    <Transaction>2020/05/24 06:59:34.031,C:\Projetos\ErpProvideService\Views\Base\BaseReport.View.interf.pas=C:\Projetos\ErpProvideService\Unit1.pas</Transaction>
+    <Transaction>2020/05/24 06:59:11.000.585,=C:\Projetos\ErpProvideService\Unit1.pas</Transaction>
+    <Transaction>2020/05/24 06:59:34.000.031,C:\Projetos\ErpProvideService\Views\Base\BaseReport.View.interf.pas=C:\Projetos\ErpProvideService\Unit1.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="Controllers"/>

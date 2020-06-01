@@ -2,7 +2,7 @@ inherited FORD0003DView: TFORD0003DView
   BorderIcons = [biSystemMenu, biMaximize]
   Caption = 'Rela'#231#226'o de ordens de servi'#231'o'
   ClientHeight = 497
-  ExplicitHeight = 525
+  ExplicitHeight = 526
   PixelsPerInch = 96
   TextHeight = 13
   inherited RpBaseView: TRLReport
@@ -352,5 +352,13 @@ inherited FORD0003DView: TFORD0003DView
       FieldName = 'SERVICE'
       Size = 95
     end
+  end
+  inherited FDConnection1: TFDConnection
+    Params.Strings = (
+      'Database=C:\ERGSis\dados\ERGDADOS.FDB'
+      'User_Name=SYSDBA'
+      'Password=masterkey'
+      'DriverID=FB')
+    Connected = True
   end
 end

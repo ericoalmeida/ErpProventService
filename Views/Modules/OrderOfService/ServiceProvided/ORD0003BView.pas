@@ -65,6 +65,7 @@ type
     procedure ActSelectVehicleExecute(Sender: TObject);
     procedure ActSelectServiceExecute(Sender: TObject);
     procedure TxTotalHoursExit(Sender: TObject);
+    procedure TxTotalKmExit(Sender: TObject);
   private
     FServiceProvidedController: iServiceProvidedController;
     FClientController: iPersonController;
@@ -76,6 +77,8 @@ type
     FCodeVehicle:  string;
 
     procedure calcularValorTotalPelasHorasTrabalhadas(AValue: Integer);
+    procedure calcularValorTotalPelosKmsRodados(AValue: Double);
+
 
     procedure selectClient;
     procedure selectOperator;
@@ -165,6 +168,14 @@ begin
   TxUnityPrice.Value := FServiceController.price;
   pricePerMinute     := (FServiceController.price / 60);  //60 minutos por hora
   TxTotal.Value      := (pricePerMinute * Minutes);
+end;
+
+procedure TFORD0003BView.calcularValorTotalPelosKmsRodados(AValue: Double);
+begin
+  if AValue = 0 then Exit;
+
+  TxUnityPrice.Value := FServiceController.price;
+  TxTotal.Value      := (AValue * FServiceController.price);
 end;
 
 procedure TFORD0003BView.deleteRecord;
@@ -545,6 +556,12 @@ procedure TFORD0003BView.TxTotalHoursPropertiesChange(Sender: TObject);
 begin
   inherited;
   changeDataAnyFields;
+end;
+
+procedure TFORD0003BView.TxTotalKmExit(Sender: TObject);
+begin
+  inherited;
+  calcularValorTotalPelosKmsRodados(TxTotalKm.Value);
 end;
 
 procedure TFORD0003BView.TxTotalKmPropertiesChange(Sender: TObject);

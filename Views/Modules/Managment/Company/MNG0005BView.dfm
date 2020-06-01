@@ -3,7 +3,7 @@ inherited FMNG0005BView: TFMNG0005BView
   ClientHeight = 391
   ClientWidth = 694
   ExplicitWidth = 700
-  ExplicitHeight = 419
+  ExplicitHeight = 420
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
@@ -152,7 +152,7 @@ inherited FMNG0005BView: TFMNG0005BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 4
+          TabOrder = 9
           Width = 142
         end
         object TxCreatedAt: TcxTextEdit
@@ -174,7 +174,7 @@ inherited FMNG0005BView: TFMNG0005BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 5
+          TabOrder = 10
           Width = 142
         end
         object LbCreatedAt: TcxLabel
@@ -209,7 +209,7 @@ inherited FMNG0005BView: TFMNG0005BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 2
+          TabOrder = 7
           Width = 247
         end
         object LbEmail: TcxLabel
@@ -245,7 +245,7 @@ inherited FMNG0005BView: TFMNG0005BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 1
+          TabOrder = 6
           Width = 142
         end
         object LbPhoneNumber: TcxLabel
@@ -280,7 +280,7 @@ inherited FMNG0005BView: TFMNG0005BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 9
+          TabOrder = 14
           Width = 394
         end
         object LbDistrictId: TcxLabel
@@ -327,7 +327,7 @@ inherited FMNG0005BView: TFMNG0005BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 0
+          TabOrder = 3
           Width = 171
         end
         object LbIE: TcxLabel
@@ -398,7 +398,7 @@ inherited FMNG0005BView: TFMNG0005BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 16
+          TabOrder = 21
           Width = 54
         end
         object LbCompanyId: TcxLabel
@@ -422,6 +422,7 @@ inherited FMNG0005BView: TFMNG0005BView
               Default = True
               Kind = bkEllipsis
             end>
+          Properties.CharCase = ecUpperCase
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
           Style.Color = 13815295
@@ -435,7 +436,7 @@ inherited FMNG0005BView: TFMNG0005BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 18
+          TabOrder = 5
           Required = True
           FieldName = 'Bairro'
           Width = 57
@@ -444,6 +445,7 @@ inherited FMNG0005BView: TFMNG0005BView
           Left = 73
           Top = 33
           ParentFont = False
+          Properties.CharCase = ecUpperCase
           Properties.OnChange = TxNamePropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
@@ -463,7 +465,7 @@ inherited FMNG0005BView: TFMNG0005BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 19
+          TabOrder = 0
           Required = True
           FieldName = 'Nome'
           Width = 600
@@ -472,6 +474,7 @@ inherited FMNG0005BView: TFMNG0005BView
           Left = 73
           Top = 57
           ParentFont = False
+          Properties.CharCase = ecUpperCase
           Properties.OnChange = TxFancyNamePropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
@@ -491,7 +494,7 @@ inherited FMNG0005BView: TFMNG0005BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 20
+          TabOrder = 1
           Required = True
           FieldName = 'Fantasia'
           Width = 600
@@ -500,6 +503,7 @@ inherited FMNG0005BView: TFMNG0005BView
           Left = 73
           Top = 81
           ParentFont = False
+          Properties.CharCase = ecUpperCase
           Properties.OnChange = TxFancyNamePropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
@@ -519,7 +523,7 @@ inherited FMNG0005BView: TFMNG0005BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 21
+          TabOrder = 2
           Required = True
           FieldName = 'CPF/CNPJ'
           Width = 150
@@ -528,6 +532,7 @@ inherited FMNG0005BView: TFMNG0005BView
           Left = 73
           Top = 113
           ParentFont = False
+          Properties.CharCase = ecUpperCase
           Properties.OnChange = TxAddressPropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
@@ -547,7 +552,7 @@ inherited FMNG0005BView: TFMNG0005BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 22
+          TabOrder = 4
           Required = True
           FieldName = 'Endere'#231'o'
           Width = 451

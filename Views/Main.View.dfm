@@ -2,7 +2,7 @@ object FMainView: TFMainView
   Left = 0
   Top = 0
   BorderStyle = bsSingle
-  Caption = 'Prefeitura Municipal de Parana'#237'ta'
+  Caption = 'Or'#231'afacil - Or'#231'amentos  de materiais para constru'#231#227'o civil'
   ClientHeight = 398
   ClientWidth = 632
   Color = clBlack
@@ -1921,6 +1921,7 @@ object FMainView: TFMainView
       192A07189A33A25862CCFAAA7949A5BDC409604C0EB0A498F858DD5BAEBEA5B7
       5449D0C2A00C7DBBC1E82DBDA5B7F496DED25B7A4B6FE92DFD57D2FF031D056C
       0077910BE40000000049454E44AE426082}
+    Visible = False
     ExplicitLeft = 385
     ExplicitTop = 224
     ExplicitWidth = 200
@@ -1934,13 +1935,12 @@ object FMainView: TFMainView
     ApplicationButton.Menu = ApMainMenu
     BarManager = BrManager
     ColorSchemeAccent = rcsaBlue
-    ColorSchemeName = 'Silver'
+    ColorSchemeName = 'Black'
     QuickAccessToolbar.Toolbar = bmMainTools
     Contexts = <>
     TabOrder = 0
     TabStop = False
     object TbAdministration: TdxRibbonTab
-      Active = True
       Caption = 'Administra'#231#227'o'
       Groups = <
         item
@@ -1955,13 +1955,13 @@ object FMainView: TFMainView
       Index = 0
     end
     object TbConstrutoras: TdxRibbonTab
+      Active = True
       Caption = 'Construtoras'
       Groups = <
         item
           Caption = ''
           ToolbarName = 'TbConstrutorasCad'
         end>
-      Visible = False
       Index = 1
     end
     object TbGeral: TdxRibbonTab
@@ -1981,7 +1981,7 @@ object FMainView: TFMainView
     Panels = <
       item
         PanelStyleClassName = 'TdxStatusBarTextPanelStyle'
-        Text = 'PREFEITURA MUNICIPAL DE PARANA'#205'TA'
+        Text = 'PAULO S'#201'RGIO ROCHINSKI'
       end>
     Ribbon = RbMainMenu
     Font.Charset = ANSI_CHARSET
@@ -2045,7 +2045,7 @@ object FMainView: TFMainView
           Visible = True
           ItemName = 'BtFinanceOpr'
         end>
-      OneOnRow = False
+      OneOnRow = True
       Row = 0
       UseOwnFont = False
       Visible = True
@@ -2054,12 +2054,14 @@ object FMainView: TFMainView
     object BmRotinas: TdxBar
       Caption = 'Rotinas'
       CaptionButtons = <>
-      DockedLeft = 412
+      DockedDockingStyle = dsTop
+      DockedLeft = 411
       DockedTop = 0
       FloatLeft = 720
       FloatTop = 2
       FloatClientWidth = 0
       FloatClientHeight = 0
+      Hidden = True
       ItemLinks = <
         item
           Visible = True
@@ -2076,18 +2078,20 @@ object FMainView: TFMainView
       OneOnRow = False
       Row = 0
       UseOwnFont = False
-      Visible = True
+      Visible = False
       WholeRow = False
     end
     object BmRelatorios: TdxBar
       Caption = 'Relat'#243'rios'
       CaptionButtons = <>
-      DockedLeft = 486
+      DockedDockingStyle = dsTop
+      DockedLeft = 411
       DockedTop = 0
       FloatLeft = 720
       FloatTop = 2
       FloatClientWidth = 0
       FloatClientHeight = 0
+      Hidden = True
       ItemLinks = <
         item
           Visible = True
@@ -2108,7 +2112,7 @@ object FMainView: TFMainView
       OneOnRow = False
       Row = 0
       UseOwnFont = False
-      Visible = True
+      Visible = False
       WholeRow = False
     end
     object bmMainTools: TdxBar
@@ -2312,7 +2316,7 @@ object FMainView: TFMainView
       Caption = 'Servi'#231'os'
       Category = 0
       Hint = 'Servi'#231'os'
-      Visible = ivAlways
+      Visible = ivNever
       Glyph.SourceDPI = 96
       Glyph.Data = {
         89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
@@ -2417,7 +2421,7 @@ object FMainView: TFMainView
       Caption = 'Ve'#237'culos/Maquin'#225'rios'
       Category = 0
       Hint = 'Ve'#237'culos/Maquin'#225'rios'
-      Visible = ivAlways
+      Visible = ivNever
       Glyph.SourceDPI = 96
       Glyph.Data = {
         89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
@@ -2500,7 +2504,7 @@ object FMainView: TFMainView
       Caption = 'Ordem de Servi'#231'os'
       Category = 0
       Hint = 'Ordem de Servi'#231'os'
-      Visible = ivAlways
+      Visible = ivNever
       Glyph.SourceDPI = 96
       Glyph.Data = {
         89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
@@ -2689,7 +2693,7 @@ object FMainView: TFMainView
       Caption = 'Servi'#231'o prestado'
       Category = 0
       Hint = 'Servi'#231'o prestado'
-      Visible = ivAlways
+      Visible = ivNever
       Glyph.SourceDPI = 96
       Glyph.Data = {
         89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
@@ -3750,7 +3754,7 @@ object FMainView: TFMainView
       Caption = 'Fornecedores'
       Category = 0
       Hint = 'Fornecedores'
-      Visible = ivNever
+      Visible = ivAlways
       Glyph.SourceDPI = 96
       Glyph.Data = {
         89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
@@ -4234,7 +4238,7 @@ object FMainView: TFMainView
       Caption = 'Operadores'
       Category = 0
       Hint = 'Operadores'
-      Visible = ivAlways
+      Visible = ivNever
       Glyph.SourceDPI = 96
       Glyph.Data = {
         89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
@@ -4345,7 +4349,7 @@ object FMainView: TFMainView
       Caption = 'Servi'#231'os prestados'
       Category = 0
       Hint = 'Gr'#225'ficos | Servi'#231'os prestados'
-      Visible = ivAlways
+      Visible = ivNever
       Glyph.SourceDPI = 96
       Glyph.Data = {
         89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF

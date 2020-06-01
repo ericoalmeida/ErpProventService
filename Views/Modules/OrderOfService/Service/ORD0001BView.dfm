@@ -3,7 +3,7 @@ inherited FORD0001BView: TFORD0001BView
   ClientHeight = 291
   ClientWidth = 594
   ExplicitWidth = 600
-  ExplicitHeight = 319
+  ExplicitHeight = 320
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
@@ -156,7 +156,7 @@ inherited FORD0001BView: TFORD0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 1
+          TabOrder = 2
           Width = 54
         end
         object LbVehicleId: TcxLabel
@@ -214,7 +214,7 @@ inherited FORD0001BView: TFORD0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 5
+          TabOrder = 7
           Width = 134
         end
         object LbCreatedAt: TcxLabel
@@ -248,7 +248,7 @@ inherited FORD0001BView: TFORD0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 7
+          TabOrder = 9
           Width = 134
         end
         object LbUpdatedAt: TcxLabel
@@ -291,7 +291,7 @@ inherited FORD0001BView: TFORD0001BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 0
+          TabOrder = 3
           Width = 141
         end
         object CbPaymentType: TcxComboBox
@@ -320,7 +320,7 @@ inherited FORD0001BView: TFORD0001BView
           StyleDisabled.TextColor = clBlack
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 10
+          TabOrder = 1
           Text = 'Hora trabalhada'
           Width = 142
         end
@@ -361,7 +361,7 @@ inherited FORD0001BView: TFORD0001BView
           StyleDisabled.TextColor = clBlack
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 12
+          TabOrder = 0
           Text = 'Ativo'
           Width = 142
         end
@@ -372,6 +372,7 @@ inherited FORD0001BView: TFORD0001BView
     Left = 95
     Top = 69
     ParentFont = False
+    Properties.CharCase = ecUpperCase
     Properties.OnChange = TxDescriptionPropertiesChange
     Style.BorderColor = 12698049
     Style.BorderStyle = ebsSingle

@@ -3,7 +3,7 @@ inherited FASS0001BView: TFASS0001BView
   ClientHeight = 291
   ClientWidth = 594
   ExplicitWidth = 600
-  ExplicitHeight = 319
+  ExplicitHeight = 320
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
@@ -143,7 +143,7 @@ inherited FASS0001BView: TFASS0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 0
+          TabOrder = 2
           Width = 134
         end
         object LbUpdatedAt: TcxLabel
@@ -177,7 +177,7 @@ inherited FASS0001BView: TFASS0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 2
+          TabOrder = 4
           Width = 134
         end
         object LbCreatedAt: TcxLabel
@@ -223,7 +223,7 @@ inherited FASS0001BView: TFASS0001BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 5
+          TabOrder = 7
           Width = 54
         end
         object LbExpenseId: TcxLabel
@@ -263,7 +263,7 @@ inherited FASS0001BView: TFASS0001BView
           StyleDisabled.TextColor = clBlack
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 7
+          TabOrder = 0
           Text = 'Ativo'
           Width = 142
         end
@@ -283,6 +283,7 @@ inherited FASS0001BView: TFASS0001BView
           Left = 91
           Top = 25
           ParentFont = False
+          Properties.CharCase = ecUpperCase
           Properties.OnChange = TxDescriptionPropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
@@ -302,7 +303,7 @@ inherited FASS0001BView: TFASS0001BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 9
+          TabOrder = 1
           Required = True
           FieldName = 'Descri'#231#227'o'
           Width = 486

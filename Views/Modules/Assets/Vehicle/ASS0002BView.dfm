@@ -3,7 +3,7 @@ inherited FASS0002BView: TFASS0002BView
   ClientHeight = 291
   ClientWidth = 594
   ExplicitWidth = 600
-  ExplicitHeight = 319
+  ExplicitHeight = 320
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
@@ -139,7 +139,7 @@ inherited FASS0002BView: TFASS0002BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 1
+          TabOrder = 6
           Width = 54
         end
         object LbVehicleId: TcxLabel
@@ -185,7 +185,7 @@ inherited FASS0002BView: TFASS0002BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 4
+          TabOrder = 9
           Width = 134
         end
         object LbCreatedAt: TcxLabel
@@ -219,7 +219,7 @@ inherited FASS0002BView: TFASS0002BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 6
+          TabOrder = 11
           Width = 134
         end
         object LbUpdatedAt: TcxLabel
@@ -292,6 +292,7 @@ inherited FASS0002BView: TFASS0002BView
           Left = 91
           Top = 25
           ParentFont = False
+          Properties.CharCase = ecUpperCase
           Properties.OnChange = TxDescriptionPropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
@@ -311,7 +312,7 @@ inherited FASS0002BView: TFASS0002BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 10
+          TabOrder = 1
           Required = True
           FieldName = 'Descri'#231#227'o'
           Width = 494
@@ -320,6 +321,7 @@ inherited FASS0002BView: TFASS0002BView
           Left = 91
           Top = 49
           ParentFont = False
+          Properties.CharCase = ecUpperCase
           Properties.OnChange = TxModelPropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
@@ -339,7 +341,7 @@ inherited FASS0002BView: TFASS0002BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 11
+          TabOrder = 2
           Required = True
           FieldName = 'Modelo'
           Width = 162
@@ -348,6 +350,7 @@ inherited FASS0002BView: TFASS0002BView
           Left = 91
           Top = 73
           ParentFont = False
+          Properties.CharCase = ecUpperCase
           Properties.OnChange = TxCategoryPropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
@@ -367,7 +370,7 @@ inherited FASS0002BView: TFASS0002BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 12
+          TabOrder = 4
           Required = True
           FieldName = 'Categoria'
           Width = 162
@@ -376,6 +379,7 @@ inherited FASS0002BView: TFASS0002BView
           Left = 418
           Top = 49
           ParentFont = False
+          Properties.CharCase = ecUpperCase
           Properties.OnChange = TxBrandPropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
@@ -395,7 +399,7 @@ inherited FASS0002BView: TFASS0002BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 13
+          TabOrder = 3
           Required = True
           FieldName = 'Marca'
           Width = 167
@@ -404,6 +408,7 @@ inherited FASS0002BView: TFASS0002BView
           Left = 418
           Top = 73
           ParentFont = False
+          Properties.CharCase = ecUpperCase
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
           Style.Font.Charset = ANSI_CHARSET
@@ -421,7 +426,7 @@ inherited FASS0002BView: TFASS0002BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 14
+          TabOrder = 5
           FieldName = 'Placa'
           Width = 167
         end

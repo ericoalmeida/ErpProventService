@@ -63,7 +63,7 @@ end;
 
 procedure TFORD0003DView.show;
 begin
-  ShowModal;
+  RpBaseView.Preview();
 end;
 
 end.

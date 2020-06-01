@@ -3,12 +3,13 @@ inherited FMNG0003BView: TFMNG0003BView
   ClientHeight = 291
   ClientWidth = 594
   ExplicitWidth = 600
-  ExplicitHeight = 319
+  ExplicitHeight = 320
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
     Width = 592
     Height = 289
+    TabOrder = 2
     ExplicitWidth = 592
     ExplicitHeight = 289
     inherited PnHeader: TRzPanel
@@ -185,7 +186,7 @@ inherited FMNG0003BView: TFMNG0003BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 2
+          TabOrder = 3
           Width = 128
         end
         object LbCreatedAt: TcxLabel
@@ -219,7 +220,7 @@ inherited FMNG0003BView: TFMNG0003BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 4
+          TabOrder = 5
           Width = 423
         end
         object cxLabel3: TcxLabel
@@ -265,7 +266,7 @@ inherited FMNG0003BView: TFMNG0003BView
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.Kind = lfUltraFlat
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 7
+          TabOrder = 8
           Width = 54
         end
         object LbDistrictId: TcxLabel
@@ -301,6 +302,7 @@ inherited FMNG0003BView: TFMNG0003BView
               Default = True
               Kind = bkEllipsis
             end>
+          Properties.CharCase = ecUpperCase
           Properties.OnChange = TxCountryIdPropertiesChange
           Style.BorderColor = 12698049
           Style.BorderStyle = ebsSingle
@@ -315,7 +317,7 @@ inherited FMNG0003BView: TFMNG0003BView
           StyleFocused.Color = 16577771
           StyleFocused.LookAndFeel.NativeStyle = False
           StyleHot.LookAndFeel.NativeStyle = False
-          TabOrder = 10
+          TabOrder = 1
           Required = True
           FieldName = 'Pa'#237's'
           Width = 57
@@ -327,6 +329,7 @@ inherited FMNG0003BView: TFMNG0003BView
     Left = 101
     Top = 69
     ParentFont = False
+    Properties.CharCase = ecUpperCase
     Properties.OnChange = TxNamePropertiesChange
     Style.BorderColor = 12698049
     Style.BorderStyle = ebsSingle
@@ -346,7 +349,7 @@ inherited FMNG0003BView: TFMNG0003BView
     StyleFocused.Color = 16577771
     StyleFocused.LookAndFeel.NativeStyle = False
     StyleHot.LookAndFeel.NativeStyle = False
-    TabOrder = 1
+    TabOrder = 0
     Required = True
     FieldName = 'Nome'
     Width = 375
@@ -355,6 +358,7 @@ inherited FMNG0003BView: TFMNG0003BView
     Left = 527
     Top = 69
     ParentFont = False
+    Properties.CharCase = ecUpperCase
     Properties.OnChange = TxInitialsPropertiesChange
     Style.BorderColor = 12698049
     Style.BorderStyle = ebsSingle
@@ -374,7 +378,7 @@ inherited FMNG0003BView: TFMNG0003BView
     StyleFocused.Color = 16577771
     StyleFocused.LookAndFeel.NativeStyle = False
     StyleHot.LookAndFeel.NativeStyle = False
-    TabOrder = 2
+    TabOrder = 1
     Required = True
     FieldName = 'Sigla'
     Width = 54
