@@ -2,7 +2,8 @@ unit OrderOfServiceFactory.Model.Interf;
 
 interface
 
-uses Service.Model.Interf, Operators.Model.Interf, ServiceProvided.Model.Interf;
+uses Service.Model.Interf, Operators.Model.Interf, ServiceProvided.Model.Interf,
+  Budget.Model.Interf;
 
 type
   IOrderOfServiceFactoryModel = interface
@@ -10,6 +11,7 @@ type
     function serviceModel: IServiceModel;
     function operatorModel: IOperatorModel;
     function serviceProvidedModel: IServiceProvidedModel;
+    function budgetModel: IBudgetModel;
   end;
 
 implementation

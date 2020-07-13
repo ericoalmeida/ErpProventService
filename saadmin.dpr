@@ -234,7 +234,12 @@ uses
   ORD0001CView in 'Views\Modules\OrderOfService\Service\ORD0001CView.pas' {FORD0001CView},
   ORD0003DView in 'Views\Modules\OrderOfService\ServiceProvided\ORD0003DView.pas' {FORD0003DView},
   BaseReportWindow.View in 'Views\Base\BaseReportWindow.View.pas' {FBaseReportWindowView},
-  BaseReport.View.interf in 'Views\Base\BaseReport.View.interf.pas';
+  BaseReport.View.interf in 'Views\Base\BaseReport.View.interf.pas',
+  TORDBUDGET.Entity.Model in 'Models\Modules\OrderOfService\Budget\Entity\TORDBUDGET.Entity.Model.pas',
+  Budget.Model.Interf in 'Models\Modules\OrderOfService\Budget\Budget.Model.Interf.pas',
+  Budget.Model in 'Models\Modules\OrderOfService\Budget\Budget.Model.pas',
+  Budget.Controller.Interf in 'Controllers\Modules\OrderOfService\Budget\Budget.Controller.Interf.pas',
+  Budget.Controller in 'Controllers\Modules\OrderOfService\Budget\Budget.Controller.pas';
 
 {$R *.res}
 
