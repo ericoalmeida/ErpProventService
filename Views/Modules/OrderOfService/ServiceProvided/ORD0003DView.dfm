@@ -290,7 +290,6 @@ inherited FORD0003DView: TFORD0003DView
     end
   end
   inherited FdQData: TFDQuery
-    Active = True
     SQL.Strings = (
       'Select'
       ''
@@ -359,6 +358,5 @@ inherited FORD0003DView: TFORD0003DView
       'User_Name=SYSDBA'
       'Password=masterkey'
       'DriverID=FB')
-    Connected = True
   end
 end

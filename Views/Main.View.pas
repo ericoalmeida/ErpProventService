@@ -90,6 +90,7 @@ type
     procedure dxBarLargeButton2Click(Sender: TObject);
     procedure BtOperatorsClick(Sender: TObject);
     procedure BtServicesProvisionClick(Sender: TObject);
+    procedure BtOrcamentoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -129,6 +130,15 @@ begin
     .modulesFacadeView
      .orderOfServiceFactory
       .showProgramOfListing(tpORD0002AView)
+      .&end;
+end;
+
+procedure TFMainView.BtOrcamentoClick(Sender: TObject);
+begin
+  TFacadeView.New
+    .modulesFacadeView
+     .orderOfServiceFactory
+      .showProgramOfListing(tpBDG0001AView)
       .&end;
 end;
 

@@ -239,7 +239,13 @@ uses
   Budget.Model.Interf in 'Models\Modules\OrderOfService\Budget\Budget.Model.Interf.pas',
   Budget.Model in 'Models\Modules\OrderOfService\Budget\Budget.Model.pas',
   Budget.Controller.Interf in 'Controllers\Modules\OrderOfService\Budget\Budget.Controller.Interf.pas',
-  Budget.Controller in 'Controllers\Modules\OrderOfService\Budget\Budget.Controller.pas';
+  Budget.Controller in 'Controllers\Modules\OrderOfService\Budget\Budget.Controller.pas',
+  BudgetInsert.Controller in 'Controllers\Modules\OrderOfService\Budget\Operations\BudgetInsert.Controller.pas',
+  BudgetUpdate.Controller in 'Controllers\Modules\OrderOfService\Budget\Operations\BudgetUpdate.Controller.pas',
+  BudgetDelete.Controller in 'Controllers\Modules\OrderOfService\Budget\Operations\BudgetDelete.Controller.pas',
+  BudgetDuplicate.Controller in 'Controllers\Modules\OrderOfService\Budget\Operations\BudgetDuplicate.Controller.pas',
+  BDG0001AView in 'Views\Modules\OrderOfService\Budget\BDG0001AView.pas' {FBDG0001AView},
+  BDG0001BView in 'Views\Modules\OrderOfService\Budget\BDG0001BView.pas' {FBDG0001BView};
 
 {$R *.res}
 

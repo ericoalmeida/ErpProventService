@@ -22,8 +22,7 @@ uses
 type
   [Entity]
   [Table('TORDBUDGET', '')]
-  [PrimaryKey('COMPANYID', NotInc, NoSort, False, 'Chave primária')]
-  [PrimaryKey('CODE', NotInc, NoSort, False, 'Chave primária')]
+  [PrimaryKey('COMPANYID, CODE', NotInc, NoSort, False, 'Chave primária')]
   TTORDBUDGET = class
   private
     { Private declarations } 
@@ -38,6 +37,7 @@ type
 
     FTMNGCOMPANY_0:  TTMNGCOMPANY  ;
     FTMNGUSER_1:  TTMNGUSER  ;
+    function GETCODE: String;
   public 
     { Public declarations } 
     constructor Create;
@@ -51,7 +51,7 @@ type
     [Restrictions([NotNull])]
     [Column('CODE', ftString, 64)]
     [Dictionary('CODE', 'Mensagem de validação', '', '', '', taLeftJustify)]
-    property CODE: String read FCODE write FCODE;
+    property CODE: String read GETCODE write FCODE;
 
     [Restrictions([NotNull])]
     [Column('BUDGETID', ftInteger)]
@@ -109,6 +109,14 @@ begin
     FTMNGUSER_1.Free;
 
   inherited;
+end;
+
+function TTORDBUDGET.GETCODE: String;
+begin
+  if FCODE.IsEmpty then
+  FCODE := TGUID.NewGuid.ToString;
+
+  Result := FCODE;
 end;
 
 initialization

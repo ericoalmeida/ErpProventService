@@ -126,6 +126,7 @@ inherited FBaseRegisterView: TFBaseRegisterView
             Font.Name = 'Open Sans SemiBold'
             Font.Style = [fsBold]
             ParentFont = False
+            OnClick = BtConfirmarClick
           end
         end
       end

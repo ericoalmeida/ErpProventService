@@ -2,7 +2,6 @@ inherited FSTO0001BView: TFSTO0001BView
   Caption = 'Produtos SINAPI'
   ClientHeight = 325
   ClientWidth = 594
-  Visible = False
   ExplicitWidth = 600
   ExplicitHeight = 354
   PixelsPerInch = 96
@@ -85,15 +84,15 @@ inherited FSTO0001BView: TFSTO0001BView
           E7F11F04311D30C2D9605F0000000049454E44AE426082}
       end
       inherited LbTitle: TRzLabel
-        Width = 130
+        Width = 152
         Height = 26
         Caption = 'Produtos SINAPI'
-        ExplicitWidth = 130
+        ExplicitWidth = 152
       end
       inherited LbOperation: TRzLabel
-        Left = 506
+        Left = 507
         Height = 26
-        ExplicitLeft = 506
+        ExplicitLeft = 507
       end
     end
     inherited PnProgram: TRzPanel
@@ -123,6 +122,9 @@ inherited FSTO0001BView: TFSTO0001BView
         inherited PnButtonConfirm: TRzPanel
           Left = 366
           ExplicitLeft = 366
+          inherited BtConfirmar: TcxButton
+            OnClick = BtConfirmarClick
+          end
         end
       end
       inherited PnContent: TRzPanel

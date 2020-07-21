@@ -4,6 +4,12 @@ object FDataMFirebird: TFDataMFirebird
   Height = 198
   Width = 264
   object FDatabase: TFDConnection
+    Params.Strings = (
+      'Database=C:\ERGSis\dados\ERGDADOS.FDB'
+      'User_Name=SYSDBA'
+      'Password=masterkey'
+      'DriverID=FB')
+    LoginPrompt = False
     Left = 32
     Top = 8
   end

@@ -21,7 +21,8 @@ type
 
     function code: string;
     function budgetId: string;
-
+    function description: string;
+    function emissionDate: string;
     function createdAt: string;
     function updatedAt: string;
   end;
@@ -30,8 +31,8 @@ type
     function budgetModel(AValue: IBudgetModel): iBudgetInsertController;
 
     function companyId(AValue: string): iBudgetInsertController;
-    function name(AValue: string): iBudgetInsertController;
-    function status(AValue: integer): iBudgetInsertController;
+    function description(AValue: string): iBudgetInsertController;
+    function emissionDate(AValue: TDateTime): iBudgetInsertController;
     function userId(AValue: string): iBudgetInsertController;
 
     procedure save;
@@ -42,8 +43,8 @@ type
     function selectedRecord(AValue: TTORDBUDGET): iBudgetUpdateController;
 
     function companyId(AValue: string): iBudgetUpdateController;
-    function name(AValue: string): iBudgetUpdateController;
-    function status(AValue: integer): iBudgetUpdateController;
+    function description(AValue: string): iBudgetUpdateController;
+    function emissionDate(AValue: TDateTime): iBudgetUpdateController;
     function userId(AValue: string): iBudgetUpdateController;
 
     procedure save;
@@ -61,8 +62,8 @@ type
       : iBudgetDuplicateController;
 
     function companyId(AValue: string): iBudgetDuplicateController;
-    function name(AValue: string): iBudgetDuplicateController;
-    function status(AValue: integer): iBudgetDuplicateController;
+    function description(AValue: string): iBudgetDuplicateController;
+    function emissionDate(AValue: TDateTime): iBudgetDuplicateController;
     function userId(AValue: string): iBudgetDuplicateController;
 
     procedure save;

@@ -4,7 +4,7 @@ inherited FMNG0006AView: TFMNG0006AView
   ClientWidth = 494
   OnShow = FormShow
   ExplicitWidth = 500
-  ExplicitHeight = 329
+  ExplicitHeight = 330
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel

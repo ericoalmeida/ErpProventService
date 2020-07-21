@@ -1935,7 +1935,7 @@ object FMainView: TFMainView
     ApplicationButton.Menu = ApMainMenu
     BarManager = BrManager
     ColorSchemeAccent = rcsaBlue
-    ColorSchemeName = 'Blue'
+    ColorSchemeName = 'Silver'
     QuickAccessToolbar.Toolbar = bmMainTools
     Contexts = <>
     TabOrder = 0
@@ -4130,6 +4130,7 @@ object FMainView: TFMainView
         2F0D756F5E05F4170A37160307FFF86FBFFBA2A1884B8029211A4361857F54C2
         BD02B814A8034A2EF63674FEC3C7673404800D70D187E8C51FA7174591C08C21
         FDAFD7DF002A723C39F3E6D8CC0000000049454E44AE426082}
+      OnClick = BtOrcamentoClick
     end
     object BtCotacao: TdxBarLargeButton
       Caption = 'Cota'#231#227'o'

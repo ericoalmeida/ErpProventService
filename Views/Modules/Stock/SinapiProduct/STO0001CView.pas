@@ -117,7 +117,7 @@ begin
       CdData.emptyDataset;
 
       FMessage
-       .messages('Arquivo selecionado é inválido!')
+       .messages('Arquivo inválido!')
        .&end;
     end;
 

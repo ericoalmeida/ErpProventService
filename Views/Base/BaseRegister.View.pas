@@ -24,6 +24,7 @@ type
     AcSearchRecord: TActionList;
     PnButtonConfirm: TRzPanel;
     BtConfirmar: TcxButton;
+    procedure BtConfirmarClick(Sender: TObject);
   private
     { Private declarations }
    protected
@@ -50,6 +51,12 @@ implementation
 
 uses Facade.View, Types.Views;
 { TFBaseRegisterView }
+
+procedure TFBaseRegisterView.BtConfirmarClick(Sender: TObject);
+begin
+  inherited;
+  Close;
+end;
 
 procedure TFBaseRegisterView.changeDataAnyFields;
 begin

@@ -3,7 +3,8 @@ unit OrderOfServiceFactory.Controller;
 interface
 
 uses OrderOfServiceFactory.Controller.Interf, Service.Controller.Interf,
-  Operators.Controller.Interf, ServiceProvided.Controller.Interf;
+  Operators.Controller.Interf, ServiceProvided.Controller.Interf,
+  Budget.Controller.Interf;
 
 type
   TOrderOfServiceFactoryController = class(TInterfacedObject,
@@ -18,13 +19,20 @@ type
     function serviceController: iServiceController;
     function oepratorController: iOperatorController;
     function serviceProvidedController: iServiceProvidedController;
+    function budgetController: iBudgetController;
   end;
 
 implementation
 
 { TOrdemOfServiceFactoryController }
 
-uses Service.Controller, Operators.Controller, ServiceProvided.Controller;
+uses Service.Controller, Operators.Controller, ServiceProvided.Controller,
+  Budget.Controller;
+
+function TOrderOfServiceFactoryController.budgetController: iBudgetController;
+begin
+  Result := TBudgetController.New;
+end;
 
 constructor TOrderOfServiceFactoryController.Create;
 begin
