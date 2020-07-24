@@ -161,8 +161,8 @@ object FBaseView: TFBaseView
       object LbProgram: TRzLabel
         Left = 0
         Top = 0
-        Width = 608
-        Height = 18
+        Width = 60
+        Height = 15
         Align = alClient
         Alignment = taCenter
         Caption = 'LbProgram'
@@ -172,8 +172,6 @@ object FBaseView: TFBaseView
         Font.Name = 'Open Sans SemiBold'
         Font.Style = [fsBold]
         ParentFont = False
-        ExplicitWidth = 60
-        ExplicitHeight = 15
       end
     end
     object PnContainerBody: TRzPanel

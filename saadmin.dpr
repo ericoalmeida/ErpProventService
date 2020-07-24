@@ -245,13 +245,24 @@ uses
   BudgetDelete.Controller in 'Controllers\Modules\OrderOfService\Budget\Operations\BudgetDelete.Controller.pas',
   BudgetDuplicate.Controller in 'Controllers\Modules\OrderOfService\Budget\Operations\BudgetDuplicate.Controller.pas',
   BDG0001AView in 'Views\Modules\OrderOfService\Budget\BDG0001AView.pas' {FBDG0001AView},
-  BDG0001BView in 'Views\Modules\OrderOfService\Budget\BDG0001BView.pas' {FBDG0001BView};
+  BDG0001BView in 'Views\Modules\OrderOfService\Budget\BDG0001BView.pas' {FBDG0001BView},
+  STO0001DView in 'Views\Modules\Stock\SinapiProduct\STO0001DView.pas' {FSTO0001DView},
+  BudgetProviders.Model.Interf in 'Models\Modules\OrderOfService\BudgetProviders\BudgetProviders.Model.Interf.pas',
+  TORDBUDGETPROVIDERS.Entity.Model in 'Models\Modules\OrderOfService\BudgetProviders\Entity\TORDBUDGETPROVIDERS.Entity.Model.pas',
+  BudgetProviders.Model in 'Models\Modules\OrderOfService\BudgetProviders\BudgetProviders.Model.pas',
+  BudgetProviders.Controller.Interf in 'Controllers\Modules\OrderOfService\BudgetProviders\BudgetProviders.Controller.Interf.pas',
+  BudgetProviders.Controller in 'Controllers\Modules\OrderOfService\BudgetProviders\BudgetProviders.Controller.pas',
+  BudgetProvidersInsert.Controller in 'Controllers\Modules\OrderOfService\BudgetProviders\Operations\BudgetProvidersInsert.Controller.pas',
+  BudgetProvidersUpdate.Controller in 'Controllers\Modules\OrderOfService\BudgetProviders\Operations\BudgetProvidersUpdate.Controller.pas',
+  BudgetProvidersDelete.Controller in 'Controllers\Modules\OrderOfService\BudgetProviders\Operations\BudgetProvidersDelete.Controller.pas',
+  BudgetProvidersDuplicate.Controller in 'Controllers\Modules\OrderOfService\BudgetProviders\Operations\BudgetProvidersDuplicate.Controller.pas';
 
 {$R *.res}
 
 begin
-  Application.Initialize;
-  Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TFMainView, FMainView);
+   Application.Initialize;
+   Application.MainFormOnTaskbar := True;
+   Application.CreateForm(TFMainView, FMainView);
   Application.Run;
+
 end.

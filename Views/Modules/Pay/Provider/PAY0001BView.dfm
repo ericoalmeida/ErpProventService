@@ -87,13 +87,11 @@ inherited FPAY0001BView: TFPAY0001BView
       end
       inherited LbTitle: TRzLabel
         Width = 125
-        Height = 26
         Caption = 'Fornecedores'
         ExplicitWidth = 125
       end
       inherited LbOperation: TRzLabel
         Left = 607
-        Height = 26
         ExplicitLeft = 607
       end
     end
@@ -102,10 +100,6 @@ inherited FPAY0001BView: TFPAY0001BView
       Width = 690
       ExplicitTop = 370
       ExplicitWidth = 690
-      inherited LbProgram: TRzLabel
-        Width = 690
-        Height = 18
-      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 690
@@ -124,9 +118,6 @@ inherited FPAY0001BView: TFPAY0001BView
         inherited PnButtonConfirm: TRzPanel
           Left = 466
           ExplicitLeft = 466
-          inherited BtConfirmar: TcxButton
-            OnClick = BtConfirmarClick
-          end
         end
       end
       inherited PnContent: TRzPanel

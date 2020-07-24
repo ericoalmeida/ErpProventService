@@ -86,13 +86,11 @@ inherited FORD0003BView: TFORD0003BView
       end
       inherited LbTitle: TRzLabel
         Width = 161
-        Height = 26
         Caption = 'Ordem de servi'#231'o'
         ExplicitWidth = 161
       end
       inherited LbOperation: TRzLabel
         Left = 557
-        Height = 26
         ExplicitLeft = 557
       end
     end
@@ -101,10 +99,6 @@ inherited FORD0003BView: TFORD0003BView
       Width = 640
       ExplicitTop = 336
       ExplicitWidth = 640
-      inherited LbProgram: TRzLabel
-        Width = 640
-        Height = 18
-      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 640
@@ -123,9 +117,6 @@ inherited FORD0003BView: TFORD0003BView
         inherited PnButtonConfirm: TRzPanel
           Left = 416
           ExplicitLeft = 416
-          inherited BtConfirmar: TcxButton
-            OnClick = BtConfirmarClick
-          end
         end
       end
       inherited PnContent: TRzPanel

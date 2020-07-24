@@ -81,13 +81,11 @@ inherited FMNG0003BView: TFMNG0003BView
       end
       inherited LbTitle: TRzLabel
         Width = 72
-        Height = 26
         Caption = 'Estados'
         ExplicitWidth = 72
       end
       inherited LbOperation: TRzLabel
         Left = 507
-        Height = 26
         ExplicitLeft = 507
       end
     end
@@ -96,10 +94,6 @@ inherited FMNG0003BView: TFMNG0003BView
       Width = 590
       ExplicitTop = 270
       ExplicitWidth = 590
-      inherited LbProgram: TRzLabel
-        Width = 590
-        Height = 18
-      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 590
@@ -118,9 +112,6 @@ inherited FMNG0003BView: TFMNG0003BView
         inherited PnButtonConfirm: TRzPanel
           Left = 366
           ExplicitLeft = 366
-          inherited BtConfirmar: TcxButton
-            OnClick = BtConfirmarClick
-          end
         end
       end
       inherited PnContent: TRzPanel

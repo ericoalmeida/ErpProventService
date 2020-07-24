@@ -16,6 +16,7 @@ inherited FMNG0005BView: TFMNG0005BView
       ExplicitWidth = 690
       inherited ImTitle: TImage
         Width = 24
+        Height = 24
         Picture.Data = {
           0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000018
           000000180806000000E0773DF8000004FC4944415478DA8D956B4C935718C7FF
@@ -68,14 +69,12 @@ inherited FMNG0005BView: TFMNG0005BView
       inherited LbTitle: TRzLabel
         Left = 36
         Width = 79
-        Height = 26
         Caption = 'Empresa'
         ExplicitLeft = 36
         ExplicitWidth = 79
       end
       inherited LbOperation: TRzLabel
         Left = 607
-        Height = 26
         ExplicitLeft = 607
       end
     end
@@ -84,10 +83,6 @@ inherited FMNG0005BView: TFMNG0005BView
       Width = 690
       ExplicitTop = 370
       ExplicitWidth = 690
-      inherited LbProgram: TRzLabel
-        Width = 690
-        Height = 18
-      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 690
@@ -106,9 +101,6 @@ inherited FMNG0005BView: TFMNG0005BView
         inherited PnButtonConfirm: TRzPanel
           Left = 466
           ExplicitLeft = 466
-          inherited BtConfirmar: TcxButton
-            OnClick = BtConfirmarClick
-          end
         end
       end
       inherited PnContent: TRzPanel

@@ -137,8 +137,8 @@ object FSTO0001CView: TFSTO0001CView
       object LbProgram: TRzLabel
         Left = 0
         Top = 0
-        Width = 710
-        Height = 18
+        Width = 60
+        Height = 15
         Align = alClient
         Alignment = taCenter
         Caption = 'LbProgram'
@@ -148,8 +148,6 @@ object FSTO0001CView: TFSTO0001CView
         Font.Name = 'Open Sans SemiBold'
         Font.Style = [fsBold]
         ParentFont = False
-        ExplicitWidth = 60
-        ExplicitHeight = 15
       end
     end
     object PnContainerBody: TRzPanel
@@ -425,8 +423,8 @@ object FSTO0001CView: TFSTO0001CView
             AlignWithMargins = True
             Left = 4
             Top = 5
-            Width = 698
-            Height = 22
+            Width = 199
+            Height = 17
             Margins.Top = 4
             Margins.Bottom = 2
             Align = alClient
@@ -438,8 +436,6 @@ object FSTO0001CView: TFSTO0001CView
             Font.Style = []
             ParentFont = False
             BorderColor = 15066597
-            ExplicitWidth = 199
-            ExplicitHeight = 17
           end
         end
         object PnGrid: TRzPanel

@@ -3,26 +3,26 @@ unit PersonDelete.Controller;
 interface
 
 uses Person.Controller.Interf, Person.Model.Interf, Base.View.Interf,
-  TMNGPERSON.Entity.Model;
+   TMNGPERSON.Entity.Model;
 
 type
-  TPersonDeleteController = class(TInterfacedObject, iPersonDeleteController)
-  private
-    FMessageConfirm: iBaseMessageView;
+   TPersonDeleteController = class(TInterfacedObject, iPersonDeleteController)
+   private
+      FMessageConfirm: iBaseMessageView;
 
-    FPersonModel: IPersonModel;
-    FSelectedRecord: TTMNGPERSON;
-  public
-    constructor Create;
-    destructor Destroy; override;
+      FPersonModel: IPersonModel;
+      FSelectedRecord: TTMNGPERSON;
+   public
+      constructor Create;
+      destructor Destroy; override;
 
-    class function New: iPersonDeleteController;
+      class function New: iPersonDeleteController;
 
-    function personModel(AValue: IPersonModel): iPersonDeleteController;
-    function selectedRecord(AValue: TTMNGPERSON): iPersonDeleteController;
+      function personModel(AValue: IPersonModel): iPersonDeleteController;
+      function selectedRecord(AValue: TTMNGPERSON): iPersonDeleteController;
 
-    procedure save;
-  end;
+      procedure save;
+   end;
 
 implementation
 
@@ -32,51 +32,52 @@ uses Facade.View, Types.Views, System.SysUtils;
 
 constructor TPersonDeleteController.Create;
 begin
-  FMessageConfirm := TFacadeView.New.messagesFactoryView.typeMessage
-    (tmConfirmation);
+   FMessageConfirm := TFacadeView.New.messagesFactoryView.typeMessage
+     (tmConfirmation);
 end;
 
 destructor TPersonDeleteController.Destroy;
 begin
 
-  inherited;
+   inherited;
 end;
 
 function TPersonDeleteController.personModel(AValue: IPersonModel)
   : iPersonDeleteController;
 begin
-  Result := Self;
-  FPersonModel := AValue;
+   Result := Self;
+   FPersonModel := AValue;
 end;
 
 class function TPersonDeleteController.New: iPersonDeleteController;
 begin
-  Result := Self.Create;
+   Result := Self.Create;
 end;
 
 procedure TPersonDeleteController.save;
 begin
-  if FMessageConfirm.messages(Format('Deseja excluir o registro %s ?',
-    [FSelectedRecord.FANCYNAME])).&end then
-  begin
+   if FMessageConfirm.messages(Format('Deseja excluir o registro %s ?',
+     [FSelectedRecord.FANCYNAME])).&end then
+   begin
 
-    try
-      FPersonModel.DAO.Delete(FSelectedRecord);
+      try
+         FPersonModel.DAO.Delete(FSelectedRecord);
 
-    except
-      on E: Exception do
-        raise Exception.Create(Format('O Registro %s não pode ser excluído!',
-          [FSelectedRecord.FANCYNAME]));
-    end;
+      except
+         on E: Exception do
+            raise Exception.Create
+              (Format('O Registro %s não pode ser excluído!',
+              [FSelectedRecord.FANCYNAME]));
+      end;
 
-  end;
+   end;
 end;
 
 function TPersonDeleteController.selectedRecord(AValue: TTMNGPERSON)
   : iPersonDeleteController;
 begin
-  Result := Self;
-  FSelectedRecord := AValue;
+   Result := Self;
+   FSelectedRecord := AValue;
 end;
 
 end.

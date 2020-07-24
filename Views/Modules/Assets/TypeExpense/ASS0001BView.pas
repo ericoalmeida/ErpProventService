@@ -3,55 +3,57 @@ unit ASS0001BView;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
-  System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, BaseRegister.View, cxGraphics,
-  cxLookAndFeels,
-  cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore, dxSkinDarkRoom, dxSkinDarkSide,
-  dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, System.Actions,
-  Vcl.ActnList, Vcl.StdCtrls,
-  cxButtons, RzLabel, dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel, Base.View.interf,
-  Types.Controllers, cxControls, cxContainer, cxEdit, cxLabel, cxTextEdit,
-  TypeExpense.Controller.interf, cxMaskEdit, cxDropDownEdit, ERGTextEdit;
+   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+   System.Classes, Vcl.Graphics,
+   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, BaseRegister.View, cxGraphics,
+   cxLookAndFeels,
+   cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore, dxSkinDarkRoom,
+   dxSkinDarkSide,
+   dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, System.Actions,
+   Vcl.ActnList, Vcl.StdCtrls,
+   cxButtons, RzLabel, dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel,
+   Base.View.interf,
+   Types.Controllers, cxControls, cxContainer, cxEdit, cxLabel, cxTextEdit,
+   TypeExpense.Controller.interf, cxMaskEdit, cxDropDownEdit, ERGTextEdit;
 
 type
-  TFASS0001BView = class(TFBaseRegisterView, iBaseRegisterView)
-    TxUpdatedDate: TcxTextEdit;
-    LbUpdatedAt: TcxLabel;
-    TxCreatedDate: TcxTextEdit;
-    LbCreatedAt: TcxLabel;
-    LbDescription: TcxLabel;
-    TxTypeExpenseId: TcxTextEdit;
-    LbExpenseId: TcxLabel;
-    CbStatus: TcxComboBox;
-    LbStatus: TcxLabel;
-    TxDescription: TERGTextEdit;
-    procedure FormCreate(Sender: TObject);
-    procedure BtConfirmarClick(Sender: TObject);
-    procedure TxDescriptionPropertiesChange(Sender: TObject);
-    procedure CbStatusPropertiesChange(Sender: TObject);
-  private
-    FTypeExpenseController: iTypeExpenseController;
-  public
-    class function New: iBaseRegisterView;
+   TFASS0001BView = class(TFBaseRegisterView, iBaseRegisterView)
+      TxUpdatedDate: TcxTextEdit;
+      LbUpdatedAt: TcxLabel;
+      TxCreatedDate: TcxTextEdit;
+      LbCreatedAt: TcxLabel;
+      LbDescription: TcxLabel;
+      TxTypeExpenseId: TcxTextEdit;
+      LbExpenseId: TcxLabel;
+      CbStatus: TcxComboBox;
+      LbStatus: TcxLabel;
+      TxDescription: TERGTextEdit;
+      procedure FormCreate(Sender: TObject);
+      procedure BtConfirmarClick(Sender: TObject);
+      procedure TxDescriptionPropertiesChange(Sender: TObject);
+      procedure CbStatusPropertiesChange(Sender: TObject);
+   private
+      FTypeExpenseController: iTypeExpenseController;
+   public
+      class function New: iBaseRegisterView;
 
-    function operation(AValue: TTypeOperation): iBaseRegisterView;
-    function selectedRecord(AValue: string): iBaseRegisterView;
+      function operation(AValue: TTypeOperation): iBaseRegisterView;
+      function selectedRecord(AValue: string): iBaseRegisterView;
 
-    procedure insertRecord;
-    procedure updateRecord;
-    procedure deleteRecord;
-    procedure duplicateRecord;
+      procedure insertRecord;
+      procedure updateRecord;
+      procedure deleteRecord;
+      procedure duplicateRecord;
 
-    procedure save;
-    procedure showDataOnScreen;
-    procedure disableFields;
+      procedure save;
+      procedure showDataOnScreen;
+      procedure disableFields;
 
-    procedure &end;
-  end;
+      procedure &end;
+   end;
 
 var
-  FASS0001BView: TFASS0001BView;
+   FASS0001BView: TFASS0001BView;
 
 implementation
 
@@ -62,140 +64,127 @@ uses Facade.Controller;
 
 procedure TFASS0001BView.BtConfirmarClick(Sender: TObject);
 begin
-  if not(validate) then Exit;
+   if not(validate) then
+      Exit;
 
-  save;
+   save;
 
-  Close;
+   Close;
 end;
 
 procedure TFASS0001BView.CbStatusPropertiesChange(Sender: TObject);
 begin
-  inherited;
-  changeDataAnyFields;
+   inherited;
+   changeDataAnyFields;
 end;
 
 procedure TFASS0001BView.deleteRecord;
 begin
-  FTypeExpenseController
-   .delete
-    .save;
+   FTypeExpenseController.delete.save;
 end;
 
 procedure TFASS0001BView.disableFields;
 begin
-  CbStatus.Enabled := not(FOperation in [toShow, toDelete]);
-  TxDescription.Enabled := not(FOperation in [toShow, toDelete]);
+   CbStatus.Enabled := not(FOperation in [toShow, toDelete]);
+   TxDescription.Enabled := not(FOperation in [toShow, toDelete]);
 
-  PnButtonConfirm.Visible := not(FOperation = toShow);
-  BtConfirmar.Visible := not(FOperation = toShow);
+   PnButtonConfirm.Visible := not(FOperation = toShow);
+   BtConfirmar.Visible := not(FOperation = toShow);
 end;
 
 procedure TFASS0001BView.duplicateRecord;
 begin
-  FTypeExpenseController
-   .duplicate
-    .companyId(FSessionCompany)
-    .description(TxDescription.Text)
-    .status(CbStatus.ItemIndex)
-    .userId(FSessionUser)
-   .save;
+   FTypeExpenseController.duplicate.companyId(FSessionCompany)
+     .description(TxDescription.Text).status(CbStatus.ItemIndex)
+     .userId(FSessionUser).save;
 end;
 
 procedure TFASS0001BView.&end;
 begin
-  showDataOnScreen;
-  disableFields;
-  showCurrentOperation;
+   showDataOnScreen;
+   disableFields;
+   showCurrentOperation;
 
-  ShowModal;
+   ShowModal;
 end;
 
 procedure TFASS0001BView.FormCreate(Sender: TObject);
 begin
-  inherited;
+   inherited;
 
-  FTypeExpenseController := TFacadeController.New.ModulesFacadeController.
-    AssetsFactoryController.typeExpenseController;
+   FTypeExpenseController := TFacadeController.New.ModulesFacadeController.
+     AssetsFactoryController.typeExpenseController;
 end;
 
 procedure TFASS0001BView.insertRecord;
 begin
-  FTypeExpenseController
-   .insert
-    .companyId(FSessionCompany)
-    .description(TxDescription.Text)
-    .status(CbStatus.ItemIndex)
-    .userId(FSessionUser)
-   .save;
+   FTypeExpenseController.insert.companyId(FSessionCompany)
+     .description(TxDescription.Text).status(CbStatus.ItemIndex)
+     .userId(FSessionUser).save;
 end;
 
 class function TFASS0001BView.New: iBaseRegisterView;
 begin
-  Result := Self.Create(nil);
+   Result := Self.Create(nil);
 end;
 
 function TFASS0001BView.operation(AValue: TTypeOperation): iBaseRegisterView;
 begin
-  Result := Self;
-  FOperation := AValue;
+   Result := Self;
+   FOperation := AValue;
 end;
 
 procedure TFASS0001BView.save;
 begin
-  case FOperation of
-    toInsert:
-      insertRecord;
+   case FOperation of
+      toInsert:
+         insertRecord;
 
-    toUpdate:
-      updateRecord;
+      toUpdate:
+         updateRecord;
 
-    toDelete:
-      deleteRecord;
+      toDelete:
+         deleteRecord;
 
-    toDuplicate:
-      duplicateRecord;
-  end;
+      toDuplicate:
+         duplicateRecord;
+   end;
 end;
 
 function TFASS0001BView.selectedRecord(AValue: string): iBaseRegisterView;
 begin
-  Result := Self;
-  FSelectedRecord := AValue;
+   Result := Self;
+   FSelectedRecord := AValue;
 end;
 
 procedure TFASS0001BView.showDataOnScreen;
 begin
-  if (FOperation in [toInsert]) or (FSelectedRecord = EmptyStr) then
-    Exit;
+   if (FOperation in [toInsert]) or (FSelectedRecord = EmptyStr) then
+      Exit;
 
-  FTypeExpenseController.find(FSelectedRecord);
+   FTypeExpenseController.find(FSelectedRecord);
 
-  TxTypeExpenseId.Text  := FTypeExpenseController.typeExpenseId;
-  TxDescription.Text    := FTypeExpenseController.description;
+   TxTypeExpenseId.Text := FTypeExpenseController.typeExpenseId;
+   TxDescription.Text := FTypeExpenseController.description;
 
-  TxCreatedDate.Text    := FTypeExpenseController.createdAt;
-  TxUpdatedDate.Text    := FTypeExpenseController.updatedAt;
+   TxCreatedDate.Text := FTypeExpenseController.createdAt;
+   TxUpdatedDate.Text := FTypeExpenseController.updatedAt;
 
-  if not(FOperation in [toDelete]) then
-    BtConfirmar.Enabled := False;
+   if not(FOperation in [toDelete]) then
+      BtConfirmar.Enabled := False;
 end;
 
 procedure TFASS0001BView.TxDescriptionPropertiesChange(Sender: TObject);
 begin
-  inherited;
-  changeDataAnyFields;
+   inherited;
+   changeDataAnyFields;
 end;
 
 procedure TFASS0001BView.updateRecord;
 begin
-  FTypeExpenseController
-   .update
-    .companyId(FSessionCompany)
-    .description(TxDescription.Text)
-    .status(CbStatus.ItemIndex)
-    .userId(FSessionUser)
-   .save;
+   FTypeExpenseController.update.companyId(FSessionCompany)
+     .description(TxDescription.Text).status(CbStatus.ItemIndex)
+     .userId(FSessionUser).save;
 end;
 
 end.

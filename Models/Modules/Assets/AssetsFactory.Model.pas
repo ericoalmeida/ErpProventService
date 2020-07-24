@@ -5,17 +5,17 @@ interface
 uses AssetsFactory.Model.Interf, TypeExpense.Model.Interf, Vehicle.Model.Interf;
 
 type
-  TAssetsFactoryModel = class(TInterfacedObject, iAssetsFactoryModel)
-  private
-  public
-    constructor Create;
-    destructor Destroy; override;
+   TAssetsFactoryModel = class(TInterfacedObject, iAssetsFactoryModel)
+   private
+   public
+      constructor Create;
+      destructor Destroy; override;
 
-    class function New: iAssetsFactoryModel;
+      class function New: iAssetsFactoryModel;
 
-    function TypeExpenseModel: iTypeExpenseModel;
-    function vehicleModel: IVehicleModel;
-  end;
+      function TypeExpenseModel: iTypeExpenseModel;
+      function vehicleModel: IVehicleModel;
+   end;
 
 implementation
 
@@ -31,22 +31,22 @@ end;
 destructor TAssetsFactoryModel.Destroy;
 begin
 
-  inherited;
+   inherited;
 end;
 
 class function TAssetsFactoryModel.New: iAssetsFactoryModel;
 begin
-  Result := Self.Create;
+   Result := Self.Create;
 end;
 
 function TAssetsFactoryModel.TypeExpenseModel: iTypeExpenseModel;
 begin
-  Result := TTypeExpenseModel.New;
+   Result := TTypeExpenseModel.New;
 end;
 
 function TAssetsFactoryModel.vehicleModel: IVehicleModel;
 begin
-  Result := TVehicleModel.New;
+   Result := TVehicleModel.New;
 end;
 
 end.

@@ -81,10 +81,6 @@ inherited FASS0002CView: TFASS0002CView
       Width = 670
       ExplicitTop = 270
       ExplicitWidth = 670
-      inherited LbProgram: TRzLabel
-        Width = 670
-        Height = 18
-      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 670
@@ -129,10 +125,6 @@ inherited FASS0002CView: TFASS0002CView
           Width = 666
           ExplicitTop = 156
           ExplicitWidth = 666
-          inherited LbTotalRegistros: TRzLabel
-            Width = 658
-            Height = 22
-          end
         end
         inherited PnGrid: TRzPanel
           Width = 666

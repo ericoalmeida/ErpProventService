@@ -1,16 +1,19 @@
 inherited FBDG0001BView: TFBDG0001BView
   Caption = 'Or'#231'amentos'
-  ClientHeight = 502
-  ClientWidth = 952
-  ExplicitWidth = 958
-  ExplicitHeight = 531
+  ClientHeight = 454
+  ClientWidth = 801
+  ExplicitWidth = 807
+  ExplicitHeight = 483
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
-    Width = 950
-    Height = 500
+    Width = 799
+    Height = 452
+    ExplicitWidth = 799
+    ExplicitHeight = 452
     inherited PnHeader: TRzPanel
-      Width = 948
+      Width = 797
+      ExplicitWidth = 797
       inherited ImTitle: TImage
         Picture.Data = {
           0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000020
@@ -89,85 +92,80 @@ inherited FBDG0001BView: TFBDG0001BView
       end
       inherited LbTitle: TRzLabel
         Width = 112
-        Height = 26
         Caption = 'Or'#231'amentos'
         ExplicitWidth = 112
       end
       inherited LbOperation: TRzLabel
-        Left = 865
-        Height = 26
+        Left = 714
+        ExplicitLeft = 714
       end
     end
     inherited PnProgram: TRzPanel
-      Top = 481
-      Width = 948
-      inherited LbProgram: TRzLabel
-        Width = 948
-        Height = 18
-      end
+      Top = 433
+      Width = 797
+      ExplicitTop = 433
+      ExplicitWidth = 797
     end
     inherited PnContainerBody: TRzPanel
-      Width = 948
-      Height = 440
+      Width = 797
+      Height = 392
+      ExplicitWidth = 797
+      ExplicitHeight = 392
       inherited PnFooterBody: TRzPanel
-        Top = 400
-        Width = 948
+        Top = 352
+        Width = 797
+        ExplicitTop = 352
+        ExplicitWidth = 797
         inherited PnButtonCancel: TRzPanel
-          Left = 837
+          Left = 686
+          ExplicitLeft = 686
         end
         inherited PnButtonConfirm: TRzPanel
-          Left = 724
-          inherited BtConfirmar: TcxButton
-            Enabled = True
-            OnClick = BtConfirmarClick
-          end
+          Left = 573
+          ExplicitLeft = 573
         end
       end
       inherited PnContent: TRzPanel
-        Width = 944
-        Height = 396
+        Width = 793
+        Height = 348
+        ExplicitWidth = 793
+        ExplicitHeight = 348
         inherited LbObs: TRzLabel
-          Top = 383
-          Width = 944
+          Top = 335
+          Width = 793
+          ExplicitTop = 335
         end
         object RzPageControl1: TRzPageControl
           AlignWithMargins = True
           Left = 4
           Top = 4
-          Width = 936
-          Height = 375
+          Width = 785
+          Height = 327
           Hint = ''
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
           Margins.Bottom = 4
-          ActivePage = TSPrincipal
+          ActivePage = TSProdutos
           Align = alClient
           Font.Charset = ANSI_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = 'Open Sans'
           Font.Style = []
+          FlatColor = 12698049
           ParentFont = False
           TabColors.Unselected = clWhite
-          TabIndex = 0
+          TabIndex = 2
           TabOrder = 0
-          TabStyle = tsCutCorner
-          ExplicitLeft = 256
-          ExplicitTop = 80
-          ExplicitWidth = 300
-          ExplicitHeight = 150
-          FixedDimension = 27
+          TabStyle = tsRoundCorners
+          FixedDimension = 23
           object TSPrincipal: TRzTabSheet
             Color = clWhite
             Caption = 'Dados Principais'
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             object TxUpdatedDate: TcxTextEdit
               Left = 91
-              Top = 309
+              Top = 149
               Enabled = False
               ParentFont = False
               Properties.CharCase = ecUpperCase
@@ -196,7 +194,7 @@ inherited FBDG0001BView: TFBDG0001BView
             end
             object TxCreatedDate: TcxTextEdit
               Left = 91
-              Top = 285
+              Top = 125
               Enabled = False
               ParentFont = False
               Properties.CharCase = ecUpperCase
@@ -225,7 +223,7 @@ inherited FBDG0001BView: TFBDG0001BView
             end
             object LbUpdatedAt: TcxLabel
               Left = 4
-              Top = 310
+              Top = 150
               Caption = 'Atualizado em:'
               ParentFont = False
               Style.Font.Charset = ANSI_CHARSET
@@ -237,7 +235,7 @@ inherited FBDG0001BView: TFBDG0001BView
             end
             object LbCreatedAt: TcxLabel
               Left = 25
-              Top = 286
+              Top = 126
               Caption = 'Criado em:'
               ParentFont = False
               Style.Font.Charset = ANSI_CHARSET
@@ -247,7 +245,7 @@ inherited FBDG0001BView: TFBDG0001BView
               Style.Font.Style = []
               Style.IsFontAssigned = True
             end
-            object TxProductId: TcxTextEdit
+            object TxBudgetId: TcxTextEdit
               Left = 91
               Top = 17
               Enabled = False
@@ -294,6 +292,7 @@ inherited FBDG0001BView: TFBDG0001BView
               ParentFont = False
               Properties.CharCase = ecUpperCase
               Properties.MaxLength = 155
+              Properties.OnChange = TxDescriptionPropertiesChange
               Style.BorderColor = 12698049
               Style.BorderStyle = ebsSingle
               Style.Font.Charset = ANSI_CHARSET
@@ -313,7 +312,7 @@ inherited FBDG0001BView: TFBDG0001BView
               StyleHot.LookAndFeel.NativeStyle = False
               TabOrder = 6
               Height = 63
-              Width = 814
+              Width = 680
             end
             object LbDescription: TcxLabel
               Left = 25
@@ -328,7 +327,7 @@ inherited FBDG0001BView: TFBDG0001BView
               Style.IsFontAssigned = True
             end
             object LbStatus: TcxLabel
-              Left = 706
+              Left = 572
               Top = 18
               Caption = 'Emiss'#227'o:'
               ParentFont = False
@@ -340,10 +339,11 @@ inherited FBDG0001BView: TFBDG0001BView
               Style.IsFontAssigned = True
             end
             object EbEmissionDate: TcxDateEdit
-              Left = 763
+              Left = 629
               Top = 17
               ParentFont = False
               Properties.Kind = ckDateTime
+              Properties.OnChange = EbEmissionDatePropertiesChange
               Style.BorderColor = 12698049
               Style.BorderStyle = ebsSingle
               Style.Font.Charset = ANSI_CHARSET
@@ -377,7 +377,7 @@ inherited FBDG0001BView: TFBDG0001BView
               AlignWithMargins = True
               Left = 2
               Top = 2
-              Width = 928
+              Width = 777
               Height = 44
               Cursor = crHandPoint
               Margins.Left = 2
@@ -474,21 +474,20 @@ inherited FBDG0001BView: TFBDG0001BView
               Font.Name = 'Open Sans SemiBold'
               Font.Style = [fsBold]
               ParentFont = False
-              ExplicitLeft = 0
-              ExplicitTop = 1
-              ExplicitWidth = 923
+              OnClick = cxButton1Click
             end
             object DBDados: TcxGrid
               AlignWithMargins = True
               Left = 2
               Top = 48
-              Width = 928
-              Height = 294
+              Width = 777
+              Height = 247
               Margins.Left = 2
               Margins.Top = 1
               Margins.Right = 2
               Margins.Bottom = 2
               Align = alClient
+              BorderStyle = cxcbsNone
               Font.Charset = ANSI_CHARSET
               Font.Color = clWindowText
               Font.Height = -12
@@ -496,16 +495,40 @@ inherited FBDG0001BView: TFBDG0001BView
               Font.Style = []
               ParentFont = False
               TabOrder = 1
-              ExplicitLeft = 200
-              ExplicitTop = 96
-              ExplicitWidth = 250
-              ExplicitHeight = 200
+              LookAndFeel.Kind = lfStandard
+              LookAndFeel.NativeStyle = False
               object VwDados: TcxGridDBTableView
                 Navigator.Buttons.CustomButtons = <>
+                DataController.DataSource = DsFornecedores
                 DataController.Summary.DefaultGroupSummaryItems = <>
                 DataController.Summary.FooterSummaryItems = <>
                 DataController.Summary.SummaryGroups = <>
+                OptionsData.CancelOnExit = False
+                OptionsData.Deleting = False
+                OptionsData.DeletingConfirmation = False
+                OptionsData.Editing = False
+                OptionsData.Inserting = False
+                OptionsView.NoDataToDisplayInfoText = '<Sem dados para exibir>'
+                OptionsView.CellAutoHeight = True
+                OptionsView.ColumnAutoWidth = True
                 OptionsView.GroupByBox = False
+                OptionsView.Indicator = True
+                Styles.ContentEven = stContentEven
+                Styles.ContentOdd = stContentOdd
+                Styles.Header = StHeader
+                Styles.Inactive = StInactive
+                Styles.Indicator = StIndicator
+                Styles.Selection = StSelection
+                object VwDadosPERSONID: TcxGridDBColumn
+                  Caption = 'N'#186
+                  DataBinding.FieldName = 'PERSONID'
+                  Width = 50
+                end
+                object VwDadosNAME: TcxGridDBColumn
+                  Caption = 'Raz'#227'o Social/Nome Fantasia'
+                  DataBinding.FieldName = 'NAME'
+                  Width = 550
+                end
               end
               object LVDados: TcxGridLevel
                 GridView = VwDados
@@ -523,13 +546,16 @@ inherited FBDG0001BView: TFBDG0001BView
               AlignWithMargins = True
               Left = 2
               Top = 48
-              Width = 928
-              Height = 294
+              Width = 777
+              Height = 247
               Margins.Left = 2
               Margins.Top = 1
               Margins.Right = 2
               Margins.Bottom = 2
               Align = alClient
+              BevelInner = bvNone
+              BevelOuter = bvNone
+              BorderStyle = cxcbsNone
               Font.Charset = ANSI_CHARSET
               Font.Color = clWindowText
               Font.Height = -12
@@ -537,16 +563,34 @@ inherited FBDG0001BView: TFBDG0001BView
               Font.Style = []
               ParentFont = False
               TabOrder = 0
-              ExplicitLeft = 200
-              ExplicitTop = 96
-              ExplicitWidth = 250
-              ExplicitHeight = 200
+              LookAndFeel.Kind = lfStandard
+              LookAndFeel.NativeStyle = False
               object VWProdutos: TcxGridDBTableView
                 Navigator.Buttons.CustomButtons = <>
+                DataController.DataSource = DsProdutos
                 DataController.Summary.DefaultGroupSummaryItems = <>
                 DataController.Summary.FooterSummaryItems = <>
                 DataController.Summary.SummaryGroups = <>
+                OptionsView.NoDataToDisplayInfoText = '<Sem dados para exibir>'
+                OptionsView.CellAutoHeight = True
+                OptionsView.ColumnAutoWidth = True
                 OptionsView.GroupByBox = False
+                Styles.ContentEven = stContentEven
+                Styles.ContentOdd = stContentOdd
+                Styles.Header = StHeader
+                Styles.Inactive = StInactive
+                Styles.Indicator = StIndicator
+                Styles.Selection = StSelection
+                object VWProdutosPRODUCTID: TcxGridDBColumn
+                  Caption = 'N'#176
+                  DataBinding.FieldName = 'PRODUCTID'
+                  Width = 50
+                end
+                object VWProdutosDESCRIPTION: TcxGridDBColumn
+                  Caption = 'Descri'#231#227'o'
+                  DataBinding.FieldName = 'DESCRIPTION'
+                  Width = 550
+                end
               end
               object LVProdutos: TcxGridLevel
                 GridView = VWProdutos
@@ -556,7 +600,7 @@ inherited FBDG0001BView: TFBDG0001BView
               AlignWithMargins = True
               Left = 2
               Top = 2
-              Width = 928
+              Width = 777
               Height = 44
               Cursor = crHandPoint
               Margins.Left = 2
@@ -653,13 +697,142 @@ inherited FBDG0001BView: TFBDG0001BView
               Font.Name = 'Open Sans SemiBold'
               Font.Style = [fsBold]
               ParentFont = False
-              ExplicitLeft = 8
-              ExplicitTop = 12
-              ExplicitWidth = 916
+              OnClick = cxButton2Click
             end
           end
         end
       end
+    end
+  end
+  object CdsFornecedor: TClientDataSet
+    PersistDataPacket.Data = {
+      5D0000009619E0BD0100000018000000030000000000030000005D0004434F44
+      45010049000000010005574944544802000200400008504552534F4E49440400
+      010000000000044E414D45010049000000010005574944544802000200BE0000
+      00}
+    Active = True
+    Aggregates = <>
+    Params = <>
+    AfterPost = CdsFornecedorAfterPost
+    Left = 273
+    Top = 179
+    object CdsFornecedorCODE: TStringField
+      FieldName = 'CODE'
+      Size = 64
+    end
+    object CdsFornecedorPERSONID: TIntegerField
+      FieldName = 'PERSONID'
+    end
+    object CdsFornecedorNAME: TStringField
+      FieldName = 'NAME'
+      Size = 190
+    end
+  end
+  object DsFornecedores: TDataSource
+    DataSet = CdsFornecedor
+    Left = 281
+    Top = 243
+  end
+  object DsProdutos: TDataSource
+    DataSet = CdsProdutos
+    Left = 425
+    Top = 243
+  end
+  object StGridStyles: TcxStyleRepository
+    Left = 144
+    Top = 96
+    PixelsPerInch = 96
+    object StHeader: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 16579836
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Open Sans'
+      Font.Style = [fsBold]
+      TextColor = 5592405
+    end
+    object stContentOdd: TcxStyle
+      AssignedValues = [svColor, svFont]
+      Color = 16382457
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Open Sans'
+      Font.Style = []
+    end
+    object stContentEven: TcxStyle
+      AssignedValues = [svColor, svFont]
+      Color = clWhite
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Open Sans'
+      Font.Style = []
+    end
+    object StInactive: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 16315375
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Open Sans SemiBold'
+      Font.Style = [fsBold]
+      TextColor = clBlack
+    end
+    object StSelection: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 16315375
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Open Sans SemiBold'
+      Font.Style = [fsBold]
+      TextColor = clBlack
+    end
+    object StIndicator: TcxStyle
+      AssignedValues = [svColor]
+      Color = 16579836
+    end
+    object StDefaultColumn: TcxStyle
+    end
+    object StColumnSelected: TcxStyle
+      AssignedValues = [svColor]
+      Color = 13434879
+    end
+    object StHeaderColumnSelected: TcxStyle
+      AssignedValues = [svColor]
+      Color = 14869218
+    end
+    object StDefaultHeaderColumn: TcxStyle
+    end
+  end
+  object CdsProdutos: TClientDataSet
+    PersistDataPacket.Data = {
+      870000009619E0BD010000001800000004000000000003000000870004434F44
+      4501004900000001000557494454480200020040000950524F44554354494404
+      000100000000000B4445534352495054494F4E02004900000001000557494454
+      480200020026020D434F4449474F5F53494E4150490100490000000100055749
+      4454480200020016000000}
+    Active = True
+    Aggregates = <>
+    Params = <>
+    Left = 417
+    Top = 187
+    object CdsProdutosCODE: TStringField
+      FieldName = 'CODE'
+      Size = 64
+    end
+    object CdsProdutosPRODUCTID: TIntegerField
+      FieldName = 'PRODUCTID'
+    end
+    object CdsProdutosDESCRIPTION: TStringField
+      FieldName = 'DESCRIPTION'
+      Size = 550
+    end
+    object CdsProdutosCODIGO_SINAPI: TStringField
+      FieldName = 'CODIGO_SINAPI'
+      Size = 22
     end
   end
 end

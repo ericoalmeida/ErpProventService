@@ -99,10 +99,6 @@ inherited FMNG0004AView: TFMNG0004AView
     inherited PnProgram: TRzPanel
       Width = 479
       ExplicitWidth = 479
-      inherited LbProgram: TRzLabel
-        Width = 479
-        Height = 18
-      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 479
@@ -136,10 +132,6 @@ inherited FMNG0004AView: TFMNG0004AView
         inherited PnGridFooter: TRzPanel
           Width = 475
           ExplicitWidth = 475
-          inherited LbTotalRegistros: TRzLabel
-            Width = 467
-            Height = 22
-          end
         end
         inherited PnGrid: TRzPanel
           Width = 475

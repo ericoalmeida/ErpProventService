@@ -6,7 +6,7 @@ inherited FBaseMessageView: TFBaseMessageView
   Visible = False
   WindowState = wsNormal
   ExplicitWidth = 457
-  ExplicitHeight = 202
+  ExplicitHeight = 203
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
@@ -113,9 +113,6 @@ inherited FBaseMessageView: TFBaseMessageView
       Width = 447
       ExplicitTop = 153
       ExplicitWidth = 447
-      inherited LbProgram: TRzLabel
-        Width = 447
-      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 447

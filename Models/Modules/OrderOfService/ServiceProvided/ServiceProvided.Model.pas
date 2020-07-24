@@ -3,26 +3,28 @@ unit ServiceProvided.Model;
 interface
 
 uses Districts.Model.Interf, ormbr.container.objectset.interfaces,
-  ormbr.Factory.interfaces, ServiceProvided.Model.Interf, TORDSERVICESPROVIDED.Entity.Model;
+   ormbr.Factory.interfaces, ServiceProvided.Model.Interf,
+   TORDSERVICESPROVIDED.Entity.Model;
 
 type
-  TServiceProvidedModel = class(TInterfacedObject, IServiceProvidedModel)
-  private
-    FConnection: IDBConnection;
-    FEntity: TTORDSERVICESPROVIDED;
-    FDAO: IContainerObjectSet<TTORDSERVICESPROVIDED>;
+   TServiceProvidedModel = class(TInterfacedObject, IServiceProvidedModel)
+   private
+      FConnection: IDBConnection;
+      FEntity: TTORDSERVICESPROVIDED;
+      FDAO: IContainerObjectSet<TTORDSERVICESPROVIDED>;
 
-  public
-    constructor Create;
-    destructor Destroy; override;
+   public
+      constructor Create;
+      destructor Destroy; override;
 
-    class function New: IServiceProvidedModel;
+      class function New: IServiceProvidedModel;
 
-    function Entity: TTORDSERVICESPROVIDED; overload;
-    function Entity(AValue: TTORDSERVICESPROVIDED): IServiceProvidedModel; overload;
+      function Entity: TTORDSERVICESPROVIDED; overload;
+      function Entity(AValue: TTORDSERVICESPROVIDED)
+        : IServiceProvidedModel; overload;
 
-    function DAO: IContainerObjectSet<TTORDSERVICESPROVIDED>;
-  end;
+      function DAO: IContainerObjectSet<TTORDSERVICESPROVIDED>;
+   end;
 
 implementation
 
@@ -32,35 +34,37 @@ uses Facade.Controller, ormbr.container.objectset;
 
 constructor TServiceProvidedModel.Create;
 begin
-   FConnection := TFacadeController.New.ConnectionFactoryController.currentConnection;
-   FDao :=  TContainerObjectSet<TTORDSERVICESPROVIDED>.Create(FConnection, 1);
+   FConnection := TFacadeController.New.ConnectionFactoryController.
+     currentConnection;
+   FDAO := TContainerObjectSet<TTORDSERVICESPROVIDED>.Create(FConnection, 1);
 end;
 
 function TServiceProvidedModel.DAO: IContainerObjectSet<TTORDSERVICESPROVIDED>;
 begin
-  result := FDAO;
+   result := FDAO;
 end;
 
 destructor TServiceProvidedModel.Destroy;
 begin
 
-  inherited;
+   inherited;
 end;
 
 function TServiceProvidedModel.Entity: TTORDSERVICESPROVIDED;
 begin
-  Result := FEntity;
+   result := FEntity;
 end;
 
-function TServiceProvidedModel.Entity(AValue: TTORDSERVICESPROVIDED): IServiceProvidedModel;
+function TServiceProvidedModel.Entity(AValue: TTORDSERVICESPROVIDED)
+  : IServiceProvidedModel;
 begin
-  Result := Self;
-  FEntity := AValue;
+   result := Self;
+   FEntity := AValue;
 end;
 
 class function TServiceProvidedModel.New: IServiceProvidedModel;
 begin
-  Result := Self.Create;
+   result := Self.Create;
 end;
 
 end.

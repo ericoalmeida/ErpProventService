@@ -3,37 +3,37 @@ unit UserUpdate.Controller;
 interface
 
 uses User.Controller.Interf, User.Model.Interf,
-  TMNGUSER.Entity.Model, System.SysUtils;
+   TMNGUSER.Entity.Model, System.SysUtils;
 
 type
-  TUserUpdateController = class(TInterfacedObject, iUserUpdateController)
-  private
-   FUserModel: IUserModel;
-   FSelectedRecord: TTMNGUSER;
+   TUserUpdateController = class(TInterfacedObject, iUserUpdateController)
+   private
+      FUserModel: IUserModel;
+      FSelectedRecord: TTMNGUSER;
 
-    FName: string;
-    FEmail: string;
-    FUserName: string;
-    FKeyPass: string;
-    FStatus: Integer;
+      FName: string;
+      FEmail: string;
+      FUserName: string;
+      FKeyPass: string;
+      FStatus: Integer;
 
-  public
-    constructor Create;
-    destructor Destroy; override;
+   public
+      constructor Create;
+      destructor Destroy; override;
 
-    class function New: iUserUpdateController;
+      class function New: iUserUpdateController;
 
-    function userModel(AValue: IUserModel): iUserUpdateController;
-    function selectedRecord(AValue: TTMNGUSER): iUserUpdateController;
+      function userModel(AValue: IUserModel): iUserUpdateController;
+      function selectedRecord(AValue: TTMNGUSER): iUserUpdateController;
 
-    function name(AValue: string): iUserUpdateController;
-    function email(AValue: string): iUserUpdateController;
-    function username(AValue: string): iUserUpdateController;
-    function keypass(AValue: string): iUserUpdateController;
-    function status(AValue: Integer): iUserUpdateController;
+      function name(AValue: string): iUserUpdateController;
+      function email(AValue: string): iUserUpdateController;
+      function username(AValue: string): iUserUpdateController;
+      function keypass(AValue: string): iUserUpdateController;
+      function status(AValue: Integer): iUserUpdateController;
 
-    procedure save;
-  end;
+      procedure save;
+   end;
 
 implementation
 
@@ -41,16 +41,17 @@ implementation
 
 uses BCrypt.Controller;
 
-function TUserUpdateController.userModel(AValue: IUserModel): iUserUpdateController;
+function TUserUpdateController.userModel(AValue: IUserModel)
+  : iUserUpdateController;
 begin
-  Result := Self;
-  FUserModel := AValue;
+   Result := Self;
+   FUserModel := AValue;
 end;
 
 function TUserUpdateController.username(AValue: string): iUserUpdateController;
 begin
-  Result := Self;
-  FUserName := AValue;
+   Result := Self;
+   FUserName := AValue;
 end;
 
 constructor TUserUpdateController.Create;
@@ -61,68 +62,70 @@ end;
 destructor TUserUpdateController.Destroy;
 begin
 
-  inherited;
+   inherited;
 end;
 
 function TUserUpdateController.email(AValue: string): iUserUpdateController;
 begin
-  Result := Self;
-  FEmail := AValue;
+   Result := Self;
+   FEmail := AValue;
 end;
 
 function TUserUpdateController.keypass(AValue: string): iUserUpdateController;
-var bcrypt: TBCrypt;
+var
+   BCrypt: TBCrypt;
 begin
- Result := Self;
- bcrypt := TBCrypt.Create;
+   Result := Self;
+   BCrypt := TBCrypt.Create;
 
-  try
-    if not(AValue = EmptyStr) then
-    FKeyPass  := bcrypt.HashPassword(AValue, 14);
+   try
+      if not(AValue = EmptyStr) then
+         FKeyPass := BCrypt.HashPassword(AValue, 14);
 
-  finally
-    bcrypt.Free;
-  end;
+   finally
+      BCrypt.Free;
+   end;
 end;
 
 function TUserUpdateController.name(AValue: string): iUserUpdateController;
 begin
-  Result := Self;
-  FName := AValue;
+   Result := Self;
+   FName := AValue;
 end;
 
 class function TUserUpdateController.New: iUserUpdateController;
 begin
-  Result := Self.Create;
+   Result := Self.Create;
 end;
 
 procedure TUserUpdateController.save;
 begin
-  FUserModel.DAO.Modify(FSelectedRecord);
+   FUserModel.DAO.Modify(FSelectedRecord);
 
-  FSelectedRecord.NAME        := FName;
-  FSelectedRecord.EMAIL       := FEmail;
-  FSelectedRecord.USERNAME    := FUserName;
+   FSelectedRecord.name := FName;
+   FSelectedRecord.email := FEmail;
+   FSelectedRecord.username := FUserName;
 
-  if not(FKeyPass = EmptyStr) then
-  FSelectedRecord.KEYPASS     := FKeyPass;
+   if not(FKeyPass = EmptyStr) then
+      FSelectedRecord.keypass := FKeyPass;
 
-  FSelectedRecord.STATUS      := FStatus;
-  FSelectedRecord.UPDATEDAT   := Now;
+   FSelectedRecord.status := FStatus;
+   FSelectedRecord.UPDATEDAT := Now;
 
-  FUserModel.DAO.Update(FSelectedRecord);
+   FUserModel.DAO.Update(FSelectedRecord);
 end;
 
-function TUserUpdateController.selectedRecord(AValue: TTMNGUSER): iUserUpdateController;
+function TUserUpdateController.selectedRecord(AValue: TTMNGUSER)
+  : iUserUpdateController;
 begin
-  Result := Self;
-  FSelectedRecord := AValue;
+   Result := Self;
+   FSelectedRecord := AValue;
 end;
 
 function TUserUpdateController.status(AValue: Integer): iUserUpdateController;
 begin
-  Result := Self;
-  FStatus := AValue;
+   Result := Self;
+   FStatus := AValue;
 end;
 
 end.

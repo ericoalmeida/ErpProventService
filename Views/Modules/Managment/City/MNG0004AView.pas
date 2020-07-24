@@ -3,61 +3,72 @@ unit MNG0004AView;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, BaseList.View, cxGraphics, cxLookAndFeels,
-  cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore, dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle,
-  dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Silver,
-  cxControls, cxContainer, cxEdit, cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage,
-  cxNavigator, cxDataControllerConditionalFormattingRulesManagerDialog, Data.DB, cxDBData,
-  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
-  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client,
-  FireDAC.Comp.DataSet, cxClasses, cxGridLevel, cxGridCustomView, cxGridCustomTableView,
-  cxGridTableView, cxGridDBTableView, cxGrid, cxTextEdit, cxLabel, Vcl.StdCtrls, cxButtons, RzLabel,
-  dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel, Base.View.interf, dxSkinDarkRoom, dxSkinDarkSide,
-  System.ImageList, Vcl.ImgList, cxImageList;
+   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+   System.Classes, Vcl.Graphics,
+   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, BaseList.View, cxGraphics,
+   cxLookAndFeels,
+   cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore, dxSkinDevExpressDarkStyle,
+   dxSkinDevExpressStyle,
+   dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Green,
+   dxSkinOffice2007Silver,
+   cxControls, cxContainer, cxEdit, cxStyles, cxCustomData, cxFilter, cxData,
+   cxDataStorage,
+   cxNavigator, cxDataControllerConditionalFormattingRulesManagerDialog,
+   Data.DB, cxDBData,
+   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+   FireDAC.Stan.Error, FireDAC.DatS,
+   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+   FireDAC.Comp.Client,
+   FireDAC.Comp.DataSet, cxClasses, cxGridLevel, cxGridCustomView,
+   cxGridCustomTableView,
+   cxGridTableView, cxGridDBTableView, cxGrid, cxTextEdit, cxLabel,
+   Vcl.StdCtrls, cxButtons, RzLabel,
+   dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel, Base.View.interf, dxSkinDarkRoom,
+   dxSkinDarkSide,
+   System.ImageList, Vcl.ImgList, cxImageList;
 
 type
-  TFMNG0004AView = class(TFBaseListView, iBaseListView)
-    FdQDataCODIGO: TStringField;
-    FdQDataCITYID: TIntegerField;
-    FdQDataNAME: TStringField;
-    FdQDataZIPCODE: TStringField;
-    FdQDataIBGECODE: TIntegerField;
-    FdQDataSTATEID: TStringField;
-    FdQDataSTATENAME: TStringField;
-    FdQDataCREATEDAT: TSQLTimeStampField;
-    FdQDataUPDATEDAT: TSQLTimeStampField;
-    VwDadosCITYID: TcxGridDBColumn;
-    VwDadosNAME: TcxGridDBColumn;
-    VwDadosZIPCODE: TcxGridDBColumn;
-    VwDadosIBGECODE: TcxGridDBColumn;
-    VwDadosSTATENAME: TcxGridDBColumn;
-    VwDadosCREATEDAT: TcxGridDBColumn;
-    VwDadosUPDATEDAT: TcxGridDBColumn;
-    procedure FormShow(Sender: TObject);
-    procedure BtInsertClick(Sender: TObject);
-    procedure BtUpdateClick(Sender: TObject);
-    procedure BtShowClick(Sender: TObject);
-    procedure BtDeleteClick(Sender: TObject);
-    procedure BtDuplicateClick(Sender: TObject);
-    procedure TxBuscarPropertiesChange(Sender: TObject);
-  private
-  public
-    { Public declarations }
-    class function New: iBaseListView;
+   TFMNG0004AView = class(TFBaseListView, iBaseListView)
+      FdQDataCODIGO: TStringField;
+      FdQDataCITYID: TIntegerField;
+      FdQDataNAME: TStringField;
+      FdQDataZIPCODE: TStringField;
+      FdQDataIBGECODE: TIntegerField;
+      FdQDataSTATEID: TStringField;
+      FdQDataSTATENAME: TStringField;
+      FdQDataCREATEDAT: TSQLTimeStampField;
+      FdQDataUPDATEDAT: TSQLTimeStampField;
+      VwDadosCITYID: TcxGridDBColumn;
+      VwDadosNAME: TcxGridDBColumn;
+      VwDadosZIPCODE: TcxGridDBColumn;
+      VwDadosIBGECODE: TcxGridDBColumn;
+      VwDadosSTATENAME: TcxGridDBColumn;
+      VwDadosCREATEDAT: TcxGridDBColumn;
+      VwDadosUPDATEDAT: TcxGridDBColumn;
+      procedure FormShow(Sender: TObject);
+      procedure BtInsertClick(Sender: TObject);
+      procedure BtUpdateClick(Sender: TObject);
+      procedure BtShowClick(Sender: TObject);
+      procedure BtDeleteClick(Sender: TObject);
+      procedure BtDuplicateClick(Sender: TObject);
+      procedure TxBuscarPropertiesChange(Sender: TObject);
+   private
+   public
+      { Public declarations }
+      class function New: iBaseListView;
 
-    procedure insertRecord;
-    procedure updateRecord;
-    procedure showRecord;
-    procedure deleteRecord;
-    procedure duplicateRecord;
-    procedure listRecords;
+      procedure insertRecord;
+      procedure updateRecord;
+      procedure showRecord;
+      procedure deleteRecord;
+      procedure duplicateRecord;
+      procedure listRecords;
 
-    procedure &end;
-  end;
+      procedure &end;
+   end;
 
 var
-  FMNG0004AView: TFMNG0004AView;
+   FMNG0004AView: TFMNG0004AView;
 
 implementation
 
@@ -69,141 +80,121 @@ uses Facade.View, Types.Views;
 
 procedure TFMNG0004AView.BtDeleteClick(Sender: TObject);
 begin
-  inherited;
+   inherited;
 
-  {1 } deleteRecord;
-  {2 } listRecords;
-  {3 } totalRecords;
-  {4 } disableButtonsWhenfdQDataEmpty;
+   { 1 } deleteRecord;
+   { 2 } listRecords;
+   { 3 } totalRecords;
+   { 4 } disableButtonsWhenfdQDataEmpty;
 end;
 
 procedure TFMNG0004AView.BtDuplicateClick(Sender: TObject);
 begin
-  inherited;
+   inherited;
 
-  {1 } duplicateRecord;
-  {2 } listRecords;
-  {3 } totalRecords;
-  {4 } disableButtonsWhenfdQDataEmpty;
+   { 1 } duplicateRecord;
+   { 2 } listRecords;
+   { 3 } totalRecords;
+   { 4 } disableButtonsWhenfdQDataEmpty;
 end;
 
 procedure TFMNG0004AView.BtInsertClick(Sender: TObject);
 begin
-  inherited;
+   inherited;
 
-  {1 } insertRecord;
-  {2 } listRecords;
-  {3 } totalRecords;
-  {4 } disableButtonsWhenfdQDataEmpty;
+   { 1 } insertRecord;
+   { 2 } listRecords;
+   { 3 } totalRecords;
+   { 4 } disableButtonsWhenfdQDataEmpty;
 end;
 
 procedure TFMNG0004AView.BtShowClick(Sender: TObject);
 begin
-  inherited;
+   inherited;
 
-  {1 } showRecord;
-  {2 } listRecords;
-  {3 } totalRecords;
-  {4 } disableButtonsWhenfdQDataEmpty;
+   { 1 } showRecord;
+   { 2 } listRecords;
+   { 3 } totalRecords;
+   { 4 } disableButtonsWhenfdQDataEmpty;
 end;
 
 procedure TFMNG0004AView.BtUpdateClick(Sender: TObject);
 begin
-  inherited;
+   inherited;
 
-  {1 } updateRecord;
-  {2 } listRecords;
-  {3 } totalRecords;
-  {4 } disableButtonsWhenfdQDataEmpty;
+   { 1 } updateRecord;
+   { 2 } listRecords;
+   { 3 } totalRecords;
+   { 4 } disableButtonsWhenfdQDataEmpty;
 end;
 
 procedure TFMNG0004AView.deleteRecord;
 begin
- TFacadeView.New
-  .modulesFacadeView
-   .ManagmentFactoryView
-    .showProgramOfRegister(trMNG0004BView)
-     .operation(FOperation)
-      .selectedRecord(FdQDataCODIGO.AsString)
-     .&end;
+   TFacadeView.New.modulesFacadeView.ManagmentFactoryView.showProgramOfRegister
+     (trMNG0004BView).operation(FOperation)
+     .selectedRecord(FdQDataCODIGO.AsString).&end;
 end;
 
 procedure TFMNG0004AView.duplicateRecord;
 begin
- TFacadeView.New
-  .modulesFacadeView
-   .ManagmentFactoryView
-    .showProgramOfRegister(trMNG0004BView)
-     .operation(FOperation)
-      .selectedRecord(FdQDataCODIGO.AsString)
-     .&end;
+   TFacadeView.New.modulesFacadeView.ManagmentFactoryView.showProgramOfRegister
+     (trMNG0004BView).operation(FOperation)
+     .selectedRecord(FdQDataCODIGO.AsString).&end;
 end;
 
 procedure TFMNG0004AView.&end;
 begin
 
-  Show;
+   Show;
 end;
 
 procedure TFMNG0004AView.FormShow(Sender: TObject);
 begin
-  inherited;
-  FFieldOrder := 'NAME';
+   inherited;
+   FFieldOrder := 'NAME';
 
-  {1 } listRecords;
-  {2 } totalRecords;
-  {3 } disableButtonsWhenfdQDataEmpty;
+   { 1 } listRecords;
+   { 2 } totalRecords;
+   { 3 } disableButtonsWhenfdQDataEmpty;
 end;
 
 procedure TFMNG0004AView.insertRecord;
 begin
- TFacadeView.New
-  .modulesFacadeView
-   .ManagmentFactoryView
-    .showProgramOfRegister(trMNG0004BView)
-     .operation(FOperation)
-     .&end;
+   TFacadeView.New.modulesFacadeView.ManagmentFactoryView.showProgramOfRegister
+     (trMNG0004BView).operation(FOperation).&end;
 end;
 
 procedure TFMNG0004AView.listRecords;
 begin
-  FdQData.Close();
-  FdQData.Open();
+   FdQData.Close();
+   FdQData.Open();
 end;
 
 class function TFMNG0004AView.New: iBaseListView;
 begin
-  Result := Self.Create(nil);
+   Result := Self.Create(nil);
 end;
 
 procedure TFMNG0004AView.showRecord;
 begin
- TFacadeView.New
-  .modulesFacadeView
-   .ManagmentFactoryView
-    .showProgramOfRegister(trMNG0004BView)
-     .operation(FOperation)
-      .selectedRecord(FdQDataCODIGO.AsString)
-     .&end;
+   TFacadeView.New.modulesFacadeView.ManagmentFactoryView.showProgramOfRegister
+     (trMNG0004BView).operation(FOperation)
+     .selectedRecord(FdQDataCODIGO.AsString).&end;
 end;
 
 procedure TFMNG0004AView.TxBuscarPropertiesChange(Sender: TObject);
 begin
-  inherited;
+   inherited;
 
-  filterRecords;
-  totalRecords;
+   filterRecords;
+   totalRecords;
 end;
 
 procedure TFMNG0004AView.updateRecord;
 begin
- TFacadeView.New
-  .modulesFacadeView
-   .ManagmentFactoryView
-    .showProgramOfRegister(trMNG0004BView)
-     .operation(FOperation)
-      .selectedRecord(FdQDataCODIGO.AsString)
-     .&end;
+   TFacadeView.New.modulesFacadeView.ManagmentFactoryView.showProgramOfRegister
+     (trMNG0004BView).operation(FOperation)
+     .selectedRecord(FdQDataCODIGO.AsString).&end;
 end;
 
 end.

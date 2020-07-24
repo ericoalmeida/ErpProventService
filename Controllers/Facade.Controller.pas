@@ -3,23 +3,23 @@ unit Facade.Controller;
 interface
 
 uses Facade.Controller.Interf, Connection.Controller.Interf,
-  ModulesFacade.Controller.Interf, Utils.Controller.Interf;
+   ModulesFacade.Controller.Interf, Utils.Controller.Interf;
 
 type
-  TFacadeController = class(TInterfacedObject, iFacadeController)
-  private
-  public
-    constructor Create;
-    destructor Destroy; override;
+   TFacadeController = class(TInterfacedObject, iFacadeController)
+   private
+   public
+      constructor Create;
+      destructor Destroy; override;
 
-    class function New: iFacadeController;
+      class function New: iFacadeController;
 
-    function utils: iUtilsController;
+      function Utils: iUtilsController;
 
-    function ConnectionFactoryController: iConnectionController;
+      function ConnectionFactoryController: iConnectionController;
 
-    function ModulesFacadeController: iModulesFacadeController;
-  end;
+      function ModulesFacadeController: iModulesFacadeController;
+   end;
 
 implementation
 
@@ -29,7 +29,7 @@ uses Connection.Controller, ModulesFacade.Controller, Utils.Controller;
 
 function TFacadeController.ConnectionFactoryController: iConnectionController;
 begin
-  Result := TConnectionController.New;
+   Result := TConnectionController.New;
 end;
 
 constructor TFacadeController.Create;
@@ -40,22 +40,22 @@ end;
 destructor TFacadeController.Destroy;
 begin
 
-  inherited;
+   inherited;
 end;
 
 function TFacadeController.ModulesFacadeController: iModulesFacadeController;
 begin
-  Result := TModulesFacadeController.New;
+   Result := TModulesFacadeController.New;
 end;
 
 class function TFacadeController.New: iFacadeController;
 begin
-  Result := Self.Create;
+   Result := Self.Create;
 end;
 
-function TFacadeController.utils: iUtilsController;
+function TFacadeController.Utils: iUtilsController;
 begin
- result := TUtilsController.New;
+   Result := TUtilsController.New;
 end;
 
 end.

@@ -10,11 +10,5 @@ inherited FBaseReportWindowView: TFBaseReportWindowView
         ExplicitWidth = 205
       end
     end
-    inherited PnProgram: TRzPanel
-      inherited LbProgram: TRzLabel
-        Width = 608
-        Height = 18
-      end
-    end
   end
 end

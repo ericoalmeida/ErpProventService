@@ -5,22 +5,15 @@ inherited FMSG0001View: TFMSG0001View
   inherited PnContainer: TRzPanel
     inherited PnHeader: TRzPanel
       inherited LbTitle: TRzLabel
-        Width = 93
+        Width = 107
         Caption = 'Informa'#231#227'o'
-        ExplicitWidth = 93
+        ExplicitWidth = 107
       end
     end
     inherited PnContainerBody: TRzPanel
       inherited PnFooterBody: TRzPanel
         inherited PnButtonConfirm: TRzPanel
           Visible = False
-          ExplicitLeft = 220
-          ExplicitTop = 4
-          inherited BtConfirmar: TcxButton
-            OnClick = nil
-            ExplicitLeft = 2
-            ExplicitWidth = 106
-          end
         end
       end
       inherited PnContent: TRzPanel

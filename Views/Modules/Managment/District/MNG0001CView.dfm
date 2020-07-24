@@ -12,14 +12,14 @@ inherited FMNG0001CView: TFMNG0001CView
     Width = 672
     Height = 289
     ExplicitWidth = 672
-    ExplicitHeight = 319
+    ExplicitHeight = 289
     inherited PnHeader: TRzPanel
       Width = 670
       ExplicitWidth = 670
       inherited LbTitle: TRzLabel
-        Width = 155
+        Width = 175
         Caption = 'Pesquisa de bairros'
-        ExplicitWidth = 155
+        ExplicitWidth = 175
       end
     end
     inherited PnProgram: TRzPanel
@@ -27,16 +27,12 @@ inherited FMNG0001CView: TFMNG0001CView
       Width = 670
       ExplicitTop = 300
       ExplicitWidth = 670
-      inherited LbProgram: TRzLabel
-        Width = 670
-        Height = 18
-      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 670
       Height = 229
       ExplicitWidth = 670
-      ExplicitHeight = 259
+      ExplicitHeight = 229
       inherited PnFooterBody: TRzPanel
         Top = 189
         Width = 670
@@ -55,7 +51,7 @@ inherited FMNG0001CView: TFMNG0001CView
         Width = 668
         Height = 187
         ExplicitWidth = 668
-        ExplicitHeight = 217
+        ExplicitHeight = 187
         inherited PnGridHeader: TRzPanel
           Width = 666
           ExplicitWidth = 666
@@ -76,10 +72,6 @@ inherited FMNG0001CView: TFMNG0001CView
           Width = 666
           ExplicitTop = 186
           ExplicitWidth = 666
-          inherited LbTotalRegistros: TRzLabel
-            Width = 658
-            Height = 22
-          end
         end
         inherited PnGrid: TRzPanel
           Width = 666

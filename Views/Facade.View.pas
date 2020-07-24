@@ -2,21 +2,21 @@ unit Facade.View;
 
 interface
 
-uses Facade.View.interf, MessagesFactory.View.interf, ModulesFacade.View.Interf;
+uses Facade.View.interf, MessagesFactory.View.interf, ModulesFacade.View.interf;
 
 type
-  TFacadeView = class sealed(TInterfacedObject, iFacadeView)
-  private
-  public
-    constructor Create;
-    destructor Destroy; override;
+   TFacadeView = class sealed(TInterfacedObject, iFacadeView)
+   private
+   public
+      constructor Create;
+      destructor Destroy; override;
 
-    class function New: iFacadeView;
+      class function New: iFacadeView;
 
-    function messagesFactoryView: iMessagesFactoryView;
+      function messagesFactoryView: iMessagesFactoryView;
 
-    function modulesFacadeView: iModulesFacadeView;
-  end;
+      function modulesFacadeView: iModulesFacadeView;
+   end;
 
 implementation
 
@@ -32,22 +32,22 @@ end;
 destructor TFacadeView.Destroy;
 begin
 
-  inherited;
+   inherited;
 end;
 
 function TFacadeView.messagesFactoryView: iMessagesFactoryView;
 begin
- Result := TMessagesFactoryView.New;
+   Result := TMessagesFactoryView.New;
 end;
 
 function TFacadeView.modulesFacadeView: iModulesFacadeView;
 begin
- Result := TModulesFacadeView.New;
+   Result := TModulesFacadeView.New;
 end;
 
 class function TFacadeView.New: iFacadeView;
 begin
-  Result := Self.Create;
+   Result := Self.Create;
 end;
 
 end.

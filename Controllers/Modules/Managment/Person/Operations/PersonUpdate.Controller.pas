@@ -3,51 +3,50 @@ unit PersonUpdate.Controller;
 interface
 
 uses Person.Controller.Interf, Person.Model.Interf,
-  System.SysUtils, TMNGPERSON.Entity.Model;
+   System.SysUtils, TMNGPERSON.Entity.Model;
 
 type
-  TPersonUpdateController = class(TInterfacedObject,
-    iPersonUpdateController)
-  private
-    FPersonModel: IPersonModel;
-    FSelectedRecord: TTMNGPERSON;
+   TPersonUpdateController = class(TInterfacedObject, iPersonUpdateController)
+   private
+      FPersonModel: IPersonModel;
+      FSelectedRecord: TTMNGPERSON;
 
-    FCompanyId: string;
-    FPersonType: Integer;
-    FName: string;
-    FFancyName: string;
-    FCPFCNPJ: string;
-    FRGIE: string;
-    FAddress: string;
-    FDistrictId: string;
-    FPhoneNumber: string;
-    FEmail: string;
-    FStatus: Integer;
-    FUserId: string;
-  public
-    constructor Create;
-    destructor Destroy; override;
+      FCompanyId: string;
+      FPersonType: Integer;
+      FName: string;
+      FFancyName: string;
+      FCPFCNPJ: string;
+      FRGIE: string;
+      FAddress: string;
+      FDistrictId: string;
+      FPhoneNumber: string;
+      FEmail: string;
+      FStatus: Integer;
+      FUserId: string;
+   public
+      constructor Create;
+      destructor Destroy; override;
 
-    class function New: iPersonUpdateController;
+      class function New: iPersonUpdateController;
 
-    function personModel(AValue: IPersonModel): iPersonUpdateController;
-    function selectedRecord(AValue: TTMNGPERSON): iPersonUpdateController;
+      function personModel(AValue: IPersonModel): iPersonUpdateController;
+      function selectedRecord(AValue: TTMNGPERSON): iPersonUpdateController;
 
-    function companyId(AValue: string): iPersonUpdateController;
-    function personType(AValue: Integer): iPersonUpdateController;
-    function name(AValue: string): iPersonUpdateController;
-    function fancyName(AValue: string): iPersonUpdateController;
-    function CPFCNPJ(AValue: string): iPersonUpdateController;
-    function RGIE(AValue: string): iPersonUpdateController;
-    function address(AValue: string): iPersonUpdateController;
-    function districtId(AValue: string): iPersonUpdateController;
-    function phoneNumber(AValue: string): iPersonUpdateController;
-    function email(AValue: string): iPersonUpdateController;
-    function status(AValue: Integer): iPersonUpdateController;
-    function userId(AValue: string): iPersonUpdateController;
+      function companyId(AValue: string): iPersonUpdateController;
+      function personType(AValue: Integer): iPersonUpdateController;
+      function name(AValue: string): iPersonUpdateController;
+      function fancyName(AValue: string): iPersonUpdateController;
+      function CPFCNPJ(AValue: string): iPersonUpdateController;
+      function RGIE(AValue: string): iPersonUpdateController;
+      function address(AValue: string): iPersonUpdateController;
+      function districtId(AValue: string): iPersonUpdateController;
+      function phoneNumber(AValue: string): iPersonUpdateController;
+      function email(AValue: string): iPersonUpdateController;
+      function status(AValue: Integer): iPersonUpdateController;
+      function userId(AValue: string): iPersonUpdateController;
 
-    procedure save;
-  end;
+      procedure save;
+   end;
 
 implementation
 
@@ -56,44 +55,49 @@ implementation
 function TPersonUpdateController.personModel(AValue: IPersonModel)
   : iPersonUpdateController;
 begin
-  Result := Self;
-  FPersonModel := AValue;
+   Result := Self;
+   FPersonModel := AValue;
 end;
 
-function TPersonUpdateController.address(AValue: string): iPersonUpdateController;
+function TPersonUpdateController.address(AValue: string)
+  : iPersonUpdateController;
 begin
-  Result := Self;
-  FAddress := AValue;
+   Result := Self;
+   FAddress := AValue;
 end;
 
-function TPersonUpdateController.companyId(AValue: string): iPersonUpdateController;
+function TPersonUpdateController.companyId(AValue: string)
+  : iPersonUpdateController;
 begin
-  Result := Self;
-  FCompanyId := AValue;
+   Result := Self;
+   FCompanyId := AValue;
 end;
 
-function TPersonUpdateController.CPFCNPJ(AValue: string): iPersonUpdateController;
+function TPersonUpdateController.CPFCNPJ(AValue: string)
+  : iPersonUpdateController;
 begin
-  Result := Self;
-  FCPFCNPJ := AValue;
+   Result := Self;
+   FCPFCNPJ := AValue;
 end;
 
-function TPersonUpdateController.personType(AValue: Integer): iPersonUpdateController;
+function TPersonUpdateController.personType(AValue: Integer)
+  : iPersonUpdateController;
 begin
-  Result := Self;
-  FPersonType := AValue;
+   Result := Self;
+   FPersonType := AValue;
 end;
 
-function TPersonUpdateController.phoneNumber(AValue: string): iPersonUpdateController;
+function TPersonUpdateController.phoneNumber(AValue: string)
+  : iPersonUpdateController;
 begin
-  Result := Self;
-  FPhoneNumber := AValue;
+   Result := Self;
+   FPhoneNumber := AValue;
 end;
 
 function TPersonUpdateController.RGIE(AValue: string): iPersonUpdateController;
 begin
-  Result := Self;
-  FRGIE := AValue;
+   Result := Self;
+   FRGIE := AValue;
 end;
 
 constructor TPersonUpdateController.Create;
@@ -104,76 +108,80 @@ end;
 destructor TPersonUpdateController.Destroy;
 begin
 
-  inherited;
+   inherited;
 end;
 
-function TPersonUpdateController.districtId(AValue: string): iPersonUpdateController;
+function TPersonUpdateController.districtId(AValue: string)
+  : iPersonUpdateController;
 begin
-  Result := Self;
-  FDistrictId := AValue;
+   Result := Self;
+   FDistrictId := AValue;
 end;
 
 function TPersonUpdateController.email(AValue: string): iPersonUpdateController;
 begin
-  Result := Self;
-  FEmail := AValue;
+   Result := Self;
+   FEmail := AValue;
 end;
 
-function TPersonUpdateController.fancyName(AValue: string): iPersonUpdateController;
+function TPersonUpdateController.fancyName(AValue: string)
+  : iPersonUpdateController;
 begin
-  Result := Self;
-  FFancyName := AValue;
+   Result := Self;
+   FFancyName := AValue;
 end;
 
 function TPersonUpdateController.name(AValue: string): iPersonUpdateController;
 begin
-  Result := Self;
-  FName := AValue;
+   Result := Self;
+   FName := AValue;
 end;
 
 class function TPersonUpdateController.New: iPersonUpdateController;
 begin
-  Result := Self.Create;
+   Result := Self.Create;
 end;
 
 procedure TPersonUpdateController.save;
 begin
-  FPersonModel.DAO.Modify(FSelectedRecord);
+   FPersonModel.DAO.Modify(FSelectedRecord);
 
-  FSelectedRecord.COMPANYID   := FCompanyId;
-  FSelectedRecord.PERSONTYPE  := FPersonType;
-  FSelectedRecord.NAME        := FName;
-  FSelectedRecord.FANCYNAME   := FFancyName;
-  FSelectedRecord.CPFCNPJ     := FCPFCNPJ;
-  FSelectedRecord.RGIE        := FRGIE;
-  FSelectedRecord.ADDRESS     := FAddress;
-  FSelectedRecord.DISTRICTID  := FDistrictId;
-  FSelectedRecord.PHONENUMBER := FPhoneNumber;
-  FSelectedRecord.EMAIL       := FEmail;
-  FSelectedRecord.STATUS      := FStatus;
-  FSelectedRecord.USERID      := FUserId;
-  FSelectedRecord.UPDATEDAT   := Now;
+   FSelectedRecord.companyId := FCompanyId;
+   FSelectedRecord.personType := FPersonType;
+   FSelectedRecord.name := FName;
+   FSelectedRecord.fancyName := FFancyName;
+   FSelectedRecord.CPFCNPJ := FCPFCNPJ;
+   FSelectedRecord.RGIE := FRGIE;
+   FSelectedRecord.address := FAddress;
+   FSelectedRecord.districtId := FDistrictId;
+   FSelectedRecord.phoneNumber := FPhoneNumber;
+   FSelectedRecord.email := FEmail;
+   FSelectedRecord.status := FStatus;
+   FSelectedRecord.userId := FUserId;
+   FSelectedRecord.UPDATEDAT := Now;
 
-  FPersonModel.DAO.Update(FSelectedRecord);
+   FPersonModel.DAO.Update(FSelectedRecord);
 end;
 
 function TPersonUpdateController.selectedRecord(AValue: TTMNGPERSON)
   : iPersonUpdateController;
 begin
-  Result := Self;
-  FSelectedRecord := AValue;
+   Result := Self;
+   FSelectedRecord := AValue;
 end;
 
-function TPersonUpdateController.status(AValue: Integer): iPersonUpdateController;
+function TPersonUpdateController.status(AValue: Integer)
+  : iPersonUpdateController;
 begin
-  Result := Self;
-  FStatus := AValue;
+   Result := Self;
+   FStatus := AValue;
 end;
 
-function TPersonUpdateController.userId(AValue: string): iPersonUpdateController;
+function TPersonUpdateController.userId(AValue: string)
+  : iPersonUpdateController;
 begin
-  Result := Self;
-  FUserId := AValue;
+   Result := Self;
+   FUserId := AValue;
 end;
 
 end.

@@ -95,13 +95,11 @@ inherited FMNG0004BView: TFMNG0004BView
       end
       inherited LbTitle: TRzLabel
         Width = 70
-        Height = 26
         Caption = 'Cidades'
         ExplicitWidth = 70
       end
       inherited LbOperation: TRzLabel
         Left = 507
-        Height = 26
         ExplicitLeft = 507
       end
     end
@@ -110,10 +108,6 @@ inherited FMNG0004BView: TFMNG0004BView
       Width = 590
       ExplicitTop = 270
       ExplicitWidth = 590
-      inherited LbProgram: TRzLabel
-        Width = 590
-        Height = 18
-      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 590
@@ -132,9 +126,6 @@ inherited FMNG0004BView: TFMNG0004BView
         inherited PnButtonConfirm: TRzPanel
           Left = 366
           ExplicitLeft = 366
-          inherited BtConfirmar: TcxButton
-            OnClick = BtConfirmarClick
-          end
         end
       end
       inherited PnContent: TRzPanel

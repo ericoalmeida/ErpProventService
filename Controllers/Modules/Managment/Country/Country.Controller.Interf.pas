@@ -5,57 +5,57 @@ interface
 uses Country.Model.Interf, TMNGCOUNTRY.Entity.Model;
 
 type
-  iCountryInsertController = interface;
-  iCountryUpdateController = interface;
-  iCountryDeleteController = interface;
-  iCountryDuplicateController = interface;
+   iCountryInsertController = interface;
+   iCountryUpdateController = interface;
+   iCountryDeleteController = interface;
+   iCountryDuplicateController = interface;
 
-  iCountryController = interface
-    function find(AValue: string): iCountryController;
-    function findById(AValue: string): iCountryController;
+   iCountryController = interface
+      function find(AValue: string): iCountryController;
+      function findById(AValue: string): iCountryController;
 
-    function insert: iCountryInsertController;
-    function update: iCountryUpdateController;
-    function delete: iCountryDeleteController;
-    function duplicate: iCountryDuplicateController;
+      function insert: iCountryInsertController;
+      function update: iCountryUpdateController;
+      function delete: iCountryDeleteController;
+      function duplicate: iCountryDuplicateController;
 
-    function codigo: string;
-    function countryId: string;
-    function description: string;
-    function createdDate: string;
-    function updatedDate: string;
-  end;
+      function codigo: string;
+      function countryId: string;
+      function description: string;
+      function createdDate: string;
+      function updatedDate: string;
+   end;
 
-  iCountryInsertController = interface
-    function countryModel(AValue: ICountryModel): iCountryInsertController;
-    function name(AValue: string): iCountryInsertController;
+   iCountryInsertController = interface
+      function countryModel(AValue: ICountryModel): iCountryInsertController;
+      function name(AValue: string): iCountryInsertController;
 
-    procedure save;
-  end;
+      procedure save;
+   end;
 
-  iCountryUpdateController = interface
-    function countryModel(AValue: ICountryModel): iCountryUpdateController;
-    function selectedRecord(AValue: TTMNGCOUNTRY): iCountryUpdateController;
+   iCountryUpdateController = interface
+      function countryModel(AValue: ICountryModel): iCountryUpdateController;
+      function selectedRecord(AValue: TTMNGCOUNTRY): iCountryUpdateController;
 
-    function name(AValue: string): iCountryUpdateController;
+      function name(AValue: string): iCountryUpdateController;
 
-    procedure save;
-  end;
+      procedure save;
+   end;
 
-  iCountryDeleteController = interface
-    function countryModel(AValue: ICountryModel): iCountryDeleteController;
-    function selectedRecord(AValue: TTMNGCOUNTRY): iCountryDeleteController;
+   iCountryDeleteController = interface
+      function countryModel(AValue: ICountryModel): iCountryDeleteController;
+      function selectedRecord(AValue: TTMNGCOUNTRY): iCountryDeleteController;
 
-    procedure save;
-  end;
+      procedure save;
+   end;
 
-  iCountryDuplicateController = interface
-    function countryModel(AValue: ICountryModel): iCountryDuplicateController;
+   iCountryDuplicateController = interface
+      function countryModel(AValue: ICountryModel): iCountryDuplicateController;
 
-    function name(AValue: string): iCountryDuplicateController;
+      function name(AValue: string): iCountryDuplicateController;
 
-    procedure save;
-  end;
+      procedure save;
+   end;
 
 implementation
 

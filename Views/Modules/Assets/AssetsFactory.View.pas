@@ -5,19 +5,21 @@ interface
 uses AssetsFactory.View.Interf, Base.View.Interf, Types.Views;
 
 type
-  TAssetsFactoryView = class(TInterfacedObject, iAssetsFactoryView)
-  private
-  public
-    constructor Create;
-    destructor Destroy; override;
+   TAssetsFactoryView = class(TInterfacedObject, iAssetsFactoryView)
+   private
+   public
+      constructor Create;
+      destructor Destroy; override;
 
-    class function New: iAssetsFactoryView;
+      class function New: iAssetsFactoryView;
 
-    function showProgramOfListing(AValue: TTypeListingPrograms): iBaseListView;
-    function showProgramOfRegister(AValue: TTypeRegisterPrograms)
-      : iBaseRegisterView;
-    function showProgramOfSearch(AValue: TTypeSearchPrograms): IBaseSearchView;
-  end;
+      function showProgramOfListing(AValue: TTypeListingPrograms)
+        : iBaseListView;
+      function showProgramOfRegister(AValue: TTypeRegisterPrograms)
+        : iBaseRegisterView;
+      function showProgramOfSearch(AValue: TTypeSearchPrograms)
+        : IBaseSearchView;
+   end;
 
 implementation
 
@@ -33,46 +35,46 @@ end;
 destructor TAssetsFactoryView.Destroy;
 begin
 
-  inherited;
+   inherited;
 end;
 
 class function TAssetsFactoryView.New: iAssetsFactoryView;
 begin
-  Result := Self.Create;
+   Result := Self.Create;
 end;
 
 function TAssetsFactoryView.showProgramOfListing(AValue: TTypeListingPrograms)
   : iBaseListView;
 begin
-  case AValue of
-    tpASS0001AView:
-      Result := TFASS0001AView.New;
+   case AValue of
+      tpASS0001AView:
+         Result := TFASS0001AView.New;
 
-    tpASS0002AView:
-      Result := TFASS0002AView.New;
+      tpASS0002AView:
+         Result := TFASS0002AView.New;
 
-  end;
+   end;
 end;
 
 function TAssetsFactoryView.showProgramOfRegister(AValue: TTypeRegisterPrograms)
   : iBaseRegisterView;
 begin
-  case AValue of
-    trASS0001BView:
-      Result := TFASS0001BView.New;
+   case AValue of
+      trASS0001BView:
+         Result := TFASS0001BView.New;
 
-    trASS0002BView:
-      Result := TFASS0002BView.New;
-  end;
+      trASS0002BView:
+         Result := TFASS0002BView.New;
+   end;
 end;
 
 function TAssetsFactoryView.showProgramOfSearch(AValue: TTypeSearchPrograms)
   : IBaseSearchView;
 begin
-  case AValue of
-    tsASS0002CView:
-      Result := TFASS0002CView.New;
-  end;
+   case AValue of
+      tsASS0002CView:
+         Result := TFASS0002CView.New;
+   end;
 end;
 
 end.

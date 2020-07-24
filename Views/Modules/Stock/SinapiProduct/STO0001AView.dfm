@@ -85,9 +85,9 @@ inherited FSTO0001AView: TFSTO0001AView
           E7F11F04311D30C2D9605F0000000049454E44AE426082}
       end
       inherited LbTitle: TRzLabel
-        Width = 130
+        Width = 152
         Caption = 'Produtos SINAPI'
-        ExplicitWidth = 130
+        ExplicitWidth = 152
       end
     end
     inherited PnProgram: TRzPanel
@@ -95,10 +95,6 @@ inherited FSTO0001AView: TFSTO0001AView
       Width = 490
       ExplicitTop = 280
       ExplicitWidth = 490
-      inherited LbProgram: TRzLabel
-        Width = 490
-        Height = 18
-      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 490
@@ -140,10 +136,6 @@ inherited FSTO0001AView: TFSTO0001AView
           Width = 486
           ExplicitTop = 115
           ExplicitWidth = 486
-          inherited LbTotalRegistros: TRzLabel
-            Width = 478
-            Height = 22
-          end
         end
         inherited PnGrid: TRzPanel
           Width = 486

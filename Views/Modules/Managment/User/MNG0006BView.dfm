@@ -94,13 +94,11 @@ inherited FMNG0006BView: TFMNG0006BView
       end
       inherited LbTitle: TRzLabel
         Width = 79
-        Height = 26
         Caption = 'Usu'#225'rios'
         ExplicitWidth = 79
       end
       inherited LbOperation: TRzLabel
         Left = 507
-        Height = 26
         ExplicitLeft = 507
       end
     end
@@ -109,10 +107,6 @@ inherited FMNG0006BView: TFMNG0006BView
       Width = 590
       ExplicitTop = 270
       ExplicitWidth = 590
-      inherited LbProgram: TRzLabel
-        Width = 590
-        Height = 18
-      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 590
@@ -131,9 +125,6 @@ inherited FMNG0006BView: TFMNG0006BView
         inherited PnButtonConfirm: TRzPanel
           Left = 366
           ExplicitLeft = 366
-          inherited BtConfirmar: TcxButton
-            OnClick = BtConfirmarClick
-          end
         end
       end
       inherited PnContent: TRzPanel

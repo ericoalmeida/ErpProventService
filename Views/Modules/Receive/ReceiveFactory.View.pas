@@ -5,20 +5,22 @@ interface
 uses ReceiveFactory.View.Interf, Base.View.Interf, Types.Views;
 
 type
-  TReceiveFactoryView = class(TInterfacedObject, iReceiveFactoryView)
-  private
-  public
-    constructor Create;
-    destructor Destroy; override;
+   TReceiveFactoryView = class(TInterfacedObject, iReceiveFactoryView)
+   private
+   public
+      constructor Create;
+      destructor Destroy; override;
 
-    class function New: iReceiveFactoryView;
+      class function New: iReceiveFactoryView;
 
-    function showProgramOfListing(AValue: TTypeListingPrograms): iBaseListView;
-    function showProgramOfRegister(AValue: TTypeRegisterPrograms)
-      : iBaseRegisterView;
-    function showProgramOfSearch(AValue: TTypeSearchPrograms): IBaseSearchView;
+      function showProgramOfListing(AValue: TTypeListingPrograms)
+        : iBaseListView;
+      function showProgramOfRegister(AValue: TTypeRegisterPrograms)
+        : iBaseRegisterView;
+      function showProgramOfSearch(AValue: TTypeSearchPrograms)
+        : IBaseSearchView;
 
-  end;
+   end;
 
 implementation
 
@@ -34,42 +36,39 @@ end;
 destructor TReceiveFactoryView.Destroy;
 begin
 
-  inherited;
+   inherited;
 end;
 
 class function TReceiveFactoryView.New: iReceiveFactoryView;
 begin
-  Result := Self.Create;
+   Result := Self.Create;
 end;
 
 function TReceiveFactoryView.showProgramOfListing(AValue: TTypeListingPrograms)
   : iBaseListView;
 begin
-  case AValue of
-    tpREC0001AView:
-      Result := TFREC0001AView.New;
-  end;
+   case AValue of
+      tpREC0001AView:
+         Result := TFREC0001AView.New;
+   end;
 end;
 
 function TReceiveFactoryView.showProgramOfRegister
   (AValue: TTypeRegisterPrograms): iBaseRegisterView;
 begin
-  case AValue of
-    trREC0001BView:
-      Result := TFREC0001BView.New;
-  end;
+   case AValue of
+      trREC0001BView:
+         Result := TFREC0001BView.New;
+   end;
 end;
 
 function TReceiveFactoryView.showProgramOfSearch(AValue: TTypeSearchPrograms)
   : IBaseSearchView;
 begin
-  case AValue of
-    tsREC0001CView:
-      Result := TFREC0001CView.New;
-
-    tsPAY0001CView:
-      Result := TFPAY0001CView.New;
-  end;
+   case AValue of
+      tsREC0001CView:
+         Result := TFREC0001CView.New;
+   end;
 end;
 
 end.

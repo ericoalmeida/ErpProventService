@@ -87,9 +87,9 @@ inherited FPAY0001AView: TFPAY0001AView
           44AE426082}
       end
       inherited LbTitle: TRzLabel
-        Width = 107
+        Width = 125
         Caption = 'Fornecedores'
-        ExplicitWidth = 107
+        ExplicitWidth = 125
       end
     end
     inherited PnProgram: TRzPanel
@@ -97,10 +97,6 @@ inherited FPAY0001AView: TFPAY0001AView
       Width = 490
       ExplicitTop = 280
       ExplicitWidth = 490
-      inherited LbProgram: TRzLabel
-        Width = 490
-        Height = 18
-      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 490
@@ -142,10 +138,6 @@ inherited FPAY0001AView: TFPAY0001AView
           Width = 486
           ExplicitTop = 115
           ExplicitWidth = 486
-          inherited LbTotalRegistros: TRzLabel
-            Width = 478
-            Height = 22
-          end
         end
         inherited PnGrid: TRzPanel
           Width = 486

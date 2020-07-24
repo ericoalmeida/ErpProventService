@@ -85,13 +85,11 @@ inherited FORD0001BView: TFORD0001BView
       end
       inherited LbTitle: TRzLabel
         Width = 78
-        Height = 26
         Caption = 'Servi'#231'os'
         ExplicitWidth = 78
       end
       inherited LbOperation: TRzLabel
         Left = 507
-        Height = 26
         ExplicitLeft = 507
       end
     end
@@ -100,10 +98,6 @@ inherited FORD0001BView: TFORD0001BView
       Width = 590
       ExplicitTop = 270
       ExplicitWidth = 590
-      inherited LbProgram: TRzLabel
-        Width = 590
-        Height = 18
-      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 590
@@ -122,9 +116,6 @@ inherited FORD0001BView: TFORD0001BView
         inherited PnButtonConfirm: TRzPanel
           Left = 366
           ExplicitLeft = 366
-          inherited BtConfirmar: TcxButton
-            OnClick = BtConfirmarClick
-          end
         end
       end
       inherited PnContent: TRzPanel

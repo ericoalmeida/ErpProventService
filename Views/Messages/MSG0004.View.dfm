@@ -50,22 +50,15 @@ inherited FMSG0004View: TFMSG0004View
           F307D50000000049454E44AE426082}
       end
       inherited LbTitle: TRzLabel
-        Width = 43
+        Width = 49
         Caption = 'Aviso'
-        ExplicitWidth = 43
+        ExplicitWidth = 49
       end
     end
     inherited PnContainerBody: TRzPanel
       inherited PnFooterBody: TRzPanel
         inherited PnButtonConfirm: TRzPanel
           Visible = False
-          ExplicitLeft = 220
-          ExplicitTop = 4
-          inherited BtConfirmar: TcxButton
-            OnClick = nil
-            ExplicitLeft = 2
-            ExplicitWidth = 106
-          end
         end
       end
       inherited PnContent: TRzPanel

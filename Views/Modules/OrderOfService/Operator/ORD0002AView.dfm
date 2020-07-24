@@ -4,7 +4,7 @@ inherited FORD0002AView: TFORD0002AView
   ClientWidth = 494
   OnShow = FormShow
   ExplicitWidth = 500
-  ExplicitHeight = 329
+  ExplicitHeight = 330
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
@@ -98,10 +98,6 @@ inherited FORD0002AView: TFORD0002AView
       Width = 490
       ExplicitTop = 280
       ExplicitWidth = 490
-      inherited LbProgram: TRzLabel
-        Width = 490
-        Height = 18
-      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 490
@@ -143,10 +139,6 @@ inherited FORD0002AView: TFORD0002AView
           Width = 486
           ExplicitTop = 115
           ExplicitWidth = 486
-          inherited LbTotalRegistros: TRzLabel
-            Width = 478
-            Height = 22
-          end
         end
         inherited PnGrid: TRzPanel
           Width = 486

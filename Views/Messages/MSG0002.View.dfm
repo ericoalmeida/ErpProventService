@@ -98,9 +98,9 @@ inherited FMSG0002View: TFMSG0002View
           562A39A8FAB5E2B20000000049454E44AE426082}
       end
       inherited LbTitle: TRzLabel
-        Width = 103
+        Width = 117
         Caption = 'Confirma'#231#227'o'
-        ExplicitWidth = 103
+        ExplicitWidth = 117
       end
     end
     inherited PnProgram: TRzPanel
@@ -108,9 +108,6 @@ inherited FMSG0002View: TFMSG0002View
       Width = 433
       ExplicitTop = 175
       ExplicitWidth = 433
-      inherited LbProgram: TRzLabel
-        Width = 433
-      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 433
@@ -163,12 +160,9 @@ inherited FMSG0002View: TFMSG0002View
         inherited PnButtonConfirm: TRzPanel
           Left = 206
           ExplicitLeft = 206
-          ExplicitTop = 4
           inherited BtConfirmar: TcxButton
             Caption = '&Sim'
             OnClick = BtConfirmarClick
-            ExplicitLeft = 2
-            ExplicitWidth = 106
           end
         end
       end

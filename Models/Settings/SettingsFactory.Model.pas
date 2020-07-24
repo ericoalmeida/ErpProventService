@@ -4,19 +4,17 @@ interface
 
 uses SettingsFactory.Model.interf, ConnectionSettings.Model.interf;
 
-
 type
-  TSettingsFactoryModel = class(TInterfacedObject,
-    iSettingsFactoryModel)
-  private
-  public
-    constructor Create;
-    destructor Destroy; override;
+   TSettingsFactoryModel = class(TInterfacedObject, iSettingsFactoryModel)
+   private
+   public
+      constructor Create;
+      destructor Destroy; override;
 
-    class function New: iSettingsFactoryModel;
+      class function New: iSettingsFactoryModel;
 
-    function connection: iConnectionSettingsModel;
-  end;
+      function connection: iConnectionSettingsModel;
+   end;
 
 implementation
 
@@ -24,10 +22,9 @@ implementation
 
 uses ConnectionSettings.Model;
 
-
 function TSettingsFactoryModel.connection: iConnectionSettingsModel;
 begin
-  Result := TConnectionSettingsModel.new;
+   Result := TConnectionSettingsModel.New;
 end;
 
 constructor TSettingsFactoryModel.Create;
@@ -38,12 +35,12 @@ end;
 destructor TSettingsFactoryModel.Destroy;
 begin
 
-  inherited;
+   inherited;
 end;
 
 class function TSettingsFactoryModel.New: iSettingsFactoryModel;
 begin
-  Result := Self.Create;
+   Result := Self.Create;
 end;
 
 end.

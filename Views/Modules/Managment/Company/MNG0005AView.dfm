@@ -4,7 +4,7 @@ inherited FMNG0005AView: TFMNG0005AView
   ClientWidth = 494
   OnShow = FormShow
   ExplicitWidth = 500
-  ExplicitHeight = 329
+  ExplicitHeight = 330
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
@@ -17,6 +17,7 @@ inherited FMNG0005AView: TFMNG0005AView
       ExplicitWidth = 490
       inherited ImTitle: TImage
         Width = 24
+        Height = 24
         Picture.Data = {
           0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000018
           000000180806000000E0773DF8000004FC4944415478DA8D956B4C935718C7FF
@@ -77,10 +78,6 @@ inherited FMNG0005AView: TFMNG0005AView
       Width = 490
       ExplicitTop = 280
       ExplicitWidth = 490
-      inherited LbProgram: TRzLabel
-        Width = 490
-        Height = 18
-      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 490
@@ -122,10 +119,6 @@ inherited FMNG0005AView: TFMNG0005AView
           Width = 486
           ExplicitTop = 115
           ExplicitWidth = 486
-          inherited LbTotalRegistros: TRzLabel
-            Width = 478
-            Height = 22
-          end
         end
         inherited PnGrid: TRzPanel
           Width = 486

@@ -5,17 +5,18 @@ interface
 uses ConnectionFactory.Model.Interf, Connection.Model.Interf, Types.Models;
 
 type
-  TConnectionFactoryModel = class(TInterfacedObject, iConnectionFactoryModel)
-  private
-  public
-    constructor Create;
-    destructor Destroy; override;
+   TConnectionFactoryModel = class(TInterfacedObject, iConnectionFactoryModel)
+   private
+   public
+      constructor Create;
+      destructor Destroy; override;
 
-    class function New: iConnectionFactoryModel;
+      class function New: iConnectionFactoryModel;
 
-    function connectionWithDatabase(AValue: TTypesConnection): iConnectionModel;
+      function connectionWithDatabase(AValue: TTypesConnection)
+        : iConnectionModel;
 
-  end;
+   end;
 
 implementation
 
@@ -23,15 +24,17 @@ implementation
 
 uses DataMFirebird.Model;
 
-function TConnectionFactoryModel.connectionWithDatabase(AValue: TTypesConnection): iConnectionModel;
+function TConnectionFactoryModel.connectionWithDatabase
+  (AValue: TTypesConnection): iConnectionModel;
 begin
-  case AValue of
-    dbFirebird    : Result := TFDataMFirebird.New;
-    // dbSQLite   :  ;
-    // dbMongoDB  :  ;
-    // dbMySQL    :  ;
-    // dbPostgres :  ;
-  end;
+   case AValue of
+      dbFirebird:
+         Result := TFDataMFirebird.New;
+      // dbSQLite   :  ;
+      // dbMongoDB  :  ;
+      // dbMySQL    :  ;
+      // dbPostgres :  ;
+   end;
 end;
 
 constructor TConnectionFactoryModel.Create;
@@ -42,12 +45,12 @@ end;
 destructor TConnectionFactoryModel.Destroy;
 begin
 
-  inherited;
+   inherited;
 end;
 
 class function TConnectionFactoryModel.New: iConnectionFactoryModel;
 begin
-  Result := Self.Create
+   Result := Self.Create
 end;
 
 end.

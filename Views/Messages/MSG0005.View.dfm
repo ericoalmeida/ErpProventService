@@ -3,7 +3,7 @@ inherited FMSG0005View: TFMSG0005View
   ClientHeight = 323
   ClientWidth = 377
   ExplicitWidth = 383
-  ExplicitHeight = 351
+  ExplicitHeight = 352
   PixelsPerInch = 96
   TextHeight = 15
   inherited PnContainer: TRzPanel
@@ -25,9 +25,6 @@ inherited FMSG0005View: TFMSG0005View
       Width = 373
       ExplicitTop = 302
       ExplicitWidth = 373
-      inherited LbProgram: TRzLabel
-        Width = 373
-      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 373

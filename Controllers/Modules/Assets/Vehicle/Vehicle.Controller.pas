@@ -3,160 +3,161 @@ unit Vehicle.Controller;
 interface
 
 uses Vehicle.Controller.Interf, Vehicle.Model.Interf,
-  TASSVEHICLE.Entity.Model,
-  System.SysUtils;
+   TASSVEHICLE.Entity.Model,
+   System.SysUtils;
 
 type
-  TVehicleController = class(TInterfacedObject, iVehicleController)
-  private
-    FVehicleModel: IVehicleModel;
-    FRecordFound: TTASSVEHICLE;
-  public
-    constructor Create;
-    destructor Destroy; override;
+   TVehicleController = class(TInterfacedObject, iVehicleController)
+   private
+      FVehicleModel: IVehicleModel;
+      FRecordFound: TTASSVEHICLE;
+   public
+      constructor Create;
+      destructor Destroy; override;
 
-    class function New: iVehicleController;
+      class function New: iVehicleController;
 
-    function find(AValue: string): iVehicleController;
-    function findById(AValue: string): iVehicleController;
+      function find(AValue: string): iVehicleController;
+      function findById(AValue: string): iVehicleController;
 
-    function insert: iVehicleInsertController;
-    function update: iVehicleUpdateController;
-    function delete: iVehicleDeleteController;
-    function duplicate: iVehicleDuplicateController;
+      function insert: iVehicleInsertController;
+      function update: iVehicleUpdateController;
+      function delete: iVehicleDeleteController;
+      function duplicate: iVehicleDuplicateController;
 
-    function code: string;
-    function vehicleId: string;
+      function code: string;
+      function vehicleId: string;
 
-    function description: string;
-    function model: string;
-    function brand: string;
-    function category: string;
-    function board: string;
-    function status: Integer;
-    function userId: string;
+      function description: string;
+      function Model: string;
+      function brand: string;
+      function category: string;
+      function board: string;
+      function status: Integer;
+      function userId: string;
 
-    function createdAt: string;
-    function updatedAt: string;
-  end;
+      function createdAt: string;
+      function updatedAt: string;
+   end;
 
 implementation
 
 { TVehicleController }
 
 uses Facade.Model, VehicleInsert.Controller, VehicleUpdate.Controller,
-  VehicleDelete.Controller, VehicleDuplicate.Controller;
+   VehicleDelete.Controller, VehicleDuplicate.Controller;
 
 function TVehicleController.board: string;
 begin
-  Result := FRecordFound.BOARD;
+   Result := FRecordFound.board;
 end;
 
 function TVehicleController.brand: string;
 begin
-  Result := FRecordFound.BRAND;
+   Result := FRecordFound.brand;
 end;
 
 function TVehicleController.category: string;
 begin
-  Result := FRecordFound.CATEGORY;
+   Result := FRecordFound.category;
 end;
 
 function TVehicleController.code: string;
 begin
-  Result := FRecordFound.code;
+   Result := FRecordFound.code;
 end;
 
 function TVehicleController.vehicleId: string;
 begin
-  Result := FRecordFound.VEHICLEID.ToString;
+   Result := FRecordFound.vehicleId.ToString;
 end;
 
 constructor TVehicleController.Create;
 begin
-  FVehicleModel := TFacadeModel.New.moduleFacade.assetsFactoryModel.
-    vehicleModel;
+   FVehicleModel := TFacadeModel.New.moduleFacade.assetsFactoryModel.
+     vehicleModel;
 end;
 
 function TVehicleController.createdAt: string;
 begin
-  Result := DateTimeToStr(FRecordFound.createdAt);
+   Result := DateTimeToStr(FRecordFound.createdAt);
 end;
 
 function TVehicleController.delete: iVehicleDeleteController;
 begin
-  Result := TVehicleDeleteController.New.vehicleModel(FVehicleModel)
-    .selectedRecord(FRecordFound);
+   Result := TVehicleDeleteController.New.vehicleModel(FVehicleModel)
+     .selectedRecord(FRecordFound);
 end;
 
 function TVehicleController.description: string;
 begin
-  Result := FRecordFound.DESCRIPTION;
+   Result := FRecordFound.description;
 end;
 
 destructor TVehicleController.Destroy;
 begin
 
-  inherited;
+   inherited;
 end;
 
 function TVehicleController.duplicate: iVehicleDuplicateController;
 begin
-  Result := TVehicleDuplicateController.New.vehicleModel(FVehicleModel);
+   Result := TVehicleDuplicateController.New.vehicleModel(FVehicleModel);
 end;
 
 function TVehicleController.insert: iVehicleInsertController;
 begin
-  Result := TVehicleInsertController.New.vehicleModel(FVehicleModel);
+   Result := TVehicleInsertController.New.vehicleModel(FVehicleModel);
 end;
 
-function TVehicleController.model: string;
+function TVehicleController.Model: string;
 begin
-  Result := FRecordFound.MODEL;
+   Result := FRecordFound.Model;
 end;
 
 class function TVehicleController.New: iVehicleController;
 begin
-  Result := Self.Create;
+   Result := Self.Create;
 end;
 
 function TVehicleController.status: Integer;
 begin
-  Result := FRecordFound.STATUS;
+   Result := FRecordFound.status;
 end;
 
 function TVehicleController.find(AValue: string): iVehicleController;
 begin
-  Result := Self;
+   Result := Self;
 
-  FRecordFound := FVehicleModel.DAO.FindWhere
-    (Format('CODE = %s', [QuotedStr(AValue)])).Items[0];
+   FRecordFound := FVehicleModel.DAO.FindWhere
+     (Format('CODE = %s', [QuotedStr(AValue)])).Items[0];
 end;
 
 function TVehicleController.findById(AValue: string): iVehicleController;
 begin
-  Result := Self;
+   Result := Self;
 
-  if AValue = EmptyStr then Exit;
+   if AValue = EmptyStr then
+      Exit;
 
-  FRecordFound := FVehicleModel.DAO.FindWhere
-    (Format('VEHICLEID = %s', [QuotedStr(AValue)])).Items[0];
+   FRecordFound := FVehicleModel.DAO.FindWhere(Format('VEHICLEID = %s',
+     [QuotedStr(AValue)])).Items[0];
 end;
 
 function TVehicleController.update: iVehicleUpdateController;
 begin
-  Result := TVehicleUpdateController.New.vehicleModel(FVehicleModel)
-    .selectedRecord(FRecordFound);
+   Result := TVehicleUpdateController.New.vehicleModel(FVehicleModel)
+     .selectedRecord(FRecordFound);
 end;
 
 function TVehicleController.updatedAt: string;
 begin
-  Result := DateTimeToStr(FRecordFound.updatedAt);
+   Result := DateTimeToStr(FRecordFound.updatedAt);
 end;
 
 function TVehicleController.userId: string;
 begin
-  Result := FRecordFound.TMNGUSER.USERID.ToString;
+   Result := FRecordFound.TMNGUSER.userId.ToString;
 end;
 
 end.

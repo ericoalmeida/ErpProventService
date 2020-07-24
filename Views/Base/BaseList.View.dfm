@@ -69,12 +69,6 @@ inherited FBaseListView: TFBaseListView
         ExplicitHeight = 25
       end
     end
-    inherited PnProgram: TRzPanel
-      inherited LbProgram: TRzLabel
-        Width = 608
-        Height = 18
-      end
-    end
     inherited PnContainerBody: TRzPanel
       object PnContent: TRzPanel
         AlignWithMargins = True
@@ -140,6 +134,7 @@ inherited FBaseListView: TFBaseListView
             StyleFocused.LookAndFeel.NativeStyle = False
             StyleHot.LookAndFeel.NativeStyle = False
             TabOrder = 1
+            ExplicitHeight = 21
             Width = 277
           end
         end
@@ -159,8 +154,8 @@ inherited FBaseListView: TFBaseListView
             AlignWithMargins = True
             Left = 4
             Top = 5
-            Width = 596
-            Height = 22
+            Width = 199
+            Height = 17
             Margins.Top = 4
             Margins.Bottom = 2
             Align = alClient
@@ -172,8 +167,6 @@ inherited FBaseListView: TFBaseListView
             Font.Style = []
             ParentFont = False
             BorderColor = 15066597
-            ExplicitWidth = 199
-            ExplicitHeight = 17
           end
         end
         object PnGrid: TRzPanel

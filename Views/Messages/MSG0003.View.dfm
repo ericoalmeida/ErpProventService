@@ -79,22 +79,15 @@ inherited FMSG0003View: TFMSG0003View
           FD3FB15EB5AD8D7B31F10000000049454E44AE426082}
       end
       inherited LbTitle: TRzLabel
-        Width = 33
+        Width = 40
         Caption = 'Erro'
-        ExplicitWidth = 33
+        ExplicitWidth = 40
       end
     end
     inherited PnContainerBody: TRzPanel
       inherited PnFooterBody: TRzPanel
         inherited PnButtonConfirm: TRzPanel
           Visible = False
-          ExplicitLeft = 220
-          ExplicitTop = 4
-          inherited BtConfirmar: TcxButton
-            OnClick = nil
-            ExplicitLeft = 2
-            ExplicitWidth = 106
-          end
         end
       end
       inherited PnContent: TRzPanel

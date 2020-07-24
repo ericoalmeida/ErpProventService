@@ -3,29 +3,28 @@ unit OperatorsDelete.Controller;
 interface
 
 uses Operators.Controller.Interf, Operators.Model.Interf,
-  TORDOPERATOR.Entity.Model,
-  System.SysUtils, Base.View.interf;
+   TORDOPERATOR.Entity.Model,
+   System.SysUtils, Base.View.Interf;
 
 type
-  TOperatorDeleteController = class(TInterfacedObject,
-    iOperatorDeleteController)
-  private
-    FMessageConfirm: iBaseMessageView;
+   TOperatorDeleteController = class(TInterfacedObject,
+     iOperatorDeleteController)
+   private
+      FMessageConfirm: iBaseMessageView;
 
-    FOperatorModel: IOperatorModel;
-    FSelectedRecord: TTORDOPERATOR;
-  public
-    constructor Create;
-    destructor Destroy; override;
+      FOperatorModel: IOperatorModel;
+      FSelectedRecord: TTORDOPERATOR;
+   public
+      constructor Create;
+      destructor Destroy; override;
 
-    class function New: iOperatorDeleteController;
+      class function New: iOperatorDeleteController;
 
-    function operatorModel(AValue: IOperatorModel): iOperatorDeleteController;
-    function selectedRecord(AValue: TTORDOPERATOR)
-      : iOperatorDeleteController;
+      function operatorModel(AValue: IOperatorModel): iOperatorDeleteController;
+      function selectedRecord(AValue: TTORDOPERATOR): iOperatorDeleteController;
 
-    procedure save;
-  end;
+      procedure save;
+   end;
 
 implementation
 
@@ -35,51 +34,52 @@ uses Facade.View, Types.Views;
 
 constructor TOperatorDeleteController.Create;
 begin
-  FMessageConfirm := TFacadeView.New.messagesFactoryView.typeMessage
-    (tmConfirmation);
+   FMessageConfirm := TFacadeView.New.messagesFactoryView.typeMessage
+     (tmConfirmation);
 end;
 
 destructor TOperatorDeleteController.Destroy;
 begin
 
-  inherited;
+   inherited;
 end;
 
 function TOperatorDeleteController.operatorModel(AValue: IOperatorModel)
   : iOperatorDeleteController;
 begin
-  Result := Self;
-  FOperatorModel := AValue;
+   Result := Self;
+   FOperatorModel := AValue;
 end;
 
 class function TOperatorDeleteController.New: iOperatorDeleteController;
 begin
-  Result := Self.Create;
+   Result := Self.Create;
 end;
 
 procedure TOperatorDeleteController.save;
 begin
-  if FMessageConfirm.messages(Format('Deseja excluir o operador %s ?',
-    [FSelectedRecord.NAME])).&end then
-  begin
+   if FMessageConfirm.messages(Format('Deseja excluir o operador %s ?',
+     [FSelectedRecord.NAME])).&end then
+   begin
 
-    try
-      FOperatorModel.DAO.Delete(FSelectedRecord);
+      try
+         FOperatorModel.DAO.Delete(FSelectedRecord);
 
-    except
-      on E: Exception do
-        raise Exception.Create(Format('O Operador %s não pode ser excluído!',
-          [FSelectedRecord.NAME]));
-    end;
+      except
+         on E: Exception do
+            raise Exception.Create
+              (Format('O Operador %s não pode ser excluído!',
+              [FSelectedRecord.NAME]));
+      end;
 
-  end;
+   end;
 end;
 
 function TOperatorDeleteController.selectedRecord(AValue: TTORDOPERATOR)
   : iOperatorDeleteController;
 begin
-  Result := Self;
-  FSelectedRecord := AValue;
+   Result := Self;
+   FSelectedRecord := AValue;
 end;
 
 end.

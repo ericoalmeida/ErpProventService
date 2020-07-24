@@ -231,6 +231,7 @@ inherited FBaseSearchView: TFBaseSearchView
             StyleFocused.LookAndFeel.NativeStyle = False
             StyleHot.LookAndFeel.NativeStyle = False
             TabOrder = 1
+            ExplicitHeight = 21
             Width = 274
           end
         end
@@ -250,8 +251,8 @@ inherited FBaseSearchView: TFBaseSearchView
             AlignWithMargins = True
             Left = 4
             Top = 5
-            Width = 596
-            Height = 22
+            Width = 199
+            Height = 17
             Margins.Top = 4
             Margins.Bottom = 2
             Align = alClient
@@ -263,8 +264,6 @@ inherited FBaseSearchView: TFBaseSearchView
             Font.Style = []
             ParentFont = False
             BorderColor = 15066597
-            ExplicitWidth = 199
-            ExplicitHeight = 17
           end
         end
         object PnGrid: TRzPanel

@@ -5,16 +5,16 @@ interface
 uses StockFactory.Model.Interf, SinapiProduct.Model.Interf;
 
 type
-  TStockFactoryModel = class(TInterfacedObject, iStockFactoryModel)
-  private
-  public
-    constructor Create;
-    destructor Destroy; override;
+   TStockFactoryModel = class(TInterfacedObject, iStockFactoryModel)
+   private
+   public
+      constructor Create;
+      destructor Destroy; override;
 
-    class function New: iStockFactoryModel;
+      class function New: iStockFactoryModel;
 
-    function sinapiProductModel: iSinapiProductModel;
-  end;
+      function sinapiProductModel: iSinapiProductModel;
+   end;
 
 implementation
 
@@ -30,17 +30,17 @@ end;
 destructor TStockFactoryModel.Destroy;
 begin
 
-  inherited;
+   inherited;
 end;
 
 class function TStockFactoryModel.New: iStockFactoryModel;
 begin
-  Result := Self.Create;
+   Result := Self.Create;
 end;
 
 function TStockFactoryModel.sinapiProductModel: iSinapiProductModel;
 begin
-  Result := TSinapiProductModel.New;
+   Result := TSinapiProductModel.New;
 end;
 
 end.

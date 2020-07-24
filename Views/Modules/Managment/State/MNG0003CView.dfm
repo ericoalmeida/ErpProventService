@@ -11,31 +11,32 @@ inherited FMNG0003CView: TFMNG0003CView
   inherited PnContainer: TRzPanel
     Width = 672
     Height = 319
-    ExplicitWidth = 472
+    ExplicitWidth = 672
+    ExplicitHeight = 319
     inherited PnHeader: TRzPanel
       Width = 670
       ExplicitWidth = 470
       inherited LbTitle: TRzLabel
-        Width = 160
+        Width = 183
         Caption = 'Pesquisa de Estados'
-        ExplicitWidth = 160
+        ExplicitWidth = 183
       end
     end
     inherited PnProgram: TRzPanel
       Top = 300
       Width = 670
+      ExplicitTop = 300
       ExplicitWidth = 470
-      inherited LbProgram: TRzLabel
-        Width = 670
-      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 670
       Height = 259
-      ExplicitWidth = 470
+      ExplicitWidth = 670
+      ExplicitHeight = 259
       inherited PnFooterBody: TRzPanel
         Top = 219
         Width = 670
+        ExplicitTop = 219
         ExplicitWidth = 470
         inherited PnButtonCancel: TRzPanel
           Left = 556
@@ -49,14 +50,15 @@ inherited FMNG0003CView: TFMNG0003CView
       inherited PnContent: TRzPanel
         Width = 668
         Height = 217
-        ExplicitWidth = 468
+        ExplicitWidth = 668
+        ExplicitHeight = 217
         inherited PnGridHeader: TRzPanel
           Width = 666
-          ExplicitWidth = 466
+          ExplicitWidth = 666
           inherited LbBuscar: TcxLabel
             Left = 339
             Style.IsFontAssigned = True
-            ExplicitLeft = 139
+            ExplicitLeft = 339
           end
           inherited TxBuscar: TcxTextEdit
             Left = 388
@@ -67,19 +69,19 @@ inherited FMNG0003CView: TFMNG0003CView
         inherited PnGridFooter: TRzPanel
           Top = 186
           Width = 666
+          ExplicitTop = 186
           ExplicitWidth = 466
-          inherited LbTotalRegistros: TRzLabel
-            Width = 658
-          end
         end
         inherited PnGrid: TRzPanel
           Width = 666
           Height = 143
           ExplicitWidth = 466
+          ExplicitHeight = 143
           inherited DbDados: TcxGrid
             Width = 664
             Height = 141
             ExplicitWidth = 464
+            ExplicitHeight = 141
             inherited VwDados: TcxGridDBTableView
               DataController.DataSource = DsData
               object VwDadosSTATEID: TcxGridDBColumn

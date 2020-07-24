@@ -1,5 +1,6 @@
 inherited FPAY0001CView: TFPAY0001CView
   Caption = 'Pesquisa de Fornecedores'
+  Visible = False
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 15
@@ -82,23 +83,15 @@ inherited FPAY0001CView: TFPAY0001CView
         ExplicitWidth = 236
       end
     end
-    inherited PnProgram: TRzPanel
-      inherited LbProgram: TRzLabel
-        Width = 608
-        Height = 18
-      end
-    end
     inherited PnContainerBody: TRzPanel
       inherited PnContent: TRzPanel
         inherited PnGridHeader: TRzPanel
           inherited LbBuscar: TcxLabel
             Style.IsFontAssigned = True
           end
-        end
-        inherited PnGridFooter: TRzPanel
-          inherited LbTotalRegistros: TRzLabel
-            Width = 596
-            Height = 22
+          inherited TxBuscar: TcxTextEdit
+            Properties.OnChange = TxBuscarPropertiesChange
+            ExplicitHeight = 24
           end
         end
         inherited PnGrid: TRzPanel

@@ -3,65 +3,65 @@ unit ServiceProvidedInsert.Controller;
 interface
 
 uses ServiceProvided.Controller.Interf, ServiceProvided.Model.Interf,
-  System.SysUtils, TORDSERVICESPROVIDED.Entity.Model;
+   System.SysUtils, TORDSERVICESPROVIDED.Entity.Model;
 
 type
-  TServiceProvidedInsertController = class(TInterfacedObject,
-    iServiceProvidedInsertController)
-  private
-    FServiceProvidedModel: IServiceProvidedModel;
+   TServiceProvidedInsertController = class(TInterfacedObject,
+     iServiceProvidedInsertController)
+   private
+      FServiceProvidedModel: IServiceProvidedModel;
 
-    FCompanyId: string;
-    FProvidedAt: TDate;
-    FClientId: string;
-    FOperatorId: string;
-    FMachineId: string;
-    FServiceId: string;
-    FTotalHours: Integer;
-    FTotalKm: Double;
-    FTotal: Currency;
-    FUserId: string;
+      FCompanyId: string;
+      FProvidedAt: TDate;
+      FClientId: string;
+      FOperatorId: string;
+      FMachineId: string;
+      FServiceId: string;
+      FTotalHours: Integer;
+      FTotalKm: Double;
+      FTotal: Currency;
+      FUserId: string;
 
-    function getserviceProvidedId: Integer;
-  public
-    constructor Create;
-    destructor Destroy; override;
+      function getserviceProvidedId: Integer;
+   public
+      constructor Create;
+      destructor Destroy; override;
 
-    class function New: iServiceProvidedInsertController;
+      class function New: iServiceProvidedInsertController;
 
-    function serviceProvidedModel(AValue: IServiceProvidedModel)
-      : iServiceProvidedInsertController;
+      function serviceProvidedModel(AValue: IServiceProvidedModel)
+        : iServiceProvidedInsertController;
 
-    function companyId(AValue: string): iServiceProvidedInsertController;
-    function providedAt(AValue: TDate): iServiceProvidedInsertController;
-    function clientId(AValue: string): iServiceProvidedInsertController;
-    function operatorId(AValue: string): iServiceProvidedInsertController;
-    function machineId(AValue: string): iServiceProvidedInsertController;
-    function serviceId(AValue: string): iServiceProvidedInsertController;
-    function totalHours(AValue: Integer): iServiceProvidedInsertController;
-    function totalKm(AValue: Double): iServiceProvidedInsertController;
-    function total(AValue: Currency): iServiceProvidedInsertController;
-    function userId(AValue: string): iServiceProvidedInsertController;
+      function companyId(AValue: string): iServiceProvidedInsertController;
+      function providedAt(AValue: TDate): iServiceProvidedInsertController;
+      function clientId(AValue: string): iServiceProvidedInsertController;
+      function operatorId(AValue: string): iServiceProvidedInsertController;
+      function machineId(AValue: string): iServiceProvidedInsertController;
+      function serviceId(AValue: string): iServiceProvidedInsertController;
+      function totalHours(AValue: Integer): iServiceProvidedInsertController;
+      function totalKm(AValue: Double): iServiceProvidedInsertController;
+      function total(AValue: Currency): iServiceProvidedInsertController;
+      function userId(AValue: string): iServiceProvidedInsertController;
 
-    procedure save;
-  end;
+      procedure save;
+   end;
 
 implementation
 
 { TServiceProvidedInsertController }
 
-function TServiceProvidedInsertController.clientId(
-  AValue: string): iServiceProvidedInsertController;
+function TServiceProvidedInsertController.clientId(AValue: string)
+  : iServiceProvidedInsertController;
 begin
-  Result := Self;
-  FClientId := AValue;
+   Result := Self;
+   FClientId := AValue;
 end;
 
-function TServiceProvidedInsertController.companyId(
-  AValue: string): iServiceProvidedInsertController;
+function TServiceProvidedInsertController.companyId(AValue: string)
+  : iServiceProvidedInsertController;
 begin
-  Result := Self;
-  FCompanyId := AValue;
+   Result := Self;
+   FCompanyId := AValue;
 end;
 
 constructor TServiceProvidedInsertController.Create;
@@ -72,106 +72,110 @@ end;
 destructor TServiceProvidedInsertController.Destroy;
 begin
 
-  inherited;
+   inherited;
 end;
 
 class function TServiceProvidedInsertController.New
   : iServiceProvidedInsertController;
 begin
-  Result := Self.Create;
+   Result := Self.Create;
 end;
 
-function TServiceProvidedInsertController.operatorId(
-  AValue: string): iServiceProvidedInsertController;
+function TServiceProvidedInsertController.operatorId(AValue: string)
+  : iServiceProvidedInsertController;
 begin
-  Result := Self;
-  FOperatorId := AValue;
+   Result := Self;
+   FOperatorId := AValue;
 end;
 
-function TServiceProvidedInsertController.providedAt(
-  AValue: TDate): iServiceProvidedInsertController;
+function TServiceProvidedInsertController.providedAt(AValue: TDate)
+  : iServiceProvidedInsertController;
 begin
-  Result := Self;
-  FProvidedAt := AValue;
+   Result := Self;
+   FProvidedAt := AValue;
 end;
 
 function TServiceProvidedInsertController.getserviceProvidedId: Integer;
 begin
-  if FServiceProvidedModel.DAO.Find.Count <> 0 then
-  begin
-    Result := FServiceProvidedModel.DAO.FindWhere('', 'SERVICEPROVIDEDID desc')
-      .Last.SERVICEPROVIDEDID + 1;
-  end
-  else
-  begin
-    Result := 1;
-  end;
+   if FServiceProvidedModel.DAO.Find.Count <> 0 then
+   begin
+      Result := FServiceProvidedModel.DAO.FindWhere('',
+        'SERVICEPROVIDEDID desc').Last.SERVICEPROVIDEDID + 1;
+   end
+   else
+   begin
+      Result := 1;
+   end;
 end;
 
-function TServiceProvidedInsertController.machineId(
-  AValue: string): iServiceProvidedInsertController;
+function TServiceProvidedInsertController.machineId(AValue: string)
+  : iServiceProvidedInsertController;
 begin
-  Result := Self;
-  FMachineId := AValue;
+   Result := Self;
+   FMachineId := AValue;
 end;
 
 procedure TServiceProvidedInsertController.save;
 begin
-  FServiceProvidedModel.Entity(TTORDSERVICESPROVIDED.Create);
+   FServiceProvidedModel.Entity(TTORDSERVICESPROVIDED.Create);
 
-  FServiceProvidedModel.Entity.companyId := FCompanyId;
-  FServiceProvidedModel.Entity.SERVICEPROVIDEDID := getserviceProvidedId;
-  FServiceProvidedModel.Entity.PROVIDEDAT := FProvidedAt;
-  FServiceProvidedModel.Entity.CLIENTID := FClientId;
-  FServiceProvidedModel.Entity.OPERATORID := FOperatorId;
-  FServiceProvidedModel.Entity.MACHINEID := FMachineId;
-  FServiceProvidedModel.Entity.SERVICEID := FServiceId;
-  FServiceProvidedModel.Entity.TOTALHOURS := FTotalHours;
-  FServiceProvidedModel.Entity.TOTALKM := FTotalKm;
-  FServiceProvidedModel.Entity.TOTAL := FTotal;
-  FServiceProvidedModel.Entity.USERID := FUserId;
-  FServiceProvidedModel.Entity.CREATEDAT := Now;
-  FServiceProvidedModel.Entity.UPDATEDAT := Now;
+   FServiceProvidedModel.Entity.companyId := FCompanyId;
+   FServiceProvidedModel.Entity.SERVICEPROVIDEDID := getserviceProvidedId;
+   FServiceProvidedModel.Entity.providedAt := FProvidedAt;
+   FServiceProvidedModel.Entity.clientId := FClientId;
+   FServiceProvidedModel.Entity.operatorId := FOperatorId;
+   FServiceProvidedModel.Entity.machineId := FMachineId;
+   FServiceProvidedModel.Entity.serviceId := FServiceId;
+   FServiceProvidedModel.Entity.totalHours := FTotalHours;
+   FServiceProvidedModel.Entity.totalKm := FTotalKm;
+   FServiceProvidedModel.Entity.total := FTotal;
+   FServiceProvidedModel.Entity.userId := FUserId;
+   FServiceProvidedModel.Entity.CREATEDAT := Now;
+   FServiceProvidedModel.Entity.UPDATEDAT := Now;
 
-  FServiceProvidedModel.DAO.Insert(FServiceProvidedModel.Entity);
+   FServiceProvidedModel.DAO.Insert(FServiceProvidedModel.Entity);
 end;
 
-function TServiceProvidedInsertController.serviceId(
-  AValue: string): iServiceProvidedInsertController;
+function TServiceProvidedInsertController.serviceId(AValue: string)
+  : iServiceProvidedInsertController;
 begin
-  Result := Self;
-  FServiceId := AValue;
+   Result := Self;
+   FServiceId := AValue;
 end;
 
 function TServiceProvidedInsertController.serviceProvidedModel
   (AValue: IServiceProvidedModel): iServiceProvidedInsertController;
 begin
-  Result := Self;
-  FServiceProvidedModel := AValue;
+   Result := Self;
+   FServiceProvidedModel := AValue;
 end;
 
-function TServiceProvidedInsertController.total(AValue: Currency): iServiceProvidedInsertController;
+function TServiceProvidedInsertController.total(AValue: Currency)
+  : iServiceProvidedInsertController;
 begin
-  Result := Self;
-  FTotal := AValue;
+   Result := Self;
+   FTotal := AValue;
 end;
 
-function TServiceProvidedInsertController.totalHours(AValue: Integer): iServiceProvidedInsertController;
+function TServiceProvidedInsertController.totalHours(AValue: Integer)
+  : iServiceProvidedInsertController;
 begin
-  Result := Self;
-  FTotalHours := AValue;
+   Result := Self;
+   FTotalHours := AValue;
 end;
 
-function TServiceProvidedInsertController.totalKm(AValue: Double): iServiceProvidedInsertController;
+function TServiceProvidedInsertController.totalKm(AValue: Double)
+  : iServiceProvidedInsertController;
 begin
-  Result := Self;
-  FTotalKm := AValue;
+   Result := Self;
+   FTotalKm := AValue;
 end;
 
-function TServiceProvidedInsertController.userId(AValue: string): iServiceProvidedInsertController;
+function TServiceProvidedInsertController.userId(AValue: string)
+  : iServiceProvidedInsertController;
 begin
-  Result := Self;
-  FUserId := AValue;
+   Result := Self;
+   FUserId := AValue;
 end;
 
 end.

@@ -3,26 +3,26 @@ unit State.Model;
 interface
 
 uses State.Model.Interf, ormbr.container.objectset.interfaces,
-  ormbr.Factory.interfaces, TMNGSTATE.Entity.Model;
+   ormbr.Factory.interfaces, TMNGSTATE.Entity.Model;
 
 type
-  TStateModel = class(TInterfacedObject, IStateModel)
-  private
-    FConnection: IDBConnection;
-    FEntity: TTMNGSTATE;
-    FDAO: IContainerObjectSet<TTMNGSTATE>;
+   TStateModel = class(TInterfacedObject, IStateModel)
+   private
+      FConnection: IDBConnection;
+      FEntity: TTMNGSTATE;
+      FDAO: IContainerObjectSet<TTMNGSTATE>;
 
-  public
-    constructor Create;
-    destructor Destroy; override;
+   public
+      constructor Create;
+      destructor Destroy; override;
 
-    class function New: IStateModel;
+      class function New: IStateModel;
 
-    function Entity: TTMNGSTATE; overload;
-    function Entity(AValue: TTMNGSTATE): IStateModel; overload;
+      function Entity: TTMNGSTATE; overload;
+      function Entity(AValue: TTMNGSTATE): IStateModel; overload;
 
-    function DAO: IContainerObjectSet<TTMNGSTATE>;
-  end;
+      function DAO: IContainerObjectSet<TTMNGSTATE>;
+   end;
 
 implementation
 
@@ -32,35 +32,36 @@ uses Facade.Controller, ormbr.container.objectset;
 
 constructor TStateModel.Create;
 begin
-   FConnection := TFacadeController.New.ConnectionFactoryController.currentConnection;
-   FDao :=  TContainerObjectSet<TTMNGSTATE>.Create(FConnection, 1);
+   FConnection := TFacadeController.New.ConnectionFactoryController.
+     currentConnection;
+   FDAO := TContainerObjectSet<TTMNGSTATE>.Create(FConnection, 1);
 end;
 
 function TStateModel.DAO: IContainerObjectSet<TTMNGSTATE>;
 begin
-  result := FDAO;
+   result := FDAO;
 end;
 
 destructor TStateModel.Destroy;
 begin
 
-  inherited;
+   inherited;
 end;
 
 function TStateModel.Entity: TTMNGSTATE;
 begin
-  Result := FEntity;
+   result := FEntity;
 end;
 
 function TStateModel.Entity(AValue: TTMNGSTATE): IStateModel;
 begin
-  Result := Self;
-  FEntity := AValue;
+   result := Self;
+   FEntity := AValue;
 end;
 
 class function TStateModel.New: IStateModel;
 begin
-  Result := Self.Create;
+   result := Self.Create;
 end;
 
 end.
