@@ -6,7 +6,6 @@ uses BudgetProviders.Model.Interf, TORDBUDGETPROVIDERS.Entity.Model;
 
 type
    IBudgetProvidersInsertController = interface;
-   IBudgetProvidersDuplicateController = interface;
 
    IBudgetProvidersController = interface
       function find(AValue: string): IBudgetProvidersController;
@@ -17,9 +16,7 @@ type
 
       function sequenceProvider: Integer;
       function budgetId: string;
-      function providerOwnId: Integer;
       function providerId: string;
-      function providerName: string;
       function createdAt: string;
       function updatedAt: string;
    end;
@@ -32,17 +29,6 @@ type
       function providerId(AValue: string): IBudgetProvidersInsertController;
       function userId(AValue: string): IBudgetProvidersInsertController;
     
-      procedure save;
-   end;
-
-   IBudgetProvidersDuplicateController = interface
-      function budgetProvidersModel(AValue: IBudgetProvidersModel): IBudgetProvidersDuplicateController;
-
-      function companyId(AValue: string): IBudgetProvidersDuplicateController;
-      function budgetId(AValue: string): IBudgetProvidersDuplicateController;
-      function providerId(AValue: string): IBudgetProvidersDuplicateController;
-      function userId(AValue: string): IBudgetProvidersDuplicateController;
-
       procedure save;
    end;
 

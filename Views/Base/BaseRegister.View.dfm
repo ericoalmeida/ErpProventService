@@ -11,7 +11,7 @@ inherited FBaseRegisterView: TFBaseRegisterView
         AlignWithMargins = True
         Top = 6
         Width = 170
-        Height = 25
+        Height = 26
         Margins.Top = 5
         Margins.Bottom = 7
         Align = alLeft
@@ -27,7 +27,7 @@ inherited FBaseRegisterView: TFBaseRegisterView
         Left = 525
         Top = 6
         Width = 79
-        Height = 21
+        Height = 26
         Margins.Top = 5
         Margins.Bottom = 7
         Align = alRight
@@ -38,6 +38,13 @@ inherited FBaseRegisterView: TFBaseRegisterView
         Font.Name = 'Ubuntu Medium'
         Font.Style = [fsItalic]
         ParentFont = False
+        ExplicitHeight = 21
+      end
+    end
+    inherited PnProgram: TRzPanel
+      inherited LbProgram: TRzLabel
+        Width = 608
+        Height = 18
       end
     end
     inherited PnContainerBody: TRzPanel
@@ -48,9 +55,16 @@ inherited FBaseRegisterView: TFBaseRegisterView
           ExplicitLeft = 497
           inherited BtSair: TcxButton
             Left = 1
-            Width = 107
+            Top = 1
+            Width = 108
+            Height = 30
             Margins.Left = 0
+            Margins.Top = 0
+            Margins.Right = 0
             Caption = 'C&ancelar'
+            LookAndFeel.Kind = lfStandard
+            SpeedButtonOptions.Flat = False
+            SpeedButtonOptions.Transparent = False
             ExplicitLeft = 1
             ExplicitWidth = 107
           end
@@ -70,18 +84,18 @@ inherited FBaseRegisterView: TFBaseRegisterView
           TabOrder = 1
           object BtConfirmar: TcxButton
             AlignWithMargins = True
-            Left = 2
-            Top = 2
-            Width = 106
-            Height = 29
-            Margins.Left = 1
-            Margins.Top = 1
-            Margins.Right = 1
+            Left = 1
+            Top = 1
+            Width = 108
+            Height = 30
+            Margins.Left = 0
+            Margins.Top = 0
+            Margins.Right = 0
             Margins.Bottom = 0
             Align = alClient
             Caption = '&Confirmar'
             Enabled = False
-            LookAndFeel.Kind = lfOffice11
+            LookAndFeel.Kind = lfStandard
             LookAndFeel.NativeStyle = False
             LookAndFeel.ScrollbarMode = sbmDefault
             OptionsImage.Glyph.SourceDPI = 96
@@ -110,8 +124,6 @@ inherited FBaseRegisterView: TFBaseRegisterView
               6FA0673A017880CBEFC309D50002F0BF03C5148A5699E7E19C0000000049454E
               44AE426082}
             SpeedButtonOptions.CanBeFocused = False
-            SpeedButtonOptions.Flat = True
-            SpeedButtonOptions.Transparent = True
             TabOrder = 0
             Font.Charset = ANSI_CHARSET
             Font.Color = 5592405
@@ -120,6 +132,10 @@ inherited FBaseRegisterView: TFBaseRegisterView
             Font.Style = [fsBold]
             ParentFont = False
             OnClick = BtConfirmarClick
+            ExplicitLeft = 2
+            ExplicitTop = 2
+            ExplicitWidth = 106
+            ExplicitHeight = 29
           end
         end
       end
@@ -140,7 +156,7 @@ inherited FBaseRegisterView: TFBaseRegisterView
         object LbObs: TRzLabel
           Left = 0
           Top = 180
-          Width = 170
+          Width = 604
           Height = 13
           Align = alBottom
           Caption = 'Os campos em NEGRITO s'#227'o obrigatorios'
@@ -150,6 +166,7 @@ inherited FBaseRegisterView: TFBaseRegisterView
           Font.Name = 'Open Sans'
           Font.Style = []
           ParentFont = False
+          ExplicitWidth = 170
         end
       end
     end

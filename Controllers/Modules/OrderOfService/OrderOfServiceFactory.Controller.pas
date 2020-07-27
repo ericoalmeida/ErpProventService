@@ -4,7 +4,8 @@ interface
 
 uses OrderOfServiceFactory.Controller.Interf, Service.Controller.Interf,
    Operators.Controller.Interf, ServiceProvided.Controller.Interf,
-   Budget.Controller.Interf, BudgetProviders.Controller.Interf;
+   Budget.Controller.Interf, BudgetProviders.Controller.Interf,
+  BudgetProducts.Controller.Interf;
 
 type
    TOrderOfServiceFactoryController = class(TInterfacedObject,
@@ -20,7 +21,8 @@ type
       function oepratorController: iOperatorController;
       function serviceProvidedController: iServiceProvidedController;
       function budgetController: iBudgetController;
-      function budgetProvidersController: IBudgetProvidersController;      
+      function budgetProvidersController: IBudgetProvidersController;
+      function budgetProductsController: IBudgetProductsController;                        
    end;
 
 implementation
@@ -28,11 +30,16 @@ implementation
 { TOrdemOfServiceFactoryController }
 
 uses Service.Controller, Operators.Controller, ServiceProvided.Controller,
-   Budget.Controller, BudgetProviders.Controller;
+   Budget.Controller, BudgetProviders.Controller, BudgetProducts.Controller;
 
 function TOrderOfServiceFactoryController.budgetController: iBudgetController;
 begin
    Result := TBudgetController.New;
+end;
+
+function TOrderOfServiceFactoryController.budgetProductsController: IBudgetProductsController;
+begin
+   Result := TBudgetProductsController.New;
 end;
 
 function TOrderOfServiceFactoryController.budgetProvidersController: IBudgetProvidersController;

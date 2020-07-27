@@ -1,10 +1,10 @@
 unit OrderOfServiceFactory.Model;
-
+
 interface
 
 uses OrderOfServiceFactory.Model.Interf, Service.Model.Interf,
    Operators.Model.Interf, ServiceProvided.Model.Interf, Budget.Model.Interf,
-  BudgetProviders.Model.Interf;
+   BudgetProviders.Model.Interf, BudgetProducts.Model.Interf;
 
 type
    TOrderOfServiceFactoryModel = class(TInterfacedObject,
@@ -20,7 +20,8 @@ type
       function operatorModel: IOperatorModel;
       function serviceProvidedModel: IServiceProvidedModel;
       function budgetModel: IBudgetModel;
-      function budgetProvidersModel: IBudgetProvidersModel;      
+      function budgetProvidersModel: IBudgetProvidersModel;
+      function budgetProductsModel: IBudgetProductsModel;
    end;
 
 implementation
@@ -28,16 +29,22 @@ implementation
 { TOrderOfServiceFactoryModel }
 
 uses Service.Model, Operators.Model, ServiceProvided.Model, Budget.Model,
-  BudgetProviders.Model;
+   BudgetProviders.Model, BudgetProducts.Model;
 
 function TOrderOfServiceFactoryModel.budgetModel: IBudgetModel;
 begin
    Result := TBudgetModel.New;
 end;
 
-function TOrderOfServiceFactoryModel.budgetProvidersModel: IBudgetProvidersModel;
+function TOrderOfServiceFactoryModel.budgetProductsModel: IBudgetProductsModel;
 begin
-  Result :=  TBudgetProvidersModel.New;
+   Result := TBudgetProductsModel.New;
+end;
+
+function TOrderOfServiceFactoryModel.budgetProvidersModel
+  : IBudgetProvidersModel;
+begin
+   Result := TBudgetProvidersModel.New;
 end;
 
 constructor TOrderOfServiceFactoryModel.Create;
@@ -73,3 +80,4 @@ begin
 end;
 
 end.
+

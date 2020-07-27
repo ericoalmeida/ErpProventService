@@ -92,8 +92,9 @@ type
       procedure BtOperatorsClick(Sender: TObject);
       procedure BtServicesProvisionClick(Sender: TObject);
       procedure BtOrcamentoClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
    private
-      { Private declarations }
+      procedure loadLogoFasipe;
    public
       { Public declarations }
    end;
@@ -105,7 +106,7 @@ implementation
 
 {$R *.dfm}
 
-uses Facade.Controller, Facade.View, Types.Views;
+uses Facade.Controller, Facade.View, Types.Views, Facade.Model;
 
 procedure TFMainView.BtEmpresasClick(Sender: TObject);
 begin
@@ -183,6 +184,21 @@ procedure TFMainView.dxBarLargeButton2Click(Sender: TObject);
 begin
    TFacadeView.New.modulesFacadeView.payFactory.showProgramOfListing
      (tpPAY0001AView).&end;
+end;
+
+procedure TFMainView.FormShow(Sender: TObject);
+begin
+  loadLogoFasipe;
+end;
+
+procedure TFMainView.loadLogoFasipe;
+begin
+  ImLogo.Picture.LoadFromFile(
+    TFacadeModel
+     .New
+      .SettingsFactoryModel
+       .connection
+        .logo );
 end;
 
 procedure TFMainView.BtClientClick(Sender: TObject);

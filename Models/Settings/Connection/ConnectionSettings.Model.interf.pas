@@ -13,6 +13,8 @@ type
       function user: string;
       function password: string;
       function lib: string;
+
+      function logo: string;
    end;
 
 implementation

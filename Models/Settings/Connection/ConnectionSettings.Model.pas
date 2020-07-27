@@ -26,6 +26,8 @@ type
       function user: string;
       function password: string;
       function lib: string;
+
+      function logo: string;      
    end;
 
 implementation
@@ -40,6 +42,11 @@ end;
 function TConnectionSettingsModel.lib: string;
 begin
    Result := FFileIni.ReadString('Settings', 'library', '');
+end;
+
+function TConnectionSettingsModel.logo: string;
+begin
+   Result := FFileIni.ReadString('Fasipe', 'logo', '');
 end;
 
 constructor TConnectionSettingsModel.Create;
@@ -73,6 +80,8 @@ begin
    FFileIni.WriteString('Settings', 'user', 'SYSDBA');
    FFileIni.WriteString('Settings', 'password', 'masterkey');
    FFileIni.WriteString('Settings', 'library', 'fbclient.dll');
+
+   FFileIni.WriteString('Fasipe', 'logo', 'C:\ERGSis\windows\logo.png');   
 end;
 
 class function TConnectionSettingsModel.new: iConnectionSettingsModel;

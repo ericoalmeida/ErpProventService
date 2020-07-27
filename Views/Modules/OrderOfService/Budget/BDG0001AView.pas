@@ -18,7 +18,8 @@ uses
    FireDAC.Comp.Client, FireDAC.Comp.DataSet, cxClasses, cxGridLevel,
    cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
    cxGrid, cxTextEdit, cxLabel, Vcl.StdCtrls, cxButtons, RzLabel,
-   dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel, Base.View.interf;
+   dxGDIPlusClasses, Vcl.ExtCtrls, RzPanel, Base.View.interf,
+  DataMFirebird.Model;
 
 type
    TFBDG0001AView = class(TFBaseListView, iBaseListView)
@@ -35,14 +36,19 @@ type
       VwDadosUSERNAME: TcxGridDBColumn;
       VwDadosCREATEDAT: TcxGridDBColumn;
       VwDadosUPDATEDAT: TcxGridDBColumn;
+    RzPanel1: TRzPanel;
+    cxButton1: TcxButton;
+    QueryExporta: TFDQuery;
       procedure FormShow(Sender: TObject);
       procedure BtInsertClick(Sender: TObject);
       procedure BtUpdateClick(Sender: TObject);
-    procedure BtShowClick(Sender: TObject);
-    procedure BtDeleteClick(Sender: TObject);
-    procedure BtDuplicateClick(Sender: TObject);
+      procedure BtShowClick(Sender: TObject);
+      procedure BtDeleteClick(Sender: TObject);
+      procedure BtDuplicateClick(Sender: TObject);
+    procedure cxButton1Click(Sender: TObject);
    private
       { Private declarations }
+      procedure exportFile;
    public
       { Public declarations }
       class function New: iBaseListView;
@@ -107,6 +113,13 @@ begin
    listRecords;
 end;
 
+procedure TFBDG0001AView.cxButton1Click(Sender: TObject);
+begin
+  inherited;
+
+  exportFile;
+end;
+
 procedure TFBDG0001AView.deleteRecord;
 begin
    TFacadeView.New
@@ -133,6 +146,64 @@ procedure TFBDG0001AView.&end;
 begin
 
    Show;
+end;
+
+procedure TFBDG0001AView.exportFile;
+  Var
+    i : Integer;
+    F : TextFile;
+    Arquivo : string;
+begin
+   Arquivo := 'C:\ERGSis\exportacoes\orcamento_' +
+     FdQDataBUDGETID.AsString + '.csv';
+   AssignFile(F, Arquivo);
+   ReWrite(F);
+
+
+   try
+      try
+         QueryExporta.ParamByName('companyId').AsString := FSessionCompany;
+         QueryExporta.ParamByName('code').AsString := FdQDataCODE.AsString;
+
+         QueryExporta.Open();
+
+         For i := 0 To Pred(QueryExporta.FieldCount) Do
+         Begin
+            Write(F, QueryExporta.Fields[i].FieldName);
+            If (i < Pred(QueryExporta.FieldCount)) Then
+               Write(F, ';');
+         End;
+
+         WriteLn(F);
+
+         While (Not QueryExporta.Eof) Do
+         Begin
+            For i := 0 To Pred(QueryExporta.FieldCount) Do
+            Begin
+               Write(F, QueryExporta.Fields[i].AsString);
+               If (i < Pred(QueryExporta.FieldCount)) Then
+                  Write(F, ';');
+            End;
+
+            WriteLn(F);
+            QueryExporta.Next;
+         End;
+
+      except
+         on E: Exception do begin
+            ShowMessage(e.Message);
+         end;
+      end;
+   finally
+      Flush(F);
+      CloseFile(F);
+
+      QueryExporta.Close;
+
+      ShowMessage('Exportação concluída!');
+
+   end;
+
 end;
 
 procedure TFBDG0001AView.FormShow(Sender: TObject);

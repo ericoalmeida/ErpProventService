@@ -14,9 +14,7 @@ type
    private
       FQuery: TFDQuery;
       FBudgetProvidersModel: IBudgetProvidersModel;
-      FProvidersModel: IPersonModel;
       FRecordFound: TTORDBUDGETPROVIDERS;
-      FRecordProvider:  TTMNGPERSON;
    public
       constructor Create;
       destructor Destroy; override;
@@ -31,9 +29,7 @@ type
 
       function budgetId: string;
       function sequenceProvider: Integer;
-      function providerOwnId: Integer;
       function providerId: string;
-      function providerName: string;
       function createdAt: string;
       function updatedAt: string;
    end;
@@ -70,7 +66,6 @@ begin
 
    FBudgetProvidersModel := TFacadeModel.New.moduleFacade.orderOfServiceFactoryModel.
      budgetProvidersModel;
-   FProvidersModel := TFacadeModel.New.moduleFacade.managmentFactoryModel.personModel;
 end;
 
 function TBudgetProvidersController.createdAt: string;
@@ -99,16 +94,6 @@ begin
  Result := FRecordFound.PROVIDERID;
 end;
 
-function TBudgetProvidersController.providerName: string;
-begin
-   Result := FRecordProvider.NAME;
-end;
-
-function TBudgetProvidersController.providerOwnId: Integer;
-begin
-   Result := FRecordProvider.PERSONID;
-end;
-
 function TBudgetProvidersController.sequenceProvider: Integer;
 begin
   Result := FRecordFound.SEQUENCEPROVIDER;
@@ -120,9 +105,6 @@ begin
 
    FRecordFound := FBudgetProvidersModel.DAO.FindWhere
      (Format('CODE = %s', [QuotedStr(AValue)])).Items[0];
-
-   FRecordProvider := FProvidersModel.DAO.FindWhere
-     (Format('CODE = %s', [QuotedStr(FRecordFound.PROVIDERID)])).Items[0];     
 end;
 
 function TBudgetProvidersController.findById(AValue: string): IBudgetProvidersController;

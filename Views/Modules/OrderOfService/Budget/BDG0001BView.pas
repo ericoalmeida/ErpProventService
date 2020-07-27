@@ -20,7 +20,8 @@ uses
    Datasnap.DBClient, BudgetProviders.Controller.Interf, FireDAC.Stan.Intf,
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client, DataMFirebird.Model;
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, DataMFirebird.Model,
+  BudgetProducts.Controller.Interf;
 
 type
    TFBDG0001BView = class(TFBaseRegisterView, iBaseRegisterView)
@@ -67,12 +68,19 @@ type
       StColumnSelected: TcxStyle;
       StHeaderColumnSelected: TcxStyle;
       StDefaultHeaderColumn: TcxStyle;
-      CdsProdutos: TClientDataSet;
-      CdsProdutosCODE: TStringField;
-      CdsProdutosPRODUCTID: TIntegerField;
-      CdsProdutosDESCRIPTION: TStringField;
-      CdsProdutosCODIGO_SINAPI: TStringField;
     FDQuery: TFDQuery;
+    cxButton3: TcxButton;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    cxButton4: TcxButton;
+    CDSProdutos: TClientDataSet;
+    CDSProdutosCODE: TStringField;
+    CDSProdutosPRODUCTID: TIntegerField;
+    CDSProdutosDESCRIPTION: TStringField;
+    CDSProdutosCODIGO_SINAPI: TStringField;
+    CDSProdutosQTDE: TFloatField;
+    VWProdutosCODIGO_SINAPI: TcxGridDBColumn;
+    VWProdutosQTDE: TcxGridDBColumn;
       procedure FormCreate(Sender: TObject);
       procedure BtConfirmarClick(Sender: TObject);
       procedure TxDescriptionPropertiesChange(Sender: TObject);
@@ -81,14 +89,23 @@ type
       procedure CdsProdutosAfterPost(DataSet: TDataSet);
       procedure CdsFornecedorAfterPost(DataSet: TDataSet);
       procedure cxButton2Click(Sender: TObject);
+    procedure cxButton3Click(Sender: TObject);
+    procedure CdsFornecedorAfterDelete(DataSet: TDataSet);
+    procedure CdsProdutosAfterDelete(DataSet: TDataSet);
+    procedure cxButton4Click(Sender: TObject);
+    procedure CDSProdutosAfterEdit(DataSet: TDataSet);
    private
       { Private declarations }
       FBudgetController: iBudgetController;
       FBudgetProvidersController: IBudgetProvidersController;
+      FBudgetProductsController: IBudgetProductsController;
 
 
     procedure saveProviders;
-    procedure loadProviders;       
+    procedure loadProviders;
+
+    procedure saveProducts;
+    procedure loadProducts;       
    public
       { Public declarations }
       class function New: iBaseRegisterView;
@@ -127,10 +144,28 @@ begin
    inherited;
 end;
 
+procedure TFBDG0001BView.CdsFornecedorAfterDelete(DataSet: TDataSet);
+begin
+  inherited;
+  changeDataAnyFields;
+end;
+
 procedure TFBDG0001BView.CdsFornecedorAfterPost(DataSet: TDataSet);
 begin
    inherited;
    changeDataAnyFields;
+end;
+
+procedure TFBDG0001BView.CdsProdutosAfterDelete(DataSet: TDataSet);
+begin
+  inherited;
+   changeDataAnyFields;
+end;
+
+procedure TFBDG0001BView.CDSProdutosAfterEdit(DataSet: TDataSet);
+begin
+  inherited;
+  changeDataAnyFields;
 end;
 
 procedure TFBDG0001BView.CdsProdutosAfterPost(DataSet: TDataSet);
@@ -191,11 +226,26 @@ begin
       Exit;
 
    CdsProdutos.Append;
-   CdsProdutosCODE.AsString := FProductController.code;
-   CdsProdutosPRODUCTID.AsInteger := FProductController.productId.ToInteger;
+   CdsProdutosCODE.AsString          := FProductController.code;
+   CdsProdutosPRODUCTID.AsInteger    := FProductController.productId.ToInteger;
    CdsProdutosCODIGO_SINAPI.AsString := FProductController.codeSinapi;
-   CdsProdutosDESCRIPTION.AsString := FProductController.description;
+   CdsProdutosDESCRIPTION.AsString   := FProductController.description;
+   CDSProdutosQTDE.AsFloat           := 1;
    CdsProdutos.Post;
+end;
+
+procedure TFBDG0001BView.cxButton3Click(Sender: TObject);
+begin
+  inherited;
+
+   CdsFornecedor.Delete;
+end;
+
+procedure TFBDG0001BView.cxButton4Click(Sender: TObject);
+begin
+  inherited;
+  
+  CdsProdutos.Delete;
 end;
 
 procedure TFBDG0001BView.deleteRecord;
@@ -206,7 +256,12 @@ end;
 procedure TFBDG0001BView.disableFields;
 begin
    EbEmissionDate.Enabled := not(FOperation in [toShow, toDelete]);
-   TxDescription.Enabled := not(FOperation in [toShow, toDelete]);
+   TxDescription.Enabled  := not(FOperation in [toShow, toDelete]);
+
+   cxButton1.Enabled := not(FOperation in [toShow, toDelete]);
+   cxButton2.Enabled := not(FOperation in [toShow, toDelete]);
+   cxButton3.Enabled := not(FOperation in [toShow, toDelete]);
+   cxButton4.Enabled := not(FOperation in [toShow, toDelete]);   
 end;
 
 procedure TFBDG0001BView.duplicateRecord;
@@ -217,6 +272,7 @@ begin
 
      
    saveProviders;
+   saveProducts;        
 end;
 
 procedure TFBDG0001BView.EbEmissionDatePropertiesChange(Sender: TObject);
@@ -232,6 +288,33 @@ begin
    showCurrentOperation;
 
    ShowModal;
+end;
+
+procedure TFBDG0001BView.saveProducts;
+begin
+  if CdsProdutos.IsEmpty then Exit;
+
+
+  if FOperation in [toInsert, toDuplicate] then
+    FBudgetProductsController.cleanOldRecords(FSessionCompany, FBudgetController.budgetCode)
+  else
+    FBudgetProductsController.cleanOldRecords(FSessionCompany, FBudgetController.code); 
+
+  
+  CdsProdutos.First;
+  while not (CdsProdutos.Eof) do
+  begin
+    FBudgetProductsController
+     .insert
+      .companyId(FSessionCompany)
+      .budgetId(FBudgetController.budgetCode)
+      .productId(CdsProdutosCODE.AsString)
+      .qtde(CDSProdutosQTDE.AsFloat)
+      .userId(FSessionUser)
+      .save;
+
+    CdsProdutos.Next;
+  end;
 end;
 
 procedure TFBDG0001BView.saveProviders;
@@ -271,6 +354,9 @@ begin
 
    FBudgetProvidersController := TFacadeController.New.ModulesFacadeController.
      OrderOfServiceFactoryController.budgetProvidersController;
+
+   FBudgetProductsController := TFacadeController.New.ModulesFacadeController.
+     OrderOfServiceFactoryController.budgetProductsController;     
 end;
 
 procedure TFBDG0001BView.insertRecord;
@@ -280,7 +366,50 @@ begin
      .userId(FSessionUser).save;
 
      
-   saveProviders;     
+   saveProviders;
+   saveProducts;     
+end;
+
+procedure TFBDG0001BView.loadProducts;
+begin
+   with FDQuery do
+   begin
+      SQL.Clear;
+      SQL.Add(
+        'select                                                          ' +
+        'b.code,                                                         ' +
+        'b.productid,                                                    ' +
+        'a.qtde,                                                         ' +
+        'b.code_sinapi,                                                  ' +
+        'b.description                                                   ' +
+        'from                                                            ' +
+        'tordbudgetproducts a                                            ' +
+        'left join tstosinapiproduct b on (b.companyid = a.companyid)    ' +
+        'and(b.code = a.productid)                                       ' +
+        'where                                                           ' +
+        Format('a.companyid = %s and a.budgetid = %s ',
+        [QuotedStr(FSessionCompany), QuotedStr(FBudgetController.code)]));
+
+      Open();
+
+      if not(IsEmpty = True) then
+      begin
+         First;
+
+         while not Eof do
+         begin
+            CdsProdutos.Append;
+            CdsProdutosCODE.AsString          := FieldByName('code').AsString;
+            CdsProdutosPRODUCTID.AsInteger    := FieldByName('productid').AsInteger;
+            CDSProdutosQTDE.AsFloat           := FieldByName('qtde').AsFloat;
+            CDSProdutosCODIGO_SINAPI.AsString := FieldByName('code_sinapi').AsString;
+            CdsProdutosDESCRIPTION.AsString   := FieldByName('description').AsString;
+            CdsProdutos.Post;
+
+            Next;
+         end;
+      end;
+   end;
 end;
 
 procedure TFBDG0001BView.loadProviders;
@@ -370,6 +499,7 @@ begin
 
 
    loadProviders;
+   loadProducts;
 
    if not(FOperation in [toDelete]) then
       BtConfirmar.Enabled := False;
@@ -387,7 +517,8 @@ begin
      .description(TxDescription.Text).emissionDate(EbEmissionDate.Date)
      .userId(FSessionUser).save;
 
-   saveProviders;          
+   saveProviders;  
+   saveProducts;                
 end;
 
 end.

@@ -252,7 +252,13 @@ uses
   BudgetProviders.Model in 'Models\Modules\OrderOfService\BudgetProviders\BudgetProviders.Model.pas',
   BudgetProviders.Controller.Interf in 'Controllers\Modules\OrderOfService\BudgetProviders\BudgetProviders.Controller.Interf.pas',
   BudgetProviders.Controller in 'Controllers\Modules\OrderOfService\BudgetProviders\BudgetProviders.Controller.pas',
-  BudgetProvidersInsert.Controller in 'Controllers\Modules\OrderOfService\BudgetProviders\Operations\BudgetProvidersInsert.Controller.pas';
+  BudgetProvidersInsert.Controller in 'Controllers\Modules\OrderOfService\BudgetProviders\Operations\BudgetProvidersInsert.Controller.pas',
+  BudgetProducts.Model.Interf in 'Models\Modules\OrderOfService\BudgetProducts\BudgetProducts.Model.Interf.pas',
+  TORDBUDGETPRODUCTS.Entity.Model in 'Models\Modules\OrderOfService\BudgetProducts\Entity\TORDBUDGETPRODUCTS.Entity.Model.pas',
+  BudgetProducts.Model in 'Models\Modules\OrderOfService\BudgetProducts\BudgetProducts.Model.pas',
+  BudgetProducts.Controller.Interf in 'Controllers\Modules\OrderOfService\BudgetProducts\BudgetProducts.Controller.Interf.pas',
+  BudgetProducts.Controller in 'Controllers\Modules\OrderOfService\BudgetProducts\BudgetProducts.Controller.pas',
+  BudgetProductsInsert.Controller in 'Controllers\Modules\OrderOfService\BudgetProducts\Operations\BudgetProductsInsert.Controller.pas';
 
 {$R *.res}
 
