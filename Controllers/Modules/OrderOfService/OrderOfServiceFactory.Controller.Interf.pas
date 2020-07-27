@@ -3,7 +3,8 @@ unit OrderOfServiceFactory.Controller.Interf;
 interface
 
 uses Service.Controller.Interf, Operators.Controller.Interf,
-   ServiceProvided.Controller.Interf, Budget.Controller.Interf;
+   ServiceProvided.Controller.Interf, Budget.Controller.Interf,
+  BudgetProviders.Controller.Interf;
 
 type
    iOrderOfServiceFactoryController = interface
@@ -12,6 +13,8 @@ type
       function oepratorController: iOperatorController;
       function serviceProvidedController: iServiceProvidedController;
       function budgetController: iBudgetController;
+      function budgetProvidersController: IBudgetProvidersController;
+      
    end;
 
 implementation

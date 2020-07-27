@@ -17,11 +17,14 @@ uses
    cxGridLevel, cxClasses, cxGridCustomView, cxGridCustomTableView,
    cxGridTableView, cxGridDBTableView, cxGrid, cxMaskEdit, cxDropDownEdit,
    Vcl.ComCtrls, dxCore, cxDateUtils, cxCalendar, Budget.Controller.interf,
-   Datasnap.DBClient;
+   Datasnap.DBClient, BudgetProviders.Controller.Interf, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, DataMFirebird.Model;
 
 type
    TFBDG0001BView = class(TFBaseRegisterView, iBaseRegisterView)
-      RzPageControl1: TRzPageControl;
+    Paginas: TRzPageControl;
       TSPrincipal: TRzTabSheet;
       TSFornecedores: TRzTabSheet;
       TSProdutos: TRzTabSheet;
@@ -69,6 +72,7 @@ type
       CdsProdutosPRODUCTID: TIntegerField;
       CdsProdutosDESCRIPTION: TStringField;
       CdsProdutosCODIGO_SINAPI: TStringField;
+    FDQuery: TFDQuery;
       procedure FormCreate(Sender: TObject);
       procedure BtConfirmarClick(Sender: TObject);
       procedure TxDescriptionPropertiesChange(Sender: TObject);
@@ -80,6 +84,11 @@ type
    private
       { Private declarations }
       FBudgetController: iBudgetController;
+      FBudgetProvidersController: IBudgetProvidersController;
+
+
+    procedure saveProviders;
+    procedure loadProviders;       
    public
       { Public declarations }
       class function New: iBaseRegisterView;
@@ -191,20 +200,23 @@ end;
 
 procedure TFBDG0001BView.deleteRecord;
 begin
-
+   FBudgetController.delete.save;
 end;
 
 procedure TFBDG0001BView.disableFields;
 begin
    EbEmissionDate.Enabled := not(FOperation in [toShow, toDelete]);
    TxDescription.Enabled := not(FOperation in [toShow, toDelete]);
-   TxCreatedDate.Enabled := not(FOperation in [toShow, toDelete]);
-   TxUpdatedDate.Enabled := not(FOperation in [toShow, toDelete]);
 end;
 
 procedure TFBDG0001BView.duplicateRecord;
 begin
+   FBudgetController.duplicate.companyId(FSessionCompany)
+     .description(TxDescription.Text).emissionDate(EbEmissionDate.Date)
+     .userId(FSessionUser).save;
 
+     
+   saveProviders;
 end;
 
 procedure TFBDG0001BView.EbEmissionDatePropertiesChange(Sender: TObject);
@@ -222,12 +234,43 @@ begin
    ShowModal;
 end;
 
+procedure TFBDG0001BView.saveProviders;
+begin
+  if CdsFornecedor.IsEmpty then Exit;
+
+
+  if FOperation in [toInsert, toDuplicate] then
+    FBudgetProvidersController.cleanOldRecords(FSessionCompany, FBudgetController.budgetCode)
+  else
+    FBudgetProvidersController.cleanOldRecords(FSessionCompany, FBudgetController.code); 
+
+  
+  CdsFornecedor.First;
+  while not (CdsFornecedor.Eof) do
+  begin
+    FBudgetProvidersController
+     .insert
+      .companyId(FSessionCompany)
+      .budgetId(FBudgetController.budgetCode)
+      .providerId(CdsFornecedorCODE.AsString)
+      .userId(FSessionUser)
+      .save;
+
+    CdsFornecedor.Next;
+  end;
+end;
+
 procedure TFBDG0001BView.FormCreate(Sender: TObject);
 begin
    inherited;
+   Paginas.ActivePage  := TSPrincipal;
+   EbEmissionDate.Date := Now;
 
    FBudgetController := TFacadeController.New.ModulesFacadeController.
      OrderOfServiceFactoryController.budgetController;
+
+   FBudgetProvidersController := TFacadeController.New.ModulesFacadeController.
+     OrderOfServiceFactoryController.budgetProvidersController;
 end;
 
 procedure TFBDG0001BView.insertRecord;
@@ -235,6 +278,47 @@ begin
    FBudgetController.insert.companyId(FSessionCompany)
      .description(TxDescription.Text).emissionDate(EbEmissionDate.Date)
      .userId(FSessionUser).save;
+
+     
+   saveProviders;     
+end;
+
+procedure TFBDG0001BView.loadProviders;
+begin
+   with FDQuery do
+   begin
+      SQL.Clear;
+      SQL.Add(
+        'select                                                  ' +
+        'b.code,                                                 ' +
+        'b.personid,                                             ' +
+        'b.name                                                  ' +
+        'from                                                    ' +
+        'tordbudgetproviders a                                   ' +
+        'left join tmngperson b on (b.companyid = a.companyid)   ' +
+        'and(b.code = a.providerid)                              ' +
+        'where                                                   ' +
+        Format('a.companyid = %s and a.budgetid = %s ',
+        [QuotedStr(FSessionCompany), QuotedStr(FBudgetController.code)]));
+
+      Open();
+
+      if not(IsEmpty = True) then
+      begin
+         First;
+
+         while not Eof do
+         begin
+            CdsFornecedor.Append;
+            CdsFornecedorCODE.AsString      :=  FieldByName('code').AsString;
+            CdsFornecedorPERSONID.AsInteger := FieldByName('personid').AsInteger;;
+            CdsFornecedorNAME.AsString      := FieldByName('name').AsString;;
+            CdsFornecedor.Post;
+
+            Next;
+         end;
+      end;
+   end;
 end;
 
 class function TFBDG0001BView.New: iBaseRegisterView;
@@ -284,6 +368,9 @@ begin
    TxCreatedDate.Text := FBudgetController.createdAt;
    TxUpdatedDate.Text := FBudgetController.updatedAt;
 
+
+   loadProviders;
+
    if not(FOperation in [toDelete]) then
       BtConfirmar.Enabled := False;
 end;
@@ -299,6 +386,8 @@ begin
    FBudgetController.update.companyId(FSessionCompany)
      .description(TxDescription.Text).emissionDate(EbEmissionDate.Date)
      .userId(FSessionUser).save;
+
+   saveProviders;          
 end;
 
 end.

@@ -38,6 +38,9 @@ type
       procedure FormShow(Sender: TObject);
       procedure BtInsertClick(Sender: TObject);
       procedure BtUpdateClick(Sender: TObject);
+    procedure BtShowClick(Sender: TObject);
+    procedure BtDeleteClick(Sender: TObject);
+    procedure BtDuplicateClick(Sender: TObject);
    private
       { Private declarations }
    public
@@ -65,10 +68,34 @@ implementation
 uses Facade.View, Types.Views;
 { TFBDG0001AView }
 
+procedure TFBDG0001AView.BtDeleteClick(Sender: TObject);
+begin
+  inherited;
+  
+   deleteRecord;
+   listRecords;
+end;
+
+procedure TFBDG0001AView.BtDuplicateClick(Sender: TObject);
+begin
+  inherited;
+  
+   duplicateRecord;
+   listRecords;
+end;
+
 procedure TFBDG0001AView.BtInsertClick(Sender: TObject);
 begin
    inherited;
    insertRecord;
+   listRecords;
+end;
+
+procedure TFBDG0001AView.BtShowClick(Sender: TObject);
+begin
+  inherited;
+  
+   showRecord;
    listRecords;
 end;
 
@@ -82,12 +109,24 @@ end;
 
 procedure TFBDG0001AView.deleteRecord;
 begin
-
+   TFacadeView.New
+     .modulesFacadeView
+      .orderOfServiceFactory
+      .showProgramOfRegister(trBDG0001BView)
+      .operation(FOperation)
+      .selectedRecord(FdQDataCODE.AsString)
+     .&end;
 end;
 
 procedure TFBDG0001AView.duplicateRecord;
 begin
-
+   TFacadeView.New
+     .modulesFacadeView
+      .orderOfServiceFactory
+      .showProgramOfRegister(trBDG0001BView)
+      .operation(FOperation)
+      .selectedRecord(FdQDataCODE.AsString)
+     .&end;
 end;
 
 procedure TFBDG0001AView.&end;
@@ -126,14 +165,24 @@ end;
 
 procedure TFBDG0001AView.showRecord;
 begin
-
+   TFacadeView.New
+     .modulesFacadeView
+      .orderOfServiceFactory
+      .showProgramOfRegister(trBDG0001BView)
+      .operation(FOperation)
+      .selectedRecord(FdQDataCODE.AsString)
+     .&end;
 end;
 
 procedure TFBDG0001AView.updateRecord;
 begin
-   TFacadeView.New.modulesFacadeView.orderOfServiceFactory.showProgramOfRegister
-     (trBDG0001BView).operation(FOperation)
-     .selectedRecord(FdQDataCODE.AsString).&end;
+   TFacadeView.New
+    .modulesFacadeView
+     .orderOfServiceFactory
+      .showProgramOfRegister(trBDG0001BView)
+      .operation(FOperation)
+      .selectedRecord(FdQDataCODE.AsString)
+     .&end;
 end;
 
 end.

@@ -206,6 +206,7 @@ procedure TFBaseListView.VwDadosCustomDrawCell(Sender: TcxCustomGridTableView;
   var ADone: Boolean);
 begin
    inherited;
+
    try
       if (AViewInfo.GridRecord.Values[FColumnStatus.Index] = 1) then
       begin

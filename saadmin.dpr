@@ -252,10 +252,7 @@ uses
   BudgetProviders.Model in 'Models\Modules\OrderOfService\BudgetProviders\BudgetProviders.Model.pas',
   BudgetProviders.Controller.Interf in 'Controllers\Modules\OrderOfService\BudgetProviders\BudgetProviders.Controller.Interf.pas',
   BudgetProviders.Controller in 'Controllers\Modules\OrderOfService\BudgetProviders\BudgetProviders.Controller.pas',
-  BudgetProvidersInsert.Controller in 'Controllers\Modules\OrderOfService\BudgetProviders\Operations\BudgetProvidersInsert.Controller.pas',
-  BudgetProvidersUpdate.Controller in 'Controllers\Modules\OrderOfService\BudgetProviders\Operations\BudgetProvidersUpdate.Controller.pas',
-  BudgetProvidersDelete.Controller in 'Controllers\Modules\OrderOfService\BudgetProviders\Operations\BudgetProvidersDelete.Controller.pas',
-  BudgetProvidersDuplicate.Controller in 'Controllers\Modules\OrderOfService\BudgetProviders\Operations\BudgetProvidersDuplicate.Controller.pas';
+  BudgetProvidersInsert.Controller in 'Controllers\Modules\OrderOfService\BudgetProviders\Operations\BudgetProvidersInsert.Controller.pas';
 
 {$R *.res}
 

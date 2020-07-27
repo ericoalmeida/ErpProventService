@@ -24,8 +24,7 @@ type
 
    [Entity]
    [Table('TORDBUDGETPROVIDERS', '')]
-   [PrimaryKey('COMPANYID', NotInc, NoSort, False, 'Chave primária')]
-   [PrimaryKey('SEQUENCEPROVIDER', NotInc, NoSort, False, 'Chave primária')]
+   [PrimaryKey('COMPANYID, SEQUENCEPROVIDER', NotInc, NoSort, False, 'Chave primária')]
    TTORDBUDGETPROVIDERS = class
    private
       { Private declarations }
@@ -46,50 +45,40 @@ type
       destructor Destroy; override;
       [Restrictions([NotNull])]
       [Column('COMPANYID', ftString, 64)]
-      [ForeignKey('FK_TORDBUDGETPROVIDERS_1', 'COMPANYID', 'TMNGPERSON',
-        'COMPANYID', SetNull, SetNull)]
-      [ForeignKey('FK11_TORDBUDGETPROVIDERS', 'COMPANYID', 'TORDBUDGET',
-        'COMPANYID', Cascade, Cascade)]
-      [Dictionary('COMPANYID', 'Mensagem de validação', '', '', '',
-        taLeftJustify)]
+      [ForeignKey('FK_TORDBUDGETPROVIDERS_1', 'COMPANYID', 'TMNGPERSON', 'COMPANYID', SetNull, SetNull)]
+      [ForeignKey('FK11_TORDBUDGETPROVIDERS', 'COMPANYID', 'TORDBUDGET', 'COMPANYID', Cascade, Cascade)]
+      [Dictionary('COMPANYID', 'Mensagem de validação', '', '', '', taLeftJustify)]
       property COMPANYID: String read FCOMPANYID write FCOMPANYID;
 
       [Restrictions([NotNull])]
       [Column('SEQUENCEPROVIDER', ftInteger)]
-      [Dictionary('SEQUENCEPROVIDER', 'Mensagem de validação', '', '', '',
-        taCenter)]
-      property SEQUENCEPROVIDER: Integer read FSEQUENCEPROVIDER
-        write FSEQUENCEPROVIDER;
+      [Dictionary('SEQUENCEPROVIDER', 'Mensagem de validação', '', '', '', taCenter)]
+      property SEQUENCEPROVIDER: Integer read FSEQUENCEPROVIDER write FSEQUENCEPROVIDER;
 
       [Restrictions([NotNull])]
       [Column('BUDGETID', ftString, 64)]
-      [Dictionary('BUDGETID', 'Mensagem de validação', '', '', '',
-        taLeftJustify)]
+      [Dictionary('BUDGETID', 'Mensagem de validação', '', '', '', taLeftJustify)]
       property BUDGETID: String read FBUDGETID write FBUDGETID;
 
       [Restrictions([NotNull])]
       [Column('PROVIDERID', ftString, 64)]
-      [Dictionary('PROVIDERID', 'Mensagem de validação', '', '', '',
-        taLeftJustify)]
+      [Dictionary('PROVIDERID', 'Mensagem de validação', '', '', '', taLeftJustify)]
       property PROVIDERID: String read FPROVIDERID write FPROVIDERID;
 
       [Restrictions([NotNull])]
       [Column('USERID', ftString, 64)]
-      [ForeignKey('FK_TORDBUDGETPROVIDERS_2', 'USERID', 'TMNGUSER', 'CODE',
-        SetNull, SetNull)]
+      [ForeignKey('FK_TORDBUDGETPROVIDERS_2', 'USERID', 'TMNGUSER', 'CODE', SetNull, SetNull)]
       [Dictionary('USERID', 'Mensagem de validação', '', '', '', taLeftJustify)]
       property USERID: String read FUSERID write FUSERID;
 
       [Restrictions([NotNull])]
       [Column('CREATEDAT', ftDateTime)]
-      [Dictionary('CREATEDAT', 'Mensagem de validação', 'Now', '',
-        '!##/##/####;1;_', taCenter)]
+      [Dictionary('CREATEDAT', 'Mensagem de validação', 'Now', '', '!##/##/####;1;_', taCenter)]
       property CREATEDAT: TDateTime read FCREATEDAT write FCREATEDAT;
 
       [Restrictions([NotNull])]
       [Column('UPDATEDAT', ftDateTime)]
-      [Dictionary('UPDATEDAT', 'Mensagem de validação', 'Now', '',
-        '!##/##/####;1;_', taCenter)]
+      [Dictionary('UPDATEDAT', 'Mensagem de validação', 'Now', '', '!##/##/####;1;_', taCenter)]
       property UPDATEDAT: TDateTime read FUPDATEDAT write FUPDATEDAT;
 
       [Association(OneToOne, 'COMPANYID', 'TMNGPERSON', 'COMPANYID')]

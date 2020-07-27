@@ -521,9 +521,6 @@
         <DCCReference Include="Controllers\Modules\OrderOfService\BudgetProviders\BudgetProviders.Controller.Interf.pas"/>
         <DCCReference Include="Controllers\Modules\OrderOfService\BudgetProviders\BudgetProviders.Controller.pas"/>
         <DCCReference Include="Controllers\Modules\OrderOfService\BudgetProviders\Operations\BudgetProvidersInsert.Controller.pas"/>
-        <DCCReference Include="Controllers\Modules\OrderOfService\BudgetProviders\Operations\BudgetProvidersUpdate.Controller.pas"/>
-        <DCCReference Include="Controllers\Modules\OrderOfService\BudgetProviders\Operations\BudgetProvidersDelete.Controller.pas"/>
-        <DCCReference Include="Controllers\Modules\OrderOfService\BudgetProviders\Operations\BudgetProvidersDuplicate.Controller.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

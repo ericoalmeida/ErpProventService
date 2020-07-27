@@ -20,6 +20,7 @@ type
       function duplicate: iBudgetDuplicateController;
 
       function code: string;
+      function budgetCode: string;
       function budgetId: string;
       function description: string;
       function emissionDate: TDateTime;

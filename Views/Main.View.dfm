@@ -19,9 +19,9 @@ object FMainView: TFMainView
   TextHeight = 13
   object ImLogo: TImage
     Left = 0
-    Top = 159
+    Top = 157
     Width = 632
-    Height = 216
+    Height = 218
     Align = alClient
     Center = True
     Picture.Data = {
@@ -1931,15 +1931,17 @@ object FMainView: TFMainView
     Left = 0
     Top = 0
     Width = 632
-    Height = 159
+    Height = 157
     ApplicationButton.Menu = ApMainMenu
     BarManager = BrManager
+    Style = rs2016
     ColorSchemeAccent = rcsaBlue
-    ColorSchemeName = 'Blue'
+    ColorSchemeName = 'DevExpressStyle'
     QuickAccessToolbar.Toolbar = bmMainTools
     Contexts = <>
     TabOrder = 0
     TabStop = False
+    ExplicitTop = -6
     object TbAdministration: TdxRibbonTab
       Caption = 'Administra'#231#227'o'
       Groups = <

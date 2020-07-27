@@ -57,8 +57,8 @@ end;
 
 procedure TBudgetDeleteController.save;
 begin
-   if FMessageConfirm.messages(Format('Deseja excluir o operador %s ?',
-     [FSelectedRecord.DESCRIPTION])).&end then
+   if FMessageConfirm.messages(Format('Deseja excluir o orçamento %d ?',
+     [FSelectedRecord.BUDGETID])).&end then
    begin
 
       try
@@ -67,7 +67,7 @@ begin
       except
          on E: Exception do
             raise Exception.Create
-              (Format('O Operador %s não pode ser excluído!',
+              (Format('O Oçamento %s não pode ser excluído!',
               [FSelectedRecord.DESCRIPTION]));
       end;
 

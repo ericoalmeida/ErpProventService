@@ -79,7 +79,7 @@ function TBudgetDuplicateController.getBudgetId: Integer;
 begin
    if FBudgetModel.DAO.Find.Count <> 0 then
    begin
-      Result := FBudgetModel.DAO.FindWhere('', 'OPERATORID desc')
+      Result := FBudgetModel.DAO.FindWhere('', 'BUDGETID desc')
         .Last.BUDGETID + 1;
    end
    else

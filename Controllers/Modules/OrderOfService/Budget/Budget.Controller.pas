@@ -26,6 +26,7 @@ type
 
       function code: string;
       function budgetId: string;
+      function budgetCode: string;
       function description: string;
       function emissionDate: TDateTime;
       function createdAt: string;
@@ -40,6 +41,11 @@ uses Facade.Model, OperatorsInsert.Controller, OperatorsUpdate.Controller,
    OperatorsDelete.Controller, OperatorsDuplicate.Controller,
    BudgetInsert.Controller, BudgetUpdate.Controller, BudgetDelete.Controller,
    BudgetDuplicate.Controller;
+
+function TBudgetController.budgetCode: string;
+begin
+  Result := FBudgetModel.DAO.FindWhere('', 'BUDGETID desc').Last.CODE;
+end;
 
 function TBudgetController.budgetId: string;
 begin

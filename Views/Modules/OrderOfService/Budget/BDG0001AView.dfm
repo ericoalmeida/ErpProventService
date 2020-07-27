@@ -102,6 +102,10 @@ inherited FBDG0001AView: TFBDG0001AView
       Width = 567
       ExplicitTop = 282
       ExplicitWidth = 567
+      inherited LbProgram: TRzLabel
+        Width = 567
+        Height = 18
+      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 567
@@ -141,6 +145,10 @@ inherited FBDG0001AView: TFBDG0001AView
           Width = 563
           ExplicitTop = 117
           ExplicitWidth = 563
+          inherited LbTotalRegistros: TRzLabel
+            Width = 555
+            Height = 22
+          end
         end
         inherited PnGrid: TRzPanel
           Width = 563
@@ -235,6 +243,7 @@ inherited FBDG0001AView: TFBDG0001AView
       Size = 64
     end
     object FdQDataBUDGETID: TIntegerField
+      Alignment = taCenter
       FieldName = 'BUDGETID'
       Origin = 'BUDGETID'
       Required = True

@@ -92,11 +92,13 @@ inherited FBDG0001BView: TFBDG0001BView
       end
       inherited LbTitle: TRzLabel
         Width = 112
+        Height = 26
         Caption = 'Or'#231'amentos'
         ExplicitWidth = 112
       end
       inherited LbOperation: TRzLabel
         Left = 714
+        Height = 26
         ExplicitLeft = 714
       end
     end
@@ -105,6 +107,10 @@ inherited FBDG0001BView: TFBDG0001BView
       Width = 797
       ExplicitTop = 433
       ExplicitWidth = 797
+      inherited LbProgram: TRzLabel
+        Width = 797
+        Height = 18
+      end
     end
     inherited PnContainerBody: TRzPanel
       Width = 797
@@ -135,7 +141,7 @@ inherited FBDG0001BView: TFBDG0001BView
           Width = 793
           ExplicitTop = 335
         end
-        object RzPageControl1: TRzPageControl
+        object Paginas: TRzPageControl
           AlignWithMargins = True
           Left = 4
           Top = 4
@@ -146,7 +152,7 @@ inherited FBDG0001BView: TFBDG0001BView
           Margins.Top = 4
           Margins.Right = 4
           Margins.Bottom = 4
-          ActivePage = TSProdutos
+          ActivePage = TSPrincipal
           Align = alClient
           Font.Charset = ANSI_CHARSET
           Font.Color = clWindowText
@@ -156,7 +162,7 @@ inherited FBDG0001BView: TFBDG0001BView
           FlatColor = 12698049
           ParentFont = False
           TabColors.Unselected = clWhite
-          TabIndex = 2
+          TabIndex = 0
           TabOrder = 0
           TabStyle = tsRoundCorners
           FixedDimension = 23
@@ -342,7 +348,9 @@ inherited FBDG0001BView: TFBDG0001BView
               Left = 629
               Top = 17
               ParentFont = False
+              Properties.DateOnError = deToday
               Properties.Kind = ckDateTime
+              Properties.MinDate = 43101.000000000000000000
               Properties.OnChange = EbEmissionDatePropertiesChange
               Style.BorderColor = 12698049
               Style.BorderStyle = ebsSingle
@@ -369,10 +377,6 @@ inherited FBDG0001BView: TFBDG0001BView
           object TSFornecedores: TRzTabSheet
             Color = clWhite
             Caption = 'Fornecedores'
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             object cxButton1: TcxButton
               AlignWithMargins = True
               Left = 2
@@ -538,10 +542,6 @@ inherited FBDG0001BView: TFBDG0001BView
           object TSProdutos: TRzTabSheet
             Color = clWhite
             Caption = 'Produtos'
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             object DBProdutos: TcxGrid
               AlignWithMargins = True
               Left = 2
@@ -834,5 +834,33 @@ inherited FBDG0001BView: TFBDG0001BView
       FieldName = 'CODIGO_SINAPI'
       Size = 22
     end
+  end
+  object FDQuery: TFDQuery
+    Connection = FDataMFirebird.FDatabase
+    SQL.Strings = (
+      'select'
+      'b.code,'
+      'b.personid,'
+      'b.name'
+      'from'
+      'tordbudgetproviders a'
+      
+        'left join tmngperson b on (b.companyid = a.companyid)and(b.perso' +
+        'nid = a.providerid)'
+      'where a.companyid = :companyId'
+      'and a.budgetid = :budgetId')
+    Left = 569
+    Top = 235
+    ParamData = <
+      item
+        Name = 'COMPANYID'
+        DataType = ftString
+        ParamType = ptInput
+      end
+      item
+        Name = 'BUDGETID'
+        DataType = ftString
+        ParamType = ptInput
+      end>
   end
 end
