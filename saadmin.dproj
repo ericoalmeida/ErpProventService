@@ -96,6 +96,9 @@
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Icon_MainIcon>saadmin_Icon5.ico</Icon_MainIcon>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -527,6 +530,21 @@
         <DCCReference Include="Controllers\Modules\OrderOfService\BudgetProducts\BudgetProducts.Controller.Interf.pas"/>
         <DCCReference Include="Controllers\Modules\OrderOfService\BudgetProducts\BudgetProducts.Controller.pas"/>
         <DCCReference Include="Controllers\Modules\OrderOfService\BudgetProducts\Operations\BudgetProductsInsert.Controller.pas"/>
+        <DCCReference Include="Models\Modules\OrderOfService\BudgetAnalyzes\Entity\TORDBUDGETANALYZES.Entity.Model.pas"/>
+        <DCCReference Include="Models\Modules\OrderOfService\BudgetAnalyzes\BudgetAnalyzes.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modules\OrderOfService\BudgetAnalyzes\BudgetAnalyzes.Model.pas"/>
+        <DCCReference Include="Views\Modules\OrderOfService\Budget\BDG0002AView.pas">
+            <Form>FBDG0002AView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Modules\OrderOfService\Budget\BDG0001FView.pas">
+            <Form>FBDG0002FView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Modules\OrderOfService\Budget\BDG0001IView.pas">
+            <Form>FBDG0001IView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -557,6 +575,12 @@
             </Delphi.Personality>
             <Deployment Version="3">
                 <DeployFile LocalName="C:\ERGSis\windows\saadmin.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>saadmin.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\ERGServicos\windows\saadmin.exe" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>saadmin.exe</RemoteName>
                         <Overwrite>true</Overwrite>

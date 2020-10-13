@@ -31,7 +31,7 @@ implementation
 
 uses ORD0001AView, ORD0001BView, ORD0002AView, ORD0002BView, ORD0003AView,
    ORD0003BView,
-   ORD0002CView, ORD0001CView, ORD0003DView, BDG0001AView, BDG0001BView;
+   ORD0002CView, ORD0001CView, ORD0003DView, BDG0001AView, BDG0001BView, BDG0002AView;
 
 constructor TOrderOfServiceFactoryView.Create;
 begin
@@ -68,7 +68,10 @@ begin
          Result := TFORD0003AView.New;
 
       tpBDG0001AView:
-         Result := TFBDG0001AView.New
+         Result := TFBDG0001AView.New;
+
+      tpBDG0002AView:
+       Result := TFBDG0002AView.New;
    end;
 end;
 

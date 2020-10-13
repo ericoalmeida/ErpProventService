@@ -4,7 +4,7 @@ interface
 
 uses Service.Model.Interf, Operators.Model.Interf, ServiceProvided.Model.Interf,
    Budget.Model.Interf, BudgetProviders.Model.Interf,
-  BudgetProducts.Model.Interf;
+  BudgetProducts.Model.Interf, BudgetAnalyzes.Model.Interf;
 
 type
    IOrderOfServiceFactoryModel = interface
@@ -14,7 +14,8 @@ type
       function serviceProvidedModel: IServiceProvidedModel;
       function budgetModel: IBudgetModel;
       function budgetProvidersModel: IBudgetProvidersModel;  
-      function budgetProductsModel: IBudgetProductsModel;            
+      function budgetProductsModel: IBudgetProductsModel; 
+      function budgetAnalyzesModel: IBudgetAnalyzesModel;                  
    end;
 
 implementation

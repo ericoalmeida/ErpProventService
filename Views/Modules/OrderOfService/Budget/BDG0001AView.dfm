@@ -221,7 +221,6 @@ inherited FBDG0001AView: TFBDG0001AView
           GradientColorStop = 15066597
           GradientDirection = gdDiagonalDown
           TabOrder = 6
-          ExplicitLeft = 210
           object cxButton1: TcxButton
             AlignWithMargins = True
             Left = 1
@@ -234,7 +233,7 @@ inherited FBDG0001AView: TFBDG0001AView
             Margins.Right = 0
             Margins.Bottom = 0
             Align = alClient
-            LookAndFeel.Kind = lfStandard
+            LookAndFeel.Kind = lfOffice11
             LookAndFeel.NativeStyle = False
             OptionsImage.Glyph.SourceDPI = 96
             OptionsImage.Glyph.Data = {
@@ -293,12 +292,10 @@ inherited FBDG0001AView: TFBDG0001AView
               10EDC7287EDC751C89F1F62D64B010AD80298D9AC811CBA0B5A3FD8DB92503F8
               3FDBBF82714FB529618BAF0000000049454E44AE426082}
             SpeedButtonOptions.CanBeFocused = False
+            SpeedButtonOptions.Flat = True
+            SpeedButtonOptions.Transparent = True
             TabOrder = 0
             OnClick = cxButton1Click
-            ExplicitLeft = 2
-            ExplicitTop = 2
-            ExplicitWidth = 36
-            ExplicitHeight = 37
           end
         end
       end

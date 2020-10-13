@@ -9,7 +9,8 @@ type
    TTypeListingPrograms = (tpMNG0001AView, tpMNG0002AView, tpMNG0003AView,
      tpMNG0004AView, tpMNG0005AView, tpMNG0006AView, tpASS0001AView,
      tpASS0002AView, tpORD0001AView, tpORD0002AView, tpORD0003AView,
-     tpSTO0001AView, tpREC0001AView, tpPAY0001AView, tpBDG0001AView);
+     tpSTO0001AView, tpREC0001AView, tpPAY0001AView, tpBDG0001AView, 
+     tpBDG0002AView);
 
    TTypeRegisterPrograms = (trMNG0001BView, trMNG0002BView, trMNG0003BView,
      trMNG0004BView, trMNG0005BView, trMNG0006BView, trASS0001BView,

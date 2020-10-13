@@ -258,7 +258,13 @@ uses
   BudgetProducts.Model in 'Models\Modules\OrderOfService\BudgetProducts\BudgetProducts.Model.pas',
   BudgetProducts.Controller.Interf in 'Controllers\Modules\OrderOfService\BudgetProducts\BudgetProducts.Controller.Interf.pas',
   BudgetProducts.Controller in 'Controllers\Modules\OrderOfService\BudgetProducts\BudgetProducts.Controller.pas',
-  BudgetProductsInsert.Controller in 'Controllers\Modules\OrderOfService\BudgetProducts\Operations\BudgetProductsInsert.Controller.pas';
+  BudgetProductsInsert.Controller in 'Controllers\Modules\OrderOfService\BudgetProducts\Operations\BudgetProductsInsert.Controller.pas',
+  TORDBUDGETANALYZES.Entity.Model in 'Models\Modules\OrderOfService\BudgetAnalyzes\Entity\TORDBUDGETANALYZES.Entity.Model.pas',
+  BudgetAnalyzes.Model.Interf in 'Models\Modules\OrderOfService\BudgetAnalyzes\BudgetAnalyzes.Model.Interf.pas',
+  BudgetAnalyzes.Model in 'Models\Modules\OrderOfService\BudgetAnalyzes\BudgetAnalyzes.Model.pas',
+  BDG0002AView in 'Views\Modules\OrderOfService\Budget\BDG0002AView.pas' {FBDG0002AView},
+  BDG0001FView in 'Views\Modules\OrderOfService\Budget\BDG0001FView.pas' {FBDG0002FView},
+  BDG0001IView in 'Views\Modules\OrderOfService\Budget\BDG0001IView.pas' {FBDG0001IView};
 
 {$R *.res}
 
@@ -266,6 +272,7 @@ begin
    Application.Initialize;
    Application.MainFormOnTaskbar := True;
    Application.CreateForm(TFMainView, FMainView);
+  Application.CreateForm(TFBDG0001IView, FBDG0001IView);
   Application.Run;
 
 end.

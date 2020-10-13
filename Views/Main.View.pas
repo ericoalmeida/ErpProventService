@@ -93,6 +93,7 @@ type
       procedure BtServicesProvisionClick(Sender: TObject);
       procedure BtOrcamentoClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure BtCotacaoClick(Sender: TObject);
    private
       procedure loadLogoFasipe;
    public
@@ -205,6 +206,16 @@ procedure TFMainView.BtClientClick(Sender: TObject);
 begin
    TFacadeView.New.modulesFacadeView.receiveFactory.showProgramOfListing
      (tpREC0001AView).&end;
+end;
+
+procedure TFMainView.BtCotacaoClick(Sender: TObject);
+begin
+   TFacadeView
+    .New
+     .modulesFacadeView
+      .orderOfServiceFactory
+      .showProgramOfListing(tpBDG0002AView)
+      .&end;
 end;
 
 procedure TFMainView.BtCountryClick(Sender: TObject);

@@ -2338,6 +2338,7 @@ object FMainView: TFMainView
         5EDC3D6C89DE62A5E04B35AC78139644F6442EECD7D2F06EF76B7C9C0EBC9C12
         8DE13FB57EEDAF639321BE787FB1FE0D170E725099F4769D0000000049454E44
         AE426082}
+      OnClick = BtCotacaoClick
     end
     object BtOperators: TdxBarLargeButton
       Caption = 'Operadores'

@@ -4,7 +4,7 @@ interface
 
 uses OrderOfServiceFactory.Model.Interf, Service.Model.Interf,
    Operators.Model.Interf, ServiceProvided.Model.Interf, Budget.Model.Interf,
-   BudgetProviders.Model.Interf, BudgetProducts.Model.Interf;
+   BudgetProviders.Model.Interf, BudgetProducts.Model.Interf, BudgetAnalyzes.Model.Interf;
 
 type
    TOrderOfServiceFactoryModel = class(TInterfacedObject,
@@ -22,6 +22,7 @@ type
       function budgetModel: IBudgetModel;
       function budgetProvidersModel: IBudgetProvidersModel;
       function budgetProductsModel: IBudgetProductsModel;
+      function budgetAnalyzesModel: IBudgetAnalyzesModel;                        
    end;
 
 implementation
@@ -29,7 +30,12 @@ implementation
 { TOrderOfServiceFactoryModel }
 
 uses Service.Model, Operators.Model, ServiceProvided.Model, Budget.Model,
-   BudgetProviders.Model, BudgetProducts.Model;
+   BudgetProviders.Model, BudgetProducts.Model, BudgetAnalyzes.Model;
+
+function TOrderOfServiceFactoryModel.budgetAnalyzesModel: IBudgetAnalyzesModel;
+begin
+  Result := TBudgetAnalyzesModel.New;
+end;
 
 function TOrderOfServiceFactoryModel.budgetModel: IBudgetModel;
 begin
